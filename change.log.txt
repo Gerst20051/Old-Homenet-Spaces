@@ -1,0 +1,43 @@
+Old Homenet Spaces Change Log
+
+---------------------------------------------------------------------
+
+February 2009 Changes
+
+---------------------------------------------------------------------
+
+1. HTML transformed to XHTML 1.0
+2. Began adding DOCTYPE Declarations
+3. Changed Website Design to Frameset
+4. Frameset Index Page had Banner, Main, and Footer Frames
+5. Links in Banner and Footer Target Main Frame
+6. After Changing Theme Parent Window Will Refresh
+7. Defined CSS Styles and XHTML More
+8. Added Comments to the CSS and XHTML Code in order to Declare Where Sections Begin and End
+9. Created 6 Global Themes That Import CSS Styles That Aren't Theme Dependent
+10. Redefined And Reorganized Meta Tags
+11. Renamed / Lowercased Everything: css, classes, styles, anchors, folders, files, etc...
+12. Replaced Spaces w/ Underscrores
+13. Formatting on CSS and XHTML Documents Drastically Improved
+14. Removed Greeting! May Be Temporarily Removed
+15. Discontinued Dynamic Animation
+16. Removed Copyright and Top Links on All Individual Pages
+17. Added Drop-Down Navigation to All Individual Pages
+18. Began Converted Layout From Tables to Div's - Mainly Homepage
+19. Created Background Color Images for Different Themes
+20. Simplyfied CSS by Combining ID's with Classes
+21. Added Javascript To Login Form
+22. Redid Logo
+23. Added Tab Index and Access Keys
+23. Added Privacy Policy Page
+24. Made Advertisements Part of Classified Section
+25. Redid Links / Moved From Top to Left Side.
+26. Made Links, Navbar, Tabs, and Footer Lists - Link Trees
+
+---------------------------------------------------------------------
+
+December 2010 Changes
+
+---------------------------------------------------------------------
+
+1. Updated TAD Script (12 AM used to say 0 AM)

@@ -1,0 +1,1400 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: Character Set Restrictions Imposed by Common Internet Media
+Date: Thu, 15 Feb 2007 17:04:52 -0500
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.jhall.demon.co.uk/currency/charset.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.3028
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Character Set Restrictions Imposed by Common Internet =
+Media</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META=20
+content=3D"A discussion of the character set&#13;&#10;restrictions =
+imposed by e-mail, news and the web.  Last updated 10-May-2003."=20
+name=3Ddescription>
+<META=20
+content=3D"character, characters, set, internet, media,&#13;&#10;e-mail, =
+email, mail, news, web, www, html, ascii, unicode, iso, 646, =
+646-us,&#13;&#10;8859, 8859/1, 8859-1, 10646"=20
+name=3Dkeywords>
+<META content=3D"MSHTML 6.00.5730.11" name=3DGENERATOR></HEAD>
+<BODY>
+<P align=3Dcenter>[&nbsp;<A=20
+href=3D"http://www.jhall.demon.co.uk/currency/">Main&nbsp;Index</A>&nbsp;=
+| <A=20
+href=3D"http://www.jhall.demon.co.uk/currency/by_country.html">Countries&=
+nbsp;and&nbsp;Currencies</A>&nbsp;|=20
+<A=20
+href=3D"http://www.jhall.demon.co.uk/currency/by_currency.html">Currency&=
+nbsp;names</A>&nbsp;|=20
+<A=20
+href=3D"http://www.jhall.demon.co.uk/currency/by_abbrev.html">Currency&nb=
+sp;Abbreviations</A>&nbsp;|=20
+<A=20
+href=3D"http://www.jhall.demon.co.uk/currency/by_symbol.html">Currency&nb=
+sp;Symbols</A>&nbsp;|=20
+Character&nbsp;Set&nbsp;Restrictions&nbsp;]</P>
+<H1 align=3Dcenter>Character Set Restrictions Imposed by Common Internet =
+
+Media</H1>
+<P align=3Dcenter>Last updated: 10-May-2003</P>
+<H2>Introduction</H2>There are three main Internet media in which almost =
+any=20
+Internet user can author content: <A=20
+href=3D"http://www.jhall.demon.co.uk/currency/charset.html#email">E-mail<=
+/A>, <A=20
+href=3D"http://www.jhall.demon.co.uk/currency/charset.html#news">News</A>=
+ and the=20
+<A href=3D"http://www.jhall.demon.co.uk/currency/charset.html#www">World =
+Wide=20
+Web</A>. Each of these media has restrictions (largely arising from =
+historical=20
+circumstance) on the characters that may be used. These restrictions are =
+
+arbitrary, difficult to remember and sometimes appear petty, but =
+ignoring them=20
+will cause problems for others and possibly yourself.=20
+<P>The situation is made worse by the fact that many modern applications =
+dealing=20
+with these media are written by people who are unaware of, do not =
+understand or=20
+(worse) deliberately ignore Internet standards and conventions. One of =
+the worst=20
+offenders in this regard ironically claims that the Internet was =
+designed to be=20
+compatible with its software (even though users of its products are =
+regularly=20
+lambasted for using "broken" software that ignores and breaks most =
+Internet=20
+standards and conventions).=20
+<H2>History</H2>The Internet was developed in the US back in the days =
+when only=20
+7-bit character sets (a 7-bit character set can contain up to&nbsp;128=20
+characters) were in use and 8-bit character sets (which can contain up=20
+to&nbsp;256 characters) were unheard of.=20
+<P>Although the Internet transmits information in 8-bit chunks, since =
+there were=20
+no 8-bit character sets around at the time, the designers of the =
+Internet had to=20
+choose one of the many 7-bit character sets in use around the world as =
+the=20
+standard character set for many protocols. The natural decision (since =
+they were=20
+in the US) was to use US ASCII (ISO&nbsp;646-US) as the standard =
+character set=20
+for these protocols (such as e-mail and later news).=20
+<H2>Why You Should Follow the Rules</H2>The Internet adopts change =
+slowly.=20
+Although it is possible to extend protocol definitions in ways which are =
+
+backwards-compatible (so people using old software can continue to use =
+that=20
+software to send data), this can cause problems for older software when=20
+receiving data which makes use of the extensions. As long as anyone on =
+the=20
+Internet is using older software, it is unwise to make use of protocol=20
+extensions. On the Internet, old software doesn't die, it simply fades =
+away (but=20
+<EM>very</EM> slowly).=20
+<P>The rules presented here define what it is possible to do and still =
+be=20
+certain that you will not cause problems for others. In some cases you =
+can break=20
+the rules without any apparent problem (it may cause problems for some =
+but if=20
+they don't complain you won't know about it) in the same way that you =
+can often=20
+break the speed limit and not get caught. Just like breaking the speed =
+limit,=20
+just because you have managed to get away with it several times that =
+does not=20
+mean that it is a good idea to do so.=20
+<P>Some people don't particularly care that they may cause problems for =
+others.=20
+In news posts a common attitude is that if 90% (or 75%, or whatever) of =
+people=20
+can read their posts then that is good enough. This is a very selfish =
+attitude=20
+if you have something to say that others would like to read and a very =
+foolish=20
+attitude if you are requesting help (it is possible that the only person =
+with=20
+the answer is one of those you have excluded by posting something he =
+can't=20
+read). In practise you'll find that if you break the rules a large =
+proportion of=20
+those with long experience of the Internet will ignore your posts =
+whether they=20
+can read them or not on the principle that if you're so selfish or =
+foolish as to=20
+exclude those with older software your posts have nothing worthwhile to =
+offer=20
+anyway.=20
+<P>It takes a little more effort to follow the rules, but if you have =
+something=20
+to say you surely wish as many people as possible to read it. If not, =
+why bother=20
+in the first place?=20
+<H2>Valid ASCII Characters</H2>ASCII (ISO 646-US) is the character set =
+used by=20
+e-mail and news. Valid (printable) characters are:=20
+<BLOCKQUOTE><PRE> !"#$%&amp;'()*+,-./0123456789:;&lt;=3D&gt;?
+@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_
+`abcdefghijklmnopqrstuvwxyz{|}~
+</PRE></BLOCKQUOTE>
+<P>Also valid are the space character and the tab character.=20
+<P>You should not explicitly use the carriage-return or line-feed =
+control=20
+characters: when you start a new line in e-mail or news your TCP/IP =
+software=20
+translates whatever your mailer/newsreader uses to start a new line into =
+the=20
+standard end-of-line convention used in transmitting e-mail and news=20
+(carriage-return followed by line-feed). The effect of inserting an =
+isolated=20
+carriage-return or line-feed (whichever of them happens not to be used =
+to=20
+indicate new lines on your computer) is unpredictable.=20
+<H2><A name=3Diso8859/1>Valid ISO 8859/1 Characters</A></H2>ISO 8859/1 =
+is the=20
+default character set used by HTML (web pages). The first&nbsp;128 =
+characters=20
+are identical with ASCII. It is <EM>not</EM> valid to use the non-ASCII=20
+characters of ISO 8859/1 in e-mail or news. Valid (printable) ISO 8859/1 =
+
+characters are:=20
+<BLOCKQUOTE><PRE> !"#$%&amp;'()*+,-./0123456789:;&lt;=3D&gt;?
+@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_
+`abcdefghijklmnopqrstuvwxyz{|}~
+&nbsp;=A1=A2=A3=A4=A5=A6=A7=A8=A9=AA=AB=AC&shy;=AE=AF=B0=B1=B2=B3=B4=B5=B6=
+=B7=B8=B9=BA=BB=BC=BD=BE=BF
+=C0=C1=C2=C3=C4=C5=C6=C7=C8=C9=CA=CB=CC=CD=CE=CF=D0=D1=D2=D3=D4=D5=D6=D7=D8=
+=D9=DA=DB=DC=DD=DE=DF
+=E0=E1=E2=E3=E4=E5=E6=C7=E8=E9=EA=EB=EC=ED=EE=EF=F0=F1=F2=F3=F4=F5=F6=F7=F8=
+=F9=FA=FB=FC=DD=FE=FF
+</PRE></BLOCKQUOTE>
+<P>Also valid are the space character, the tab character, the hard space =
+and the=20
+soft hyphen. The hard space character (character code 160&nbsp;decimal) =
+is=20
+identical in appearance to the ordinary space but applications which=20
+automatically format text should not break a line at a hard space. The =
+soft=20
+hyphen (character code 173&nbsp;decimal) should be discarded by all =
+applications=20
+unless they automatically format text, in which case it indicates a =
+suitable=20
+point to break a line and display a hyphen (many applications either =
+fail to=20
+discard the soft hyphen when they should or fail to treat it as a =
+potential=20
+break point).=20
+<P>You should not explicitly use the carriage-return or line-feed =
+control=20
+characters: when you start a new line in e-mail or news your TCP/IP =
+software=20
+translates whatever your mailer/newsreader uses to start a new line into =
+the=20
+standard end-of-line convention used in transmitting e-mail and news=20
+(carriage-return followed by line-feed). The effect of inserting an =
+isolated=20
+carriage-return or line-feed (whichever of them happens not to be used =
+to=20
+indicate new lines on your computer) is unpredictable.=20
+<H2><A name=3Demail>E-mail</A></H2>Despite various extensions, you =
+should still=20
+regard e-mail as being 7-bit, US-ASCII unless you are <EM>certain</EM> =
+that the=20
+recipient can handle <A=20
+href=3D"http://www.jhall.demon.co.uk/currency/charset.html#mime">MIME</A>=
+ and has=20
+access to the same character set that you are using.=20
+<P>Although the e-mail transfer protocol has been extended to allow the =
+transfer=20
+of 8-bit characters, a significant fraction of mail transfer agents =
+(mail=20
+sending software, mail receiving software and mail gateways) are still=20
+restricted to 7&nbsp;bits. So even if your software is capable of =
+sending 8-bit=20
+characters, they may not arrive at the destination intact: 8-bit =
+characters may=20
+be discarded entirely or may mutate into 7-bit characters by having the=20
+top&nbsp;bit set to zero. This means that if you write:=20
+<BLOCKQUOTE>German Schlo=DF for sale in K=F6ln, only =A3250,000. =
+</BLOCKQUOTE>it may=20
+turn into (if 8-bit characters are discarded):=20
+<BLOCKQUOTE>German Schlo for sale in Kln, only 250,000. </BLOCKQUOTE>or =
+(if=20
+8-bit characters have their top bit set to zero):=20
+<BLOCKQUOTE>German Schlo_ for sale in Kvln, only #250,000. </BLOCKQUOTE>
+<P>Even if you are lucky enough that your message gets through intact, =
+your=20
+recipient may not be using the same 8-bit character set as yourself. =
+Although=20
+ISO&nbsp;8859/1 is very common (being designed to serve the needs of =
+several=20
+European languages), there are many other ISO&nbsp;8859 character sets =
+and even=20
+more 8-bit character sets that are not part of ISO&nbsp;8859. The =
+standard Mac=20
+Roman encoding for character sets has many (but not all) of the =
+ISO&nbsp;8859/1=20
+characters but few of the characters are in the same position as in=20
+ISO&nbsp;8859/1. People in different countries will use the character =
+set=20
+appropriate to their country, which may or may not match yours. As far =
+as=20
+English speaking countries go, any character set which is compatible =
+with=20
+US&nbsp;ASCII will serve, and incompatibilities may only surface when =
+you need=20
+to send a currency symbol or a non-English character.=20
+<P>Actually, even 7-bit US ASCII is not guaranteed to reach all =
+recipients=20
+unchanged. Some older software running on some mail gateways (notably =
+those that=20
+use the EBCDIC character set) has problems with the following =
+characters:=20
+<BLOCKQUOTE><PRE>[\]^`{|}~
+</PRE></BLOCKQUOTE>
+<P>Generally, the Internet community regards software that incorrectly =
+handles=20
+these characters as "broken" but that is of no help if you're mailing C =
+source=20
+code to somebody. Fortunately, this software is extremely rare these =
+days.=20
+<H2><A name=3Dmime>MIME</A></H2>A way of getting around the problems of =
+7-bit=20
+e-mail transfer is to use <DFN>MIME</DFN> (Multipurpose Internet Mail=20
+Extensions). MIME has many modes of operation, but normally if you =
+include an=20
+8-bit character in an item of e-mail a MIME-aware mailer will convert =
+the=20
+message into "quoted-printable" form and use special sequences of =
+characters=20
+starting with an equals sign (<SAMP>=3D</SAMP>) to encode the 8-bit =
+characters.=20
+<P>The first problem with using MIME in e-mail is that not everyone has =
+a=20
+MIME-capable mailer. You must <EM>always</EM> ensure that your recipient =
+can=20
+handle MIME before sending MIME-encoded e-mail. What happens if the =
+recipient=20
+does not have a MIME-capable mailer is that if you send:=20
+<BLOCKQUOTE>German Schlo=DF for sale in K=F6ln, only =A3250000 =
+(=3D$375000).=20
+</BLOCKQUOTE>he will see:=20
+<BLOCKQUOTE>German Schlo=3DDF for sale in K=3DF6ln, only =3DA3250000 =
+(=3D3D$375000).=20
+</BLOCKQUOTE>
+<P>Raw MIME is extremely confusing. Your recipient might figure out that =
+
+"<SAMP>Schlo=3DDF</SAMP>" means "Schlo=DF" and that =
+"<SAMP>K=3DF6ln</SAMP>" means=20
+"K=F6ln." It is very likely that he may think that "<SAMP>=3DA</SAMP>" =
+is an obscure=20
+way of representing "=A3" and that you're asking =A33250000 for your =
+"Schlo=3DDF"=20
+(this sort of mistake is <EM>very</EM> common in these circumstances). =
+The fact=20
+that your message already contained an equals sign is unfortunate =
+because it=20
+gets turned into <SAMP>=3D3D</SAMP> and just adds to the confusion. And =
+just to=20
+make things worse, if your message had trailing blanks at the end of a =
+line then=20
+MIME adds equals signs to the ends of those lines.=20
+<P>The second problem with using MIME in e-mail is that not everyone is =
+using=20
+the same character set as yourself. MIME will automatically include =
+details of=20
+your character set so your recipient's software can automatically select =
+the=20
+appropriate character set&nbsp;- <EM>if</EM> that character set happens =
+to be=20
+available or the software knows how to synthesize it from available =
+character=20
+sets. Even so, you must ensure that your recipient can deal with your =
+character=20
+set before using MIME.=20
+<H2><A name=3Dnews>News</A></H2>News articles are essentially a superset =
+of e-mail=20
+messages, although the transmission method differs. This means that they =
+have=20
+the same restrictions as e-mail messages, namely that the protocol =
+specifies the=20
+use of the printable characters of US&nbsp;ASCII (ISO&nbsp;646-US).=20
+<P>Modern news server software is "8-bit clean" which means that it =
+passes 8-bit=20
+characters correctly. However, a lot of news servers are still running =
+older=20
+software which is not 8-bit clean (which means it drops or mutates 8-bit =
+
+characters just as with e-mail). Not only that, but news is global in =
+scope so=20
+many people will <EM>not</EM> be using the same 8-bit character set as =
+yourself=20
+and even if 8-bit characters reach them intact they will see something =
+entirely=20
+different to what you wrote.=20
+<P>MIME is <EM>not</EM> a feasible solution to the problem of sending =
+8-bit=20
+characters. MIME should only be used when you can guarantee that your =
+recipient=20
+can handle it. Since you have no knowledge or control over who receives =
+your=20
+news article, you cannot guarantee that they can cope with MIME.=20
+<P>Note that some countries operate a closed group of news servers =
+guaranteed to=20
+be 8-bit clean and with the convention that articles posted to those =
+servers use=20
+a single, agreed character set. If, and <EM>only</EM> if, your article =
+is being=20
+posted to a closed community of news servers then you may use 8-bit =
+characters=20
+(provided you post using the correct character set). Newsgroups in the =
+major=20
+hierarchies (<SAMP>alt</SAMP>, <SAMP>biz</SAMP>, <SAMP>comp</SAMP>,=20
+<SAMP>humanities</SAMP>, <SAMP>misc</SAMP>, <SAMP>news</SAMP>, =
+<SAMP>rec</SAMP>,=20
+<SAMP>sci</SAMP>, <SAMP>soc</SAMP>, <SAMP>talk</SAMP>, etc.) as well as =
+most=20
+English-speaking hierarchies (such as <SAMP>uk</SAMP>) are <EM>not</EM> =
+in a=20
+closed community of this kind and you <EM>should</EM> restrict your =
+posts in=20
+those hierarchies to US&nbsp;ASCII.=20
+<H2><A name=3Dwww>World Wide Web</A></H2>The base character set for web =
+pages,=20
+used by default, is <A=20
+href=3D"http://www.jhall.demon.co.uk/currency/charset.html#iso8859/1">ISO=
+&nbsp;8859/1</A>.=20
+Other character sets and encoding schemes may be used (such as the =
+Japanese=20
+JUNET encoding of ISO&nbsp;2022-JP or Unicode UCS-2 format) but these =
+are=20
+outside the scope of this document. This section assumes that the =
+default=20
+ISO&nbsp;8859/1 character set is being used.=20
+<P>HTML allows you to enter all valid ISO&nbsp;8859/1 characters =
+directly.=20
+However, the 8-bit characters which are not in the ASCII =
+(ISO&nbsp;646-US)=20
+character set cause problems for those who are limited to retrieving web =
+pages=20
+by e-mail because e-mail cannot be guaranteed to transmit other than =
+ASCII=20
+characters correctly. It also causes problems for people using Apple =
+Macs=20
+because most Mac browsers have problems with 8-bit characters entered =
+directly.=20
+It is therefore considered good practise to use <A=20
+href=3D"http://www.jhall.demon.co.uk/currency/charset.html#entity_numeric=
+">character=20
+entities</A> (such as <SAMP>&amp;aelig;</SAMP> for "=E6") or <A=20
+href=3D"http://www.jhall.demon.co.uk/currency/charset.html#entity_numeric=
+">numeric=20
+character references</A> (such as <SAMP>&amp;#163;</SAMP> for =A3) =
+unless your=20
+document contains so many 8-bit characters as to make this impractical.=20
+<P>The characters:=20
+<BLOCKQUOTE><PRE>[\]^`{|}~
+</PRE></BLOCKQUOTE>may also cause problems when web pages are retrieved =
+by=20
+e-mail if the e-mail passes through (now rare) older mail gateways, but =
+it is=20
+not considered necessary to use numeric character references to deal =
+with those=20
+in ordinary text (it is considered necessary to URL-encode them when =
+they appear=20
+in <A=20
+href=3D"http://www.jhall.demon.co.uk/currency/charset.html#url-encoding">=
+URLs</A>).=20
+
+<P>One extension to HTML, which is an adjunct to most versions of HTML =
+but=20
+incorporated into HTML version&nbsp;4, is the ability to refer to =
+characters in=20
+the Unicode character set. The first&nbsp;255 characters of the Unicode=20
+character set are identical to the ISO&nbsp;8859/1 character set (in the =
+same=20
+way that the first&nbsp;128 characters of the ISO&nbsp;8859/1 character =
+set are=20
+identical to the ASCII character set). Unicode characters can be entered =
+means=20
+of numeric character references greater than&nbsp;255 (such as=20
+<SAMP>&amp;#8352;</SAMP> to give the Euro currency symbol). This depends =
+on=20
+browsers having Unicode support <EM>and</EM> the user having Unicode =
+fonts which=20
+contain the relevant symbols. Older browsers may display nothing at all, =
+an=20
+error marker, or a totally incorrect character (usually a character from =
+
+ISO&nbsp;8859/1). Some older browsers may even crash when confronted =
+with a=20
+numeric character reference greater than&nbsp;255. Until Unicode support =
+is much=20
+more widespread you should think very carefully before using Unicode =
+characters=20
+in web pages.=20
+<H2><A name=3Dentity_numeric>HTML Character Entities and Numeric =
+Character=20
+References for ISO&nbsp;8859/1 Characters</A></H2>HTML has two =
+mechanisms (which=20
+do <EM>not</EM> work for e-mail or news) for referring to characters =
+that are=20
+difficult to enter from the keyboard, are subject to corruption when =
+HTML pages=20
+are accessed by e-mail or have special meaning to HTML. These are =
+character=20
+entities and numeric character references.=20
+<P>Character entities are take the form=20
+<SAMP>&amp;</SAMP><VAR>entity-name</VAR><SAMP>;</SAMP> where=20
+<VAR>entity-name</VAR> is one of those listed below. Entity names are=20
+case-sensitive: <SAMP>&amp;thorn;</SAMP> and <SAMP>&amp;THORN</SAMP> are =
+lower-=20
+and upper-case versions of the same character whilst =
+<SAMP>&amp;Thorn;</SAMP> is=20
+not a valid entity.=20
+<P>Numeric character references take the form=20
+<SAMP>&amp;#</SAMP><VAR>number</VAR><SAMP>;</SAMP> where =
+<VAR>number</VAR> can=20
+be any of 9, 10, 13, 32-126, 160-255.=20
+<P>Notes:=20
+<OL>
+  <LI>Numeric character references should work with any browser.=20
+  <P></P>
+  <LI>Character entities are generally preferable to numeric character=20
+  references because it is easier to recognize them when reading HTML =
+source.=20
+  However, early drafts of the HTML specification defined character =
+entities=20
+  only for letters not in the English alphabet and accented characters. =
+Older=20
+  browsers do not understand other (non-alphabetic) character entities, =
+which is=20
+  why the table below gives a preferred form. The non-breaking space is =
+an=20
+  exception to this since there are roughly the same number of browsers =
+that=20
+  have problems with <SAMP>&amp;#160;</SAMP> as <SAMP>&amp;nbsp;</SAMP>. =
+
+  <P></P>
+  <LI>The semicolon terminating character entities and numeric character =
+
+  references may be omitted if the following character would not be =
+interpreted=20
+  as part of the entity or numeric reference. However, since most people =
+don't=20
+  know what characters are and aren't valid in entity names, it's safest =
+to=20
+  always include the terminating semicolon. Even if you happen to =
+understand the=20
+  rules of entity names, amending a file can result in the semicolon =
+becoming=20
+  necessary without you noticing, but if you always include the =
+semicolon you'll=20
+  never get caught out.=20
+  <P></P>
+  <LI>The <SAMP>"</SAMP>, <SAMP>&amp;</SAMP>, <SAMP>&gt;</SAMP> and=20
+  <SAMP>&lt;</SAMP> characters all have special significance in HTML =
+(although=20
+  there are also circumstances when they behave as ordinary characters): =
+when=20
+  you need to display one of these characters, rather than using it for =
+the=20
+  purposes of HTML mark-up, you should use the character entity or =
+numeric=20
+  character reference. </LI></OL>
+<P>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TH align=3Dleft>Character</TH>
+    <TH>&nbsp;&nbsp;&nbsp;&nbsp;</TH>
+    <TH align=3Dleft>Entity</TH>
+    <TH>&nbsp;&nbsp;&nbsp;&nbsp;</TH>
+    <TH align=3Dleft>Numeric Reference</TH>
+    <TH>&nbsp;&nbsp;&nbsp;&nbsp;</TH>
+    <TH align=3Dleft>Preferred<BR></TH></TR>
+  <TR>
+    <TD>"</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;quot;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#34;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;quot;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>&amp;</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;amp;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#38;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;amp;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>&lt;</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;nbsp;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#60;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;lt;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>&gt;</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;gt;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#62;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;gt;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>[<I>Non-breaking space</I>]</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;nbsp;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#160;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#160;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=A1</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;iexcl;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#161;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#161;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=A2</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;cent;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#162;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#162;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=A3</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;pound;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#163;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#163;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=A4</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;curren;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#164;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#164;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=A5</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;yen;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#165;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#165;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=A6</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;brvbar;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#166;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#166;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=A7</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;sect;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#167;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#167;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=A8</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;uml;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#168;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#168;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=A9</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;copy;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#169;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#169;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=AA</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;ordf;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#170;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#170;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=AB</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;laquo;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#171;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#171;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=AC</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;not;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#172;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#172;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>[<I>Soft Hyphen</I>]</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;shy;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#173;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#173;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=AE</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;reg;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#174;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#174;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=AF</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;macron;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#175;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#175;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=B0</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;deg;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#176;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#176;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=B1</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;plusmn;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#177;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#177;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=B2</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;sup2;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#178;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#178;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=B3</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;sup3;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#179;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#179;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=B4</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;acute;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#180;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#180;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=B5</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;micro;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#181;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#181;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=B6</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;para;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#182;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#182;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=B7</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;middot;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#183;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#183;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=B8</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;cedil;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#184;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#184;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=B9</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;sup1;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#185;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#185;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=BA</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;ordm;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#186;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#186;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=BB</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;raquo;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#187;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#187;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=BC</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;frac14;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#188;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#188;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=BD</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;frac12;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#189;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#189;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=BE</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;frac34;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#190;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#190;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=BF</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;iquest;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#191;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#191;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=C0</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Agrave;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#192;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Agrave;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=C1</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Aacute;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#193;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Aacute;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=C2</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Acirc;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#194;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Acirc;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=C3</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Atilde;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#195;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Atilde;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=C4</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Auml;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#196;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Auml;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=C5</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Aring;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#197;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Aring;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=C6</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;AElig;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#197;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;AElig;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=C7</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Ccedil;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#199;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Ccedil;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=C8</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Egrave;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#200;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Egrave;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=C9</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Eacute;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#201;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Eacute;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=CA</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Ecirc;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#202;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Ecirc;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=CB</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Euml;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#203;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Euml;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=CC</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Igrave;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#204;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Igrave;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=CD</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Iacute;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#205;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Iacute;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=CE</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Icirc;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#206;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Icirc;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=CF</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Iuml;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#207;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Iuml;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=D0</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;ETH;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#208;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;ETH;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=D1</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Ntilde;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#209;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Ntilde;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=D2</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Ograve;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#210;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Ograve;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=D3</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Oacute;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#211;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Oacute;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=D4</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Ocirc;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#212;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Ocirc;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=D5</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Otilde;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#213;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Otilde;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=D6</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Ouml;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#214;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Ouml;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=D7</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;times;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#215;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#215;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=D8</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Oslash;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#216;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Oslash;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=D9</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Ugrave;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#217;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Ugrave;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=DA</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Uacute;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#218;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Uacute;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=DB</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Ucirc;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#219;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Ucirc;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=DC</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Uuml;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#220;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Uuml;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=DD</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Yacute;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#221;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;Yacute;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=DE</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;THORN;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#222;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;THORN;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=DF</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;szlig;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#223;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;szlig;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=E0</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;agrave;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#224;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;agrave;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=E1</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;aacute;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#225;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;aacute;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=E2</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;acirc;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#226;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;acirc;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=E3</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;atilde;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#227;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;atilde;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=E4</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;auml;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#228;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;auml;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=E5</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;aring;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#229;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;aring;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=E6</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;aelig;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#230;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;aelig;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=E7</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;ccedil;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#231;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;ccedil;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=E8</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;egrave;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#232;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;egrave;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=E9</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;eacute;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#233;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;eacute;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=EA</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;ecirc;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#234;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;ecirc;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=EB</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;euml;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#235;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;euml;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=EC</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;igrave;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#236;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;igrave;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=ED</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;iacute;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#237;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;iacute;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=EE</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;icirc;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#238;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;icirc;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=EF</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;iuml;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#239;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;iuml;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=F0</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;eth;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#240;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;eth;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=F1</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;ntilde;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#241;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;ntilde;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=F2</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;ograve;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#242;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;ograve;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=F3</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;oacute;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#243;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;oacute;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=F4</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;ocirc;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#244;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;ocirc;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=F5</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;otilde;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#245;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;otilde;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=F6</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;ouml;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#246;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;ouml;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=F7</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;divide;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#247;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#247;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=F8</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;oslash;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#248;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;oslash;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=F9</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;ugrave;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#249;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;ugrave;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=FA</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;uacute;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#250;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;uacute;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=FB</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;ucirc;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#251;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;ucirc;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=FC</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;uuml;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#252;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;uuml;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=FD</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;yacute;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#253;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;yacute;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=FE</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;thorn;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#254;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;thorn;</SAMP><BR></TD></TR>
+  <TR>
+    <TD>=FF</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;yuml;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;#255;</SAMP>=20
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD><SAMP>&amp;yuml;</SAMP><BR></TD></TR></TBODY></TABLE>
+<H2><A name=3Durl-encoding>URL-Encoding</A></H2>When writing URLs =
+(whether as=20
+actual links on web pages or when referring to URLs in e-mail and news), =
+certain=20
+characters must be represented by means of URL-encoding, which means =
+substiting=20
+the character with <SAMP>%</SAMP><VAR>hexadecimal-character-code</VAR>. =
+The full=20
+details of when and why URL-encoding is necessary is discussed in=20
+<CITE>RFC&nbsp;1630</CITE>, <CITE>RFC&nbsp;1738</CITE> and=20
+<CITE>RFC&nbsp;1808</CITE>. Some basic details are given here.=20
+<OL>
+  <LI>All non-ASCII characters (i.e., valid ISO&nbsp;8859/1 characters =
+that are=20
+  not also ASCII characters) <EM>must</EM> be URL-encoded. E.g., the =
+file=20
+  <SAMP>k=F6ln.html</SAMP> would appear in a URL as =
+<SAMP>k%F6ln.html</SAMP>.=20
+  <P></P>
+  <LI>Some characters are considered to be "unsafe" when web pages are =
+requested=20
+  by e-mail. These are: the tab character (<SAMP>%09</SAMP>), the space=20
+  character (<SAMP>%09</SAMP>), <SAMP>[</SAMP> (<SAMP>%5B</SAMP>),=20
+  <SAMP>\</SAMP> (<SAMP>%5C</SAMP>), <SAMP>]</SAMP> (<SAMP>%5D</SAMP>),=20
+  <SAMP>^</SAMP> (<SAMP>%5E</SAMP>), <SAMP>`</SAMP> (<SAMP>%60</SAMP>),=20
+  <SAMP>{</SAMP> (<SAMP>%7B</SAMP>), <SAMP>|</SAMP> (<SAMP>%7C</SAMP>),=20
+  <SAMP>}</SAMP> (<SAMP>%7D</SAMP>) and <SAMP>~</SAMP> =
+(<SAMP>%7E</SAMP>). When=20
+  writing URLs you <EM>should</EM> URL-encode these characters.=20
+  <P></P>
+  <LI>Some characters have special meanings in URLs, such as the colon=20
+  (<SAMP>:</SAMP>) that separates the URL scheme from the rest of the =
+URL, the=20
+  <SAMP>//</SAMP> that indicates that the URL conforms to the Common =
+Internet=20
+  Scheme syntax and the percent sign (<SAMP>%</SAMP>). Generally, when =
+these=20
+  characters appear as parts of filenames they must be URL-encoded to=20
+  distinguish them from their special meaning in URLs (this is a =
+simplification,=20
+  read the RFCs for the full details). These characters are: =
+<SAMP>"</SAMP>=20
+  (<SAMP>%22</SAMP>), <SAMP>#</SAMP> (<SAMP>%23</SAMP>), <SAMP>%</SAMP>=20
+  (<SAMP>%25</SAMP>), <SAMP>&amp;</SAMP> (<SAMP>%26</SAMP>), =
+<SAMP>+</SAMP>=20
+  (<SAMP>%2B</SAMP>), <SAMP>,</SAMP> (<SAMP>%2C</SAMP>), <SAMP>/</SAMP>=20
+  (<SAMP>%2F</SAMP>), <SAMP>:</SAMP> (<SAMP>%3A</SAMP>), =
+<SAMP>&lt;</SAMP>=20
+  (<SAMP>%3C</SAMP>), <SAMP>=3D</SAMP> (<SAMP>%3D</SAMP>), =
+<SAMP>&gt;</SAMP>=20
+  (<SAMP>%3E</SAMP>), <SAMP>?</SAMP> (<SAMP>%3F</SAMP>) and =
+<SAMP>@</SAMP>=20
+  (<SAMP>%40</SAMP>). </LI></OL>
+<HR>
+
+<ADDRESS>=A9 Copyright 1998, Paul L. Allen<BR>Comments to John Hall: =
+<SAMP><A=20
+href=3D"mailto:currency1atjahall.co.uk">currency1atjhall.co.uk</A></SAMP>=
+ (replace=20
+"at" by "@") </ADDRESS>
+<P align=3Dcenter>[&nbsp;<A=20
+href=3D"http://www.jhall.demon.co.uk/currency/">Main&nbsp;Index</A>&nbsp;=
+| <A=20
+href=3D"http://www.jhall.demon.co.uk/currency/by_country.html">Countries&=
+nbsp;and&nbsp;Currencies</A>&nbsp;|=20
+<A=20
+href=3D"http://www.jhall.demon.co.uk/currency/by_currency.html">Currency&=
+nbsp;names</A>&nbsp;|=20
+<A=20
+href=3D"http://www.jhall.demon.co.uk/currency/by_abbrev.html">Currency&nb=
+sp;Abbreviations</A>&nbsp;|=20
+<A=20
+href=3D"http://www.jhall.demon.co.uk/currency/by_symbol.html">Currency&nb=
+sp;Symbols</A>&nbsp;|=20
+Character&nbsp;Set&nbsp;Restrictions&nbsp;]</P></BODY></HTML>

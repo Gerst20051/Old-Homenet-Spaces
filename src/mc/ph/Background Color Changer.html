@@ -1,0 +1,598 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Background Color Changer</title>
+<meta http-equiv="The JavaScript Source" content="no-cache">
+<meta name="description" content="Input color codes, either as RGB numbers, or as a 6 character hexadecimal code, then test it to see how it will look on the page. Great for testing color schemes!">
+<meta name="date" content="2006-08-11">
+<meta name="channel" content="Developer">
+<meta name="author" content="Brett McLean">
+<meta name="section" content="Miscellaneous">
+<script type="text/javascript">
+<!--
+/* This script and many more are available free online at
+The JavaScript Source :: http://javascript.internet.com
+Created by: Brett McLean :: http://www.brettbits.com/ */
+
+var sixteen;
+var one;
+var red;
+var green;
+var blue;
+var colorCode;
+var inputType = "dec";
+
+var ralpha = "0123456789ABCDEF";
+var temppos;
+var rnumber;
+
+hexArray = new Array();
+  hexArray[0] = "0";
+  hexArray[1] = "1";
+  hexArray[2] = "2";
+  hexArray[3] = "3";
+  hexArray[4] = "4";
+  hexArray[5] = "5";
+  hexArray[6] = "6";
+  hexArray[7] = "7";
+  hexArray[8] = "8";
+  hexArray[9] = "9";
+  hexArray[10] = "A";
+  hexArray[11] = "B";
+  hexArray[12] = "C";
+  hexArray[13] = "D";
+  hexArray[14] = "E";
+  hexArray[15] = "F";
+
+rhexArray = new Array();
+  rhexArray[0] = "F";
+  rhexArray[1] = "E";
+  rhexArray[2] = "D";
+  rhexArray[3] = "C";
+  rhexArray[4] = "B";
+  rhexArray[5] = "A";
+  rhexArray[6] = "9";
+  rhexArray[7] = "8";
+  rhexArray[8] = "7";
+  rhexArray[9] = "6";
+  rhexArray[10] = "5";
+  rhexArray[11] = "4";
+  rhexArray[12] = "3";
+  rhexArray[13] = "2";
+  rhexArray[14] = "1";
+  rhexArray[15] = "0";
+
+
+function d2h(number) { //converts a decimal number to hexadecimal
+ 	sixteen = Math.floor(number/16); //value in the 16s position
+ 	one = Math.floor(number-(sixteen*16)); //value in the 1s position
+ 	sixteen = hexArray[sixteen]; //hex representation of the value in the 16s position
+ 	one = hexArray[one]; //hex respresentation of the value in the 1s position
+ 	number = sixteen + one; //concatenate string values of hex digits
+ 	return number;
+}
+
+function h2d(number) { //converts hexadecimal numbers to decimal equivalents
+ 	if(number.substring(0,1) == "F") {
+ 			sixteen = 15;
+ 	} else 	if(number.substring(0,1) == "E") {
+ 			sixteen = 14;
+ 	} else 	if(number.substring(0,1) == "D") {
+ 			sixteen = 13;
+ 	} else 	if(number.substring(0,1) == "C") {
+ 			sixteen = 12;
+ 	} else 	if(number.substring(0,1) == "B") {
+ 			sixteen = 11;
+ 	} else 	if(number.substring(0,1) == "A") {
+ 			sixteen = 10;
+ 	} else {
+ 		sixteen = eval(number.substring(0,1));
+ 	}
+ 	sixteen = sixteen * 16;
+ 	if(number.substring(1,2) == "F") {
+ 			one = 15;
+ 	} else if(number.substring(1,2) == "E") {
+ 			one = 14;
+ 	} else if(number.substring(1,2) == "D") {
+ 			one = 13;
+ 	} else if(number.substring(1,2) == "C") {
+ 			one = 12;
+ 	} else if(number.substring(1,2) == "B") {
+ 			one = 11
+ 	} else if(number.substring(1,2) == "A") {
+ 			one = 10;
+ 	} else {
+ 		one = eval(number.substring(1,2));
+ 	}
+ 	return sixteen + one; //return sum of these decimal numbers
+}
+
+function changeFgColor(number) { //this function receives the background's hexadecimal color code
+		//as a parameter, and then returns a suitable font color that would
+		//be visible on that background color
+ 	rnumber = "";
+ 	for(i=0; i <= number.length-1; i++) {
+  		temppos = ralpha.indexOf(number.charAt(i));
+  		rnumber = rnumber + rhexArray[temppos];
+ 	}
+ 	return rnumber;
+}
+
+function changeBgColor() { //this function reads in values from the text fields, parses the text
+		//as a color code, and then changes the background color
+ 	if(inputType == "hex") { //if user has changed the hexadecimal field
+  		document.colorform.hextext.value = document.colorform.hextext.value.toUpperCase();
+  		if(document.colorform.hextext.value.substring(0,1) == "#") { //if user placed "#" in front of hex color code
+   			colorCode = document.colorform.hextext.value.substring(1,7);
+  } else {
+  			colorCode = document.colorform.hextext.value.substring(0,6);
+	 }
+		document.colorform.redtext.value = h2d(colorCode.substring(0,2)); //converts to red's decimal value
+		document.colorform.greentext.value = h2d(colorCode.substring(2,4)); //converts to red's decimal value
+		document.colorform.bluetext.value = h2d(colorCode.substring(4,6)); //converts to red's decimal value
+		document.bgColor = colorCode; //change background color
+		document.fgColor = changeFgColor(colorCode); //change font color to something readable
+		return false; //exit function
+	}
+
+	//if program reaches this point, the color code is to be based on inputted decimal values,
+	//as opposed to hexadecimal values
+
+	//check red's value range
+ 	if (eval(document.colorform.redtext.value) > 255 || eval(document.colorform.redtext.value) < 0) {
+ 		alert("All values must be and less than or equal to 255 and greater than or equal to 0.");
+ 		return false;
+ 	}
+ 	//check green's value range
+ 	if (eval(document.colorform.greentext.value) > 255 || eval(document.colorform.greentext.value) < 0) {
+ 		alert("All values must be and less than or equal to 255 and greater than or equal to 0.");
+ 		return false;
+ 	}
+ 	//check blue's value range
+ 	if (eval(document.colorform.bluetext.value) > 255 || eval(document.colorform.bluetext.value) < 0) {
+ 		alert("All values must be and less than or equal to 255 and greater than or equal to 0.");
+ 		return false;
+ 	}
+
+ 	red = d2h(eval(document.colorform.redtext.value)); //convert red's decimal value to hex
+ 	green = d2h(eval(document.colorform.greentext.value));//convert green's decimal value to hex
+ 	blue = d2h(eval(document.colorform.bluetext.value)); //convert blue's decimal value to hex
+
+ 	colorCode = red + green + blue; //create hexadecimal color code
+ 	document.bgColor = colorCode; //set background color
+ 	document.fgColor = changeFgColor(colorCode); //change font color to something readable
+ 	document.colorform.hextext.value = "#" + colorCode; //rewrite hex's text field with new color code
+}
+
+function changeInput(type) {
+ 	inputType = type; //inputType is to determine whether the user is changing the decimal text fields,
+			 //or the hexadecimal text fields
+}
+
+function instruct() { //alerts user with instructions
+ 	alert("Enter a Red, Green, or Blue value of 0 to 255 \nor enter a 6 digit Hex Color Code using numbers 0-9\nand letters A-F then click Change Background.");
+}
+//-->
+</script>
+
+</head>
+
+<body bgcolor="#ffffff" vlink="#0000ff" ">
+
+
+<br>
+<center>
+<script language="JavaScript" type="text/javascript"><!--
+function openDescription(ID) {
+var url = "http://www.ppcforhosts.com/public/util/description.cfm?id=" + ID;
+link = window.open(url,"newWin","directories=0,height=250,location=0,menubar=0,resizable=1,scrollbars=1,status=0,toolbar=0,width=450");
+}
+//--></script>
+<p>&nbsp;</p>
+<table width="100%" cellpadding=0 cellspacing=0 border=0>
+<tr><td width="99%" align=center>
+
+<basefont size="3">
+<font size="+2" face="Helvetica,Arial">
+&nbsp;<img src="../../images/arrow.gif" border="0" alt="}" width="7" height="13">
+<font color="#006666"><b>Background Color Changer</b></font></font>
+<br>
+<br>
+<!-- Demonstration --><div style="width: 300px; margin-left: 30%; background-color: #fff; color: #00009C; text-align: center; line-height: 1.5em; ">
+<form name="colorform" onSubmit="changeBgColor(); return false;">
+Red: <input type="text" name="redtext" size="3" value="255" onfocus="changeInput('dec')">
+Green: <input type="text" name="greentext" size="3" value="255" onfocus="changeInput('dec')">
+Blue: <input type="text" name="bluetext" size="3" value="255" onfocus="changeInput('dec')">
+<br>
+Hex Code: <input type="text" name="hextext" size="7" value="#FFFFFF" onfocus="changeInput('hex')">
+<br>
+<input type="submit" value="Change Background" style="background-color: #00009C; color: #fff;">
+<br>
+<input type="button" value="Instructions" onclick="instruct()" style="background-color: #00009C; color: #fff;">
+</form>
+</div>
+
+<p>
+<p>
+<a name="source">
+<table border="0" width="486" cellpadding="3" cellspacing="0">
+<tr><td bgcolor="yellow">
+  <p align="center"><font face="helvetica,arial,geneva"><b>The JavaScript Source : Background 
+  Color Changer</b></p>
+<p align="center">Simply click inside the window below, use your cursor to highlight the script, and copy [Control]+C the script into a new file in your text editor (such as Note Pad) and save [Control+S]. The script is yours!!!
+<br><br></font></td></tr>
+<tr><td bgcolor="yellow" align="CENTER">
+<form name="copy">
+
+<div align="center">
+<input type="button" value="Highlight All" onclick="javascript:this.form.txt.focus();this.form.txt.select();">
+</div>
+
+<textarea name="txt" rows="20" cols="75" wrap="VIRTUAL">
+
+&lt;!-- Paste this code into an external JavaScript file named: colorChange.js  -->
+
+/* This script and many more are available free online at
+The JavaScript Source :: http://javascript.internet.com
+Created by: Brett McLean :: http://www.brettbits.com/ */
+
+var sixteen;
+var one;
+var red;
+var green;
+var blue;
+var colorCode;
+var inputType = "dec";
+
+var ralpha = "0123456789ABCDEF";
+var temppos;
+var rnumber;
+
+hexArray = new Array();
+  hexArray[0] = "0";
+  hexArray[1] = "1";
+  hexArray[2] = "2";
+  hexArray[3] = "3";
+  hexArray[4] = "4";
+  hexArray[5] = "5";
+  hexArray[6] = "6";
+  hexArray[7] = "7";
+  hexArray[8] = "8";
+  hexArray[9] = "9";
+  hexArray[10] = "A";
+  hexArray[11] = "B";
+  hexArray[12] = "C";
+  hexArray[13] = "D";
+  hexArray[14] = "E";
+  hexArray[15] = "F";
+
+rhexArray = new Array();
+  rhexArray[0] = "F";
+  rhexArray[1] = "E";
+  rhexArray[2] = "D";
+  rhexArray[3] = "C";
+  rhexArray[4] = "B";
+  rhexArray[5] = "A";
+  rhexArray[6] = "9";
+  rhexArray[7] = "8";
+  rhexArray[8] = "7";
+  rhexArray[9] = "6";
+  rhexArray[10] = "5";
+  rhexArray[11] = "4";
+  rhexArray[12] = "3";
+  rhexArray[13] = "2";
+  rhexArray[14] = "1";
+  rhexArray[15] = "0";
+
+
+function d2h(number) { //converts a decimal number to hexadecimal
+ 	sixteen = Math.floor(number/16); //value in the 16s position
+ 	one = Math.floor(number-(sixteen*16)); //value in the 1s position
+ 	sixteen = hexArray[sixteen]; //hex representation of the value in the 16s position
+ 	one = hexArray[one]; //hex respresentation of the value in the 1s position
+ 	number = sixteen + one; //concatenate string values of hex digits
+ 	return number;
+}
+
+function h2d(number) { //converts hexadecimal numbers to decimal equivalents
+ 	if(number.substring(0,1) == "F") {
+ 			sixteen = 15;
+ 	} else 	if(number.substring(0,1) == "E") {
+ 			sixteen = 14;
+ 	} else 	if(number.substring(0,1) == "D") {
+ 			sixteen = 13;
+ 	} else 	if(number.substring(0,1) == "C") {
+ 			sixteen = 12;
+ 	} else 	if(number.substring(0,1) == "B") {
+ 			sixteen = 11;
+ 	} else 	if(number.substring(0,1) == "A") {
+ 			sixteen = 10;
+ 	} else {
+ 		sixteen = eval(number.substring(0,1));
+ 	}
+ 	sixteen = sixteen * 16;
+ 	if(number.substring(1,2) == "F") {
+ 			one = 15;
+ 	} else if(number.substring(1,2) == "E") {
+ 			one = 14;
+ 	} else if(number.substring(1,2) == "D") {
+ 			one = 13;
+ 	} else if(number.substring(1,2) == "C") {
+ 			one = 12;
+ 	} else if(number.substring(1,2) == "B") {
+ 			one = 11
+ 	} else if(number.substring(1,2) == "A") {
+ 			one = 10;
+ 	} else {
+ 		one = eval(number.substring(1,2));
+ 	}
+ 	return sixteen + one; //return sum of these decimal numbers
+}
+
+function changeFgColor(number) { //this function receives the background's hexadecimal color code
+		//as a parameter, and then returns a suitable font color that would
+		//be visible on that background color
+ 	rnumber = "";
+ 	for(i=0; i &lt;= number.length-1; i++) {
+  		temppos = ralpha.indexOf(number.charAt(i));
+  		rnumber = rnumber + rhexArray[temppos];
+ 	}
+ 	return rnumber;
+}
+
+function changeBgColor() { //this function reads in values from the text fields, parses the text
+		//as a color code, and then changes the background color
+ 	if(inputType == "hex") { //if user has changed the hexadecimal field
+  		document.colorform.hextext.value = document.colorform.hextext.value.toUpperCase();
+  		if(document.colorform.hextext.value.substring(0,1) == "#") { //if user placed "#" in front of hex color code
+   			colorCode = document.colorform.hextext.value.substring(1,7);
+  } else {
+  			colorCode = document.colorform.hextext.value.substring(0,6);
+	 }
+		document.colorform.redtext.value = h2d(colorCode.substring(0,2)); //converts to red's decimal value
+		document.colorform.greentext.value = h2d(colorCode.substring(2,4)); //converts to red's decimal value
+		document.colorform.bluetext.value = h2d(colorCode.substring(4,6)); //converts to red's decimal value
+		document.bgColor = colorCode; //change background color
+		document.fgColor = changeFgColor(colorCode); //change font color to something readable
+		return false; //exit function
+	}
+
+	//if program reaches this point, the color code is to be based on inputted decimal values,
+	//as opposed to hexadecimal values
+
+	//check red's value range
+ 	if (eval(document.colorform.redtext.value) > 255 || eval(document.colorform.redtext.value) &lt; 0) {
+ 		alert("All values must be and less than or equal to 255 and greater than or equal to 0.");
+ 		return false;
+ 	}
+ 	//check green's value range
+ 	if (eval(document.colorform.greentext.value) > 255 || eval(document.colorform.greentext.value) &lt; 0) {
+ 		alert("All values must be and less than or equal to 255 and greater than or equal to 0.");
+ 		return false;
+ 	}
+ 	//check blue's value range
+ 	if (eval(document.colorform.bluetext.value) > 255 || eval(document.colorform.bluetext.value) &lt; 0) {
+ 		alert("All values must be and less than or equal to 255 and greater than or equal to 0.");
+ 		return false;
+ 	}
+
+ 	red = d2h(eval(document.colorform.redtext.value)); //convert red's decimal value to hex
+ 	green = d2h(eval(document.colorform.greentext.value));//convert green's decimal value to hex
+ 	blue = d2h(eval(document.colorform.bluetext.value)); //convert blue's decimal value to hex
+
+ 	colorCode = red + green + blue; //create hexadecimal color code
+ 	document.bgColor = colorCode; //set background color
+ 	document.fgColor = changeFgColor(colorCode); //change font color to something readable
+ 	document.colorform.hextext.value = "#" + colorCode; //rewrite hex's text field with new color code
+}
+
+function changeInput(type) {
+ 	inputType = type; //inputType is to determine whether the user is changing the decimal text fields,
+			 //or the hexadecimal text fields
+}
+
+function instruct() { //alerts user with instructions
+ 	alert("Enter a Red, Green, or Blue value of 0 to 255 \nor enter a 6 digit Hex Color Code using numbers 0-9\nand letters A-F then click Change Background.");
+}
+
+
+
+&lt;!-- Paste this code into the HEAD section of your HTML document.
+     You may need to change the path of the file.  -->
+
+&lt;script type="text/javascript" src="colorChange.js">&lt;/script>
+
+
+
+&lt;!-- Paste this code into the BODY section of your HTML document  -->
+
+&lt;div style="width: 300px; margin-left: 30%; background-color: #fff; color: #00009C; text-align: center; line-height: 1.5em; ">
+&lt;form name="colorform" onSubmit="changeBgColor(); return false;">
+Red: &lt;input type="text" name="redtext" size="3" value="255" onfocus="changeInput('dec')">
+Green: &lt;input type="text" name="greentext" size="3" value="255" onfocus="changeInput('dec')">
+Blue: &lt;input type="text" name="bluetext" size="3" value="255" onfocus="changeInput('dec')">
+&lt;br>
+Hex Code: &lt;input type="text" name="hextext" size="7" value="#FFFFFF" onfocus="changeInput('hex')">
+&lt;br>
+&lt;input type="submit" value="Change Background" style="background-color: #00009C; color: #fff;">
+&lt;br>
+&lt;input type="button" value="Instructions" onclick="instruct()" style="background-color: #00009C; color: #fff;">
+&lt;/form>
+&lt;/div>
+
+
+</textarea></form>
+</td>
+</tr>
+</table>
+
+<!--content_stop-->
+
+<p>
+
+  </tr>
+</table>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function getCookieVal (offset) {
+var endstr = document.cookie.indexOf(";", offset);
+if (endstr == -1)
+endstr = document.cookie.length;
+return unescape(document.cookie.substring(offset, endstr));
+}
+function GetCookie (name) {
+var arg = name + "=";
+var alen = arg.length;
+var clen = document.cookie.length;
+var i = 0;
+while (i < clen) {
+var j = i + alen;
+if (document.cookie.substring(i, j) == arg)
+return getCookieVal (j);
+i = document.cookie.indexOf(" ", i) + 1;
+if (i == 0)
+break;
+}
+return null;
+}
+function SetCookie (name, value) {
+var argv = SetCookie.arguments;
+var argc = SetCookie.arguments.length;
+var expires = (argc > 2) ? argv[2] : null;
+var path = "/"; //(argc > 3) ? argv[3] : null;
+var domain = (argc > 4) ? argv[4] : null;
+var secure = (argc > 5) ? argv[5] : false;
+document.cookie = name + "=" + escape (value) +
+((expires == null) ? "" : ("; expires=" +
+expires.toGMTString())) +
+((path == null) ? "" : ("; path=" + path)) +
+((domain == null) ? "" : ("; domain=" + domain)) +
+((secure == true) ? "; secure" : "");
+}
+
+var emailcookie = GetCookie('email_address');
+if (emailcookie == null) {
+emailcookie = 'your email here';
+}
+
+function chk(email, formname)
+{
+invalid = "";
+
+if (!email)
+invalid = "No email address found!  Try reloading the page then use the 'email a script' feature again.";
+
+else {
+
+if ( (email.indexOf("@") == -1) || (email.indexOf(".") == -1) )
+invalid += "\n\nInvalid email address.  Your email address is missing an '@' sign and a '.' in the domain name (like '.com').  Please check your address then submit again.";
+
+if (email.indexOf("youremailhere") > -1)
+invalid += "\n\nInvalid email address.  Make sure your email address included your username, the '@' sign, and the domain name (like '.com').";
+
+if (email.indexOf("\\") > -1)
+invalid += "\n\nEmail address contains an invalid back-slash (\\) character.  Remove the character and submit again.";
+
+if (email.indexOf("/") > -1)
+invalid += "\n\nEmail address contains an invalid forward-slash (/) character.  Remove the character and submit again.";
+
+if (email.indexOf("'") > -1)
+invalid += "\n\nEmail address contains an invalid apostrophe (') character.  Remove the character and submit again.";
+
+if (email.indexOf("zaz.com.br") > -1)
+invalid += "\n\nPlease do not use an email address that has an autoresponder set up for it.  Thanks.";
+
+if (email.indexOf("!") > -1)
+invalid += "\n\nEmail address contains an invalid exclamation point (!) character.  Remove the character or correct the email address then submit again.";
+
+if ( (email.indexOf(",") > -1) || (email.indexOf(";") > -1) )
+invalid += "\n\nPlease only enter one email address in the box at a time.  Remove the extra addresses and submit again.";
+
+if (email.indexOf("?subject") > -1)
+invalid += "\n\nPlease do not add '?subject=...' to your email address.  Scriptbot will send you the script with a pre-defined subject already.  Please remove the '?subject=...' from your email address and submit again.";
+}
+
+if (invalid == "")
+   {
+   var largeExpDate = new Date();
+   largeExpDate.setTime(largeExpDate.getTime() + (31 * 24 * 3600 * 1000));
+   SetCookie('email_address', email, largeExpDate);
+   if (formname == "scriptbot")
+      {
+      page = "http://javascript.internet.com/sent.html?" + email;
+      window.open(page, "AdWindow", "width=650,height=200");
+      }
+   return true;
+}
+else
+   {
+   alert("Oops, something is wrong...." + invalid);
+   return false;
+   }
+}
+
+function updateNewsletters() {
+with (document.forms["newslettersignup"]) {
+emailStr = email.value;
+var emailPat=/^(.+)@(.+)$/;
+var specialChars="\\(\\)<>@,;:\\\\\\\"\\.\\[\\]"; // remove   ( ) < > @ , ; : \ " . [ ]    */
+var validChars="\[^\\s" + specialChars + "\]";
+var quotedUser="(\"[^\"]*\")";
+var ipDomainPat=/^\[(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})\]$/;
+var atom=validChars + '+';
+var word="(" + atom + "|" + quotedUser + ")";
+var userPat=new RegExp("^" + word + "(\\." + word + ")*$");
+var domainPat=new RegExp("^" + atom + "(\\." + atom +")*$");
+var matchArray=emailStr.match(emailPat);
+if (matchArray==null) {
+alert("Email address seems incorrect (check @ and .'s)");
+return false;;
+}
+var user=matchArray[1];
+var domain=matchArray[2];
+if (user.match(userPat)==null) {
+alert("The username doesn't seem to be valid.");
+return false;
+}
+var IPArray=domain.match(ipDomainPat);
+if (IPArray!=null) {
+for (var i=1;i<=4;i++) {
+if (IPArray[i]>255) {
+alert("Destination IP address is invalid!");
+return false;
+      }
+   }
+}
+var domainArray=domain.match(domainPat);
+if (domainArray==null) {
+alert("The domain name doesn't seem to be valid.");
+return false;
+}
+var atomPat=new RegExp(atom,"g");
+var domArr=domain.match(atomPat);
+var len=domArr.length;
+if (domArr[domArr.length-1].length<2 || domArr[domArr.length-1].length>3) {
+alert("The address must end in a three-letter domain, or two letter country.");
+return false;
+}
+if (len<2) {
+var errStr="This address is missing a hostname!";
+alert(errStr);
+return false;
+}
+List_Name.value = newsletter.options[newsletter.selectedIndex].value
+		+ nltype.options[nltype.selectedIndex].value;
+
+   var largeExpDate = new Date();
+   largeExpDate.setTime(largeExpDate.getTime() + (31 * 24 * 3600 * 1000));
+   SetCookie('email_address', emailStr, largeExpDate);
+
+return true;
+   }
+}
+// End -->
+</script>
+
+</body></html>

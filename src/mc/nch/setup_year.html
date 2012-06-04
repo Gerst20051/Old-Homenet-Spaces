@@ -1,0 +1,427 @@
+<html>
+
+<head>
+<title>Subject</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+<link rel="stylesheet" type="text/css" href="../../css/globalblue.css" media="screen" />
+<script src="../../cs.js"></script>
+<script type="text/javascript">
+<!--
+
+
+// ----- Auxiliary -------------------------------------------------------------
+
+function tabview_aux(TabViewId, id)
+{
+  var TabView = document.getElementById(TabViewId);
+
+  // ----- Tabs -----
+
+  var Tabs = TabView.firstChild;
+  while (Tabs.className != "Tabs" ) Tabs = Tabs.nextSibling;
+
+  var Tab = Tabs.firstChild;
+  var i   = 0;
+
+  do
+  {
+    if (Tab.tagName == "A")
+    {
+      i++;
+      Tab.href      = "javascript:tabview_switch('"+TabViewId+"', "+i+");";
+      Tab.className = (i == id) ? "Active" : "";
+      Tab.blur();
+    }
+  }
+  while (Tab = Tab.nextSibling);
+
+  // ----- Pages -----
+
+  var Pages = TabView.firstChild;
+  while (Pages.className != 'Pages') Pages = Pages.nextSibling;
+
+  var Page = Pages.firstChild;
+  var i    = 0;
+
+  do
+  {
+    if (Page.className == 'Page')
+    {
+      i++;
+      if (Pages.offsetHeight) Page.style.height = (Pages.offsetHeight-2)+"px";
+      Page.style.overflow = "auto";
+      Page.style.display  = (i == id) ? 'block' : 'none';
+    }
+  }
+  while (Page = Page.nextSibling);
+}
+
+// ----- Functions -------------------------------------------------------------
+
+function tabview_switch(TabViewId, id) { tabview_aux(TabViewId, id); }
+
+function tabview_initialize(TabViewId) { tabview_aux(TabViewId,  1); }
+
+//-->
+</script>
+</head>
+
+<body id="newschannelbody">
+
+<div class="content">
+	<p align="center"><font size="5"><a name="top">News Channel</a></font></p>
+	<hr />
+	<p align="center"><a href="2006/index.html">2006</a> -
+	<a href="2007/index.html">2007</a> - <a href="2008/index.html">2008</a> -
+	<a href="2009/index.html">2009</a> - <a href="2010/index.html">2010</a> -
+	<a href="2011/index.html">2011</a></p>
+	<center>
+	<table border="3" cellpadding="3" cellspacing="0" style="border-collapse: collapse" width="100%">
+		<tr>
+			<td width="100%" colspan="3">Year 2007</td>
+		</tr>
+		<tr>
+			<td width="34%">
+			<p align="center"><a href="#January">January</a></p>
+			</td>
+			<td width="33%">
+			<p align="center"><a href="#February">February</a></p>
+			</td>
+			<td width="33%">
+			<p align="center"><a href="#March">March</a></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="34%">
+			<p align="center"><a href="#April">April</a></p>
+			</td>
+			<td width="33%">
+			<p align="center"><a href="#May">May</a></p>
+			</td>
+			<td width="33%">
+			<p align="center"><a href="#June">June</a></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="34%">
+			<p align="center"><a href="#July">July</a></p>
+			</td>
+			<td width="33%">
+			<p align="center"><a href="#August">August</a></p>
+			</td>
+			<td width="33%">
+			<p align="center"><a href="#September">September</a></p>
+			</td>
+		</tr>
+		<tr>
+			<td width="34%">
+			<p align="center"><a href="#October">October</a></p>
+			</td>
+			<td width="33%">
+			<p align="center"><a href="#November">November</a></p>
+			</td>
+			<td width="33%">
+			<p align="center"><a href="#December">December</a></p>
+			</td>
+		</tr>
+	</table>
+	</center><br />
+	<center>
+	<table border="1" cellpadding="4" cellspacing="0" style="border-collapse: collapse" width="100%" id="AutoNumber1">
+		<tr>
+			<td width="100%"><font size="5"><b><a name="January">January</a></b></font></td>
+		</tr>
+		<tr>
+			<td width="100%" align="center">
+			<p align="center">&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" align="center">&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="100%" align="center">&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="100%">
+			<p align="right"><a href="../..">
+			<img border="0" src="../../i/sy/a/06.gif" width="18" height="18" /><font size="4"> 
+			Back To Top</font></a></p>
+			</td>
+		</tr>
+	</table>
+	</center <br>
+	<table border="1" cellpadding="4" cellspacing="0" style="border-collapse: collapse" width="100%">
+		<tr>
+			<td width="100%"><font size="5"><b><a name="February">February</a></b></font></td>
+		</tr>
+		<tr>
+			<td width="100%" align="center">
+			<p align="center">&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" align="center">&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="100%" align="center">&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="100%">
+			<p align="right"><a href="../..">
+			<img border="0" src="../../i/sy/a/06.gif" width="18" height="18" /><font size="4"> 
+			Back To Top</font></a></p>
+			</td>
+		</tr>
+	</table>
+	<br />
+	<table border="1" cellpadding="4" cellspacing="0" style="border-collapse: collapse" width="100%" id="AutoNumber1">
+		<tr>
+			<td width="100%"><font size="5"><b><a name="March">March</a></b></font></td>
+		</tr>
+		<tr>
+			<td width="100%" align="center">
+			<p align="center">&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" align="center">&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="100%" align="center">&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="100%">
+			<p align="right"><a href="../..">
+			<img border="0" src="../../i/sy/a/06.gif" width="18" height="18" /><font size="4"> 
+			Back To Top</font></a></p>
+			</td>
+		</tr>
+	</table>
+	<br />
+	<center>
+	<table border="1" cellpadding="4" cellspacing="0" style="border-collapse: collapse" width="100%" id="AutoNumber1">
+		<tr>
+			<td width="100%"><font size="5"><b><a name="April">April</a></b></font></td>
+		</tr>
+		<tr>
+			<td width="100%" align="center">
+			<p align="center">&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" align="center">&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="100%" align="center">&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="100%">
+			<p align="right"><a href="../..">
+			<img border="0" src="../../i/sy/a/06.gif" width="18" height="18" /><font size="4"> 
+			Back To Top</font></a></p>
+			</td>
+		</tr>
+	</table>
+	</center><br />
+	<table border="1" cellpadding="4" cellspacing="0" style="border-collapse: collapse" width="100%" id="AutoNumber1">
+		<tr>
+			<td width="100%"><font size="5"><b><a name="May">May</a></b></font></td>
+		</tr>
+		<tr>
+			<td width="100%" align="center">
+			<p align="center">&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" align="center">&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="100%" align="center">&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="100%">
+			<p align="right"><a href="../..">
+			<img border="0" src="../../i/sy/a/06.gif" width="18" height="18" /><font size="4"> 
+			Back To Top</font></a></p>
+			</td>
+		</tr>
+	</table>
+	<br />
+	<table border="1" cellpadding="4" cellspacing="0" style="border-collapse: collapse" width="100%">
+		<tr>
+			<td width="100%"><font size="5"><b><a name="June">June</a></b></font></td>
+		</tr>
+		<tr>
+			<td width="100%" align="center">
+			<p align="center">&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" align="center">&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="100%" align="center">&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="100%">
+			<p align="right"><a href="../..">
+			<img border="0" src="../../i/sy/a/06.gif" width="18" height="18" /><font size="4"> 
+			Back To Top</font></a></p>
+			</td>
+		</tr>
+	</table>
+	<br />
+	<center>
+	<table border="1" cellpadding="4" cellspacing="0" style="border-collapse: collapse" width="100%" id="AutoNumber1">
+		<tr>
+			<td width="100%"><font size="5"><b><a name="July">July</a></b></font></td>
+		</tr>
+		<tr>
+			<td width="100%" align="center">
+			<p align="center">&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="100%" align="center">&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="100%" align="center">&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="100%">
+			<p align="right"><a href="../..">
+			<img border="0" src="../../i/sy/a/06.gif" width="18" height="18" /><font size="4"> 
+			Back To Top</font></a></p>
+			</td>
+		</tr>
+	</table>
+	</center></div>
+<br />
+<table border="1" cellpadding="4" cellspacing="0" style="border-collapse: collapse" width="100%" id="AutoNumber1">
+	<tr>
+		<td width="100%"><font size="5"><b><a name="August">August</a></b></font></td>
+	</tr>
+	<tr>
+		<td width="100%" align="center">
+		<p align="center">&nbsp;</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%" align="center">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="100%" align="center">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="100%">
+		<p align="right"><a href="../..">
+		<img border="0" src="../../i/sy/a/06.gif" width="18" height="18" /><font size="4"> 
+		Back To Top</font></a></p>
+		</td>
+	</tr>
+</table>
+<br />
+<table border="1" cellpadding="4" cellspacing="0" style="border-collapse: collapse" width="100%">
+	<tr>
+		<td width="100%"><font size="5"><b><a name="September">September</a></b></font></td>
+	</tr>
+	<tr>
+		<td width="100%" align="center">
+		<p align="center">&nbsp;</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%" align="center">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="100%" align="center">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="100%">
+		<p align="right"><a href="../..">
+		<img border="0" src="../../i/sy/a/06.gif" width="18" height="18" /><font size="4"> 
+		Back To Top</font></a></p>
+		</td>
+	</tr>
+</table>
+<br />
+<center>
+<table border="1" cellpadding="4" cellspacing="0" style="border-collapse: collapse" width="100%" id="AutoNumber1">
+	<tr>
+		<td width="100%"><b><font size="5"><a name="October">October</a></font></b></td>
+	</tr>
+	<tr>
+		<td width="100%" align="center">
+		<p align="center">&nbsp;</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%" align="center">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="100%" align="center">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="100%">
+		<p align="right"><a href="../..">
+		<img border="0" src="../../i/sy/a/06.gif" width="18" height="18" /><font size="4"> 
+		Back To Top</font></a></p>
+		</td>
+	</tr>
+</table>
+</center><br />
+<table border="1" cellpadding="4" cellspacing="0" style="border-collapse: collapse" width="100%" id="AutoNumber1">
+	<tr>
+		<td width="100%"><font size="5"><b><a name="November">November</a></b></font></td>
+	</tr>
+	<tr>
+		<td width="100%" align="center">
+		<p align="center">&nbsp;</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%" align="center">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="100%" align="center">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="100%">
+		<p align="right"><a href="../..">
+		<img border="0" src="../../i/sy/a/06.gif" width="18" height="18" /><font size="4"> 
+		Back To Top</font></a></p>
+		</td>
+	</tr>
+</table>
+<br />
+<table border="1" cellpadding="4" cellspacing="0" style="border-collapse: collapse" width="100%">
+	<tr>
+		<td width="100%"><font size="5"><b><a name="December">December</a></b></font></td>
+	</tr>
+	<tr>
+		<td width="100%" align="center">
+		<p align="center">&nbsp;</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="100%" align="center">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="100%" align="center">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="100%">
+		<p align="right"><a href="../..">
+		<img border="0" src="../../i/sy/a/06.gif" width="18" height="18" /><font size="4"> 
+		Back To Top</font></a></p>
+		</td>
+	</tr>
+</table>
+<p align="center"><a href="../../index.html">Home</a> -
+<a href="../r/index.html">Resources</a></p>
+</div>
+
+</body>
+
+</html>

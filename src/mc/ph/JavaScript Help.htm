@@ -1,0 +1,787 @@
+<html>
+
+<head>
+<title>JavaScript Help</title>
+</head>
+
+<!-- <BODY> -->
+<body>
+
+<script language="JavaScript">
+var content = "";
+var BGCHANGE = "<script> function initArray() "+
+"{ "+
+"  this.length = initArray.arguments.length; "+
+"  for (var i = 0; i < this.length; i++); "+
+"    this[i+1] = initArray.arguments[i]; "+
+
+
+"} "+
+
+"var hexChars = \"0123456789ABCDEF\"; "+
+
+"function Dec2Hex (Dec)  "+
+"{ "+
+"  var a = Dec % 16; "+
+"  var b = (Dec - a)/16; "+
+"  hex = \"\" + hexChars.charAt(b) + hexChars.charAt(a); "+
+"  return hex; "+
+"} "+
+
+"function BGCHANGE (begin, end, steps)  "+
+"{ "+
+"  steps = steps -1 ; "+
+
+"  redA     = begin.charAt(0) + begin.charAt(1); "+
+"  red_valA = parseInt(redA,'16'); "+
+
+
+"  redB     = end.charAt(0) + end.charAt(1); "+
+"  red_valB = parseInt(redB,'16'); "+
+
+
+"  red_int  = ((red_valB - red_valA) / steps) * -1; "+
+"  grnA     = begin.charAt(2) + begin.charAt(3); "+
+"  grn_valA = parseInt(grnA,'16'); "+
+
+
+"  grnB     = end.charAt(2) + end.charAt(3); "+
+"  grn_valB = parseInt(grnB,'16'); "+
+
+
+"  grn_int  = ((grn_valB - grn_valA) / steps) * -1; "+
+"  bluA     = begin.charAt(4) + begin.charAt(5); "+
+"  blu_valA = parseInt(bluA,'16'); "+
+
+
+"  bluB     = end.charAt(4) + end.charAt(5); "+
+"  blu_valB = parseInt(bluB,'16'); "+
+
+
+"  blu_int  = ((blu_valB - blu_valA) / steps) * -1; "+
+
+"  step = 2; "+
+
+
+"  red = red_valA; "+
+
+
+"  grn = grn_valA; "+
+
+
+"  blu = blu_valA; "+
+
+
+
+"  document.bgColor = begin; "+
+
+
+
+"  while ( steps >= step )  "+
+"  { "+
+"    red -= red_int; "+
+"    red_round = Math.round(red); "+
+"    red_hex = Dec2Hex(red); "+
+
+"    grn -= grn_int; "+
+"    grn_round = Math.round(grn); "+
+"    grn_hex = Dec2Hex(grn); "+
+
+"    blu -= blu_int; "+
+"    blu_round = Math.round(blu); "+
+"    blu_hex = Dec2Hex(blu); "+
+
+"    document.bgColor = red_hex + grn_hex + blu_hex; "+
+
+"    step++; "+
+"  } "+
+"  document.bgColor = end; "+
+"} "+
+
+"<\/script> "
+</script>
+<script LANGUAGE="JavaScript">
+<!--
+//  ******************************
+//  **   JavaScript Hot Pro     **
+//  **       Version 1.0        **
+//  **   Written by Patrick     **
+//  **   Clinger.  © Patrick    **
+//  **      Clinger 1997.       **
+//  **  Permission is given to  **
+//  **  use this program if a   **
+//  **   $5 Registration Fee,   **
+//  **      a self-addressed    **
+//  **  envelope, and a 3 1/2"  **
+//  **  disk (for the program)  **
+//  **       are sent to:       **
+//  **                          **
+//  **  Patrick Clinger         **
+//  **  21532 Calle Otono       **
+//  **  Lake Forest, CA         **
+//  **  92630                   **
+//  **  USA                     **
+//  ******************************
+
+////////////////////////
+///// Alert Boxes /////
+//////////////////////
+function EXALERTBOX()
+	{
+alert("This is your customized message!")
+	}
+
+function ALERTBOXTEST()
+	{
+var ALERTBOXVALUE = document.Add.ALERTBOXVALUE.value
+  if(ALERTBOXVALUE == ''){}
+  else
+	{
+alert(ALERTBOXVALUE)
+	}
+	}
+
+function ALERTBOXSOURCE()
+	{
+var ALERTBOXVALUE = document.Add.ALERTBOXVALUE.value
+  if(ALERTBOXVALUE == ''){}
+  else
+	{
+document.Add.write.value = ("<SCRIPT LANGUAGE=\"JavaScript\">\n<!--\nwindow.alert\(\""+ALERTBOXVALUE+"\"\)\n\/\/ -->\n\<\/SCRIPT\>")
+	}
+	}
+
+
+
+//////////////////////
+//// Background /////
+////////////////////
+
+function EXBGCOLOR()
+	{
+document.bgColor='0000FF'
+	}
+
+
+function BGCOLORTEST()
+	{
+var BGCOLORVALUE = document.Add.BGCOLORVALUE.value
+  if(BGCOLORVALUE == ''){}
+  else
+	{
+document.bgColor=BGCOLORVALUE
+	}
+	}
+
+
+function BGCOLORSOURCE()
+	{
+var BGCOLORVALUE = document.Add.BGCOLORVALUE.value
+  if(BGCOLORVALUE == ''){}
+  else
+	{
+document.Add.write.value = ("<SCRIPT LANGUAGE=\"JavaScript\">\n<!--\ndocument.bgColor="+BGCOLORVALUE+"\n\/\/ -->\n\<\/SCRIPT\>")
+	}
+	}
+
+
+
+
+////////////////////////
+///// Window Open /////
+//////////////////////
+
+
+function EXWINDOWOPEN()
+	{
+window.open("http://www.geocities.com","windowname","height=320,width=400,scrollbars,resizable")
+	}
+
+function WINDOWOPENTEST()
+	{
+var WINDOWOPENVALUE = document.Add.WINDOWOPENVALUE.value
+  if(WINDOWOPENVALUE == ''){}
+  else
+	{
+window.open(WINDOWOPENVALUE,"windowname","height=320,width=320,scrollbars,resizable")
+	}
+	}
+
+function WINDOWOPENSOURCE()
+	{
+var WINDOWOPENVALUE = document.Add.WINDOWOPENVALUE.value
+  if(WINDOWOPENVALUE == ''){}
+  else
+	{
+document.Add.write.value = ("<SCRIPT LANGUAGE=\"JavaScript\">\n<!--\nwindow.open\(\""+WINDOWOPENVALUE+"\",\"windowname\",\"height=320,width=320,scrollbars,resizable\"\)\n\/\/ -->\n\<\/SCRIPT\>")
+	}
+	}
+
+
+////////////////////////
+/////   Prompts   /////
+//////////////////////
+
+function EXPROMPT()
+	{
+  var contain="";
+    contain="<SCRIPT LANGUAGE=\"JavaScript\"> <!-- \n"+
+	     " var NAME = window.prompt(\"Whats your name\"\,\"\") document.write(\"<HTML><HEAD><TITLE>Temporary Window</TITLE></HEAD><BODY BGCOLOR=000000 TEXT=FFFFFF <CENTER><FONT SIZE=+2>Hello, \"+NAME+\" and welcome to my web page!</FONT></CENTER>\")\n \/\/ --> <\/SCRIPT\> <HTML><BODY BGCOLOR='000000' TEXT='FFFFFF'><P><CEN"+
+             "TER><FONT SIZE=+2>Temporary<br>Window</CENTER"+
+             "</FONT></P></BODY></HTML>"
+    newwin = window.open("","windowname","height=320,width=320,resizable")
+    newwin.document.write(contain)
+	}
+
+function PROMPTTEST()
+	{
+var PROMPTVALUE = document.Add.PROMPTVALUE.value
+var NAME = prompt(PROMPTVALUE,"")
+document.Add.write.value = (NAME)
+alert(NAME+", has now been written in the textarea above")
+	}
+
+function PROMPTSOURCE()
+	{
+var PROMPTVALUE = document.Add.PROMPTVALUE.value;
+var QUOTE = document.Add.QUOTE.value;
+document.Add.write.value = ("<SCRIPT LANGUAGE=\"JavaScript\">\n<!--\nvar NAME = prompt("+QUOTE+PROMPTVALUE+QUOTE+",\"\")\ndocument.write\(NAME+\", welcome to this web page!\"\)\n\/\/ -->\n\<\/SCRIPT\>")
+	}
+
+
+
+////////////////////////
+/////   Confirm   /////
+//////////////////////
+
+function EXCONFIRM()
+	{
+if (!confirm("Are you sure you want to stay at this page?")) 
+{
+history.back();
+}
+	}
+
+function CONFIRMTEST()
+	{
+var CONFIRMVALUE = document.Add.CONFIRMVALUE.value;
+if (!confirm(CONFIRMVALUE)) 
+{
+history.back();
+}
+	}
+
+
+function CONFIRMSOURCE()
+	{
+var CONFIRMVALUE = document.Add.CONFIRMVALUE.value;
+document.Add.write.value = ("<SCRIPT LANGUAGE=\"JavaScript\">\n<!--\nif \(!confirm\("+CONFIRMVALUE+"\)\)\n{\nhistory.back\(\)\n}\n\/\/ -->\n\<\/SCRIPT\>") 
+	}
+
+
+//////////////////
+///// News //////
+////////////////
+var TIME = "";
+function NEWSTEST()
+	{
+document.Add.write.focus();
+if(document.Add.NEWSVALUE1.value == '') {}
+ else
+	{
+	setTimeout("document.Add.write.value = \(document.Add.NEWSVALUE1.value\)",0);
+	if(document.Add.NEWSVALUE2.value == '') {}
+	 else
+		{
+		setTimeout("document.Add.write.value = \(document.Add.NEWSVALUE2.value\)",2000);
+		if(document.Add.NEWSVALUE3.value == '') {}
+		 else
+			{
+			setTimeout("document.Add.write.value = \(document.Add.NEWSVALUE3.value\)",4000);
+			if(document.Add.NEWSVALUE4.value == '') {}
+			 else
+				{
+				setTimeout("document.Add.write.value = \(document.Add.NEWSVALUE4.value\)",6000);
+				if(document.Add.NEWSVALUE5.value == '') {}
+				 else
+					{
+				setTimeout("document.Add.write.value = \(document.Add.NEWSVALUE5.value\)",8000);
+				if(document.Add.NEWSVALUE6.value == '') {}
+				else
+					{
+					setTimeout("document.Add.write.value = \(document.Add.NEWSVALUE6.value\)",10000);
+					if(document.Add.NEWSVALUE7.value == '') {}
+					else
+						{
+						setTimeout("document.Add.write.value = \(document.Add.NEWSVALUE7.value\)",12000);
+						if(document.Add.NEWSVALUE8.value == '') {}
+						else
+							{
+							setTimeout("document.Add.write.value = \(document.Add.NEWSVALUE8.value\)",14000);
+						if(document.Add.NEWSVALUE9.value == '') {}
+						else
+							{
+							setTimeout("document.Add.write.value = \(document.Add.NEWSVALUE9.value\)",16000);
+							if(document.Add.NEWSVALUE10.value == '') {}
+							else
+								{
+								setTimeout("document.Add.write.value = \(document.Add.NEWSVALUE10.value\)",18000);
+								if(document.Add.NEWSVALUE11.value == '') {}
+								else
+									{
+									setTimeout("document.Add.write.value = \(document.Add.NEWSVALUE11.value\)",20000);
+									if(document.Add.NEWSVALUE12.value == '') {}
+									else
+										{
+										setTimeout("document.Add.write.value = \(document.Add.NEWSVALUE12.value\)",22000);
+										}
+									}
+								}
+							}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+	}
+
+
+function EXNEWS()
+	{
+document.Add.write.focus()
+setTimeout("document.Add.write.value = \('This is an')",0);
+setTimeout("document.Add.write.value = \('example')",2000);
+setTimeout("document.Add.write.value = \('of News')",4000);
+setTimeout("document.Add.write.value = \('')",6000);
+	}
+
+
+
+
+function NEWSSOURCE()
+	{
+
+	if(document.Add.NEWSVALUE1.value == '') { var NEWS1 = '' }
+	else
+	{ var NEWS1 = 'setTimeout\(\"document.news.news.value = \(\''+document.Add.NEWSVALUE1.value+'\'\)\",0\)\n'
+TIME="2000";	}
+
+	if(document.Add.NEWSVALUE2.value == '') { var NEWS2 = '' }
+	else
+	{ var NEWS2 = 'setTimeout\(\"document.news.news.value = \(\''+document.Add.NEWSVALUE2.value+'\'\)\",2000\)\n'
+TIME="4000";	}
+
+	if(document.Add.NEWSVALUE3.value == '') { var NEWS3 = '' }
+	else
+	{ var NEWS3 = 'setTimeout\(\"document.news.news.value = \(\''+document.Add.NEWSVALUE3.value+'\'\)\",4000\)\n'
+TIME="6000";	}
+
+	if(document.Add.NEWSVALUE4.value == '') { var NEWS4 = '' }
+	else
+	{ var NEWS4 = 'setTimeout\(\"document.news.news.value = \(\''+document.Add.NEWSVALUE4.value+'\'\)\",6000\)\n'
+TIME="8000";	}
+
+	if(document.Add.NEWSVALUE5.value == '') { var NEWS5 = '' }
+	else
+	{ var NEWS5 = 'setTimeout\(\"document.news.news.value = \(\''+document.Add.NEWSVALUE5.value+'\'\)\",8000\)\n'
+TIME="10000";	}
+
+	if(document.Add.NEWSVALUE6.value == '') { var NEWS6 = '' }
+	else
+	{ var NEWS6 = 'setTimeout\(\"document.news.news.value = \(\''+document.Add.NEWSVALUE6.value+'\'\)\",10000\)\n'
+TIME="12000";	}
+
+	if(document.Add.NEWSVALUE7.value == '') { var NEWS7 = '' }
+	else
+	{ var NEWS7 = 'setTimeout\(\"document.news.news.value = \(\''+document.Add.NEWSVALUE7.value+'\'\)\",12000\)\n'
+TIME="14000";	}
+
+	if(document.Add.NEWSVALUE8.value == '') { var NEWS8 = '' }
+	else
+	{ var NEWS8 = 'setTimeout\(\"document.news.news.value = \(\''+document.Add.NEWSVALUE8.value+'\'\)\",14000\)\n'
+TIME="16000";	}
+
+	if(document.Add.NEWSVALUE9.value == '') { var NEWS9 = '' }
+	else
+	{ var NEWS9 = 'setTimeout\(\"document.news.news.value = \(\''+document.Add.NEWSVALUE9.value+'\'\)\",16000\)\n'
+TIME="18000";	}
+
+	if(document.Add.NEWSVALUE10.value == '') { var NEWS10 = '' }
+	else
+	{ var NEWS10 = 'setTimeout\(\"document.news.news.value = \(\''+document.Add.NEWSVALUE10.value+'\'\)\",18000\)\n'
+TIME="20000";	}
+
+	if(document.Add.NEWSVALUE11.value == '') { var NEWS11 = '' }
+	else
+	{ var NEWS11 = 'setTimeout\(\"document.news.news.value = \(\''+document.Add.NEWSVALUE11.value+'\'\)\",20000\)\n'
+	}
+
+	if(document.Add.NEWSVALUE12.value == '') { var NEWS12 = '' }
+	else
+	{ var NEWS12 = 'setTimeout\(\"document.news.news.value = \(\''+document.Add.NEWSVALUE12.value+'\'\)\",22000\)\n'
+TIME="22000";	}
+document.Add.write.value = ("<SCRIPT LANGUAGE=\"JavaScript\">\n<!--\nfunction NEWS\(\)\n{\n"+NEWS1+NEWS2+NEWS3+NEWS4+NEWS5+NEWS6+NEWS7+NEWS8+NEWS9+NEWS10+NEWS11+NEWS12+"setTimeout\(\"NEWS()\","+TIME+"\)\n}\nNEWS\(\)\n\/\/ -->\n\<\/SCRIPT\>\n\n<FORM NAME=\"news\">\n<INPUT TYPE=\"TEXT\" NAME=\"news\" SIZE=\"30\">\n</FORM>")
+}
+
+
+
+//////////////////
+//// Status /////
+////////////////
+
+function EXSTATUS()
+	{
+window.status="This is your own customized message!"
+setTimeout("window.status=''",10000)
+	}
+
+function STATUSTEST()
+	{
+window.status=document.Add.STATUSVALUE.value
+setTimeout("window.status=''",10000)
+	}
+
+function STATUSSOURCE()
+	{
+if(document.Add.STATUSVALUE.value=='') {}
+ else {
+document.Add.write.value = ("<SCRIPT LANGUAGE=\"JavaScript\">\n<!--\nwindow.status=\""+document.Add.STATUSVALUE.value+"\"\n\/\/ -->\n\<\/SCRIPT\>")
+      }
+	}
+
+
+////////////////////
+//// Fading BG ////
+//////////////////
+
+function FADESOURCE()
+	{
+var STARTFADEVALUE = document.Add.STARTFADEVALUE.value;
+var ENDFADEVALUE = document.Add.ENDFADEVALUE.value;
+if(STARTFADEVALUE == '') {}
+if(ENDFADEVALUE == '') {}
+else
+{
+document.Add.write.value = ("<HTML><HEAD><TITLE>Background Changing</TITLE>\n<script>\nfunction initArray\(\)\n{\n  this.length = initArray.arguments.length\n  for \(var i \= 0; i < this.length; i++\)\n    this\[i\+1\] = initArray.arguments\[i\]\n}\nvar hexChars \= \"0123456789ABCDEF\";\n function Dec2Hex \(Dec\)\n {\n  var a = Dec % 16;\n  var b = \(Dec - a\)/16;\n  hex = \"\" + hexChars.charAt\(b\) + hexChars.charAt\(a\);\n  return hex;\n}\n  function CHANGEBG \(begin\, end\, steps\) {   steps \= steps \-1 ;\n  redA     \= begin.charAt\(0\) + begin.charAt\(1\);\n  red_valA \= parseInt\(redA,'16'\);\n  redB     \= end.charAt\(0\) + end.charAt\(1\);\n  red_valB \= parseInt\(redB,'16'\);\n  red_int  \= \(\(red_valB - red_valA\) / steps\) * -1;\n  grnA     \= begin.charAt\(2\) + begin.charAt\(3\);\n  grn_valA \= parseInt\(grnA,'16'\);\n  grnB     \= end.charAt\(2\) + end.charAt\(3\);\n  grn_valB \= parseInt\(grnB,'16'\);\n  grn_int  \= \(\(grn_valB - grn_valA) / steps\) * -1;\n  bluA     \= begin.charAt\(4\) + begin.charAt\(5\);\n  blu_valA \= parseInt\(bluA,'16'\);\n  bluB     \= end.charAt\(4\) + end.charAt\(5\);\n  blu_valB \= parseInt\(bluB,'16'\);\n  blu_int  \= \(\(blu_valB - blu_valA\) / steps\) * -1;\n  step \= 2;\n  red \= red_valA;\n  grn \= grn_valA;\n  blu \= blu_valA;\n  document.bgColor = begin;\n  while \( steps >\= step \) \n  {\n    red \-\= red_int;\n    red_round = Math.round\(red\);\n    red_hex = Dec2Hex\(red\);\n    grn -\= grn_int;\n    grn_round = Math.round\(grn\);\n    grn_hex = Dec2Hex\(grn\);\n    blu -\= blu_int;\n    blu_round = Math.round\(blu\);\n    blu_hex = Dec2Hex\(blu\);\n    document.bgColor \= red_hex + grn_hex + blu_hex;\n    step\+\+;\n  }\n  document.bgColor \= end;\n}\n<\/script>\n</HEAD><BODY\>\n\<script>\n<!-- \n  CHANGEBG\(\""+STARTFADEVALUE+"\",\""+ENDFADEVALUE+"\",350);\n \/\/ -->\n<\/script>")
+}
+	}
+
+function FADETEST()
+	{
+var STARTFADEVALUE = document.Add.STARTFADEVALUE.value;
+var ENDFADEVALUE = document.Add.ENDFADEVALUE.value;
+if(STARTFADEVALUE == '') {}
+if(ENDFADEVALUE == '') {}
+else
+{
+document.Add.HIDE.value = ("<HTML><HEAD><TITLE>Background Changing</TITLE>\n<script>\nfunction initArray\(\)\n{\n  this.length = initArray.arguments.length\n  for \(var i \= 0; i < this.length; i++\)\n    this\[i\+1\] = initArray.arguments\[i\]\n}\nvar hexChars \= \"0123456789ABCDEF\";\n function Dec2Hex \(Dec\)\n {\n  var a = Dec % 16;\n  var b = \(Dec - a\)/16;\n  hex = \"\" + hexChars.charAt\(b\) + hexChars.charAt\(a\);\n  return hex;\n}\n  function CHANGEBG \(begin\, end\, steps\) {   steps \= steps \-1 ;\n  redA     \= begin.charAt\(0\) + begin.charAt\(1\);\n  red_valA \= parseInt\(redA,'16'\);\n  redB     \= end.charAt\(0\) + end.charAt\(1\);\n  red_valB \= parseInt\(redB,'16'\);\n  red_int  \= \(\(red_valB - red_valA\) / steps\) * -1;\n  grnA     \= begin.charAt\(2\) + begin.charAt\(3\);\n  grn_valA \= parseInt\(grnA,'16'\);\n  grnB     \= end.charAt\(2\) + end.charAt\(3\);\n  grn_valB \= parseInt\(grnB,'16'\);\n  grn_int  \= \(\(grn_valB - grn_valA) / steps\) * -1;\n  bluA     \= begin.charAt\(4\) + begin.charAt\(5\);\n  blu_valA \= parseInt\(bluA,'16'\);\n  bluB     \= end.charAt\(4\) + end.charAt\(5\);\n  blu_valB \= parseInt\(bluB,'16'\);\n  blu_int  \= \(\(blu_valB - blu_valA\) / steps\) * -1;\n  step \= 2;\n  red \= red_valA;\n  grn \= grn_valA;\n  blu \= blu_valA;\n  document.bgColor = begin;\n  while \( steps >\= step \) \n  {\n    red \-\= red_int;\n    red_round = Math.round\(red\);\n    red_hex = Dec2Hex\(red\);\n    grn -\= grn_int;\n    grn_round = Math.round\(grn\);\n    grn_hex = Dec2Hex\(grn\);\n    blu -\= blu_int;\n    blu_round = Math.round\(blu\);\n    blu_hex = Dec2Hex\(blu\);\n    document.bgColor \= red_hex + grn_hex + blu_hex;\n    step\+\+;\n  }\n  document.bgColor \= end;\n}\n<\/script>\n</HEAD><BODY\>\n\<script>\n<!-- \n  CHANGEBG\(\""+STARTFADEVALUE+"\",\""+ENDFADEVALUE+"\",350);\n \/\/ -->\n<\/script>")
+}
+newwin = window.open("","window","resizeable,width=300,height=200");
+content = document.Add.HIDE.value;
+setTimeout("newwin.document.write(content)",500);
+	}
+
+function EXFADE()
+	{
+    newwin = window.open("fade.html","windowname","height=320,width=320,resizable")
+	}
+
+// -->
+</script>
+<form NAME="Add">
+  <center><textarea NAME="write" ROWS="12" COLS="50" WRAP="Phisical">
+</textarea><br>
+  <br>
+  <table BORDER="1" width="450">
+    <!-- Window Alerts -->
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCC99"><font SIZE="+2">Alert Box</font> </td>
+      <td BGCOLOR="000000">
+      <input TYPE="BUTTON" VALUE="Example of an Alert Box" onClick="EXALERTBOX()">
+      </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC"><font SIZE="+2">
+      <h4>Alert Message:</h4>
+      </font></td>
+      <td BGCOLOR="000000">
+      <input TYPE="TEXT" NAME="ALERTBOXVALUE" VALUE="Put your message here!" SIZE="25">
+      </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <input TYPE="BUTTON" VALUE="Source Code" onClick="ALERTBOXSOURCE()"></td>
+      <td BGCOLOR="000000">
+      <input TYPE="BUTTON" VALUE="Test It!" onClick="ALERTBOXTEST()"></td>
+    </tr>
+  </table>
+  <br>
+  <br>
+  <!-- Background Colors -->
+  <table BORDER="1" width="450">
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCC99"><font SIZE="+2">Background Color</font> </td>
+      <td BGCOLOR="000000">
+      <input TYPE="BUTTON" VALUE="Example of a Background Change" onClick="EXBGCOLOR()">
+      </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC"><font SIZE="+2">
+      <h4>Background Color:</h4>
+      </font></td>
+      <td BGCOLOR="000000">
+      <input TYPE="TEXT" NAME="BGCOLORVALUE" VALUE="000000" SIZE="25"> </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <input TYPE="BUTTON" VALUE="Source Code" onClick="BGCOLORSOURCE()"></td>
+      <td BGCOLOR="000000">
+      <input TYPE="BUTTON" VALUE="Test It!" onClick="BGCOLORTEST()"></td>
+    </tr>
+  </table>
+  <br>
+  <br>
+  <!-- Window Openings -->
+  <table BORDER="1" width="450">
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCC99"><font SIZE="+2">New Windows</font> </td>
+      <td BGCOLOR="000000">
+      <input TYPE="BUTTON" VALUE="Example of a Window Opening" onClick="EXWINDOWOPEN()">
+      </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC"><font SIZE="+2">
+      <h4>URL for the window:</h4>
+      </font></td>
+      <td BGCOLOR="000000"><input TYPE="TEXT" NAME="WINDOWOPENVALUE" size="25">
+      </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <input TYPE="BUTTON" VALUE="Source Code" onClick="WINDOWOPENSOURCE()"></td>
+      <td BGCOLOR="000000">
+      <input TYPE="BUTTON" VALUE="Test It!" onClick="WINDOWOPENTEST()"></td>
+    </tr>
+  </table>
+  <br>
+  <br>
+  <!-- Prompts -->
+  <table BORDER="1" width="450">
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCC99"><font SIZE="+2">Prompts</font> </td>
+      <td BGCOLOR="000000">
+      <input TYPE="BUTTON" VALUE="Example of a Prompt" onClick="EXPROMPT()">
+      </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <h4>What the prompt says:</h4>
+      </td>
+      <td BGCOLOR="000000">
+      <input TYPE="TEXT" NAME="PROMPTVALUE" VALUE="Whats your name?" SIZE="25">
+      </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <input TYPE="BUTTON" VALUE="Source Code" onClick="PROMPTSOURCE()"></td>
+      <td BGCOLOR="000000">
+      <input TYPE="BUTTON" VALUE="Test It!" onClick="PROMPTTEST()"></td>
+    </tr>
+  </table>
+  <br>
+  <br>
+  <!-- Confirms -->
+  <table BORDER="1" width="450">
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCC99"><font SIZE="+2">Confirm</font> </td>
+      <td BGCOLOR="000000">
+      <input TYPE="BUTTON" VALUE="Example of a Confirm" onClick="EXCONFIRM()">
+      </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <h4>What the confirm says:</h4>
+      </td>
+      <td BGCOLOR="000000">
+      <input TYPE="TEXT" NAME="CONFIRMVALUE" VALUE="Are you sure you wish to contine coming into this page?" SIZE="25">
+      </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <input TYPE="BUTTON" VALUE="Source Code" onClick="CONFIRMSOURCE()"></td>
+      <td BGCOLOR="000000">
+      <input TYPE="BUTTON" VALUE="Test It!" onClick="CONFIRMTEST()"></td>
+    </tr>
+  </table>
+  <br>
+  <br>
+  <!-- News -->
+  <table BORDER="1" width="450">
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCC99"><font SIZE="+2">News</font> </td>
+      <td BGCOLOR="000000">
+      <input TYPE="BUTTON" VALUE="Example of News" onClick="EXNEWS()"> </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <h4>News Line 1:</h4>
+      </td>
+      <td BGCOLOR="000000"><input TYPE="TEXT" NAME="NEWSVALUE1" VALUE SIZE="25">
+      </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <h4>News Line 2:</h4>
+      </td>
+      <td BGCOLOR="000000"><input TYPE="TEXT" NAME="NEWSVALUE2" VALUE SIZE="25">
+      </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <h4>News Line 3:</h4>
+      </td>
+      <td BGCOLOR="000000"><input TYPE="TEXT" NAME="NEWSVALUE3" VALUE SIZE="25">
+      </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <h4>News Line 4:</h4>
+      </td>
+      <td BGCOLOR="000000"><input TYPE="TEXT" NAME="NEWSVALUE4" VALUE SIZE="25">
+      </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <h4>News Line 5:</h4>
+      </td>
+      <td BGCOLOR="000000"><input TYPE="TEXT" NAME="NEWSVALUE5" VALUE SIZE="25">
+      </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <h4>News Line 6:</h4>
+      </td>
+      <td BGCOLOR="000000"><input TYPE="TEXT" NAME="NEWSVALUE6" VALUE SIZE="25">
+      </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <h4>News Line 7:</h4>
+      </td>
+      <td BGCOLOR="000000"><input TYPE="TEXT" NAME="NEWSVALUE7" VALUE SIZE="25">
+      </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <h4>News Line 8:</h4>
+      </td>
+      <td BGCOLOR="000000"><input TYPE="TEXT" NAME="NEWSVALUE8" VALUE SIZE="25">
+      </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <h4>News Line 9:</h4>
+      </td>
+      <td BGCOLOR="000000"><input TYPE="TEXT" NAME="NEWSVALUE9" VALUE SIZE="25">
+      </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <h4>News Line 10:</h4>
+      </td>
+      <td BGCOLOR="000000">
+      <input TYPE="TEXT" NAME="NEWSVALUE10" VALUE SIZE="25"> </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <h4>News Line 11:</h4>
+      </td>
+      <td BGCOLOR="000000">
+      <input TYPE="TEXT" NAME="NEWSVALUE11" VALUE SIZE="25"> </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <h4>News Line 12:</h4>
+      </td>
+      <td BGCOLOR="000000">
+      <input TYPE="TEXT" NAME="NEWSVALUE12" VALUE SIZE="25"> </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <input TYPE="BUTTON" VALUE="Source Code" onClick="NEWSSOURCE()"></td>
+      <td BGCOLOR="000000">
+      <input TYPE="BUTTON" VALUE="Test It!" onClick="NEWSTEST()"></td>
+    </tr>
+  </table>
+  <br>
+  <br>
+  <!-- Window Status -->
+  <table BORDER="1" width="450">
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCC99"><font SIZE="+2">Status Message</font> </td>
+      <td BGCOLOR="000000">
+      <input TYPE="BUTTON" VALUE="Example of a Status Message" onClick="EXSTATUS()">
+      </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <h4>What the status should say:</h4>
+      </td>
+      <td BGCOLOR="000000">
+      <input TYPE="TEXT" NAME="STATUSVALUE" VALUE="This is an example of a status message!" SIZE="25">
+      </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <input TYPE="BUTTON" VALUE="Source Code" onClick="STATUSSOURCE()"></td>
+      <td BGCOLOR="000000">
+      <input TYPE="BUTTON" VALUE="Test It!" onClick="STATUSTEST()"></td>
+    </tr>
+  </table>
+  <br>
+  <br>
+  <!-- Fading BG -->
+  <table BORDER="1" width="450">
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCC99"><font SIZE="+2">Background Fade</font> </td>
+      <td BGCOLOR="000000">
+      <input TYPE="BUTTON" VALUE="Example of a Background Fade" onClick="EXFADE()">
+      </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <h4>Starting color of the background:</h4>
+      </td>
+      <td BGCOLOR="000000">
+      <input TYPE="TEXT" NAME="STARTFADEVALUE" VALUE="FFFFFF" SIZE="25" onFocus="this.select()">
+      </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC">
+      <h4>Ending color of the background:</h4>
+      </td>
+      <td BGCOLOR="000000">
+      <input TYPE="TEXT" NAME="ENDFADEVALUE" VALUE="000000" SIZE="25" onFocus="this.select()">
+      </td>
+    </tr>
+    <tr ALIGN="CENTER">
+      <td BGCOLOR="FFCCCC" COLSPAN="1">
+      <input TYPE="BUTTON" VALUE="Source Code" onClick="FADESOURCE()"></td>
+      <td BGCOLOR="FFCCCC" COLSPAN="1">
+      <input TYPE="BUTTON" VALUE="Test It!" onClick="FADETEST()"></td>
+    </tr>
+  </table>
+  <br>
+  <br>
+  <input TYPE="HIDDEN" NAME="QUOTE" VALUE="&quot;">
+  <input TYPE="HIDDEN" NAME="SLASH" VALUE="//"><input TYPE="HIDDEN" NAME="HIDE">
+  </center>
+</form>
+</center>
+
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<html>
+
+<head>
+<title>Subject</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+<link rel="stylesheet" type="text/css" href="../../css/globalblue.css" media="screen" />
+<script src="../../cs.js"></script>
+<script type="text/javascript">
+<!--
+
+
+// ----- Auxiliary -------------------------------------------------------------
+
+function tabview_aux(TabViewId, id)
+{
+  var TabView = document.getElementById(TabViewId);
+
+  // ----- Tabs -----
+
+  var Tabs = TabView.firstChild;
+  while (Tabs.className != "Tabs" ) Tabs = Tabs.nextSibling;
+
+  var Tab = Tabs.firstChild;
+  var i   = 0;
+
+  do
+  {
+    if (Tab.tagName == "A")
+    {
+      i++;
+      Tab.href      = "javascript:tabview_switch('"+TabViewId+"', "+i+");";
+      Tab.className = (i == id) ? "Active" : "";
+      Tab.blur();
+    }
+  }
+  while (Tab = Tab.nextSibling);
+
+  // ----- Pages -----
+
+  var Pages = TabView.firstChild;
+  while (Pages.className != 'Pages') Pages = Pages.nextSibling;
+
+  var Page = Pages.firstChild;
+  var i    = 0;
+
+  do
+  {
+    if (Page.className == 'Page')
+    {
+      i++;
+      if (Pages.offsetHeight) Page.style.height = (Pages.offsetHeight-2)+"px";
+      Page.style.overflow = "auto";
+      Page.style.display  = (i == id) ? 'block' : 'none';
+    }
+  }
+  while (Page = Page.nextSibling);
+}
+
+// ----- Functions -------------------------------------------------------------
+
+function tabview_switch(TabViewId, id) { tabview_aux(TabViewId, id); }
+
+function tabview_initialize(TabViewId) { tabview_aux(TabViewId,  1); }
+
+//-->
+</script>
+</head>
+
+<body id="newschannelbody">
+
+<div class="content">
+	<center>
+	<p><font size="5">Subject</font></p>
+	<hr />
+	<table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse">
+		<tr>
+			<td width="99%" align="center">
+			<div align="center">
+				<div class="TabView" id="TabView">
+					<!-- *** Tabs ************************************************************** -->
+					<div class="Tabs">
+						<a>Source 1</a> <a>Source 2</a> <a>Source 3</a> </div>
+					<!-- *** Pages ************************************************************* -->
+					<div class="Pages">
+						<div class="Page">
+							<div class="Pad">
+								<!-- *** Page1 Start *** -->Source 1
+								<!-- *** Page1 End *** --></div>
+						</div>
+						<div class="Page">
+							<div class="Pad">
+								<!-- *** Page2 Start *** -->Source 2
+								<!-- *** Page2 End *** --></div>
+						</div>
+						<div class="Page">
+							<div class="Pad">
+								<!-- *** Page3 Start *** -->Source 3
+								<!-- *** Page3 End ***** --></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript">
+
+tabview_initialize('TabView');
+
+    </script>
+			</td>
+		</tr>
+	</table>
+	</center>
+	<p align="center"><a target="_parent" href="../../index.html">Home</a> -
+	<a href="index.html">News</a> - <a href="../r/index.html">Resources</a></p>
+</div>
+
+</body>
+
+</html>

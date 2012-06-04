@@ -1,0 +1,281 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: Interactive Multiplication Table
+Date: Thu, 15 Feb 2007 16:50:36 -0500
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.aplusmath.com/cgi-bin/Homework_Helper/mtable
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.3028
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Interactive Multiplication Table</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META content=3D"MSHTML 6.00.5730.11" name=3DGENERATOR></HEAD>
+<BODY bgColor=3D#ffffff onload=3DsetTheFocusNoBanner()>
+<CENTER>
+<FORM name=3Dform action=3D/cgi-bin/Homework_Helper/mtable method=3Dpost =
+
+SELECT><BR><FONT size=3D6>Interactive Multiplication Table</FONT>
+<P>
+<HR width=3D"80%" color=3D#000000 noShade SIZE=3D2>
+
+<SCRIPT language=3DJavaScript>=0A=
+=0A=
+<!--=0A=
+=0A=
+function setTheFocus()=0A=
+{=0A=
+    document.form.n1.focus();=0A=
+    banner();=0A=
+}=0A=
+=0A=
+function setTheFocusNoBanner()=0A=
+{=0A=
+    document.form.n1.focus();=0A=
+}=0A=
+// -->=0A=
+=0A=
+</SCRIPT>
+<BR>
+<TABLE border=3D1>
+  <TBODY>
+  <TR>
+    <TD align=3Dmiddle width=3D30>=D7</TD>
+    <TD align=3Dright width=3D30 bgColor=3Dcyan>0</TD>
+    <TD align=3Dright width=3D30 bgColor=3Dcyan>1</TD>
+    <TD align=3Dright width=3D30 bgColor=3Dcyan>2</TD>
+    <TD align=3Dright width=3D30 bgColor=3Dcyan>3</TD>
+    <TD align=3Dright width=3D30 bgColor=3Dcyan>4</TD>
+    <TD align=3Dright width=3D30 bgColor=3Dcyan>5</TD>
+    <TD align=3Dright width=3D30 bgColor=3Dcyan>6</TD>
+    <TD align=3Dright width=3D30 bgColor=3Dcyan>7</TD>
+    <TD align=3Dright width=3D30 bgColor=3Dcyan>8</TD>
+    <TD align=3Dright width=3D30 bgColor=3Dcyan>9</TD>
+    <TD align=3Dright width=3D30 bgColor=3Dcyan>10</TD>
+    <TD align=3Dright width=3D30 bgColor=3Dcyan>11</TD>
+    <TD align=3Dright width=3D30 bgColor=3Dcyan>12</TD></TR>
+  <TR>
+    <TD align=3Dright bgColor=3Dcyan>0</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>0</TD></TR>
+  <TR>
+    <TD align=3Dright bgColor=3Dcyan>1</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>1</TD>
+    <TD align=3Dright width=3D30>2</TD>
+    <TD align=3Dright width=3D30>3</TD>
+    <TD align=3Dright width=3D30>4</TD>
+    <TD align=3Dright width=3D30>5</TD>
+    <TD align=3Dright width=3D30>6</TD>
+    <TD align=3Dright width=3D30>7</TD>
+    <TD align=3Dright width=3D30>8</TD>
+    <TD align=3Dright width=3D30>9</TD>
+    <TD align=3Dright width=3D30>10</TD>
+    <TD align=3Dright width=3D30>11</TD>
+    <TD align=3Dright width=3D30>12</TD></TR>
+  <TR>
+    <TD align=3Dright bgColor=3Dcyan>2</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>2</TD>
+    <TD align=3Dright width=3D30>4</TD>
+    <TD align=3Dright width=3D30>6</TD>
+    <TD align=3Dright width=3D30>8</TD>
+    <TD align=3Dright width=3D30>10</TD>
+    <TD align=3Dright width=3D30>12</TD>
+    <TD align=3Dright width=3D30>14</TD>
+    <TD align=3Dright width=3D30>16</TD>
+    <TD align=3Dright width=3D30>18</TD>
+    <TD align=3Dright width=3D30>20</TD>
+    <TD align=3Dright width=3D30>22</TD>
+    <TD align=3Dright width=3D30>24</TD></TR>
+  <TR>
+    <TD align=3Dright bgColor=3Dcyan>3</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>3</TD>
+    <TD align=3Dright width=3D30>6</TD>
+    <TD align=3Dright width=3D30>9</TD>
+    <TD align=3Dright width=3D30>12</TD>
+    <TD align=3Dright width=3D30>15</TD>
+    <TD align=3Dright width=3D30>18</TD>
+    <TD align=3Dright width=3D30>21</TD>
+    <TD align=3Dright width=3D30>24</TD>
+    <TD align=3Dright width=3D30>27</TD>
+    <TD align=3Dright width=3D30>30</TD>
+    <TD align=3Dright width=3D30>33</TD>
+    <TD align=3Dright width=3D30>36</TD></TR>
+  <TR>
+    <TD align=3Dright bgColor=3Dcyan>4</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>4</TD>
+    <TD align=3Dright width=3D30>8</TD>
+    <TD align=3Dright width=3D30>12</TD>
+    <TD align=3Dright width=3D30>16</TD>
+    <TD align=3Dright width=3D30>20</TD>
+    <TD align=3Dright width=3D30>24</TD>
+    <TD align=3Dright width=3D30>28</TD>
+    <TD align=3Dright width=3D30>32</TD>
+    <TD align=3Dright width=3D30>36</TD>
+    <TD align=3Dright width=3D30>40</TD>
+    <TD align=3Dright width=3D30>44</TD>
+    <TD align=3Dright width=3D30>48</TD></TR>
+  <TR>
+    <TD align=3Dright bgColor=3Dcyan>5</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>5</TD>
+    <TD align=3Dright width=3D30>10</TD>
+    <TD align=3Dright width=3D30>15</TD>
+    <TD align=3Dright width=3D30>20</TD>
+    <TD align=3Dright width=3D30>25</TD>
+    <TD align=3Dright width=3D30>30</TD>
+    <TD align=3Dright width=3D30>35</TD>
+    <TD align=3Dright width=3D30>40</TD>
+    <TD align=3Dright width=3D30>45</TD>
+    <TD align=3Dright width=3D30>50</TD>
+    <TD align=3Dright width=3D30>55</TD>
+    <TD align=3Dright width=3D30>60</TD></TR>
+  <TR>
+    <TD align=3Dright bgColor=3Dcyan>6</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>6</TD>
+    <TD align=3Dright width=3D30>12</TD>
+    <TD align=3Dright width=3D30>18</TD>
+    <TD align=3Dright width=3D30>24</TD>
+    <TD align=3Dright width=3D30>30</TD>
+    <TD align=3Dright width=3D30>36</TD>
+    <TD align=3Dright width=3D30>42</TD>
+    <TD align=3Dright width=3D30>48</TD>
+    <TD align=3Dright width=3D30>54</TD>
+    <TD align=3Dright width=3D30>60</TD>
+    <TD align=3Dright width=3D30>66</TD>
+    <TD align=3Dright width=3D30>72</TD></TR>
+  <TR>
+    <TD align=3Dright bgColor=3Dcyan>7</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>7</TD>
+    <TD align=3Dright width=3D30>14</TD>
+    <TD align=3Dright width=3D30>21</TD>
+    <TD align=3Dright width=3D30>28</TD>
+    <TD align=3Dright width=3D30>35</TD>
+    <TD align=3Dright width=3D30>42</TD>
+    <TD align=3Dright width=3D30>49</TD>
+    <TD align=3Dright width=3D30>56</TD>
+    <TD align=3Dright width=3D30>63</TD>
+    <TD align=3Dright width=3D30>70</TD>
+    <TD align=3Dright width=3D30>77</TD>
+    <TD align=3Dright width=3D30>84</TD></TR>
+  <TR>
+    <TD align=3Dright bgColor=3Dcyan>8</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>8</TD>
+    <TD align=3Dright width=3D30>16</TD>
+    <TD align=3Dright width=3D30>24</TD>
+    <TD align=3Dright width=3D30>32</TD>
+    <TD align=3Dright width=3D30>40</TD>
+    <TD align=3Dright width=3D30>48</TD>
+    <TD align=3Dright width=3D30>56</TD>
+    <TD align=3Dright width=3D30>64</TD>
+    <TD align=3Dright width=3D30>72</TD>
+    <TD align=3Dright width=3D30>80</TD>
+    <TD align=3Dright width=3D30>88</TD>
+    <TD align=3Dright width=3D30>96</TD></TR>
+  <TR>
+    <TD align=3Dright bgColor=3Dcyan>9</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>9</TD>
+    <TD align=3Dright width=3D30>18</TD>
+    <TD align=3Dright width=3D30>27</TD>
+    <TD align=3Dright width=3D30>36</TD>
+    <TD align=3Dright width=3D30>45</TD>
+    <TD align=3Dright width=3D30>54</TD>
+    <TD align=3Dright width=3D30>63</TD>
+    <TD align=3Dright width=3D30>72</TD>
+    <TD align=3Dright width=3D30>81</TD>
+    <TD align=3Dright width=3D30>90</TD>
+    <TD align=3Dright width=3D30>99</TD>
+    <TD align=3Dright width=3D30>108</TD></TR>
+  <TR>
+    <TD align=3Dright bgColor=3Dcyan>10</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>10</TD>
+    <TD align=3Dright width=3D30>20</TD>
+    <TD align=3Dright width=3D30>30</TD>
+    <TD align=3Dright width=3D30>40</TD>
+    <TD align=3Dright width=3D30>50</TD>
+    <TD align=3Dright width=3D30>60</TD>
+    <TD align=3Dright width=3D30>70</TD>
+    <TD align=3Dright width=3D30>80</TD>
+    <TD align=3Dright width=3D30>90</TD>
+    <TD align=3Dright width=3D30>100</TD>
+    <TD align=3Dright width=3D30>110</TD>
+    <TD align=3Dright width=3D30>120</TD></TR>
+  <TR>
+    <TD align=3Dright bgColor=3Dcyan>11</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>11</TD>
+    <TD align=3Dright width=3D30>22</TD>
+    <TD align=3Dright width=3D30>33</TD>
+    <TD align=3Dright width=3D30>44</TD>
+    <TD align=3Dright width=3D30>55</TD>
+    <TD align=3Dright width=3D30>66</TD>
+    <TD align=3Dright width=3D30>77</TD>
+    <TD align=3Dright width=3D30>88</TD>
+    <TD align=3Dright width=3D30>99</TD>
+    <TD align=3Dright width=3D30>110</TD>
+    <TD align=3Dright width=3D30>121</TD>
+    <TD align=3Dright width=3D30>132</TD></TR>
+  <TR>
+    <TD align=3Dright bgColor=3Dcyan>12</TD>
+    <TD align=3Dright width=3D30>0</TD>
+    <TD align=3Dright width=3D30>12</TD>
+    <TD align=3Dright width=3D30>24</TD>
+    <TD align=3Dright width=3D30>36</TD>
+    <TD align=3Dright width=3D30>48</TD>
+    <TD align=3Dright width=3D30>60</TD>
+    <TD align=3Dright width=3D30>72</TD>
+    <TD align=3Dright width=3D30>84</TD>
+    <TD align=3Dright width=3D30>96</TD>
+    <TD align=3Dright width=3D30>108</TD>
+    <TD align=3Dright width=3D30>120</TD>
+    <TD align=3Dright width=3D30>132</TD>
+    <TD align=3Dright width=3D30>144</TD></TR></TR></TBODY></TABLE>
+<P>Enter a problem below with numbers between 0 and 12 and press Enter:
+<P><INPUT maxLength=3D2 size=3D2 name=3Dn1> =D7 <INPUT maxLength=3D2 =
+size=3D2 name=3Dn2>
+<P><INPUT type=3Dsubmit value=3DEnter name=3DEnter><BR></FORM><FONT =
+size=3D2>
+<P><A href=3D"http://www.aplusmath.com/">Return to Aplusmath =
+Home</A></FONT>
+<P>
+<HR width=3D"80%" color=3D#000000 noShade SIZE=3D2>
+
+<P class=3DMsoNormal><B style=3D"mso-bidi-font-weight: normal">Master =
+<SPAN=20
+class=3DSpellE><A=20
+href=3D"http://www.flashmaster.com/cgi-bin/redirect.cgi?goto=3D/multiplic=
+ation_table.htm&amp;code=3DAPLUS"><SPAN=20
+style=3D"COLOR: blue"><U>Multiplication Tables</U></SPAN></A> &amp; =
+Other <A=20
+href=3D"http://www.flashmaster.com/cgi-bin/redirect.cgi?goto=3D/multiplic=
+ation_table.htm&amp;code=3DAPLUS"><SPAN=20
+style=3D"COLOR: blue"><U>Math Facts</U></SPAN></A> with the <A=20
+href=3D"http://www.flashmaster.com/cgi-bin/redirect.cgi?goto=3D/multiplic=
+ation_table.htm&amp;code=3DAPLUS"><SPAN=20
+style=3D"COLOR: blue"><U>FlashMaster</U></SPAN></A>=AE<O:P></O:P></B> =
+<BR><B><SPAN=20
+style=3D"FONT-SIZE: 9pt; FONT-FAMILY: Arial">Kids regard it as a "<SPAN=20
+class=3DSpellE>GameBoy</SPAN>," but it is a little computer for =
+practicing basic=20
+math facts</SPAN></B></P></SPAN></CENTER></BODY></HTML>

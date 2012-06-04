@@ -1,0 +1,27 @@
+HTML {
+	MARGIN-TOP: 0px
+}
+BODY {
+	MARGIN-TOP: 0px
+}
+LI.title {
+	FONT-SIZE: 120%
+}
+UL.topicGroup {
+	MARGIN-TOP: 0px; PADDING-LEFT: 0px; MARGIN-LEFT: 1.2em
+}
+#tutorial_list {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+#tutorial_list LI.section {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 20px; WIDTH: 47%; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+#tutorial_list UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 25px; FONT-SIZE: 83%; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 5px; LIST-STYLE-TYPE: none
+}
+#tutorial_list UL LI {
+	BACKGROUND-POSITION: left center; PADDING-LEFT: 15px; BACKGROUND-IMAGE: url(http://www.nlm.nih.gov/images/bullet.gif); WIDTH: 100%; BACKGROUND-REPEAT: no-repeat
+}
+.listSpace {
+	MARGIN-BOTTOM: 2em
+}

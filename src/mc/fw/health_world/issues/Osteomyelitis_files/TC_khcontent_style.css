@@ -1,0 +1,9 @@
+#khcontent A:link {
+	COLOR: #00799f; TEXT-DECORATION: none
+}
+#khcontent A:visited {
+	COLOR: #0066ff; TEXT-DECORATION: none
+}
+#khcontent A:hover {
+	COLOR: #ff9900; TEXT-DECORATION: underline
+}

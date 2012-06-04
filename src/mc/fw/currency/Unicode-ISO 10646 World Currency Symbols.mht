@@ -1,0 +1,393 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: Unicode/ISO 10646 World Currency Symbols
+Date: Thu, 15 Feb 2007 17:04:58 -0500
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.jhall.demon.co.uk/currency/by_symbol.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.3028
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" =
+"http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML><HEAD><TITLE>Unicode/ISO 10646 World Currency Symbols</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META=20
+content=3D"Unicode/ISO 10646 currency symbols for&#13;&#10;various =
+currencies.  Last updated 10-May-2003."=20
+name=3Ddescription>
+<META=20
+content=3D"currency, currencies, iso, 10646, symbol,&#13;&#10;symbols, =
+sign, signs"=20
+name=3Dkeywords>
+<META=20
+content=3D"baht, cent, col=F3n, colon, cruzeiro,&#13;&#10;dollar, =
+d=F4ng, dong, ecu, euro, florin, guilder, gulden, =
+franc,&#13;&#10;generic, lira, mill"=20
+name=3Dkeywords>
+<META=20
+content=3D"naira, peseta, pound, punt, rupee, bengali,&#13;&#10;shekel, =
+won, yen"=20
+name=3Dkeywords>
+<META content=3D"MSHTML 6.00.5730.11" name=3DGENERATOR></HEAD>
+<BODY>
+<P align=3Dcenter>[&nbsp;<A=20
+href=3D"http://www.jhall.demon.co.uk/currency/">Main&nbsp;Index</A>&nbsp;=
+| <A=20
+href=3D"http://www.jhall.demon.co.uk/currency/by_country.html">Countries&=
+nbsp;and&nbsp;Currencies</A>&nbsp;|=20
+<A=20
+href=3D"http://www.jhall.demon.co.uk/currency/by_currency.html">Currency&=
+nbsp;names</A>&nbsp;|=20
+<A=20
+href=3D"http://www.jhall.demon.co.uk/currency/by_abbrev.html">Currency&nb=
+sp;Abbreviations</A>&nbsp;|=20
+Currency&nbsp;Symbols&nbsp;| <A=20
+href=3D"http://www.jhall.demon.co.uk/currency/charset.html">Character&nbs=
+p;Set&nbsp;Restrictions</A>&nbsp;]</P>
+<H1 align=3Dcenter>Unicode/ISO 10646 World Currency Symbols</H1>
+<P align=3Dcenter>Last updated: 10-May-2003</P>
+<H2>General</H2>
+<P>At the time of writing, it is believed that the following are the =
+only world=20
+currency symbols available in Unicode/ISO&nbsp;10646.=20
+<P><STRONG>Notes</STRONG>=20
+<OL>
+  <LI>There is some disagreement amongst typographers about the =
+pound/punt and=20
+  lira symbols. The Pound/Punt symbol is a stylised, cursive "L" with =
+one or two=20
+  horizontal cross-strokes (=A3). Around&nbsp;30 years ago, the =
+two-stroke form=20
+  predominated in the UK, currently the one-stroke form predominates. =
+The same=20
+  symbol would be used in the UK to represent both Pound/Punt and Lira =
+and=20
+  whether the symbol has one or two cross-strokes is a matter of what is =
+
+  available in the typeface used.=20
+  <P>It is said, although no Italian typographers have yet confirmed =
+this, that=20
+  only the two cross-stroke version is acceptable in Italy to represent =
+the=20
+  Lira. Presumably they too would use the same symbol to represent the=20
+  Pound/Punt.=20
+  <P>Unicode has separate symbols for both the Pound/Punt and the Lira, =
+and most=20
+  fonts use the single cross-stroke form for the Pound/Punt and the two=20
+  cross-stroke form for the Lira. However, until Unicode is =
+better-supported by=20
+  browsers, it may be prudent to use the Pound/Punt symbol (which is =
+part of the=20
+  basic HTML character set) for the Lira rather than use the correct =
+Lira symbol=20
+  that not everyone will be able to see, even though this risks the =
+wrath of=20
+  Italian purist typographers.=20
+  <P></P>
+  <LI>The cent symbol represents $0.01.=20
+  <P></P>
+  <LI>The mill symbol represents $0.001 and is rarely used.=20
+  <P></P>
+  <LI>The florin symbol was actually intended for another purpose (a =
+letter in=20
+  an African language) but has been given a dual-r=F4le by the Unicode =
+Consortium.=20
+  This usage is unfortunate since the florin symbol should always be =
+slanted=20
+  even in fonts which are otherwise unslanted while the African letter =
+should=20
+  follow the slant of the font&nbsp;- font designers have to choose =
+which of the=20
+  two r=F4les to design this symbol for. </LI></OL>
+<H2>Browsers and Unicode Capability</H2>
+<P><STRONG>Warning:</STRONG> most of the Unicode symbols here require:=20
+<OL>
+  <LI>That your browser is <EM>capable</EM> of displaying Unicode =
+characters,=20
+  and=20
+  <P></P>
+  <LI>That you have <EM>enabled</EM> the display of Unicode characters =
+(with=20
+  some browsers, configuring the browser to use a Unicode font =
+automatically=20
+  enables the display of Unicode characters), <EM>and</EM>=20
+  <P></P>
+  <LI>That you have a suitable Unicode font which contains the necessary =
+
+  characters. Although many newer browsers have Unicode capability, =
+fonts which=20
+  have the full range of Unicode characters are still rare. In fact, =
+fonts which=20
+  contain any Unicode characters other than those that are also in=20
+  ISO&nbsp;8859/1 or DOS/Windows CP&nbsp;1252 are still rare.=20
+  <P>On some platforms, fonts which contain Unicode characters may have =
+the text=20
+  "unicode" in their name. On other platforms, there may be no way of=20
+  distinguishing from the name if the font contains Unicode characters =
+or not=20
+  (checking the size may help as a Unicode font is likely to be around=20
+  25&nbsp;times the size of a non-Unicode font). </P></LI></OL>Unless =
+<EM>all</EM>=20
+these conditions are met, one of the following may occur:=20
+<UL>
+  <LI>If your browser is very old and was written before HTML was =
+extended to=20
+  allow Unicode characters, it may get confused or even crash (in which =
+case you=20
+  won't be reading this explanation).=20
+  <P></P>
+  <LI>If your browser is old and was written before HTML was extended to =
+allow=20
+  Unicode characters it may use a rather simplistic method of dealing =
+with=20
+  character codes greater than&nbsp;255 (the highest character code =
+permissible=20
+  without using Unicode). The most common behaviour in such browsers is=20
+  effectively to repeatedly subtract&nbsp;256 from the character code =
+until the=20
+  code value is less than&nbsp;256 and display that. The other typical=20
+  behaviours are to display nothing at all, a blank space, some form of =
+error=20
+  marker or the character numeric reference in the form =
+<SAMP>&amp;#321;</SAMP>.=20
+
+  <P></P>
+  <LI>If your browser understands Unicode but it is not enabled or you =
+do not=20
+  have a suitable font then it may display nothing at all, a blank =
+space, some=20
+  form of error marker or the character numeric reference in the form=20
+  <SAMP>&amp;#321;</SAMP>.=20
+  <P></P>
+  <LI>Even if your browser understands Unicode, you have Unicode enabled =
+and you=20
+  have a suitable font, it may have gaps where some of the currency =
+symbols=20
+  should be in which case it may display nothing at all, a blank space, =
+some=20
+  form of error marker or the character numeric reference in the form=20
+  <SAMP>&amp;#321;</SAMP>. </LI></UL>Here is a test to see if your =
+browser can=20
+handle Unicode correctly: "&#321;". Examine the character in quotes at =
+the end of the=20
+previous sentence. If you see a capital&nbsp;L with a stroke through the =
+
+vertical line then your browser handles Unicode. If you see a =
+capital&nbsp;A=20
+then your browser was written before HTML was extended to use Unicode. =
+If you=20
+see something else such as a black blob or other error marker, or no =
+character=20
+at all, then your browser can probably handle Unicode but you don't have =
+a=20
+suitable font. If you see two characters in the quotes, your browser is =
+using=20
+these as a crude representation of the character.=20
+<H2>Currency Symbols</H2>
+<P>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TH align=3Dleft>Currency</TH>
+    <TH>&nbsp;&nbsp;&nbsp;&nbsp;</TH>
+    <TH align=3Dleft>Unicode Symbol<BR></TH></TR>
+  <TR>
+    <TH>&nbsp;</TH>
+    <TH>&nbsp;</TH>
+    <TH>&nbsp;<BR></TH></TR>
+  <TR>
+    <TD>Baht</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD>&#3647;<BR></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;<BR></TD></TR>
+  <TR>
+    <TD>Cent ($.01)</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD>=A2<BR></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;<BR></TD></TR>
+  <TR>
+    <TD>Col=F3n</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD>&#8353;<BR></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;<BR></TD></TR>
+  <TR>
+    <TD>Cruzeiro Real</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD>&#8354;<BR></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;<BR></TD></TR>
+  <TR>
+    <TD>Dollar</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD>$<BR></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;<BR></TD></TR>
+  <TR>
+    <TD>D=F4ng</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD>&#8363;<BR></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;<BR></TD></TR>
+  <TR>
+    <TD>ECU (replaced by the Euro)</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD>&#8352;<BR></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;<BR></TD></TR>
+  <TR>
+    <TD>Euro (replacement for the ECU)</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD>=80<BR></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;<BR></TD></TR>
+  <TR>
+    <TD>Florin (also called Guilder and Gulden)</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD>=83<BR></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;<BR></TD></TR>
+  <TR>
+    <TD>French Franc</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD>&#8355;<BR></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;<BR></TD></TR>
+  <TR>
+    <TD>Generic Currency Symbol</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD>=A4<BR></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;<BR></TD></TR>
+  <TR>
+    <TD>Lira</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD>&#8356;<BR></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;<BR></TD></TR>
+  <TR>
+    <TD>Mill ($.001)</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD>&#8357;<BR></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;<BR></TD></TR>
+  <TR>
+    <TD>Naira</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD>&#8358;<BR></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;<BR></TD></TR>
+  <TR>
+    <TD>Peseta</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD>&#8359;<BR></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;<BR></TD></TR>
+  <TR>
+    <TD>Pound (and Irish Punt)</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD>=A3<BR></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;<BR></TD></TR>
+  <TR>
+    <TD>Rupee Sign (Bengali)</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD>&#2547;<BR></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;<BR></TD></TR>
+  <TR>
+    <TD>Rupee Mark (Bengali)</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD>&#2546;<BR></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;<BR></TD></TR>
+  <TR>
+    <TD>Rupee</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD>&#8360;<BR></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;<BR></TD></TR>
+  <TR>
+    <TD>Shekel</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD>&#8362;<BR></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;<BR></TD></TR>
+  <TR>
+    <TD>Won</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD>&#8361;<BR></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;<BR></TD></TR>
+  <TR>
+    <TD>Yen</TD>
+    <TD>&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+    <TD>=A5<BR></TD></TR></TBODY></TABLE>
+<HR>
+
+<ADDRESS>=A9 Copyright 1998, 1999, Paul L. Allen<BR>Comments to John =
+Hall:=20
+<SAMP><A =
+href=3D"mailto:currency1atjhall.co.uk">currency1atjhall.co.uk</A></SAMP> =
+
+(replace "at" by "@") </ADDRESS>
+<P align=3Dcenter>[&nbsp;<A=20
+href=3D"http://www.jhall.demon.co.uk/currency/">Main&nbsp;Index</A>&nbsp;=
+| <A=20
+href=3D"http://www.jhall.demon.co.uk/currency/by_country.html">Countries&=
+nbsp;and&nbsp;Currencies</A>&nbsp;|=20
+<A=20
+href=3D"http://www.jhall.demon.co.uk/currency/by_currency.html">Currency&=
+nbsp;names</A>&nbsp;|=20
+<A=20
+href=3D"http://www.jhall.demon.co.uk/currency/by_abbrev.html">Currency&nb=
+sp;Abbreviations</A>&nbsp;|=20
+Currency&nbsp;Symbols&nbsp;| <A=20
+href=3D"http://www.jhall.demon.co.uk/currency/charset.html">Character&nbs=
+p;Set&nbsp;Restrictions</A>&nbsp;]</P></BODY></HTML>

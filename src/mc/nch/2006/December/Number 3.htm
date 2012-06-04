@@ -1,0 +1,286 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Hackers release workaround for Vista&#39;s enterprise activation</title>
+<meta name="Microsoft Theme" content="bars 0011">
+</head>
+
+<body background="../../../../_themes/bars/barbkgde.gif" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#996600" alink="#993300"><!--mstheme--><font face="Times New Roman,Times">
+
+<style type="text/css">
+<!--
+div.TabView div.Tabs
+{
+  height: 24px;
+  overflow: hidden;
+}
+
+div.TabView div.Tabs a
+{
+  float: left;
+  display: block;
+  width:  90px;
+  text-align: center;
+  height:      24px;
+  line-height: 28px;
+  vertical-align: middle;
+  background: url('../../../../i/mc/nc/tabs.png') no-repeat -2px -1px;
+  text-decoration: none;
+  font-family: "Times New Roman", Serif;
+  font-weight: 900;
+  font-size: 13px;
+  color: #000080
+}
+
+div.TabView div.Tabs a:hover, div.TabView div.Tabs a.Active
+{
+  background: url('../../../../i/mc/nc/tabs.png') no-repeat -2px -31px;
+}
+
+div.TabView div.Pages
+{
+  clear: both;
+  border: 1px solid #404040;
+  overflow: hidden;
+}
+
+div.TabView div.Pages div.Page
+{
+  height: 100%;
+  padding: 0px;
+  overflow: hidden;
+}
+
+div.TabView div.Pages div.Page div.Pad
+{
+  padding: 3px 18px;
+}
+ .yqlink {display:inline-block;}.yqin {display:inline; height:0px; width:0px; position:absolute; text-align:left;}.yqimgins {background: url('http://us.i1.yimg.com/us.yimg.com/i/us/nws/gl/12_yq_bsc.gif') no-repeat right 50%; padding-right:15px; margin-right:2px; font-weight:bold; border-bottom:1px dotted #0066CC; cursor:hand; text-decoration:none; color:#000000; background-repeat:no-repeat}body{font-family:arial,sans-serif}
+-->
+</style>
+<script type="text/javascript">
+<!--
+
+
+// ----- Auxiliary -------------------------------------------------------------
+
+function tabview_aux(TabViewId, id)
+{
+  var TabView = document.getElementById(TabViewId);
+
+  // ----- Tabs -----
+
+  var Tabs = TabView.firstChild;
+  while (Tabs.className != "Tabs" ) Tabs = Tabs.nextSibling;
+
+  var Tab = Tabs.firstChild;
+  var i   = 0;
+
+  do
+  {
+    if (Tab.tagName == "A")
+    {
+      i++;
+      Tab.href      = "javascript:tabview_switch('"+TabViewId+"', "+i+");";
+      Tab.className = (i == id) ? "Active" : "";
+      Tab.blur();
+    }
+  }
+  while (Tab = Tab.nextSibling);
+
+  // ----- Pages -----
+
+  var Pages = TabView.firstChild;
+  while (Pages.className != 'Pages') Pages = Pages.nextSibling;
+
+  var Page = Pages.firstChild;
+  var i    = 0;
+
+  do
+  {
+    if (Page.className == 'Page')
+    {
+      i++;
+      if (Pages.offsetHeight) Page.style.height = (Pages.offsetHeight-2)+"px";
+      Page.style.overflow = "auto";
+      Page.style.display  = (i == id) ? 'block' : 'none';
+    }
+  }
+  while (Page = Page.nextSibling);
+}
+
+// ----- Functions -------------------------------------------------------------
+
+function tabview_switch(TabViewId, id) { tabview_aux(TabViewId, id); }
+
+function tabview_initialize(TabViewId) { tabview_aux(TabViewId,  1); }
+
+//-->
+</script>
+</head>
+
+<body background="../../../../_themes/bars/barbkgde.gif" bgcolor="#FFFFFF" text="#000000" link="#666633" vlink="#996600" alink="#993300"><!--mstheme--><font face="Times New Roman,Times">
+
+<center>
+<h2>Hackers release workaround for Vista&#39;s enterprise activation</h2>
+<!--msthemeseparator--><p align="center"><img src="../../../../_themes/bars/barrulee.gif" width="600" height="10" alt="horizontal rule"></p>
+<!--mstheme--></font><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse">
+  <tr>
+    <td width="99%" align="center"><!--mstheme--><font face="Times New Roman,Times">
+    <basefont size="3">
+    <div align="center">
+      <div class="TabView" id="TabView">
+        <div class="Tabs" style="width: 180;height:31">
+          <a>ITWire</a> <a>ARSTechnica</a></div>
+        <!-- *** Pages ************************************************************* -->
+        <div class="Pages" style="width: 450px; height: 250px; text-align: left;">
+          <!-- *** Page1 Start *** -->
+          <div class="Page">
+            <div class="Pad" style="width: 428; height: 14">
+              <h3 align="center"><strong>Ah, the never ending quest of the hackers 
+              to defeat anti-piracy measures. Nothing has truly stopped them in 
+              the past, with only Microsoft’s Vista activation servers proving the 
+              most troublesome. But a sneaky new way has emerged, thanks to Microsoft’s 
+              own technology.</strong></h3>
+              <h3>Related stories </h3>
+              <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../../_themes/bars/barbul1e.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="Times New Roman,Times"><a href="http://www.itwire.com.au/content/view/7849/1023/">The 
+                beginning of the end for DRM</a> <!--mstheme--></font><!--msthemelist--></td></tr>
+                <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../../_themes/bars/barbul1e.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="Times New Roman,Times"><a href="http://www.itwire.com.au/content/view/7817/52/">Microsoft 
+                Vista team reads iTWire and responds to Vista problems</a> <!--mstheme--></font><!--msthemelist--></td></tr>
+                <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../../_themes/bars/barbul1e.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="Times New Roman,Times"><a href="http://www.itwire.com.au/content/view/7794/53/">Microsoft&#39;s 
+                &#39;Everywhere&#39; Excludes Linux</a> <!--mstheme--></font><!--msthemelist--></td></tr>
+              <!--msthemelist--></table><!--mstheme--><font face="Times New Roman,Times">
+              <p>With the Business and Enterprise versions of Vista, Microsoft is 
+              allowing companies to install a ‘Key Management Service’ (KMS), which 
+              contacts a server on a company’s network to locally activate those 
+              two versions of Vista. </p>
+              <p>Microsoft knew that this might happen, so they put in a bit of 
+              a failsafe – the activation only lasts for 180 days, thereby stopping 
+              users from walking into the office with their computer loaded up with 
+              pirate version of Vista Business edition and walking out with a fully 
+              activated computer. </p>
+              <p>Of course they could, in theory, just take that same computer back 
+              into the office on the 179th day and re-activate it, but now that 
+              the cat is out of the bag and Microsoft clearly knows of this sneaky 
+              ‘workaround’ to their anti-piracy measures, the hackers cannot expect 
+              Microsoft to sit on their laurels and just take the piracy lying down.
+              </p>
+              <p>After all, it’s the pirates that Microsoft wants most this time 
+              around. Businesses, governments and users who buy a copy of Windows 
+              pre-loaded onto a desktop or notebook computer are well known to be 
+              buying a legitimate copy of Windows. It’s what has given Microsoft 
+              its massive cash reserves after all, along with millions of legitimate 
+              sales of different versions of Office. </p>
+              <p>But with little anti-piracy protection on earlier Windows and Office 
+              versions, or ones that were trivial to work around, billions of dollars 
+              of legitimate sales were lost into the digital mist of cyberspace.
+              </p>
+              <p>Microsoft’s advances in activation technology have worked wonders 
+              at stopping the ‘casual copying’ that pirates have taken for granted 
+              for years. Instead, they’ve had to seek out versions of Microsoft’s 
+              software with a ‘Volume License Key’, or essentially business versions 
+              that did not need activation, but simply a seemingly valid license 
+              key. </p>
+              <p>Of course, Microsoft knew that this was happening too, and started 
+              up the Windows Genuine Advantage (WGA) program to catch Windows pirates 
+              and stop them from easily getting security updates or from downloading 
+              new programs such as IE7, Windows Defender and others. </p>
+              <p>So successful is this program still to this day, that Microsoft 
+              has finally decided to implement it for Microsoft Office, as we revealed 
+              not too long ago on iTWire, with January next year the drop dead date 
+              for those with pirate versions of Office wanting to get essential 
+              security updates. The program is unsurprisingly titled the ‘Office 
+              Genuine Advantage’ (OGA) program. </p>
+              <p>The battle with the hackers and pirates will long continue, with 
+              Microsoft no doubt about to embark on a stricter policy of checking 
+              the activation of copies of Vista and Office 2007 now that news of 
+              this hacker workaround is very public knowledge. </p>
+              <p>I just hope it doesn’t inconvenience legitimate users who have 
+              paid good money to buy the software. There have been glitches with 
+              WGA that have seen legit users accused on screen of perhaps having 
+              a non-genuine copy. </p>
+              <p>If these anti-piracy measures are to be foisted upon us all, as 
+              is happening, Microsoft needs to ensure that legitimate users receive 
+              an uninterrupted, trouble free experience. After all, that’s the least 
+              of the advantages you’d expect from any ‘genuine advantage’ program.
+              </p>
+            </div>
+          </div>
+          <!-- *** Page1 End *** -->
+          <!-- *** Page2 Start *** -->
+          <div class="Page">
+            <div class="Pad" style="width: 448; height: 33">
+              <div class="PostBodyContainer">
+                Back in September, Ars
+                <a href="http://arstechnica.com/../../journals/microsoft.ars/2006/9/12/5269">
+                discussed</a> two ways that Microsoft volume licensing customers 
+                could activate Windows Vista. One method, the Multiple Activation 
+                Key (MAK), required that machine keys be authenticated against Microsoft&#39;s 
+                servers either through one centralized machine or individually. 
+                The second method, a Key Management Service (KMS), only required 
+                a centralized server that clients could activate against every 180 
+                days. The server itself would host the keys, not the client machines.
+                <p>While the KMS is intended to benefit system administrators with 
+                several on-site clients, it turns out that the service may also 
+                benefit those looking to pirate Windows Vista—at least for now.
+                <a href="http://apcmag.com/node/4769">Reports</a> are circulating 
+                around the web claiming that a group of hackers have used a VMWare 
+                image and a VBS script to simulate a local KMS which can generate 
+                valid Vista product keys. Because Vista&#39;s Home and Ultimate editions 
+                cannot work with a KMS, they cannot be pirated. On the other hand, 
+                both Enterprise and Business editions of Vista can easily be activated 
+                with the &quot;Microsoft.Windows.Vista.Local.Activation.Server-MelindaGates&quot; 
+                workaround. </p>
+                <p>APC Magazine, who first reported on the hack, explains how it 
+                works: </p>
+                <blockquote>
+                  <p>The download is a VMWare image, and the idea behind it is that 
+                  you download and install VMWare Player (a legal free download), 
+                  boot the image and use some VBS script (supplied with the activation 
+                  server download) to have the client Vista machine get its activation 
+                  from the local server. And that&#39;s it — no communication back to 
+                  Microsoft. </p>
+                </blockquote>
+                <p>Although this hack shows that Vista can be tricked into activating, 
+                it is still <em>just</em> a workaround for enterprise activation. 
+                Ultimately, I have to believe that Microsoft will find a way to 
+                prevent this from happening in the future. Plus, even a system activated 
+                with this method must be reactivated every 180 days and cannot go 
+                through any sort of Windows Genuine Advantage check without some 
+                tampering. </p>
+                <p>Not to downplay the fact that there is now a way to pirate Vista, 
+                but in some ways, Microsoft should be happy that someone had to 
+                create a KMS in order to fool Vista into activating. Inevitably, 
+                Vista&#39;s product activation was going to be circumvented. To quote 
+                APC&#39;s James Bannan, &quot;the fact that it&#39;s taken the acquisition of 
+                a KMS server shows that Vista activation is still holding strong 
+                in its own right.&quot; Would you agree? </p>
+              </div>
+            </div>
+            <!-- *** Page2 End *** -->
+          </div>
+          <script type="text/javascript">
+
+tabview_initialize('TabView');
+
+          </script>
+        </div>
+      </div>
+    </div>
+    <!--mstheme--></font></td>
+    </tr>
+  </table><!--mstheme--><font face="Times New Roman,Times">
+</center>
+
+<!--mstheme--></font></body>
+<p align="center"><a href="../../../../index.html">Home</a> -
+<a href="../index.html">News</a> -
+<a href="../../../r/index.html">Resources</a></p>
+
+<!--mstheme--></font></body>
+
+</html>

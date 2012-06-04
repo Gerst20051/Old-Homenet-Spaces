@@ -1,0 +1,192 @@
+<html>
+
+<head>
+<script language="JavaScript">
+// (c) 2000-2002 ricocheting <ricocheting@hotmail.com>
+
+//################################
+// funtion: generate()
+// decs: creates the source depending out textboxes
+function generate(){
+
+var f = document.myForm;
+
+var total='<scr' + 'ipt language="JavaScript"><!--\n';
+
+if(f.url.value.length==0 || f.url.value=="http://"){
+	alert('You will need to enter the "Background Music URL" for it to work right');
+}
+
+// If multiple sounds are used, just grab the first one for NOSCRIPT browsers
+var soundFile = f.url.value;
+if (soundFile.indexOf(",") > 0)
+{
+	soundFile = soundFile.substring(0,soundFile.indexOf(","));
+}
+
+// For SCRIPTable browsers, add script to randomly pick which file to play
+total += 'var soundFile = "' + f.url.value + '";'
+total += 'if (soundFile.indexOf(",") > 0) {';
+total += 'var sounds = soundFile.split(",");';
+total += 'soundFile = sounds[Math.floor(Math.random()*sounds.length)];}';
+
+
+if(f.IE_size[0].checked){ IE_size='width=70 height=45';}
+else if(f.IE_size[1].checked){ IE_size='width=285 height=45';}
+else if(f.IE_size[2].checked){ IE_size='width=70 height=25';}
+else if(f.IE_size[3].checked){ IE_size='width=285 height=25';}
+else{ IE_size='hidden="true"';}
+
+if(f.NS_size[0].checked){ NS_size='controls="LargeConsole" width=145 height=35';}
+else if(f.NS_size[1].checked){ NS_size='controls="LargeConsole" width=145 height=60';}
+else if(f.NS_size[2].checked){ NS_size='controls="SmallConsole" width=50 height=15';}
+else if(f.NS_size[3].checked){ NS_size='controls="SmallConsole" width=145 height=15';}
+else{ NS_size='hidden="true"';}
+
+var autoStart = f.autoStart.checked ? "true" : "false";
+
+var IE='<embed src="\'+soundFile+\'" autostart="'+ autoStart +'" loop="'+f.loop[f.loop.selectedIndex].value+'" '+IE_size+'></embed>';
+var NS='<embed src="\'+soundFile+\'" autostart="'+ autoStart +'" loop="'+f.loop[f.loop.selectedIndex].value+'" '+NS_size+'></embed>';
+var other='<embed src="'+soundFile+'" autostart="'+ autoStart +'" loop="'+f.loop[f.loop.selectedIndex].value+'"></embed>';
+
+var fileMimeType = "";
+for (var i=0;i<f.mimeType.length;i++)
+	if (f.mimeType[i].checked)
+	{
+		fileMimeType = f.mimeType[i].value;
+		break;
+	}
+if (fileMimeType == "other")
+	fileMimeType = f.other.value;
+
+total+= 'if(navigator.plugins.length>0){\n' +
+'if (navigator.mimeTypes["' + fileMimeType + '"] && navigator.mimeTypes["' + fileMimeType + '"].enabledPlugin) document.write(\''+NS+'\');}\n'+
+'else {\n'+
+'document.write(\''+IE+'\');}\n'+
+'\n//-->\n</'+'script>\n';
+total+= '<noscript>'+other+'</noscript>\n';
+total+= '<bgsound src="'+soundFile+'" loop='+f.loop[f.loop.selectedIndex].value+'>'
+
+f.output.value=total;
+}
+
+
+
+
+// End-->
+</script>
+<script type="text/javascript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+<title>Music Generator</title>
+</head>
+
+<body onload="P7_TMclass();P7_TMopen()">
+
+<div id="content">
+  <h1 align="center">Background Sound</h1>
+  <form name="myForm">
+    <h4>Audio File Properties</h4>
+    <p><b>Audio File URL(s):</b> <input type="text" name="url" size="30"><br>
+    <i>Use commas to separate multiple audio files. </i></p>
+    <p><b>Audio File MIME Type:</b></p>
+    <p><input type="radio" name="mimeType" value="audio/mid" checked> MIDI (audio/mid)<br>
+    <input type="radio" name="mimeType" value="audio/mp3"> MP3 (audio/mp3)<br>
+    <input type="radio" name="mimeType" value="audio/wav"> Windows Audio (audio/wav)<br>
+    <input type="radio" name="mimeType" value="audio/au"> Sun Audio (audio/au)<br>
+    <input type="radio" name="mimeType" value="other"> Other:
+    <input type="text" name="other" size="12"></p>
+    <p><input type="checkbox" name="autoStart" value="ON" checked> <b>Auto Start
+    </b></p>
+    <p><b>Loop Times:</b> <select name="loop">
+    <option value="true" selected>Infinite</option>
+    <option value="1">1 Loop</option>
+    <option value="2">2 Loops</option>
+    <option value="3">3 Loops</option>
+    <option value="4">4 Loops</option>
+    <option value="5">5 Loops</option>
+    <option value="10">10 Loops</option>
+    </select> </p>
+    <h4>Control Panel</h4>
+    <p>Below are some representative player controls that will appear on the page. 
+    Note that the exact control may look different than these, depending on the 
+    type of audio player the user has installed</p>
+    <table border="0">
+      <tr>
+        <td>
+        <table border="0" align="center" cellpadding="4" cellspacing="0" style="border-collapse:collapse;border:1px #cc6666 solid;">
+          <tr>
+            <td class="header">Internet Explorer</td>
+          </tr>
+          <tr>
+            <td class="desc"><input type="radio" name="IE_size" checked><img src="../../i/mc/ph/mp/IE4.gif" width="70" height="45">
+            </td>
+          </tr>
+          <tr>
+            <td class="desc"><input type="radio" name="IE_size"><img src="../../i/mc/ph/mp/IE3.gif" width="285" height="45">
+            </td>
+          </tr>
+          <tr>
+            <td class="desc"><input type="radio" name="IE_size"><img src="../../i/mc/ph/mp/IE1.gif" width="70" height="25">
+            </td>
+          </tr>
+          <tr>
+            <td class="desc"><input type="radio" name="IE_size"><img src="../../i/mc/ph/mp/IE2.gif" width="285" height="25">
+            </td>
+          </tr>
+          <tr>
+            <td class="desc"><input type="radio" name="IE_size">Hidden </td>
+          </tr>
+        </table>
+        </td>
+        <td width="20"></td>
+        <td valign="top" style="border:0px">
+        <table border="0" align="center" cellpadding="4" cellspacing="0" style="border-collapse:collapse;border:1px #cc6666 solid;">
+          <tr>
+            <td class="header">Netscape Navigator </td>
+          </tr>
+          <tr>
+            <td class="desc"><input type="radio" name="NS_size" checked><img src="../../i/mc/ph/mp/NS1.gif" width="145" height="35">
+            </td>
+          </tr>
+          <tr>
+            <td class="desc"><input type="radio" name="NS_size"><img src="../../i/mc/ph/mp/NS2.gif" width="145" height="60">
+            </td>
+          </tr>
+          <tr>
+            <td class="desc"><input type="radio" name="NS_size"><img src="../../i/mc/ph/mp/NS3.gif" width="50" height="15">
+            </td>
+          </tr>
+          <tr>
+            <td class="desc"><input type="radio" name="NS_size"><img src="../../i/mc/ph/mp/NS4.gif" width="145" height="15">
+            </td>
+          </tr>
+          <tr>
+            <td class="desc"><input type="radio" name="NS_size" value="hidden">Hidden
+            </td>
+          </tr>
+        </table>
+        </td>
+      </tr>
+    </table>
+    <h4>Source Code</h4>
+    <p><i>Click the Generate button, copy the following, and paste into the BODY 
+    section of your page.</i></p>
+    <p>
+    <input type="button" class="button" value="Generate" onClick="generate()">&nbsp;
+    </p>
+    <textarea name="output" cols="58" rows="10" wrap="virtual">No code available. &quot;Generate&quot; source code first.</textarea>
+  </form>
+  <hr />
+  </div>
+
+</body>
+
+</html>

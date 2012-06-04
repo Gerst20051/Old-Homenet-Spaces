@@ -1,0 +1,216 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+
+<style>
+body {font-size:10pt; 
+	color:black;
+	font-family:verdana,arial,helvetica,san-serif;
+	background-color:white;
+	}
+
+td	{
+	font-size:10pt;
+	}
+
+
+.header {
+	background-color:#cccccc;
+	font-weight:bold;
+	padding-left:20px;
+	}
+
+.desc {
+	background-color:#eeeeee;
+	border: 1px #cccccc solid;
+	}
+
+
+
+</style>
+
+<script language="JavaScript">
+// (c) 2000-2002 ricocheting <ricocheting@hotmail.com>
+
+//################################
+// funtion: generate()
+// decs: creates the source depending out textboxes
+function generate(){
+
+var f = document.myForm;
+var total='<script language="JavaScript"><!--\n';
+
+if(f.url.value.length==0 || f.url.value=="http://"){
+	alert('You will need to enter the "Background Music URL" for it to work right');
+}
+
+if(f.IE_size[1].checked){ IE_size='width=70 height=45';}
+else if(f.IE_size[2].checked){ IE_size='width=285 height=45';}
+else if(f.IE_size[3].checked){ IE_size='width=70 height=25';}
+else if(f.IE_size[4].checked){ IE_size='width=285 height=25';}
+else{ IE_size='hidden="true"';}
+
+if(f.NS_size[1].checked){ NS_size='controls="LargeConsole" width=145 height=35';}
+else if(f.NS_size[2].checked){ NS_size='controls="LargeConsole" width=145 height=60';}
+else if(f.NS_size[3].checked){ NS_size='controls="SmallConsole" width=50 height=15';}
+else if(f.NS_size[4].checked){ NS_size='controls="SmallConsole" width=145 height=15';}
+else{ NS_size='hidden="true"';}
+
+var IE='<embed src="'+f.url.value+'" autostart="'+f.autostart[f.autostart.selectedIndex].value+'" loop="'+f.loop[f.loop.selectedIndex].value+'" '+IE_size+'></embed>';
+var NS='<embed src="'+f.url.value+'" autostart="'+f.autostart[f.autostart.selectedIndex].value+'" loop="'+f.loop[f.loop.selectedIndex].value+'" '+NS_size+'></embed>';
+var other='<embed src="'+f.url.value+'" autostart="'+f.autostart[f.autostart.selectedIndex].value+'" loop="'+f.loop[f.loop.selectedIndex].value+'"></embed>';
+
+total+= 'if(navigator.appName=="Netscape"){\ndocument.write(\''+NS+'\');}\n'+
+'else if(navigator.appName=="Microsoft Internet Explorer"){\n'+
+'document.write(\''+IE+'\');}\n'+
+'else{\n'+
+'document.write(\''+other+'\');}\n//-->\n</'+'script>\n';
+total+= '<noscript>'+other+'</noscript>\n';
+total+= '<noembed><bgsound src="'+f.url.value+'" loop='+f.loop[f.loop.selectedIndex].value+'></noembed>'
+
+f.output.value=total;
+}
+
+
+//################################
+// funtion: view()
+// decs: displays a preview of the script
+function view() {
+if(document.myForm.output.value != 'no code available. "Generate" source code first'){
+msg=open("","DisplayWindow","menubar=1,resizable=1,width=300,height=100");
+msg.document.write(document.myForm.output.value);
+}
+else{
+generate();
+view();}
+}
+
+
+// End-->
+</script>
+
+
+<TITLE>Music Generator</TITLE>
+
+</head>
+<body>
+</div>
+
+<form name="myForm">
+
+<table border=0 align=center cellpadding=4 cellspacing=0 style="border-collapse:collapse;border:1px #cc6666 solid;">
+<tr><td class=header>
+Music Properties
+</td></tr>
+
+<tr><td align="center" class=desc>
+BG Music location:<br>
+<input type="text" name="url" onfocus="if(this.value){}else{value='http://'}" size="20">
+</td></tr>
+
+<tr><td align="center" class=desc>
+Auto-Start:<br>
+<select size=2 name="autostart">
+<option value=true selected>True
+<option value=false>False
+</select>
+</td></tr>
+
+<tr><td align="center" class=desc>
+Loop Times:<br>
+<select name="loop" >
+<option value="true" selected>Infinite
+<option value="1">1 Loop
+<option value="2">2 Loops
+<option value="3">3 Loops
+<option value="4">4 Loops
+<option value="5">5 Loops
+<option value="10">10 Loops
+</select>
+
+</td></tr></table>
+
+<br><br><br>
+
+	<table align=center><tr><td bgcolor="#CC6666" align="center" colspan=3>
+	<font color="white"><b>Display Panel</b></font></td></tr>
+	<tr><td height=10></td></tr>
+	<tr><td valign="top" style="border:0px">
+	
+<table border=0 align=center cellpadding=4 cellspacing=0 style="border-collapse:collapse;border:1px #cc6666 solid;">
+<tr><td class=header>
+Internet Explorer 4+
+</td></tr>
+
+<tr><td class=desc>
+<input type="radio" name="IE_size" checked>Hidden
+</td></tr>
+
+<tr><td class=desc>
+<input type="radio" name="IE_size"><img src="../../i/mc/ph/mp/IE4.gif" width="70" height="45">
+</td></tr>
+
+<tr><td class=desc>
+<input type="radio" name="IE_size"><img src="../../i/mc/ph/mp/IE3.gif" width="285" height="45">
+</td></tr>
+
+<tr><td class=desc>
+<input type="radio" name="IE_size"><img src="../../i/mc/ph/mp/IE1.gif" width="70" height="25">
+</td></tr>
+
+<tr><td class=desc>
+<input type="radio" name="IE_size"><img src="../../i/mc/ph/mp/IE2.gif" width="285" height="25">
+</td></tr></table>
+
+	</td><td width=20></td><td valign="top" style="border:0px">
+
+<table border=0 align=center cellpadding=4 cellspacing=0 style="border-collapse:collapse;border:1px #cc6666 solid;">
+<tr><td class=header>
+Netscape 4.x
+</td></tr>
+
+<tr><td class=desc>
+<input type="radio" name="NS_size" checked>Hidden
+</td></tr>
+
+<tr><td class=desc>
+<input type="radio" name="NS_size"><img src="../../i/mc/ph/mp/NS1.gif" width="145" height="35">
+</td></tr>
+
+<tr><td class=desc>
+<input type="radio" name="NS_size"><img src="../../i/mc/ph/mp/NS2.gif" width="145" height="60">
+</td></tr>
+
+<tr><td class=desc>
+<input type="radio" name="NS_size"><img src="../../i/mc/ph/mp/NS3.gif" width="50" height="15">
+</td></tr>
+
+<tr><td class=desc>
+<input type="radio" name="NS_size"><img src="../../i/mc/ph/mp/NS4.gif" width="145" height="15">
+</td></tr></table>
+
+	</td></tr></table>
+
+<br><br><br>
+
+<!-- START Generate/view/reset table -->
+<table border=0 align=center cellpadding=4 cellspacing=0 style="border-collapse:collapse;border:1px #cc6666 solid;">
+<tr><td class=header>
+Source Code: 
+</td></tr>
+
+<tr><td class="desc" align=center>
+<input type="button" class="button" value="Generate" onClick="generate()"> 
+<input type="button" class="Button" value="Preview" onClick="view();"> 
+<input type="reset" class="button" value="Reset" onclick="if(confirm('This will reset all the boxes to their original values.\n\nAre you sure you want to Continue?')){return true;}else{return false;}">
+</td></tr>
+
+<tr><td style="border-top:1px #cc6666 solid;">
+<textarea name="output" cols=58 rows=10 wrap="virtual">no code available. "Generate" source code first</textarea>
+</td></tr></table>
+<!-- END Generate/view/reset table -->
+</form>
+
+
+</body>
+</html>

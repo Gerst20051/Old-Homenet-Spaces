@@ -1,0 +1,163 @@
+BODY {
+	MARGIN-TOP: 0px; MARGIN-LEFT: 0px
+}
+.light_intro {
+	FONT-WEIGHT: normal; FONT-SIZE: 3px; COLOR: #fdfefc; FONT-FAMILY: Verdana, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+A.light_intro:hover {
+	COLOR: #000066; TEXT-DECORATION: underline
+}
+A.light_intro:visited {
+	COLOR: #fdfefc
+}
+.drugsintro {
+	FONT-SIZE: 11px; LINE-HEIGHT: 14px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A {
+	FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: #003399
+}
+A:hover {
+	COLOR: #000066; TEXT-DECORATION: underline
+}
+.tab2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; BACKGROUND-IMAGE: url("../../Health/mimages/tab_bgd.gif"); FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.tab3 {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; BACKGROUND-IMAGE: url("../../Health/mimages/tab_bgd2.gif"); FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.tab4 {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; BACKGROUND-IMAGE: url("../../Health/mimages/tab_bgd.gif"); FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+A.tab {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #336699; FONT-FAMILY: Arial, Helvetica, sans-serif; WHITE-SPACE: nowrap; TEXT-DECORATION: none
+}
+A.tab:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #336699; FONT-FAMILY: Arial, Helvetica, sans-serif; WHITE-SPACE: nowrap; TEXT-DECORATION: underline
+}
+A.lightlink {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: Arial, Verdana, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+A.lightlink:hover {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; FONT-FAMILY: Arial, Verdana, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+TD {
+	FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+H1 {
+	MARGIN-TOP: 0px; FONT-WEIGHT: bold; FONT-SIZE: 16px; MARGIN-BOTTOM: 8px; LINE-HEIGHT: 17px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+H2 {
+	MARGIN-TOP: 0px; FONT-WEIGHT: bold; FONT-SIZE: 13px; MARGIN-BOTTOM: 8px; LINE-HEIGHT: 14px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+H3 {
+	MARGIN-TOP: 0px; FONT-WEIGHT: bold; FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.footer {
+	FONT-SIZE: 10px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.d5 {
+	FONT-SIZE: 9px; COLOR: #666666; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: justify
+}
+A.d5 {
+	COLOR: #adc2d6; TEXT-DECORATION: none
+}
+A.d5:visited {
+	COLOR: #adc2d6
+}
+.d5:visited {
+	COLOR: #666666
+}
+.d6 {
+	FONT-SIZE: 11px; COLOR: #666666; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: justify
+}
+A.d6 {
+	COLOR: #adc2d6; TEXT-DECORATION: none
+}
+A.d6:visited {
+	COLOR: #adc2d6
+}
+.d6:visited {
+	COLOR: #666666
+}
+.drugshead {
+	FONT-WEIGHT: bold; FONT-SIZE: 9px; COLOR: #999999; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.small {
+	FONT-SIZE: 11px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.searchbg {
+	BACKGROUND-IMAGE: url("../../Health/mimages/search_bgd.gif")
+}
+.searchbg2 {
+	BACKGROUND-IMAGE: url("../../Health/mimages/search_bgd2.gif")
+}
+.searchbg3 {
+	BACKGROUND-IMAGE: url(/mimages/search_bgd3.gif)
+}
+.ft {
+	BACKGROUND-IMAGE: url("../../Health/mimages/f_t.gif")
+}
+.fl {
+	BACKGROUND-IMAGE: url("../../Health/mimages/f_l.gif")
+}
+.clr {
+	BACKGROUND-IMAGE: url("../../Health/mimages/clr.gif")
+}
+.fbgd {
+	BACKGROUND-IMAGE: url("../../Health/mimages/f_bgd.gif")
+}
+.fb {
+	BACKGROUND-IMAGE: url("../../Health/mimages/f_b.gif")
+}
+.fr {
+	BACKGROUND-IMAGE: url("../../Health/mimages/f_r.gif")
+}
+.categoryhead {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Verdana, Arial
+}
+TD.tdone {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #cfe0f1; TEXT-DECORATION: none
+}
+.headline {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+A.slink {
+	FONT-WEIGHT: normal; FONT-SIZE: 9px; FONT-FAMILY: Verdana, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+A.slink:hover {
+	FONT-WEIGHT: normal; FONT-SIZE: 9px; COLOR: #adc2d6; FONT-FAMILY: Verdana, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+A.subhead {
+	FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+A.subhead:hover {
+	FONT-WEIGHT: normal; FONT-SIZE: 13px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+.subhead {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+A.invisilink {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+A.invisilink:hover {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+A.invisilink:visited {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.invisilink {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.d3 {
+	LEFT: 0px; OVERFLOW: hidden; WIDTH: 0px; POSITION: absolute; TOP: -100px; HEIGHT: 0px
+}
+UL {
+	MARGIN-TOP: 5px; PADDING-LEFT: 20px; FONT-WEIGHT: normal; FONT-SIZE: 12px; MARGIN-BOTTOM: 5px; MARGIN-LEFT: 0px; COLOR: #000000; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; LIST-STYLE-TYPE: disc; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+.rule {
+	BORDER-TOP: #adc2d6 1px solid; BORDER-LEFT-COLOR: #adc2d6; MARGIN-BOTTOM: 0px; BORDER-BOTTOM-COLOR: #adc2d6; BORDER-RIGHT-COLOR: #adc2d6
+}
+

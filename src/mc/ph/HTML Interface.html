@@ -1,0 +1,1100 @@
+<html>
+
+<head>
+<title>HTML Interface</title>
+<meta HTTP-EQUIV="The JavaScript Source" CONTENT="no-cache">
+<meta NAME="description" CONTENT="This is a simple HTML-Interface that allows you to check the code (HTML or JavaScript) in less than 1 second. If you like HTML or JavaScript then this interface is for you!">
+<meta NAME="date" CONTENT="2003-01-15">
+<meta NAME="channel" CONTENT="Web Developer">
+<meta NAME="author" CONTENT="Ursache Vladimir ">
+<meta NAME="section" CONTENT="Miscellaneous">
+<body bgColor="#f5db9c">
+
+<script LANGUAGE="JavaScript">
+
+if(!(document.all))
+
+{
+
+ alert("TESTED ONLY ON MSIE");
+
+}
+
+var high = screen.height - 10;
+
+var wide = screen.width - 10;
+
+var myFe_s="HEIGHT=" +high+ ",width=" +wide+ ",resizable=yes,scrollbars=yes";
+
+var newWin=window.open("","newWindow",myFe_s);
+
+self.focus();
+
+var myVar=0;
+
+
+
+ function btopen_newWin()
+
+{
+
+ if(newWin.closed==true)
+
+ {
+
+  var myFe_s="HEIGHT=500,width=700,resizable=yes,scrollbars=yes";
+
+  newWin=window.open("","newWindow",myFe_s);
+
+ }
+
+ else
+
+ {
+
+  alert("Sorry, but the newWin is already open");
+
+ }
+
+}  //E O F
+
+
+
+ function btclear_newWin()
+
+{
+
+ if(newWin.closed==false)
+
+ {
+
+  newWin.document.open("text/html");
+
+  newWin.document.write("");
+
+  newWin.document.close();
+
+ }
+
+ else
+
+ {
+
+  alert("Sorry, but 1st u hv 2 open da newWin");
+
+ }
+
+}    // E O F
+
+
+
+ function btclear_txtArea()
+
+{
+
+ var myConf=confirm("D'u really want that?");
+
+ if(myConf)
+
+ {
+
+  document.form1.txtArea.value="";
+
+ }
+
+}    // E O F
+
+
+
+ function btcheck_newWin()
+
+{
+
+ if (newWin.closed==false)
+
+ {
+
+  newWin.focus();                         //50
+
+  myVar++;
+
+  myVarValue();
+
+  var m;
+
+  m=document.form1.txtArea.value;
+
+  newWin.document.write(m);
+
+  newWin.document.close();
+
+ }
+
+ else
+
+ {
+
+  alert("Open the newWin again");
+
+ }
+
+}    // E O F
+
+
+
+ function myVarValue()
+
+{
+
+ myDiv.innerHTML="<H3>Code checked "+myVar+" times</H3>";
+
+}   // E O F
+
+
+
+    function btclear_myVar()
+
+{
+
+ myVar=0;
+
+ myVarValue();
+
+}   // E O F
+
+    function oover(theDiv)
+
+{
+
+ theDiv.style.color = "black";
+
+ theDiv.style.cursor = "hand";
+
+ theDiv.style.backgroundColor = "silver";
+
+}
+
+    function oout(theDiv)
+
+{
+
+ theDiv.style.color = "green";
+
+ theDiv.style.backgroundColor = "skyblue";
+
+}
+
+  
+
+  function inn(bla,min,max)
+
+{
+
+ var truth;
+
+ if((bla == "") || isNaN(bla)) { truth = false; }
+
+ else
+
+ {
+
+  bla = parseInt(bla);
+
+  if((bla > max) || (bla < min)) { truth = false; }
+
+  else { truth = true; }
+
+ }
+
+ return truth;
+
+}  // E O F
+
+
+
+  function btbigger()
+
+{                                     //100
+
+ var mRows;
+
+ var mCols;
+
+ var mSize;
+
+ var mCode="";
+
+ var finalRows = 15;
+
+ var finalCols = 60;
+
+ var finalSize = 15;
+
+ mRows = document.form2.rowsNumber.value; 
+
+ mCols = document.form2.colsNumber.value;
+
+ mSize = document.form2.mNewSize.value;
+
+ if(inn(mRows,10,100)) { finalRows = mRows; }
+
+ if(inn(mCols,20,100)) { finalCols = mCols; }
+
+ if(inn(mSize,5,40)) { finalSize = mSize; }
+
+
+
+ mCode = document.form1.txtArea.value;
+
+
+
+ fortxtArea.innerHTML = '<TEXTAREA NAME=txtArea WRAP=OFF ROWS=' +finalRows+ 
+
+ ' COLS=' +finalCols+ ' STYLE="font-size:' +finalSize+ 'px;"> </TEXTAREA>';
+
+ document.form2.rowsNumber.value = "ROWS";
+
+ document.form2.colsNumber.value = "COLS";
+
+ document.form2.mNewSize.value = "FONT-SIZE";
+
+ document.form1.txtArea.value = mCode;
+
+ document.form1.txtArea.focus();
+
+}  // E O F
+
+ 
+
+ function kp()
+
+{
+
+ if(event.keyCode == 9)
+
+ { btcheck_newWin(); 
+
+   return false;
+
+ }
+
+}
+
+document.onkeydown=kp;
+
+
+
+ function bttips()
+
+{
+
+ tip.innerHTML="<H3>1.When you want to check the code you can press the key 'TAB' too.<BR>"+
+
+"2. After checking the code a lot of times be sure to save it somewhere, coz until that moment"+
+
+" the whole code will be Lost once the browser is closed, coz the code is actually in the"+
+
+"'BUFFER-ZONE'<BR>";
+
+setTimeout("tip.innerHTML=''", 15000);
+
+}  // E O F
+
+ 
+
+</script>
+</head>
+
+<body BGCOLOR="#ffffff" vlink="#0000ff">
+
+<hr>
+<p align="center"><font size="7" face="Kristen ITC">HTML Interface</font></p>
+<hr><center>
+<script language="JavaScript" type="text/javascript"><!--
+function openDescription(ID) {
+var url = "http://www.ppcforhosts.com/public/util/description.cfm?id=" + ID;
+link = window.open(url,"newWin","directories=0,height=250,location=0,menubar=0,resizable=1,scrollbars=1,status=0,toolbar=0,width=450");
+}
+//--></script>
+<br>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td width="99%" align="center">
+    <basefont size="3"><br>
+    <!-- Demonstration -->
+    <!-- This script and many more are available free online at -->
+    <!-- The JavaScript Source!! http://javascript.internet.com -->
+    <!-- Original:  Ursache Vladimir  (vlad783@yahoo.com) -->
+    <!-- Web Site:  http://www.geocities.com/vlad783 -->
+    <table>
+      <tr>
+        <td>
+        <form NAME="form1">
+          <div ID="fortxtArea">
+            <textarea NAME="txtArea" WRAP="off" ROWS="15" COLS="60" STYLE="font-size:15px;">
+
+    </textarea>
+          </div>
+        </form>
+        </td>
+      </tr>
+    </table>
+    <table BGCOLOR="skyblue" CELLPADDING="4" BORDER="2">
+      <tr>
+        <td>
+        <div ID="myDiv1" STYLE="color:green;" onmouseover="oover(myDiv1)" onmouseout="oout(myDiv1)" onclick="btcheck_newWin()">
+          CHECK THE CODE
+        </div>
+        </td>
+        <td>
+        <div ID="myDiv2" STYLE="color:green;" onmouseover="oover(myDiv2)" onmouseout="oout(myDiv2)" onclick="btopen_newWin()">
+          OPEN THE newWin
+        </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        <div ID="myDiv3" STYLE="color:green;" onmouseover="oover(myDiv3)" onmouseout="oout(myDiv3)" onclick="btclear_txtArea()">
+          CLEAR FIELD ABOVE
+        </div>
+        </td>
+        <td>
+        <div ID="myDiv4" STYLE="color:green;" onmouseover="oover(myDiv4)" onmouseout="oout(myDiv4)" onclick="btclear_newWin()">
+          CLEAR newWin
+        </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        <div ID="myDiv5" STYLE="color:green;" onmouseover="oover(myDiv5)" onmouseout="oout(myDiv5)" onclick="btclear_myVar()">
+          RESTART COUNTER
+        </div>
+        </form>
+        </td>
+      </tr>
+    </table>
+    <h3></h3>
+    <div ID="myDiv">
+      Code checked 0 times<h3></h3>
+    </div>
+    <h3></h3>
+    <form NAME="form2">
+      <input TYPE="text" VALUE="ROWS" NAME="rowsNumber" ONFOCUS="document.form2.rowsNumber.value=&quot;&quot;" size="20"><br>
+      <input TYPE="text" VALUE="COLS" NAME="colsNumber" ONFOCUS="document.form2.colsNumber.value=&quot;&quot;" size="20"><br>
+      <input TYPE="text" VALUE="FONT-SIZE" NAME="mNewSize" ONFOCUS="document.form2.mNewSize.value=&quot;&quot;" size="20"><br>
+      <input TYPE="button" VALUE="OK" onclick="btbigger()">&nbsp;
+      <input TYPE="button" VALUE="DEFAULT" onclick="window.location.reload()">&nbsp;
+      <input TYPE="button" VALUE="2 TIPS" onclick="bttips()">
+    </form>
+    <div ID="tip">
+    </div>
+    <p></p>
+    <p><a name="source"></p>
+    <table BORDER="0" WIDTH="486" CELLPADDING="3" CELLSPACING="0">
+      <tr>
+        <td BGCOLOR="yellow"><font FACE="helvetica,arial,geneva"><b>The JavaScript 
+        Source: Miscellaneous: HTML-Interface</b>
+        <p>Simply click inside the window below, use your cursor to highlight the 
+        script, and copy (type Control-c or Apple-c) the script into a new file 
+        in your text editor (such as Note Pad or Simple Text) and save (Control-s 
+        or Command-s). The script is yours!!! <br>
+        <br>
+        </font></p>
+        </td>
+      </tr>
+      <tr>
+        <td BGCOLOR="yellow" ALIGN="CENTER">
+        <form NAME="copy">
+          <div align="center">
+            <input type="button" value="Highlight All" onClick="javascript:this.form.txt.focus();this.form.txt.select();">&nbsp;&nbsp;&nbsp;&nbsp;
+            <input TYPE="text" NAME="total" VALUE="Script Size:  6.52 KB" size="24">
+          </div>
+          <textarea NAME="txt" ROWS="20" COLS="75" WRAP="VIRTUAL">
+
+&lt;!-- TWO STEPS TO INSTALL HTML-INTERFACE:
+
+
+
+  1.  Copy the coding into the HEAD of your HTML document
+
+  2.  Add the last code into the BODY of your HTML document  --&gt;
+
+
+
+&lt;!-- STEP ONE: Paste this code into the HEAD of your HTML document  --&gt;
+
+
+
+&lt;HEAD&gt;
+
+
+
+&lt;!-- This script and many more are available free online at --&gt;
+
+&lt;!-- The JavaScript Source!! http://javascript.internet.com --&gt;
+
+&lt;!-- Original:  Ursache Vladimir  (vlad783@yahoo.com) --&gt;
+
+&lt;!-- Web Site:  http://www.geocities.com/vlad783 --&gt;
+
+&lt;SCRIPT LANGUAGE=JavaScript&gt;
+
+if(!(document.all))
+
+{
+
+ alert(&quot;TESTED ONLY ON MSIE&quot;);
+
+}
+
+var high = screen.height - 10;
+
+var wide = screen.width - 10;
+
+var myFe_s=&quot;HEIGHT=&quot; +high+ &quot;,width=&quot; +wide+ &quot;,resizable=yes,scrollbars=yes&quot;;
+
+var newWin=window.open(&quot;&quot;,&quot;newWindow&quot;,myFe_s);
+
+self.focus();
+
+var myVar=0;
+
+
+
+ function btopen_newWin()
+
+{
+
+ if(newWin.closed==true)
+
+ {
+
+  var myFe_s=&quot;HEIGHT=500,width=700,resizable=yes,scrollbars=yes&quot;;
+
+  newWin=window.open(&quot;&quot;,&quot;newWindow&quot;,myFe_s);
+
+ }
+
+ else
+
+ {
+
+  alert(&quot;Sorry, but the newWin is already open&quot;);
+
+ }
+
+}  //E O F
+
+
+
+ function btclear_newWin()
+
+{
+
+ if(newWin.closed==false)
+
+ {
+
+  newWin.document.open(&quot;text/html&quot;);
+
+  newWin.document.write(&quot;&quot;);
+
+  newWin.document.close();
+
+ }
+
+ else
+
+ {
+
+  alert(&quot;Sorry, but 1st u hv 2 open da newWin&quot;);
+
+ }
+
+}    // E O F
+
+
+
+ function btclear_txtArea()
+
+{
+
+ var myConf=confirm(&quot;D&#39;u really want that?&quot;);
+
+ if(myConf)
+
+ {
+
+  document.form1.txtArea.value=&quot;&quot;;
+
+ }
+
+}    // E O F
+
+
+
+ function btcheck_newWin()
+
+{
+
+ if (newWin.closed==false)
+
+ {
+
+  newWin.focus();                         //50
+
+  myVar++;
+
+  myVarValue();
+
+  var m;
+
+  m=document.form1.txtArea.value;
+
+  newWin.document.write(m);
+
+  newWin.document.close();
+
+ }
+
+ else
+
+ {
+
+  alert(&quot;Open the newWin again&quot;);
+
+ }
+
+}    // E O F
+
+
+
+ function myVarValue()
+
+{
+
+ myDiv.innerHTML=&quot;&lt;H3&gt;Code checked &quot;+myVar+&quot; times&lt;/H3&gt;&quot;;
+
+}   // E O F
+
+
+
+    function btclear_myVar()
+
+{
+
+ myVar=0;
+
+ myVarValue();
+
+}   // E O F
+
+    function oover(theDiv)
+
+{
+
+ theDiv.style.color = &quot;black&quot;;
+
+ theDiv.style.cursor = &quot;hand&quot;;
+
+ theDiv.style.backgroundColor = &quot;silver&quot;;
+
+}
+
+    function oout(theDiv)
+
+{
+
+ theDiv.style.color = &quot;green&quot;;
+
+ theDiv.style.backgroundColor = &quot;skyblue&quot;;
+
+}
+
+  
+
+  function inn(bla,min,max)
+
+{
+
+ var truth;
+
+ if((bla == &quot;&quot;) || isNaN(bla)) { truth = false; }
+
+ else
+
+ {
+
+  bla = parseInt(bla);
+
+  if((bla &gt; max) || (bla &lt; min)) { truth = false; }
+
+  else { truth = true; }
+
+ }
+
+ return truth;
+
+}  // E O F
+
+
+
+  function btbigger()
+
+{                                     //100
+
+ var mRows;
+
+ var mCols;
+
+ var mSize;
+
+ var mCode=&quot;&quot;;
+
+ var finalRows = 15;
+
+ var finalCols = 60;
+
+ var finalSize = 15;
+
+ mRows = document.form2.rowsNumber.value; 
+
+ mCols = document.form2.colsNumber.value;
+
+ mSize = document.form2.mNewSize.value;
+
+ if(inn(mRows,10,100)) { finalRows = mRows; }
+
+ if(inn(mCols,20,100)) { finalCols = mCols; }
+
+ if(inn(mSize,5,40)) { finalSize = mSize; }
+
+
+
+ mCode = document.form1.txtArea.value;
+
+
+
+ fortxtArea.innerHTML = &#39;&lt;TEXTAREA NAME=txtArea WRAP=OFF ROWS=&#39; +finalRows+ 
+
+ &#39; COLS=&#39; +finalCols+ &#39; STYLE=&quot;font-size:&#39; +finalSize+ &#39;px;&quot;&gt; &lt;/TEXTAREA&gt;&#39;;
+
+ document.form2.rowsNumber.value = &quot;ROWS&quot;;
+
+ document.form2.colsNumber.value = &quot;COLS&quot;;
+
+ document.form2.mNewSize.value = &quot;FONT-SIZE&quot;;
+
+ document.form1.txtArea.value = mCode;
+
+ document.form1.txtArea.focus();
+
+}  // E O F
+
+ 
+
+ function kp()
+
+{
+
+ if(event.keyCode == 9)
+
+ { btcheck_newWin(); 
+
+   return false;
+
+ }
+
+}
+
+document.onkeydown=kp;
+
+
+
+ function bttips()
+
+{
+
+ tip.innerHTML=&quot;&lt;H3&gt;1.When you want to check the code you can press the key &#39;TAB&#39; too.&lt;BR&gt;&quot;+
+
+&quot;2. After checking the code a lot of times be sure to save it somewhere, coz until that moment&quot;+
+
+&quot; the whole code will be Lost once the browser is closed, coz the code is actually in the&quot;+
+
+&quot;&#39;BUFFER-ZONE&#39;&lt;BR&gt;&quot;+
+
+&quot;3. For questions you can ask me (author) at vlad783@yahoo.com&quot;;
+
+setTimeout(&quot;tip.innerHTML=&#39;&#39;&quot;, 20000);
+
+}  // E O F
+
+ 
+
+&lt;/SCRIPT&gt;
+
+
+
+&lt;/HEAD&gt;
+
+
+
+&lt;!-- STEP TWO: Copy this code into the BODY of your HTML document  --&gt;
+
+
+
+&lt;BODY&gt;
+
+
+
+&lt;!-- This script and many more are available free online at --&gt;
+
+&lt;!-- The JavaScript Source!! http://javascript.internet.com --&gt;
+
+&lt;!-- Original:  Ursache Vladimir  (vlad783@yahoo.com) --&gt;
+
+&lt;!-- Web Site:  http://www.geocities.com/vlad783 --&gt;
+
+&lt;TABLE&gt;
+
+ &lt;TR&gt;
+
+  &lt;TD&gt;
+
+   &lt;FORM NAME=&quot;form1&quot;&gt; 
+
+    &lt;DIV ID=fortxtArea&gt;
+
+    &lt;TEXTAREA NAME=&quot;txtArea&quot; WRAP=off ROWS=15 COLS=60 STYLE=&quot;font-size:15px;&quot;&gt;
+
+    &lt;/TEXTAREA&gt;
+
+    &lt;/DIV&gt;
+
+  &lt;/TD&gt;
+
+ &lt;/TR&gt;
+
+ &lt;/TABLE&gt;
+
+&lt;TABLE BGCOLOR=skyblue CELLPADDING=4 BORDER=2&gt;
+
+ &lt;TR&gt;
+
+  &lt;TD&gt;
+
+  &lt;DIV ID=&quot;myDiv1&quot;
+
+   STYLE=&quot;color:green;&quot;
+
+   onmouseover=&quot;oover(myDiv1)&quot; 
+
+   onmouseout=&quot;oout(myDiv1)&quot;
+
+   onclick=&quot;btcheck_newWin()&quot;&gt;
+
+   CHECK THE CODE
+
+   &lt;/DIV&gt;
+
+   &lt;/TD&gt;
+
+   &lt;TD&gt;
+
+    &lt;DIV ID=&quot;myDiv2&quot;
+
+    STYLE=&quot;color:green;&quot;
+
+    onmouseover=&quot;oover(myDiv2)&quot; 
+
+    onmouseout=&quot;oout(myDiv2)&quot;
+
+    onclick=&quot;btopen_newWin()&quot;&gt;
+
+    OPEN THE newWin
+
+    &lt;/DIV&gt;
+
+   &lt;/TD&gt;
+
+  &lt;/TR&gt;
+
+  &lt;TR&gt;
+
+   &lt;TD&gt;
+
+    &lt;DIV ID=&quot;myDiv3&quot;
+
+    STYLE=&quot;color:green;&quot;
+
+    onmouseover=&quot;oover(myDiv3)&quot; 
+
+    onmouseout=&quot;oout(myDiv3)&quot;
+
+    onclick=&quot;btclear_txtArea()&quot;&gt;
+
+    CLEAR FIELD ABOVE
+
+    &lt;/DIV&gt;
+
+   &lt;/TD&gt;
+
+   &lt;TD&gt;
+
+    &lt;DIV ID=&quot;myDiv4&quot;
+
+    STYLE=&quot;color:green;&quot;
+
+    onmouseover=&quot;oover(myDiv4)&quot; 
+
+    onmouseout=&quot;oout(myDiv4)&quot;
+
+    onclick=&quot;btclear_newWin()&quot;&gt;
+
+    CLEAR newWin 
+
+    &lt;/DIV&gt;
+
+     
+
+   &lt;/TD&gt;
+
+  &lt;/TR&gt;
+
+  &lt;TR&gt;
+
+   &lt;TD&gt;
+
+    &lt;DIV ID=&quot;myDiv5&quot;
+
+    STYLE=&quot;color:green;&quot;
+
+    onmouseover=&quot;oover(myDiv5)&quot; 
+
+    onmouseout=&quot;oout(myDiv5)&quot;
+
+    onclick=&quot;btclear_myVar()&quot;&gt;
+
+    RESTART COUNTER
+
+    &lt;/DIV&gt;
+
+    
+
+     &lt;/FORM&gt;
+
+   &lt;/TD&gt;
+
+  &lt;/TR&gt;
+
+ &lt;/TABLE&gt;
+
+&lt;H3&gt;&lt;DIV ID=&quot;myDiv&quot;&gt;Code checked 0 times&lt;/DIV&gt; &lt;/H3&gt;
+
+
+
+&lt;FORM NAME=form2&gt;
+
+ &lt;INPUT TYPE=text VALUE=ROWS NAME=rowsNumber ONFOCUS=&#39;document.form2.rowsNumber.value=&quot;&quot;&#39;&gt;&lt;BR&gt;
+
+ &lt;INPUT TYPE=text VALUE=COLS NAME=colsNumber ONFOCUS=&#39;document.form2.colsNumber.value=&quot;&quot;&#39;&gt;&lt;BR&gt;
+
+ &lt;INPUT TYPE=text VALUE=&quot;FONT-SIZE&quot; NAME=mNewSize ONFOCUS=&#39;document.form2.mNewSize.value=&quot;&quot;&#39;&gt;&lt;BR&gt;
+
+ &lt;INPUT TYPE=button VALUE=OK onclick=&quot;btbigger()&quot;&gt; 
+
+ &lt;INPUT TYPE=button VALUE=DEFAULT onclick=&quot;window.location.reload()&quot;&gt; 
+
+ &lt;INPUT TYPE=button VALUE=&quot;3 TIPS&quot; onclick=&quot;bttips()&quot;&gt;
+
+&lt;/FORM&gt;
+
+&lt;DIV ID=tip&gt;&lt;/DIV&gt;
+
+
+
+&lt;p&gt;&lt;center&gt;
+
+&lt;font face=&quot;arial, helvetica&quot; size&quot;-2&quot;&gt;Free JavaScripts provided&lt;br&gt;
+
+by &lt;a href=&quot;http://javascriptsource.com&quot;&gt;The JavaScript Source&lt;/a&gt;&lt;/font&gt;
+
+&lt;/center&gt;&lt;p&gt;
+
+
+
+&lt;!-- Script Size:  6.52 KB --&gt;</textarea></form>
+        </td>
+      </tr>
+    </table>
+    </form>
+    <!--content_stop--></a></td>
+    </tr>
+  </table>
+  <script LANGUAGE="JavaScript">
+<!-- Begin
+function getCookieVal (offset) {
+var endstr = document.cookie.indexOf(";", offset);
+if (endstr == -1)
+endstr = document.cookie.length;
+return unescape(document.cookie.substring(offset, endstr));
+}
+function GetCookie (name) {
+var arg = name + "=";
+var alen = arg.length;
+var clen = document.cookie.length;
+var i = 0;
+while (i < clen) {
+var j = i + alen;
+if (document.cookie.substring(i, j) == arg)
+return getCookieVal (j);
+i = document.cookie.indexOf(" ", i) + 1;
+if (i == 0)
+break;
+}
+return null;
+}
+function SetCookie (name, value) {
+var argv = SetCookie.arguments;
+var argc = SetCookie.arguments.length;
+var expires = (argc > 2) ? argv[2] : null;
+var path = "/"; //(argc > 3) ? argv[3] : null;
+var domain = (argc > 4) ? argv[4] : null;
+var secure = (argc > 5) ? argv[5] : false;
+document.cookie = name + "=" + escape (value) +
+((expires == null) ? "" : ("; expires=" +
+expires.toGMTString())) +
+((path == null) ? "" : ("; path=" + path)) +
+((domain == null) ? "" : ("; domain=" + domain)) +
+((secure == true) ? "; secure" : "");
+}
+
+var emailcookie = GetCookie('email_address');
+if (emailcookie == null) {
+emailcookie = 'your email here';
+}
+
+function chk(email, formname)
+{
+invalid = "";
+
+if (!email)
+invalid = "No email address found!  Try reloading the page then use the 'email a script' feature again.";
+
+else {
+
+if ( (email.indexOf("@") == -1) || (email.indexOf(".") == -1) )
+invalid += "\n\nInvalid email address.  Your email address is missing an '@' sign and a '.' in the domain name (like '.com').  Please check your address then submit again.";
+
+if (email.indexOf("youremailhere") > -1)
+invalid += "\n\nInvalid email address.  Make sure your email address included your username, the '@' sign, and the domain name (like '.com').";
+
+if (email.indexOf("\\") > -1)
+invalid += "\n\nEmail address contains an invalid back-slash (\\) character.  Remove the character and submit again.";
+
+if (email.indexOf("/") > -1)
+invalid += "\n\nEmail address contains an invalid forward-slash (/) character.  Remove the character and submit again.";
+
+if (email.indexOf("'") > -1)
+invalid += "\n\nEmail address contains an invalid apostrophe (') character.  Remove the character and submit again.";
+
+if (email.indexOf("zaz.com.br") > -1)
+invalid += "\n\nPlease do not use an email address that has an autoresponder set up for it.  Thanks.";
+
+if (email.indexOf("!") > -1)
+invalid += "\n\nEmail address contains an invalid exclamation point (!) character.  Remove the character or correct the email address then submit again.";
+
+if ( (email.indexOf(",") > -1) || (email.indexOf(";") > -1) )
+invalid += "\n\nPlease only enter one email address in the box at a time.  Remove the extra addresses and submit again.";
+
+if (email.indexOf("?subject") > -1)
+invalid += "\n\nPlease do not add '?subject=...' to your email address.  Scriptbot will send you the script with a pre-defined subject already.  Please remove the '?subject=...' from your email address and submit again.";
+}
+
+if (invalid == "")
+   {
+   var largeExpDate = new Date();
+   largeExpDate.setTime(largeExpDate.getTime() + (31 * 24 * 3600 * 1000));
+   SetCookie('email_address', email, largeExpDate);
+   if (formname == "scriptbot")
+      {
+      page = "http://javascript.internet.com/sent.html?" + email;
+      window.open(page, "AdWindow", "width=650,height=200");
+      }
+   return true;
+}
+else
+   {
+   alert("Oops, something is wrong...." + invalid);
+   return false;
+   }
+}
+
+function updateNewsletters() {
+with (document.forms["newslettersignup"]) {
+emailStr = email.value;
+var emailPat=/^(.+)@(.+)$/;
+var specialChars="\\(\\)<>@,;:\\\\\\\"\\.\\[\\]"; // remove   ( ) < > @ , ; : \ " . [ ]    */
+var validChars="\[^\\s" + specialChars + "\]";
+var quotedUser="(\"[^\"]*\")";
+var ipDomainPat=/^\[(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})\]$/;
+var atom=validChars + '+';
+var word="(" + atom + "|" + quotedUser + ")";
+var userPat=new RegExp("^" + word + "(\\." + word + ")*$");
+var domainPat=new RegExp("^" + atom + "(\\." + atom +")*$");
+var matchArray=emailStr.match(emailPat);
+if (matchArray==null) {
+alert("Email address seems incorrect (check @ and .'s)");
+return false;;
+}
+var user=matchArray[1];
+var domain=matchArray[2];
+if (user.match(userPat)==null) {
+alert("The username doesn't seem to be valid.");
+return false;
+}
+var IPArray=domain.match(ipDomainPat);
+if (IPArray!=null) {
+for (var i=1;i<=4;i++) {
+if (IPArray[i]>255) {
+alert("Destination IP address is invalid!");
+return false;
+      }
+   }
+}
+var domainArray=domain.match(domainPat);
+if (domainArray==null) {
+alert("The domain name doesn't seem to be valid.");
+return false;
+}
+var atomPat=new RegExp(atom,"g");
+var domArr=domain.match(atomPat);
+var len=domArr.length;
+if (domArr[domArr.length-1].length<2 || domArr[domArr.length-1].length>3) {
+alert("The address must end in a three-letter domain, or two letter country.");
+return false;
+}
+if (len<2) {
+var errStr="This address is missing a hostname!";
+alert(errStr);
+return false;
+}
+List_Name.value = newsletter.options[newsletter.selectedIndex].value
+		+ nltype.options[nltype.selectedIndex].value;
+
+   var largeExpDate = new Date();
+   largeExpDate.setTime(largeExpDate.getTime() + (31 * 24 * 3600 * 1000));
+   SetCookie('email_address', emailStr, largeExpDate);
+
+return true;
+   }
+}
+// End -->
+  </script>
+</center>
+
+</body>
+
+</body>
+
+</html>

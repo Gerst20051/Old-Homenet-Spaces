@@ -1,0 +1,2457 @@
+From: <Saved by Windows Internet Explorer 7>
+Subject: A Multiplication Table
+Date: Thu, 15 Feb 2007 16:49:00 -0500
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0026_01C75121.30FAC560"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.3028
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0026_01C75121.30FAC560
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.sosmath.com/tables/mult/mult.html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>A Multiplication Table</TITLE>
+<META content=3D"No Title" name=3Ddescription>
+<META content=3Dbernoulli name=3Dkeywords>
+<META content=3Ddocument name=3Dresource-type>
+<META content=3Dglobal name=3Ddistribution>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Diso-8859-1">
+<META content=3D"MSHTML 6.00.5730.11" name=3DGENERATOR></HEAD>
+<BODY bgColor=3D#ffffff background=3Dhttp://www.sosmath.com/back001.gif>
+<CENTER>
+<TABLE cellSpacing=3D0 cellPadding=3D0 border=3D0>
+  <TBODY>
+  <TR>
+    <TD vAlign=3Dtop>
+      <SCRIPT language=3DJavaScript type=3Dtext/javascript>=0A=
+<!--=0A=
+   if (!document.phpAds_used) document.phpAds_used =3D ',';=0A=
+   phpAds_random =3D new String (Math.random()); phpAds_random =3D =
+phpAds_random.substring(2,11);=0A=
+   =0A=
+   document.write ("<" + "script language=3D'JavaScript' =
+type=3D'text/javascript' src=3D'");=0A=
+   document.write ("http://www.sosmath.com/ADV/adjs.php?n=3D" + =
+phpAds_random);=0A=
+   document.write ("&amp;what=3Dzone:3");=0A=
+   document.write ("&amp;exclude=3D" + document.phpAds_used);=0A=
+   if (document.referer)=0A=
+      document.write ("&amp;referer=3D" + escape(document.referer));=0A=
+   document.write ("'><" + "/script>");=0A=
+//-->=0A=
+</SCRIPT>
+      <NOSCRIPT><A =
+href=3D"http://www.sosmath.com/ADV/adclick.php?n=3Da03e54b3"=20
+      target=3D_blank><IMG alt=3D""=20
+      =
+src=3D"http://www.sosmath.com/ADV/adview.php?what=3Dzone:3&amp;n=3Da03e54=
+b3"=20
+      border=3D0></A></NOSCRIPT>=20
+    <TD width=3D12 height=3D60>
+    <TD vAlign=3Dtop>
+      <SCRIPT language=3DJavaScript type=3Dtext/javascript>=0A=
+<!--=0A=
+   if (!document.phpAds_used) document.phpAds_used =3D ',';=0A=
+   phpAds_random =3D new String (Math.random()); phpAds_random =3D =
+phpAds_random.substring(2,11);=0A=
+   =0A=
+   document.write ("<" + "script language=3D'JavaScript' =
+type=3D'text/javascript' src=3D'");=0A=
+   document.write ("http://www.sosmath.com/ADV/adjs.php?n=3D" + =
+phpAds_random);=0A=
+   document.write ("&amp;what=3Dzone:2");=0A=
+   document.write ("&amp;exclude=3D" + document.phpAds_used);=0A=
+   if (document.referer)=0A=
+      document.write ("&amp;referer=3D" + escape(document.referer));=0A=
+   document.write ("'><" + "/script>");=0A=
+//-->=0A=
+</SCRIPT>
+      <NOSCRIPT><A =
+href=3D"http://www.sosmath.com/ADV/adclick.php?n=3Da4bc4b80"=20
+      target=3D_blank><IMG alt=3D""=20
+      =
+src=3D"http://www.sosmath.com/ADV/adview.php?what=3Dzone:2&amp;n=3Da4bc4b=
+80"=20
+      border=3D0></A></NOSCRIPT> </TR></TBODY></TABLE></CENTER>
+<H3><IMG src=3D"http://www.sosmath.com/logos001.gif" align=3Dbottom> A=20
+Multiplication Table</H3>
+<CENTER>
+<TABLE cellPadding=3D20 border=3D3>
+  <TBODY>
+  <TR>
+    <TD vAlign=3Dtop>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><SAMP><SAMP>1</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>1</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>1</SAMP></SAMP> </TD></TR></TBODY></TABLE>
+    <TD vAlign=3Dtop>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><SAMP><SAMP>2</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>1</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>2</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>2</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>2</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>4</SAMP></SAMP> </TD></TR></TBODY></TABLE>
+    <TD vAlign=3Dtop>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><SAMP><SAMP>3</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>1</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>3</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>3</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>2</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>6</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>3</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>3</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>9</SAMP></SAMP> </TD></TR></TBODY></TABLE>
+    <TD vAlign=3Dtop>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><SAMP><SAMP>4</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>1</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>4</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>4</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>2</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>8</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>4</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>3</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>12</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>4</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>4</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>16</SAMP></SAMP> </TD></TR></TBODY></TABLE>
+    <TD vAlign=3Dtop>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><SAMP><SAMP>5</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>1</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>5</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>5</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>2</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>10</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>5</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>3</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>15</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>5</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>4</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>20</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>5</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>5</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>25</SAMP></SAMP> </TD></TR></TBODY></TABLE>
+  <TR>
+    <TD vAlign=3Dtop>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><SAMP><SAMP>6</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>1</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>6</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>6</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>2</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>12</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>6</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>3</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>18</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>6</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>4</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>24</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>6</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>5</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>30</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>6</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>6</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>36</SAMP></SAMP> </TD></TR></TBODY></TABLE>
+    <TD vAlign=3Dtop>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><SAMP><SAMP>7</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>1</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>7</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>7</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>2</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>14</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>7</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>3</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>21</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>7</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>4</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>28</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>7</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>5</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>35</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>7</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>6</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>42</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>7</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>7</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>49</SAMP></SAMP> </TD></TR></TBODY></TABLE>
+    <TD vAlign=3Dtop>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><SAMP><SAMP>8</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>1</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>8</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>8</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>2</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>16</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>8</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>3</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>24</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>8</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>4</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>32</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>8</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>5</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>40</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>8</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>6</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>48</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>8</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>7</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>56</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>8</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>8</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>64</SAMP></SAMP> </TD></TR></TBODY></TABLE>
+    <TD vAlign=3Dtop>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><SAMP><SAMP>9</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>1</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>9</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>9</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>2</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>18</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>9</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>3</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>27</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>9</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>4</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>36</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>9</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>5</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>45</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>9</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>6</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>54</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>9</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>7</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>63</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>9</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>8</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>72</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>9</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP>=20
+            <SAMP><SAMP>9</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>81</SAMP></SAMP> </TD></TR></TBODY></TABLE>
+    <TD vAlign=3Dtop>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><SAMP><SAMP>10</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>1</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>10</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>10</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>2</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>20</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>10</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>3</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>30</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>10</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>4</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>40</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>10</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>5</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>50</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>10</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>6</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>60</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>10</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>7</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>70</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>10</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>8</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>80</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>10</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>9</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>90</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>10</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>10</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>100</SAMP></SAMP> </TD></TR></TBODY></TABLE>
+  <TR>
+    <TD vAlign=3Dtop>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><SAMP><SAMP>11</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>1</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>11</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>11</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>2</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>22</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>11</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>3</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>33</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>11</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>4</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>44</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>11</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>5</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>55</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>11</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>6</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>66</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>11</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>7</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>77</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>11</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>8</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>88</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>11</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>9</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>99</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>11</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>10</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>110</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>11</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>11</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>121</SAMP></SAMP> </TD></TR></TBODY></TABLE>
+    <TD vAlign=3Dtop>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><SAMP><SAMP>12</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>1</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>12</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>12</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>2</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>24</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>12</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>3</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>36</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>12</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>4</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>48</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>12</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>5</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>60</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>12</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>6</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>72</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>12</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>7</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>84</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>12</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>8</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>96</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>12</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>9</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>108</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>12</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>10</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>120</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>12</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>11</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>132</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>12</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>12</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>144</SAMP></SAMP> </TD></TR></TBODY></TABLE>
+    <TD vAlign=3Dtop>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><SAMP><SAMP>13</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>1</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>13</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>13</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>2</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>26</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>13</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>3</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>39</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>13</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>4</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>52</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>13</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>5</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>65</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>13</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>6</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>78</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>13</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>7</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>91</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>13</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>8</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>104</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>13</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>9</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>117</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>13</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>10</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>130</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>13</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>11</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>143</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>13</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>12</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>156</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>13</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>13</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>169</SAMP></SAMP> </TD></TR></TBODY></TABLE>
+    <TD vAlign=3Dtop>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><SAMP><SAMP>14</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>1</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>14</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>14</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>2</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>28</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>14</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>3</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>42</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>14</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>4</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>56</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>14</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>5</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>70</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>14</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>6</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>84</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>14</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>7</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>98</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>14</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>8</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>112</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>14</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>9</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>126</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>14</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>10</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>140</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>14</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>11</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>154</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>14</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>12</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>168</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>14</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>13</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>182</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>14</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>14</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>196</SAMP></SAMP> </TD></TR></TBODY></TABLE>
+    <TD vAlign=3Dtop>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><SAMP><SAMP>15</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>1</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>15</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>15</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>2</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>30</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>15</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>3</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>45</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>15</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>4</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>60</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>15</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>5</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>75</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>15</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>6</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>90</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>15</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>7</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>105</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>15</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>8</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>120</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>15</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>9</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>135</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>15</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>10</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>150</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>15</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>11</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>165</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>15</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>12</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>180</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>15</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>13</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>195</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>15</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>14</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>210</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>15</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>15</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>225</SAMP></SAMP> </TD></TR></TBODY></TABLE>
+  <TR>
+    <TD vAlign=3Dtop>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><SAMP><SAMP>16</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>1</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>16</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>16</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>2</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>32</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>16</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>3</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>48</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>16</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>4</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>64</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>16</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>5</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>80</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>16</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>6</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>96</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>16</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>7</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>112</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>16</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>8</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>128</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>16</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>9</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>144</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>16</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>10</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>160</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>16</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>11</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>176</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>16</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>12</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>192</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>16</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>13</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>208</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>16</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>14</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>224</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>16</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>15</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>240</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>16</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>16</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>256</SAMP></SAMP> </TD></TR></TBODY></TABLE>
+    <TD vAlign=3Dtop>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><SAMP><SAMP>17</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>1</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>17</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>17</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>2</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>34</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>17</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>3</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>51</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>17</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>4</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>68</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>17</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>5</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>85</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>17</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>6</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>102</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>17</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>7</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>119</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>17</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>8</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>136</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>17</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>9</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>153</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>17</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>10</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>170</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>17</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>11</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>187</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>17</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>12</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>204</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>17</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>13</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>221</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>17</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>14</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>238</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>17</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>15</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>255</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>17</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>16</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>272</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>17</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>17</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>289</SAMP></SAMP> </TD></TR></TBODY></TABLE>
+    <TD vAlign=3Dtop>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><SAMP><SAMP>18</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>1</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>18</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>18</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>2</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>36</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>18</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>3</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>54</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>18</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>4</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>72</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>18</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>5</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>90</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>18</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>6</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>108</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>18</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>7</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>126</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>18</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>8</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>144</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>18</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>9</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>162</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>18</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>10</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>180</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>18</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>11</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>198</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>18</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>12</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>216</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>18</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>13</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>234</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>18</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>14</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>252</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>18</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>15</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>270</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>18</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>16</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>288</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>18</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>17</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>306</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>18</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>18</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>324</SAMP></SAMP> </TD></TR></TBODY></TABLE>
+    <TD vAlign=3Dtop>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><SAMP><SAMP>19</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>1</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>19</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>19</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>2</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>38</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>19</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>3</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>57</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>19</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>4</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>76</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>19</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>5</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>95</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>19</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>6</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>114</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>19</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>7</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>133</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>19</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>8</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>152</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>19</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>9</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>171</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>19</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>10</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>190</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>19</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>11</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>209</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>19</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>12</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>228</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>19</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>13</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>247</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>19</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>14</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>266</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>19</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>15</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>285</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>19</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>16</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>304</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>19</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>17</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>323</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>19</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>18</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>342</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>19</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>19</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>361</SAMP></SAMP> </TD></TR></TBODY></TABLE>
+    <TD vAlign=3Dtop>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD><SAMP><SAMP>20</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>1</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>20</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>20</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>2</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>40</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>20</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>3</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>60</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>20</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>4</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>80</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>20</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>5</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>100</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>20</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>6</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>120</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>20</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>7</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>140</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>20</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>8</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>160</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>20</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>9</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>180</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>20</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>10</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>200</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>20</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>11</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>220</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>20</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>12</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>240</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>20</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>13</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>260</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>20</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>14</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>280</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>20</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>15</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>300</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>20</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>16</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>320</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>20</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>17</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>340</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>20</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>18</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>360</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>20</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>19</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>380</SAMP></SAMP> </TD></TR>
+        <TR>
+          <TD><SAMP><SAMP>20</SAMP></SAMP> <SAMP><SAMP>=D7</SAMP></SAMP> =
+
+            <SAMP><SAMP>20</SAMP></SAMP> <SAMP><SAMP>=3D</SAMP></SAMP>=20
+            <SAMP><SAMP>400</SAMP></SAMP>=20
+</TD></TR></TBODY></TABLE></TR></TBODY></TABLE></CENTER>
+<P>
+<P>
+<P>
+<P>
+<HR>
+
+<P>
+<P><I><B>
+<CENTER><A =
+href=3D"http://www.sosmath.com/tables/tables.html">[Tables]</A>=20
+</CENTER>
+<P>
+<CENTER><IMG src=3D"http://www.sosmath.com/gif/lighthouse.gif"> <A=20
+href=3D"http://www.sosmath.com/index.html">S.O.S MATHematics home =
+page</A>=20
+</CENTER>
+<UL></UL>
+<P>Do you need more help? Please post your question on our <A=20
+href=3D"http://www.sosmath.com/CBB">S.O.S. Mathematics CyberBoard</A>.=20
+<P>
+<CENTER><IMG src=3D"http://www.sosmath.com/gif/sailbar.gif"></CENTER>
+<P><!--BOTTOM AD2--><!--END BOTTOM AD2--><!--BOTTOM AD-->
+<CENTER>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD>
+      <SCRIPT language=3DJavaScript type=3Dtext/javascript>=0A=
+<!--=0A=
+   if (!document.phpAds_used) document.phpAds_used =3D ',';=0A=
+   phpAds_random =3D new String (Math.random()); phpAds_random =3D =
+phpAds_random.substring(2,11);=0A=
+   =0A=
+   document.write ("<" + "script language=3D'JavaScript' =
+type=3D'text/javascript' src=3D'");=0A=
+   document.write ("http://www.sosmath.com/ADV/adjs.php?n=3D" + =
+phpAds_random);=0A=
+   document.write ("&amp;what=3Dzone:8");=0A=
+   document.write ("&amp;exclude=3D" + document.phpAds_used);=0A=
+   if (document.referer)=0A=
+      document.write ("&amp;referer=3D" + escape(document.referer));=0A=
+   document.write ("'><" + "/script>");=0A=
+//-->=0A=
+</SCRIPT>
+      <NOSCRIPT><A =
+href=3D"http://www.sosmath.com/ADV/adclick.php?n=3Da3e6c5d1"=20
+      target=3D_blank><IMG alt=3D""=20
+      =
+src=3D"http://www.sosmath.com/ADV/adview.php?what=3Dzone:8&amp;n=3Da3e6c5=
+d1"=20
+      border=3D0></A></NOSCRIPT> </TR></TBODY></TABLE></CENTER><!--END =
+BOTTOM AD--><!--COUNTER-->
+<P>
+<CENTER><FONT color=3Ddarkgray size=3D1>Copyright =A9 1999-2007 =
+MathMedics, LLC. All=20
+rights reserved. <BR><A href=3D"http://www.sosmath.com/mail.php">Contact =
+us</A>=20
+<BR>Math Medics, LLC. - P.O. Box 12395 - El Paso TX 79913 - USA <BR>
+<SCRIPT=20
+src=3D"http://www.sosmath.com/cgi-bin/suo.cgi?action=3Dindex&amp;e=3Djs">=
+</SCRIPT>
+users online during the last hour </FONT></CENTER><!--COUNTER END-->
+<SCRIPT src=3D"http://www.google-analytics.com/urchin.js"=20
+type=3Dtext/javascript>=0A=
+</SCRIPT>
+
+<SCRIPT type=3Dtext/javascript>=0A=
+_uacct =3D "UA-278468-1";=0A=
+urchinTracker();=0A=
+</SCRIPT>
+</B></I></BODY></HTML>
+
+------=_NextPart_000_0026_01C75121.30FAC560
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sosmath.com/ADV/adview.php?what=zone:3&n=a03e54b3
+
+R0lGODlh1AE8APcAAAAACAgAxggIEBAICBAIEBAIzhAQEBAQGBgICBgIEBgQGBgQcxgQzhgYGBgY
+ISEYYyEYeyEYziEhKSEhMSEpKSEpMSkYcykhKSkhcykheykpKSkpMSkpOSkpeykxMTEhYzEhczEp
+MTEpczEpezEpzjExOTExYzE5MTE5OTFCOTFCSjkIGDkYITkpYzkpezkxOTkxezkx1jk5OTk5Qjk5
+ezlCQjlCSkIQKUIpWkIpY0Ipa0IxOUIxc0I5QkI5a0I5c0I5e0I51kJCQkJKOUJKQkJKY0JSOUoQ
+IUohKUoxSko5c0pCY0pCc0pCe0pKUkpK1kpSQkpSUkpaQkpaUkpac1IpOVIxOVI5SlJCUlJCc1JK
+SlJKc1JKe1JSQlJSUlJaSlJaWlJjSlJjUlJjY1oxSlpCUlpKWlpKc1pSSlpSUlpSWlpSc1pSe1pS
+3lpaQlpaY1pjSlpjY1pra1pzSmMxQmNa3mNra2Nre2NzUmN7a2tCUmtSSmtSY2tac2tjSmtrY2tr
+a2tr3mt7c3NjY3N7a3N7c3tSWntjWntrUntrY3trc3tzY3tz3nt7a3uEe4Rrc4RzY4Rza4Rze4R7
+Y4R7e4R754SEa4SEc4SEhISEjIxCQoxrWoxza4xzc4x7Y4x7a4yEhIyM55Rre5R7a5SEY5SEa5SM
+jJSUlJSU55yEa6WUjKWcnKWc762lpa2tta2t77WttbWtxrW1tbW17721vb21xr29zr3GxsZ7jMa1
+tca9xsa9zsa998bGxsbGzsbO1s4hKc6lpc6ttc69xs691s7Gvc7Gxs7Gzs7Ozs7O1s7O987W1tYI
+CNa1vdbOztbO1tbO3tbWztbW1tbW99be3t691t7O3t7Wzt7W1t7W3t7W597e597n7+e9vefWzufW
+3ufW5+fe3ufe5+fe9+fn5+fn7+/e3u/e5+/n3u/n5+/n7+/v7+/v//fn7/fv7/fv9/f37/f3////
+/////////////////////////////////////////////////////ywAAAAA1AE8AEAI/gDfqSNH
+kNxAdQLVHVRIUCHCdQ4ZGlQHcV1BgxcnSiQojlxHjuLCictGLVu2Y8bChRvoUVxHcSxbvnRJMN26
+dAVd6rSoc6ZHculsAu1JE2fPli0DKF3KtKnTp1CjSp1KtarVq1izat3KtavXr2DDLhUojhvDiAo7
+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
+4ETyCcFCJITkkjlKXe3JhvktYRM+4YwICAAAOw==
+
+------=_NextPart_000_0026_01C75121.30FAC560
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sosmath.com/ADV/adview.php?what=zone:2&n=a4bc4b80
+
+R0lGODlheAA8ALMAAPr6+pioqDROTmSWlkVmZlyKilR9fdPZ2TI0NGyDg01ycnaMjGJ5eYWYmLbB
+wT5cXCH5BAAAAAAALAAAAAB4ADwAAAT/EMlJq7046827/4hijGRZDmiaGoXqvmhRsKoBowah77uN
+igagaVhSGEctWIG3kxCft4EsekMmcdEcc3cFCp/g3NW13DrDJAV1LJ3CRu0a7aVlqlMFLzqsYK+2
+BGd7dzdXAQ4HBws+eHMzBQ1SQUYJDZEyCjwJRmR6e2BZWwqCaIRKKQEAAAcMfY1jCwEHAUEjDYmI
+CzsMDLe0Y3kjX59FVi6ZdhJHpWt4DgAOBK4DcHGIqg3SCg2qCQyqDAIPsqoBIirBtcREbSUtyDyj
+CATCw0V+KyvP0QQzLDIAB5ADkOABAQYHAARAIGCfAAELEgJY8GCOFE/rTJCRUYeHAQkE/xoZWSYM
+nQsbMxTs02EkCUCOqQAwMLgAG0NuAAg8xEnRYjohXxLUMyHETYwfWz7OIyNMm4IFiBI1oIHIgbkR
+CaMJUBN1VolnMg3GXIDgAc5w21QtEOBTQQJZiMwZaVDVwSa3UO0ectCgANxfA+BxUeZSRoAAi0Y8
+O/B21YKIB8A2ELHvgdmEARBCAwJWgbiYCcTVnPhAwVi2VwyMbqA5AIFUB9xiewB2lUTbqgBMLcOk
+AOE2BaI6MEIutAKpCRU8yCqtMgGH46DRM9D54ekHCdSWHlvxSoGsD59ZUrtTlfKEBx4IOJ1dIT1A
+vkOgNCArkevnq3QeVH5IXFaDDrUXgP84BCSgg2LmfdaNODxtp51FODXAkDS0reKZAAI2BI0ACHAT
+mwCtlWZQPAMog9J3uDCgA3rqabNDROWEt+FqAjjFWYJmqVVWTDOZ9qBLPE1o2WLqYVcOAg4J4KFn
+rdU4IhclyieFL6yNKJFOXkAG44AVOoBhjNMhQR04NGGzVUyW+TjRVi0EMMBoCz25mE4PwInkhkqu
+MlMCmDnJQxJnGBaNZdrE5IBB9JHTgAAxdunfKgVt8wt95pU2ppcEgCcNTsYNsBif4NTYQGMyMahK
+IEl6qJNmixJ6YAoS5CFDA64ZBAQDYCUSGU6R5YZYbhSBatsBu8UETWIw0ppfabeoooj/ahLJpkpU
+BsLGQLIIfNNNhe7xOtOIpsTaRwFQsSREL1FlRsAtfCXggF20HpZNgfU5sEBL7x4WwFQj5GVVOPQc
+om9mBtAVgGVvVWUgTYdZFZqS+yLWi76VWIUYgaZEOUA/M1jFUhoEFDmiQQ+pR2DILWZiMqFAWMZy
+Uy4fCLOtQTBh8kPiWIYzzi7vbBDLKMf8ggQbcxQRYiQZYW4OWozktHIiKL2DEDaKOcky/jidxjJS
+K6eDyzHvADY9SdNjmR9EjxtEfYgtkIBQwpBA9j8vFeDNY3jnrffbCeittyV+/21JA3j3Dbjb3vCi
+eCvIkADQuPTAkDZAOQwUmcWDA27J/8Dvdt6Vrrrm5mxdoJdueumipy766Z0f5rY/LEyDj8ZwpFTg
+NarnrvvuvPfu++++z7IJPbPDioAk7WTi1kDAN+/887yD7vm7ieQWWSsWSX48NTHYLs21tH5+2/On
+ly/99NMPPHDmiPGtuNIKKN73IYncm70LRHPffVNTM9D3AoR7DK0ydzgCDi5wgeObAhO3uKcJBhB0
+CtvPwLaNdxlDe1hAB+ykxgOTXYBnYNPZkyAYDwea8IQmlNlIliYYXF1ldvkzSvc4UgSl7eyGOLNR
+yOyRkT3UrW4tqdvWuBa/4dzPeDH4xwt+SLkQrkxnQBkXE6dIxSrW7Si1e0kc9gc/I//CcHv7OyJw
+ABK00hSEgphgBBXGWDw8DCASdEsNRwrBBo7ELz3TGBoYOyHGFIitNp4xjVDOscYUPEOJa6wNLagT
+AEwAgY2F0SAk6LcVMeZviSH7mB+Q8Y1FReZLuogjE9HxjCOMEg/SKaUCFMK0IL5ElBqszypqZMk9
+MgUZNOuCDjqJAABq6ADNKUfBeuUARAYHGgpRyQHoc4A4yGAV2IkGj14zLRH0apmIxAOMHDMhfFwy
+CrZ7UuxQlhAJ3QQa0aELMLlhFZnQjVJ0yUkqGJAKEVCuMmUC5ioPA4BMrIIbL9Qgr7xUMm/aco15
++FoHlzNLiBAkOu4CQJ0Ikp177cX/R3l6wDciEg26OIAaKiETARTypfEUhKTuyaYM3oKYBzBEHAYt
+pBI6YjJ2TrQgxgLAl7xBkEyZJxV5EodCFBId3dSsJulh1IDaEyqUumZceEgJh3gWEgzKlA5fMxID
+EJAKI+FUpxrd6TcM5DSgckMc73qoUwxAVG6Eg6TZCcdMGCUh3ZRGhjLQCQirqserHqODq5QQIrL1
+0K4CNTvjUZEXUoEfy8REHF9AJ2MfQNSxxpWy0dANZNlgACdKI6pI9OtFtsCtiZRFFTWSyMGywyLi
+zQA2RCUAUmlJOWMdjLIPBcuhKCuRlcksr4AgRD9Ce1Xe2KxG4chhcreSyZp4w1av/8yEgaQx0oPZ
+M4mq8QxL7sWS6VY3ZCV70giT8oM8fnONHbHZzXB4w7RQRBo+GQpbZUI8dEzCRit0GlHDS0LykkAF
+543CA9XrxAJbaipAqGPdRgVfBauDKJQblXLC1l8upAPAB8XkeCFIYbGVRjDZVELWxMgRJsZRbhuu
+cDrUGOCTuCVogOhwB+HrtPoiFBKPwIes0lHiH1YYgl/AMBXUZFdXfa2rMkZUEBKhDTVGQZEhFohR
+c6C8CsrgkDNQ6I93eALiYnVDiMhZCIEq5rE5jckHoiIqo1FKUUJiIiJwCjUNQisrJLSMBg5TNVDQ
+4kekIjRQQauZ1qNTAaBnJrd4Df8wM5WeW5gGm2ABjBSg6S568MoWE8lUNmYxUpLeQizCpM411qKZ
+3X5hDAGewZRI8zVuRLQ8vSTIJw0r0eUcgNDReYpC2gwQfEpDKnB2NWUPRtJyEvohCmHscSYyS0Qg
+1lKOE3INgMRqShgoIefsEAB6uRagkjkRQWXsNxzgP9d2DBzScKpsH6pZTxf6sDL5RjgSYesK8SJN
+XsDfHo3yZl30wgiLKTQ3tC0B6+j0rIa+9cC5YRkPqeid64LmsOm6U4prFuFnlbe8G3JrcPuUS/AN
+gr5NggduUKSe8zxrdAjuS7MWGtwD72qBkCoNgLSVIEpVqlbpioCLv1unGi9VmMH/7T/x0Ezk0u5e
+I9DJ5K4+Q0HHBre3X65wiT7jpl2VomRrTVS7Zic0XV8UwoE60rdJlOP1prddQ56xb/KbUtg4iLMk
+OudOr6k9CXkI0eduENXW3DC+cqyzlFMTiqDH57cms271nh5646TWIXfyeYFhgGupyCksgx+GRKai
+8BapQMqpkREWoFgalEEXT+pbJrtGEVfxAoTYSW7KnHIt/ZBk5DXQ4NWaQpJaoGyhI6wH1IQ/hxGs
+3gtaE36Vo2YEV42tIkNQGdvZcN5auIGGdvzhP2qGX+VRThin/MepYSfKMJRhhSwJuRAjnzGNyUES
+dJv2Em+5whO9Eh80cLMVqThhTnM5Df7FBxRWtQKMgH04oGM6xjRV8AYtkEVqFlU/RA3jlQZONmJx
+M4A44GTJUzwlthFZsEQN2EZ+ZVwfc4GYlAY3AAIquIIs2IIuqAERAAA7
+
+------=_NextPart_000_0026_01C75121.30FAC560
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sosmath.com/logos001.gif
+
+R0lGODlhbgBMAPcAABAACBgICBgQCCEICCEQCBAAEBgQECEQEAgIKRAYKRgIGBgIISEYECkIEBgQ
+GBsTIDEICCkQCCkUEDEYCDkYBDEYEEIEBEcFCCkQGCkYGDEYGC0UIzkAEDYNIDkYHFAMGDEhEDkh
+DDkpEEIhDDEhGCUhMUIpEDkhIDkpGEYpFEEpHkIpMUIxIUIxKUo9KUpgEiEhPR4rTzElPS8tTDkm
+Pz8zRUI5WkIxY0ohQkopSko5MUc/P0o5Sko5WkpCWkJCYxBKhBhKhBhKjBhSjCFKhCFKjCFKlCFS
+jCFSlClCcylCeylKjClSjClSlClalClanDFCazFKhDFKjDFSjDFSlDFalDFanDFjlDFjnDk5czlC
+czlCezlChDlKjDlShDlSjEJCa0JKa0JKc0hId0JKhEJSf0pKhEJaf0pWhEJKjEpajEpjjDlSlDla
+lEJalEJjlEpalEpjlEprlDlanDljnDlrnEJjnEJrnEprnEpznDljpTlrpUJrpUJzpUprpUpzpV8C
+C2sEDXcEDoYIBlsSGXgQEV8pF1xJG2kYKWQ2KFcrSnIzPl9HSHxQN1xKY3ZXXpAICJATEJ0TDa0Y
+EJErJaYuIr0lELk2IJFTO5FiQ5VXUpBvW61KNK5kTKB1R7h5WFZGd1pKc1pKe1JSc1JWe1RdhFJa
+jFJalFpjhFJjjFJjlFJrlFJrnFJznFJzpVJ7pWNSc2Bgg1pnlGNjjFprnFpznFpzpVp7pW1cdWli
+hmVwlWlzoHVkfnN1kXtrgZl5e3aJMbGETq+IWqyLdr2QUsSXXcCSccSfcc6Ma86lY86la8qle86l
+hM6tc86te86thFp7rWN7pWt7p4OElpSEjJKQo6GVo7iglsaljM6tjMallM6tlL2loL2tpcapoMa1
+rdyadNate9uygM61hNa1hNa1jN61jO+1lNa1nNa9lNa9nN69jN69lN69nOe9lOu9mN7GlM69rda9
+qd69pd7GnN7Gpd7OpefGlOfGnOfGpefOnOfOpefOrefWpe+9nO/GnCwAAAAAbgBMAAAI/gAtCRxI
+sKDBgwgTKlzIsKHDhxAjSpxIsaLFixgzatzIsaPHjyBDihxJsqTJkyhTqlzJsqXLjkKEBJFJM0iR
+mTdzFiFSpKcQnjx37vxJlEgQozVr2gzCtKnMpk2NQp1KtSpTijFjFqHZs+tWr0GFdg07tKvNoTyP
+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
+
+------=_NextPart_000_0026_01C75121.30FAC560
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sosmath.com/gif/lighthouse.gif
+
+R0lGODlhIAAgALMAAAAAAIAAAACAAICAAAAAgIAAgACAgICAgMDAwP8AAAD/AP//AAAA/+b6+gD/
+/////yH5BAEAAA0ALAAAAAAgACAAQATNcMhJKwUYtM27/x9wHM+jgWjaiKSJZnDMjggmYAei14Ag
+LECgqiNyDY8cVumE/AQAj8Qh8KBGo5/caCTizXIz3TdXC5rPZxmzmVIa2e3WGw5yr+lqGX21LfmX
+eQaCMFtbhF04hTU+hQdhW2KNNY04CGiXaABAdx2YQXUxey9Fc6JJI0umIY5QnKZ2qh6wsactrqKz
+ok8AUgFTI1IJt215enAyPsk+GcqCzoNdkZCThmSLgzpcMyzSYFzWy2PWCN48YOLmiYZf1DTk1e4R
+AAA7
+
+------=_NextPart_000_0026_01C75121.30FAC560
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sosmath.com/gif/sailbar.gif
+
+R0lGODlhAQABAPcAAO/v7wAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAAEALAAAAAABAAEA
+QAgEAAMEBAA7
+
+------=_NextPart_000_0026_01C75121.30FAC560
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sosmath.com/ADV/adview.php?what=zone:8&n=a3e6c5d1
+
+R0lGODlh1AE8APcAAAAACAgAxggIEBAICBAIEBAIzhAQEBAQGBgICBgIEBgQGBgQcxgQzhgYGBgY
+ISEYYyEYeyEYziEhKSEhMSEpKSEpMSkYcykhKSkhcykheykpKSkpMSkpOSkpeykxMTEhYzEhczEp
+MTEpczEpezEpzjExOTExYzE5MTE5OTFCOTFCSjkIGDkYITkpYzkpezkxOTkxezkx1jk5OTk5Qjk5
+ezlCQjlCSkIQKUIpWkIpY0Ipa0IxOUIxc0I5QkI5a0I5c0I5e0I51kJCQkJKOUJKQkJKY0JSOUoQ
+IUohKUoxSko5c0pCY0pCc0pCe0pKUkpK1kpSQkpSUkpaQkpaUkpac1IpOVIxOVI5SlJCUlJCc1JK
+SlJKc1JKe1JSQlJSUlJaSlJaWlJjSlJjUlJjY1oxSlpCUlpKWlpKc1pSSlpSUlpSWlpSc1pSe1pS
+3lpaQlpaY1pjSlpjY1pra1pzSmMxQmNa3mNra2Nre2NzUmN7a2tCUmtSSmtSY2tac2tjSmtrY2tr
+a2tr3mt7c3NjY3N7a3N7c3tSWntjWntrUntrY3trc3tzY3tz3nt7a3uEe4Rrc4RzY4Rza4Rze4R7
+Y4R7e4R754SEa4SEc4SEhISEjIxCQoxrWoxza4xzc4x7Y4x7a4yEhIyM55Rre5R7a5SEY5SEa5SM
+jJSUlJSU55yEa6WUjKWcnKWc762lpa2tta2t77WttbWtxrW1tbW17721vb21xr29zr3GxsZ7jMa1
+tca9xsa9zsa998bGxsbGzsbO1s4hKc6lpc6ttc69xs691s7Gvc7Gxs7Gzs7Ozs7O1s7O987W1tYI
+CNa1vdbOztbO1tbO3tbWztbW1tbW99be3t691t7O3t7Wzt7W1t7W3t7W597e597n7+e9vefWzufW
+3ufW5+fe3ufe5+fe9+fn5+fn7+/e3u/e5+/n3u/n5+/n7+/v7+/v//fn7/fv7/fv9/f37/f3////
+/////////////////////////////////////////////////////ywAAAAA1AE8AEAI/gDfqSNH
+kNxAdQLVHVRIUCHCdQ4ZGlQHcV1BgxcnSiQojlxHjuLCictGLVu2Y8bChRvoUVxHcSxbvnRJMN26
+dAVd6rSoc6ZHculsAu1JE2fPli0DKF3KtKnTp1CjSp1KtarVq1izat3KtavXr2DDLhUojhvDiAo7
+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
+4ETyCcFCJITkkjlKXe3JhvktYRM+4YwICAAAOw==
+
+------=_NextPart_000_0026_01C75121.30FAC560
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sosmath.com/back001.gif
+
+R0lGODlhMgAyAPcAAO/v7///////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////ywAAAAAMgAyAAAIUwABCBxI
+sKDBgwgTKlzIsKHDhxAjSpxIsaLFixgzatzIsaPHjyBDihxJsqTJkyhTqlzJsqXLlzBjypxJs6bN
+mzhz6tzJs6fPn0CDCh1KtKjRhwEBADs=
+
+------=_NextPart_000_0026_01C75121.30FAC560
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: 7bit
+Content-Location: http://www.sosmath.com/cgi-bin/suo.cgi?action=index&e=js
+
+document.write('865');
+------=_NextPart_000_0026_01C75121.30FAC560
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.google-analytics.com/urchin.js
+
+//-- Google Analytics Urchin Module=0A=
+//-- Copyright 2005 Google, All Rights Reserved.=0A=
+=0A=
+//-- Urchin On Demand Settings ONLY=0A=
+var _uacct=3D"";			// set up the Urchin Account=0A=
+var _userv=3D1;			// service mode (0=3Dlocal,1=3Dremote,2=3Dboth)=0A=
+=0A=
+//-- UTM User Settings=0A=
+var _ufsc=3D1;			// set client info flag (1=3Don|0=3Doff)=0A=
+var _udn=3D"auto";		// (auto|none|domain) set the domain name for cookies=0A=
+var _uhash=3D"on";		// (on|off) unique domain hash for cookies=0A=
+var _utimeout=3D"1800";   	// set the inactive session timeout in seconds=0A=
+var _ugifpath=3D"/__utm.gif";	// set the web path to the __utm.gif file=0A=
+var _utsp=3D"|";			// transaction field separator=0A=
+var _uflash=3D1;			// set flash version detect option (1=3Don|0=3Doff)=0A=
+var _utitle=3D1;			// set the document title detect option =
+(1=3Don|0=3Doff)=0A=
+var _ulink=3D0;			// enable linker functionality (1=3Don|0=3Doff)=0A=
+var _uanchor=3D0;			// enable use of anchors for campaign =
+(1=3Don|0=3Doff)=0A=
+var _utcp=3D"/";			// the cookie path for tracking=0A=
+var _usample=3D100;		// The sampling % of visitors to track (1-100).=0A=
+=0A=
+//-- UTM Campaign Tracking Settings=0A=
+var _uctm=3D1;			// set campaign tracking module (1=3Don|0=3Doff)=0A=
+var _ucto=3D"15768000";		// set timeout in seconds (6 month default)=0A=
+var _uccn=3D"utm_campaign";	// name=0A=
+var _ucmd=3D"utm_medium";		// medium (cpc|cpm|link|email|organic)=0A=
+var _ucsr=3D"utm_source";		// source=0A=
+var _uctr=3D"utm_term";		// term/keyword=0A=
+var _ucct=3D"utm_content";	// content=0A=
+var _ucid=3D"utm_id";		// id number=0A=
+var _ucno=3D"utm_nooverride";	// don't override=0A=
+=0A=
+//-- Auto/Organic Sources and Keywords=0A=
+var _uOsr=3Dnew Array();=0A=
+var _uOkw=3Dnew Array();=0A=
+_uOsr[0]=3D"google";	_uOkw[0]=3D"q";=0A=
+_uOsr[1]=3D"yahoo";	_uOkw[1]=3D"p";=0A=
+_uOsr[2]=3D"msn";		_uOkw[2]=3D"q";=0A=
+_uOsr[3]=3D"aol";		_uOkw[3]=3D"query";=0A=
+_uOsr[4]=3D"aol";		_uOkw[4]=3D"encquery";=0A=
+_uOsr[5]=3D"lycos";	_uOkw[5]=3D"query";=0A=
+_uOsr[6]=3D"ask";		_uOkw[6]=3D"q";=0A=
+_uOsr[7]=3D"altavista";	_uOkw[7]=3D"q";=0A=
+_uOsr[8]=3D"search";	_uOkw[8]=3D"q";=0A=
+_uOsr[9]=3D"netscape";	_uOkw[9]=3D"s";=0A=
+_uOsr[10]=3D"cnn";	_uOkw[10]=3D"query";=0A=
+_uOsr[11]=3D"looksmart";	_uOkw[11]=3D"qt";=0A=
+_uOsr[12]=3D"about";	_uOkw[12]=3D"terms";=0A=
+_uOsr[13]=3D"mamma";	_uOkw[13]=3D"query";=0A=
+_uOsr[14]=3D"alltheweb";	_uOkw[14]=3D"q";=0A=
+_uOsr[15]=3D"gigablast";	_uOkw[15]=3D"q";=0A=
+_uOsr[16]=3D"voila";	_uOkw[16]=3D"kw";=0A=
+_uOsr[17]=3D"virgilio";	_uOkw[17]=3D"qs";=0A=
+_uOsr[18]=3D"live";	_uOkw[18]=3D"q";=0A=
+_uOsr[19]=3D"baidu";	_uOkw[19]=3D"wd";=0A=
+_uOsr[20]=3D"alice";	_uOkw[20]=3D"qs";=0A=
+_uOsr[21]=3D"seznam";	_uOkw[21]=3D"w";=0A=
+_uOsr[22]=3D"yandex";	_uOkw[22]=3D"text";=0A=
+_uOsr[23]=3D"najdi";	_uOkw[23]=3D"q";=0A=
+=0A=
+//-- Auto/Organic Keywords to Ignore=0A=
+var _uOno=3Dnew Array();=0A=
+//_uOno[0]=3D"urchin";=0A=
+//_uOno[1]=3D"urchin.com";=0A=
+//_uOno[2]=3D"www.urchin.com";=0A=
+=0A=
+//-- Referral domains to Ignore=0A=
+var _uRno=3Dnew Array();=0A=
+//_uRno[0]=3D".urchin.com";=0A=
+=0A=
+//-- **** Don't modify below this point ***=0A=
+var =
+_uff,_udh,_udt,_ubl=3D0,_udo=3D"",_uu,_ufns=3D0,_uns=3D0,_ur=3D"-",_ufno=3D=
+0,_ust=3D0,_ubd=3Ddocument,_udl=3D_ubd.location,_udlh=3D"",_uwv=3D"1";=0A=
+var _ugifpath2=3D"http://www.google-analytics.com/__utm.gif";=0A=
+if (_udl.hash) _udlh=3D_udl.href.substring(_udl.href.indexOf('#'));=0A=
+if (_udl.protocol=3D=3D"https:") =
+_ugifpath2=3D"https://ssl.google-analytics.com/__utm.gif";=0A=
+if (!_utcp || _utcp=3D=3D"") _utcp=3D"/";=0A=
+function urchinTracker(page) {=0A=
+ if (_udl.protocol=3D=3D"file:") return;=0A=
+ if (_uff && (!page || page=3D=3D"")) return;=0A=
+ var a,b,c,xx,v,z,k,x=3D"",s=3D"",f=3D0;=0A=
+ var nx=3D" expires=3DSun, 18 Jan 2038 00:00:00 GMT;";=0A=
+ var dc=3D_ubd.cookie;=0A=
+ _udh=3D_uDomain();=0A=
+ if (!_uVG()) return;=0A=
+ _uu=3DMath.round(Math.random()*2147483647);=0A=
+ _udt=3Dnew Date();=0A=
+ _ust=3DMath.round(_udt.getTime()/1000);=0A=
+ a=3Ddc.indexOf("__utma=3D"+_udh);=0A=
+ b=3Ddc.indexOf("__utmb=3D"+_udh);=0A=
+ c=3Ddc.indexOf("__utmc=3D"+_udh);=0A=
+ if (_udn && _udn!=3D"") { _udo=3D" domain=3D"+_udn+";"; }=0A=
+ if (_utimeout && _utimeout!=3D"") {=0A=
+  x=3Dnew Date(_udt.getTime()+(_utimeout*1000));=0A=
+  x=3D" expires=3D"+x.toGMTString()+";";=0A=
+ }=0A=
+ if (_ulink) {=0A=
+  if (_uanchor && _udlh && _udlh!=3D"") s=3D_udlh+"&";=0A=
+  s+=3D_udl.search;=0A=
+  if(s && s!=3D"" && s.indexOf("__utma=3D")>=3D0) {=0A=
+   if (!(_uIN(a=3D_uGC(s,"__utma=3D","&")))) a=3D"-";=0A=
+   if (!(_uIN(b=3D_uGC(s,"__utmb=3D","&")))) b=3D"-";=0A=
+   if (!(_uIN(c=3D_uGC(s,"__utmc=3D","&")))) c=3D"-";=0A=
+   v=3D_uGC(s,"__utmv=3D","&");=0A=
+   z=3D_uGC(s,"__utmz=3D","&");=0A=
+   k=3D_uGC(s,"__utmk=3D","&");=0A=
+   xx=3D_uGC(s,"__utmx=3D","&");=0A=
+   if ((k*1) !=3D ((_uHash(a+b+c+xx+z+v)*1)+(_udh*1))) =
+{_ubl=3D1;a=3D"-";b=3D"-";c=3D"-";xx=3D"-";z=3D"-";v=3D"-";}=0A=
+   if (a!=3D"-" && b!=3D"-" && c!=3D"-") f=3D1;=0A=
+   else if(a!=3D"-") f=3D2;=0A=
+  }=0A=
+ }=0A=
+ if(f=3D=3D1) {=0A=
+  _ubd.cookie=3D"__utma=3D"+a+"; path=3D"+_utcp+";"+nx+_udo;=0A=
+  _ubd.cookie=3D"__utmb=3D"+b+"; path=3D"+_utcp+";"+x+_udo;=0A=
+  _ubd.cookie=3D"__utmc=3D"+c+"; path=3D"+_utcp+";"+_udo;=0A=
+ } else if (f=3D=3D2) {=0A=
+  a=3D_uFixA(s,"&",_ust);=0A=
+  _ubd.cookie=3D"__utma=3D"+a+"; path=3D"+_utcp+";"+nx+_udo;=0A=
+  _ubd.cookie=3D"__utmb=3D"+_udh+"; path=3D"+_utcp+";"+x+_udo;=0A=
+  _ubd.cookie=3D"__utmc=3D"+_udh+"; path=3D"+_utcp+";"+_udo;=0A=
+  _ufns=3D1;=0A=
+ } else if (a>=3D0 && b>=3D0 && c>=3D0) {=0A=
+  _ubd.cookie=3D"__utmb=3D"+_udh+"; path=3D"+_utcp+";"+x+_udo;=0A=
+ } else {=0A=
+  if (a>=3D0) a=3D_uFixA(_ubd.cookie,";",_ust);=0A=
+  else a=3D_udh+"."+_uu+"."+_ust+"."+_ust+"."+_ust+".1";=0A=
+  _ubd.cookie=3D"__utma=3D"+a+"; path=3D"+_utcp+";"+nx+_udo;=0A=
+  _ubd.cookie=3D"__utmb=3D"+_udh+"; path=3D"+_utcp+";"+x+_udo;=0A=
+  _ubd.cookie=3D"__utmc=3D"+_udh+"; path=3D"+_utcp+";"+_udo;=0A=
+  _ufns=3D1;=0A=
+ }=0A=
+ if (_ulink && xx && xx!=3D"" && xx!=3D"-") {=0A=
+   xx=3D_uUES(xx);=0A=
+   if (xx.indexOf(";")=3D=3D-1) _ubd.cookie=3D"__utmx=3D"+xx+"; =
+path=3D"+_utcp+";"+nx+_udo;=0A=
+ }=0A=
+ if (_ulink && v && v!=3D"" && v!=3D"-") {=0A=
+  v=3D_uUES(v);=0A=
+  if (v.indexOf(";")=3D=3D-1) _ubd.cookie=3D"__utmv=3D"+v+"; =
+path=3D"+_utcp+";"+nx+_udo;=0A=
+ }=0A=
+ _uInfo(page);=0A=
+ _ufns=3D0;=0A=
+ _ufno=3D0;=0A=
+ _uff=3D1;=0A=
+}=0A=
+function _uInfo(page) {=0A=
+ var p,s=3D"",dm=3D"",pg=3D_udl.pathname+_udl.search;=0A=
+ if (page && page!=3D"") pg=3D_uES(page,1);=0A=
+ _ur=3D_ubd.referrer;=0A=
+ if (!_ur || _ur=3D=3D"") { _ur=3D"-"; }=0A=
+ else {=0A=
+  dm=3D_ubd.domain;=0A=
+  if(_utcp && _utcp!=3D"/") dm+=3D_utcp;=0A=
+  p=3D_ur.indexOf(dm);=0A=
+  if ((p>=3D0) && (p<=3D8)) { _ur=3D"0"; }=0A=
+  if (_ur.indexOf("[")=3D=3D0 && =
+_ur.lastIndexOf("]")=3D=3D(_ur.length-1)) { _ur=3D"-"; }=0A=
+ }=0A=
+ s+=3D"&utmn=3D"+_uu;=0A=
+ if (_ufsc) s+=3D_uBInfo();=0A=
+ if (_uctm) s+=3D_uCInfo();=0A=
+ if (_utitle && _ubd.title && _ubd.title!=3D"") =
+s+=3D"&utmdt=3D"+_uES(_ubd.title);=0A=
+ if (_udl.hostname && _udl.hostname!=3D"") =
+s+=3D"&utmhn=3D"+_uES(_udl.hostname);=0A=
+ s+=3D"&utmr=3D"+_ur;=0A=
+ s+=3D"&utmp=3D"+pg;=0A=
+ if ((_userv=3D=3D0 || _userv=3D=3D2) && _uSP()) {=0A=
+  var i=3Dnew Image(1,1);=0A=
+  i.src=3D_ugifpath+"?"+"utmwv=3D"+_uwv+s;=0A=
+  i.onload=3Dfunction() {_uVoid();}=0A=
+ }=0A=
+ if ((_userv=3D=3D1 || _userv=3D=3D2) && _uSP()) {=0A=
+  var i2=3Dnew Image(1,1);=0A=
+  =
+i2.src=3D_ugifpath2+"?"+"utmwv=3D"+_uwv+s+"&utmac=3D"+_uacct+"&utmcc=3D"+=
+_uGCS();=0A=
+  i2.onload=3Dfunction() { _uVoid(); }=0A=
+ }=0A=
+ return;=0A=
+}=0A=
+function _uVoid() { return; }=0A=
+function _uCInfo() {=0A=
+ if (!_ucto || _ucto=3D=3D"") { _ucto=3D"15768000"; }=0A=
+ if (!_uVG()) return;=0A=
+ var =
+c=3D"",t=3D"-",t2=3D"-",t3=3D"-",o=3D0,cs=3D0,cn=3D0,i=3D0,z=3D"-",s=3D""=
+;=0A=
+ if (_uanchor && _udlh && _udlh!=3D"") s=3D_udlh+"&";=0A=
+ s+=3D_udl.search;=0A=
+ var x=3Dnew Date(_udt.getTime()+(_ucto*1000));=0A=
+ var dc=3D_ubd.cookie;=0A=
+ x=3D" expires=3D"+x.toGMTString()+";";=0A=
+ if (_ulink && !_ubl) {=0A=
+  z=3D_uUES(_uGC(s,"__utmz=3D","&"));=0A=
+  if (z!=3D"-" && z.indexOf(";")=3D=3D-1) { =
+_ubd.cookie=3D"__utmz=3D"+z+"; path=3D"+_utcp+";"+x+_udo; return ""; }=0A=
+ }=0A=
+ z=3Ddc.indexOf("__utmz=3D"+_udh);=0A=
+ if (z>-1) { z=3D_uGC(dc,"__utmz=3D"+_udh,";"); }=0A=
+ else { z=3D"-"; }=0A=
+ t=3D_uGC(s,_ucid+"=3D","&");=0A=
+ t2=3D_uGC(s,_ucsr+"=3D","&");=0A=
+ t3=3D_uGC(s,"gclid=3D","&");=0A=
+ if ((t!=3D"-" && t!=3D"") || (t2!=3D"-" && t2!=3D"") || (t3!=3D"-" && =
+t3!=3D"")) {=0A=
+  if (t!=3D"-" && t!=3D"") c+=3D"utmcid=3D"+_uEC(t);=0A=
+  if (t2!=3D"-" && t2!=3D"") { if (c !=3D "") c+=3D"|"; =
+c+=3D"utmcsr=3D"+_uEC(t2); }=0A=
+  if (t3!=3D"-" && t3!=3D"") { if (c !=3D "") c+=3D"|"; =
+c+=3D"utmgclid=3D"+_uEC(t3); }=0A=
+  t=3D_uGC(s,_uccn+"=3D","&");=0A=
+  if (t!=3D"-" && t!=3D"") c+=3D"|utmccn=3D"+_uEC(t);=0A=
+  else c+=3D"|utmccn=3D(not+set)";=0A=
+  t=3D_uGC(s,_ucmd+"=3D","&");=0A=
+  if (t!=3D"-" && t!=3D"") c+=3D"|utmcmd=3D"+_uEC(t);=0A=
+  else  c+=3D"|utmcmd=3D(not+set)";=0A=
+  t=3D_uGC(s,_uctr+"=3D","&");=0A=
+  if (t!=3D"-" && t!=3D"") c+=3D"|utmctr=3D"+_uEC(t);=0A=
+  else { t=3D_uOrg(1); if (t!=3D"-" && t!=3D"") =
+c+=3D"|utmctr=3D"+_uEC(t); }=0A=
+  t=3D_uGC(s,_ucct+"=3D","&");=0A=
+  if (t!=3D"-" && t!=3D"") c+=3D"|utmcct=3D"+_uEC(t);=0A=
+  t=3D_uGC(s,_ucno+"=3D","&");=0A=
+  if (t=3D=3D"1") o=3D1;=0A=
+  if (z!=3D"-" && o=3D=3D1) return "";=0A=
+ }=0A=
+ if (c=3D=3D"-" || c=3D=3D"") { c=3D_uOrg(); if (z!=3D"-" && =
+_ufno=3D=3D1)  return ""; }=0A=
+ if (c=3D=3D"-" || c=3D=3D"") { if (_ufns=3D=3D1)  c=3D_uRef(); if =
+(z!=3D"-" && _ufno=3D=3D1)  return ""; }=0A=
+ if (c=3D=3D"-" || c=3D=3D"") {=0A=
+  if (z=3D=3D"-" && _ufns=3D=3D1) { =
+c=3D"utmccn=3D(direct)|utmcsr=3D(direct)|utmcmd=3D(none)"; }=0A=
+  if (c=3D=3D"-" || c=3D=3D"") return "";=0A=
+ }=0A=
+ if (z!=3D"-") {=0A=
+  i=3Dz.indexOf(".");=0A=
+  if (i>-1) i=3Dz.indexOf(".",i+1);=0A=
+  if (i>-1) i=3Dz.indexOf(".",i+1);=0A=
+  if (i>-1) i=3Dz.indexOf(".",i+1);=0A=
+  t=3Dz.substring(i+1,z.length);=0A=
+  if (t.toLowerCase()=3D=3Dc.toLowerCase()) cs=3D1;=0A=
+  t=3Dz.substring(0,i);=0A=
+  if ((i=3Dt.lastIndexOf(".")) > -1) {=0A=
+   t=3Dt.substring(i+1,t.length);=0A=
+   cn=3D(t*1);=0A=
+  }=0A=
+ }=0A=
+ if (cs=3D=3D0 || _ufns=3D=3D1) {=0A=
+  t=3D_uGC(dc,"__utma=3D"+_udh,";");=0A=
+  if ((i=3Dt.lastIndexOf(".")) > 9) {=0A=
+   _uns=3Dt.substring(i+1,t.length);=0A=
+   _uns=3D(_uns*1);=0A=
+  }=0A=
+  cn++;=0A=
+  if (_uns=3D=3D0) _uns=3D1;=0A=
+  _ubd.cookie=3D"__utmz=3D"+_udh+"."+_ust+"."+_uns+"."+cn+"."+c+"; =
+path=3D"+_utcp+"; "+x+_udo;=0A=
+ }=0A=
+ if (cs=3D=3D0 || _ufns=3D=3D1) return "&utmcn=3D1";=0A=
+ else return "&utmcr=3D1";=0A=
+}=0A=
+function _uRef() {=0A=
+ if (_ur=3D=3D"0" || _ur=3D=3D"" || _ur=3D=3D"-") return "";=0A=
+ var i=3D0,h,k,n;=0A=
+ if ((i=3D_ur.indexOf("://"))<0) return "";=0A=
+ h=3D_ur.substring(i+3,_ur.length);=0A=
+ if (h.indexOf("/") > -1) {=0A=
+  k=3Dh.substring(h.indexOf("/"),h.length);=0A=
+  if (k.indexOf("?") > -1) k=3Dk.substring(0,k.indexOf("?"));=0A=
+  h=3Dh.substring(0,h.indexOf("/"));=0A=
+ }=0A=
+ h=3Dh.toLowerCase();=0A=
+ n=3Dh;=0A=
+ if ((i=3Dn.indexOf(":")) > -1) n=3Dn.substring(0,i);=0A=
+ for (var ii=3D0;ii<_uRno.length;ii++) {=0A=
+  if ((i=3Dn.indexOf(_uRno[ii].toLowerCase())) > -1 && =
+n.length=3D=3D(i+_uRno[ii].length)) { _ufno=3D1; break; }=0A=
+ }=0A=
+ if (h.indexOf("www.")=3D=3D0) h=3Dh.substring(4,h.length);=0A=
+ return =
+"utmccn=3D(referral)|utmcsr=3D"+_uEC(h)+"|"+"utmcct=3D"+_uEC(k)+"|utmcmd=3D=
+referral";=0A=
+}=0A=
+function _uOrg(t) {=0A=
+ if (_ur=3D=3D"0" || _ur=3D=3D"" || _ur=3D=3D"-") return "";=0A=
+ var i=3D0,h,k;=0A=
+ if ((i=3D_ur.indexOf("://")) < 0) return "";=0A=
+ h=3D_ur.substring(i+3,_ur.length);=0A=
+ if (h.indexOf("/") > -1) {=0A=
+  h=3Dh.substring(0,h.indexOf("/"));=0A=
+ }=0A=
+ for (var ii=3D0;ii<_uOsr.length;ii++) {=0A=
+  if (h.toLowerCase().indexOf(_uOsr[ii].toLowerCase()) > -1) {=0A=
+   if ((i=3D_ur.indexOf("?"+_uOkw[ii]+"=3D")) > -1 || =
+(i=3D_ur.indexOf("&"+_uOkw[ii]+"=3D")) > -1) {=0A=
+    k=3D_ur.substring(i+_uOkw[ii].length+2,_ur.length);=0A=
+    if ((i=3Dk.indexOf("&")) > -1) k=3Dk.substring(0,i);=0A=
+    for (var yy=3D0;yy<_uOno.length;yy++) {=0A=
+     if (_uOno[yy].toLowerCase()=3D=3Dk.toLowerCase()) { _ufno=3D1; =
+break; }=0A=
+    }=0A=
+    if (t) return _uEC(k);=0A=
+    else return =
+"utmccn=3D(organic)|utmcsr=3D"+_uEC(_uOsr[ii])+"|"+"utmctr=3D"+_uEC(k)+"|=
+utmcmd=3Dorganic";=0A=
+   }=0A=
+  }=0A=
+ }=0A=
+ return "";=0A=
+}=0A=
+function _uBInfo() {=0A=
+ var sr=3D"-",sc=3D"-",ul=3D"-",fl=3D"-",cs=3D"-",je=3D1;=0A=
+ var n=3Dnavigator;=0A=
+ if (self.screen) {=0A=
+  sr=3Dscreen.width+"x"+screen.height;=0A=
+  sc=3Dscreen.colorDepth+"-bit";=0A=
+ } else if (self.java) {=0A=
+  var j=3Djava.awt.Toolkit.getDefaultToolkit();=0A=
+  var s=3Dj.getScreenSize();=0A=
+  sr=3Ds.width+"x"+s.height;=0A=
+ }=0A=
+ if (n.language) { ul=3Dn.language.toLowerCase(); }=0A=
+ else if (n.browserLanguage) { ul=3Dn.browserLanguage.toLowerCase(); }=0A=
+ je=3Dn.javaEnabled()?1:0;=0A=
+ if (_uflash) fl=3D_uFlash();=0A=
+ if (_ubd.characterSet) cs=3D_uES(_ubd.characterSet);=0A=
+ else if (_ubd.charset) cs=3D_uES(_ubd.charset);=0A=
+ return =
+"&utmcs=3D"+cs+"&utmsr=3D"+sr+"&utmsc=3D"+sc+"&utmul=3D"+ul+"&utmje=3D"+j=
+e+"&utmfl=3D"+fl;=0A=
+}=0A=
+function __utmSetTrans() {=0A=
+ var e;=0A=
+ if (_ubd.getElementById) e=3D_ubd.getElementById("utmtrans");=0A=
+ else if (_ubd.utmform && _ubd.utmform.utmtrans) =
+e=3D_ubd.utmform.utmtrans;=0A=
+ if (!e) return;=0A=
+ var l=3De.value.split("UTM:");=0A=
+ var i,i2,c;=0A=
+ if (_userv=3D=3D0 || _userv=3D=3D2) i=3Dnew Array();=0A=
+ if (_userv=3D=3D1 || _userv=3D=3D2) { i2=3Dnew Array(); c=3D_uGCS(); }=0A=
+=0A=
+ for (var ii=3D0;ii<l.length;ii++) {=0A=
+  l[ii]=3D_uTrim(l[ii]);=0A=
+  if (l[ii].charAt(0)!=3D'T' && l[ii].charAt(0)!=3D'I') continue;=0A=
+  var r=3DMath.round(Math.random()*2147483647);=0A=
+  if (!_utsp || _utsp=3D=3D"") _utsp=3D"|";=0A=
+  var f=3Dl[ii].split(_utsp),s=3D"";=0A=
+  if (f[0].charAt(0)=3D=3D'T') {=0A=
+   s=3D"&utmt=3Dtran"+"&utmn=3D"+r;=0A=
+   f[1]=3D_uTrim(f[1]); if(f[1]&&f[1]!=3D"") =
+s+=3D"&utmtid=3D"+_uES(f[1]);=0A=
+   f[2]=3D_uTrim(f[2]); if(f[2]&&f[2]!=3D"") =
+s+=3D"&utmtst=3D"+_uES(f[2]);=0A=
+   f[3]=3D_uTrim(f[3]); if(f[3]&&f[3]!=3D"") =
+s+=3D"&utmtto=3D"+_uES(f[3]);=0A=
+   f[4]=3D_uTrim(f[4]); if(f[4]&&f[4]!=3D"") =
+s+=3D"&utmttx=3D"+_uES(f[4]);=0A=
+   f[5]=3D_uTrim(f[5]); if(f[5]&&f[5]!=3D"") =
+s+=3D"&utmtsp=3D"+_uES(f[5]);=0A=
+   f[6]=3D_uTrim(f[6]); if(f[6]&&f[6]!=3D"") =
+s+=3D"&utmtci=3D"+_uES(f[6]);=0A=
+   f[7]=3D_uTrim(f[7]); if(f[7]&&f[7]!=3D"") =
+s+=3D"&utmtrg=3D"+_uES(f[7]);=0A=
+   f[8]=3D_uTrim(f[8]); if(f[8]&&f[8]!=3D"") =
+s+=3D"&utmtco=3D"+_uES(f[8]);=0A=
+  } else {=0A=
+   s=3D"&utmt=3Ditem"+"&utmn=3D"+r;=0A=
+   f[1]=3D_uTrim(f[1]); if(f[1]&&f[1]!=3D"") =
+s+=3D"&utmtid=3D"+_uES(f[1]);=0A=
+   f[2]=3D_uTrim(f[2]); if(f[2]&&f[2]!=3D"") =
+s+=3D"&utmipc=3D"+_uES(f[2]);=0A=
+   f[3]=3D_uTrim(f[3]); if(f[3]&&f[3]!=3D"") =
+s+=3D"&utmipn=3D"+_uES(f[3]);=0A=
+   f[4]=3D_uTrim(f[4]); if(f[4]&&f[4]!=3D"") =
+s+=3D"&utmiva=3D"+_uES(f[4]);=0A=
+   f[5]=3D_uTrim(f[5]); if(f[5]&&f[5]!=3D"") =
+s+=3D"&utmipr=3D"+_uES(f[5]);=0A=
+   f[6]=3D_uTrim(f[6]); if(f[6]&&f[6]!=3D"") =
+s+=3D"&utmiqt=3D"+_uES(f[6]);=0A=
+  }=0A=
+  if ((_userv=3D=3D0 || _userv=3D=3D2) && _uSP()) {=0A=
+   i[ii]=3Dnew Image(1,1);=0A=
+   i[ii].src=3D_ugifpath+"?"+"utmwv=3D"+_uwv+s;=0A=
+   i[ii].onload=3Dfunction() { _uVoid(); }=0A=
+  }=0A=
+  if ((_userv=3D=3D1 || _userv=3D=3D2) && _uSP()) {=0A=
+   i2[ii]=3Dnew Image(1,1);=0A=
+   =
+i2[ii].src=3D_ugifpath2+"?"+"utmwv=3D"+_uwv+s+"&utmac=3D"+_uacct+"&utmcc=3D=
+"+c;=0A=
+   i2[ii].onload=3Dfunction() { _uVoid(); }=0A=
+  }=0A=
+ }=0A=
+ return;=0A=
+}=0A=
+function _uFlash() {=0A=
+ var f=3D"-",n=3Dnavigator;=0A=
+ if (n.plugins && n.plugins.length) {=0A=
+  for (var ii=3D0;ii<n.plugins.length;ii++) {=0A=
+   if (n.plugins[ii].name.indexOf('Shockwave Flash')!=3D-1) {=0A=
+    f=3Dn.plugins[ii].description.split('Shockwave Flash ')[1];=0A=
+    break;=0A=
+   }=0A=
+  }=0A=
+ } else if (window.ActiveXObject) {=0A=
+  for (var ii=3D10;ii>=3D2;ii--) {=0A=
+   try {=0A=
+    var fl=3Deval("new =
+ActiveXObject('ShockwaveFlash.ShockwaveFlash."+ii+"');");=0A=
+    if (fl) { f=3Dii + '.0'; break; }=0A=
+   }=0A=
+   catch(e) {}=0A=
+  }=0A=
+ }=0A=
+ return f;=0A=
+}=0A=
+function __utmLinker(l,h) {=0A=
+ if (!_ulink) return;=0A=
+ var p,k,a=3D"-",b=3D"-",c=3D"-",x=3D"-",z=3D"-",v=3D"-";=0A=
+ var dc=3D_ubd.cookie;=0A=
+ if (!l || l=3D=3D"") return;=0A=
+ var iq =3D l.indexOf("?"); =0A=
+ var ih =3D l.indexOf("#"); =0A=
+ if (dc) {=0A=
+  a=3D_uES(_uGC(dc,"__utma=3D"+_udh,";"));=0A=
+  b=3D_uES(_uGC(dc,"__utmb=3D"+_udh,";"));=0A=
+  c=3D_uES(_uGC(dc,"__utmc=3D"+_udh,";"));=0A=
+  x=3D_uES(_uGC(dc,"__utmx=3D"+_udh,";"));=0A=
+  z=3D_uES(_uGC(dc,"__utmz=3D"+_udh,";"));=0A=
+  v=3D_uES(_uGC(dc,"__utmv=3D"+_udh,";"));=0A=
+  k=3D(_uHash(a+b+c+x+z+v)*1)+(_udh*1);=0A=
+  =
+p=3D"__utma=3D"+a+"&__utmb=3D"+b+"&__utmc=3D"+c+"&__utmx=3D"+x+"&__utmz=3D=
+"+z+"&__utmv=3D"+v+"&__utmk=3D"+k;=0A=
+ }=0A=
+ if (p) {=0A=
+  if (h && ih>-1) return;=0A=
+  if (h) { _udl.href=3Dl+"#"+p; }=0A=
+  else {=0A=
+   if (iq=3D=3D-1 && ih=3D=3D-1) _udl.href=3Dl+"?"+p;=0A=
+   else if (ih=3D=3D-1) _udl.href=3Dl+"&"+p;=0A=
+   else if (iq=3D=3D-1) =
+_udl.href=3Dl.substring(0,ih-1)+"?"+p+l.substring(ih);=0A=
+   else _udl.href=3Dl.substring(0,ih-1)+"&"+p+l.substring(ih);=0A=
+  }=0A=
+ } else { _udl.href=3Dl; }=0A=
+}=0A=
+function __utmLinkPost(f,h) {=0A=
+ if (!_ulink) return;=0A=
+ var p,k,a=3D"-",b=3D"-",c=3D"-",x=3D"-",z=3D"-",v=3D"-";=0A=
+ var dc=3D_ubd.cookie;=0A=
+ if (!f || !f.action) return;=0A=
+ var iq =3D f.action.indexOf("?"); =0A=
+ var ih =3D f.action.indexOf("#"); =0A=
+ if (dc) {=0A=
+  a=3D_uES(_uGC(dc,"__utma=3D"+_udh,";"));=0A=
+  b=3D_uES(_uGC(dc,"__utmb=3D"+_udh,";"));=0A=
+  c=3D_uES(_uGC(dc,"__utmc=3D"+_udh,";"));=0A=
+  x=3D_uES(_uGC(dc,"__utmx=3D"+_udh,";"));=0A=
+  z=3D_uES(_uGC(dc,"__utmz=3D"+_udh,";"));=0A=
+  v=3D_uES(_uGC(dc,"__utmv=3D"+_udh,";"));=0A=
+  k=3D(_uHash(a+b+c+x+z+v)*1)+(_udh*1);=0A=
+  =
+p=3D"__utma=3D"+a+"&__utmb=3D"+b+"&__utmc=3D"+c+"&__utmx=3D"+x+"&__utmz=3D=
+"+z+"&__utmv=3D"+v+"&__utmk=3D"+k;=0A=
+ }=0A=
+ if (p) {=0A=
+  if (h && ih>-1) return;=0A=
+  if (h) { f.action+=3D"#"+p; }=0A=
+  else {=0A=
+   if (iq=3D=3D-1 && ih=3D=3D-1) f.action+=3D"?"+p;=0A=
+   else if (ih=3D=3D-1) f.action+=3D"&"+p;=0A=
+   else if (iq=3D=3D-1) =
+f.action=3Df.action.substring(0,ih-1)+"?"+p+f.action.substring(ih);=0A=
+   else =
+f.action=3Df.action.substring(0,ih-1)+"&"+p+f.action.substring(ih);=0A=
+  }=0A=
+ }=0A=
+ return;=0A=
+}=0A=
+function __utmSetVar(v) {=0A=
+ if (!v || v=3D=3D"") return;=0A=
+ if (!_udo || _udo =3D=3D "") {=0A=
+  _udh=3D_uDomain();=0A=
+  if (_udn && _udn!=3D"") { _udo=3D" domain=3D"+_udn+";"; }=0A=
+ }=0A=
+ if (!_uVG()) return;=0A=
+ var r=3DMath.round(Math.random() * 2147483647);=0A=
+ _ubd.cookie=3D"__utmv=3D"+_udh+"."+_uES(v)+"; path=3D"+_utcp+"; =
+expires=3DSun, 18 Jan 2038 00:00:00 GMT;"+_udo;=0A=
+ var s=3D"&utmt=3Dvar&utmn=3D"+r;=0A=
+ if ((_userv=3D=3D0 || _userv=3D=3D2) && _uSP()) {=0A=
+  var i=3Dnew Image(1,1);=0A=
+  i.src=3D_ugifpath+"?"+"utmwv=3D"+_uwv+s;=0A=
+  i.onload=3Dfunction() { _uVoid(); }=0A=
+ }=0A=
+ if ((_userv=3D=3D1 || _userv=3D=3D2) && _uSP()) {=0A=
+  var i2=3Dnew Image(1,1);=0A=
+  =
+i2.src=3D_ugifpath2+"?"+"utmwv=3D"+_uwv+s+"&utmac=3D"+_uacct+"&utmcc=3D"+=
+_uGCS();=0A=
+  i2.onload=3Dfunction() { _uVoid(); }=0A=
+ }=0A=
+}=0A=
+function _uGCS() {=0A=
+ var t,c=3D"",dc=3D_ubd.cookie;=0A=
+ if ((t=3D_uGC(dc,"__utma=3D"+_udh,";"))!=3D"-") =
+c+=3D_uES("__utma=3D"+t+";+");=0A=
+ if ((t=3D_uGC(dc,"__utmb=3D"+_udh,";"))!=3D"-") =
+c+=3D_uES("__utmb=3D"+t+";+");=0A=
+ if ((t=3D_uGC(dc,"__utmc=3D"+_udh,";"))!=3D"-") =
+c+=3D_uES("__utmc=3D"+t+";+");=0A=
+ if ((t=3D_uGC(dc,"__utmx=3D"+_udh,";"))!=3D"-") =
+c+=3D_uES("__utmx=3D"+t+";+");=0A=
+ if ((t=3D_uGC(dc,"__utmz=3D"+_udh,";"))!=3D"-") =
+c+=3D_uES("__utmz=3D"+t+";+");=0A=
+ if ((t=3D_uGC(dc,"__utmv=3D"+_udh,";"))!=3D"-") =
+c+=3D_uES("__utmv=3D"+t+";");=0A=
+ if (c.charAt(c.length-1)=3D=3D"+") c=3Dc.substring(0,c.length-1);=0A=
+ return c;=0A=
+}=0A=
+function _uGC(l,n,s) {=0A=
+ if (!l || l=3D=3D"" || !n || n=3D=3D"" || !s || s=3D=3D"") return "-";=0A=
+ var i,i2,i3,c=3D"-";=0A=
+ i=3Dl.indexOf(n);=0A=
+ i3=3Dn.indexOf("=3D")+1;=0A=
+ if (i > -1) {=0A=
+  i2=3Dl.indexOf(s,i); if (i2 < 0) { i2=3Dl.length; }=0A=
+  c=3Dl.substring((i+i3),i2);=0A=
+ }=0A=
+ return c;=0A=
+}=0A=
+function _uDomain() {=0A=
+ if (!_udn || _udn=3D=3D"" || _udn=3D=3D"none") { _udn=3D""; return 1; }=0A=
+ if (_udn=3D=3D"auto") {=0A=
+  var d=3D_ubd.domain;=0A=
+  if (d.substring(0,4)=3D=3D"www.") {=0A=
+   d=3Dd.substring(4,d.length);=0A=
+  }=0A=
+  _udn=3Dd;=0A=
+ }=0A=
+ if (_uhash=3D=3D"off") return 1;=0A=
+ return _uHash(_udn);=0A=
+}=0A=
+function _uHash(d) {=0A=
+ if (!d || d=3D=3D"") return 1;=0A=
+ var h=3D0,g=3D0;=0A=
+ for (var i=3Dd.length-1;i>=3D0;i--) {=0A=
+  var c=3DparseInt(d.charCodeAt(i));=0A=
+  h=3D((h << 6) & 0xfffffff) + c + (c << 14);=0A=
+  if ((g=3Dh & 0xfe00000)!=3D0) h=3D(h ^ (g >> 21));=0A=
+ }=0A=
+ return h;=0A=
+}=0A=
+function _uFixA(c,s,t) {=0A=
+ if (!c || c=3D=3D"" || !s || s=3D=3D"" || !t || t=3D=3D"") return "-";=0A=
+ var a=3D_uGC(c,"__utma=3D"+_udh,s);=0A=
+ var lt=3D0,i=3D0;=0A=
+ if ((i=3Da.lastIndexOf(".")) > 9) {=0A=
+  _uns=3Da.substring(i+1,a.length);=0A=
+  _uns=3D(_uns*1)+1;=0A=
+  a=3Da.substring(0,i);=0A=
+  if ((i=3Da.lastIndexOf(".")) > 7) {=0A=
+   lt=3Da.substring(i+1,a.length);=0A=
+   a=3Da.substring(0,i);=0A=
+  }=0A=
+  if ((i=3Da.lastIndexOf(".")) > 5) {=0A=
+   a=3Da.substring(0,i);=0A=
+  }=0A=
+  a+=3D"."+lt+"."+t+"."+_uns;=0A=
+ }=0A=
+ return a;=0A=
+}=0A=
+function _uTrim(s) {=0A=
+  if (!s || s=3D=3D"") return "";=0A=
+  while ((s.charAt(0)=3D=3D' ') || (s.charAt(0)=3D=3D'\n') || =
+(s.charAt(0,1)=3D=3D'\r')) s=3Ds.substring(1,s.length);=0A=
+  while ((s.charAt(s.length-1)=3D=3D' ') || =
+(s.charAt(s.length-1)=3D=3D'\n') || (s.charAt(s.length-1)=3D=3D'\r')) =
+s=3Ds.substring(0,s.length-1);=0A=
+  return s;=0A=
+}=0A=
+function _uEC(s) {=0A=
+  var n=3D"";=0A=
+  if (!s || s=3D=3D"") return "";=0A=
+  for (var i=3D0;i<s.length;i++) {if (s.charAt(i)=3D=3D" ") n+=3D"+"; =
+else n+=3Ds.charAt(i);}=0A=
+  return n;=0A=
+}=0A=
+function __utmVisitorCode(f) {=0A=
+ var r=3D0,t=3D0,i=3D0,i2=3D0,m=3D31;=0A=
+ var a=3D_uGC(_ubd.cookie,"__utma=3D"+_udh,";");=0A=
+ if ((i=3Da.indexOf(".",0))<0) return;=0A=
+ if ((i2=3Da.indexOf(".",i+1))>0) r=3Da.substring(i+1,i2); else return =
+"";  =0A=
+ if ((i=3Da.indexOf(".",i2+1))>0) t=3Da.substring(i2+1,i); else return =
+"";  =0A=
+ if (f) {=0A=
+  return r;=0A=
+ } else {=0A=
+  var c=3Dnew =
+Array('A','B','C','D','E','F','G','H','J','K','L','M','N','P','R','S','T'=
+,'U','V','W','X','Y','Z','1','2','3','4','5','6','7','8','9');=0A=
+  return =
+c[r>>28&m]+c[r>>23&m]+c[r>>18&m]+c[r>>13&m]+"-"+c[r>>8&m]+c[r>>3&m]+c[((r=
+&7)<<2)+(t>>30&3)]+c[t>>25&m]+c[t>>20&m]+"-"+c[t>>15&m]+c[t>>10&m]+c[t>>5=
+&m]+c[t&m];=0A=
+ }=0A=
+}=0A=
+function _uIN(n) {=0A=
+ if (!n) return false;=0A=
+ for (var i=3D0;i<n.length;i++) {=0A=
+  var c=3Dn.charAt(i);=0A=
+  if ((c<"0" || c>"9") && (c!=3D".")) return false;=0A=
+ }=0A=
+ return true;=0A=
+}=0A=
+function _uES(s,u) {=0A=
+ if (typeof(encodeURIComponent) =3D=3D 'function') {=0A=
+  if (u) return encodeURI(s);=0A=
+  else return encodeURIComponent(s);=0A=
+ } else {=0A=
+  return escape(s);=0A=
+ }=0A=
+}=0A=
+function _uUES(s) {=0A=
+ if (typeof(decodeURIComponent) =3D=3D 'function') {=0A=
+  return decodeURIComponent(s);=0A=
+ } else {=0A=
+  return unescape(s);=0A=
+ }=0A=
+}=0A=
+function _uVG() {=0A=
+ if((_udn.indexOf("www.google.") =3D=3D 0 || _udn.indexOf(".google.") =
+=3D=3D 0 || _udn.indexOf("google.") =3D=3D 0) && _utcp=3D=3D'/') {=0A=
+  return false;=0A=
+ }=0A=
+ return true;=0A=
+}=0A=
+function _uSP() {=0A=
+ var s=3D100;=0A=
+ if (_usample) s=3D_usample;=0A=
+ if(s>=3D100 || s<=3D0) return true;=0A=
+ return ((__utmVisitorCode(1)%10000)<(s*100));=0A=
+}=0A=
+
+------=_NextPart_000_0026_01C75121.30FAC560--

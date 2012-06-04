@@ -1,0 +1,284 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Squares</title>
+<style type="text/css">@import url('../../../css/gc.css');
+</style>
+<script language="JavaScript">
+<!-- Original:  Ken Douglas (ken@ntlworld.com) -->
+<!-- Web Site:  http://www.groveroad.herts.sch.uk -->
+
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+
+<!-- Begin
+// static globals 
+var maxheight = 9;
+var maxwidth = maxheight;
+var winscore = Math.round((maxheight * maxwidth / 2) + 0.5);
+// dynamic globals
+var player = 1; 
+var won = 0;
+function newGame() {
+// sets all graphics back to default and clears scores
+won = 0;
+eval('document.squares.score1.value = 0');
+eval('document.squares.score2.value = 0');
+for (var y = 1; y <= maxheight; y ++ ) {
+for (var x = 1; x <= maxwidth; x ++ ) {
+document.images["x" + x + "y" + y].src = sqr[0].src;
+document.images["vx" + x + "vy" + y].src = ver[0].src;
+document.images["hx" + x + "hy" + y].src = hor[0].src;
+   }
+}
+for (var a = 1; a <= maxheight; a ++ ) {
+onemore = maxheight + 1;
+document.images["vx" + onemore + "vy" + a].src = ver[0].src;
+document.images["hx" + a + "hy" + onemore].src = hor[0].src;
+   }
+}
+function preload() {
+if (document.images) {
+sqr = new makeArray(3);
+sqr[0].src = "http://javascript.internet.com/img/squares/p0.gif";
+sqr[1].src = "http://javascript.internet.com/img/squares/p1.gif";
+sqr[2].src = "http://javascript.internet.com/img/squares/p2.gif";
+ver = new makeArray(3);
+ver[0].src = "http://javascript.internet.com/img/squares/v0.gif";
+ver[1].src = "http://javascript.internet.com/img/squares/v1.gif";
+ver[2].src = "http://javascript.internet.com/img/squares/v2.gif";
+hor = new makeArray(3);
+hor[0].src = "http://javascript.internet.com/img/squares/h0.gif";
+hor[1].src = "http://javascript.internet.com/img/squares/h1.gif";
+hor[2].src = "http://javascript.internet.com/img/squares/h2.gif";
+sel = new makeArray(2);
+sel[0].src = "http://javascript.internet.com/img/squares/notsel.gif";
+sel[1].src = "http://javascript.internet.com/img/squares/sel.gif";
+}
+else {
+alert("Sorry, this game needs a browser\nwhich supports the image object.");
+   }
+}
+function makeArray(n) {
+this.length = n;
+for (i = 0; i < n; i ++) {
+this[i] = new Image();
+}
+return this;
+}
+function go (type, a, b) {
+// processes clicks on square verticals and horizontals...
+hit = 0;
+if (type == 1) {
+if (document.images["hx" + a + "hy" + b].src == hor[1].src) {
+alert("Already taken - try again");
+return;
+}
+document.images["hx" + a + "hy" + b].src = hor[1].src;
+// figure out if the square above is captured 
+if (b != 1) {
+var an = a + 1;
+var bn = b - 1;
+ if ((document.images["vx" + a + "vy" + bn].src == ver[1].src) && (document.images["vx" + an + "vy" + bn].src == ver[1].src) && (document.images["hx" + a + "hy" + bn].src == hor[1].src)) {
+document.images["x" + a + "y" + bn].src = sqr[player].src;
+scoresOnDoors();
+hit = 1;
+   }
+}
+//figure out if the square below is captured
+if (b != maxheight + 1) {
+var an = a + 1;
+var bn = b + 1;
+if ((document.images["vx" + a + "vy" + b].src == ver[1].src) && (document.images["vx" + an + "vy" + b].src == ver[1].src) && (document.images["hx" + a + "hy" + bn].src == hor[1].src)) {
+document.images["x" + a + "y" + b].src = sqr[player].src;
+scoresOnDoors();
+hit = 1;
+      }
+   }
+}
+if (type == 2) {
+if (document.images["vx" + a + "vy" + b].src == ver[1].src) {
+alert("Already taken - try again");
+return;
+}
+document.images["vx" + a + "vy" + b].src = ver[1].src;
+// figure out if the square right is captured 
+if (a != maxwidth + 1) {
+var an = a + 1;
+var bn = b + 1;
+if ((document.images["hx" + a + "hy" + b].src == hor[1].src) && (document.images["hx" + a + "hy" + bn].src == hor[1].src) && (document.images["vx" + an + "vy" + b].src == ver[1].src)) {
+document.images["x" + a + "y" + b].src = sqr[player].src;
+scoresOnDoors();
+hit = 1;
+   }
+}
+//figure out if the left is captured
+if (a != 1) {
+var an = a - 1;
+var bn = b + 1;
+if ((document.images["hx" + an + "hy" + b].src == hor[1].src) && (document.images["hx" + an + "hy" + bn].src == hor[1].src) && (document.images["vx" + an + "vy" + b].src == ver[1].src)) {
+document.images["x" + an + "y" + b].src = sqr[player].src;
+scoresOnDoors();
+hit = 1;
+      }
+   }
+}
+// change players if no hit
+if (hit == 0) {
+if (player != 1) {player = 1
+}
+else {
+player = 2;
+}
+showPlayer();
+}
+return;
+}
+function showPlayer() {
+// let the users jnow which player is "up" by switching on the appropriate graphic
+if (player == 1) {
+document.images["play2"].src = sqr[0].src;
+document.images["play1"].src = sqr[1].src;
+}
+if (player == 2) {
+document.images["play1"].src = sqr[0].src;
+document.images["play2"].src = sqr[2].src;
+}
+return;
+}
+function scoresOnDoors() {
+// simple score increment and check - note play can comtinue after a winner is declared
+eval('tmp = document.squares.score' + player + '.value');
+tmp = tmp * 1;
+tmp += 1;
+eval('document.squares.score' + player + '.value = tmp');
+if (won == 0 && tmp >= winscore) {
+alert("Player " + player + " wins");
+won = 1;
+}
+return;
+}
+//  End -->
+</script>
+</head>
+
+<body>
+
+<table class="gitopnav" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+  <tr>
+    <td bordercolor="#000000">
+    <div class="gitop">
+      <a class="gitoplinks" href="../../../index.html">Login</a> |
+      <a class="gitoplinks" href="../../../mem/index.html">Browse</a> 
+      | <a class="gitoplinks" href="../../../s/ms.html">Search</a> |
+      <a class="gitoplinks" href="../../fp/index.html">Favorites</a> 
+      | <a class="gitoplinks" href="../../chr/index.html">Chat</a> |
+      <a class="gitoplinks" href="../../gcol/index.html">Groups</a> |
+      <a class="gitoplinks" href="../../vc/index.html">Videos</a> |
+      <a class="gitoplinks" href="../../mp/index.html">Music</a> |
+      <a class="gitoplinks" href="../../cyc/index.html">Comedy</a> |
+      <a class="gitoplinks" href="../../cs/index.html">Classifieds</a></div>
+    </td>
+  </tr>
+</table>
+<table class="getitletable" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+  <tr>
+    <td bordercolor="#000000">
+    <div class="getitle">
+      Squares</div>
+    <hr></td>
+  </tr>
+</table>
+<div class="gebacklink">
+  <a class="gebacklink" href="javascript:history.back()">Back</a></div>
+<table class="geinfotable" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0" valign="top">
+  <tr>
+    <td width="100%" style="border-left-style:solid; border-left-width:1; border-right-style:solid; border-right-width:1; border-top-style:none; border-top-width:medium; border-bottom-style:solid; border-bottom-width:1" bordercolor="#996600">
+    <div class="gicontent">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" height="732">
+        <tr>
+          <td width="99%" align="center" height="732"><br>
+          <script LANGUAGE="JavaScript">
+<!-- Original:  Ken Douglas (ken@ntlworld.com) -->
+<!-- Web Site:  http://www.groveroad.herts.sch.uk -->
+
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+
+<!-- Begin
+var output = '';
+output += '<TABLE CELLPADDING = 0 CELLSPACING = 8 BORDER = 0><TR>';
+// create the board
+output += '<TD><TABLE CELLPADDING = 0 CELLSPACING = 0 BORDER = 0>';
+for (var y = 1; y <= maxheight; y ++ ) {
+output += '<TR>';
+for (var x = 1; x <= maxwidth; x ++ ) {
+output += '<TD><IMG SRC = "http://javascript.internet.com/img/squares/d.gif" WIDTH = 4 HEIGHT = 4 BORDER = 0></TD><TD><A HREF = "javascript:go(1,' + x + ',' + y + ');" onFocus = "blur();">';
+output += '<IMG SRC = "http://javascript.internet.com/img/squares/h0.gif" NAME = "hx' + x + 'hy' + y + '" WIDTH = 38 HEIGHT = 4 ALT = "" BORDER = 0></A></TD>';
+}
+output += '<TD><IMG SRC = "http://javascript.internet.com/img/squares/d.gif" WIDTH = 4 HEIGHT = 4 BORDER = 0></TD></TR><TR>'
+for (var x = 1; x <= maxwidth; x ++ ) {
+output += '<TD><A HREF = "javascript:go(2,' + x + ',' + y + ');" onFocus = "blur();">';
+output += '<IMG SRC = "http://javascript.internet.com/img/squares/v0.gif" NAME = "vx' + x + 'vy' + y + '" WIDTH = 4 HEIGHT = 38 ALT = "" BORDER = 0></A></TD>';
+output += '<TD><IMG SRC = "http://javascript.internet.com/img/squares/p0.gif" NAME = "x' + x + 'y' + y + '" WIDTH = 38 HEIGHT = 38 ALT = "" BORDER = 0></TD>';
+}
+var x = maxwidth + 1
+output += '<TD><A HREF = "javascript:go(2,' + x + ',' + y + ');" onFocus = "blur();">';
+output += '<IMG SRC = "http://javascript.internet.com/img/squares/v0.gif" NAME = "vx' + x + 'vy' + y + '" WIDTH = 4 HEIGHT = 38 ALT = "" BORDER = 0></A></TD>';
+output += '</TR>';
+}
+output += '<TR>'
+for (var x = 1; x <= maxwidth; x ++ ) {
+output += '<TD><IMG SRC = "http://javascript.internet.com/img/squares/d.gif" WIDTH = 4 HEIGHT = 4 BORDER = 0></TD><TD><A HREF = "javascript:go(1,' + x + ',' + y + ');" onFocus = "blur();">';
+output += '<IMG SRC = "http://javascript.internet.com/img/squares/h0.gif" NAME = "hx' + x + 'hy' + y + '" WIDTH = 38 HEIGHT = 4 ALT = "" BORDER = 0></A></TD>';
+}
+output += '<TD><IMG SRC = "http://javascript.internet.com/img/squares/d.gif" WIDTH = 4 HEIGHT = 4 BORDER = 0></TD></TR><TR><TD COLSPAN = ';
+spanthis = (maxheight*2) + 1;
+output += spanthis;
+output += '>&nbsp;</TD></TR></TABLE></TD>';
+// create the form for feedback to user and also a "new game" button
+output += '<TD VALIGN = top><FORM NAME = "squares"><TABLE CELLPADDING = 2 CELLSPACING = 0 BORDER = 0 BGCOLOR = "#0193ff">';
+output += '<TR><TD ALIGN = center><FONT FACE = "Arial, Helvetica, sans-serif" SIZE = 2>Player 1</FONT></TD>';
+output += '<TD ALIGN = center><FONT FACE = "Arial, Helvetica, sans-serif" SIZE = 2>Player 2</FONT></TD></TR>';
+output += '<TR><TD ALIGN = center><IMG SRC = "http://javascript.internet.com/img/squares/p1.gif" WIDTH = 38 HEIGHT = 38 NAME = "play1" ALT = " Player 1 " VSPACE = 2" BORDER = 0><BR></TD>';
+output += '<TD ALIGN = center><IMG SRC = "http://javascript.internet.com/img/squares/p0.gif" WIDTH = 38 HEIGHT = 38 NAME = "play2" ALT = " Player 2 " VSPACE = 2" BORDER = 0><BR></TD></TR>';
+output += '<TR><TD ALIGN = center><INPUT TYPE = "text" NAME = "score1" SIZE = "3" VALUE = 0 onFocus = "blur();"></TD>';
+output += '<TD ALIGN = center><INPUT TYPE = "text" NAME = "score2" SIZE = "3" VALUE = 0 onFocus = "blur();"></TD></TR>';
+output += '<TR><TD COLSPAN = 2 ALIGN = center><BR><INPUT TYPE = "button" VALUE = " New Game " onClick = "newGame();">';
+output += '<BR>&nbsp;</TD></TR><TR><TD COLSPAN = 2 BGCOLOR = "#0193ff" ALIGN = center>';
+output += '<BR><BR><FONT FACE = "Arial, Helvetica, sans-serif" SIZE = 1>';
+output += '<A HREF = "http://www.groveroad.herts.sch.uk/kids/squares/howtoplay.html" TARGET="_new">Instructions</A><BR>';
+output += '<BR></FONT></TD></TR>';
+output += '</TABLE></FORM></TD>';
+output += '</TR></TABLE>';
+document.write(output);
+preload();
+//  End -->
+          </script>
+          </td>
+        </tr>
+      </table>
+      </center>
+    </div>
+    </td>
+  </tr>
+</table>
+<br>
+<table class="gibotnav" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+  <tr>
+    <td bordercolor="#000000">
+    <div class="gibot">
+      <a class="gibotlinks" href="../../../index.html">Home</a> -
+      <a class="gibotlinks" href="../../index.html">The Media Center</a> -
+      <a class="gibotlinks" href="../index.html">The Game Channel</a></div>
+    </td>
+  </tr>
+</table>
+
+</body>
+
+</html>

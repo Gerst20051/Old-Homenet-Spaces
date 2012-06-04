@@ -1,0 +1,201 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Simon Says</title>
+<style type="text/css">@import url('../../../css/gc.css');
+</style>
+<script language="JavaScript">
+<!-- Original:  Brian Gosselin (bgaudiodr@aol.com) -->
+<!-- Web Site:  http://www.bgaudiodr.iwarp.com -->
+
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+
+<!-- Begin
+var image_directory = "http://javascript.internet.com/img/simon-says/";
+var ok = false; 
+var pcbusy = false; 
+var userturn = true;
+var butdown = false;
+var stage = 1;
+var cnt = 1;
+var pcclicks = new Array();
+var userclicks = new Array();
+var pos;
+var tst = true;
+var msg = "Click Go!";
+btn1 = new Image();
+btn1.src = image_directory + "purple.gif";
+btn2 = new Image();
+btn2.src = image_directory + "yellow.gif";
+function updown(isdn) {
+if (isdn) {
+document.f[('pl'+pos)].src = image_directory + 'yellow.gif';
+}
+else {
+document.f[('pl'+pos)].src= image_directory + 'purple.gif';
+   }
+}
+function dopc() {
+document.f.st.value = stage;
+if (cnt <= stage) {
+pcbusy = true;
+userturn = false;
+document.f.s.value = "Simon's  Turn";
+setTimeout("pos=Math.floor((Math.random()*8)+1); updown(true)",500);
+setTimeout("updown(false) ; pcclicks[cnt]=pos; cnt++; dopc()",1200);
+}
+else {
+userclicks = new Array();
+cnt = 1;
+document.f.s.value = "Player's  Turn";
+pcbusy = false;
+userturn = true;
+document.f.b.focus();
+   }
+}
+function testclicks() {
+tst = true;
+for(i = 1;cnt > i; i++) {
+if (pcclicks[i] == userclicks[i]) {
+tst = true && tst;
+}
+else {
+tst = false && tst;
+   }
+}
+if(tst) {
+setTimeout("stage++ ; document.f.st.value=stage ; alert('That is correct!  Advancing to the next level....'); document.f.s.value=msg ; document.f.b.focus()",300);
+}
+else {
+setTimeout("stage=1 ; cnt=1 ; pcclicks=new Array() ; document.f.st.value=stage ; alert('Sorry, that is not correct.  Start a new game if you would like to play again.') ; document.f.s.value=msg",300);
+}
+cnt = 1;
+}
+function testclk(downflag, pos) {
+if (userturn&&(!pcbusy)) {
+if (downflag) {
+document.f[('pl'+pos)].src = image_directory + 'yellow.gif';
+}else{
+document.f[('pl'+pos)].src = image_directory + 'purple.gif';
+}
+if (ok && !downflag) {
+userclicks[cnt] = pos;
+cnt++;
+if (pcclicks.length == userclicks.length) {
+testclicks();
+         }
+      }
+   }
+}
+//  End -->
+</script>
+</head>
+
+<body>
+
+<table class="gitopnav" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+  <tr>
+    <td bordercolor="#000000">
+    <div class="gitop">
+      <a class="gitoplinks" href="../../../index.html">Login</a> |
+      <a class="gitoplinks" href="../../../mem/index.html">Browse</a> 
+      | <a class="gitoplinks" href="../../../s/ms.html">Search</a> |
+      <a class="gitoplinks" href="../../fp/index.html">Favorites</a> 
+      | <a class="gitoplinks" href="../../chr/index.html">Chat</a> |
+      <a class="gitoplinks" href="../../gcol/index.html">Groups</a> |
+      <a class="gitoplinks" href="../../vc/index.html">Videos</a> |
+      <a class="gitoplinks" href="../../mp/index.html">Music</a> |
+      <a class="gitoplinks" href="../../cyc/index.html">Comedy</a> |
+      <a class="gitoplinks" href="../../cs/index.html">Classifieds</a></div>
+    </td>
+  </tr>
+</table>
+<table class="getitletable" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+  <tr>
+    <td bordercolor="#000000">
+    <div class="getitle">
+      Simon Says</div>
+    <hr></td>
+  </tr>
+</table>
+<div class="gebacklink">
+  <a class="gebacklink" href="javascript:history.back()">Back</a></div>
+<table class="geinfotable" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0" valign="top">
+  <tr>
+    <td width="100%" style="border-left-style:solid; border-left-width:1; border-right-style:solid; border-right-width:1; border-top-style:none; border-top-width:medium; border-bottom-style:solid; border-bottom-width:1" bordercolor="#996600">
+    <div class="gicontent">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td width="99%" align="center"><center>
+          <form name="f">
+            <table cellspacing="20" cols="5" width="600">
+              <tr height="60">
+                <td colspan="5" align="center">
+                <img src="../purple.gif" name="pl1" onMousedown="testclk(true,1)" onMouseup="testclk(false,1)" width="80" height="30"></td>
+              </tr>
+              <tr height="60">
+                <td width="20%">&nbsp;</td>
+                <td align="center" width="20%">
+                <img src="../purple.gif" name="pl2" onMousedown="testclk(true,2)" onMouseup="testclk(false,2)" width="80" height="30"></td>
+                <td width="20%" align="center"><font size="3">Level<br>
+                </font><input type="text" size="2" value="1" name="st" readonly></td>
+                <td align="center" width="20%">
+                <img src="../purple.gif" name="pl3" onMousedown="testclk(true,3)" onMouseup="testclk(false,3)" width="80" height="30"></td>
+                <td width="20%">&nbsp;</td>
+              </tr>
+              <tr height="60">
+                <td align="center">
+                <img src="../purple.gif" name="pl4" onMousedown="testclk(true,4)" onMouseup="testclk(false,4)" width="80" height="30"></td>
+                <td align="center" colspan="3">
+                <input type="text" name="s" value="Click 'Go!' to start" readonly size="20"></td>
+                <td align="center">
+                <img src="../purple.gif" name="pl5" onMousedown="testclk(true,5)" onMouseup="testclk(false,5)" width="80" height="30"></td>
+              </tr>
+              <tr height="60">
+                <td>&nbsp;</td>
+                <td align="center">
+                <img src="../purple.gif" name="pl6" onMousedown="testclk(true,6)" onMouseup="testclk(false,6)" width="80" height="30"></td>
+                <td align="center">
+                <input type="button" value="    Go!    " name="b" onClick="ok=true ; if(!pcbusy) dopc()"></td>
+                <td align="center">
+                <img src="../purple.gif" name="pl7" onMousedown="testclk(true,7)" onMouseup="testclk(false,7)" width="80" height="30"></td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr height="60">
+                <td colspan="2" align="left"></td>
+                <td align="center">
+                <img src="../purple.gif" name="pl8" onMousedown="testclk(true,8)" onMouseup="testclk(false,8)" width="80" height="30"></td>
+                <td colspan="2" align="right"></td>
+              </tr>
+            </table>
+          </form>
+          </center>
+          </form>
+          </td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    </td>
+  </tr>
+</table>
+<br>
+<table class="gibotnav" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+  <tr>
+    <td bordercolor="#000000">
+    <div class="gibot">
+      <a class="gibotlinks" href="../../../index.html">Home</a> -
+      <a class="gibotlinks" href="../../index.html">The Media Center</a> -
+      <a class="gibotlinks" href="../index.html">The Game Channel</a></div>
+    </td>
+  </tr>
+</table>
+
+</body>
+
+</html>

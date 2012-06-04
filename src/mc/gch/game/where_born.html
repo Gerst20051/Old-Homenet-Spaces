@@ -1,0 +1,293 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Where Born</title>
+<style type="text/css">@import url('../../../css/gc.css');
+</style>
+<script language="JavaScript">
+<!-- Begin
+function makeArray(n) {
+this.length = n
+for (var i=1; i <= n; i++)
+this[i] = null
+return this
+}
+var ssn = new makeArray(57)
+ssn[1] = 3
+ssn[2] = 7
+ssn[3] = 9
+ssn[4] = 34
+ssn[5] = 39
+ssn[6] = 49
+ssn[7] = 134
+ssn[8] = 158
+ssn[9] = 211
+ssn[10] = 220
+ssn[11] = 222
+ssn[12] = 231
+ssn[13] = 236
+ssn[14] = 246
+ssn[15] = 251
+ssn[16] = 260
+ssn[17] = 267
+ssn[18] = 302
+ssn[19] = 317
+ssn[20] = 361
+ssn[21] = 386
+ssn[22] = 399
+ssn[23] = 407
+ssn[24] = 415
+ssn[25] = 424
+ssn[26] = 428
+ssn[27] = 432
+ssn[28] = 439
+ssn[29] = 448
+ssn[30] = 467
+ssn[31] = 477
+ssn[32] = 485
+ssn[33] = 500
+ssn[34] = 502
+ssn[35] = 504
+ssn[36] = 508
+ssn[37] = 515
+ssn[38] = 517
+ssn[39] = 519
+ssn[40] = 520
+ssn[41] = 524
+ssn[42] = 525
+ssn[43] = 527
+ssn[44] = 529
+ssn[45] = 530
+ssn[46] = 539
+ssn[47] = 544
+ssn[48] = 573
+ssn[49] = 574
+ssn[50] = 576
+ssn[51] = 579
+ssn[52] = 580
+ssn[53] = 584
+ssn[54] = 585
+ssn[55] = 586
+ssn[56] = 599
+ssn[57] = 728
+var geo = new makeArray(57)
+geo[1] = "New Hampshire"
+geo[2] = "Maine"
+geo[3] = "Vermont"
+geo[4] = "Massachusetts"
+geo[5] = "Rhode Island"
+geo[6] = "Connecticut"
+geo[7] = "New York"
+geo[8] = "New Jersey"
+geo[9] = "Pennsylvania"
+geo[10] = "Maryland"
+geo[11] = "Delaware"
+geo[12] = "Virginia"
+geo[13] = "West Virginia"
+geo[14] = "North Carolina"
+geo[15] = "South Carolina"
+geo[16] = "Georgia"
+geo[17] = "Florida"
+geo[18] = "Ohio"
+geo[19] = "Indiana"
+geo[20] = "Illinois"
+geo[21] = "Michigan"
+geo[22] = "Wisconsin"
+geo[23] = "Kentucky"
+geo[24] = "Tennessee"
+geo[25] = "Alabama"
+geo[26] = "Mississippi"
+geo[27] = "Arkansas"
+geo[28] = "Louisiana"
+geo[29] = "Oklahoma"
+geo[30] = "Texas"
+geo[31] = "Minnesota"
+geo[32] = "Iowa"
+geo[33] = "Missouri"
+geo[34] = "North Dakota"
+geo[35] = "South Dakota"
+geo[36] = "Nebraska"
+geo[37] = "Kansas"
+geo[38] = "Montana"
+geo[39] = "Idaho"
+geo[40] = "Wyoming"
+geo[41] = "Colorado"
+geo[42] = "New Mexico"
+geo[43] = "Arizona"
+geo[44] = "Utah"
+geo[45] = "Nevada"
+geo[46] = "Washington"
+geo[47] = "Oregon"
+geo[48] = "California"
+geo[49] = "Alaska"
+geo[50] = "Hawaii"
+geo[51] = "District of Columbia"
+geo[52] = "Virgin Islands"
+geo[53] = "Puerto Rico"
+geo[54] = "New Mexico"
+geo[55] = "Guam, American Samoa, N. Mariana Isl., Philippines"
+geo[56] = "Puerto Rico"
+geo[57] = "Long-time or retired railroad workers"
+function stripZeros(inputStr) {
+var result = inputStr
+while (result.substring(0,1) == "0") {
+result = result.substring(1,result.length)
+}
+return result
+}
+function isEmpty(inputStr) {
+if (inputStr == "" || inputStr == null) {
+return true
+}
+return false
+}
+function isNumber(inputStr) {
+for (var i = 0; i < inputStr.length; i++) {
+var oneChar = inputStr.substring(i, i + 1)
+if (oneChar < "0" || oneChar > "9") {
+return false
+   }
+}
+return true
+}
+function inRange(inputStr) {
+num = parseInt(inputStr)
+if (num < 1 || num > 586 && num < 596 || num > 599 && num < 700 || num > 728) {
+return false
+}
+return true
+}
+function isValid(inputStr) {
+if (isEmpty(inputStr)) {
+alert("Please enter a number into the field before clicking the button.")
+return false
+} else {
+if (!isNumber(inputStr)) {
+alert("Please make sure entries are numbers only.")
+return false
+} else {
+if (!inRange(inputStr)) {
+alert("Sorry, the number you entered is not part of our database.  Try another three-digit number.")
+return false
+      }
+   }
+}
+return true
+}
+function search(form) {
+var foundMatch = false
+var inputStr = stripZeros(form.entry.value)
+if (isValid(inputStr)) {
+inputValue = inputStr
+for (var i = 1; i <= ssn.length; i++) {
+if (inputValue <= ssn[i]) {
+foundMatch = true
+break
+      }
+   }
+}
+form.result.value = (foundMatch) ? geo[i] : ""
+form.entry.focus()
+form.entry.select()
+}
+// End -->
+</script>
+</head>
+
+<body>
+
+<table class="gitopnav" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+  <tr>
+    <td bordercolor="#000000">
+    <div class="gitop">
+      <a class="gitoplinks" href="../../../index.html">Login</a> |
+      <a class="gitoplinks" href="../../../mem/index.html">Browse</a> 
+      | <a class="gitoplinks" href="../../../s/ms.html">Search</a> |
+      <a class="gitoplinks" href="../../fp/index.html">Favorites</a> 
+      | <a class="gitoplinks" href="../../chr/index.html">Chat</a> |
+      <a class="gitoplinks" href="../../gcol/index.html">Groups</a> |
+      <a class="gitoplinks" href="../../vc/index.html">Videos</a> |
+      <a class="gitoplinks" href="../../mp/index.html">Music</a> |
+      <a class="gitoplinks" href="../../cyc/index.html">Comedy</a> |
+      <a class="gitoplinks" href="../../cs/index.html">Classifieds</a></div>
+    </td>
+  </tr>
+</table>
+<table class="getitletable" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+  <tr>
+    <td bordercolor="#000000">
+    <div class="getitle">
+      Where Born</div>
+    <hr></td>
+  </tr>
+</table>
+<div class="gebacklink">
+  <a class="gebacklink" href="javascript:history.back()">Back</a></div>
+<table class="geinfotable" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0" valign="top">
+  <tr>
+    <td width="100%" style="border-left-style:solid; border-left-width:1; border-right-style:solid; border-right-width:1; border-top-style:none; border-top-width:medium; border-bottom-style:solid; border-bottom-width:1" bordercolor="#996600">
+    <div class="gicontent">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td width="99%" align="center">
+          <table border="0" widht="486" cellpadding="3" cellspacing="0">
+            <tr>
+              <td>
+              <p>According to an article in the <cite>Wall Street Journal</cite>, 
+              the first three digits of a U.S. Social Security number is a code 
+              that <b>may indicate</b> the state or territory in which your application 
+              stated you were born (because the code reveals the state in which 
+              you registered). For recent immigrants, the number is supposed to 
+              match up with the state or territory in which you were living when 
+              you received proper working papers.</p>
+              <p>Note: The database in this document is not 100 percent complete 
+              or 100 percent accurate. Please don&#39;t e-mail me to inform me that 
+              it was not correct. Nothing is perfect. Populous states have added 
+              numeric ranges not contained here.</p>
+              <hr></td>
+            </tr>
+          </table>
+          <form method="post">
+            <p>Instructions:</p>
+            <ol>
+              <li>Enter the first three digits of a U.S. Social Security number 
+              in question.</li>
+              <li>Click on the Search button.</li>
+              <li>See the corresponding state or territory in the field.</l1></li>
+            </ol>
+            <center>
+            <p>Enter the first <b>three</b> digits of a Social Security number:
+            <input type="text" name="entry" size="3">
+            <input type="button" value="Search" onclick="search(this.form)"></p>
+            <p>The Federal Government links this number to:
+            <input type="text" name="result" size="50"></p>
+            </center>
+          </form>
+          </td>
+        </tr>
+      </table>
+    </div>
+    </td>
+  </tr>
+</table>
+<br>
+<table class="gibotnav" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+  <tr>
+    <td bordercolor="#000000">
+    <div class="gibot">
+      <a class="gibotlinks" href="../../../index.html">Home</a> -
+      <a class="gibotlinks" href="../../index.html">The Media Center</a> -
+      <a class="gibotlinks" href="../index.html">The Game Channel</a></div>
+    </td>
+  </tr>
+</table>
+
+</body>
+
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Time Challenge</title>
+<style type="text/css">@import url('../../../css/gc.css');
+</style>
+<script language="JavaScript">
+<!-- Original:  Randy Bennett (rbennett@thezone.net) -->
+<!-- Web Site:  http://home.thezone.net/~rbennett/sitemap.htm -->
+
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+
+<!-- Begin
+Bdown = new Image();
+Bdown.src = "http://javascript.internet.com/img/time-challenge/down.gif";
+bX = 200; bY = 250;
+function moveButton() {
+x = Math.random() * 50;
+y = Math.random() * 50;
+r1 = Math.random() * 10000;
+r2 = Math.random() * 10000;
+if (r1 > 5000) r1 = 1; else r1 = -1;
+if (r2 > 5000) r2 = 1; else r2 = -1;
+if (x < 25) x = 25;
+if (y < 25) y = 25;
+x = x * r1;
+y = y * r2;
+if (clock == "on") {
+bX += x;
+bY += y;
+if (document.all) {
+button.style.pixelTop = bY;
+button.style.pixelLeft = bX;
+}
+if (document.layers){
+document.button.left = bX;
+document.button.top = bY;
+      }
+   }
+}
+function message() {
+if (s <= 0) alert('Start the clock first, and then click this button at exactly 10 seconds.');
+if (s > 0 && s < 7) alert("Your timing is way off, click when the timer says 10 seconds.");
+if (s > 6 && s < 9) alert("Don't panic, wait for the timer to get to 10 seconds.");
+if (s == 9) alert("Keep practicing, you are very close.");
+if (s == 10) {
+clearTimeout(timeID);
+alert("WOW, I didn't think it could be done!!! Congrats!");
+}
+if (s == 11) alert("Keep practicing, you are very close");
+if (s > 11 && s < 13) alert("Something else must have caught your attention");
+if (s > 13) alert("Did you read the instructions?  You have gone past 10 seconds, reset the timer.");
+}
+var clock = "off";
+var timeID;
+var count = 0;
+var h = 0;
+var m = 0;
+var mm = 0;
+var s = 0;
+var ss = 0;
+kickStart = "off";
+function setMove(xx) {
+kickStart = xx;
+}
+function timer() {
+clearTimeout(timeID);
+count += 1;
+s += 1;
+if (s > 8 && s < 11) {
+clock = "on";
+if (kickStart == "on") moveButton();
+kickStart = "off";
+}
+else clock = "off";
+ss = s;
+if (s > 59) { s -= 60; m += 1; ss -= 60; }
+mm = m;
+if (m > 59) { m -= 60; h += 1; mm -= 60; }
+if (ss < 10) ss = "0" + ss;
+if (mm < 10) mm = "0" + mm;
+msg = "<font size=+3>" + h + ":" + mm + ":" + ss + "</font>";
+if (navigator.appName == "Netscape") {
+document.t.document.write(msg);
+document.t.document.close();
+}
+else t.innerHTML = msg;
+timeID = setTimeout("timer()", 1000);
+}
+function stopTimer(c) {
+clock = "off"
+if (c == 'stop') clearTimeout(timeID);
+if (c == 'clear') { 
+clearTimeout(timeID);
+ss = 0; mm = 0; m = 0; s = -1;
+count = 0;
+timer();
+stopTimer('stop');
+   }
+}
+//  End -->
+</script>
+</head>
+
+<body>
+
+<table class="gitopnav" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+  <tr>
+    <td bordercolor="#000000">
+    <div class="gitop">
+      <a class="gitoplinks" href="../../../index.html">Login</a> |
+      <a class="gitoplinks" href="../../../mem/index.html">Browse</a> 
+      | <a class="gitoplinks" href="../../../s/ms.html">Search</a> |
+      <a class="gitoplinks" href="../../fp/index.html">Favorites</a> 
+      | <a class="gitoplinks" href="../../chr/index.html">Chat</a> |
+      <a class="gitoplinks" href="../../gcol/index.html">Groups</a> |
+      <a class="gitoplinks" href="../../vc/index.html">Videos</a> |
+      <a class="gitoplinks" href="../../mp/index.html">Music</a> |
+      <a class="gitoplinks" href="../../cyc/index.html">Comedy</a> |
+      <a class="gitoplinks" href="../../cs/index.html">Classifieds</a></div>
+    </td>
+  </tr>
+</table>
+<table class="getitletable" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+  <tr>
+    <td bordercolor="#000000">
+    <div class="getitle">
+      Time Challenge</div>
+    <hr></td>
+  </tr>
+</table>
+<div class="gebacklink">
+  <a class="gebacklink" href="javascript:history.back()">Back</a></div>
+<table class="geinfotable" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0" valign="top">
+  <tr>
+    <td width="100%" style="border-left-style:solid; border-left-width:1; border-right-style:solid; border-right-width:1; border-top-style:none; border-top-width:medium; border-bottom-style:solid; border-bottom-width:1" bordercolor="#996600">
+    <div class="gicontent">
+      <div id="object1" style="position:absolute; visibility:show; left:60px; top:205px; z-index:2">
+        <table cellpadding="2" border="1" width="175">
+          <tr>
+            <td align="center"><center><b><font size="+2">Timer</font></b></center>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+            <table>
+              <tr>
+                <td><a href="javascript:timer();setMove('off')">Start</a> |</td>
+                <td><a href="javascript:stopTimer('stop')">Stop</a> |</td>
+                <td><a href="javascript:stopTimer('clear')">Reset</a> </td>
+              </tr>
+            </table>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="t" style="position:absolute; visibility:show; left:100px; top:280px; z-index:2">
+        <font size="+3">0:00:00</font></div>
+      <div id="object1" style="position:absolute; visibility:show; left:260px; top:205px; z-index:2">
+        <p style="text-align: left"><font size="+2"><b>The Time Challenge:</b></font><br>
+        </p>
+        <ul>
+          <li>
+          <p style="text-align: left">Start the Timer (click start)<br>
+          </p>
+          </li>
+          <li>
+          <p style="text-align: left">At exactly 10 seconds, click the button<br>
+          </p>
+          </li>
+          <li>
+          <p style="text-align: left">Stop the timer at 10 seconds, you win!<br>
+          </p>
+          </li>
+        </ul>
+      </div>
+      <div id="button" style="position:absolute;left:50;top:60;z-index:5;">
+        <a href="javascript:message()" onMouseDown="document.images['imBut'].src='down.gif'" onMouseUp="document.images['imBut'].src='up.gif'" onMouseOut="setMove('off')" onMouseOver="moveButton(),setMove('on')">
+        <img name="imBut" src="http://javascript.internet.com/img/time-challenge/up.gif" width="62" height="28" border="0"></a>
+      </div>
+    </div>
+    </td>
+  </tr>
+</table>
+<br>
+<table class="gibotnav" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+  <tr>
+    <td bordercolor="#000000">
+    <div class="gibot">
+      <a class="gibotlinks" href="../../../index.html">Home</a> -
+      <a class="gibotlinks" href="../../index.html">The Media Center</a> -
+      <a class="gibotlinks" href="../index.html">The Game Channel</a></div>
+    </td>
+  </tr>
+</table>
+
+</body>
+
+</html>

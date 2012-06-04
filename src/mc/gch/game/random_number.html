@@ -1,0 +1,132 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Random Number</title>
+<style type="text/css">@import url('../../../css/gc.css');
+</style>
+<script language="JavaScript">
+<!-- Begin
+var RNumber;
+var RTries;
+limit = 51;
+function Random() {
+today = new Date();
+num = today.getTime();
+num = Math.round(Math.abs(Math.sin(num) * 1000000)) % limit;
+return num;
+}
+function Init(){
+RNumber = Random();
+RTries = 0;
+document.FGame.Output.value='I am thinking of a number between 0 and ' + (limit-1) +' Guess it....';
+document.FGame.Tries.value=RTries;
+document.FGame.HighLow.value='';
+document.FGame.Input.value='';
+}
+function Game(Number) {
+if(Number==RNumber) {
+RTries++;
+document.FGame.Output.value='You guessed it in ' + RTries + ' tries! It was ' + RNumber + '! Hit Restart to play again.';
+document.FGame.HighLow.value='Got It!';
+} 
+else {
+RTries++;
+document.FGame.Output.value='Nope, ' + Number + ' is not the number I am thinking about!';
+document.FGame.HighLow.value=(RNumber > Number) ? 'Higher!' : 'Lower!';
+document.FGame.Tries.value=RTries;
+   }
+}
+// End -->
+</script>
+</head>
+
+<body>
+
+<table class="gitopnav" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+  <tr>
+    <td bordercolor="#000000">
+    <div class="gitop">
+      <a class="gitoplinks" href="../../../index.html">Login</a> |
+      <a class="gitoplinks" href="../../../mem/index.html">Browse</a> 
+      | <a class="gitoplinks" href="../../../s/ms.html">Search</a> |
+      <a class="gitoplinks" href="../../fp/index.html">Favorites</a> 
+      | <a class="gitoplinks" href="../../chr/index.html">Chat</a> |
+      <a class="gitoplinks" href="../../gcol/index.html">Groups</a> |
+      <a class="gitoplinks" href="../../vc/index.html">Videos</a> |
+      <a class="gitoplinks" href="../../mp/index.html">Music</a> |
+      <a class="gitoplinks" href="../../cyc/index.html">Comedy</a> |
+      <a class="gitoplinks" href="../../cs/index.html">Classifieds</a></div>
+    </td>
+  </tr>
+</table>
+<table class="getitletable" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+  <tr>
+    <td bordercolor="#000000">
+    <div class="getitle">
+      Random Number</div>
+    <hr></td>
+  </tr>
+</table>
+<div class="gebacklink">
+  <a class="gebacklink" href="javascript:history.back()">Back</a></div>
+<table class="geinfotable" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0" valign="top">
+  <tr>
+    <td width="100%" style="border-left-style:solid; border-left-width:1; border-right-style:solid; border-right-width:1; border-top-style:none; border-top-width:medium; border-bottom-style:solid; border-bottom-width:1" bordercolor="#996600">
+    <div class="gicontent">
+      <table width="100%" cellpadding="3" cellspacing="0" border="0" style="border-collapse: collapse" bordercolor="#111111">
+        <tr>
+          <td width="99%" align="center">
+          <table border="0" width="500" cellpadding="4" cellspacing="0" style="border-collapse: collapse">
+            <tr>
+              <td>
+              <p align="center">The computer will think of a random number between 
+              0 and 50. Just guess it! Higher and lower hints are included!<br>
+              </p>
+              </td>
+            </tr>
+          </table>
+          <center>
+          <form name="FGame">
+            <input type="txt" name="Output" size="70"><br>
+            <input type="txt" name="Input" size="20"> The number is:
+            <input type="txt" name="HighLow" size="20"> You guessed:
+            <input type="txt" name="Tries" value="0" size="3"> Times.<br>
+            <input type="button" name="one" value="  1  " OnClick="FGame.Input.value += 1">
+            <input type="button" name="one" value="  2  " OnClick="FGame.Input.value += 2">
+            <input type="button" name="one" value="  3  " OnClick="FGame.Input.value += 3"><br>
+            <input type="button" name="one" value="  4  " OnClick="FGame.Input.value += 4">
+            <input type="button" name="one" value="  5  " OnClick="FGame.Input.value += 5">
+            <input type="button" name="one" value="  6  " OnClick="FGame.Input.value += 6"><br>
+            <input type="button" name="one" value="  7  " OnClick="FGame.Input.value += 7">
+            <input type="button" name="one" value="  8  " OnClick="FGame.Input.value += 8">
+            <input type="button" name="one" value="  9  " OnClick="FGame.Input.value += 9"><br>
+            <input type="button" name="one" value="  0  " OnClick="FGame.Input.value += 0">
+            <input type="button" name="DoIt" value=" Try it!  " OnClick="Game(FGame.Input.value); FGame.Input.value=''"><br>
+            <input type="button" name="init" value="      Start/Restart     " OnClick="Init()"></form>
+          </center></td>
+        </tr>
+      </table>
+    </div>
+    </td>
+  </tr>
+</table>
+<br>
+<table class="gibotnav" style="border-collapse: collapse" bordercolor="#111111" cellpadding="0" cellspacing="0">
+  <tr>
+    <td bordercolor="#000000">
+    <div class="gibot">
+      <a class="gibotlinks" href="../../../index.html">Home</a> -
+      <a class="gibotlinks" href="../../index.html">The Media Center</a> -
+      <a class="gibotlinks" href="../index.html">The Game Channel</a></div>
+    </td>
+  </tr>
+</table>
+
+</body>
+</basefont>
+
+</html>

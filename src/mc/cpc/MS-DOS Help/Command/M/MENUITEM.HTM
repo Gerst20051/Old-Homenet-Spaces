@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>MENUITEM</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#m">Commands A-M</a>
+    &gt; <a href="../INDEXM.HTM#menuitem">Configuration M</a>
+    <h1>MENUITEM</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Defines an item on the startup menu. You can use this
+    command only within a menu block in your CONFIG.SYS
+    file. You can have up to nine menu items per menu.</p>
+
+    <p>The startup menu is a list of choices that appears
+    when you start your computer. You define a startup menu
+    by using special CONFIG.SYS commands. Each item on the
+    menu corresponds to a set of CONFIG.SYS commands called
+    a "configuration block." A startup menu makes it
+    possible to start your computer with a variety of
+    configurations. For more information about defining
+    multiple configurations, see the chapter "Configuring
+    Your System" in the MS-DOS User's Guide.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>MENUITEM=<a
+    href="#ParameterBlockname">blockname</a>[,<a
+    href="#ParameterMenutext">menu_text</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterBlockname"></a> blockname
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Specifies the name of the associated configuration
+      block. The block must be defined elsewhere in the
+      CONFIG.SYS file. If the menu item is selected from the
+      startup menu, the operating system carries out the
+      commands in the associated configuration block, as
+      well as any commands at the beginning of the
+      CONFIG.SYS file and any commands in configuration
+      blocks with the [common] header.</dd>
+      <dd>If the operating system cannot find a block with
+      the specified name, the item does not appear on the
+      startup menu. The block name can be up to 70
+      characters long and can contain most printable
+      characters. It cannot include spaces, backslashes (\),
+      forward slashes (/), commas, semicolons (;), equal
+      signs (=), or square brackets ([ and ]).</dd>
+
+      <dt><a name="ParameterMenutext"></a> menu_text
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Specifies the text you want the operating system
+      to display for this menu item. If you don't specify
+      any menu text, the operating system displays the block
+      name as the menu item. The menu text can be up to 70
+      characters long and can contain any characters you
+      want.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>The MENUITEM command is one of six special
+    CONFIG.SYS commands for defining startup menus and
+    multiple configurations. The other commands are as
+    follows:
+    <ul>
+      <li>The <a href="../I/INCLUDE.HTM">INCLUDE</a>
+      command, which includes the contents of one
+      configuration block in another. This command cannot be
+      included in a menu block.</li>
+      <li>The <a href="MENUCOLO.HTM">MENUCOLOR</a>
+      command, which defines the color of the menu's text
+      and screen background.</li>
+      <li>The <a href="MENUDEFA.HTM">MENUDEFAULT</a>
+      command, which specifies the default menu item.</li>
+      <li>The <a href="../N/NUMLOCK.HTM">NUMLOCK</a>
+      command, which specifies the state of the NUM LOCK key
+      when the startup menu appears. (Although
+      <a href="../N/NUMLOCK.HTM">NUMLOCK</a> can be used
+      anywhere in the CONFIG.SYS file, it is especially
+      useful when defining a startup menu.)</li>
+      <li>The <a href="../S/SUBMENU.HTM">SUBMENU</a>
+      command, which defines a submenu.</li>
+    </ul>
+    <p>For an overview of the procedure for defining
+    multiple configurations, see the topic "Commands for
+    Defining Multiple Configurations".</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p><b>Defining menu blocks</b>
+    A menu block is a set of menu-definition commands that
+    begins with a block header--the name of the block
+    enclosed in square brackets. To have a startup menu,
+    your CONFIG.SYS file must contain a menu block that has
+    the [menu] block header.</p>
+
+    <p>You can use the <a href="../S/SUBMENU.HTM">SUBMENU</a>
+    command to define submenus. Each submenu has its own
+    menu block, which can be named anything you want.</p>
+
+    <p>A menu block must contain at least one
+    MENUITEM or <a href="../S/SUBMENU.HTM">SUBMENU</a>
+    command.</p>
+
+    <p><b>Number of items on the startup menu</b>
+    The operating system displays the menu items in the
+    order they appear in the menu block and numbers them
+    automatically. The first menu item is always number 1 on
+    the menu; there can be up to nine items. If you need to
+    define more than nine menu items, use the
+    <a href="../S/SUBMENU.HTM">SUBMENU</a> command.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>This [menu] block defines a startup menu with two
+    items, Apples and Oranges:
+<pre>
+    [menu]
+    MENUITEM=<a
+href="#ParameterBlockname">Apples</a>
+    MENUITEM=<a
+href="#ParameterBlockname">Oranges</a>
+</pre>
+
+    <p>When the operating system starts, the menu will
+    appear as follows:
+<pre>
+    MS-DOS Startup Menu
+    ===================
+
+       1. Apples
+       2. Oranges
+
+    Enter a choice: 1
+</pre>
+
+    <p>This [MENU] block defines a startup menu with three
+    items and specifies menu text for each item:
+<pre>
+    [menu]
+    MENUITEM=<a
+href="#ParameterBlockname">base_config</a>,<a
+href="#ParameterMenutext">Base configuration only</a>
+    MENUITEM=<a
+href="#ParameterBlockname">full_config</a>,<a
+href="#ParameterMenutext">Normal configuration</a>
+    MENUITEM=<a
+href="#ParameterBlockname">net_config</a>,<a
+href="#ParameterMenutext">Normal configuration with network</a>
+</pre>
+
+    <p>The first item corresponds to the [base_config]
+    configuration block, the second to the [full_config]
+    block, and the third to the [net_config] block. When the
+    operating system starts, it displays the following menu:
+<pre>
+    MS-DOS Startup Menu
+    ===================
+
+       1. Base configuration only
+       2. Normal configuration
+       3. Normal configuration with network
+
+    Enter a choice: 1
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

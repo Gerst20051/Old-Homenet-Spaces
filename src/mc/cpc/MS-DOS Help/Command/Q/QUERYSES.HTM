@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>QUERY SESSION</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#q">Commands N-Z</a>
+    &gt; <a href="../INDEXQ.HTM#querysession">Commands Q</a>
+    <h1>QUERY SESSION</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Displays information about sessions on a terminal
+    server. The list includes information not only about
+    active sessions but about other sessions that the
+    server runs.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>QUERY SESSION
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>QUERY SESSION
+    [{<a href="#ParameterUsername">user_name</a>
+    | <a href="#ParameterSessionname">session_name</a>
+    | <a href="#ParameterSessionid">session_id</a>}]
+    [<a href="#SwitchConnect">/connect</a>]
+    [<a href="#SwitchCounter">/counter</a>]
+    [<a href="#SwitchFlow">/flow</a>]
+    [<a href="#SwitchMode">/mode</a>]
+    [<a href="#SwitchServer">/server:server_name</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterSessionid"></a> session_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>The ID of the session you want to query.</dd>
+      <dd>If omitted, displays information about all active
+      sessions in the system.</dd>
+
+      <dt><a name="ParameterSessionname"></a> session_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>The name of the session you want to query.</dd>
+      <dd>If omitted, displays information about all active
+      sessions in the system.</dd>
+
+      <dt><a name="ParameterUsername"></a> user_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>The name of the user whose sessions you want to
+      query.</dd>
+      <dd>If omitted, displays information about all active
+      sessions in the system.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchConnect"></a> /connect
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays current connect settings.</dd>
+
+      <dt><a name="SwitchCounter"></a> /counter
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays current counters information, including
+      the total number of sessions created, disconnected,
+      and reconnected.</dd>
+
+      <dt><a name="SwitchFlow"></a> /flow
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays current flow-control settings.</dd>
+
+      <dt><a name="SwitchMode"></a> /mode
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays current line settings.</dd>
+
+      <dt><a name="SwitchServer"></a> /server:server_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Identifies the terminal server to query.
+      The default is the current server.</dd>
+
+      <dt><a name="SwitchSystem"></a> /system
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that current information about system
+      processes is displayed. If you do not want system
+      processes to be displayed, do not use this switch.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>A user can always query the session to which the
+    user is currently logged on. To query other sessions,
+    the user must have Query Information access permission.</p>
+    <p>When query session returns information, a less than
+    (&lt;) symbol is displayed before the current session.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

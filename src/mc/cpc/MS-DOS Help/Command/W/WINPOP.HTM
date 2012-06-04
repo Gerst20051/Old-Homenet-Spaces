@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>WINPOP</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#w">Commands N-Z</a>
+    &gt; <a href="../INDEXW.HTM#winpop">Commands W</a>
+    <h1>WINPOP</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>POP3 service command line administration tool.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>WINPOP
+    [<a href="#ParameterAdd">add {DomainName | UserName@DomainName [/createuser Password]}</a>]
+    [<a href="#ParameterChangePwd">changepwd UserName@DomainName NewPassword</a>]
+    [<a href="#ParameterCreateQuotaFile">createquotafile UserName@DomainName [/user:UserName]</a>]
+    [<a href="#ParameterDelete">delete {DomainName | UserName@DomainName [/deleteuser]}</a>]
+    [<a href="#ParameterHelp">help</a>]
+    [<a href="#ParameterList">list [DomainName]</a>]
+    [<a href="#ParameterLock">lock {DomainName | UserName@DomainName}</a>]
+    [<a href="#ParameterMigrateToad">migrateToAD UserName@DomainName</a>]
+    [<a href="#ParameterStat">stat [DomainName]</a>]
+    [<a href="#ParameterUnLock">unlock {DomainName | UserName@DomainName}</a>]</p>
+
+    <p>WINPOP GET
+    [<a href="#ParameterAuthentication">auth[entication]</a>]
+    [<a href="#ParameterLogging">logging</a>]
+    [<a href="#ParameterMailRoot">mailroot</a>]
+    [<a href="#ParameterPort">port</a>]
+    [<a href="#ParameterSocket">socket</a>]
+    [<a href="#ParameterSocketBacklog">socketbacklog</a>]
+    [<a href="#ParameterSocketMax">socketmax</a>]
+    [<a href="#ParameterSocketMin">socketmin</a>]
+    [<a href="#ParameterSocketThreshold">socketthreshold</a>]
+    [<a href="#ParameterSpaRequired">sparequired</a>]
+    [<a href="#ParameterThreadCount">threadcount</a>]</p>
+
+    <p>WINPOP SET
+    [<a href="#ParameterAuthentication">auth[entication] {1 | 2 | 3}</a>]
+    [<a href="#ParameterLogging">logging {0 | 1 | 2 | 3}</a>]
+    [<a href="#ParameterMailRoot">mailroot Path</a>]
+    [<a href="#ParameterPort">port PortNumber</a>]
+    [<a href="#ParameterSocket">socket Value1 Value2 Value3 Value4</a>]
+    [<a href="#ParameterSocketBacklog">socketbacklog Value</a>]
+    [<a href="#ParameterSocketMax">socketmax Value</a>]
+    [<a href="#ParameterSocketMin">socketmin Value</a>]
+    [<a href="#ParameterSocketThreshold">socketthreshold Value</a>]
+    [<a href="#ParameterSpaRequired">sparequired {0 | 1}</a>]
+    [<a href="#ParameterThreadCount">threadcount Value</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterAdd"></a> add {DomainName | UserName@DomainName [/createuser Password]}
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Creates a new domain or mailbox. If you are using
+      Active Directory integrated authentication or local
+      Windows accounts authentication, you must create a
+      user account when creating a mailbox, unless one
+      exists already. If you are using encrypted password
+      file authentication, you must create a user account
+      using the /createuser switch, otherwise you will be
+      unable to create the mailbox. The user account created
+      when using encrypted password file authentication does
+      not have logon rights. The maximum length for a
+      mailbox name is 20 characters for local Windows
+      accounts authentication, and 64 characters for
+      encrypted password file authentication or Active
+      Directory integrated authentication. The minimum
+      length is 1 character. The value for DomainName must
+      be the fully qualified domain name.</dd>
+
+      <dt><a name="ParameterAuthentication"></a> auth[entication]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dt> auth[entication] {1 | 2 | 3}
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>If the computer on which the POP3 service is
+      running is a domain controller, use:
+        <ul>
+          <li><b>1</b> Active Directory integrated authentication</li>
+          <li><b>2</b> Encrypted password file authentication</li>
+        </ul>
+      </dd>
+      <dd>If the computer on which the POP3 service is
+      running is an Active Directory member server, use:
+        <ul>
+          <li><b>1</b> Active Directory integrated authentication</li>
+          <li><b>2</b> Local Windows accounts authentication</li>
+          <li><b>3</b> Encrypted password file authentication</li>
+        </ul>
+      </dd>
+      <dd>Otherwise, use:
+        <ul>
+          <li><b>1</b> Local Windows accounts authentication</li>
+          <li><b>2</b> Encrypted password file authentication</li>
+        </ul>
+      </dd>
+
+      <dt><a name="ParameterChangePwd"></a> changepwd UserName@DomainName NewPassword
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Changes the password of the mailbox's user
+      account.</dd>
+
+      <dt><a name="ParameterCreateQuotaFile"></a> createquotafile UserName@DomainName [/user:UserName]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Creates a quota file for the user specified.
+      The /user switch specifies a different user account
+      for the quota to reference.</dd>
+
+      <dt><a name="ParameterDelete"></a> delete {DomainName | UserName@DomainName [/deleteuser]}
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Deletes an existing domain or mailbox. When
+      deleting a mailbox, you can specify to delete the
+      associated user account, if it exists.</dd>
+      <dd><b>Warning:</b> Deleting a domain will delete all
+      the mailboxes in that domain, the corresponding mail
+      store directories, and all e-mail stored in those
+      directories.</dd>
+
+      <dt><a name="ParameterHelp"></a> help
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display command help.</dd>
+
+      <dt><a name="ParameterList"></a> list [DomainName]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Lists all POP3 service domains or, if the domain
+      value is specified, all the mailboxes in the domain.</dd>
+
+      <dt><a name="ParameterLock"></a> lock {DomainName | UserName@DomainName}
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Locks a domain or a mailbox. If a domain is locked
+      all the mailboxes in the domain are locked and all
+      users attempting to retrieve e-mail are denied a
+      connection. Incoming e-mail for the domain is still
+      received and delivered to the appropriate mailbox
+      directory in the mail store. The POP3 service will
+      continue to send outgoing mail.</dd>
+
+      <dt><a name="ParameterLogging"></a> logging
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dt> logging {0 | 1 | 2 | 3}
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the event logging level for the POP3 service:
+        <ul>
+          <li><b>0</b> No logging</li>
+          <li><b>1</b> Only critical events are logged</li>
+          <li><b>2</b> Critical and warning events are logged</li>
+          <li><b>3</b> Critical, warning, and informational events are logged</li>
+        </ul>
+      </dd>
+
+      <dt><a name="ParameterMailRoot"></a> mailroot
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dt> mailroot Path
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the mail store directory for the POP3
+      service. The value for Path must be either a directory
+      on the local file system or a Universal Naming
+      Convention (UNC) path.
+      The maximum allowable value is 260 characters.</dd>
+
+      <dt><a name="ParameterMigrateToad"></a> migrateToAD UserName@DomainName
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Migrates an encrypted password file authentication
+      user account, including its password, to an Active
+      Directory user account. This command can be used only
+      if the current authentication method is encrypted
+      password file authentication.</dd>
+
+      <dt><a name="ParameterPort"></a> port
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dt> port PortNumber
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the port on which the POP3 service listens
+      for POP3 e-mail clients and responds to connection
+      requests. The value for PortNumber must be between
+      1 - 65535.</dd>
+
+      <dt><a name="ParameterSocket"></a> socket
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dt> socket Value1 Value2 Value3 Value4
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>?</dd>
+
+      <dt><a name="ParameterSocketBacklog"></a> socketbacklog
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dt> socketbacklog Value
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the number of connections that are held in a
+      waiting state once
+      <a href="#ParameterSocketMax">socketmax Value</a> has
+      been reached. For the number of connection attempts
+      between <a href="#ParameterSocketMax">socketmax Value</a>
+      and <a href="#ParameterSocketMax">socketmax Value</a> +
+      socketbacklog Value, connections will be accepted but
+      will not receive any response until a new socket
+      becomes available. Once socketbacklog is filled, new
+      connections attempts are denied. The value for
+      socketbacklog Value must be between 0 - 100.</dd>
+
+      <dt><a name="ParameterSocketMax"></a> socketmax
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dt> socketmax Value
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the maximum number of sockets the service
+      will create. Once the number of sockets specified by
+      socketmax Value has been reached, any new connection
+      attempts are held until an existing connection is
+      disconnected. Defaults to 50. The value for socketmax
+      Value must be between 1 - 32000 and greater than
+      <a href="#ParameterSocketMin">socketmin Value</a> +
+      <a href="#ParameterSocketThreshold">socketthreshold Value</a>.</dd>
+
+      <dt><a name="ParameterSocketMin"></a> socketmin
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dt> socketmin Value
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the minimum number of sockets the service
+      will maintain. Defaults to 10. The value for socketmin
+      Value must be between 1 - 32000 and less than
+      <a href="#ParameterSocketMax">socketmax Value</a>.</dd>
+
+      <dt><a name="ParameterSocketThreshold"></a> socketthreshold
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dt> socketthreshold Value
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the number of new sockets to create at a
+      time. Once the existing sockets are used, if there are
+      still remaining sockets available, then N number of
+      new sockets will be created, where N is the value of
+      socketthreshold. The value for socketthreshold Value
+      must be between 0 - 100 and greater than 0 unless
+      <a href="#ParameterSocketMin">socketmin Value</a> =
+      <a href="#ParameterSocketMax">socketmax Value</a>.</dd>
+
+      <dt><a name="ParameterSpaRequired"></a> sparequired
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dt> sparequired {0 | 1}
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the mail server to require Secure Password
+      Authentication for all client connections:
+        <ul>
+          <li><b>0</b> Secure Password Authentication is not required (default setting)</li>
+          <li><b>1</b> Secure Password Authentication is required for all client connections (e-mail clients are not allowed to authenticate if they are using plaintext authentication)</li>
+        </ul>
+
+      <dt><a name="ParameterStat"></a> stat [DomainName]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays server statistics: total number of
+      mailboxes, total disk usage, total number of stored
+      e-mail, the lock/unlock status of the domains, and the
+      total number of domains. When the DomainName option is
+      passed, displays the domain statistics:
+      total number of mailboxes in the domain, the
+      lock/unlock status of the individual mailboxes, total
+      size of the domain, and total number of e-mail messages
+      stored in the domain.</dd>
+
+      <dt><a name="ParameterThreadCount"></a> threadcount
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dt> threadcount Value
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the number of threads to run for the POP3
+      service. The value for Value must be between 1 - 32,
+      equal to the number of CPUs installed on the computer
+      on which the POP3 service is running.</dd>
+
+      <dt><a name="ParameterUnLock"></a> unlock {DomainName | UserName@DomainName}
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Unlock a previously locked domain and all
+      mailboxes in the domain or a single mailbox, if that
+      mailbox is not locked as part of a domain lock. All
+      users attempting to download mail from the POP3
+      service will be able to connect and retrieve e-mail
+      again.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

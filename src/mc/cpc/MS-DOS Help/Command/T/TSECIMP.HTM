@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>TSECIMP</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#t">Commands N-Z</a>
+    &gt; <a href="../INDEXT.HTM#tsecimp">Commands T</a>
+    <h1>TSECIMP</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Imports assignment information from an Extensible
+    Markup Language (XML) file into the TAPI server security
+    file (tsec.ini). This command can also be used to
+    display the list of TAPI providers and the lines or
+    devices associated with each provider, validate the
+    structure of the XML file without importing the
+    information, and check domain membership.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>TSECIMP
+    [{<a href="#SwitchHelp">-?</a>
+    | <a href="#SwitchHelp">-h</a>}]</p>
+
+    <p>TSECIMP
+    <a href="#SwitchF">-f file_name</a>
+    [<a href="#SwitchU">-u</a>]
+    | <a href="#SwitchV">-v</a>]</p>
+
+    <p>TSECIMP
+    <a href="#SwitchD">-d</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> -? | -h
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a> ONLY)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchD"></a> -d
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays a list of installed telephony providers.
+      For each telephony provider, the lines or devices
+      associated with that provider are listed, as well as
+      the addresses and users associated with each line or
+      device.</dd>
+
+      <dt><a name="SwitchF"></a> -f file_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the name of the XML file that contains
+      the assignment information that you want to process.</dd>
+
+      <dt><a name="SwitchU"></a> -u
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Checks whether each user is a member of the domain
+      specified in the XML file. The computer on which you
+      use this switch must be connected to the network.
+      Significantly slows performance, so you might not want
+      to use it if you are processing a large amount of user
+      assignment information.</dd>
+
+      <dt><a name="SwitchV"></a> -v
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Validates the structure of the XML file without
+      importing the information into the tsec.ini file.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>The XML file from which you want to import assignment
+    information must follow the structure:
+    <dl>
+      <dt>UserList element</dt>
+      <dd>The UserList is the top element of the XML file.</dd>
+
+      <dt>User element</dt>
+      <dd>Each User element contains information about a
+      user who is a member of a domain. That user might be
+      assigned one or more line or phone devices. Each User
+      element might have an attribute called "NoMerge". If
+      this attribute is specified, all current line and
+      device assignments for the user are removed before new
+      assignments are made. This attribute allows the
+      administrator to quickly remove unwanted user
+      assignments. By default, this attribute is not set.</dd>
+      <dd>The User element must contain a single
+      DomainUserName element, which specifies the domain and
+      user name of the user. The User element might also
+      contain one FriendlyName element, which specifies a
+      friendly name for the user.</dd>
+      <dd>The User element might contain one LineList
+      element. If no LineList element is present, all lines
+      or devices for this user are removed.</dd>
+
+      <dt>LineList element</dt>
+      <dd>The LineList element contains information about
+      each line or device that might be assigned to the
+      user. Each LineList element can contain more than one
+      line element.</dd>
+
+      <dt>Line element</dt>
+      <dd>Each Line element specifies a line or a device.
+      You must identify each line or device by adding either
+      an Address element or a PermanentID element under the
+      Line element.</dd>
+      <dd>For each Line element, you can set the "Remove"
+      attribute. If you set this attribute, the user will no
+      longer be assigned that line or device. If this
+      attribute is not set, the user will gain access to
+      that line or device. No error is given if the line or
+      device is not available to the user.</dd>
+    </dl>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

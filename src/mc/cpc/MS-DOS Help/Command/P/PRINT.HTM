@@ -1,0 +1,372 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>PRINT</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#p">Commands N-Z</a>
+    &gt; <a href="../INDEXP.HTM#print">Commands P</a>
+    <h1>PRINT</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Prints a text file while you are using other operating system
+    commands.</p>
+    <p>This command can print in the background if you have an output
+    device connected to one of your system's serial or parallel
+    ports.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>PRINT
+    [<a href="#SwitchD">/D:device</a>]
+    [<a href="#SwitchB">/B:size</a>]
+    [<a href="#SwitchU">/U:ticks1</a>]
+    [<a href="#SwitchM">/M:ticks2</a>]
+    [<a href="#SwitchS">/S:ticks3</a>]
+    [<a href="#SwitchQ">/Q:qsize</a>]
+    [<a href="#SwitchT">/T</a>]
+    [[<a href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path</a>]<a
+    href="#ParameterFilename">filename</a> [ ...]]
+    [<a href="#SwitchC">/C</a>]
+    [<a href="#SwitchP">/P</a>] [...]</p>
+
+    <p>To install PRINT with the default parameters or to display the
+    contents of the print queue on your screen without affecting the
+    queue:</p>
+    <p>PRINT</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a name="ParameterPath"></a> path
+      <a name="ParameterFilename"></a> filename
+      <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the location and name of a file or set of files you
+      want to print. You can include multiple files (usually as many as
+      10) on one command-line.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchB"></a> /B:size
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Sets the size (in bytes) of the internal buffer, which is
+      used to store data before it is sent to the printer. The minimum
+      and default value for size is 512; the maximum value is 16384.
+      Increasing this value decreases the amount of memory available
+      for other purposes but may speed up the PRINT command.</dd>
+
+      <dt><a name="SwitchC"></a> /C
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>
+        Removes files from the print queue. You can use the /C and
+        <a href="#SwitchP">/P</a> switches on the same command-line.
+      </dd>
+      <dd>
+        When the /C switch precedes the list of filenames on the
+        command-line, it applies to all files whose names follow the /C
+        switch, until PRINT encounters a <a href="#SwitchP">/P</a>
+        switch, in which case the <a href="#SwitchP">/P</a> switch
+        applies to the file whose name precedes the <a
+        href="#SwitchP">/P</a> switch.
+      </dd>
+      <dd>
+        When the /C switch follows a filename, it applies to the
+        file whose name precedes the /C switch and all files whose
+        names follow the /C switch, until PRINT encounters a <a
+        href="#SwitchP">/P</a> switch, in which case the <a
+        href="#SwitchP">/P</a> switch applies to the file whose
+        name precedes the <a href="#SwitchP">/P</a> switch.
+      </dd>
+
+      <dt><a name="SwitchD"></a> /D:device
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the name of the print device. Valid values for
+      parallel ports are LPT1, LPT2, LPT3, and PRN. Valid values for
+      serial ports are COM1, COM2, COM3, and COM4. The default value is
+      LPT1, which is also called PRN. The /D switch must precede any
+      filename used on the command-line.</dd>
+
+      <dt><a name="SwitchM"></a> /M:ticks2
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Specifies the maximum number of clock ticks PRINT can take to
+      print a character on the printer. Values for ticks2 must be in
+      the range 1 through 255. The default value is 2. If a character
+      is printed too slowly, the operating system displays an error
+      message.</dd>
+
+      <dt><a name="SwitchP"></a> /P filename [...]
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>)</dt>
+      <dt>/P path\filename [...]
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Adds files to the print queue. You can use the
+      <a href="#SwitchC">/C</a> and /P switches on the same
+      command-line.</dd>
+      <dd>When the /P switch precedes the list of filenames on the
+      command-line, it applies to all files whose names follow the
+      /P switch, until PRINT encounters a <a href="#SwitchC">/C</a>
+      switch, in which case the <a href="#SwitchC">/C</a> switch
+      applies to the file whose name precedes the
+      <a href="#SwitchC">/C</a> switch.</dd>
+      <dd>When the /P switch follows a filename, it applies to the
+      file whose name precedes the /P switch and all files whose
+      names follow the /P switch, until PRINT encounters a
+      <a href="#SwitchC">/C</a> switch, in which case the
+      <a href="#SwitchC">/C</a> switch applies to the file whose
+      name precedes the <a href="#SwitchC">/C</a> switch.</dd>
+
+      <dt><a name="SwitchQ"></a> /Q:qsize
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Specifies the maximum number of files allowed in the print
+      queue. Values for qsize must be in the range 4 through 32. The
+      default value is 10.</dd>
+
+      <dt><a name="SwitchS"></a> /S:ticks3
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Specifies the number of clock ticks the operating system
+      scheduler allocates for background printing. Values for ticks3
+      must be in the range 1 through 255. The default value is 8.
+      Increasing this value can speed up printing while slowing down
+      other programs.</dd>
+
+      <dt><a name="SwitchT"></a> /T
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Removes all files from the print queue.</dd>
+
+      <dt><a name="SwitchU"></a> /U:ticks1
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Specifies the maximum number of clock ticks PRINT is to wait
+      for a printer to be available (clock ticks occur about 18 times
+      per second). If the printer is not available within the time
+      specified, the job does not print. Values for ticks1 must be in
+      the range 1 through 255. The default value is 1.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about configuring a printer connected to a
+    parallel port, see the
+    <a href="../M/MODECP.HTM">MODE (configure printer)</a> command.
+    <br>For information about displaying the status of a printer, see
+    the <a href="../M/MODEDD.HTM">MODE (display device status)</a>
+    command.
+    <br>For information about configuring a printer connected to a
+    serial port, see the
+    <a href="../M/MODERP.HTM">MODE (redirect printing)</a> command.
+    <br>For information about preparing printers for character-set
+    switching, see the
+    <a href="../M/MODESC.HTM">MODE (set device code pages)</a> command.
+    <br><a href="../N/NETPRINT.HTM">NET PRINT</a> - View and Delete print jobs.
+    <br><a href="../D/DEL.HTM">DEL</a> - Delete one or more files.
+    <br><a href="../D/DEFPRINT.HTM">DEFPRINT</a> - Command-line utility to set the default printer -
+    download from: http://www.tardis.ed.ac.uk/~sda/defprint
+    <br>Print Notification - this is set under Control Panel,
+    Printers, File, Server Properties, Advanced
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>printf - Format and print data.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Length">Length of a PRINT queue entry</a></li>
+      <li><a href="#Limitations">Limitations on switches</a></li>
+      <li><a href="#Application">Use an application's print command when possible</a></li>
+    </ul>
+
+    <hr>
+    <a name="Length"></a> <b>Length of a PRINT queue entry</b>
+    <p>Each print queue entry can contain a maximum of 64 characters.
+    Each queue entry includes the drive letter, directory, and any
+    subdirectories.</p>
+
+    <hr>
+    <a name="Limitations"></a> <b>Limitations on switches</b>
+    <p>You can only use the
+    <a href="#SwitchD">/D</a>,
+    <a href="#SwitchB">/B</a>,
+    <a href="#SwitchU">/U</a>,
+    <a href="#SwitchM">/M</a>,
+    <a href="#SwitchS">/S</a>, and
+    <a href="#SwitchQ">/Q</a> switches the first time you use
+    the PRINT command after starting the operating system. To
+    use one of these switches after using PRINT, you need to restart
+    the operating system.</p>
+
+    <hr>
+    <a name="Application"></a> <b>Use an application's print command when possible</b>
+    <p>Many applications have their own print commands. You should use
+    an application's print command to print files that you create with
+    the application.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To view the status of the print queue, type:</p>
+<pre>
+    PRINT
+</pre>
+
+    <p>The operating system displays the name of the file being printed
+    (if any), the names of files in the queue, and an error message, if
+    an error condition exists.</p>
+
+    <hr>
+    <p>This command removes the PENCIL.TST file from the print
+    queue:</p>
+<pre>
+    PRINT <a
+href="#ParameterDrive">A:</a><a
+href="#ParameterFilename">PENCIL.TST</a> <a
+href="#SwitchC">/C</a>
+</pre>
+
+    <hr>
+    <p>The next command shows how to remove the file PENCIL.TST from
+    the queue and add the file PEN.TST to the queue:</p>
+<pre>
+    PRINT <a
+href="#ParameterFilename">PENCIL.TST</a> <a
+href="#SwitchC">/C</a> <a
+href="#ParameterFilename">PEN.TST</a> <a
+href="#SwitchP">/P</a>
+</pre>
+
+    <hr>
+    <p>The remaining examples use switches that work only with the
+    first PRINT command you use after starting the operating system.</p>
+    <p>This command sets up the print queue for printing on
+    LPT1:</p>
+<pre>
+    PRINT <a
+href="#SwitchD">/D:lpt1</a>
+</pre>
+
+    <hr>
+    <p>To specify that the PRINT command is to wait 60 clock ticks for
+    a printer to be available and that the operating system scheduler
+    is to allocate 25 clock ticks to the PRINT command for background
+    printing rather than the default value of 8 clock ticks, type:</p>
+<pre>
+    PRINT <a
+href="#SwitchU">/U:60</a> <a
+href="#SwitchS">/S:25</a>
+</pre>
+
+    <hr>
+    <p>This example specifies that PRINT has 4 clock ticks
+    available to print each character rather than the default value of
+    2 clock ticks:</p>
+<pre>
+    PRINT <a
+href="#SwitchM">/M:4</a>
+</pre>
+
+    <hr>
+    <p>To change the default maximum number of files for the print
+    queue, use the PRINT command with the
+    <a href="#SwitchQ">/Q</a> switch:</p>
+<pre>
+    PRINT <a
+href="#SwitchQ">/Q:32</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External Resident</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

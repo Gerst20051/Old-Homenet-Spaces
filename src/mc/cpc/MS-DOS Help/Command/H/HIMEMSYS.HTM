@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>HIMEM.SYS</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#h">Commands A-M</a>
+    &gt; <a href="../INDEXH.HTM#himemsys">Configuration H</a>
+    <h1>HIMEM.SYS</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>HIMEM is an extended-memory manager--a program that coordinates the
+    use of your computer's extended memory, including the high memory area
+    (HMA), so that no two applications or device drivers use the same memory
+    at the same time.</p>
+
+    <p>You install HIMEM by adding a <a href="../D/DEVICE.HTM">DEVICE</a>
+    command for HIMEM.SYS to your CONFIG.SYS file. The
+    HIMEM.SYS command line must come before any commands
+    that start applications or device drivers that use
+    extended memory.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p><a href="../D/DEVICE.HTM">DEVICE</a>=<a
+    href="#ParameterDrivePath">[drive:][\path\]</a>HIMEM.SYS
+    [<a href="#SwitchA20control">/A20CONTROL:ON | OFF</a>]
+    [<a href="#SwitchCpuclock">/CPUCLOCK:ON | OFF</a>]
+    [<a href="#SwitchEisa">/EISA</a>]
+    [<a href="#SwitchHmamin">/HMAMIN=m</a>]
+    [<a href="#SwitchInt15">/INT15=xxxx</a>]
+    [<a href="#SwitchMachine">/MACHINE:xxxx</a>]
+    [<a href="#SwitchNumhandles">/NUMHANDLES=n</a>]
+    [<a href="#SwitchQ">/Q</a>]
+    [<a href="#SwitchShadowram">/SHADOWRAM:ON | OFF</a>]
+    [<a href="#SwitchTestmem">/TESTMEM:ON | OFF</a>]
+    [<a href="#SwitchVerbose">/V[ERBOSE]</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrivePath"></a> [drive:][\path\]
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Specifies the location of the HIMEM.SYS file.
+      HIMEM.SYS should always be located on the same drive
+      that contains your operating system files. If the
+      HIMEM.SYS file is in the root directory of your
+      startup drive, you don't need to include a path.
+      However, you must always include the complete
+      filename (HIMEM.SYS).</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchA20control"></a> /A20CONTROL:ON | OFF
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Specifies whether HIMEM is to take control of the
+      A20 line even if A20 was on when HIMEM was loaded. The
+      A20 handler gives your computer access to the HMA. If
+      you specify /A20CONTROL:OFF, HIMEM takes control of
+      the A20 line only if A20 was off when HIMEM was loaded.
+      The default setting is /A20CONTROL:ON.</dd>
+
+      <dt><a name="SwitchCpuclock"></a> /CPUCLOCK:ON | OFF
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Specifies whether HIMEM is to affect the clock
+      speed of your computer. If your computer's clock speed
+      changes when you install HIMEM, specifying /CPUCLOCK:ON
+      may correct the problem; however, enabling this option
+      slows down HIMEM. The default setting is /CPUCLOCK:OFF.</dd>
+
+      <dt><a name="SwitchEisa"></a> /EISA
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Specifies that HIMEM should allocate all available
+      extended memory. This switch is necessary only on an
+      EISA (Extended Industry Standard Architecture)
+      computer with more than 16 MB of memory; on other
+      computers, HIMEM automatically allocates all available
+      extended memory.</dd>
+
+      <dt><a name="SwitchHmamin"></a> /HMAMIN=m
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Specifies how many kilobytes of memory an
+      application must require for HIMEM to give that
+      application use of the HMA. Only one application can
+      use the HMA at a time; HIMEM allocates the HMA to the
+      first application that meets the memory-use
+      requirements set by this option. You can specify a
+      value from 0 to 63.</dd>
+      <dd>Set /HMAMIN to the amount of memory required by
+      the application that uses the most HMA memory.</dd>
+      <dd>The /HMAMIN option is not required; the default
+      value is zero. Omitting this option (or setting it to
+      zero) specifies that HIMEM allocate the HMA to the
+      first application that requests it, regardless of how
+      much of the HMA the application is going to use.</dd>
+      <dd>The /HMAMIN option has no effect when Windows is
+      running in 386 enhanced mode.</dd>
+
+      <dt><a name="SwitchInt15"></a> /INT15=xxxx
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Allocates the amount of extended memory (in
+      kilobytes) to be reserved for the Interrupt 15h
+      interface. Some older applications use the Interrupt
+      15h interface to allocate extended memory rather than
+      using the XMS (eXtended-Memory Specification) method
+      provided by HIMEM. If you use these applications, you
+      can ensure enough memory is available to them by
+      setting xxxx to 64 KB larger than the amount required
+      by the application.</dd>
+      <dd>You can specify a value from 64 to 65535; however,
+      you cannot specify more memory than your system has
+      available. If you specify a value less than 64, the
+      value becomes 0. The default value is 0.</dd>
+
+      <dt><a name="SwitchMachine"></a> /MACHINE:xxxx
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Specifies what type of computer you are using.
+      Usually, HIMEM can detect your computer type
+      successfully; however, there are a few computers that
+      HIMEM cannot detect. On such systems, HIMEM uses the
+      default system type (IBM AT or compatible). You might
+      need to include the /MACHINE option if your computer
+      is a type that HIMEM cannot detect and if HIMEM does
+      not work properly on your system by using the default
+      system type.</dd>
+      <dd>Currently, systems that require this option
+      include Acer 1100, Wyse, and IBM 7552.</dd>
+      <dd>The value for xxxx can be any of the codes or
+      their equivalent numbers in the table:
+      <ul>
+        <li><b>1</b>/<b>at</b> IBM AT or 100% compatible</li>
+        <li><b>2</b>/<b>ps2</b> IBM PS/2</li>
+        <li><b>3</b>/<b>ptlcascade</b> Phoenix Cascade BIOS</li>
+        <li><b>4</b>/<b>hpvectra</b> HP Vectra (A &amp; A+)</li>
+        <li><b>5</b>/<b>att6300plus</b> AT&amp;T 6300 Plus</li>
+        <li><b>6</b>/<b>acer1100</b> Acer 1100</li>
+        <li><b>7</b>/<b>toshiba</b> Toshiba 1600 &amp; 1200XE</li>
+        <li><b>8</b>/<b>wyse</b> Wyse 12.5 Mhz 286</li>
+        <li><b>9</b>/<b>tulip</b> Tulip SX</li>
+        <li><b>10</b>/<b>zenith</b> Zenith ZBIOS</li>
+        <li><b>11</b>/<b>at1</b> IBM PC/AT (alternative delay)</li>
+        <li><b>12</b>/<b>at2</b> IBM PC/AT (alternative delay)</li>
+        <li><b>12</b>/<b>css</b> CSS Labs</li>
+        <li><b>13</b>/<b>at3</b> IBM PC/AT (alternative delay)</li>
+        <li><b>13</b>/<b>philips</b> Philips</li>
+        <li><b>14</b>/<b>fasthp</b> HP Vectra</li>
+        <li><b>15</b>/<b>ibm7552</b> IBM 7552 Industrial Computer</li>
+        <li><b>16</b>/<b>bullmicral</b> Bull Micral 60</li>
+        <li><b>17</b>/<b>dell</b> Dell XBIOS</li>
+      </ul>
+      </dd>
+
+      <dt><a name="SwitchNumhandles"></a> /NUMHANDLES=n
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Specifies the maximum number of extended-memory
+      block (EMB) handles that can be used simultaneously.
+      You can specify a value from 1 to 128; the default
+      value is 32. Each additional handle requires an
+      additional 6 bytes of memory.</dd>
+      <dd>The /NUMHANDLES option has no effect when Windows
+      is running in 386 enhanced mode.</dd>
+
+      <dt><a name="SwitchQ"></a> /Q
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd><b>UNDOCUMENTED</b> Prevents display bootup loading
+      status.</dd>
+
+      <dt><a name="SwitchShadowram"></a> /SHADOWRAM:ON|OFF
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Specifies whether to disable shadow RAM
+      (SHADOWRAM:OFF) or to leave the ROM code running from
+      RAM (SHADOWRAM:ON).</dd>
+      <dd>Some computers make ROM code run faster by
+      "shadowing" it in RAM -- that is, by copying the ROM
+      code into faster RAM memory at startup, which uses
+      some extended memory. On computers that use shadow RAM
+      and have less than 2 MB of RAM, HIMEM usually attempts
+      to disable shadow RAM to recover additional extended
+      memory for Windows to use. (HIMEM can disable shadow
+      RAM only on certain types of systems.) When HIMEM
+      disables shadow RAM, the ROM code runs in the slower
+      ROM instead of RAM; therefore, your computer might run
+      slightly slower than it did before.</dd>
+
+      <dt><a name="SwitchTestmem"></a> /TESTMEM:ON|OFF
+      (<a href="../../Version/MSDOS/622.HTM">v6.22</a>)</dt>
+      <dd>Determines whether HIMEM performs a memory test
+      when your computer starts. By default, HIMEM tests the
+      reliability of your computer's extended memory each
+      time your computer starts. This test can identify
+      memory that is no longer reliable; unreliable memory
+      can cause system instability or loss of data. HIMEM's
+      memory test is more thorough than the standard
+      power-up memory test performed by most computers. To
+      prevent HIMEM from performing the memory test, specify
+      /TESTMEM:OFF. Disabling the memory test will shorten
+      the startup process. (The default setting is
+      /TESTMEM:ON.)</dd>
+
+      <dt><a name="SwitchVerbose"></a> /V[ERBOSE]
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Directs HIMEM to display status and error messages
+      while loading. By default, HIMEM does not display any
+      messages unless it encounters an error. (To display
+      status messages without adding the /VERBOSE switch,
+      press and hold the ALT key while HIMEM starts and
+      loads.)</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Allocation">Default memory allocation</a></li>
+      <li><a href="#Tests">HIMEM tests the reliability of your extended memory</a></li>
+      <li><a href="#Loading">Loading MS-DOS into the high memory area</a></li>
+    </ul>
+
+    <hr>
+    <a name="Tests"></a> <b>HIMEM tests the reliability of your extended memory</b>
+    <p>The <a href="../../Version/MSDOS/622.HTM">MS-DOS 6.22</a>
+    version of HIMEM.SYS includes a special safety feature:
+    it tests your computer's extended memory each time your
+    computer starts. HIMEM tests the memory by writing and
+    reading data to each memory address and checking for
+    differences in the data. If the data HIMEM reads from an
+    address differs from the data it just wrote to that
+    address, then the memory at that address is unreliable.
+    Unreliable memory can cause system instability or loss
+    of data. HIMEM's memory test is more thorough than the
+    standard power-up memory test performed by most
+    computers.</p>
+
+    <p>If HIMEM detects unreliable memory, it displays the
+    following message and does not load:
+<pre>
+    ERROR: HIMEM.SYS has detected unreliable extended memory at address
+    XXXXXXXXh.
+</pre>
+
+    <p>If you receive this message, you should have your
+    computer's memory checked by a qualified computer
+    hardware technician. Although you can disable the memory
+    test and load HIMEM by using the <a href="#SwitchTestmem">/TESTMEM:OFF</a>
+    switch, it's not advisable to do so until you have had
+    the memory checked by a technician.</p>
+
+    <hr>
+    <a name="Allocation"></a> <b>Default memory allocation</b>
+    <p>Only one program at a time can use the high memory
+    area (HMA). If you omit the <a href="#SwitchHmamin">/HMAMIN=m</a>
+    switch (or set it to 0), HIMEM reserves the HMA for the
+    first program that requests it and that meets the memory
+    requirements set by the <a href="#SwitchHmamin">/HMAMIN=m</a>
+    switch. To ensure the most efficient use of your
+    system's high memory area, set <a href="#SwitchHmamin">/HMAMIN=m</a>
+    to the amount of memory required by the program that
+    uses the most HMA memory.</p>
+
+    <hr>
+    <a name="Loading"></a> <b>Loading MS-DOS into the high memory area</b>
+    <p>HIMEM or another XMS driver must be loaded in order
+    to load MS-DOS into the high memory area (HMA). You load
+    MS-DOS into the HMA by using the <a href="../D/DOS.HTM">DOS</a>=<a
+    href="../D/DOS.HTM#ParameterHigh">HIGH</a> command in
+    your CONFIG.SYS file. (The <a href="../D/DOS.HTM">DOS</a>=<a
+    href="../D/DOS.HTM#ParameterHigh">HIGH</a> command can
+    appear anywhere in the CONFIG.SYS file.)</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To run HIMEM using the default values, add to your
+    CONFIG.SYS file:
+<pre>
+    <a href="../D/DEVICE.HTM">DEVICE</a>=HIMEM.SYS
+</pre>
+
+    <p>The command line shown above does not specify a path
+    for the HIMEM.SYS file; therefore, the operating system
+    searches for the HIMEM.SYS file only in the root
+    directory of your startup drive. Because this command
+    line does not include additional options, HIMEM uses the
+    default values for those options. HIMEM allocates the
+    HMA to the first program that requests it and allows the
+    simultaneous use of up to 32 extended-memory handles.</p>
+
+    <hr>
+    <p>Increasing the number of memory handles that HIMEM
+    provides</p>
+
+    <p>To specify that a maximum of 128 extended-memory
+    handles can be used simultaneously, add to your
+    CONFIG.SYS file:
+<pre>
+    <a href="../D/DEVICE.HTM">DEVICE</a>=<a
+    href="#ParameterDrivePath">C:\dos\</a>HIMEM.SYS <a
+    href="#SwitchNumhandles">/NUMHANDLES=128</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS (UNDOCUMENTED)</dt>
+          <dd>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          </dd>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2004/03/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

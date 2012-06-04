@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>TSSHUTDN</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#t">Commands N-Z</a>
+    &gt; <a href="../INDEXT.HTM#tsshutdn">Commands T</a>
+    <h1>TSSHUTDN</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Use the tsshutdn command to shut down and restart a Terminal server. If
+    you do so, users are notified that their sessions will end and the server
+    is shut down in a controlled manner. Microsoft recommends that you use the
+    tsshutdn command instead of the Shut Down option on the Start menu to shut
+    down a Terminal server. If you use the Shut Down option on the Start menu,
+    users are not notified before their sessions are ended, and they may
+    experience data loss on the client computer.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>TSSHUTDN
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>TSSHUTDN
+    [<a href="#ParameterWaittime">wait_time</a>]
+    [<a href="#SwitchServer">/server:server_name</a>]
+    [<a href="#SwitchReboot">/reboot</a>]
+    [<a href="#SwitchPowerdown">/powerdown</a>]
+    [<a href="#SwitchDelay">/delay:log_off_delay</a>]
+    [<a href="#SwitchV">/v</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterWaittime"></a> wait_time
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Specify the time period to wait (after users are notified) after
+      which users are logged off from their sessions. The default setting is 60
+      seconds.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchDelay"></a> /delay:log_off_delay
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Specify the time period to wait (after users are logged off from
+      their sessions) after which all processes end and the Terminal server
+      shuts down. The default setting is 30 seconds.</dd>
+
+      <dt><a name="SwitchPowerdown"></a> /powerdown
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Turn off the Terminal server (if the computer supports Advanced Power
+      Management).</dd>
+
+      <dt><a name="SwitchReboot"></a> /reboot
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Shut down and restart the Terminal server after client sessions are
+      ended.</dd>
+
+      <dt><a name="SwitchServer"></a> /server:server_name
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Specify the Terminal server that you want to shut down. The default
+      setting is to shut down the current Terminal server.</dd>
+
+      <dt><a name="SwitchV"></a> /v
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Display information about the actions that are performed.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>The freeware <a href="http://aumha.org/win5/a/shutcut.htm">SHUTDOWN</a>
+    utility by Andrej Budja.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>You must have administrative credentials to run TSSHUTDN.</p>
+
+    <hr>
+    <p>Using in the Start menu is not recommended for shutting down a terminal
+    server. This method does not notify users before ending their sessions.</p>
+
+    <hr>
+    <p>All connected sessions are notified that they are going to be shut down.
+    Sessions that have applications with open files prompt the user to save the
+    files. After initiating the logoff command, TSSHUTDN waits a specified
+    interval (set by <a href="#SwitchDelay">/delay</a>) before ending all
+    processes.</p>
+
+    <hr>
+    <p>TSSHUTDN does not reboot the terminal server unless the
+    <a href="#SwitchReboot">/reboot</a> option is specified.</p>
+
+    <hr>
+    <p>Microsoft Windows Remote Desktop TSShutdn.exe Unauthenticated Shutdown
+    DoS <br>OSVDB ID: 15011 <br>Disclosure Date: Mar 25, 2005</p>
+
+    <p><b>Description:</b> Microsoft Windows Remote Desktop contains a flaw
+    that may allow a remote denial of service. The issue is triggered if a
+    users belonging to the same domain of the target machine and uses the
+    TSShutdn.exe utility trying to shut down the server. There is no
+    authentication check so the target machine will shut down.</p>
+
+    <p><b>Solution:</b> Apply Windows XP SP2, as it has been reported to fix
+    this vulnerability. Alternatively, Microsoft Corporation has released a
+    patch for SP1 to fix this vulnerability.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To end all client sessions 60 seconds after notification, and then shut
+    down the current terminal server 30 seconds after all of the users are
+    logged off, type the following command at the command prompt, and then
+    press ENTER:</p>
+<pre>
+    TSSHUTDN <a
+href="#SwitchV">/v</a>
+</pre>
+    <p>Users receive the following message:
+    <br>System is shutting down in 60 seconds.</p>
+
+    <p>To end all client sessions 5 minutes after notification, and then shut
+    down and restart the Terminal server 1 minute after all of the users are
+    logged off, type the following command at the command prompt, and then
+    press ENTER:</p>
+<pre>
+    TSSHUTDN <a
+href="#ParameterWaittime">300</a> <a
+href="#SwitchReboot">/reboot</a> <a
+href="#SwitchDelay">/delay:60</a> <a
+href="#SwitchV">/v</a>
+</pre>
+    <p>Users receive the following message:
+    <br>System is shutting down in 300 seconds.</p>
+
+    <p>To end all client sessions 2 minutes after notification, and then shut
+    down and restart a Terminal server named "Server8" 20 seconds after all of
+    the users are logged off, type the following command at the command prompt,
+    and then press ENTER:</p>
+<pre>
+    TSSHUTDN <a
+href="#ParameterWaittime">120</a> <a
+href="#SwitchServer">/server:server8</a> <a
+href="#SwitchDelay">/delay:20</a> <a
+href="#SwitchV">/v</a>
+</pre>
+    <p>Users receive the following message:
+    <br>System is shutting down in 120 seconds.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/07/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>FCBS</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#f">Commands A-M</a>
+    &gt; <a href="../INDEXF.HTM#fcbs">Configuration F</a>
+    <h1>FCBS</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Specifies the number of file control blocks (FCBs)
+    that the operating system can have open at the same
+    time. You can use this command only in your CONFIG.SYS
+    file.</p>
+
+    <p>A file control block is a data structure that stores
+    information about a file.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>FCBS=<a
+    href="#ParameterX">x</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterX"></a> x
+      (<a href="../../Version/MSDOS/300.HTM">v3.0</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the number of file control blocks that
+      the operating system can have open at one time.
+      Valid values for x are in the range 1 through 255.
+      The default value is 4.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="FILES.HTM">FILES</a>.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Limitation">Limitation on opening files</a></li>
+      <li><a href="#Recommended">Recommended use of the FCBS command</a></li>
+    </ul>
+
+    <hr>
+    <a name="Limitation"></a> <b>Limitation on opening files</b>
+    <p>If a program tries to open more than x files by using
+    file control blocks, the operating system might close
+    the files that were opened earlier.</p>
+
+    <hr>
+    <a name="Recommended"></a> <b>Recommended use of the FCBS command</b>
+    <p>You should use the FCBS command only if a program
+    requires you to do so. Most newer programs do not
+    require file control blocks. However, some older
+    programs might require you to use the FCBS command in
+    your CONFIG.SYS file.</p>
+
+    <p>Many programs use file handles. You can specify the
+    number of file handles available using the
+    <a href="FILES.HTM">FILES</a> command.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To specify that the operating system can have up to
+    eight file control blocks open at the same time, add to
+    your CONFIG.SYS file:
+<pre>
+    fcbs=<a
+href="#ParameterX">8</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

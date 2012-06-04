@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CERTUTIL Backup/Restore</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCA.HTM#certutilbackup">Commands Ca-Cg</a>
+    <h1>CERTUTIL Backup/Restore</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Certutil tasks for backing up and restoring certificates.</p>
+    <p>Certification authorities should be backed up regularly and restored when necessary to provide their services.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CERTUTIL
+    [<a href="#SwitchBackup">-backup</a>]
+    [<a href="#SwitchHelp">/?</a>]</p>
+
+    <p>To back up Certificate Services:
+    <br>CERTUTIL
+    <a href="#SwitchBackup">-backup</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    [<a href="#SwitchP">-p password</a>]
+    <a href="#ParameterBackupDirectory">backup_directory</a>
+    [<a href="#ParameterIncremental">incremental</a>]
+    [<a href="#ParameterKeepLog">keeplog</a>]</p>
+
+    <p>To back up Certificate Services:
+    <br>CERTUTIL
+    <a href="#SwitchBackupDb">-backupdb</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    <a href="#ParameterBackupDirectory">backup_directory</a>
+    [[<a href="#ParameterIncremental">incremental</a>]
+     [<a href="#ParameterKeepLog">keeplog</a>]]</p>
+
+    <p>To back up the CA certificate and keys:
+    <br>CERTUTIL
+    <a href="#SwitchBackupKey">-backupkey</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    [<a href="#SwitchP">-p password</a>]
+    <a href="#ParameterBackupDirectory">backup_directory</a></p>
+
+    <p>To restore the CA database, certificates, and keys:
+    <br>CERTUTIL
+    <a href="#SwitchRestore">-restore</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    [<a href="#SwitchP">-p password</a>]
+    <a href="#ParameterBackupDirectory">backup_directory</a></p>
+
+    <p>To restore the CA database:
+    <br>CERTUTIL
+    <a href="#SwitchRestoreDb">-restoredb</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    <a href="#ParameterBackupDirectory">backup_directory</a></p>
+
+    <p>To restore the CA certificate and keys from a backup directory or a PKCS #12 (.pfx) file:
+    <br>CERTUTIL
+    <a href="#SwitchRestoreKey">-restorekey</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    [<a href="#SwitchP">-p password</a>]
+    {<a href="#ParameterBackupDirectory">backup_directory</a>
+    | <a href="#ParameterPfxFile">pfx_file</a>}</p>
+
+    <p>To dump the CA database schema, for example, column names, types, and max sizes:
+    <br>CERTUTIL
+    <a href="#SwitchSchema">-schema</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    [<a href="#ParameterDumpType">dump_type</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterBackupDirectory"></a> backup_directory
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the backup directory.</dd>
+
+      <dt><a name="ParameterDumpType"></a> dump_type
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies one of:
+      <ul>
+      <li><b>ext</b> Displays the schema for Ext table</li>
+      <li><b>attib</b> Displays the schema for Attib table</li>
+      <li><b>crl</b> Displays the schema for the certificate revocation list (CRL)</li>
+      </ul>
+      </dd>
+
+      <dt><a name="ParameterIncremental"></a> incremental
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Implements an incremental backup instead of a full
+      backup. If omitted, performs a full backup.</dd>
+
+      <dt><a name="ParameterKeepLog"></a> keeplog
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Preserves database log files. If omitted,
+      combines the database log files into a single log file
+      that is retained upon the successful completion.</dd>
+
+      <dt><a name="ParameterPfxFile"></a> pfx_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the PKCS #12 PFX file.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchBackup"></a> -backup
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Backs up Certificate Services.</dd>
+
+      <dt><a name="SwitchBackupDb"></a> -backupdb
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Backs up the Certificate Services database.</dd>
+      <dd>Can run locally or remotely. The server and the
+      CA must be running. Typically, administrators used to
+      perform infrequent full backups followed by frequent
+      incremental backups. Each backup must be made into a
+      separate directory tree. Starting with the most recent
+      full backup, all backups are required to correctly
+      restore the database.</dd>
+
+      <dt><a name="SwitchBackupKey"></a> -backupkey
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Backs up the Certificate Services certificate
+      and private key.</dd>
+
+      <dt><a name="SwitchConfig"></a> -config machine\user
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Processes the operation by using the CA specified
+      in the machine/user configuration string.</dd>
+      <dd>You must specify the machine or user in -config.
+      Otherwise, the Select Certificate Authority dialog box
+      appears and displays a list of all CAs that are available.</dd>
+      <dd>If you use "-config -", the operation is processed
+      using the default CA.
+
+      <dt><a name="SwitchF"></a> -f
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Overwrites existing files or keys.</dd>
+
+      <dt><a name="SwitchGmt"></a> -gmt
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays time as Greenwich mean time.</dd>
+
+      <dt><a name="SwitchP"></a> -p password
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies a password.</dd>
+      <dd>The maximum length allowed for a PFX file password
+      is 32 characters.</dd>
+
+      <dt><a name="SwitchRestore"></a> -restore
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Restores the CA database, certificates, and keys
+      from the specified
+      <a href="#ParameterBackupDirectory">backup_directory</a>.</dd>
+
+      <dt><a name="SwitchRestoreDb"></a> -restoredb
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Restores the CA database
+      from the specified
+      <a href="#ParameterBackupDirectory">backup_directory</a>.</dd>
+      <dd>The CA server must not be running. Can run locally
+      or remotely.</dd>
+      <dd>To restore a full backup and incremental backups,
+      you must restore the full backup first, and then
+      restore all subsequent incremental backups in any
+      order. To overwrite the existing server database files
+      with the full restore, use <a href="#SwitchF">-f</a>. Do
+      not start the server until all backups are restored.</dd>
+      <dd>When you start the CA server, you initiate database
+      recovery. If you successfully start the CA server (that
+      is, as recorded in the application event log), this
+      indicates restore and recovery were completed
+      successfully. If the server fails to start after you run
+      <a href="#SwitchRestore">-restore</a>, you receive an
+      error code. For more information, you can also view the
+      RESTOREINPROGRESS registry key.</dd>
+
+      <dt><a name="SwitchRestoreKey"></a> -restorekey
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Restores Certificate Services certificate and
+      private key from the specified
+      <a href="#ParameterBackupDirectory">backup_directory</a>
+      or PKCS #12 <a href="#ParameterPfxFile">pfx_file</a>.</dd>
+
+      <dt><a name="SwitchSchema"></a> -schema
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Dumps the CA database schema.</dd>
+
+      <dt><a name="SwitchSeconds"></a> -seconds
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays time with seconds and milliseconds.</dd>
+
+      <dt><a name="SwitchV"></a> -v
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies verbose output.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="CERTUTIC.HTM">CERTUTIL configure</a>
+    <br><a href="CERTUTIE.HTM">CERTUTIL decode/encode</a>
+    <br><a href="CERTUTIF.HTM">CERTUTIL certificates</a>
+    <br><a href="CERTUTIL.HTM">CERTUTIL CRLs</a>
+    <br><a href="CERTUTIM.HTM">CERTUTIL manage</a>
+    <br><a href="CERTUTIR.HTM">CERTUTIL archival/recovery</a>
+    <br><a href="CERTUTIT.HTM">CERTUTIL troubleshooting</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

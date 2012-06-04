@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>MAPISEND</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#m">Commands A-M</a>
+    &gt; <a href="../INDEXM.HTM#mapisend">Commands M</a>
+    <h1>MAPISEND</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Send email from the command-line.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>MAPISEND
+    <a href="#SwitchU">-u "profile"</a>
+    <a href="#SwitchP">-p password</a>
+    <a href="#SwitchR">-r recipient</a>
+    <a href="#SwitchS">-s "subject"</a>
+    <a href="#SwitchM">-m "text message"</a>
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchI">-i</a>]
+    [<a href="#SwitchV">-v</a>]</p>
+
+    <p>MAPISEND
+    <a href="#SwitchU">-u "profile"</a>
+    <a href="#SwitchP">-p password</a>
+    <a href="#SwitchR">-r recipient</a>
+    <a href="#SwitchS">-s "subject"</a>
+    <a href="#SwitchT">-t text file</a>
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchI">-i</a>]
+    [<a href="#SwitchV">-v</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchC"></a> -c
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>cc: list.</dd>
+
+      <dt><a name="SwitchF"></a> -f
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>File Attachment - path and file name(s).</dd>
+
+      <dt><a name="SwitchI"></a> -i
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Interactive login (prompts for profile and password).</dd>
+
+      <dt><a name="SwitchM"></a> -m "text message"
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Text message.</dd>
+
+      <dt><a name="SwitchP"></a> -p password;
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Password.</dd>
+
+      <dt><a name="SwitchR"></a> -r recipient;
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>"recipient" is one or more recipient(s). If more than one
+      recipient - separate with ';'.</dd>
+
+      <dt><a name="SwitchS"></a> -s "subject"
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>"subject" is the subject line.</dd>
+
+      <dt><a name="SwitchT"></a> -t text file
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Text file.</dd>
+
+      <dt><a name="SwitchU"></a> -u "profile"
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>"profile" is the profile name (user mailbox) of sender.</dd>
+
+      <dt><a name="SwitchV"></a> -v
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Generates verbose output.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>MAPISEND requires MAPI - i.e the MS Exchange/Outlook client needs
+    to be installed.
+    <br>BLAT (3rd-party).
+    <br>CommandMail (3rd-party).
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>sendmail.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+
+<pre>
+    MAPISEND <a
+href="#SwitchU">-u "john doe"</a> <a
+href="#SwitchP">-p MyPassword</a> <a
+href="#SwitchR">-r billg@beast.com</a> <a
+href="#SwitchS">-s "Test message"</a> <a
+href="#SwitchT">-t c:\MyMail.txt</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External Back Office/Exchange Resource Kit</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

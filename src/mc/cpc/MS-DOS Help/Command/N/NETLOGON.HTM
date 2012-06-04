@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>NET LOGON</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#n">Commands N-Z</a>
+    &gt; <a href="../INDEXN.HTM#netlogon">Commands N</a>
+    <h1>NET LOGON</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Identifies you as a member of a workgroup.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>NET LOGON
+    [<a href="#ParameterUser">user</a>
+    [<a href="#ParameterPassword">password</a>
+    | <a href="#ParameterQuestionmark">?</a>]]
+    [<a href="#SwitchDomain">/DOMAIN:name</a>]
+    [<a href="#SwitchYes">/YES</a>]
+    [<a href="#SwitchSavepw">/SAVEPW:NO</a>]</p>
+
+    <p>If you would rather be prompted to type your user name and
+    password instead of specifying them in the command-line:</p>
+
+    <p>NET LOGON</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterPassword"></a> password
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>The unique string of characters that authorizes you to
+      gain access to your password-list file. The password can
+      contain up to 14 characters.</dd>
+
+      <dt><a name="ParameterQuestionmark"></a> ?
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies that you want to be prompted for your password.</dd>
+
+      <dt><a name="ParameterUser"></a> user
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the name that identifies you in your workgroup.
+      The name you specify can contain up to 20 characters.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchDomain"></a> /DOMAIN:name
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies that you want to log on to a Microsoft Windows
+      NT or LAN Manager domain.</dd>
+      <dd>Specifies the Windows NT or LAN Manager domain you want
+      to log on to.</dd>
+
+      <dt><a name="SwitchSavepw"></a> /SAVEPW:no
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Carries out the NET LOGON command without prompting you
+      to create a password-list file.</dd>
+
+      <dt><a name="SwitchYes"></a> /YES
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Carries out the command without first
+      prompting you to provide information or confirm actions.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

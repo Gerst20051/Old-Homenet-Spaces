@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>IISFTP</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#i">Commands A-M</a>
+    &gt; <a href="../INDEXI.HTM#iisftp">Commands I</a>
+    <h1>IISFTP</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Creates, deletes, and lists FTP sites on local and remote
+    servers running Windows Server 2003 with Internet Information
+    Services (IIS) 6.0. Also sets and gets user isolation properties,
+    starts, stops, and pauses FTP sites.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>IISFTP[.VBS]
+    [<a href="#SwitchCreate">/create</a>
+    | <a href="#SwitchDelete">/delete</a>
+    | <a href="#SwitchGetAdprop">/getadprop</a>
+    | <a href="#SwitchPause">/pause</a>
+    | <a href="#SwitchQuery">/query</a>
+    | <a href="#SwitchSetAdprop">/setadprop</a>
+    | <a href="#SwitchStart">/start</a>
+    | <a href="#SwitchStop">/stop</a>]
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>IISFTP[.VBS]
+    <a href="#SwitchCreate">/create</a>
+    <a href="#ParameterPath">path</a>
+    <a href="#ParameterSiteName">site_name</a>
+    [<a href="#SwitchB">/b port</a>
+    [<a href="#SwitchDontStart">/dontstart</a>
+    [<a href="#SwitchI">/i ip_address</a>
+    [<a href="#SwitchIsolation">/isolation ActiveDirectory</a>
+     [<a href="#SwitchDomain">/domain domain_name</a>
+      <a href="#SwitchAdmin">/admin [Domain\]User</a>
+      <a href="#SwitchAdminPwd">/adminpwd pass_word</a>]]
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <p>IISFTP[.VBS]
+    <a href="#SwitchCreate">/create</a>
+    <a href="#ParameterPath">path</a>
+    <a href="#ParameterSiteName">site_name</a>
+    [<a href="#SwitchB">/b port</a>
+    [<a href="#SwitchDontStart">/dontstart</a>
+    [<a href="#SwitchI">/i ip_address</a>
+    [<a href="#SwitchIsolation">/isolation Local</a>]
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <p>IISFTP[.VBS]
+    {<a href="#SwitchDelete">/delete</a>
+    | <a href="#SwitchPause">/pause</a>
+    | <a href="#SwitchStart">/start</a>
+    | <a href="#SwitchStop">/stop</a>}
+    <a href="#ParameterFtpSite">ftp_site [ftp_site ...]</a>
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <p>IISFTP[.VBS]
+    <a href="#SwitchGetAdprop">/getadprop</a>
+    <a href="#ParameterUserId">user_id</a>
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <p>IISFTP[.VBS]
+    <a href="#SwitchQuery">/query</a>
+    [<a href="#ParameterFtpSite">ftp_site [ftp_site ...]</a>]
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <p>IISFTP[.VBS]
+    <a href="#SwitchSetAdprop">/setadprop</a>
+    <a href="#ParameterUserId">user_id</a>
+    {<a href="#ParameterFtpDirRoot">FTPDir | FTPRoot</a>}
+    <a href="#ParameterPropertyId">property_id</a>
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterFtpDirRoot"></a> FTPDir | FTPRoot
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies isolation at either directory or root
+      level (required to set user isolation).</dd>
+
+      <dt><a name="ParameterFtpSite"></a> ftp_site [ftp_site ...]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the site name or metabase path of the
+      FTP site.</dd>
+      <dd><a href="#SwitchQuery">/query</a> will display
+      all sites, if omitted.</dd>
+      <dd>FTP sites must be uniquely identified. If more
+      than one FTP site has the same descriptive name, you
+      must use the metabase path to identify the FTP site.</dd>
+
+      <dt><a name="ParameterPath"></a> path
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the location of content files for the
+      FTP site. Enter a path to a local directory. Any
+      directories in the path do not exist, are created.</dd>
+      <dd>The Path parameter must immediately precede the
+      <a href="#ParameterSiteName">site_name</a> parameter. Otherwise, site
+      information will not be interpreted correctly.</dd>
+
+      <dt><a name="ParameterPropertyId"></a> property_id
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the value of the directory or root
+      isolation (required to set user isolation).</dd>
+
+      <dt><a name="ParameterSiteName"></a> site_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies a name for the FTP site.</dd>
+
+      <dt><a name="ParameterUserId"></a> user_id
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the logon ID of the Active Directory
+      user.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchAdmin"></a> /admin [Domain\]User
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the name of the administrator in the
+      User, Domain\User, or User@Domain format.</dd>
+
+      <dt><a name="SwitchAdminPwd"></a> /adminpwd pass_word
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the administrator's password.</dd>
+
+      <dt><a name="SwitchB"></a> /b port
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies a TCP port number for the FTP site.
+      The default is 21.</dd>
+
+      <dt><a name="SwitchCreate"></a> /create
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Creates FTP sites on local and remote servers.</dd>
+      <dd>When you create a new FTP site, you specify only
+      the basic properties needed to create the site and
+      identify its contents. IISFTP uses the same default
+      properties that IIS uses when establishing new FTP
+      sites, and adheres to the same rules for inheriting
+      properties. To configure the more advanced properties
+      of the site, use IIS Manager.</dd>
+
+      <dt><a name="SwitchDelete"></a> /delete
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Deletes FTP sites on local and remote servers.</dd>
+
+      <dt><a name="SwitchDomain"></a> /domain
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the name of the Active Directory domain.</dd>
+
+      <dt><a name="SwitchDontStart"></a> /dontstart
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Indicates that the FTP site does not start
+      automatically as soon as it is created. By default,
+      IIS starts the FTP site when the /create command
+      completes successfully.</dd>
+
+      <dt><a name="SwitchGetAdprop"></a> /getadprop
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Gets Active Directory properties for a specific
+      user on a local or remote computer.</dd>
+
+      <dt><a name="SwitchI"></a> /i ip_address
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies an IP address for the FTP site.
+      The default is All Unassigned, which assigns to the
+      site all of the IP addresses on the computer that are
+      not assigned to other sites. Only one site on each
+      IIS server can be set to: All Unassigned.</dd>
+
+      <dt><a name="SwitchIsolation"></a> /isolation {ActiveDirectory | Local}
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Provides for one of two user isolation modes,
+      ActiveDirectory and Local. If omitted, the site will
+      not use user isolation.</dd>
+
+      <dt><a name="SwitchQuery"></a> /query
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the FTP sites on local and remote
+      servers.</dd>
+
+      <dt><a name="SwitchP"></a> /p password
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the password of the user account that is
+      specified in <a href="#SwitchU">/u</a>. If omitted,
+      you will be prompted.</dd>
+
+      <dt><a name="SwitchPause"></a> /pause
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Pauses FTP sites on local and remote servers.</dd>
+
+      <dt><a name="SwitchS"></a> /s computer
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Runs the script on the specified remote computer.
+      Type the computer name or IP address without
+      backslashes. Defaults to the local computer.</dd>
+
+      <dt><a name="SwitchSetAdprop"></a> /setadprop
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets Active Directory properties for a specific
+      user on a local or remote computer.</dd>
+
+      <dt><a name="SwitchStart"></a> /start
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Starts FTP sites on local and remote servers.</dd>
+
+      <dt><a name="SwitchStop"></a> /stop
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Stops FTP sites on local and remote servers.</dd>
+
+      <dt><a name="SwitchU"></a> /u [Domain\]User
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Runs the script with the permissions of the
+      specified user account. This account must be a member
+      of the Administrators group on the remote computer.
+      By default, the script runs with the permissions of
+      the current user of the local computer.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>To perform this procedure, you must be a member of
+    the Administrators group on the local computer, or you
+    must have been delegated the appropriate authority. If
+    the computer is joined to a domain, members of the
+    Domain Admins group might be able to perform this
+    procedure. As a security best practice, consider using
+    "Run as" to perform this procedure.</p>
+    <p>Does not verify the port number or IP address of an
+    FTP site, and it does not verify that these bindings are
+    unique within the server. If you create a site with
+    invalid or conflicting bindings, the site will not start.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>BOOTCFG /COPY</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#b">Commands A-M</a>
+    &gt; <a href="../INDEXB.HTM#bootcfgc">Commands B</a>
+    <h1>BOOTCFG /COPY</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Configures, queries, or changes Boot.ini file settings.</p>
+    <p>Makes another operating system instance copy,
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>BOOTCFG
+    <a href="#SwitchCopy">/copy</a>
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>BOOTCFG
+    <a href="#SwitchCopy">/copy</a>
+    [<a href="#SwitchS">/s [computer]</a>
+    [<a href="#SwitchU">/u [[domain\]user]</a>
+    <a href="#SwitchP">/p password</a>
+    [<a href="#SwitchD">/d "description"</a>]
+    <a href="#SwitchId">/id line_number</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchCopy"></a> /copy
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Makes another operating system instance copy,
+      for which switches can be added.</dd>
+
+      <dt><a name="SwitchD"></a> /d "desription"
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the description for the new operating system
+      entry.</dd>
+
+      <dt><a name="SwitchId"></a> /id line_number
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the operating system entry line number in the
+      [operating systems] section of the Boot.ini file to which
+      the operating system load options are added. The first line
+      after the [operating systems] section header is 1.</dd>
+
+      <dt><a name="SwitchP"></a> /p password
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the password of the user account that is
+      specified in <a href="#SwitchU">/u</a>.</dd>
+
+      <dt><a name="SwitchS"></a> /s computer
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the name or IP address of a remote
+      computer (do not use backslashes).
+      The default is the local computer.</dd>
+
+      <dt><a name="SwitchU"></a> /u [[domain\]user]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Runs the command with the account permissions of the
+      user specified by User or Domain\User. The default is the
+      permissions of the current logged on user on the computer
+      issuing the command.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="BOOTCFGA.HTM">BOOTCFG /ADDSW</a>
+    Adds BOOT.INI load options.
+    <br><a href="BOOTCFGG.HTM">BOOTCFG /DBG1394</a>
+    Configures 1394 port debugging.
+    <br><a href="BOOTCFGB.HTM">BOOTCFG /DEBUG</a>
+    Adds or changes the debug settings.
+    <br><a href="BOOTCFGF.HTM">BOOTCFG /DEFAULT</a>
+    Designate the default operating system entry.
+    <br><a href="BOOTCFGL.HTM">BOOTCFG /DELETE</a>
+    Deletes an operating system entry.
+    <br><a href="BOOTCFGE.HTM">BOOTCFG /EMS</a>
+    Adds or changes the EMS console redirection.
+    <br><a href="BOOTCFGQ.HTM">BOOTCFG /QUERY</a>
+    Displays the [boot loader] and [operating systems] sections.
+    <br><a href="BOOTCFGR.HTM">BOOTCFG /RAW</a>
+    Adds load options to an [operating systems] entry.
+    <br><a href="BOOTCFGS.HTM">BOOTCFG /RMSW</a>
+    Removes BOOT.INI load options.
+    <br><a href="BOOTCFGT.HTM">BOOTCFG /TIMEOUT</a>
+    Changes the operating system time-out value.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+<pre>
+    bootcfg <a
+href="#SwitchCopy">/copy</a> <a
+href="#SwitchD">/d "\ABC Server\"</a> <a
+href="#SwitchId">/id 1</a>
+
+    bootcfg <a
+href="#SwitchCopy">/copy</a> <a
+href="#SwitchS">/s srvmain</a> <a
+href="#SwitchU">/u maindom\hiropln</a> <a
+href="#SwitchP">/p p@ssW23</a> <a
+href="#SwitchD">/d "Windows XP"</a> <a
+href="#SwitchId">/id 2</a>
+
+    bootcfg <a
+href="#SwitchCopy">/copy</a> <a
+href="#SwitchU">/u hiropln</a> <a
+href="#SwitchP">/p p@ssW23</a> <a
+href="#SwitchD">/d "AB Ver 1.001"</a> <a
+href="#SwitchId">/id 2</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

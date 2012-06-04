@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>GOTO</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#g">Commands A-M</a>
+    &gt; <a href="../INDEX.HTM#goto">Batch G</a>
+    <h1>GOTO</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Directs the operating system to a line in a batch program
+    that is marked by a label you specify. You can use this command
+    only in batch programs.</p>
+    <p>The GOTO command directs within a batch program to a line
+    identified by a label. When the label is found, it processes
+    the commands beginning on the next line.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>GOTO
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>GOTO
+    [:]<a href="#ParameterLabel">label</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterLabel"></a> [:]label
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the line in a batch program to go. Colon (:)
+      is treated as space.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../I/IF.HTM">IF</a>
+    <br><a href="../C/CALL.HTM">CALL</a>
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>case - Conditionally perform a command.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#EOF">GOTO :eof as the end of the batch file</a></li>
+      <li><a href="#First">GOTO uses the first eight characters of each label</a></li>
+      <li><a href="#Match">Matching the label parameter with the label in the batch program</a></li>
+      <li><a href="#Conditional">Using GOTO for conditional operations</a></li>
+      <li><a href="#Valid">Valid values for label</a></li>
+    </ul>
+
+    <hr>
+    <a name="EOF"></a> <b>GOTO :eof as the end of the batch file</b>
+    <p>An easy way to exit a batch script file without defining a
+    label is to specify "GOTO :eof" this transfers control to the end
+    of the current batch file.</p>
+
+    <hr>
+    <a name="Valid"></a> <b>Valid values for label</b>
+    <p>The label parameter cannot include separators such as spaces,
+    semicolons or equal signs.</p>
+
+    <hr>
+    <a name="First"></a> <b>GOTO uses the first eight characters of each label</b>
+    <p>The GOTO command uses only the first eight characters of a
+    label. Therefore, the labels 'hithere01' and 'hithere02' are both
+    equivalent to 'hithere0'.</p>
+    <p>If two labels are the same (or just have the same first eight
+    characters), the first label from the top of the BATCH file will be
+    where processing will continue.</p>
+
+    <hr>
+    <a name="Match"></a> <b>Matching the label parameter with the label in the batch program</b>
+    <p>The label value you specify on the GOTO command-line must match
+    a label in the batch program. The label within the batch program
+    must be preceded by a colon.</p>
+    <p>If your batch program does not contain the label that you
+    specify, the batch program stops and the operating system displays
+    the message:</p>
+<pre>
+    Label not found
+</pre>
+
+    <p>The operating system recognizes a batch-program line beginning
+    with a colon (:) as a label and does not process it as a command.
+    If a line begins with a colon, the operating system ignores any
+    commands on that line.</p>
+
+    <hr>
+    <a name="Conditional"></a> <b>Using GOTO for conditional operations</b>
+    <p>GOTO is often used on the same command-line with other commands
+    to perform conditional operations. For more information about using
+    GOTO for conditional operations, see the
+    <a href="../I/IF.HTM">IF</a> command.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+
+    <p>This batch program formats a disk in drive A as a
+    system disk. If the operation is successful, the GOTO command
+    directs the operating system to a label named 'end'.</p>
+<pre>
+    <a href="../A/ATSIGN.HTM">@</a><a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterOff">OFF</a>
+     <a href="../F/FORMAT.HTM">FORMAT</a> <a
+href="../F/FORMAT.HTM#ParameterDrive">A:</a> <a
+href="../F/FORMAT.HTM#SwitchS">/S</a>
+     <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#ParameterNot">NOT</a> <a
+href="../I/IF.HTM#ParameterErrorlevel">ERRORLEVEL</a> 1 GOTO <a
+href="#ParameterLabel">ERR</a>
+      <a href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">An error occurred during formatting.</a>
+      GOTO <a
+href="#ParameterLabel">END</a>
+    :<a href="../L/LABEL.HTM#ParameterLabel">ERR</a>
+      <a href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">Successfully formatted the disk in drive A.</a>
+    :<a href="../L/LABEL.HTM#ParameterLabel">END</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>Internal</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

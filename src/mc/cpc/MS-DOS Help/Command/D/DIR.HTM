@@ -1,0 +1,630 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DIR</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDA.HTM#dir">Commands Da-Dr</a>
+    <h1>DIR</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Displays a list of the files and subdirectories that are in the
+    directory you specify.</p>
+    <p>When you use DIR without parameters or switches, it displays the
+    disk's volume label and serial number; one directory or filename
+    per line, including the filename extension, the file size in bytes,
+    and the date and time the file was last modified; and the total
+    number of files listed, their cumulative size, and the free space
+    (in bytes) remaining on the disk.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>DIR
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>DIR
+    [<a href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path</a>][<a
+    href="#ParameterFilename">filename</a>] [...]
+    [<a href="#SwitchA">/A[[:]attributes]</a>]
+    [<a href="#SwitchB">/B</a>]
+    [<a href="#SwitchC">/C[H]</a>]
+    [<a href="#SwitchD">/D</a>]
+    [<a href="#SwitchL">/L</a>]
+    [<a href="#SwitchN">/N</a>]
+    [<a href="#SwitchO">/O[[:]sortorder]</a>]
+    [<a href="#SwitchP">/P</a>]
+    [<a href="#SwitchQ">/Q</a>]
+    [<a href="#SwitchS">/S</a>]
+    [<a href="#SwitchT">/T[[:]timefield]</a>]
+    [<a href="#SwitchV">/V</a>]
+    [<a href="#SwitchW">/W</a>]
+    [<a href="#SwitchX">/X</a>]
+    [<a href="#SwitchZ">/Z</a>]
+    [<a href="#Switch4">/4</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a href="../../Version/MSDOS/100.HTM">v1.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the drive for which you want to see a listing.</dd>
+
+      <dt><a name="ParameterPath"></a> path
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the directory for which you want to see a listing.</dd>
+
+      <dt><a name="ParameterFilename"></a> filename
+      (<a href="../../Version/MSDOS/100.HTM">v1.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies a particular file or group of files for which you
+      want to see a listing.</dd>
+      <dt> [...]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>You can use multiple file_name parameters.
+      Separate file_names with spaces, commas, or semicolons.
+      You can use wildcard characters (? and *) in
+      file_name to display a group of files.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchA"></a> /A[[:] attributes]
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>
+        Displays only the names of those directories and files with the
+        attributes you specify. If you omit this switch, DIR displays
+        the names of all files except hidden and system files. The
+        list describes each of the values you can use for
+        attributes. The colon (:) is optional. Use any combination of
+        these values, and do not separate the values with spaces:
+        <ul>
+          <li><b>&nbsp;</b> Show ALL files (including hidden and system)</li>
+          <li><b>A</b> Files ready for archiving (backup)</li>
+          <li><b>-A</b> Files that have not changed since the last backup</li>
+          <li><b>D</b> Directories</li>
+          <li><b>-D</b> Files only (no directories)</li>
+          <li><b>H</b> Hidden file</li>
+          <li><b>-H</b> Files not hidden</li>
+          <li><b>R</b> Read-only files</li>
+          <li><b>-R</b> Files that are not read-only</li>
+          <li><b>S</b> Systems files</li>
+          <li><b>-S</b> Files other than system files</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchB"></a> /B
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Lists each directory name or filename, one per line
+      (including the filename extension). This switch displays no
+      heading information and no summary, bare. The /B switch overrides
+      the <a href="#SwitchC">/C[H]</a> or <a href="#SwitchW">/W</a>
+      switch.</dd>
+
+      <dt><a name="SwitchC"></a> /C
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Include thousands separator in file sizes.</dd>
+
+      <dt>/-C
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Don't include thousands separator in file sizes.</dd>
+
+      <dt>/C[H]
+      (<a href="../../Version/MSDOS/620.HTM">v6.2</a> through
+      <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Displays the compression ratio of files compressed using
+      DoubleSpace or DriveSpace, based on an 8K cluster size. The
+      /C[H] switch is ignored when used with the
+      <a href="#SwitchB">/B</a> or <a href="#SwitchW">/W</a> switch.
+        <dl>
+          <dt>H</dt>
+          <dd>The optional H switch displays the compression ratio of
+          files compressed using DoubleSpace or DriveSpace, based on
+          the cluster size of the host drive.</dd>
+        </dl>
+      </dd>
+
+      <dt><a name="SwitchD"></a> /D
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Wide List format, sorted by vertical column.</dd>
+
+      <dt><a name="SwitchL"></a> /L
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Displays unsorted directory names and filenames in lowercase.
+      This switch does not convert extended characters to
+      lowercase.</dd>
+
+      <dt><a name="SwitchN"></a> /N
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Long List format, filenames on far right.</dd>
+
+      <dt>/-N
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Stefan Ewing reminds that this is the way to display short
+      (8dot3) filenames.
+      Explicitly specifying the path or use with
+      <a href="#SwitchB">/B</a>, <a href="#SwitchS">/S</a>,
+      <a href="#SwitchB">/X</a> or <a href="#SwitchW">/W</a>
+      may result in long path(s) or filename(s).</dd>
+
+      <dt><a name="SwitchO"></a> /O[[:] sortorder]</dt>
+      <dd>Controls the order in which DIR sorts and displays directory
+      names and filenames. If you omit this switch, DIR displays the
+      names in the order in which they occur in the directory. If you
+      use this switch without specifying sortorder, DIR displays the
+      names of the directories, sorted in alphabetic order, and then
+      displays the names of files, sorted in alphabetic order. The
+      colon (:) is optional. The list describes each of the
+      values you can use for sortorder. Use any combination of the
+      values, and do not separate these values with spaces:
+        <ul>
+          <li><b>A</b> By last access date, earliest first. (<a href="../../Version/MSDOS/700.HTM">v7.00</a> <a href="../../Version/MSWIN/95.HTM">Win95</a>)</li>
+          <li><b>-A</b> By last access date, latest first. (<a href="../../Version/MSDOS/700.HTM">v7.00</a> <a href="../../Version/MSWIN/95.HTM">Win95</a>)</li>
+          <li><b>C</b> By compression ratio, lowest first. (<a href="../../Version/MSDOS/620.HTM">v6.2</a> through <a href="../../Version/MSDOS/700.HTM">v7.00</a> <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</li>
+          <li><b>-C</b> By compression ratio, highest first. (<a href="../../Version/MSDOS/620.HTM">v6.2</a> through <a href="../../Version/MSDOS/700.HTM">v7.00</a> <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</li>
+          <li><b>D</b> By date and time, earliest first. (<a href="../../Version/MSDOS/500.HTM">v5.0</a> <a href="../../Version/MSWIN/95.HTM">Win95</a> <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</li>
+          <li><b>-D</b> By date and time, latest first. (<a href="../../Version/MSDOS/500.HTM">v5.0</a> <a href="../../Version/MSWIN/95.HTM">Win95</a> <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</li>
+          <li><b>E</b> Alphabetic order by extension. (<a href="../../Version/MSDOS/500.HTM">v5.0</a> <a href="../../Version/MSWIN/95.HTM">Win95</a> <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</li>
+          <li><b>-E</b> Reverse alphabetic order by extension (Z through A). (<a href="../../Version/MSDOS/500.HTM">v5.0</a> <a href="../../Version/MSWIN/95.HTM">Win95</a> <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</li>
+          <li><b>G</b> With directories grouped before files. (<a href="../../Version/MSDOS/500.HTM">v5.0</a> <a href="../../Version/MSWIN/95.HTM">Win95</a> <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</li>
+          <li><b>-G</b> With directories grouped after files. (<a href="../../Version/MSDOS/500.HTM">v5.0</a> <a href="../../Version/MSWIN/95.HTM">Win95</a> <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</li>
+          <li><b>N</b> In alphabetic order by name. (<a href="../../Version/MSDOS/500.HTM">v5.0</a> <a href="../../Version/MSWIN/95.HTM">Win95</a> <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</li>
+          <li><b>-N</b> In reverse alphabetic order by name (Z through A). (<a href="../../Version/MSDOS/500.HTM">v5.0</a> <a href="../../Version/MSWIN/95.HTM">Win95</a> <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</li>
+          <li><b>S</b> By size, smallest first. (<a href="../../Version/MSDOS/500.HTM">v5.0</a> <a href="../../Version/MSWIN/95.HTM">Win95</a> <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</li>
+          <li><b>-S</b>  By size, largest first. (<a href="../../Version/MSDOS/500.HTM">v5.0</a> <a href="../../Version/MSWIN/95.HTM">Win95</a> <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchP"></a> /P
+      (<a href="../../Version/MSDOS/100.HTM">v1.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Displays one screen of the listing at a time. To see the next
+      screen, press any key.</dd>
+
+      <dt><a name="SwitchQ"></a> /Q
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Display owner of the file.</dd>
+
+      <dt><a name="SwitchS"></a> /S
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Lists every occurrence, in the specified directory and all
+      subdirectories, of the specified filename.</dd>
+
+      <dt><a name="SwitchT"></a> /T[[:] timefields]
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Time field used to display and sort:
+        <ul>
+          <li><b>A</b> Last Access</li>
+          <li><b>C</b> Create</li>
+          <li><b>W</b> Last Written (default)</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchV"></a> /V
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Verbose mode. Also displays attributes, date last
+      accessed, and disk space allocated. The /V switch
+      overrides the <a href="#Switch4">/4</a> switch.</dd>
+
+      <dt><a name="SwitchW"></a> /W
+      (<a href="../../Version/MSDOS/100.HTM">v1.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Displays the listing in wide format, with as many as five
+      filenames or directory names on each line. The /W switch is
+      ignored when used with the <a href="#SwitchB">/B</a> switch.
+      NT also sorts horizontally.</dd>
+
+      <dt><a name="SwitchX"></a> /X
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Long List format, filenames on far right
+      (<a href="#SwitchN">/N</a>), includes short (8dot3) filename
+      before long filename.</dd>
+
+      <dt><a name="SwitchZ"></a> /Z
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> Do not display long filenames.
+      Explicitly specifying the path or use with
+      <a href="#SwitchB">/B</a> or <a href="#SwitchS">/S</a>
+      may result in short (8dot3) path(s) or filename(s).</dd>
+
+      <dt><a name="Switch4"></a> /4
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href= "../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd><b>UNDOCUMENTED in
+      <a href="../../Version/MSDOS/700.HTM">v7.00</a> and
+      <a href="../../Version/MSWIN/95.HTM">Win95</a></b>.</dd>
+      <dd><b>DOCUMENTED in
+      <a href="../../Version/MSDOS/710.HTM">v7.10</a> and
+      <a href="../../Version/MSWIN/98.HTM">Win98</a></b>.</dd>
+      <dd>Display four-digit years. The /4 switch is ignored
+      when used with the <a href="#SwitchV">/V</a> switch.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about environment variables that affect the way
+    DIR works, see <a href="../../ENV/MSDOS/DIRCMD.HTM">%DIRCMD%</a>.
+    <br>For information about displaying the directory structure of a
+    path or disk, see the <a href="../T/TREE.HTM">TREE</a>
+    command.
+    <br>For information about compressing disks, see the
+    <a href="DRVSPACE.HTM">DRVSPACE</a> command.
+    <br>You can also list files by
+    <a href="../X/XCOPY.HTM">XCOPY</a>
+    <a href="../X/XCOPY.HTM#SwitchL">/L</a>.
+    <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+    <br>You can show size of multiple subfolders by
+    <a href="DIRUSE.HTM">DIRUSE</a>
+    command. <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+    <br><b>Equivalent UNIX command is:</b>
+    <br>ls</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Slow">Browsing LAN directories can be slow</a></li>
+      <li><a href="#dircmd">Presetting DIR parameters and switches</a></li>
+      <li><a href="#dos100">DOS 1.0 note</a></li>
+      <li><a href="#Datetime">Setting date and time formats</a></li>
+      <li><a href="#Attributes">Specifying file display attributes</a></li>
+      <li><a href="#Sorting">Specifying filename sorting</a></li>
+      <li><a href="#undoc">Undocumented parameters and switches</a></li>
+      <li><a href="#Pipes">Using redirection symbols and pipes</a></li>
+      <li><a href="#Wildcards">Using wildcards with DIR</a></li>
+    </ul>
+
+    <hr>
+    <a name="Slow"></a> <b>Browsing LAN directories can be slow</b>
+    <p>Browsing LAN directories can be slow.</p>
+
+    <hr>
+    <a name="Wildcards"></a> <b>Using wildcards with DIR</b>
+    <p>You can use wildcards (* and ?) to display a listing of a subset
+    of files and subdirectories. For an example illustrating the use of
+    a wildcard, see the
+    <a href="#WildcardExample">Example</a>.</p>
+
+    <hr>
+    <a name="Attributes"></a> <b>Specifying file display attributes</b>
+    <p>if you specify the <a href="#SwitchA">/A</a> switch
+    with more than one value in attributes, DIR displays the names of
+    only those files with all the specified attributes. For example, if
+    you specify the <a href="#SwitchA">/A</a> switch with the
+    R and -H values for attributes by using either
+    <a href="#SwitchA">/A:R-H</a> or
+    <a href="#SwitchA">/AR-H</a>, DIR displays only the names of
+    read-only files that are not hidden.</p>
+
+    <hr>
+    <a name="Sorting"></a> <b>Specifying filename sorting</b>
+    <p>If you specify more than one sortorder value, DIR sorts the
+    filenames by the first criterion first, then by the second
+    criterion, and so on. For example, if you specify the
+    <a href="#SwitchO">/O</a> switch with the E and -S values for
+    sortorder by using either <a href="#SwitchO">/O:E-S</a> or
+    <a href="#SwitchO">/OE-S</a>, DIR sorts the names of
+    directories and files by extension, with the largest first, and
+    displays the final result. The alphabetic sorting by extension
+    causes filenames with no extensions to appear first, then directory
+    names, then filenames with extensions.</p>
+
+    <hr>
+    <a name="Datetime"></a> <b>Setting date and time formats</b>
+    <p>The date and time formats used by DIR depend on the country
+    setting you use in your CONFIG.SYS file. If you don't use the
+    <a href="../C/COUNTRY.HTM">COUNTRY</a> command, the formats are those for the United States.</p>
+
+    <hr>
+    <a name="Pipes"></a> <b>Using redirection symbols and pipes</b>
+    <p>When you use a redirection symbol (&gt;) to send DIR output to a
+    file or a pipe (|) to send DIR output to another command, use the
+    <a href="#SwitchA">/A:-D</a> and
+    <a href="#SwitchB">/B</a> switches to list only the filenames.
+    You can use the filename parameter with the
+    <a href="#SwitchB">/B</a> and <a href="#SwitchS">/S</a>
+    switches to specify that DIR is to search the current directory and
+    its subdirectories for all filenames that match filename. DIR lists
+    only the drive letter, directory name, filename, and filename
+    extension, one path per line, for each filename it finds.</p>
+    <p>Before using a pipe for redirection, you should
+    <a href="../S/SET.HTM">set</a> the TEMP environment variable in your
+    AUTOEXEC.BAT file. Otherwise, the temporary file will appear in the
+    directory listing.</p>
+
+    <hr>
+    <a name="dircmd"></a> <b>Presetting DIR parameters and switches</b>
+    <p>You can preset DIR parameters and switches by including the
+    <a href="../S/SET.HTM">SET</a> command with the
+    <a href="../../ENV/MSDOS/DIRCMD.HTM">%DIRCMD%</a> environment
+    variable in your AUTOEXEC.BAT file. You can use any valid
+    combination of DIR parameters and switches with the
+    <a href="../S/SET.HTM">SET</a>
+    <a href="../../ENV/MSDOS/DIRCMD.HTM">%DIRCMD%</a> command, including the
+    location and name of a file.</p>
+    <p>For example, to use the
+    <a href="../../ENV/MSDOS/DIRCMD.HTM">%DIRCMD%</a> environment variable
+    to set the wide display format (<a href="#SwitchW">/W</a>) as the
+    default format, include the command in your AUTOEXEC.BAT
+    file:</p>
+<pre>
+    <a href="../S/SET.HTM">SET</a> dircmd=<a
+href="#SwitchW">/W</a>
+</pre>
+
+    <p>For a single use of the DIR command, you can override a switch
+    set by using the
+    <a href="../../ENV/MSDOS/DIRCMD.HTM">%DIRCMD%</a> environment variable.
+    To do so, you use the same switch on the DIR command-line, but you must
+    also precede the switch letter with a minus sign:</p>
+<pre>
+    DIR <a href="#SwitchW">/-W</a>
+</pre>
+
+    <p>You can change the <a href="../../ENV/MSDOS/DIRCMD.HTM">%DIRCMD%</a>
+    default settings by typing the
+    <a href="../S/SET.HTM">SET</a> command at the command prompt with a
+    new parameter or switch after the equal sign (=). The new default
+    settings are effective for all subsequent DIR commands until you
+    use <a href="../S/SET.HTM">SET</a>
+    <a href="../../ENV/MSDOS/DIRCMD.HTM">%DIRCMD%</a> again on the command
+    line or until you restart the operating system.</p>
+    <p>To clear all default settings, type:</p>
+<pre>
+    <a href="../S/SET.HTM">SET</a> dircmd=
+</pre>
+
+    <p>You can view the current settings of the
+    <a href="../../ENV/MSDOS/DIRCMD.HTM">%DIRCMD%</a> environment
+    variable by typing:</p>
+<pre>
+    <a href="../S/SET.HTM">SET</a>
+</pre>
+
+    <p>The operating system displays a list of environment variables
+    and their settings. For more information about setting environment
+    variables, see the <a href="../S/SET.HTM">SET</a> command.</p>
+
+    <hr>
+    <a name="dos100"></a> <b>Dos 1.0 note</b>
+    <p>DIR noted the date a file was created or changed, it ignored the
+    time.</p>
+
+    <hr>
+    <a name="undoc"></a> <b>Undocumented parameters and switches</b>
+    <p><b>UNDOCUMENTED.</b> DIR, (DIR followed by a comma) Displays ALL
+    files in the current directory, including hidden and system
+    files.</p>
+    <p>This appears only to work with
+    <a href="../../Version/MSDOS/500.HTM">v5.0</a> and
+    <a href="../../Version/MSDOS/600.HTM">v6.0</a>. With
+    <a href="../../Version/MSDOS/330.HTM">v3.30</a>, it doesn't
+    display either IO.SYS, MSDOS.SYS (both with
+    <a href="#SwitchA">S</a>, <a href="#SwitchA">H</a> and
+    <a href="#SwitchA">R</a> attribs) or a test file with
+    <a href="#SwitchA">A</a> and <a href="#SwitchA">H</a> attribs.</p>
+    <p>With <a href="../../Version/MSDOS/500.HTM">v5.0</a>, it
+    displayed a test file with <a href="#SwitchA">H</a> and
+    <a href="#SwitchA">A</a>, but would not display IO.SYS or
+    MSDOS.SYS with <a href="#SwitchA">S</a>,
+    <a href="#SwitchA">H</a> and <a href="#SwitchA">R</a>.
+    This isn't surprising actually, since
+    <a href="#SwitchA">S</a> alone (without
+    <a href="#SwitchA">H</a>) will prevent inclusion of a file in a
+    normal DIR.</p>
+    <p>Not tested with
+    <a href="../../Version/MSDOS/400.HTM">v4.0</a> or
+    <a href="../../Version/MSDOS/401.HTM">v4.01</a>.
+    Not supported by JP Software's 4DOS.</p>
+    <p>Does not work in
+    <a href="../../Version/MSDOS/700.HTM">v7.00</a>, the DOS
+    that comes with <a href="../../Version/MSWIN/95.HTM">Win95</a>
+    and <a href="../../Version/MSWIN/98.HTM">Win98</a>.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>Suppose you want to display all files and directories in a
+    directory, including hidden or system files. To specify this
+    display, type:</p>
+<pre>
+    DIR <a href="#SwitchA">/A</a>
+</pre>
+
+    <hr>
+    <p>Suppose you want DIR to display one directory listing after
+    another, until it has displayed the listing for every directory on
+    the disk in the current drive. Suppose also that you want DIR to
+    alphabetize each directory listing, display it in wide format, and
+    pause after each screen. To specify such a display, be sure the
+    root directory is the current directory and then type:</p>
+<pre>
+    DIR <a href="#SwitchS">/S</a> <a
+href="#SwitchW">/W</a> <a
+href="#SwitchO">/O</a> <a
+href="#SwitchP">/P</a>
+</pre>
+
+    <p>DIR lists the name of the root directory, the names of the
+    subdirectories of the root directory, and the names of the files in
+    the root directory (including extensions). Then DIR lists the
+    subdirectory names and filenames in each subdirectory in the
+    directory tree.</p>
+
+    <hr>
+    <p>To alter the preceding example so that DIR displays the
+    filenames and extensions but omits the directory names, type:</p>
+<pre>
+    DIR <a href="#SwitchS">/S</a> <a
+href="#SwitchW">/W</a> <a
+href="#SwitchO">/O</a> <a
+href="#SwitchP">/P</a> <a
+href="#SwitchA">/A</a>:-D
+</pre>
+
+    <hr>
+    <p>To print a directory listing, type the redirection symbol and
+    PRN after any form of the DIR command:</p>
+<pre>
+    DIR &gt; prn
+</pre>
+
+    <p>When you specify PRN on the DIR command-line, the directory
+    listing is sent to the printer attached to the LPT1 port. If your
+    printer is attached to a different port, you must replace PRN with
+    the name of the correct port.</p>
+
+    <hr>
+    <p>You can also redirect output of the DIR command to a file by
+    replacing PRN with a filename. A path is also accepted on the
+    command-line. For example, to direct DIR output to the file DIR.DOC
+    in the RECORDS directory, type:</p>
+<pre>
+    DIR &gt; \records\dir.doc
+</pre>
+
+    <p>If DIR.DOC does not exist, the operating system creates it,
+    unless the directory RECORDS also does not exist. In that case,
+    the operating system displays the message:</p>
+<pre>
+    File creation error
+</pre>
+
+    <hr>
+    <a name="WildcardExample"></a>
+    <p>To display a list of all the filenames with the .TXT extension
+    in all directories on drive C, type:</p>
+<pre>
+    DIR <a href="#ParameterDrive">C:\</a><a
+href="#Wildcards">*</a><a
+href="#ParameterFilename">.TXT</a> <a
+href="#SwitchW">/W</a> <a
+href="#SwitchO">/O</a> <a
+href="#SwitchS">/S</a> <a
+href="#SwitchP">/P</a>
+</pre>
+
+    <p>DIR displays, in wide format, an alphabetized list of the
+    matching filenames in each directory and pauses each time the
+    screen fills, until you press a key to continue.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>Internal</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/100.HTM">v1.0</a>
+          <a href="../../Version/MSDOS/105.HTM">v1.05</a>
+          <a href="../../Version/MSDOS/110.HTM">v1.1</a>
+          <a href="../../Version/MSDOS/111.HTM">v1.11</a>
+          v1.24
+          v1.25
+          <a href="../../Version/MSDOS/185.HTM">v1.85</a>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

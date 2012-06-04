@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>VERIFY</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#v">Commands N-Z</a>
+    &gt; <a href="../INDEXV.HTM#verify">Commands V</a>
+    <h1>VERIFY</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Directs the operating system to verify that your files are
+    written correctly to a disk and displays the status of verification.
+    For example, you can use this command to make sure data is not
+    written to a bad sector. You can use this command either at the
+    command prompt or in your AUTOEXEC.BAT file.</p>
+    <p><a href="../../Version/MSWIN/NTXP.HTM">Windows XP</a>
+    does not use this command. It is accepted only for compatibility
+    with MS-DOS files.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>VERIFY
+    [<a href="#ParameterON">ON</a>
+    | <a href="#ParameterOFF">OFF</a>]</p>
+
+    <p>Display the current setting:</p>
+    <p>VERIFY</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterON"></a> ON |
+      (<a name="ParameterOFF"></a> OFF
+      <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies whether should verify (ON) or not verify
+      (OFF) that write operations are done correctly, via CRC
+      calculation.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about checking a disk for bad sectors, see the
+    <a href="../C/CHKDSK.HTM">CHKDSK</a> command.
+    <br>For information about verifying files as you copy them, see the
+    <a href="../C/COPY.HTM#SwitchV">/V</a> switch in the
+    <a href="../C/COPY.HTM">COPY</a>,
+    <a href="../D/DEFRAG.HTM">DEFRAG</a>,
+    <a href="../D/DISKCOPY.HTM">DISKCOPY</a>,
+    <a href="../R/REPLACE.HTM">REPLACE</a>, or
+    <a href="../X/XCOPY.HTM">XCOPY</a> commands.
+    <br><a href="../M/MOVE.HTM">MOVE</a> - Move files from one folder to another.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>cksum - Print CRC checksum and byte counts.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Defaults">Default setting</a></li>
+      <li><a href="#OnOff">Displaying the current status of the ON|OFF switch</a></li>
+      <li><a href="#Performance">How VERIFY affects performance</a></li>
+    </ul>
+
+    <hr>
+    <a name="Defaults"></a> <b>Default setting</b>
+    <p>By default the CMD shell has verify
+    <a href="#ParameterOFF">OFF</a>. Windows Explorer will always copy
+    with verify <a href="#ParameterON">ON</a>.</p>
+
+    <hr>
+    <a name="OnOff"></a> <b>Displaying the current status of the ON|OFF switch</b>
+    <p>Use the VERIFY command without a switch to find out whether
+    verification is turned <a href="#ParameterON">ON</a>.</p>
+
+    <hr>
+    <a name="Performance"></a> <b>How VERIFY affects performance</b>
+    <p>Turning VERIFY <a href="#ParameterON">ON</a> slows down all disk
+    write operations. Copying files can be up to twice as fast with
+    VERIFY <a href="#ParameterOFF">OFF</a>.
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <ul>
+    <li><b>1</b> parameter is not <a href="#ParameterON">ON</a>
+    | <a href="#ParameterOFF">OFF</a></li>
+    </ul>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>Internal</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>FSUTIL OBJECTID</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#f">Commands A-M</a>
+    &gt; <a href="../INDEXF.HTM#fsutilobjectid">Commands F</a>
+    <h1>FSUTIL OBJECTID</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Manages object identifiers (also known as OIDs),
+    which are internal objects used by the Distributed Link
+    Tracking (DLT) Client service and File Replication
+    Service (FRS) to track other objects such as files,
+    directories, and links. Object identifiers are invisible
+    to most programs and should never be modified.</p>
+    <p><b>Warning</b>
+    Do not delete, set, or otherwise modify an object
+    identifier. Deleting or setting an object identifier can
+    result in the loss of data from portions of a file, up
+    to and including entire volumes of data. In addition you
+    might cause adverse behavior in the Distributed Link
+    Tracking (DLT) Client service and File Replication
+    Service (FRS).</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>FSUTIL OBJECTID
+    <a href="#ParameterHelp">help</a></p>
+
+    <p>FSUTIL OBJECTID
+    <a href="#ParameterCreate">create</a>
+    <a href="#ParameterDrive">drive</a></p>
+
+    <p>FSUTIL OBJECTID
+    <a href="#ParameterDelete">delete</a>
+    <a href="#ParameterDrive">drive</a></p>
+
+    <p>FSUTIL OBJECTID
+    <a href="#ParameterQuery">query</a>
+    <a href="#ParameterDrive">drive</a></p>
+
+    <p>FSUTIL OBJECTID
+    <a href="#ParameterSet">set</a>
+    <a href="#ParameterObjectId">object_id</a>
+    <a href="#ParameterBirthVolumeId">birth_volume_id</a>
+    <a href="#ParameterBirthObjectId">birth_object_id</a>
+    <a href="#ParameterDomainId">domain_id</a>
+    <a href="#ParameterDrive">drive</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterBirthObjectId"></a> birth_object_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>A 16-byte hexadecimal identifier that indicates
+      the file's original <a href="#ParameterObjectId">object_id</a>
+      (note that the <a href="#ParameterObjectId">object_id</a>
+      may change when a file is moved). This value is used
+      by the DLT Client service.</dd>
+
+      <dt><a name="ParameterBirthVolumeId"></a> birth_volume_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>A 16-byte hexadecimal identifier that indicates
+      the volume on which the file was located when it first
+      obtained an <a href="#ParameterObjectId">object_id</a>.
+      This value is used by the DLT Client service.</dd>
+
+      <dt><a name="ParameterCreate"></a> create
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Creates object identifier if the file does not
+      already have one, otherwise equivalent to
+      <a href="#ParameterQuery">query</a>.</dd>
+
+      <dt><a name="ParameterDelete"></a> delete
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Deletes an object identifier.</dd>
+
+      <dt><a name="ParameterDrive"></a> drive
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the drive letter (followed by a colon),
+      mount point, or volume name.</dd>
+      <dt>(<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the full path to the file including the
+      file name and extension.</dd>
+      <dt><a name="ParameterDomainId"></a> domain_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>A 16-byte hexadecimal domain identifier. This
+      value is not currently used and must be set to all
+      zeros.</dd>
+
+      <dt><a name="ParameterHelp"></a> help
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="ParameterObjectId"></a> object_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>A file-specific 16-byte hexadecimal identifier
+      that is guaranteed to be unique within a volume. It is
+      used by the Distributed Link Tracking (DLT) Client
+      service and the File Replication Service (FRS) to
+      identify files. Any file that has an object_id, also
+      has a <a href="#ParameterBirthVolumeId">birth_volume_id</a>,
+      a <a href="#ParameterBirthObjectId">birth_object_id</a>,
+      and a <a href="#ParameterDomainId">domain_id</a>. When
+      you move a file, the object_id may change, but
+      the <a href="#ParameterBirthVolumeId">birth_volume_id</a>
+      and <a href="#ParameterBirthObjectId">birth_object_id</a>
+      remain the same, which enables Windows XP to always
+      find a file, no matter where it has been moved.</dd>
+
+      <dt><a name="ParameterQuery"></a> query
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Queries an object identifier.</dd>
+
+      <dt><a name="ParameterSet"></a> set
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Sets an object identifier.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="FSUTILBE.HTM">FSUTIL BEHAVIOR</a>
+    <br><a href="FSUTILDI.HTM">FSUTIL DIRTY</a>
+    <br><a href="FSUTILFI.HTM">FSUTIL FILE</a>
+    <br><a href="FSUTILFS.HTM">FSUTIL FSINFO</a>
+    <br><a href="FSUTILHA.HTM">FSUTIL HARDLINK</a>
+    <br><a href="FSUTILQU.HTM">FSUTIL QUOTA</a>
+    <br><a href="FSUTILRE.HTM">FSUTIL REPARSEPOINT</a>
+    <br><a href="FSUTILSP.HTM">FSUTIL SPARSE</a>
+    <br><a href="FSUTILUS.HTM">FSUTIL USN</a>
+    <br><a href="FSUTILVO.HTM">FSUTIL VOLUME</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

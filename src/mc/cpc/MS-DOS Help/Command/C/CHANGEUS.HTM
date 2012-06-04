@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CHANGE USER</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCH.HTM#changeuser">Commands Ch-Cz</a>
+    <h1>CHANGE USER</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Changes the Terminal Services setting for .INI file mapping.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CHANGE USER
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>CHANGE USER
+    <a href="#SwitchExecute">/execute</a></p>
+
+    <p>CHANGE USER
+    <a href="#SwitchInstall">/install</a></p>
+
+    <p>CHANGE USER
+    <a href="#SwitchQuery">/query</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchExecute"></a> /execute
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Enables .INI file mapping to the home directory.
+      This is the default setting.</dd>
+
+      <dt><a name="SwitchInstall"></a> /install
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Disables .INI file mapping to the home directory.
+      All .INI files are read and written to the system directory.
+      You must disable .INI file mapping when installing
+      applications on a terminal server.</dd>
+
+      <dt><a name="SwitchQuery"></a> /query
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the current setting for .INI file mapping.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Use change user <a href="#SwitchInstall">/install</a>
+    before installing an application to create .INI files for
+    the application in the system directory. These files are
+    used as master copies for user-specific .INI files.
+    After installing the application, use change user
+    <a href="#SwitchExecute">/execute</a> to revert to
+    standard .INI file mapping.</p>
+
+    <p>The first time you run the application, it searches the
+    home directory for its .INI files. If the .INI files are
+    not found in the home directory, but are found in the
+    system directory, Terminal Services copies the .INI files
+    to the home directory, ensuring that each user has a
+    unique copy of the application .INI files. Any new .INI
+    files are created in the home directory.</p>
+
+    <p>Each user should have a unique copy of the .INI files
+    for an application. This prevents instances where different
+    users might have incompatible application configurations
+    (for example, different default directories or screen
+    resolutions).</p>
+
+    <p>When the system is in install mode (change user
+    <a href="#SwitchInstall">/install</a>), several things occur.
+    All registry entries that are created are shadowed under
+    HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows
+    NT\CurrentVersion\TerminalServer\Install. Keys added to
+    HKEY_CURRENT_USER are copied under the \SOFTWARE key, and
+    keys added to HKEY_LOCAL_MACHINE are copied under \MACHINE.
+    If the application queries the Windows directory using system
+    calls, such as GetWindowsDirectory, the Terminal server
+    returns the systemroot directory. If any .INI file entries
+    are added using system calls, such as
+    WritePrivateProfileString, they are added to the .INI files
+    under the systemroot directory.</p>
+
+    <p>When the system returns to execution mode (change user
+    <a href="#SwitchExecute">/execute</a>), and the application
+    tries to read a registry entry under HKEY_CURRENT_USER that
+    does not exist, Terminal Services checks to see whether a copy
+    of the key exists under the \TerminalServer\Install key. If it
+    does, the keys are copied to the appropriate location under
+    HKEY_CURRENT_USER. If the application tries to read from an
+    .INI file that does not exist, Terminal Services searches for
+    that .INI file under the system root. If the .INI file is in
+    the system root, it is copied to the \Windows subdirectory of
+    the user's home directory. If the application queries the
+    Windows directory, the Terminal server returns the \Windows
+    subdirectory of the user's home directory.</p>
+
+    <p>When you log on, Terminal Services checks whether its system
+    .INI files are newer than the .INI files on your computer. If
+    the system version is newer, your .INI file is either replaced
+    or merged with the newer version. This depends on whether or
+    not the INISYNC bit, 0x40, is set for this .INI file. Your
+    previous version of the .INI file is renamed as Inifile.ctx.
+    If the system registry values under the \TerminalServer\Install
+    key are newer than your version under HKEY_CURRENT_USER, then
+    your version of the keys is deleted and replaced with the new
+    keys from under \TerminalServer\Install.</p>
+
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

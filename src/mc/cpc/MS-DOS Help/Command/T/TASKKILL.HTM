@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>TASKKILL</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#t">Commands N-Z</a>
+    &gt; <a href="../INDEXT.HTM#taskkill">Commands T</a>
+    <h1>TASKKILL</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Ends one or more tasks or processes.
+    Processes can be killed by process ID or image name.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>TASKKILL
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>TASKKILL
+    [<a href="#SwitchS">/S computer</a>
+     [<a href="#SwitchU">/U [domain\]user</a>
+      [<a href="#SwitchP">/P password</a>]]]
+    [<a href="#SwitchFi">/FI filter_name</a>]
+    [<a href="#SwitchIm">/IM image_name</a>
+     <a href="#SwitchPid">/PID process_id</a>]
+    [<a href="#SwitchF">/F</a>]
+    [<a href="#SwitchT">/T</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchF"></a> /F
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that process(es) be forcefully
+      terminated. Ignored for remote processes; all remote
+      processes are forcefully terminated.</dd>
+
+      <dt><a name="SwitchFi"></a> /FI filter_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the types of process(es) to include in
+      or exclude from termination. These are valid
+      filter names, operators, and values:
+<pre>
+      <u>Name        Operators               Value</u>
+      CPUTime     eq, ne, gt, lt, ge, le  Valid time in the format of hh:mm:ss. The mm and ss parameters should be between 0 and 59 and hh can be any valid unsigned numeric value.
+      Hostname    eq, ne                  Any valid string.
+      Imagename   eq, ne                  Any valid string.
+      Memusage    eg, ne, gt, lt, ge, le  Any valid integer.
+      PID         eg, ne, gt, lt, ge, le  Any valid positive integer.
+
+      Services    eq, ne                  Any valid string.
+      Session     eg, ne, gt, lt, ge, le  Any valid session number.
+      Status      eq, ne                  RUNNING|NOT RESPONDING
+      Username    eq, ne                  Any valid user name ([Domain\]User).
+      Windowtitle eq, ne                  Any valid string.
+      <u>Name        Operators               Value</u>
+</pre>
+      </dd>
+
+      <dt><a name="SwitchIm"></a> /IM image_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the image name of the process to be
+      terminated.
+      Use the wildcard (*) to specify all image names.</dd>
+
+      <dt><a name="SwitchP"></a> /P password
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the password of the user account that is
+      specified in <a href="#SwitchU">/u</a>.</dd>
+
+      <dt><a name="SwitchPid"></a> /PID process_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the process ID of the process to be
+      terminated.</dd>
+
+      <dt><a name="SwitchS"></a> /S computer
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the name or IP address of a remote
+      computer (do not use backslashes).
+      The default is the local computer.</dd>
+
+      <dt><a name="SwitchT"></a> /T
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies to terminate all child processes along
+      with the parent process,
+      commonly known as a tree kill.</dd>
+
+      <dt><a name="SwitchU"></a> /U [domain\]user
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Runs the command with the account permissions of
+      the user specified by User or Domain\User. The default
+      is the permissions of the current logged on user on
+      the computer issuing the command.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li>The wildcard character (*) is accepted only when specified along with the filters.</li>
+      <li>Termination for remote processes will always be done forcefully regardless of whether the <a href="#SwitchF">/F</a> switch is specified.</li>
+      <li>Supplying a computer name to the <a href="#SwitchFi">HOSTNAME</a> filter will cause a shutdown and all processes will be stopped.</li>
+      <li>Use <a href="TASKLIST.HTM">tasklist</a> to determine the Process ID (PID) for the process to be terminated.</li>
+      <li>Replacement for the <b>Kill</b> tool.</li>
+    </ul>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

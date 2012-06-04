@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>FSUTIL REPARSEPOINT</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#f">Commands A-M</a>
+    &gt; <a href="../INDEXF.HTM#fsutilreparsepoint">Commands F</a>
+    <h1>FSUTIL REPARSEPOINT</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Queries or deletes reparse points, which are NTFS
+    file system objects that have a definable attribute
+    containing user-controlled data, and are used to extend
+    functionality in the input/output (I/O) subsystem.
+    Reparse points are used for directory junction points
+    and volume mount points. They are also used by file
+    system filter drivers to mark certain files as special
+    to that driver.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>FSUTIL REPARSEPOINT
+    <a href="#ParameterHelp">help</a></p>
+
+    <p>FSUTIL REPARSEPOINT
+    <a href="#ParameterDelete">delete</a>
+    <a href="#ParameterDrive">drive</a></p>
+
+    <p>FSUTIL REPARSEPOINT
+    <a href="#ParameterQuery">query</a>
+    <a href="#ParameterDrive">drive</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDelete"></a> delete
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Deletes a reparse point from the file or directory
+      identified by the specified handle, but does not
+      delete the file or directory.</dd>
+      <dd><b>Warning</b> Only deletes the file, not its
+      associated reparse points. This might cause file open
+      failures in processes or services that attempt to open
+      the file.</dd>
+
+      <dt><a name="ParameterDrive"></a> drive
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the drive letter (followed by a colon),
+      mount point, or volume name.</dd>
+      <dt>(<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the full path to the file including the
+      file name and extension.</dd>
+
+      <dt><a name="ParameterHelp"></a> help
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="ParameterQuery"></a> query
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Retrieves the reparse point data associated with
+      the file or directory identified by the specified
+      handle.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="FSUTILBE.HTM">FSUTIL BEHAVIOR</a>
+    <br><a href="FSUTILDI.HTM">FSUTIL DIRTY</a>
+    <br><a href="FSUTILFI.HTM">FSUTIL FILE</a>
+    <br><a href="FSUTILFS.HTM">FSUTIL FSINFO</a>
+    <br><a href="FSUTILHA.HTM">FSUTIL HARDLINK</a>
+    <br><a href="FSUTILOB.HTM">FSUTIL OBJECTID</a>
+    <br><a href="FSUTILQU.HTM">FSUTIL QUOTA</a>
+    <br><a href="FSUTILSP.HTM">FSUTIL SPARSE</a>
+    <br><a href="FSUTILUS.HTM">FSUTIL USN</a>
+    <br><a href="FSUTILVO.HTM">FSUTIL VOLUME</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>On an NTFS volume, a file or directory can contain a
+    reparse point, which is a collection of user-defined
+    data. The format of this data is understood by the
+    program that stores the data, and a file system filter,
+    which you install to interpret the data and process the
+    file. When an program sets a reparse point, it stores
+    this data, plus a reparse tag, which uniquely identifies
+    the data it is storing. When the file system opens a
+    file with a reparse point, it attempts to find the file
+    system filter associated with the data format identified
+    by the reparse tag. If such a file system filter is
+    found, the filter processes the file as directed by the
+    reparse data. If no such file system filter is found,
+    the file open operation fails.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

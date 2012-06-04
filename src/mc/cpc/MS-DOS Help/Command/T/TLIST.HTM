@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>TLIST</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#t">Commands N-Z</a>
+    &gt; <a href="../INDEXT.HTM#tlist">Commands T</a>
+    <h1>TLIST</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Shows the command, command-line, working directory, memory
+    usage and DLLs for each running task.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>TLIST
+    [<a href="#SwitchT">-t</a>]
+    [[<a href="#ParameterPid">pid</a>]
+    | [<a href="#ParameterPattern">pattern</a> [...]]]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterPattern"></a> pattern
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>A complete task name or expression pattern (e.g. CMD.*)
+      if a pattern is given it will match against task names or
+      window titles.</dd>
+
+      <dt><a name="ParameterPid"></a> pid
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>List module information for this task, if no PID is given
+      - all Tasks are listed.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchT"></a> -t
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Show Task dependencies in Tree form.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>PSTAT - display running tasks including all Process Threads.
+    <br><a href="../M/MEM.HTM">MEM</a> - Display memory usage.
+    <br><a href="../W/WINMSD.HTM">WINMSD</a> - Windows NT Diagnostics (including Physical Memory).
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>time - Measure Program Resource Use.
+    <br>times - User and system times.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>This batch file will show the full path of all
+    running programs:</p>
+<pre>
+    <a href="../A/ATSIGN.HTM">@</a><a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterOff">OFF</a>
+    <a href="../F/FOR_F.HTM">FOR /F</a> <a
+href="../F/FOR_F.HTM#ParameterTokens">"TOKENS=1"</a> <a
+href="../F/FOR_F.HTM#ParameterVariable">%%G</a> IN (<a
+href="../F/FOR_F.HTM#ParameterSetCommand">'tlist'</a>) DO (<a
+href="../C/CALL.HTM">CALL</a> <a
+href="../C/CALL.HTM#ParameterLabel">%s_item</a> <a
+href="../C/CALL.HTM#ParameterParms">%%G</a>)
+    <a href="../G/GOTO.HTM">GOTO</a> :<a
+href="../G/GOTO.HTM#ParameterLabel">eof</a>
+
+    <a href="../L/LABEL.HTM#ParameterLabel">:s_item</a>
+    tlist <a href="#ParameterPattern">%1</a> | <a
+href="../F/FIND.HTM">FIND</a> "<a
+href="../F/FIND.HTM#ParameterString">CmdLine</a>"
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External Resource Kit</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd><a href="../../Version/MSWIN/NT400.HTM">NT4</a></dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/01/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CONVLOG</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCH.HTM#convlog">Commands Ch-Cz</a>
+    <h1>CONVLOG</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Convert your Web server's log files to National Center for
+    Supercomputing Applications (NCSA) Common log file format.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CONVLOG
+    [<a href="#SwitchI">-i{e|i|n}</a>]
+    <a href="#ParameterFileName">filename.log</a>
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchD">-d</a>]
+    [<a href="#SwitchL">-l{0|1|2}</a>]
+    [<a href="#SwitchO">-o output_directory</a>]
+    [<a href="#SwitchT">-t [ncsa:gmt_offset]</a>]
+    [<a href="#SwitchX">-x</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterFileName"></a> filename.log
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the input file name.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchC"></a> -c
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Continues logging even if incorrectly formatted
+      line is found.</dd>
+
+      <dt><a name="SwitchD"></a> -d
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Enables DNS replacement of user IP address during
+      the conversion process.</dd>
+
+      <dt><a name="SwitchI"></a> -i{e|i|n}
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the format of the input file:
+        <ul>
+          <li><b>e</b> W3C Extended log file format</li>
+          <li><b>i</b> IIS log file format</li>
+          <li><b>n</b> NCSA Common log file format</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchL"></a> -l{0|1|2}
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the date format used in an IIS log input
+      file:
+        <ul>
+          <li><b>0</b> MM/DD/YY default (U.S. date format)</li>
+          <li><b>1</b> YY/MM/DD (Japanese date format)</li>
+          <li><b>2</b> DD.MM.YY (German date format)</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchO"></a> -o output directory
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the output directory. The default is
+      the current directory (
+      <a href="../../ENV/MSWIN/SYSTEMRO.HTM">%SYSTEMROOT%</a>\System32).</dd>
+
+      <dt><a name="SwitchT"></a> -t [ncsa:gmt_offset]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the output type default as NCSA Common
+      log file format. gmt_offset is the offset, in hours,
+      from Greenwich Mean Time (GMT). The offset is a four-digit
+      number preceded by a plus or minus sign, depending on
+      your local time difference from GMT. An empty space
+      following the GMT offset enables replacement of IP
+      address by DNS name (for IIS log file format only).</dd>
+
+      <dt><a name="SwitchX"></a> -x
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Saves non-HTTP transaction entries to a .dmp file.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External IIS</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>PAGEFILECONFIG[.VBS]</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#p">Commands N-Z</a>
+    &gt; <a href="../INDEXP.HTM#pagefileconfig">Commands P</a>
+    <h1>PAGEFILECONFIG[.VBS]</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Enables an administrator to display and configure a
+    system's paging file Virtual Memory settings.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>PAGEFILECONFIG[.VBS]
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>PAGEFILECONFIG[.VBS]
+    <a href="#SwitchChange">/CHANGE</a>
+    [<a href="#SwitchI">/I initial_pagefile_size</a>
+    | <a href="#SwitchM">/M maximum_pagefile_size</a>]
+    [<a href="#SwitchS">/S Computer</a>
+     [<a href="#SwitchU">/U [Domain\]User</a>
+      [<a href="#SwitchP">/P password</a>]]]
+    <a href="#SwitchVo">/VO volume_letter | * [...]</a></p>
+
+    <p>PAGEFILECONFIG[.VBS]
+    <a href="#SwitchCreate">/CREATE</a>
+    <a href="#SwitchI">/I initial_pagefile_size</a>
+    <a href="#SwitchM">/M maximum_pagefile_size</a>
+    [<a href="#SwitchS">/S Computer</a>
+     [<a href="#SwitchU">/U [Domain\]User</a>
+      [<a href="#SwitchP">/P password</a>]]]
+    <a href="#SwitchVo">/VO volume_letter | * [...]</a></p>
+
+    <p>PAGEFILECONFIG[.VBS]
+    <a href="#SwitchDelete">/DELETE</a>
+    [<a href="#SwitchS">/S Computer</a>
+     [<a href="#SwitchU">/U [Domain\]User</a>
+      [<a href="#SwitchP">/P password</a>]]]
+    <a href="#SwitchVo">/VO volume_letter | * [...]</a></p>
+
+    <p>PAGEFILECONFIG[.VBS]
+    <a href="#SwitchQuery">/QUERY</a>
+    [<a href="#SwitchFo">/FO forma</a>]
+    [<a href="#SwitchS">/S Computer</a>
+     [<a href="#SwitchU">/U [Domain\]User</a>
+      [<a href="#SwitchP">/P password</a>]]]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchChange"></a> /CHANGE
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Changes a system's existing paging file Virtual
+      Memory settings.</dd>
+
+      <dt><a name="SwitchCreate"></a> /CREATE
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Creates or adds an additional paging file to a
+      system.</dd>
+
+      <dt><a name="SwitchDelete"></a> /DELETE
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Deletes a paging file from a system.</dd>
+
+      <dt><a name="SwitchFo"></a> /FO format
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the format to use for the query output.
+      Valid values are:
+        <ul>
+          <li><b>CSV</b></li>
+          <li><b>LIST</b> (default)</li>
+          <li><b>TABLE</b></li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchI"></a> /I initial_pagefile_size
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the new initial size (in MB) to use for
+      the paging file specified.</dd>
+
+      <dt><a name="SwitchM"></a> /M maximum_pagefile_size
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the new maximum size (in MB) to use for
+      the paging file specified.</dd>
+
+      <dt><a name="SwitchP"></a> /P password
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the password of the user account that is
+      specified in the <a href="#SwitchU">/U</a> parameter.</dd>
+
+      <dt><a name="SwitchQuery"></a> /QUERY
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Queries and displays a system's paging file
+      Virtual Memory settings.</dd>
+
+      <dt><a name="SwitchS"></a> /S Computer
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the name or IP address of a remote
+      computer (do not use backslashes).
+      The default is the local computer.</dd>
+
+      <dt><a name="SwitchU"></a> /U [Domain\]User
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Runs the script with the account permissions of
+      the user specified by User or Domain\User. The default
+      is the permissions of the current logged on user on
+      the computer issuing the command.</dd>
+
+      <dt><a name="SwitchVo"></a> /VO volume_letter | * [...]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the volume or volumes of the paging file
+      settings to be changed. The volume is specified by a
+      letter followed by a colon.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Maximum paging file size is limited to available free
+    disk space less the crashdump recovery settings for the
+    boot drive.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

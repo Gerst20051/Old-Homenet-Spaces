@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>FREEDISK</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#f">Commands A-M</a>
+    &gt; <a href="../INDEX.HTM#freedisk">Batch F</a>
+    <h1>FREEDISK</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Checks to see if the specified amount of disk space
+    is available before continuing with an installation process.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>FREEDISK
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]
+    [<a href="#SwitchD">/d drive</a>]
+    [<a href="#ParameterValue">value</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterValue"></a> value
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Checks for a specific amount of free disk space.
+      You can specify bytes, KB, MB, GB, TB, PB, or NB.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchD"></a> /d drive
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the drive for which you want to find out
+      the availability of free space. You must specify drive
+      for a remote computer.</dd>
+
+      <dt><a name="SwitchP"></a> /p password
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the password of the user account that is
+      specified in <a href="#SwitchU">/u</a>.</dd>
+
+      <dt><a name="SwitchS"></a> /s computer
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the name or IP address of a remote computer
+      (do not use backslashes). The default is the local computer.</dd>
+
+      <dt><a name="SwitchU"></a> /u [Domain\]User
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Runs the command with the account permissions of
+      the user specified by User or Domain\User.
+      The default is system permissions.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Joachim Proske found if you use:
+<pre>
+    FREEDISK <a
+href="#SwitchD">/D \\DEFRMFS2\TEST</a> <a
+href="#ParameterValue">20GB</a>
+</pre>
+
+    it is possible to test a network Share without
+    needing to code Accountinformations and Passwords
+    in a Script.</p>
+    <p>He tested several UNC-Paths and I found no Problem
+    with an Account who has access rights to the Share
+    in question.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>Determine if at least 50 MB of free space available:
+<pre>
+    freedisk <a
+href="#ParameterValue">50mb</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <ul>
+    <li><b>0</b> enough space</li>
+    <li><b>1</b> insufficient space</li>
+    </ul>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2005/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

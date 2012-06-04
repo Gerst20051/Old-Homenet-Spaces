@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>FSUTIL SPARSE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#f">Commands A-M</a>
+    &gt; <a href="../INDEXF.HTM#fsutilsparse">Commands F</a>
+    <h1>FSUTIL SPARSE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Manages sparse files. A sparse file is a file with
+    one or more regions of unallocated data in it. A program
+    will see these unallocated regions as containing bytes
+    with the value zero, but there is actually no disk space
+    used to represent these zeros. In other words, all
+    meaningful or nonzero data is allocated, whereas all
+    non-meaningful data (large strings of data composed of
+    zeros) is not allocated. When a sparse file is read,
+    allocated data is returned as stored and unallocated
+    data is returned, by default, as zeros, in accordance
+    with the C2 security requirement specification. Sparse
+    file support allows data to be de-allocated from
+    anywhere in the file.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>FSUTIL SPARSE
+    <a href="#ParameterHelp">help</a></p>
+
+    <p>FSUTIL SPARSE
+    <a href="#ParameterQueryFlag">queryflag</a>
+    <a href="#ParameterDrive">drive</a></p>
+
+    <p>FSUTIL SPARSE
+    <a href="#ParameterQueryRange">queryrange</a>
+    <a href="#ParameterDrive">drive</a></p>
+
+    <p>FSUTIL SPARSE
+    <a href="#ParameterSetFlag">setflag</a>
+    <a href="#ParameterDrive">drive</a></p>
+
+    <p>FSUTIL SPARSE
+    <a href="#ParameterSetRange">setrange</a>
+    <a href="#ParameterDrive">drive</a>
+    <a href="#ParameterOffset">offset</a>
+    <a href="#ParameterLength">length</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the drive letter (followed by a colon),
+      mount point, or volume name.</dd>
+      <dt>(<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the full path to the file including the
+      file name and extension.</dd>
+
+      <dt><a name="ParameterHelp"></a> help
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="ParameterLength"></a> length
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Length of the region in the file to be marked as
+      sparse, in bytes.</dd>
+
+      <dt><a name="ParameterOffset"></a> offset
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Offset within the file to mark as sparse.</dd>
+
+      <dt><a name="ParameterQueryFlag"></a> queryflag
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Queries sparse.</dd>
+
+      <dt><a name="ParameterQueryRange"></a> queryrange
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Scans a file looking for ranges that may contain
+      nonzero data.</dd>
+
+      <dt><a name="ParameterSetFlag"></a> setflag
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Marks the indicated file as sparse.</dd>
+
+      <dt><a name="ParameterSetRange"></a> setrange
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Fills a specified range of a file with zeroes.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="FSUTILBE.HTM">FSUTIL BEHAVIOR</a>
+    <br><a href="FSUTILDI.HTM">FSUTIL DIRTY</a>
+    <br><a href="FSUTILFI.HTM">FSUTIL FILE</a>
+    <br><a href="FSUTILFS.HTM">FSUTIL FSINFO</a>
+    <br><a href="FSUTILHA.HTM">FSUTIL HARDLINK</a>
+    <br><a href="FSUTILOB.HTM">FSUTIL OBJECTID</a>
+    <br><a href="FSUTILQU.HTM">FSUTIL QUOTA</a>
+    <br><a href="FSUTILRE.HTM">FSUTIL REPARSEPOINT</a>
+    <br><a href="FSUTILUS.HTM">FSUTIL USN</a>
+    <br><a href="FSUTILVO.HTM">FSUTIL VOLUME</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>In a sparse file, large ranges of zeroes may not
+    require disk allocation. Space for nonzero data will be
+    allocated as needed as the file is written.</p>
+
+    <p>Only compressed or sparse files can have zeroed
+    ranges known to the operating system.</p>
+
+    <p>If the file is sparse or compressed, NTFS may
+    de-allocate disk space within the file. This sets the
+    range of bytes to zeroes without extending the file
+    size.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

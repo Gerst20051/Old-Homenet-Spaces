@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>LOCAL</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#l">Commands A-M</a>
+    &gt; <a href="../INDEXL.HTM#local">Commands L</a>
+    <h1>LOCAL</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Display membership of local groups on remote servers or
+    remote domains.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>LOCAL
+    <a href="#ParameterGroupName">group_name</a>
+    [<a href="#ParameterDomainName">domain_name</a>
+    | <a href="#ParameterServer">\\server</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDomainName"></a> domain_name
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>A network domain.</dd>
+
+      <dt><a name="ParameterGroupName"></a> group_name
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>The local group.</dd>
+
+      <dt><a name="ParameterServer"></a> \\server
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>A network server.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../N/NETGROUP.HTM">NET GROUP</a> - Manage network resources.
+    <br><a href="../N/NETLOCAL.HTM">NET LOCALGROUP</a> - Manage network resources.
+    <br>FINDGRP - Display group memberships of a user.
+    <br><a href="../G/GLOBAL.HTM">GLOBAL</a> - Display membership of global groups.
+    <br>GetDC - Get domain controller.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>groups - Print group names a user is in.
+    <br>id - Print user and group id's.
+    <br>uname - Print system information.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>Displays the members of the group 'Power Users' in the Scotland
+    domain.</p>
+<pre>
+    LOCAL <a
+href="#ParameterGroupName">"Power Users"</a> <a
+href="#ParameterDomainName">Scotland</a>
+</pre>
+
+    <hr>
+    <p>Displays the members of the group Administrators on server
+    9G_Server</p>
+<pre>
+    LOCAL <a
+href="#ParameterGroupName">Administrators</a> <a
+href="#ParameterServer">\\9G_Server</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External Resource Kit</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd><a href="../../Version/MSWIN/NT400.HTM">NT4</a></dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>SCANDSKW</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#s">Commands N-Z</a>
+    &gt; <a href="../INDEXS.HTM#scandskw">Commands S</a>
+    <h1>SCANDSKW</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Starts Microsoft ScanDisk, a disk analysis and repair tool that
+    checks a drive for errors and corrects any problems that it finds.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>To check the current drive for disk errors:</p>
+    <p>SCANDSKW</p>
+
+    <p>To check one or more drives for disk errors:</p>
+    <p>SCANDSKW
+    [[<a href="#ParameterDrive">drive:</a> [...]
+      [<a href="#SwitchA">/A[ll[fixeddisks]]</a>]
+      [<a href="#SwitchN">/N[oninteractive]</a>]
+      [<a href="#SwitchO">/O[ldfs]</a>]
+      [<a href="#SwitchP">/P[review]</a>]
+      [<a href="#SwitchSageRun">/Sagerun:n</a>]
+      [<a href="#SwitchSageSet">/Sageset:n</a>]
+    | [<a href="#SwitchSilent">/Silent</a>]]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive: [...]
+      (<a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the drive or drives you want to check and
+      repair.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchA"></a> /A[ll[fixeddisks]]
+      (<a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Check all your local, nonremovable hard disks.</dd>
+
+      <dt><a name="SwitchN"></a> /N[oninteractive]
+      (<a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Start and close ScanDisk automatically.</dd>
+
+      <dt><a name="SwitchO"></a> /O[ldfs]
+      (<a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd><b>UNDOCUMENTED</b> <b>*DANGEROUS*</b> Converts ALL
+      Windows Long File Names (LFNs) on target hard disks
+      to MS-DOS style 8.3 Short File Names (SFNs).</dd>
+      <dd><b>ALL long folder AND file names will be lost!</b></dd>
+
+      <dt><a name="SwitchP"></a> /P[review]
+      (<a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Prevent ScanDisk from correcting any errors it finds.</dd>
+
+      <dt><a name="SwitchSageRun"></a> /Sagerun:n
+      (<a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd><b>UNDOCUMENTED</b> Use Unattended settings via
+      System Agent (Task Scheduler) from the SETn Registry
+      key, n=0-50.</dd>
+      <dd>HKEY_LOCAL_MACHINE\Software\Microsoft\Plus!\SystemAgent\SAGE\Scandisk
+      for Windows\Setn</dd>
+
+      <dt><a name="SwitchSageSet"></a> /Sageset:n
+      (<a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd><b>UNDOCUMENTED</b> Display settings dialog box
+      and saves them in the SETn Registry key for use with
+      System Agent (Task Scheduler), n=0-50.</dd>
+      <dd>HKEY_LOCAL_MACHINE\Software\Microsoft\Plus!\SystemAgent\SAGE\Scandisk
+      for Windows\Setn</dd>
+
+      <dt><a name="SwitchSilent"></a> /Silent
+      (<a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd><b>UNDOCUMENTED</b> Does NOT allow any command-line
+      parameters. Summary screens are NOT displayed.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Registry keys used by SCANDSKW:
+    <ul>
+      <li>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Applets\Check Drive</li>
+      <li>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Applets\Check Drive\LastCheck</li>
+      <li>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Applets\Check Drive\LastSurfaceAnalysis</li>
+      <li>HKEY_USERS\.Default\Software\Microsoft\Windows\CurrentVersion\Applets\Check Drive</li>
+      <li>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Applets\Check Drive</li>
+    </ul>
+
+    <p>Registry keys used by SCANDSKW and Task Scheduler (System Agent):
+    <ul>
+      <li>HKEY_LOCAL_MACHINE\Software\Microsoft\Plus!\SystemAgent\SAGE\Scandisk for Windows</li>
+      <li>HKEY_LOCAL_MACHINE\Software\Microsoft\Plus!\SystemAgent\SAGE\Scandisk for Windows\Setn</li>
+      <li>HKEY_LOCAL_MACHINE\Software\Microsoft\Plus!\SystemAgent\SAGE\Scandisk for Windows\Result Codes</li>
+    </ul>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2004/10/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

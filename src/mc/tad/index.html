@@ -1,0 +1,437 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Media Center | Time And Date</title>
+<style type="text/css">@import url('../../css/tad.css');
+</style>
+<script language="JavaScript">
+<!-- Begin
+var LMDate = new Date( document.lastModified );
+year = LMDate.getYear();
+if (year < 1900) { year +=1900; }
+
+function Init() {
+this.length = Init.arguments.length;
+for ( var i = 0; i < this.length; i++ ) this[ i + 1 ] = Init.arguments[ i ];
+}
+function Roman(number) {
+if (number < 1) { alert(number+" is too small\nMinumum value is 1"); number = 1; }
+if (number > 5999) { alert(number+" it too big\nMaximum value is 5999"); number = 5999; }
+var roman_unit = new Init("","I","II","III","IV","V","VI","VII","VIII","IX");
+var roman_tens = new Init("","X","XX","XXX","XL","L","LX","LXX","LXXX","XC");
+var roman_hund = new Init("","C","CC","CCC","CD","D","DC","DCC","DCCC","CM");
+var roman_thou = new Init("","M","MM","MMM","MMMM","MMMMM");
+
+var v = 0; var w = 0; var x = 0; var y = 0;
+v = ((number - (number % 1000)) / 1000) + 1;
+number = (number % 1000);
+w = ((number - (number % 100)) / 100) + 1;
+number = (number % 100);
+x = ((number - (number % 10)) / 10) + 1;
+y = (number % 10) + 1;
+return ("Year Of " + roman_thou[v] + roman_hund[w] + roman_tens[x] + roman_unit[y]);
+}
+//  End -->
+</script>
+</head>
+
+<body>
+
+<table style="border-collapse: collapse" bordercolor="#111111" class="titletable" cellspacing="0" cellpadding="0">
+	<tr>
+		<td bordercolor="#000000">
+		<div class="title">
+			Time And Date</div>
+		<hr></td>
+	</tr>
+</table>
+<div class="backlink">
+	<a class="backlink" href="javascript:history.back()">Back</a></div>
+<table class="maintable" style="border-collapse: collapse" bordercolor="#111111" cellspacing="0" cellpadding="0">
+	<tr>
+		<td id="maincontentcell" valign="top">
+		<div class="maincontent">
+			<div class="clock">
+				Phanerozoic Eon</div>
+			<div class="clock">
+				Cenozoic Era</div>
+			<div class="clock">
+				Quaternary Period</div>
+			<div class="clock">
+				Holocene Epoch</div>
+			<div class="clock">
+				Second Millennia</div>
+			<div class="clock">
+				First Century</div>
+			<div class="clock">
+				First Decade</div>
+			<div class="clock">
+				<script type="text/javascript">
+		<!--//
+		today = new Date();
+		var year = today.getYear();
+		document.write("Year Of " + year);
+		//-->
+		</script>
+				<br>
+				<script>
+		document.write(Roman(year) );
+		</script>
+			</div>
+			<div class="clock">
+				<script type="text/javascript">
+			<!--//
+			today = new Date();
+						
+			if(today.getMonth() == 0) month = "January";
+			if(today.getMonth() == 1) month = "February";
+			if(today.getMonth() == 2) month = "March";
+			if(today.getMonth() == 3) month = "April";
+			if(today.getMonth() == 4) month = "May";
+			if(today.getMonth() == 5) month = "June";
+			if(today.getMonth() == 6) month = "July";
+			if(today.getMonth() == 7) month = "August";
+			if(today.getMonth() == 8) month = "September";
+			if(today.getMonth() == 9) month = "October";
+			if(today.getMonth() == 10) month = "November";
+			if(today.getMonth() == 11) month = "December";
+			
+			document.write("Month Of " + month);
+			//-->
+		</script>
+			</div>
+			<div class="clock">
+				<script type="text/javascript">
+			<!--//
+			today = new Date();
+											
+			if(today.getDay() == 0) day = "Sunday";
+			if(today.getDay() == 1) day = "Monday";
+			if(today.getDay() == 2) day = "Tuesday";
+			if(today.getDay() == 3) day = "Wednesday";
+			if(today.getDay() == 4) day = "Thursday";
+			if(today.getDay() == 5) day = "Friday";
+			if(today.getDay() == 6) day = "Saturday";
+			
+			document.write("Today Is " + day + " The " + today.getDate());
+			//-->
+		</script>
+			</div>
+			<div class="clock">
+				<script type="text/javascript">
+		<!--//
+		today = new Date();
+		
+		if (today.getHours() > 12) {
+			hours = (today.getHours() - 12);
+			ampm = "PM";
+		} else {
+			if (today.getHours() == 0) hours = 12;
+			else hours = today.getHours();
+			ampm = "AM";
+		}
+
+		document.write("Hour Of " + hours + " " + ampm);
+		//-->
+		</script>
+			</div>
+			<div class="clock">
+				<script type="text/javascript">
+		<!--//
+		today = new Date();
+		
+		if(today.getMinutes() < 10) minutes = "0" + today.getMinutes();
+		else minutes = today.getMinutes();
+		document.write("Minute Of " + minutes);
+		//-->
+		</script>
+			</div>
+			<div class="clock">
+				<script type="text/javascript">
+		<!--//
+		today = new Date();
+		var seconds = today.getSeconds();
+		document.write("Second Of " + seconds);
+		//-->
+		</script>
+			</div>
+		</div>
+		</td>
+	</tr>
+</table>
+<br>
+<table cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" class="botnav">
+	<tr>
+		<td bordercolor="#000000">
+		<div class="bot">
+			<a class="botlinks" href="../../index.html">Home</a> -
+			<a class="botlinks" href="calendar.html">Calendar</a> -
+			<a class="botlinks" href="holidays.html">Holidays</a></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+<script language="JavaScript">
+dCol='#FF0000';//date colour.
+fCol='#0000FF';//face colour.
+sCol='#FFFF00';//seconds colour.
+mCol='#FF0000';//minutes colour.
+hCol='#00FF00';//hours colour.
+ClockHeight=50;
+ClockWidth=50;
+ClockFromMouseY=0;
+ClockFromMouseX=100;
+
+//Alter nothing below! Alignments will be lost!
+
+days=new Array("SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY");
+m=new Array("JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER");
+date=new Date();
+day=date.getDate();
+year=date.getYear();
+if (year < 2000) year=year+1900;
+TodaysDate=" "+days[date.getDay()]+" "+day+" "+m[date.getMonth()]+" "+year;
+D=TodaysDate.split('');
+clockH='...';
+clockH=clockH.split('');
+M='....';
+M=M.split('');
+S='.....';
+S=S.split('');
+Face='1 2 3 4 5 6 7 8 9 10 11 12';
+font='Arial';
+size=1;
+clkspeed=0.6;
+ns=(document.layers);
+ie=!ns;
+Face=Face.split(' ');
+faceLength=Face.length;
+a=size*10;
+ymouse=0;
+xmouse=0;
+scrll=0;
+props="<font face="+font+" size="+size+" color="+fCol+"><B>";
+props2="<font face="+font+" size="+size+" color="+dCol+"><B>";
+Split=360/faceLength;
+Dsplit=360/D.length;
+HandHeight=ClockHeight/4.5
+HandWidth=ClockWidth/4.5
+HandY=-7;
+HandX=-2.5;
+scrll=0;
+if (ie && !(document.all)){
+  step=0.09;
+} else {
+  step=0.06;
+}
+
+currStep=0;
+clocky=new Array();clockx=new Array();clockY=new Array();clockX=new Array();
+for (clki=0; clki < faceLength; clki++){clocky[clki]=0;clockx[clki]=0;clockY[clki]=0;clockX[clki]=0}
+clockDy=new Array();clockDx=new Array();clockDY=new Array();clockDX=new Array();
+for (clki=0; clki < D.length; clki++){clockDy[clki]=0;clockDx[clki]=0;clockDY[clki]=0;clockDX[clki]=0}
+if (ns){
+for (clki=0; clki < D.length; clki++)
+document.write('<layer name="nsDate'+clki+'" top=0 left=0 height='+a+' width='+a+'><center>'+props2+D[clki]+'</font></center></layer>');
+for (clki=0; clki < faceLength; clki++)
+document.write('<layer name="nsFace'+clki+'" top=0 left=0 height='+a+' width='+a+'><center>'+props+Face[clki]+'</font></center></layer>');
+for (clki=0; clki < S.length; clki++)
+document.write('<layer name=nsSeconds'+i+' top=0 left=0 width=15 height=15><font face=Arial size=3 color='+sCol+'><center><b>'+S[clki]+'</b></center></font></layer>');
+for (clki=0; clki < M.length; clki++)
+document.write('<layer name=nsMinutes'+clki+' top=0 left=0 width=15 height=15><font face=Arial size=3 color='+mCol+'><center><b>'+M[clki]+'</b></center></font></layer>');
+for (clki=0; clki < clockH.length; clki++)
+document.write('<layer name=nsHours'+clki+' top=0 left=0 width=15 height=15><font face=Arial size=3 color='+hCol+'><center><b>'+clockH[clki]+'</b></center></font></layer>');
+}
+if (ie){
+document.write('<div id="Od" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (clki=0; clki < D.length; clki++)
+document.write('<div id="ieDate'+clki+'" style="position:absolute;top:0px;left:0;height:'+a+';width:'+a+';text-align:center">'+props2+D[clki]+'</B></font></div>');
+document.write('</div></div>');
+document.write('<div id="Of" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (clki=0; clki < faceLength; clki++)
+document.write('<div id="ieFace' + clki + '" style="position:absolute;top:0px;left:0;height:'+a+';width:'+a+';text-align:center">'+props+Face[clki]+'</B></font></div>');
+document.write('</div></div>');
+document.write('<div id="Oh" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (clki=0; clki < clockH.length; clki++)
+document.write('<div id="ieHours' + clki + '" style="position:absolute;width:16px;height:16px;font-family:Arial;font-size:16px;color:'+hCol+';text-align:center;font-weight:bold">'+clockH[clki]+'</div>');
+document.write('</div></div>');
+document.write('<div id="Om" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (clki=0; clki < M.length; clki++)
+document.write('<div id="ieMinutes'+clki+'" style="position:absolute;width:16px;height:16px;font-family:Arial;font-size:16px;color:'+mCol+';text-align:center;font-weight:bold">'+M[clki]+'</div>');
+document.write('</div></div>')
+document.write('<div id="Os" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (clki=0; clki < S.length; clki++)
+document.write('<div id="ieSeconds'+clki+'" style="position:absolute;width:16px;height:16px;font-family:Arial;font-size:16px;color:'+sCol+';text-align:center;font-weight:bold">'+S[clki]+'</div>');
+document.write('</div></div>')
+}
+(ns)?window.captureEvents(Event.MOUSEMOVE):0;
+function Mouse(evnt){
+ymouse = (!document.all)?evnt.pageY+ClockFromMouseY-(window.pageYOffset):event.y+ClockFromMouseY;
+xmouse = (!document.all)?evnt.pageX+ClockFromMouseX:event.x+ClockFromMouseX;
+}
+(ns)?window.onMouseMove=Mouse:document.onmousemove=Mouse;
+function ClockAndAssign(){
+time = new Date ();
+secs = time.getSeconds();
+sec = -1.57 + Math.PI * secs/30;
+mins = time.getMinutes();
+min = -1.57 + Math.PI * mins/30;
+hr = time.getHours();
+hrs = -1.575 + Math.PI * hr/6+Math.PI*parseInt(time.getMinutes())/360;
+if (ie){
+document.getElementById("Od").style.top=window.document.body.scrollTop;
+document.getElementById("Of").style.top=window.document.body.scrollTop;
+document.getElementById("Oh").style.top=window.document.body.scrollTop;
+document.getElementById("Om").style.top=window.document.body.scrollTop;
+document.getElementById("Os").style.top=window.document.body.scrollTop;
+}
+for (clki=0; clki < faceLength; clki++){
+ var F=(ns)?document.layers['nsFace'+i]:document.getElementById("ieFace" + clki ).style;
+ F.top=clocky[clki] + ClockHeight*Math.sin(-1.0471 + clki*Split*Math.PI/180)+scrll;
+ F.left=clockx[clki] + ClockWidth*Math.cos(-1.0471 + clki*Split*Math.PI/180);
+ }
+for (clki=0; clki < clockH.length; clki++){
+ var HL=(ns)?document.layers['nsHours'+clki]:document.getElementById("ieHours"+clki).style;
+ HL.top=clocky[clki]+HandY+(clki*HandHeight)*Math.sin(hrs)+scrll;
+ HL.left=clockx[clki]+HandX+(clki*HandWidth)*Math.cos(hrs);
+ }
+for (clki=0; clki < M.length; clki++){
+ var ML=(ns)?document.layers['nsMinutes'+clki]:document.getElementById("ieMinutes"+clki).style;
+ ML.top=clocky[clki]+HandY+(clki*HandHeight)*Math.sin(min)+scrll;
+ ML.left=clockx[clki]+HandX+(clki*HandWidth)*Math.cos(min);
+ }
+for (clki=0; clki < S.length; clki++){
+ var SL=(ns)?document.layers['nsSeconds'+clki]:document.getElementById("ieSeconds" + clki).style;
+ SL.top=clocky[clki]+HandY+(clki*HandHeight)*Math.sin(sec)+scrll;
+ SL.left=clockx[clki]+HandX+(clki*HandWidth)*Math.cos(sec);
+ }
+for (clki=0; clki < D.length; clki++){
+ var DL=(ns)?document.layers['nsDate'+clki]:document.getElementById("ieDate" + clki).style;
+ DL.top=clockDy[clki] + ClockHeight*1.5*Math.sin(currStep+clki*Dsplit*Math.PI/180)+scrll;
+ DL.left=clockDx[clki] + ClockWidth*1.5*Math.cos(currStep+clki*Dsplit*Math.PI/180);
+ }
+currStep-=step;
+}
+function Delay(){
+scrll=(ns)?window.pageYOffset:0;
+clockDy[0]=Math.round(clockDY[0]+=((ymouse)-clockDY[0])*clkspeed);
+clockDx[0]=Math.round(clockDX[0]+=((xmouse)-clockDX[0])*clkspeed);
+for (clki=1; clki < D.length; clki++){
+clockDy[clki]=Math.round(clockDY[clki]+=(clockDy[clki-1]-clockDY[clki])*clkspeed);
+clockDx[clki]=Math.round(clockDX[clki]+=(clockDx[clki-1]-clockDX[clki])*clkspeed);
+}
+clocky[0]=Math.round(clockY[0]+=((ymouse)-clockY[0])*clkspeed);
+clockx[0]=Math.round(clockX[0]+=((xmouse)-clockX[0])*clkspeed);
+for (clki=1; clki < faceLength; clki++){
+clocky[clki]=Math.round(clockY[clki]+=(clocky[clki-1]-clockY[clki])*clkspeed);
+clockx[clki]=Math.round(clockX[clki]+=(clockx[clki-1]-clockX[clki])*clkspeed);
+}
+ClockAndAssign();
+setTimeout('Delay()',30);
+}
+
+if (ns||ie) {
+Delay();
+}
+</script>
+<script language="JavaScript">
+
+<!-- Begin
+var osd = "   "
+osd +="Clock ";
+osd +="Center";
+var timer;
+var msg = "";
+function scrollMaster () {
+msg = customDateSpring(new Date())
+clearTimeout(timer)
+msg += " " + showtime() + " " + osd
+for (var i= 0; i < 100; i++){
+msg = " " + msg;
+}
+scrollMe()
+}
+function scrollMe(){
+window.status = msg;
+msg = msg.substring(1, msg.length) + msg.substring(0,1);
+timer = setTimeout("scrollMe()", 200);
+}
+function showtime (){
+var now = new Date();
+var hours= now.getHours();
+var minutes= now.getMinutes();
+var seconds= now.getSeconds();
+var months= now.getMonth();
+var dates= now.getDate();
+var years= now.getYear();
+var timeValue = ""
+timeValue += ((months >9) ? "" : " ")
+timeValue += ((dates >9) ? "" : " ")
+timeValue = ( months +1)
+timeValue +="/"+ dates
+timeValue +="/"+  years
+var ap="A.M."
+if (hours == 12) {
+ap = "P.M."
+}
+if (hours == 0) {
+hours = 12
+}
+if(hours >= 13){
+hours -= 12;
+ap="P.M."
+}
+var timeValue2 = " " + hours
+timeValue2 += ((minutes < 10) ? ":0":":") + minutes + " " + ap
+return timeValue2;
+}
+function MakeArray(n) {
+this.length = n
+return this
+}
+monthNames = new MakeArray(12)
+monthNames[1] = "Janurary"
+monthNames[2] = "February"
+monthNames[3] = "March"
+monthNames[4] = "April"
+monthNames[5] = "May"
+monthNames[6] = "June"
+monthNames[7] = "July"
+monthNames[8] = "August"
+monthNames[9] = "Sept."
+monthNames[10] = "Oct."
+monthNames[11] = "Nov."
+monthNames[12] = "Dec."
+daysNames = new MakeArray(7)
+daysNames[1] = "Sunday"
+daysNames[2] = "Monday"
+daysNames[3] = "Tuesday"
+daysNames[4] = "Wednesday"
+daysNames[5] = "Thursday"
+daysNames[6] = "Friday"
+daysNames[7] = "Saturday"
+function customDateSpring(oneDate) {
+var theDay = daysNames[oneDate.getDay() +1]
+var theDate =oneDate.getDate()
+var theMonth = monthNames[oneDate.getMonth() +1]
+var dayth="th"
+if ((theDate == 1) || (theDate == 21) || (theDate == 31)) {
+dayth="st";
+}
+if ((theDate == 2) || (theDate ==22)) {
+dayth="nd";
+}
+if ((theDate== 3) || (theDate  == 23)) {
+dayth="rd";
+}
+return theDay + ", " + theMonth + " " + theDate + dayth + ","
+}
+scrollMaster();
+// End -->
+</script>
+
+</html>

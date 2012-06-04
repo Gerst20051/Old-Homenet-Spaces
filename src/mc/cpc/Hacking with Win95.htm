@@ -1,0 +1,440 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Hacking with Win95</title>
+</head>
+
+<body>
+
+<h2 align="center">Hacking with Win95/NT:&nbsp; How to Telnet <br>
+How to Break into a Windows 95 Computers from the Internet </h2>
+<hr>
+<p align="justify">******************************************************<br>
+In this Guide you will learn how to: <br>
+* Use telnet from Windows <br>
+* Download web pages via telnet <br>
+* Get finger information via telnet <br>
+* Telnet from the DOS command-line <br>
+* Use netcat <br>
+* Break into Windows Computers from the Internet <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Protecting Yourself <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; What can they do <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The command-line approach <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The GUI approach <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Final Words <br>
+************************************************************</p>
+<p align="justify">How to Use Telnet on a Windows Computer</p>
+<p align="justify">Telnet is great little program for doing a couple of interesting 
+things. In fact, if you want to call yourself a hacker, you absolutely MUST be able 
+to telnet!&nbsp; In this lesson you will find out a few of the cool things a hacker 
+can do with telnet.</p>
+<p align="justify">If you are using Win95, you can find telnet in the c:\windows 
+directory, and on NT, in the c:\winnt\system32 directory.&nbsp; There isn&#39;t a lot 
+of online help concerning the usage of the program, so my goal is to provide some 
+information for new users.</p>
+<p align="justify">First off, telnet isn&#39;t so much an application as it is a protocol.&nbsp; 
+Telnet is protocol that runs over TCP/IP, and was used for connecting to remote 
+computers.&nbsp; It provides a login interface, and you can run command-line programs 
+by typing the commands on your keyboard, and the programs use the resources of the 
+remote machine.&nbsp; The results are displayed in the terminal window on your machine, 
+but the memory and CPU cycles consumed by the program are located on the remote 
+machine.&nbsp; Therefore, telnet functions as a terminal emulation program, emulating 
+a terminal on the remote machine.</p>
+<p align="justify">Now, telnet runs on your Win95 box as a GUI application...that 
+is to say that you can type &quot;telnet&quot; at the command prompt (in Windows 95 this is 
+the MS-DOS prompt), and assuming that your PATH is set correctly, a window titled 
+&quot;telnet&quot; will open.&nbsp; This differs from your ftp program in that all commands 
+are entered in the DOS window.</p>
+<p align="justify">Let&#39;s begin by opening telnet.&nbsp; Simply open a DOS window 
+by clicking &quot;start&quot;, then &quot;programs&quot;, then &quot;MS-DOS&quot;, and at the command prompt, 
+type:</p>
+<p align="justify">c:\telnet</p>
+<p align="justify">The window for telnet will open, and you can browse the features 
+of the program from the menu bar.</p>
+<p align="justify">***************************************************<br>
+NEWBIE NOTE:&nbsp; In this text file, I am referring only to the telnet <br>
+program that ships with Win95/NT.&nbsp; If you type &quot;telnet&quot; at the <br>
+command prompt and you don&#39;t get the telnet window, make sure <br>
+that the program is on your hard drive using the Start -&gt; Find -&gt; <br>
+Files or Folders command.&nbsp; Also make sure that your path statement includes 
+the Windows directory.&nbsp; There are many other programs available that provide 
+similar functionality, with a lot of other bells and whistles, from any number of 
+software sites. <br>
+*************************************************</p>
+<p align="justify">To learn a bit more about telnet, choose Help -&gt; Contents, or
+<br>
+Help -&gt; Search for help on...&nbsp; from the menu bar.&nbsp; Read through <br>
+the files in order to find more detailed explanations of things <br>
+you may wish to do.&nbsp; For example, in this explanation, I will <br>
+primarily be covering how to use the application and what it can <br>
+be used for, but now how to customize the colors for the application.</p>
+<p align="justify">Now, if you choose Connect -&gt; Remote System, you will be presented 
+with a dialog window that will ask you for the remote host, the port and the terminal 
+type.</p>
+<p align="justify">****************************************************<br>
+NEWBIE NOTE: For most purposes, you can leave the terminal type on <br>
+VT100. <br>
+****************************************************</p>
+<p align="justify">In the Connect dialog box, you can enter in the host to which
+<br>
+you wish to connect, and there is a list box of several ports <br>
+you can connect to:</p>
+<p align="justify">daytime:&nbsp; May give you the current time on the server.
+<br>
+echo:&nbsp; May echo back whatever you type in, and will tell you that the computer 
+you have connected to is alive nd running on the Internet. qotd:&nbsp; May provide 
+you with a quote of the day. <br>
+chargen:&nbsp; May display a continuous stream of characters, useful for spotting 
+network problems, but may crash your telnet program. <br>
+telnet:&nbsp; May present you with a login screen.</p>
+<p align="justify">These will only work if the server to which you are trying to 
+connect is running these services.&nbsp; However, you are not limited to just those 
+ports...you can type in any port number you wish.&nbsp; (For more on fun ports, 
+see the GTMHH, &quot;Port Surf&#39;s Up.&quot;) You will only successfully connect to the port 
+if the service in question is available.&nbsp; What occurs after you connect depends 
+upon the protocol for that particular service.</p>
+<p align="justify">When you are using telnet to connect to the telnet service on 
+a server, you will (in most cases) be presented with a banner and a login prompt.</p>
+<p align="justify">[Note from Carolyn Meinel:&nbsp; Many people have written saying 
+their telnet program fails to connect no matter what host they try to reach.&nbsp; 
+Here&#39;s a way to fix your problem.&nbsp; First -- make sure you are already connected 
+to the Internet.&nbsp; If your telnet program still cannot connect to anything, 
+here&#39;s how to fix your problem.&nbsp; Click &quot;start&quot; then &quot;settings&quot; then &quot;control 
+panel.&quot;&nbsp; Then click &quot;Internet&quot; then &quot;connection.&quot;&nbsp; This screen will have 
+two boxes that may or may not be checked.&nbsp; The top one says &quot;connect to the 
+Internet as needed.&quot;&nbsp; If that box is checked, uncheck it -- but only uncheck 
+it if you already have been having problems connecting.&nbsp; The bottom box says 
+&quot;connect through a proxy server.&quot;&nbsp; If that box is checked, you probably are 
+on a local area network and your systems administrator doesn&#39;t allow you to use 
+telnet.]</p>
+<p align="justify">*********************************************<br>
+NEWBIE NOTE:&nbsp; It&#39;s not a good idea to connect to a host on which you don&#39;t 
+have a valid account.&nbsp; In your attempts to guess a username and password, all 
+you will do is fill the log files on that host. From there, you can very easily 
+be traced, and your online service provider will probably cancel your account.
+<br>
+**********************************************</p>
+<p align="justify">Now, you can also use telnet to connect to other ports, such 
+as <br>
+ftp (21), smtp (25), pop3 (110), and even http (80).&nbsp; When you <br>
+connect to ftp, smtp, and pop3, you will be presented with a <br>
+banner, or a line of text that displays some information about the <br>
+service.&nbsp; This will give you a clue as to the operating system <br>
+running on the host computer, or it may come right out and tell <br>
+you what the operating system is...for instance, AIX, Linux, <br>
+Solaris, or NT.&nbsp; If you successfully connect to port 80, you will <br>
+see a blank screen.&nbsp; This indicates, again, that you have successfully completed 
+the TCP negotiation and you have a connection.</p>
+<p align="justify">Now, what you do from there is up to you.&nbsp; You can simply 
+disconnect with the knowledge that, yes, there is a service running on port 80, 
+or you can use your knowledge of the HTTP protocol to retrieve the HTML source for 
+web pages on the server.</p>
+<p align="justify">How to Download Web Pages Via Telnet</p>
+<p align="justify">To retrieve a web page for a server using telnet, you need to 
+connect to that server on port 80, generally.&nbsp; Some servers may use a different 
+port number, such as 8080, but most web servers run on port 80.&nbsp; The first 
+thing you need to do is click on Terminal -&gt; Preferences and make sure that there 
+is a check in the Local Echo box.&nbsp; Then, since most web pages will generally 
+take up more than a single screen, enable logging by clicking Terminal -&gt; Start 
+Logging... and select a location and filename.&nbsp; Keep in mind that as long as 
+logging is on, and the same file is being logged to, all new information will be 
+appended to the file, rather than overwriting the <br>
+original file.&nbsp; This is useful if you want to record several sessions, and 
+edit out the extraneous information using Notepad.</p>
+<p align="justify">Now, connect the remote host, and if your connection is successful, 
+type in:</p>
+<p align="justify">GET / HTTP/1.0</p>
+<p align="justify">and hit enter twice.</p>
+<p align="justify">**************************************************<br>
+NEWBIE NOTE:&nbsp; Make sure that you hit enter twice...this is part <br>
+of the HTTP protocol.&nbsp; The single / after GET tells the server <br>
+to return the default index file, which is generally &quot;index.html&quot;. <br>
+However, you can enter other filenames, as well. <br>
+*************************************************</p>
+<p align="justify">You should have seen a bunch of text scroll by on the screen.&nbsp; 
+Now you can open the log file in Notepad, and you will see the HTML <br>
+code for the page, just as though you had chosen the View Source <br>
+option from your web browser.&nbsp; You will also get some additional <br>
+information...the headers for the file will contain some information <br>
+about the server.&nbsp; For example:</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HTTP/1.0 200 Document 
+follows <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date: Thu, 04 Jun 1998 14:46:46 GMT
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Server: NCSA/1.5.2 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Last-modified: Thu, 19 Feb 1998 17:44:13 
+GMT <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Content-type: text/html <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Content-length: 3196</p>
+<p align="justify">One particularly interesting piece of information is the server
+<br>
+name.&nbsp; This refers to the web server software that is running <br>
+and serving web pages.&nbsp; You may see other names in this field, <br>
+such as versions of Microsoft IIS, Purveyor, WebSite, etc. <br>
+This will give you a clue as to the underlying operating system <br>
+running on the server.</p>
+<p align="justify">*************************************************<br>
+SYSADMIN NOTE:&nbsp; This technique, used in conjunction with a <br>
+database of exploits on web servers, can be particularly annoying. <br>
+Make sure you keep up on exploits and the appropriate security <br>
+patches from your web server and operating system vendors. <br>
+*************************************************<br>
+*************************************************<br>
+NEWBIE NOTE:&nbsp; This technique of gathering web pages is perfectly legal.&nbsp; 
+You aren&#39;t attempting to compromise the target system, you are simply doing by hand 
+what your web browser does for you automatically.&nbsp; Of course, this technique 
+will not load images and Java applets for you. <br>
+************************************************</p>
+<p align="justify">Getting Finger Information Via Telnet</p>
+<p align="justify">By now, you&#39;ve probably heard or read a lot about finger.&nbsp; 
+It doesn&#39;t seem like a very useful service, and many sysadmins disable the service 
+because it provides information on a particular user, information an evil hacker 
+can take advantage of.&nbsp; Win95 doesn&#39;t ship with a finger client, but NT does.&nbsp; 
+You can download finger clients for Win95 from any number of software sites.&nbsp; 
+But why do that when you have a readily available client in telnet?</p>
+<p align="justify">The finger daemon or server runs on port 79, so connect to a 
+remote host on that port.&nbsp; If the service is running, you will be presented 
+with a blank screen.</p>
+<p align="justify">****************************************************<br>
+NEWBIE NOTE:&nbsp; NT doesn&#39;t ship with a finger daemon (A daemon is a program on 
+the remote computer which waits for people like you to connect to it), so generally 
+speaking, and server that you find running finger will be a Unix box.&nbsp; I say 
+&quot;generally&quot; because there are third-party finger daemons available and someone may 
+want to run one on their NT computer. <br>
+****************************************************</p>
+<p align="justify">The blank screen indicates that the finger daemon is waiting 
+for input.&nbsp; If you have a particular user that you are interested in, type 
+in the username and hit enter.&nbsp; A response will be provided, and the daemon 
+will disconnect the client.&nbsp; If you don&#39;t know a particular username, you can 
+start by simply hitting enter.&nbsp; In some cases, you may get a response such 
+as &quot;No one logged on.&quot; Or you may get information of all currently logged on users.&nbsp; 
+It all depends on whether or not the sysadmin has chosen to enable certain features 
+of the daemon.&nbsp; You can also try other names, such as &quot;root&quot;, &quot;daemon&quot;, &quot;ftp&quot;, 
+&quot;bin&quot;, etc.</p>
+<p align="justify">Another neat trick to try out is something that I have seen referred 
+to as &quot;finger forwarding&quot;.&nbsp; To try this out, you need two hosts that run finger.&nbsp; 
+Connect to the first host, host1.com, and enter the username that you are interested 
+in.&nbsp; Then go to the second host, and enter:</p>
+<p align="justify">user@host1.com</p>
+<p align="justify">You should see the same information!&nbsp; Again, this all depends 
+upon <br>
+the configuration of the finger daemon.</p>
+<p align="justify">Using Telnet from the Command Line</p>
+<p align="justify">Now, if you want to show your friends that you a &quot;real man&quot; because 
+&quot;real men don&#39;t need no stinkin&#39; GUIs&quot;, well just open up a DOS window and type:</p>
+<p align="justify">c:\&gt;telnet &lt;host&gt; &lt;port&gt;</p>
+<p align="justify">and the program will automatically attempt to connect to the 
+host <br>
+on the designated port for you.</p>
+<p align="justify">Using Netcat</p>
+<p align="justify">Let me start by giving a mighty big thanks to Weld Pond from 
+L0pht for producing the netcat program for Windows NT.&nbsp; To get a copy of this 
+program, which comes with source code, simply go to:</p>
+<p align="justify">http://www.l0pht.com/~weld</p>
+<p align="justify">NOTE:&nbsp; The first character of &quot;l0pht: is the letter &quot;l&quot;.&nbsp; 
+The second character is a zero, not an &quot;o&quot;.</p>
+<p align="justify">I know that the program is supposed to run on NT, but I have
+<br>
+seen it run on Win95.&nbsp; It&#39;s a great little program that can be used <br>
+to do some of the same things as telnet.&nbsp; However, there are <br>
+advantages to using netcat...for one, it&#39;s a command-line program, <br>
+and it can be included in a batch file.&nbsp; In fact, you can automate <br>
+multiple calls to netcat in a batch file, saving the results to <br>
+a text file.</p>
+<p align="justify">**************************************************<br>
+NEWBIE NOTE:&nbsp; For more information on batch files, see previous versions of 
+the Guide To (mostly) Harmless Hacking, Getting Serious with Windows series ...one 
+of them dealt with basic batch file programming. <br>
+**************************************************</p>
+<p align="justify">Before using netcat, take a look at the readme.txt file provided 
+in <br>
+the zipped archive you downloaded.&nbsp; It goes over the instructions <br>
+on how to download web pages using netcat, similar to what I <br>
+described earlier using telnet.</p>
+<p align="justify">There are two ways to go about getting finger information using
+<br>
+netcat.&nbsp; The first is in interactive mode.&nbsp; Simply type:</p>
+<p align="justify">c:\&gt;nc &lt;host&gt; 79</p>
+<p align="justify">If the daemon is running, you won&#39;t get a command prompt back.&nbsp; 
+If this is the case, type in the username and hit enter. Or use the automatic mode 
+by first creating a text file containing the username of interest.&nbsp; For example, 
+I typed:</p>
+<p align="justify">c:\&gt;edit root</p>
+<p align="justify">and entered the username &quot;root&quot;, without the quotes.&nbsp; Then 
+from <br>
+the command prompt, type:</p>
+<p align="justify">c:\&gt;nc &lt;host&gt; 79 &lt; root</p>
+<p align="justify">and the response will appear on your screen.&nbsp; You can save 
+the <br>
+output to a file by adding the appropriate redirection operator <br>
+to the end of the file:</p>
+<p align="justify">c:\&gt;nc &lt;host&gt; 79 &lt; root &gt; nc.log</p>
+<p align="justify">to create the file nc.log, or:</p>
+<p align="justify">c:\&gt;nc &lt;host&gt; 79 &lt; root &gt;&gt; nc.log</p>
+<p align="justify">to append the response to the end of nc.log.&nbsp; NOTE:&nbsp; 
+Make sure <br>
+that you use spaces between the redirection operators. <br>
+&nbsp;</p>
+<p align="justify">How to Break into a Windows 95 machine Connected to the Internet</p>
+<p align="justify">Disclaimer</p>
+<p align="justify">The intent of this file is NOT to provide a step-by-step guide 
+to accessing a Win95 computer while it is connected to the Internet.&nbsp; The intent 
+is show you how to protect yourself.</p>
+<p align="justify">There are no special tools needed to access a remote Win95 machine...everything 
+you need is right there on your Win95 system!&nbsp; Two methods will be described...the 
+command-line approach and the GUI approach.</p>
+<p align="justify">Protecting Yourself</p>
+<p align="justify">First, the method of protecting yourself needs to be made perfectly 
+clear.&nbsp; DON&#39;T SHARE FILES!!&nbsp; I can&#39;t stress that enough. If you are a 
+home user, and you are connecting a Win95 computer to the Internet via some dial-up 
+method, disable sharing.&nbsp; If you must share, use a strong password...8 characters 
+minimum, a mix of upper and lower case letters and numbers, change the password 
+every now and again.&nbsp; If you need to transmit the</p>
+<p align="justify">password to someone, do so over the phone or by written letter. 
+To disable sharing, click on My Computer -&gt; Control Panel -&gt; Network -&gt; File and 
+Print Sharing.&nbsp; In the dialog box that appears, uncheck both boxes.&nbsp; It&#39;s 
+that easy.</p>
+<p align="justify">What Can They Do?</p>
+<p align="justify">What can someone do?&nbsp; Well, lots of stuff, but it largely 
+depends on what shares are available.&nbsp; If someone is able to share a printer 
+from your machine, they can send you annoying letters and messages.&nbsp; This consumes 
+time, your printer ink/toner, and your paper.&nbsp; If they are able to share a 
+disk share, what they can do largely depends upon what&#39;s in that share.&nbsp; The 
+share appears as another directory on the attacker&#39;s machine, so any programs they 
+run will be consuming their own resources...memory, cpu cycles, etc. But if the 
+attacker has read and write access to those disk shares, then you&#39;re in trouble.&nbsp; 
+If you take work home, your files may be vulnerable.&nbsp; Initialization and configuration 
+files can be searched for passwords.&nbsp; Files can be modified and deleted. A 
+particularly nasty thing to do is adding a line to your autoexec.bat file so that 
+the next time your computer is booted, the hard drive is formatted without any prompting 
+from the user. Bad ju-ju, indeed.</p>
+<p align="justify">** The command-line approach **</p>
+<p align="justify">Okay, now for the part that should probably be titled &quot;How they 
+do it&quot;.&nbsp; All that is needed is the IP address of the remote machine. Now open 
+up a DOS window, and at the command prompt, type:</p>
+<p align="justify">c:\&gt;nbtstat -A [ip_addr]</p>
+<p align="justify">If the remote machine is connected to the Internet and the ports 
+used for sharing are not blocked, you should see something like:</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NetBIOS Remote Machine Name 
+Table</p>
+<p align="justify">&nbsp;&nbsp; Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Status <br>
+--------------------------------------------- <br>
+NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;00&gt;&nbsp; UNIQUE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Registered <br>
+DOMAIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;00&gt;&nbsp; GROUP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Registered <br>
+NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;03&gt;&nbsp; UNIQUE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Registered <br>
+USERNAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;03&gt;&nbsp; UNIQUE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Registered</p>
+<p align="justify">MAC Address = 00-00-00-00-00-00</p>
+<p align="justify">This machine name table shows the machine and domain names, a 
+logged-on username, and the address of the Ethernet adapter (the information has 
+been obfuscated for instructional purposes).</p>
+<p align="justify">**Note:&nbsp; This machine, if unpatched and not protected with 
+a firewall or packet-filter router, may be vulnerable to a range of denial of service 
+attacks, which seem to be fairly popular, largely because they require no skill 
+or knowledge to perpetrate.</p>
+<p align="justify">The key piece of information that you are looking for is in the 
+Type column.&nbsp; A machine that has sharing enabled will have a hex code of &quot;&lt;20&gt;&quot;.</p>
+<p align="justify">**Note:&nbsp; With the right tools, it is fairly simple for a 
+sysadmin to write a batch file that combs a subnet or her entire network, looking 
+for client machines with sharing enabled.&nbsp; This batch file can then be run 
+at specific times...every day at 2:00 am, only on Friday evenings or weekends, etc.</p>
+<p align="justify">If you find a machine with sharing enabled, the next thing to 
+do is type the following command:</p>
+<p align="justify">c:\&gt;net view \\[ip_addr]</p>
+<p align="justify">Now, your response may be varied.&nbsp; You may find that there 
+are no shares on the list, or that there are several shares available. Choose which 
+share you would like to connect to, and type the command:</p>
+<p align="justify">c:\&gt;net use g: \\[ip_addr]\[share_name]</p>
+<p align="justify">You will likely get a response that the command was completed 
+successfully.&nbsp; If that is the case, type:</p>
+<p align="justify">c:\&gt;cd g:</p>
+<p align="justify">or which ever device name you decided to use.&nbsp; You can now 
+view what exists on that share using the dir commands, etc.</p>
+<p align="justify">Now, you may be presented with a password prompt when you ssue 
+the above command.&nbsp; If that is the case, typical &quot;hacker&quot; (I shudder at that 
+term) methods may be used.</p>
+<p align="justify">** The GUI approach **</p>
+<p align="justify">After issuing the nbtstat command, you can opt for the GUI approach 
+to accessing the shares on that machine.&nbsp; To do so, make sure that you leave 
+the DOS window open, or minimized...don&#39;t close it.&nbsp; Now, use Notepad to open 
+this file:</p>
+<p align="justify">c:\windows\lmhosts.sam</p>
+<p align="justify">Read over the file, and then open create another file in Notepad, 
+called simply &quot;Lmhosts&quot;, without an extension.&nbsp; The file should contain the 
+IP address of the host, the NetBIOS name of the host (from the nbtstat command), 
+and #PRE, separated by tabs.&nbsp; Once you have added this information, save it, 
+and minimize the window.&nbsp; In the DOS command window, type:</p>
+<p align="justify">c:\&gt;nbtstat -R</p>
+<p align="justify">This command reloads the cache from the Lmhosts file you just 
+created.</p>
+<p align="justify">Now, click on Start -&gt; Find -&gt; Computer, and type in the NetBIOS 
+name of the computer...the same one you added to the lmhosts file. If your attempt 
+to connect to the machine is successful, you should be presented with a window containing 
+the available shares.&nbsp; You may be presented with a password prompt window, 
+but again, typical &quot;hacker&quot; (again, that term grates on me like fingernails on a 
+chalk board, but today, it seems that it&#39;s all folks understand) techniques may 
+be used to break the password.</p>
+<p align="justify">************************************************<br>
+Note from Carolyn Meinel: Want to try this stuff without winding up in jail or getting 
+expelled from school? Get a friend to give you permission to try to break in.</p>
+<p align="justify">First, you will need his or her IP address.&nbsp; Usually this 
+will be different every time your friend logs on.&nbsp; You friend can learn his 
+or her IP address by going to the DOS prompt while online and giving the command 
+&quot;netstat -r&quot;. Something like this should show up:</p>
+<p align="justify">C:\WINDOWS&gt;netstat -r</p>
+<p align="justify">Route Table</p>
+<p align="justify">Active Routes:</p>
+<p align="justify">&nbsp; Network Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Netmask&nbsp; Gateway Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Interface&nbsp; 
+Metric <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.0.0.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+0.0.0.0&nbsp;&nbsp;&nbsp; 198.999.176.84&nbsp;&nbsp;&nbsp; 198.999.176.84&nbsp;&nbsp;&nbsp;&nbsp; 
+1 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 127.0.0.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+255.0.0.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 127.0.0.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+127.0.0.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 <br>
+&nbsp;&nbsp;&nbsp;&nbsp; 198.999.176.0&nbsp;&nbsp;&nbsp; 255.255.255.0&nbsp;&nbsp;&nbsp; 
+198.999.176.84&nbsp;&nbsp;&nbsp; 198.999.176.84&nbsp;&nbsp;&nbsp; 1 <br>
+&nbsp;&nbsp;&nbsp; 198.999.176.84&nbsp; 255.255.255.255&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+127.0.0.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 127.0.0.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+1 <br>
+&nbsp;&nbsp; 198.999.176.255&nbsp; 255.255.255.255&nbsp;&nbsp;&nbsp; 198.999.176.84&nbsp;&nbsp;&nbsp; 
+198.999.176.84&nbsp;&nbsp;&nbsp; 1 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 224.0.0.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+224.0.0.0&nbsp;&nbsp;&nbsp; 198.999.176.84&nbsp;&nbsp;&nbsp; 198.999.176.84&nbsp;&nbsp;&nbsp;&nbsp; 
+1 <br>
+&nbsp; 255.255.255.255&nbsp; 255.255.255.255&nbsp;&nbsp;&nbsp; 198.999.176.84&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+0.0.0.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1</p>
+<p align="justify">Your friend&#39;s IP address should be under &quot;Gateway Address.&quot;&nbsp; 
+Ignore the 127.0.0.1 as this will show up for everyone and simply means &quot;locahost&quot; 
+or &quot;my own computer.&quot;&nbsp; If in doubt, break the Internet connection and then 
+get online again.&nbsp; The number that changes is the IP address of your friend&#39;s 
+computer. <br>
+***************************************************</p>
+<p align="justify">************************************************** <br>
+Evil Genius tip: Here is something really scary.&nbsp; In your shell account give 
+the &quot;netstat&quot; command.&nbsp; If your ISP allows you to use it, you might be able 
+to get the dynamically assigned IP addresses of people from all over the world -- 
+everyone who is browsing a Web site hosted by your ISP, everyone using ftp, spammers 
+you might catch red-handed in the act of forging email on your ISP, guys up at 2AM 
+playing on multiuser dungeons, IRC users, in fact you will see everyone who is connected 
+to your ISP! <br>
+****************************************************</p>
+<p align="justify">*************************************************** <br>
+YOU CAN GO TO JAIL WARNING: If you find a Windows 95 box on the Internet with file 
+sharing enabled and no password protection, you can still get in big trouble for 
+exploiting it.&nbsp; It&#39;s just like finding a house whose owner forgot to lock the 
+door -- you still are in trouble if someone catches you inside.&nbsp; Tell temptation 
+to take a hike! <br>
+************************************************</p>
+
+</body>
+
+</html>

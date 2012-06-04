@@ -1,0 +1,356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>FOR /F</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#f">Commands A-M</a>
+    &gt; <a href="../INDEX.HTM#forf">Batch F</a>
+    <h1>FOR /F</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Conditionally process the output of a command, items in text
+    file(s), or a text string.</p>
+    <p>FOR /F processing of a command/text-file consists of reading the
+    output from the command/text-file one line at a time and then
+    breaking the line up into individual items of data or 'tokens'. The
+    DO command is then executed with the parameter(s) set to the
+    token(s) found.</p>
+    <p>By default, /F breaks up the command/line output at each blank
+    space, and any blank lines are skipped. You can override this
+    default parsing behavior by specifying the "options" parameter. The
+    options must be contained within "quotes".</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>FOR /F
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>To use FOR in a batch program:</p>
+    <p>FOR /F
+    ["[<a href="#ParameterDelims">delims=xxx</a>]
+    [<a href="#ParameterSkip">skip=n</a>]
+    [<a href="#ParameterEol">eol=;</a>]
+    [<a href="#ParameterTokens">tokens=n</a>]
+    [<a href="#ParameterUsebackq">usebackq</a>]"]
+    <a href="#ParameterVariable">%%variable</a>
+    IN (<a href="#ParameterSetCommand">'command_to_process'</a>
+    | <a href="#ParameterSetFilename">filename</a>
+    | <a href="#ParameterSetText">"Text string to process"</a>)
+    DO <a href="#ParameterCommand">command</a>
+    [<a href="#ParameterCommandParameters">command-parameters</a>]</p>
+
+    <p>To use FOR from the command prompt:</p>
+    <p>FOR /F
+    ["[<a href="#ParameterDelims">delims=xxx</a>]
+    [<a href="#ParameterSkip">skip=n</a>]
+    [<a href="#ParameterEol">eol=;</a>]
+    [<a href="#ParameterTokens">tokens=n</a>]
+    [<a href="#ParameterUsebackq">usebackq</a>]"]
+    <a href="#ParameterVariable">%variable</a>
+    IN (<a href="#ParameterSetCommand">'command_to_process'</a>
+    | <a href="#ParameterSetFilename">filename</a>
+    | <a href="#ParameterSetText">"Text string to process"</a>)
+    DO <a href="#ParameterCommand">command</a>
+    [<a href="#ParameterCommandParameters">command-parameters</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterCommand"></a> command
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Specifies the command that you want to carry out on each file
+      included in the specified set.</dd>
+
+      <dt><a name="ParameterDelims"></a> delims=xxx
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>The delimiter character(s), default = a space.</dd>
+      <dd>Specifying more than one delimiter has been known to cause
+      problems with some data sets, if you have problems try parsing
+      with just one delimiter at a time, or change the order in which
+      they are listed.</dd>
+      <dd>For example, if you need to include BOTH tab and space as
+      delimiters, the order is significant.
+      "delims=&lt;tab&gt;&lt;space&gt;" works,
+      "delims=&lt;space&gt;&lt;tab&gt;" doesn't.</dd>
+      <dd>When editing a CMD script notice that many text editors will
+      fail to enter the TAB character correctly.</dd>
+      <dd>You can use any character as a delimiter - but they are case
+      sensitive.</dd>
+
+      <dt><a name="ParameterEol"></a> eol=;
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Character to indicate a comment, end of line.</dd>
+
+      <dt><a name="ParameterCommandParameters"></a> command-parameters
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Specifies any parameters or switches that you want to use
+      with the specified command (if the specified command uses any
+      parameters or switches).</dd>
+
+      <dt><a name="ParameterSetCommand"></a> ('command_to_process')
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>The output of the 'command_to_process' is passed into the FOR
+      parameter.</dd>
+
+      <dt><a name="ParameterSetFilename"></a> (filename)
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>A set of one or more files. Wildcards may be used. If
+      (filename) is a period character (.) then FOR will loop through
+      every file in the folder.</dd>
+
+      <dt><a name="ParameterSetText"></a> ("Text string to process")
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>A string of text will be treated just like a single line of
+      input from a file, the string must be enclosed in double
+      quotes.</dd>
+
+      <dt><a name="ParameterSkip"></a> skip=n
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>A number of lines to skip at the beginning, default = 0.</dd>
+
+      <dt><a name="ParameterTokens"></a> tokens=n
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Specifies which numbered items to read from each line,
+      default = 1.</dd>
+      <dd>tokens=2,4,6 will cause the second, fourth and sixth items on
+      each line to be processed.</dd>
+      <dd>tokens=2-6 will cause the second, third, fourth, fifth and
+      sixth items on each line to be processed.</dd>
+      <dd>tokens=* will cause all items on each line to be
+      processed.</dd>
+      <dd>tokens=3* will cause the 3rd and all subsequent items on each
+      line to be processed.</dd>
+      <dd>Specifying more than 1 token will cause additional parameter
+      letters to be allocated.</dd>
+      <dd>If the last character in the tokens= string is an asterisk,
+      then additional parameters are allocated for all the remaining
+      text on the line.</dd>
+
+      <dt><a name="ParameterUsebackq"></a> usebackq
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Specifies that an alternative set of FOR command delimiters
+      are to be used:
+        <ul>
+          <li>a `command_to_process` is placed in BACK quotes instead
+          of 'straight' quotes.</li>
+          <li>a filename set can be placed in DOUBLE quotes (so
+          allowing long filenames).</li>
+          <li>a literal 'Text string to process' is surrounded by
+          SINGLE quotes.</li>
+        </ul>
+      </dd>
+
+      <dt><a name="ParameterVariable"></a> %variable or %%variable
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Represents a replaceable variable. The FOR command replaces
+      %%variable (or %variable) with each text string in the specified
+      set until the command (specified in the command parameter)
+      processes all the files. Use %%variable to carry out the FOR
+      command within a batch program. Use %variable to carry out FOR
+      from the command prompt. (Do NOT use %0 through %9 to avoid
+      confusion with the command-line arguments passed to the batch
+      file).</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="FOR_0.HTM">FOR</a> - Loop through a set of files in one folder.
+    <br><a href="FOR_R.HTM">FOR</a> /R - Loop through files (recurse subfolders).
+    <br><a href="FOR_D.HTM">FOR</a> /D - Loop through several folders.
+    <br><a href="FOR_L.HTM">FOR</a> /L - Loop through a range of numbers.
+    <br><a href="FORFILES.HTM">FORFILES</a> - Batch process multiple files.
+    <br><a href="../G/GOTO.HTM">GOTO</a> - Direct a batch program to jump to a labelled line.
+    <br><a href="../I/IF.HTM">IF</a> - Conditionally perform a command.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>cut - Divide a file into several columns.
+    <br>for - Expand words, and execute commands.
+    <br>case - Conditionally perform a command.
+    <br>eval - Evaluate several COMMANDS/arguments.
+    <br>if - Conditionally perform a command.
+    <br>gawk - Find and Replace text within file(s).
+    <br>m4 - Macro processor.
+    <br>until - Execute commands (until error).
+    <br>while - Execute commands.</p>
+
+    <hr>
+    <a name="Notes"></a><b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a><b>Examples</b>
+    <p>To ECHO from the command-line, the name of every environment
+    variable.</p>
+<pre>
+    FOR /F "<a
+href="#ParameterDelims">delims==</a>" <a
+href="#ParameterVariable">%G</a> IN <a
+href="#ParameterSetCommand">('SET')</a> DO <a
+href="../A/ATSIGN.HTM">@</a> <a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">%G</a>
+</pre>
+
+    <hr>
+    <p>To ECHO from the command-line, the name of every environment
+    variable, using usebackq.</p>
+<pre>
+    FOR /F "<a
+href="#ParameterUsebackq">usebackq</a> <a
+href="#ParameterDelims">delims==</a>" <a
+href="#ParameterVariable">%G</a> IN <a
+href="#ParameterSetCommand">(`SET`)</a> DO <a
+href="../A/ATSIGN.HTM">@</a> <a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">%G</a>
+</pre>
+
+    <hr>
+    <p>To put the Windows Version into an environment variable:</p>
+<pre>
+    <a href="../A/ATSIGN.HTM">@</a><a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterOff">OFF</a>
+    ::parse the VER command
+    FOR /F "<a
+href="#ParameterTokens">tokens=4*</a>" <a
+href="#ParameterVariable">%%G</a> IN <a
+href="#ParameterSetCommand">('ver')</a> DO <a
+href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">v_version</a>=<a
+href="../S/SET.HTM#ParameterString">%%G</a>
+    :: show the result
+    <a href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">%v_version%</a>
+</pre>
+
+    <hr>
+    <p>List all the text files in a folder:</p>
+<pre>
+    FOR /F "<a
+href="#ParameterTokens">tokens=*</a>" <a
+href="#ParameterVariable">%%G</a> IN <a
+href="#ParameterSetCommand">('dir/b ^"c:\program files\*.txt^"')</a> DO <a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">%%G</a>
+
+</pre>
+    <p>(The long filename surrounded by "quotes" have to be escaped
+    using ^).</p>
+
+    <hr>
+    <p>Echo the dollar amount and the date:</p>
+<pre>
+    FOR /F "<a
+href="#ParameterTokens">tokens=1,3*</a> <a
+href="#ParameterDelims">delims=,</a>" <a
+href="#ParameterVariable">%%G</a> IN <a
+href="#ParameterSetText">("12-AUG-99,deposit,$45.50,23.7")</a> DO <a
+href="../A/ATSIGN.HTM">@</a> <a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">%%H was paid to %%G</a>
+</pre>
+
+    <hr>
+    <p>Echo the month and transaction type:</p>
+<pre>
+    FOR /F "<a
+href="#ParameterTokens">tokens=2,4*</a> <a
+href="#ParameterDelims">delims=,</a>" <a
+href="#ParameterVariable">%%G</a> IN <a
+href="#ParameterSetText">("12-AUG-99,deposit,$45.50,23.7")</a> DO <a
+href="../A/ATSIGN.HTM">@</a> <a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">%%H was made in %%G</a>
+</pre>
+
+    <hr>
+    <p>Parse each line in myfile.txt, ignoring lines that begin with a
+    semicolon, with tokens delimited by a comma:</p>
+<pre>
+    FOR /F "<a
+href="#ParameterTokens">tokens=1,3*</a> <a
+href="#ParameterDelims">delims=,</a>" <a
+href="#ParameterVariable">%%G</a> IN <a
+href="#ParameterSetFilename">(myfile.txt)</a> DO <a
+href="../A/ATSIGN.HTM">@</a> <a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">%%G %%H %%I</a>
+
+myfile.txt
+[
+12-AUG-99,DEPOSIT,450,23,55
+; start of the new year
+14-JAN-00,WITHDRAWAL,285,122
+03-FEB-00,DEPOSIT,200
+]
+
+%%G = token1 = "12-AUG-99"
+%%H = token3 = "450"
+%%I = tokens 4+ = "23,55"
+</pre>
+    <p>%%G is explicitly declared in the FOR statement and the %%H and
+    %%I are implicitly declared via the
+    <a href="#ParameterTokens">tokens=</a> option. You can specify up
+    to 26 tokens via the <a href="#ParameterTokens">tokens=</a> line,
+    provided this does not cause an attempt to declare a parameter
+    higher than the letter 'Z'.</p>
+    <p>FOR parameter names are global, so in complex scripts which call
+    one FOR statement from within another FOR statement you can refer
+    to both sets of parameters. You cannot have more than 26 parameters
+    active at any one time.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>Internal</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/01/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

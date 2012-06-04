@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>NETSH</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#n">Commands N-Z</a>
+    &gt; <a href="../INDEXN.HTM#netsh">Commands N</a>
+    <h1>NETSH</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>The NetShell utility (netsh) is a command-line, scripting
+    interface for configuring and monitoring Windows. The
+    configuration tool provides an interactive shell interface
+    to the user. The front end is the command shell that accepts
+    your commands, and the back end is a helper that corresponds
+    to a system component or utility. A helper is a Dynamic Link
+    Library file (.dll) that extends the functionality of netsh.
+    A helper provides configuration and/or monitoring support
+    for one or more services, utilities, or protocols, but
+    helpers can also be used to extend other helpers. The
+    command shell directs the command to the appropriate helper,
+    and the helper carries out the command.</p>
+    <p>The netsh command allows you to run the NetShell utility
+    to display or modify the configuration of a currently
+    running computer. It also provides a scripting feature that
+    you can use to run a collection of commands in batch mode
+    against a specified computer.</p>
+    <p>The command shell provides for contexts, which are
+    groupings of netsh commands for specific networking
+    components. A context is identified by a string that is
+    appended to commands. Commands entered in a given context
+    are passed to an associated helper. The contexts available
+    depend on the Windows components installed. For example,
+    typing routing at the netsh command changes to
+    the routing context. Typing ras at the netsh command
+    changes to the ras (remote access portion of the Routing
+    and Remote Access service) context.</p>
+    <p>Subcontexts may exist within each context. For example,
+    within the routing context, you can change to the ip and
+    ipx subcontexts.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>NETSH
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>NETSH
+    [<a href="#SwitchA">-a aliasfile</a>]
+    [<a href="#SwitchC">-c context</a>]
+    [<a href="#SwitchR">-r remotecomputer</a>]
+    [<a href="#ParameterCommand">command</a>
+    | <a href="#SwitchF">-f scriptfile</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterCommand"></a> command
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>?</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchA"></a> -a aliasfile
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>?</dd>
+
+      <dt><a name="SwitchC"></a> -c context
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>?</dd>
+
+      <dt><a name="SwitchF"></a> -f scriptfile
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>?</dd>
+
+      <dt><a name="SwitchR"></a> -r remotecomputer
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>?</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>To display a list of subcontexts and commands that can be
+    used in a context, at the netsh prompt, type the context name,
+    followed by a space and ?. For example, to display a list of
+    subcontexts and commands that can be used in the routing context,
+    at the netsh prompt, type:
+<pre>
+    netsh&gt;routing ?
+</pre>
+
+    <p><b>Netsh Commands:</b></p>
+    <p>These additional commands can be used with Netsh.
+    Optional parameters are shown in brackets ([ ]).
+    Alternative entries are shown with a pipe (|) between them.</p>
+    <ul>
+    <li><b>?</b>  Displays help.</li>
+    <li><b>abort</b>  Discards any changes made in offline mode.
+    No effect in online mode.</li>
+    <li><b>add helper DLL_name</b>  Installs the helper DLL.</li>
+    <li><b>alias [alias_name]</b>  Displays the equivalent string.</li>
+    <li><b>alias [alias_name] [string1] [string2] ...</b>  Sets
+    alias_name to the specified strings.</li>
+    <li><b>alias</b>  Lists all aliases.</li>
+    <li><b>bye</b>  Exits the program.</li>
+    <li><b>commit</b>  Commits any changes made in the offline mode to
+    the router. No effect in the online mode.</li>
+    <li><b>delete helper DLL_name</b>  Removes the helper DLL.</li>
+    <li><b>dump -file_name</b>  Dumps or appends configuration to a
+    text file.</li>
+    <li><b>exec Script_file_name</b>  Loads the script file and executes
+    commands from it.</li>
+    <li><b>exit</b>  Exits the program.</li>
+    <li><b>h</b>  Displays help.</li>
+    <li><b>help</b>  Displays help.</li>
+    <li><b>offline</b>  Sets the current mode to offline. Any changes
+    made in this mode will be saved, but require a commit or online
+    command to be set in the router.</li>
+    <li><b>online</b>  Sets the current mode to online. Any changes in
+    this mode will be immediately reflected in the router.</li>
+    <li><b>popd</b>  Pops a context from the stack.</li>
+    <li><b>pushd</b>  Pushes current context onto the stack.</li>
+    <li><b>quit</b>  Exits the program.</li>
+    <li><b>set file [open file_name | append file_name | close]</b>
+    Copies the Command Prompt window output to a file.
+    <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a></li>
+    <li><b>set machine [[\\computer_name=]string]</b>
+    Sets the current computer on which to perform configuration tasks.
+    <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a></li>
+    <li><b>set mode [mode =] online | offline</b>  Sets the current
+    mode to online or offline.</li>
+    <li><b>show alias</b>  Lists all defined aliases.</li>
+    <li><b>show helper</b>  Lists all top-level helpers.</li>
+    <li><b>show mode</b>  Shows the current mode.</li>
+    <li><b>unalias alias_name</b>  Deletes the specified alias.</li>
+    </ul>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>TCP / IP Protocols</title>
+<meta name="Microsoft Theme" content="layers 0011">
+</head>
+
+<body background="../../../_themes/layers/laybkgnd.gif" bgcolor="#FFFFFF" text="#000000" link="#330099" vlink="#999999" alink="#660033"><!--mstheme--><font face="georgia,times new roman,times">
+
+<h1 align="center"><!--mstheme--><font face="georgia,Times New Roman,Times"><!--mstheme--><b>TCP/IP Protocols<!--mstheme--></font><!--mstheme--></b></h1>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<p class="intro" align="center">TCP/IP is a large collection of different communication 
+protocols.</p>
+<p>How is such efficient communication possible? Well, there are two big advantages 
+that the computers on the Internet have over our hypothetical natives of different 
+cultures and countries. The first is that the computers of the Internet are in reasonably 
+constant contact with each other over a set of telephone lines, transoceanic cables, 
+satellite links, and so on that allow rapid transfer of electronic information. 
+The second is that the computers of the Internet have agreed to a common set of 
+understandings that allows them to exchange vast amounts of information even though 
+internally they may speak very different computer languages. </p>
+<p>These communications are possible because of a set of <em>protocols</em>, which 
+is a fancy word for mutually agreed-upon rules about exactly how information will 
+be transferred between the computers of the Internet. The two most important protocols 
+that allow networks to cooperate with one another and exchange information are called 
+TCP <em>(Transmission Control Protocol)</em> and IP <em>(Internet Protocol).
+</em>Collectively, these two protocols are often referred to as TCP/IP. </p>
+<p>Local networks can be based on a variety of technologies, but as long as the 
+software layers on top of the network hardware implement the TCP/IP protocol operations, 
+a network can exchange intelligible information with the rest of the Internet.
+</p>
+<h5>Packets of Information</h5>
+<p>How does information get transferred between computers on the Internet? A pretty 
+good analogy is that of letters and the usual mail system (the one that computer 
+types call &quot;snail mail&quot;, because it is so slow compared with electronic mail!). 
+The information is transferred in what are called electronic<em> packets</em>, which 
+are something like letters containing information. If the packets are like letters, 
+they must have an <em>address</em>. Just as normal letters must have an address 
+on the front to make delivery likely, TCP/IP communication depends on addresses 
+being included in each packet. Not surprisingly, these addresses are commonly termed 
+&quot;IP addresses&quot;. So, if someone asks what your IP address is, she is asking the electronic 
+equivalent of what your post office address is. </p>
+<p>As these packets of information move through the network, electronic devices 
+called <em>routers</em> use these IP addresses to decide whether to keep a packet 
+in a local network or to forward it to a different network. This is a complex task, 
+because there are many networks that either comprise the Internet, or that are attached 
+to it through some <em>gateway</em>. </p>
+<p>Thus, routers and gateways in the network serve much the same function that different 
+levels of post offices serve in the usual mail system, with each level of the postal 
+system deciding whether the letter in question should be delivered locally, or forwarded 
+to another part of the postal system. </p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<h2><!--mstheme--><font face="georgia,Times New Roman,Times">A Family of Protocols<!--mstheme--></font></h2>
+<p>TCP/IP is a large collection of different communication protocols based upon 
+the two original protocols TCP and IP.</p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<h2><!--mstheme--><font face="georgia,Times New Roman,Times">TCP - Transmission Control Protocol<!--mstheme--></font></h2>
+<p>TCP is used for transmission of data from an application to the network.</p>
+<p>TCP is responsible for breaking data down into IP packets before they are sent, 
+and for assembling the packets when they arrive.</p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<h2><!--mstheme--><font face="georgia,Times New Roman,Times">IP - Internet Protocol<!--mstheme--></font></h2>
+<p>IP takes care of the communication with other computers.</p>
+<p>IP is responsible for the sending and receiving data packets over the Internet.</p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<h2><!--mstheme--><font face="georgia,Times New Roman,Times">HTTP - Hyper Text Transfer Protocol<!--mstheme--></font></h2>
+<p>HTTP takes care of the communication between a web server and a web browser.</p>
+<p>HTTP is used for sending requests from a web client (a browser) to a web server, 
+returning web content (web pages) from the server back to the client.</p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<h2><!--mstheme--><font face="georgia,Times New Roman,Times">HTTPS - Secure HTTP<!--mstheme--></font></h2>
+<p>HTTPS takes care of secure communication between a web server and a web browser.</p>
+<p>HTTPS typically handles credit card transactions and other sensitive data.</p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<h2><!--mstheme--><font face="georgia,Times New Roman,Times">SSL - Secure Sockets Layer<!--mstheme--></font></h2>
+<p>The SSL protocol is used for encryption of data for secure data transmission.</p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<h2><!--mstheme--><font face="georgia,Times New Roman,Times">SMTP - Simple Mail Transfer Protocol<!--mstheme--></font></h2>
+<p>SMTP is used for transmission of e-mails.</p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<h2><!--mstheme--><font face="georgia,Times New Roman,Times">MIME - Multi-purpose Internet Mail Extensions<!--mstheme--></font></h2>
+<p>The MIME protocol lets SMTP transmit multimedia files including voice, audio, 
+and binary data across TCP/IP networks.</p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<h2><!--mstheme--><font face="georgia,Times New Roman,Times">IMAP - Internet Message Access Protocol<!--mstheme--></font></h2>
+<p>IMAP is used for storing and retrieving e-mails.</p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<h2><!--mstheme--><font face="georgia,Times New Roman,Times">POP - Post Office Protocol<!--mstheme--></font></h2>
+<p>POP is used for downloading e-mails from an e-mail server to a personal computer.</p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<h2><!--mstheme--><font face="georgia,Times New Roman,Times">FTP - File Transfer Protocol<!--mstheme--></font></h2>
+<p>FTP takes care of transmission of files between computers.</p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<h2><!--mstheme--><font face="georgia,Times New Roman,Times">NTP - Network Time Protocol<!--mstheme--></font></h2>
+<p>NTP is used to synchronize the time (the clock) between computers.</p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<h2><!--mstheme--><font face="georgia,Times New Roman,Times">DHCP - Dynamic Host Configuration Protocol<!--mstheme--></font></h2>
+<p>DHCP is used for allocation of dynamic IP addresses to computers in a network.</p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<h2><!--mstheme--><font face="georgia,Times New Roman,Times">SNMP - Simple Network Management Protocol<!--mstheme--></font></h2>
+<p>SNMP is used for administration of computer networks.</p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<h2><!--mstheme--><font face="georgia,Times New Roman,Times">LDAP - Lightweight Directory Access Protocol<!--mstheme--></font></h2>
+<p>LDAP is used for collecting information about users and e-mail addresses from 
+the internet.</p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<h2><!--mstheme--><font face="georgia,Times New Roman,Times">ICMP - Internet Control Message Protocol<!--mstheme--></font></h2>
+<p>ICMP takes care of error handling in the network.</p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<h2><!--mstheme--><font face="georgia,Times New Roman,Times">ARP - Address Resolution Protocol<!--mstheme--></font></h2>
+<p>ARP is used by IP to find the hardware address of a computer network card based 
+on the IP address.</p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<h2><!--mstheme--><font face="georgia,Times New Roman,Times">RARP - Reverse Address Resolution Protocol<!--mstheme--></font></h2>
+<p>RARP is used by IP to find the IP address based on the hardware address of a 
+computer network card.</p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<h2><!--mstheme--><font face="georgia,Times New Roman,Times">BOOTP - Boot Protocol<!--mstheme--></font></h2>
+<p>BOOTP is used for booting (starting) computers from the network.</p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<h2><!--mstheme--><font face="georgia,Times New Roman,Times">PPTP - Point to Point Tunneling Protocol<!--mstheme--></font></h2>
+<p>PPTP is used for setting up a connection (tunnel) between private networks.</p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<p align="center"><a href="../../../index.html">Home</a> -
+<a href="../index.html">Computers</a> -
+<a href="../IP%20Sub-Netting.htm">IP Sub-Netting</a> -
+<a href="../ISDN%20Tutorial.htm">ISDN Tutorial</a> -
+<a href="../IP%20Addressing%20and%20Subnetting.htm">IP Addressing</a> -
+<a href="http://www.protocols.com/pbook/tcpip1.htm">Original Link</a></p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<p align="center"><a href="Page%201.htm">Page 1</a> - <a href="Page%202.htm">Page 
+2</a> - <a href="Page%203.htm">Page 3</a> - <a href="Page%204.htm">Page 4</a> -
+<a href="Page%205.htm">Page 5</a> - <a href="Page%206.htm">Page 6</a> -
+<a href="Page%207.htm">Page 7</a> - <a href="Page%208.htm">Page 8</a> -
+<a href="Page%209.htm">Page 9</a> - <a href="Page%2010.htm">Page 10</a></p>
+
+<!--mstheme--></font></body>
+
+</html>

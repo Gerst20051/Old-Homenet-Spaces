@@ -1,0 +1,544 @@
+Windows Registry Editor Version 5.00 
+
+;-----------------------
+;Operating System Tweaks
+;-----------------------
+
+;Disable Automatic Restart in the event of a BSOD
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl]
+"AutoReboot"=dword:00000000
+
+;Disable Desktop Cleanup
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\
+Explorer\Desktop\CleanupWiz]
+"norun"="1"
+
+;Speed up shutdown
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
+"WaitToKillServiceTimeout"="3000"
+
+;Disable the Desktop Cleanup Wizard
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Desktop\CleanupWiz]
+"NoRun"=dword:00000001
+
+;Disables Error Reporting, but notifies when errors occur
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PCHealth\ErrorReporting]
+"DoReport"=dword:00000000
+
+;Disable Welcome Screen and uses Classic Logon
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"LogonType"=dword:00000000
+
+;Disable Windows Picture and Fax Viewer
+[-HKEY_CLASSES_ROOT\SystemFileAssociations\image\ShellEx\ContextMenuHandlers\ShellImagePreview]
+
+;Do not use Simple File Sharing
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa]
+"forceguest"=dword:00000000
+
+;Speed up Network Browsing by removing Network Scheduled Tasks
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RemoteComputer\NameSpace\{D6277990-4C6A-11CF-8D87-00AA0060F5BF}]
+
+;Remove Shortcut Arrows
+[HKEY_CLASSES_ROOT\lnkfile]
+"IsShortcut"=-
+
+;Disables Windows Tour bubble popup
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Applets\Tour]
+"RunCount"=dword:00000000
+
+;---------------
+;Services Tweaks
+;---------------
+
+;Disable Messenger Service (to stop spam. Does not affect MSN or Windows Messenger)
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Messenger]
+"Start"=dword:00000004
+
+;Disable Remote Registry Service
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RemoteRegistry]
+"Start"=dword:00000004
+
+;Disable Windows Time Service
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time]
+"Start"=dword:00000004
+
+
+;----------------------------------------------
+;Tweaks to improve the functionality of Windows
+;----------------------------------------------
+
+;Remove Shared Documents from My Computer
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\DelegateFolders\{59031a47-3f72-44a7-89c5-5595fe6b30ee}]
+
+;NoLowDiskSpaceChecks won't check if you are low on diskspace and pop up a balloon telling you.
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoLowDiskSpaceChecks"=dword:00000001
+
+;Change MenuShowDelay (Start Menu load speed)
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"MenuShowDelay"="2"
+
+
+;------------------------
+;Internet Explorer Tweaks
+;------------------------
+
+;Prevents Internet Explorer windows from being reused
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"AllowWindowReuse"=dword:00000000
+
+;Max your Internet Explorer's simultaneous downloads to 10 (default was 2)
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"MaxConnectionsPer1_0Server"=dword:0000000a
+"MaxConnectionsPerServer"=dword:0000000a
+
+
+;------------
+;Other Tweaks
+;------------
+
+;Removes Sign up with Passport Wizard when trying to sign in MSN Messenger
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Passport]
+"RegistrationCompleted"=dword:00000001
+
+; Alerter
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Alerter]
+"Start"=dword:00000004
+
+; Application Layer Gateway
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ALG]
+"Start"=dword:00000003
+
+; Application Management
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AppMgmt]
+"Start"=dword:00000003
+
+; Automatic Update
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wuauserv]
+"Start"=dword:00000002
+
+; Background Intelligent Transfer Service
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BITS]
+"Start"=dword:00000003
+
+; ClipBook
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ClipSrv]
+"Start"=dword:00000004
+
+; COM+ Event System
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventSystem]
+"Start"=dword:00000003
+
+; COM+ System Application
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\COMSysApp]
+"Start"=dword:00000003
+
+; Computer Browser
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Browser]
+"Start"=dword:00000002
+
+; Cryptographic Services
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\CryptSvc]
+"Start"=dword:00000002
+ 
+
+; DCOM Server Process Launcher
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DcomLaunch]
+"Start"=dword:00000002
+
+
+; DHCP Client
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dhcp]
+"Start"=dword:00000002
+
+; Distributed Link Tracking Client
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TrkWks]
+"Start"=dword:00000003
+
+; Distributed Transaction Coordinator
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MSDTC]
+"Start"=dword:00000003
+
+; DNS Client
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dnscache]
+"Start"=dword:00000002
+
+; Error Reporting
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ERSvc]
+"Start"=dword:00000004
+
+; Event Log
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Eventlog]
+"Start"=dword:00000002
+
+; Fast User Switching Compatibility
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\FastUserSwitchingCompatibility]
+"Start"=dword:00000004
+
+; Help and Support
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\helpsvc]
+"Start"=dword:00000003
+
+; HTTP SSL
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HTTPFilter]
+"Start"=dword:00000003
+
+; Human Interface Device Access
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HidServ]
+"Start"=dword:00000004
+
+; IMAPI CD-Burning Service
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ImapiService]
+"Start"=dword:0000002
+
+; Indexing Service
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\cisvc]
+"Start"=dword:00000002
+
+; IPSEC Services
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PolicyAgent]
+"Start"=dword:00000004
+
+; Logical Disk Manager
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\dmserver]
+"Start"=dword:00000003
+
+; Logical Disk Manager Administrative Service
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\dmadmin]
+"Start"=dword:00000003
+
+; Messenger, Windows NOT MSN
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Messenger]
+"Start"=dword:00000004
+
+; MS Software Shadow Copy Provider
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SwPrv]
+"Start"=dword:00000003
+
+; Net Logon
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Netlogon]
+"Start"=dword:00000004
+
+; NetMeeting Remote Desktop Sharing
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mnmsrvc]
+"Start"=dword:00000004
+
+; Network Connections
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Netman]
+"Start"=dword:00000003
+
+; Network DDE
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NetDDE]
+"Start"=dword:00000004
+
+; Network DDE DSDM
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NetDDEdsdm]
+"Start"=dword:00000004
+
+; Network Location Awareness (NLA)
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Nla]
+"Start"=dword:00000003
+
+; Network Provisioning Service
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\xmlprov]
+"Start"=dword:00000003
+
+; NT LM Security Support Provider
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NtLmSsp]
+"Start"=dword:00000003
+
+; Performance Logs and Alerts
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SysmonLog]
+"Start"=dword:00000003
+
+; Plug and Play
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PlugPlay]
+"Start"=dword:00000002
+
+; Portable Media Serial Number
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WmdmPmSp]
+"Start"=dword:00000003
+
+; Print Spooler
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Spooler]
+"Start"=dword:00000002
+
+; Protected Storage
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ProtectedStorage]
+"Start"=dword:00000002
+
+; QoS RSVP
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RSVP]
+"Start"=dword:00000004
+
+; Remote Access Auto Connection Manager
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasAuto]
+"Start"=dword:00000003
+
+; Remote Access Connection Manager
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasMan]
+"Start"=dword:00000003
+
+; Remote Desktop Help Session Manager
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RDSessMgr]
+"Start"=dword:00000003
+
+; Remote Procedure Call (RPC)
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RpcSs]
+"Start"=dword:00000002
+
+; Remote Procedure Call (RPC) Locator
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RpcLocator]
+"Start"=dword:00000003
+
+; Remote Registry
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RemoteRegistry]
+"Start"=dword:00000004
+
+; Removable Storage
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NtmsSvc]
+"Start"=dword:00000003
+
+; Routing and Remote Access
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RemoteAccess]
+"Start"=dword:00000004
+
+; Secondary Logon
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\seclogon]
+"Start"=dword:00000004
+
+; Security Accounts Manager
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SamSs]
+"Start"=dword:00000002
+
+; Security Center
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wscsvc]
+"Start"=dword:00000004
+
+; Server
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\lanmanserver]
+"Start"=dword:00000002
+
+; Shell Hardware Detection
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ShellHWDetection]
+"Start"=dword:00000002
+
+;Smart Card
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SCardSvr]
+"Start"=dword:00000003
+
+; SSPD Discovery
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SSDPSRV]
+"Start"=dword:00000003
+
+; System Event Notification
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SENS]
+"Start"=dword:00000002
+
+; System Restore Service
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\srservice]
+"Start"=dword:00000004
+
+; Task Scheduler
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Schedule]
+"Start"=dword:00000002
+
+; TCP/IP NetBIOS Helper
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LmHosts]
+"Start"=dword:00000002
+
+; Telephony
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TapiSrv]
+"Start"=dword:00000003
+
+; Telnet
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TlntSvr]
+"Start"=dword:00000004
+
+; Terminal Services
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TermService]
+"Start"=dword:00000004
+
+; Themes
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Themes]
+"Start"=dword:00000002
+
+; Uninterruptable Power Supply
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\UPS]
+"Start"=dword:00000004
+
+; Universal Plug and Play Device Host
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\upnphost]
+"Start"=dword:00000003
+
+; Volume Shadow Copy
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\VSS]
+"Start"=dword:00000003
+
+; WebClient
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WebClient]
+"Start"=dword:00000003
+
+; Windows Audio
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AudioSrv]
+"Start"=dword:00000002
+
+; Windows Firewall/Internet Connection Sharing (ICS)
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess]
+"Start"=dword:00000004
+
+; Windows Image Acquisition (WIA)
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\stisvc]
+"Start"=dword:00000003
+
+; Windows Installer
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MSIServer]
+"Start"=dword:00000003
+
+; Windows Management Instrumentation
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\winmgmt]
+"Start"=dword:00000002
+
+; Windows Management Instrumentation Driver Extension
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Wmi]
+"Start"=dword:00000003
+
+; Windows Time
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time]
+"Start"=dword:00000002
+
+; Wireless Zero Configuration
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WZCSVC]
+"Start"=dword:00000004
+
+; WMI Performance Adapter
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WmiApSrv]
+"Start"=dword:00000004
+
+; Workstation
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\lanmanworkstation]
+"Start"=dword:00000002
+
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"ForegroundLockTimeout"=dword:00000000
+"HungAppTimeout"="4000"
+"MenuShowDelay"="200"
+"WaitToKillAppTimeout"="5000"
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
+"WaitToKillServiceTimeout"="5000"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoInstrumentation"=dword:00000001
+
+; Remove "Shortcut To" text on shortcuts
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"link"=hex:00,00,00,00
+
+; Show translucent selection rectangle
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ListviewAlphaSelect"=dword:00000000
+
+;Use drop shadows for icon labels on the desktop
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ListviewShadow"=dword:00000001
+
+; Use background image for each folder type
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ListviewWatermark"=dword:00000000
+
+; Slide taskbar buttons
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"TaskbarAnimations"=dword:00000000
+
+; Smooth Edges Of Screen Fonts 0=no, 2=yes
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"FontSmoothing"="2"
+
+; Animate windows when minimizing and maximizing
+[HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics]
+"MinAnimate"="0"
+
+; Use this to keep the registry in-line with the above changes
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects]
+"VisualFXSetting"=dword:00000003
+
+; Disable Ballon Tips
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"EnableBalloonTips"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"StartButtonBalloonTip"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ShowInfoTip"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\tips]
+"Show"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"FolderContentsInfoTip"=dword:00000000
+
+; Use Personalized menus
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"IntelliMenus"=dword:00000000
+
+; Don't Group Similar Taskbar Buttons
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"TaskbarGlomming"=dword:00000000
+
+; Explorer tweaks
+; Don't Cache Thumbnails
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"DisableThumbnailCache"=dword:00000001
+
+; TURN OFF ANNOYING WINDOWS STUFF and misc. tweaks
+
+;Disable Desktop Cleanup Wizard
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Desktop\CleanupWiz]
+"NoRun"=dword:00000001
+
+; Disable Low Disk Space Warning
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoLowDiskSpaceChecks"=dword:00000001
+
+; Set CPU Priority
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
+"Win32PrioritySeparation"=dword:00000026
+
+
+; Run 16-bit applications in their own process (stability)
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WOW]
+"DefaultSeparateVDM"="Yes"
+
+; Launch Folder windows in separate process (stability)
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"SeparateProcess"=dword:00000000
+
+; Explorer Fast Update
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Update]
+"UpdateMode"=hex:00
+
+; Stop Windows from looking for Scheduled Tasks when browsing network
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\
+
+RemoteComputer\NameSpace\{D6277990-4C6A-11CF-8D87-00A 
+A0060F5BF}]
+@="Scheduled Tasks"
+
+; Make IE Behave
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Internet Explorer\Infodelivery\Restrictions]
+"NoUpdateCheck"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main]
+"IEWatsonDisable"=dword:00000001
+"IEWatsonEnabled"=dword:00000000
+
+; Make WMP Behave
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MediaPlayer]
+"EnableAutoUpgrade"="no"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsMediaPlayer]
+"DisableAutoUpdate"=dword:00000001

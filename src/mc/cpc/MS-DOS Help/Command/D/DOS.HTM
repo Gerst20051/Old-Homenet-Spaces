@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DOS</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDA.HTM#dos">Configuration Da-Dr</a>
+    <h1>DOS</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Specifies that the operating system should maintain a link to the upper
+    memory area, load part of itself into the high memory area (HMA), or both.
+    You can use this command only in your CONFIG.SYS file.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>DOS=<a href="#ParameterHighLow">HIGH|LOW</a>[,<a
+    href="#ParameterUmb">[NO]UMB</a>]</p>
+
+    <p>DOS=<a href="#ParameterUmb">[NO]UMB</a>[,<a
+    href="#ParameterHighLow">HIGH|LOW</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterHighLow"></a> HIGH | LOW
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies whether the operating system should
+      attempt to load a part of itself into the HMA (HIGH)
+      or keep all of the operating system in conventional
+      memory (LOW). The default setting is LOW.</dd>
+
+      <dt><a name="ParameterUmb"></a> [NO]UMB
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies whether the operating system should
+      manage upper memory blocks (UMBs) created by a UMB
+      provider such as <a href="../E/EMM386.HTM">EMM386.EXE</a>.
+      The UMB parameter specifies that the operating system
+      should manage UMBs, if they exist. The NOUMB parameter
+      specifies that the operating system should not manage
+      UMBs. The default setting is NOUMB.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about loading a device driver into
+    the upper memory area, see the
+    <a href="DEVICEHI.HTM">DEVICEHIGH</a> command.
+    <br>For information about loading a program into the
+    upper memory area, see the
+    <a href="../L/LOADHIGH.HTM">LOADHIGH</a> command.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#HimemSys">Must install HIMEM.SYS for DOS=UMB or DOS=HIGH</a></li>
+      <li><a href="#UsingHigh">Using the HIGH parameter</a></li>
+      <li><a href="#UsingUmb">Using the UMB parameter</a></li>
+    </ul>
+
+    <hr>
+    <a name="HimemSys"></a> <b>Must install HIMEM.SYS for DOS=UMB or DOS=HIGH</b>
+    <p>You must install the <a href="../H/HIMEMSYS.HTM">HIMEM.SYS</a>
+    device driver or another extended memory manager before
+    you specify either DOS=<a href="#ParameterHighLow">HIGH</a>
+    or DOS=<a href="#ParameterUmb">UMB</a>.
+
+    <hr>
+    <a name="UsingUmb"></a> <b>Using the UMB parameter</b>
+    <p>You must specify the DOS=<a href="#ParameterUmb">UMB</a>.
+    command in order to load programs and device drivers
+    into the upper memory area. Using the upper memory area
+    frees more space in conventional memory for programs.
+    In addition to using this command, you must install an
+    upper-memory-block (UMB) provider. If your computer has
+    an 80386 or 80486 processor, you can use
+    <a href="../E/EMM386.HTM">EMM386.EXE</a> for your UMB
+    provider.</p>
+
+    <p>If you specify DOS=<a href="#ParameterUmb">UMB</a>.
+    and no UMB provider is installed, the operating system
+    will not display an error message.</p>
+
+    <hr>
+    <a name="UsingHigh"></a> <b>Using the HIGH parameter</b>
+    <p>If you specify the <a href="#ParameterHighLow">HIGH</a>
+    parameter, the operating system attempts to load part
+    of itself into the HMA. Loading part of the operating
+    system into the HMA frees conventional memory for
+    programs. If you specify DOS=<a href="#ParameterHighLow">HIGH</a>
+    and the operating system is unable to use the HMA, the
+    following message will appear:
+<pre>
+    HMA not available
+    Loading DOS low
+</pre>
+
+    <hr>
+    <a name="Combining"></a> <b>Combining parameters</b>
+    <p>You can include more than one parameter on a single
+    DOS command line, using commas to separate them. The
+    following command lines are valid:
+<pre>
+    DOS=<a href="#ParameterUmb">UMB</a>],<a
+href="#ParameterHighLow">LOW</a>
+
+    DOS=<a href="#ParameterHighLow">HIGH</a>,<a
+href="#ParameterUmb">UMB</a>
+</pre>
+
+    <p>You can place the DOS command anywhere in your
+    CONFIG.SYS file.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CERTREQ SIGN</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCA.HTM#certreqsign">Commands Ca-Cg</a>
+    <h1>CERTREQ SIGN</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>To sign a cross-certification or qualified subordination
+    request.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CERTREQ
+    [<a href="#SwitchSign">-sign</a>]
+    [<a href="#SwitchHelp">/?</a>]</p>
+
+    <p>CERTREQ
+    <a href="#SwitchSign">-sign</a>
+    [<a href="#SwitchBinary">-binary</a>]
+    [<a href="#SwitchCert">-cert certificate_id</a>]
+    [<a href="#SwitchCrl">-crl</a>]
+    [<a href="#ParameterFileRequestIn">request_input_file</a>
+    [<a href="#ParameterFileRequestOut">request_output_file</a>]]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterFileRequestIn"></a> request_input_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the base64-encoded or binary input file
+      that you want to use. The file can be a PKCS #10
+      certificate request, PKCS #7 certificate renewal request,
+      KEYGEN tag format certificate request, a Certificate
+      Management protocol using Cryptographic Message Syntax
+      (CMS) request (AKA CMC), or a certificate file of the
+      CA that you want to cross-certify.</dd>
+
+      <dt><a name="ParameterFileRequestOut"></a> request_output_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the base64-encoded file to which you
+      want to send output.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display cluster group syntax. Default.</dd>
+
+      <dt><a name="SwitchBinary"></a> -binary
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Formats output files as binary instead of
+      base64-encoded.</dd>
+
+      <dt><a name="SwitchCert"></a> -cert certificate_id
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the signing certificate by common name,
+      serial number, Secure Hash Algorithm (SHA-1) key, or
+      certificate hash.</dd>
+
+      <dt><a name="SwitchCrl"></a> -crl
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Includes certificate revocation lists (CRLs) in
+      the output to the base64-encoded PKCS #7 file
+      specified by
+      <a href="#ParameterFileRequestOut">request_output_file</a>.
+      </dd>
+
+      <dt><a name="SwitchSign"></a> -sign
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Signs a cross-certification or qualified
+      subordination request.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="CERTREQA.HTM">CERTREQ ACCEPT</a>
+    <br><a href="CERTREQN.HTM">CERTREQ NEW</a>
+    <br><a href="CERTREQP.HTM">CERTREQ POLICY</a>
+    <br><a href="CERTREQR.HTM">CERTREQ RETRIEVE</a>
+    <br><a href="CERTREQT.HTM">CERTREQ SUBMIT</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

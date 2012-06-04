@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>PROMPT</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#p">Commands N-Z</a>
+    &gt; <a href="../INDEXP.HTM#prompt">Commands P</a>
+    <h1>PROMPT</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Changes the appearance of the command prompt.</p>
+    <p>You can customize the command prompt to display any text you
+    want, including such information as the name of the current
+    directory, the time and date, and the operating system version
+    number.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>PROMPT
+    [<a href="#ParameterText">text</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterText"></a> text
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies any text and information you want
+      included in your system prompt.</dd>
+      <dd>The list shows the character combinations you can
+      include instead of, or in addition to, any character string(s)
+      in the text parameter. The list includes a brief description of
+      the text or information that each character combination adds to
+      your command prompt.
+        <ul>
+          <li><b>$$</b> $ (dollar sign)</li>
+          <li><b>$A</b> &amp; ampersand (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</li>
+          <li><b>$B</b> | (pipe)</li>
+          <li><b>$C</b> ( left parenthesis (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</li>
+          <li><b>$D</b> Current date</li>
+          <li><b>$E</b> ASCII escape code (code 27)</li>
+          <li><b>$F</b> ) right parenthesis (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</li>
+          <li><b>$G</b> &gt; (greater-than sign)</li>
+          <li><b>$H</b> Backspace (to delete a character that has been written to the prompt command-line)</li>
+          <li><b>$L</b> &lt; (less-than sign)</li>
+          <li><b>$M</b> Display the remote name for Network drives <a href="../../Version/MSWIN/NT400.HTM">NT4</a></li>
+          <li><b>$N</b> Current drive</li>
+          <li><b>$P</b> Current drive and path</li>
+          <li><b>$Q</b> = (equal sign)</li>
+          <li><b>$S</b> space (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</li>
+          <li><b>$T</b> Current time</li>
+          <li><b>$V</b> Operating system version number</li>
+          <li><b>$V</b> Windows NT version number (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</li>
+          <li><b>$_</b> ENTER-LINEFEED</li>
+          <li><b>$+</b> Will display plus signs (+) one for each level of the PUSHD directory stack (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</li>
+        </ul>
+
+      <b>Caution</b> Depending on if
+      <a href="../D/DOSKEY.HTM">DOSKEY</a> is loaded or not,
+      the output can be unreadable.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about setting the current date and time, see the
+    <a href="../D/DATE.HTM">DATE</a> and
+    <a href="../T/TIME.HTM">TIME</a> commands.
+    <br>For information about ANSI escape sequences, see
+    <a href="../A/ANSISYS.HTM">ANSI.SYS</a>.
+    <br><a href="../S/SETX.HTM">SETX</a> - Set an environment variable permanently.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>The BASH prompt is set by the BASH variable $PROMPT_COMMAND.
+    <br>env - Display, set, or remove environment variables.
+    <br>export - Set an environment variable.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Windows">Defining the DOS command prompt in Windows</a></li>
+      <li><a href="#Pvalue">Using the $P value for text</a></li>
+      <li><a href="#Text">Using the PROMPT command without the text parameter</a></li>
+    </ul>
+
+    <hr>
+    <a name="Text"></a> <b>Using the PROMPT command without the text parameter</b>
+    <p>When you use the PROMPT command without specifying a value for
+    text, PROMPT resets the command prompt to the default setting--the
+    current drive letter followed by a greater-than sign (&gt;).</p>
+
+    <hr>
+    <a name="Pvalue"></a> <b>Using the $P value for text</b>
+    <p>If you include the $P character in the text parameter, the
+    operating system reads your disk after you enter each command
+    to determine the current drive and path. This can take extra
+    time, especially for floppy disk drives.</p>
+
+    <hr>
+    <a name="Windows"></a> <b>Defining the DOS command prompt in Windows</b>
+    <p>If you use
+    <a href="../../Version/MSWIN/310.HTM">Win3.1</a>, you can change
+    the command prompt with the
+    <a href="../../ENV/MSWIN/WINPMT.HTM">%WINPMT%</a> environment
+    variable.</p>
+    <p>For example, suppose you want the message to precede
+    the operating system command prompt:</p>
+    <p>Type "exit" when you're ready to return to Windows.</p>
+    <p>To display this message, include the command to your
+    AUTOEXEC.BAT file:</p>
+<pre>
+    <a
+href="../S/SET.HTM">SET</a> winpmt=Type "exit" when you're ready to return to Windows.$_$p$g
+</pre>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>This example sets the command prompt to display the
+    current drive and path followed by the greater-than sign
+    (&gt;), the default setting:</p>
+<pre>
+    PROMPT <a
+href="#ParameterText">$p$g</a>
+</pre>
+
+    <hr>
+    <p>This command displays a two-line prompt in which the
+    current time appears on the first line and the current date appears
+    on the second line:</p>
+<pre>
+    PROMPT <a
+href="#ParameterText">time is: $t$_date is: $d</a>
+</pre>
+
+    <hr>
+    <p>If your CONFIG.SYS file loads <a href="../A/ANSISYS.HTM">ANSI.SYS</a>,
+    you can use ANSI escape sequences in your prompts.
+    Displays your prompt in reverse video mode and returns to usual
+    video mode for other text:</p>
+<pre>
+    PROMPT <a
+href="#ParameterText">$e[7m$n:$e[m</a>
+</pre>
+
+    <hr>
+    <p>The characters following the escape code ($E) are ANSI escape
+    sequences.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>Internal</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DOSKEY</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDA.HTM#doskey">Commands Da-Dr</a>
+    <h1>DOSKEY</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Loads the Doskey program into memory. The Doskey program recalls
+    operating system commands and enables you to edit command-lines and
+    create and run macros.</p>
+    <p>Doskey is a memory-resident program. When installed, Doskey
+    occupies about 3 kilobytes of resident memory.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>DOSKEY
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>DOSKEY [<a href="#SwitchReinstall">/REINSTALL</a>]
+    [<a href="#SwitchBufsize">/BUFSIZE=nnn</a>]
+    [<a href="#SwitchEcho">/E[CHO]:[ON|OFF]</a>]
+    [<a href="#SwitchExename">/EXENAME=exename</a>]
+    [<a href="#SwitchFile">/F[ILE]:file</a>
+    | <a href="#SwitchFile">/MACROFILE:file</a>]
+    [<a href="#SwitchKeysize">/K[EYSIZE]:nn</a>]
+    [<a href="#SwitchLine">/L[INE]:nnn</a>]
+    [<a href="#SwitchListsize">/LISTSIZE=size</a>]
+    [<a href="#SwitchMacros">/M[ACROS]</a>[=exename|=ALL]]
+    [<a href="#SwitchHistory">/H[ISTORY]</a>]
+    [<a href="#SwitchInsert">/INSERT</a>
+    | <a href="#SwitchOverstrike">/OVERSTRIKE</a>]
+    [<a href="#ParameterMacroname">macroname=</a>[text]]
+    [<a href="#SwitchAppedit">/APPEDIT</a>]
+    [<a href="#SwitchCommand">/COMMAND</a>]
+    [<a href="#SwitchPermanent">/PERMANENT</a>]
+    [<a href="#SwitchScrsize">/SCRSIZE</a>]
+    [<a href="#SwitchXhistory">/XHISTORY</a>]</p>
+
+    <p>To start the Doskey program and use the default settings:</p>
+    <p>DOSKEY</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterMacroname"></a> macroname=[text]
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Creates a macro that carries out one or more commands
+      (a Doskey macro). Macroname specifies the name you want to assign
+      to the macro. Text specifies the commands you want to
+      record.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchAppedit"></a> /APPEDIT
+      (<a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd><b>UNDOCUMENTED</b> Enables command-line history in
+      applications such as DEBUG.EXE.</dd>
+
+      <dt><a name="SwitchBufsize"></a> /BUFSIZE=nnn
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the size of the buffer in which Doskey stores
+      commands and Doskey macros. The default size is 512 bytes. The
+      minimum buffer size is 256 bytes. Beginning with <a href=
+      "../../Version/MSDOS/700.HTM">v7.00</a> BUFSIZE can be
+      abbreviated as B.</dd>
+
+      <dt><a name="SwitchCommand"></a> /COMMAND
+      (<a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd><b>UNDOCUMENTED</b> unknown.</dd>
+
+      <dt><a name="SwitchEcho"></a> /E[CHO]:[ON|OFF]
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Enables/disables echo of macro expansions. The default is: ON.</dd>
+
+      <dt><a name="SwitchExename"></a> /EXENAME=exename
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specify an executable other than cmd.exe.</dd>
+
+      <dt><a name="SwitchFile"></a> /F[ILE]:file
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dt>/MACROFILE:file
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies a file containing a list of macros.</dd>
+
+      <dt><a name="SwitchHistory"></a> /H[ISTORY]
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Displays a list of all commands stored in memory. You can use
+      a redirection symbol (&gt;) with the /HISTORY switch to redirect
+      the list to a file.</dd>
+
+      <dt><a name="SwitchInsert"></a> /INSERT |
+      (<a name="SwitchOverstrike"></a> /OVERSTRIKE
+      <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dt>/I[NSERT] | /O[VERSTRIKE]
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies whether new text you type is to replace old text.
+      If you use the /INSERT switch, new text that you type on a line
+      is inserted into old text (as if you had pressed the INSERT key).
+      If you use the /OVERSTRIKE switch, new text replaces old text.
+      The default setting is: /OVERSTRIKE.</dd>
+
+      <dt><a name="SwitchKeysize"></a> /K[EYSIZE]:nn
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the size of the keyboard type-ahead buffer. The
+      default size is 15 bytes.</dd>
+
+      <dt><a name="SwitchLine"></a> /L[INE]:nnn
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Sets maximum size of the line edit buffer. The default size
+      is 128 bytes.</dd>
+
+      <dt><a name="SwitchListsize"></a> /LISTSIZE=size
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Limit the number of commands remembered by the buffer.</dd>
+
+      <dt><a name="SwitchMacros"></a> /M[ACROS]
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Displays a list of all Doskey macros. You can use a
+      redirection symbol (&gt;) with the /MACROS switch to redirect the
+      list to a file.</dd>
+
+      <dt>/MACROS:ALL
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Display all Doskey macros for all executables.</dd>
+
+      <dt>/MACROS:exename
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Display all Doskey macros for the given executable.</dd>
+
+      <dt><a name="SwitchPermanent"></a> /PERMANENT
+      (<a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd><b>UNDOCUMENTED</b> unknown.</dd>
+
+      <dt><a name="SwitchReinstall"></a> /REINSTALL
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dt>/R[EINSTALL]
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Installs a new copy of the Doskey program, even if one is
+      already installed. In the latter case, the /REINSTALL switch also
+      clears the buffer.</dd>
+
+      <dt><a name="SwitchScrsize"></a> /SCRSIZE
+      (<a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd><b>UNDOCUMENTED</b> unknown.</dd>
+
+      <dt><a name="SwitchXhistory"></a> /XHISTORY
+      (<a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd><b>UNDOCUMENTED</b> unknown.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><b>Equivalent Linux BASH commands:</b>
+    <br>m4 - Macro processor.
+    <br>history - Command history.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Create">Creating a macro</a></li>
+      <li><a href="#SameName">Creating a macro with the same name as an DOS command</a></li>
+      <li><a href="#Delete">Deleting a macro</a></li>
+      <li><a href="#Edit">Editing the command-line</a></li>
+      <li><a href="#Recall">Recalling a command</a></li>
+      <li><a href="#Run">Running a macro</a></li>
+      <li><a href="#Default">Specifying a default insert mode</a></li>
+    </ul>
+
+    <hr>
+    <a name="Recall"></a> <b>Recalling a command</b>
+    <p>To recall a command, you can use any of the keys after
+    loading DOSKEY into memory:</p>
+    <dl>
+      <dt>UP ARROW</dt>
+      <dd>Recalls the operating system command you used before the one displayed.</dd>
+
+      <dt>DOWN ARROW</dt>
+      <dd>Recalls the operating system command you used after the one displayed.</dd>
+
+      <dt>PAGE UP</dt>
+      <dd>Recalls the oldest operating system command you used in the current session.</dd>
+
+      <dt>PAGE DOWN</dt>
+      <dd>Recalls the most recent operating system command you used.</dd>
+    </dl>
+
+    <hr>
+    <a name="Edit"></a> <b>Editing the command-line</b>
+    <p>With the Doskey program, you can edit the current command-line.
+    The list describes the Doskey editing keys and their
+    functions:</p>
+    <dl>
+      <dt>LEFT ARROW</dt>
+      <dd>Moves the cursor back one character.</dd>
+
+      <dt>RIGHT ARROW</dt>
+      <dd>Moves the cursor forward one character.</dd>
+
+      <dt>CTRL+LEFT ARROW</dt>
+      <dd>Moves the cursor back one word.</dd>
+
+      <dt>CTRL+RIGHT ARROW</dt>
+      <dd>Moves the cursor forward one word.</dd>
+
+      <dt>HOME</dt>
+      <dd>Moves the cursor to the beginning of the line.</dd>
+
+      <dt>END</dt>
+      <dd>Moves the cursor to the end of the line.</dd>
+
+      <dt>ESC</dt>
+      <dd>Clears the command from the display.</dd>
+
+      <dt>F1</dt>
+      <dd>Copies one character from the template to the operating
+      system command-line. (The template is a memory buffer that
+      holds the last command you typed.)</dd>
+
+      <dt>F2</dt>
+      <dd>Searches forward in the template for the next key you type
+      after pressing F2. Doskey inserts the text from the template up
+      to but not including the character you specify.</dd>
+
+      <dt>F3</dt>
+      <dd>Copies the remainder of the template to the command-line.
+      Doskey begins copying characters from the position in the
+      template that corresponds to the position indicated by the cursor
+      on the command-line.</dd>
+
+      <dt>F4</dt>
+      <dd>Deletes characters, beginning with the current character
+      position, up to a character you specify. To use this editing key,
+      press F4 and type a character. Doskey deletes up to, but not
+      including, that character.</dd>
+
+      <dt>F5</dt>
+      <dd>Copies the current command into the template and clears the
+      command-line.</dd>
+
+      <dt>F6</dt>
+      <dd>Places an end-of-file character (CTRL+Z) at the current
+      position on the command-line.</dd>
+
+      <dt><a name="F7"></a> F7</dt>
+      <dd>Displays all commands stored in memory, with their associated
+      numbers. Doskey assigns these numbers sequentially, beginning
+      with 1 for the first (oldest) command stored in memory.</dd>
+
+      <dt>ALT+F7</dt>
+      <dd>Deletes (clears) all commands stored in memory.</dd>
+
+      <dt>F8</dt>
+      <dd>Searches memory for a command that you want Doskey to
+      display. To use this editing key, type the first character, or
+      the first few characters, of the command you want Doskey to
+      search for and then press F8. Doskey displays the most recent
+      command that begins with the text you typed. Press F8 repeatedly
+      to cycle through all the commands that start with the characters
+      you specified.</dd>
+
+      <dt>F9</dt>
+      <dd>Prompts you for a command number and displays the command
+      associated with the number you specify. To display all the
+      numbers and their associated commands, press
+      <a href="#F7">F7</a>.</dd>
+
+      <dt>ALT+F10</dt>
+      <dd>Deletes (clears) all macro definitions.</dd>
+    </dl>
+
+    <hr>
+    <a name="Default"></a> <b>Specifying a default insert mode</b>
+    <p>If you press the INSERT key, you can type text on the Doskey
+    command-line in the middle of old text without replacing the old
+    text. However, once you press ENTER, Doskey returns your keyboard
+    to replace mode. You must press INSERT again to return to insert
+    mode.</p>
+    <p>The <a href="#SwitchInsert">/INSERT</a> switch puts
+    your keyboard in insert mode each time you press ENTER. Your
+    keyboard effectively remains in insert mode until you use the
+    <a href="#SwitchOverstrike">/OVERSTRIKE</a> switch. You
+    can temporarily return to replace mode by pressing the INSERT key;
+    but once you press ENTER, Doskey returns your keyboard to insert
+    mode.</p>
+    <p>The cursor changes shape when you use the INSERT key to change
+    from one mode to the other.</p>
+
+    <hr>
+    <a name="Create"></a> <b>Creating a macro</b>
+    <p>You can use the Doskey program to create macros that carry out
+    one or more operating system commands.</p>
+    <p>You can use special characters to control command
+    operations when defining a macro:</p>
+    <dl>
+      <dt>$G or $g</dt>
+      <dd>Redirects output. Use either of these special characters to
+      send output to a device or a file instead of to the screen. This
+      character is equivalent to the redirection symbol for output
+      (&gt;).</dd>
+
+      <dt>$G$G or $g$g</dt>
+      <dd>Appends output to the end of a file. Use either of these
+      special double characters to append output to an existing file
+      rather than replace the data in the file. These double characters
+      are equivalent to the "append" redirection symbol for output
+      (&gt;&gt;).</dd>
+
+      <dt>$L or $l</dt>
+      <dd>Redirects input. Use either of these special characters to
+      read input from a device or a file instead of from the keyboard.
+      This character is equivalent to the redirection symbol for input
+      (&lt;).</dd>
+
+      <dt>$B or $b</dt>
+      <dd>Sends macro output to a command. Using one of these special
+      characters is equivalent to using the pipe (|) on a command
+      line.</dd>
+
+      <dt>$T or $t</dt>
+      <dd>Separates commands. Use either of these special characters to
+      separate commands when you are creating macros or typing commands
+      on the Doskey command-line.</dd>
+
+      <dt>$$</dt>
+      <dd>Specifies the dollar-sign character ($).</dd>
+
+      <dt>$1 through $9</dt>
+      <dd>Represents any command-line information you want to specify
+      when you run the macro. The special characters $1 through $9 are
+      batch parameters, which make it possible for you to use different
+      data on the command-line each time you run the macro. The $1
+      character in a DOSKEY command is similar to the %1 character in a
+      batch program.</dd>
+
+      <dt>$*</dt>
+      <dd>Represents all the command-line information you want to
+      specify when you type the macro name. The special character $* is
+      a replaceable parameter that is similar to the batch parameters
+      $1 through $9, with one important difference. Here, everything
+      you type on the command-line after the macro name is substituted
+      for the $* in the macro.</dd>
+    </dl>
+    <p>For example, to create a macro that performs a quick and
+    unconditional format of a disk, type:</p>
+<pre>
+    DOSKEY <a
+href="#ParameterMacroname">qf=</a>format $1 /q /u
+</pre>
+
+    <p>For information about quick and unconditional formatting, see
+    the <a href="../F/FORMAT.HTM">FORMAT</a> command.</p>
+    <p>You can use the DOSKEY command in a batch program to create a
+    macro.</p>
+
+    <hr>
+    <a name="Run"></a> <b>Running a macro</b>
+    <p>To run a macro, type the macro name starting at the first
+    position on the command-line. If the macro was defined with $* or
+    any of the batch parameters $1 through $9, use a space to separate
+    parameters.</p>
+    <p>You could run the QF macro created in the previous example to
+    format a disk in drive A quickly and unconditionally. To do so, you
+    would type:</p>
+<pre>
+    qf a:
+</pre>
+
+    <p>You cannot run a macro from a batch program.</p>
+
+    <hr>
+    <a name="SameName"></a> <b>Creating a macro with the same name as an DOS command</b>
+    <p>You might want to create a macro that has the same name as an
+    operating system command. This can be useful, for example, if you
+    always use a certain command with specific switches. To specify
+    whether you want to run the macro or the operating system command,
+    The guidelines:</p>
+    <ul>
+      <li>To run the macro, begin typing the macro name immediately
+      after the command prompt, with no space between the prompt and
+      the command name.</li>
+      <li>To carry out the command, insert one or more spaces between
+      the command prompt and the command name.</li>
+    </ul>
+
+    <hr>
+    <a name="Delete"></a> <b>Deleting a macro</b>
+    <p>To delete a macro, type:</p>
+<pre>
+    DOSKEY <a
+href="#ParameterMacroname">macroname=</a>
+</pre>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>The <a href="#SwitchMacros">/MACROS</a> and
+    <a href="#SwitchHistory">/HISTORY</a> switches are useful
+    for creating batch programs to save macros and commands. For example,
+    to create a batch program named MACINIT.BAT that includes all
+    Doskey macros, type:</p>
+<pre>
+    DOSKEY <a
+href="#SwitchMacros">/MACROS</a> &gt; macinit.bat
+</pre>
+
+    <p>To use the MACINIT.BAT file, edit it to include the DOSKEY
+    command at the beginning of each macro line.</p>
+    <p>To create a batch program named TMP.BAT that contains recently
+    used commands, type:</p>
+<pre>
+    DOSKEY <a
+href="#SwitchHistory">/HISTORY</a> &gt; tmp.bat
+</pre>
+
+    <p>To define a macro with multiple commands, use $T to separate
+    commands:</p>
+<pre>
+    DOSKEY <a
+href="#ParameterMacroname">tx=</a>cd\temp$tdir/w $*
+</pre>
+
+    <p>In the preceding example, the TX macro changes the current
+    directory to TEMP and then displays a directory listing, using the
+    wide display format. You can use $* at the end of the macro to
+    append other switches to the <a href="DIR.HTM">DIR</a> command
+    when you run TX.</p>
+    <p>This macro uses a batch parameter for a new directory
+    name. The macro first creates a new directory and then changes to
+    it from the current directory.</p>
+<pre>
+    DOSKEY <a
+href="#ParameterMacroname">mc=</a>md $1$tcd $1
+</pre>
+
+    <p>To use the preceding macro to create and change to a directory
+    named BOOKS, type:</p>
+<pre>
+    mc books
+</pre>
+
+    <p>To create a macro that uses batch parameters for moving a file
+    or group of files, type:</p>
+<pre>
+    DOSKEY <a
+href="#ParameterMacroname">mv=</a>copy $1 $2 $t del $1
+</pre>
+
+    <p>To create a macro that causes the <a href="../M/MEM.HTM">MEM</a>
+    command to pause after each screen, type:</p>
+<pre>
+    DOSKEY <a
+href="#ParameterMacroname">mem=</a>mem $* /p
+</pre>
+
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

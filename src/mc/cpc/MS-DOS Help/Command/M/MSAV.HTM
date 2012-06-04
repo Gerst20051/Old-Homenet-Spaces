@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>MSAV</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#m">Commands A-M</a>
+    &gt; <a href="../INDEXM.HTM#msav">Commands M</a>
+    <h1>MSAV</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Scans your computer for known viruses.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>MSAV
+    <a href="#ParameterDrive">[drive:]</a>
+    [<a href="#SwitchS">/S</a>
+    | <a href="#SwitchC">/C</a>]
+    [<a href="#SwitchR">/R</a>]
+    [<a href="#SwitchA">/A</a>
+    | <a href="#SwitchL">/L</a>]
+    [<a href="#SwitchN">/N</a>]
+    [<a href="#SwitchP">/P</a>]
+    [<a href="#SwitchF">/F</a>]
+    [<a href="#SwitchVideo">/VIDEO</a>]
+    [<a href="#SwitchIM">/IM</a>]
+    [<a href="#SwitchLE">/LE</a>]
+    [<a href="#SwitchNGM">/NGM</a>]
+    [<a href="#SwitchPS2">/PS2</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a href="../../Version/MSDOS/600.HTM">(MSDOS6.00)</a>)</dt>
+      <dd>Specifies the drive that MSAV scans for viruses. If you do
+      not specify a drive, MSAV scans the current drive.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchA"></a> /A
+      (<a href="../../Version/MSDOS/600.HTM">(MSDOS6.00)</a>)</dt>
+      <dd>Scans all drives except drive A: and drive B:.</dd>
+
+      <dt><a name="SwitchC"></a> /C
+      (<a href="../../Version/MSDOS/600.HTM">(MSDOS6.00)</a>)</dt>
+      <dd>Scans the specified drive, and removes viruses that MSAV
+      finds.</dd>
+
+      <dt><a name="SwitchF"></a> /F
+      (<a href="../../Version/MSDOS/600.HTM">(MSDOS6.00)</a>)</dt>
+      <dd>Turns off the display of filenames that have been scanned.
+      Use this switch only with the <a href="#SwitchN">/N</a> or
+      <a href="#SwitchP">/P</a> switch.</dd>
+
+      <dt><a name="SwitchIM"></a> /IM
+      (<a href="../../Version/MSDOS/600.HTM">(MSDOS6.00)</a>)</dt>
+      <dd>Do NOT support mouse.</dd>
+
+      <dt><a name="SwitchL"></a> /L
+      (<a href="../../Version/MSDOS/600.HTM">(MSDOS6.00)</a>)</dt>
+      <dd>Scans all local drives except network drives.</dd>
+
+      <dt><a name="SwitchLE"></a> /LE
+      (<a href="../../Version/MSDOS/600.HTM">(MSDOS6.00)</a>)</dt>
+      <dd>Exchanges left and right mouse buttons.</dd>
+
+      <dt><a name="SwitchN"></a> /N
+      (<a href="../../Version/MSDOS/600.HTM">(MSDOS6.00)</a>)</dt>
+      <dd>Displays the contents of an MSAV.TXT file, if it exists and
+      it is located in the directory that contains the MSAV.EXE file.
+      MSAV then scans the current drive or the drive you specify. MSAV
+      does not use the graphical interface. If MSAV detects a virus, it
+      returns exit code 86 instead of displaying a message on your
+      screen.</dd>
+
+      <dt><a name="SwitchNGM"></a> /NGM
+      (<a href="../../Version/MSDOS/600.HTM">(MSDOS6.00)</a>)</dt>
+      <dd>Runs MSAV using the default mouse character instead of the
+      graphics character.</dd>
+
+      <dt><a name="SwitchP"></a> /P
+      (<a href="../../Version/MSDOS/600.HTM">(MSDOS6.00)</a>)</dt>
+      <dd>Displays a command-line interface instead of the graphical
+      interface.</dd>
+
+      <dt><a name="SwitchPS2"></a> /PS2
+      (<a href="../../Version/MSDOS/600.HTM">(MSDOS6.00)</a>)</dt>
+      <dd>Resets the mouse if the mouse cursor disappears or locks
+      up.</dd>
+
+      <dt><a name="SwitchR"></a> /R
+      (<a href="../../Version/MSDOS/600.HTM">(MSDOS6.00)</a>)</dt>
+      <dd>Creates an MSAV.RPT file that lists the number of files MSAV
+      checked for viruses, the number of viruses it found, and the
+      number of viruses it removed. By default, MSAV does not create a
+      report. When it does create MSAV.RPT, the file is placed in the
+      root directory.</dd>
+
+      <dt><a name="SwitchS"></a> /S
+      (<a href="../../Version/MSDOS/600.HTM">(MSDOS6.00)</a>)</dt>
+      <dd>Scans the specified drive, but does not remove viruses that
+      MSAV finds.</dd>
+
+      <dt><a name="SwitchVideo"></a> /VIDEO
+      (<a href="../../Version/MSDOS/600.HTM">(MSDOS6.00)</a>)</dt>
+      <dd>
+        Displays a list of the switches that affect how MSAV is
+        displayed. This list contains all of the switches:
+        <ul>
+          <li><b>/25</b> Sets screen display to 25 lines. This is the default setting</li>
+          <li><b>/28</b> Sets screen display to 28 lines.  Use this switch with VGA display adapters only</li>
+          <li><b>/43</b> Sets screen display to 43 lines.  Use this switch with EGA and VGA display adapters</li>
+          <li><b>/50</b> Sets screen display to 50 lines.  Use this switch with VGA display adapters only</li>
+          <li><b>/60</b> Sets screen display to 60 lines.  Use this switch with Video 7 display adapters only</li>
+          <li><b>/IN</b> Runs MSAV using a color scheme, even if a color display adapter is not detected</li>
+          <li><b>/BW</b> Runs MSAV using a black-and-white color scheme</li>
+          <li><b>/MONO</b> Runs MSAV using a monochromatic color scheme</li>
+          <li><b>/LCD</b> Runs MSAV using an LCD color scheme</li>
+          <li><b>/FF</b> Uses the fastest screen updating on computers with CGA display adapters. Using this switch may decrease video quality</li>
+          <li><b>/BF</b> Uses the computer's BIOS to display video</li>
+          <li><b>/NF</b> Disables the use of alternate fonts</li>
+          <li><b>/BT</b> Allows use of a graphics mouse in Windows</li>
+        </ul>
+      </dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#All">Check All Files option</a></li>
+      <li><a href="#CHKLIST">CHKLIST.MS files</a></li>
+      <li><a href="#INI">MSAV.INI and the MSDOSDATA environment variable</a></li>
+      <li><a href="#Symptoms">Real symptoms versus false alarms</a></li>
+      <li><a href="#SwitchNNote">Using the /N switch</a></li>
+    </ul>
+
+    <hr>
+    <a name="CHKLIST"></a> <b>CHKLIST.MS files</b>
+    <p>Microsoft Anti-Virus creates a CHKLIST.MS file in each directory
+    you scan for viruses. The first time you scan a directory,
+    Microsoft Anti-Virus records in the CHKLIST.MS file checksums for
+    each program. During subsequent scans, it compares new checksums
+    with the originals to determine if program files have changed. A
+    difference in checksum values indicates a possible virus
+    infection.</p>
+
+    <hr>
+    <a name="Symptoms"></a> <b>Real symptoms versus false alarms</b>
+    <p>Damaged programs, some memory-resident programs, and conflicts
+    among device drivers can cause your computer to act as if it were
+    infected by a virus when it is not. If you suspect your computer is
+    infected, consider the possible causes for the symptoms you
+    observe. Instead of a computer virus, a hardware or software
+    problem is likely to be producing errors.</p>
+
+    <hr>
+    <a name="All"></a> <b>Check All Files option</b>
+    <p>When the Check All Files option is selected, AnitVirus for
+    DOS checks only files with the extensions: .386, .APP,
+    .BIN, .CMD, .DOM, .DLL, .DRV, .EXE, .FON, .ICO, .OV*, .PGM, .PIF,
+    .PRG, .SYS.</p>
+
+    <hr>
+    <a name="INI"></a> <b>MSAV.INI and the MSDOSDATA environment variable</b>
+    <p>When you start Anti-Virus for DOS, it uses an initialization
+    file named MSAV.INI to configure the program. To determine the
+    location of the MSAV.INI file, Anti-Virus for DOS first searches
+    for the <a href="../../ENV/MSDOS/MSDOSDAT.HTM">%MSDOSDATA%</a>
+    environment variable, which specifies the path to
+    the initialization file. If this environment variable is not
+    defined, the program searches for the MSAV.INI file in the
+    directory from which you started Anti-Virus for DOS. If the
+    program does not find the file, the program creates it using
+    default values and places it in the directory.</p>
+    <p>The <a href="../../ENV/MSDOS/MSDOSDAT.HTM">%MSDOSDATA%</a>
+    environment variable is useful if you share the
+    MSAV.EXE file with others, but use your own configuration for
+    Anti-Virus for DOS. For example, suppose the MSAV.EXE file is
+    located in the root directory on drive P, a read-execute-only
+    network server, and you want Anti-Virus for DOS to use your own
+    configuration when it starts. To specify that it use the MSAV.INI
+    file located in the DOS directory on your drive C instead of the
+    initialization file located on network drive P, add to your
+    AUTOEXEC.BAT file:</p>
+<pre>
+    <a href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">msdosdata</a>=<a
+href="../S/SET.HTM#ParameterString">C:\DOS</a>
+</pre>
+
+    <p>To start Anti-Virus for DOS, type:</p>
+<pre>
+    p:\MSAV
+</pre>
+
+    <p>Changes you make to the configuration of Anti-Virus for DOS
+    are saved in the MSAV.INI file located in the DOS directory on
+    drive C.</p>
+
+    <hr>
+    <a name="SwitchNNote"></a> <b>Using the /N switch</b>
+    <p>If you specify the <a href="#SwitchN">/N</a> switch,
+    MSAV displays the contents of an MSAV.TXT file, if it exists and it
+    is located in the directory that contains the MSAV.EXE file. MSAV
+    then scans the current drive or the drive you specify. MSAV does
+    not use the graphical interface. If MSAV detects a virus, it
+    returns exit code 86 instead of displaying a message on your
+    screen.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To start MSAV using a black and white color scheme, and to
+    specify that MSAV check all drives except drives A: and B:, type:</p>
+<pre>
+    MSAV <a
+href="MSBACKUP.HTM#SwitchBW">/BW</a> <a
+href="#SwitchA">/A</a>
+</pre>
+
+    <p><b>Exit code</b></p>
+    <p>To write a simple batch program named VIRUS.BAT that supports
+    the MSAV exit code and the <a href="#SwitchS">/S</a>
+    switch to scan the current drive, you can type the
+    commands by using <a href="../E/EDIT.HTM">DOS Editor</a>:</p>
+<pre>
+    <a href="../A/ATSIGN.HTM">@</a><a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterOff">OFF</a>
+     <a href="../R/REM.HTM">REM</a> <a
+href="../R/REM.HTM#ParameterString">Smith's msav command</a>
+     MSAV <a
+href="#SwitchS">/S</a> <a
+href="#SwitchN">/N</a>
+     <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#ParameterErrorlevel">ERRORLEVEL</a> 86 <a
+href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">virus</a>
+     <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#ParameterNot">NOT</a> <a
+href="../I/IF.HTM#ParameterErrorlevel">ERRORLEVEL</a> 86 <a
+href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">none</a>
+    :<a href="../L/LABEL.HTM#ParameterLabel">virus</a>
+     <a href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">MSAV has detected a virus on your current drive!</a>
+     <a href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">exit</a>
+    :<a href="../L/LABEL.HTM#ParameterLabel">none</a>
+     <a href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">MSAV found no viruses on your current drive.</a>
+     <a href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">exit</a>
+    :<a href="../L/LABEL.HTM#ParameterLabel">exit</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <ul>
+    <li><b>86</b> virus detected</li>
+    </ul>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/01/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

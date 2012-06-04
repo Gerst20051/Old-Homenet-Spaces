@@ -1,0 +1,1437 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Embedding Sounds</title>
+<style>
+<!--
+  .twidth{width:100%}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><font size="5">Embedding Sounds</font></p>
+<hr>
+<p align="center"><font size="4">The BGSOUND Tag</font></p>
+<p>Explorer&#39;s <code><font color="#0000cc">&lt;BGSOUND&gt;</font></code> tag is the simplest 
+way to embed background sound in your page. It may be placed either within the
+<code><font color="#0000cc">HEAD</font></code> or the <code>
+<font color="#0000cc">BODY</font></code> portion of the page. Remember to turn ON 
+your browser&#39;s &quot;Play sounds&quot; option, under &quot;Edit&quot;/&quot;Internet-Options&quot;/&quot;Advanced&quot;. 
+Here is an html code that will
+<script>
+<!--
+
+if (IEsound)  
+  document.write("<A HREF='bgsoundAladdin.html'>play<\/A>")
+else 
+  document.write("play");
+
+// -->
+</script>
+play the 
+Aladdin soundtrack ten times, every time you load it:</p>
+<p>&nbsp;</p>
+<pre><code><font color="#0000cc">&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt; testing  &lt;/TITLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;BGSOUND SRC=&quot;aladdin.mid&quot; LOOP=10&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;</font></code></pre>
+<p>&nbsp;</p>
+<p>Similarly, the following HTML code will
+<script>
+<!--
+
+if (IEsound)  
+  document.write("<A HREF='bgsoundXfiles.html'>play<\/A>")
+else 
+  document.write("play");
+
+// -->
+</script>
+<a href="http://www.webreference.com/js/column20/bgsoundXfiles.html">play</a> the 
+X-files soundtrack five times:</p>
+<p>&nbsp;</p>
+<pre><code><font color="#0000cc">&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt; testing  &lt;/TITLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;BGSOUND SRC=&quot;xfiles.mid&quot; LOOP=5&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;</font></code></pre>
+<p>&nbsp;</p>
+<p>Microsoft documents specify more parameters for the <code>
+<font color="#0000cc">&lt;BGSOUND&gt;</font></code> tag than are currently supported. 
+The following table lists the supported ones:</p>
+<table cellSpacing="0" cellPadding="3" border="1">
+  <tr>
+    <td bgColor="#ffffcc"><b>Parameter</b></td>
+    <td bgColor="#ffffcc"><b>Description</b></td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">ID=&quot;<i>idvalue</i>&quot;</font></code></td>
+    <td>An identifier to be used for references in associated style sheet, hypertext 
+    links, and JavaScript code. Must begin with a letter and may include underscores.
+    <code><font color="#0000cc">ID</font></code> should be unique within the scope 
+    of the document. If duplicated, the collection of identical-<code><font color="#0000cc">ID</font></code> 
+    elements may be referenced by their ordinal numbers.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">LOOP=&quot;<i>n</i>&quot;</font></code></td>
+    <td>Specifies how many times the sound will loop.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">SRC=&quot;<i>url</i>&quot;</font></code></td>
+    <td>Specifies the URL of the sound file. As shown above, sound files can be 
+    in any recognizable format (for example: <code><font color="#0000cc">&quot;midi, 
+    wav, au&quot;</font></code>)</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">VOLUME=&quot;<i>n</i>&quot;</font></code></td>
+    <td>Determines the loudness of the background sound. Values may range from -10,000 
+    (weakest) to 0 (loudest). Not supported by the MAC.</td>
+  </tr>
+</table>
+<p>The following parameters are not supported:</p>
+<table cellSpacing="0" cellPadding="3" border="1">
+  <tr>
+    <td bgColor="#ffffcc"><b>Parameter</b></td>
+    <td bgColor="#ffffcc"><b>Description</b></td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">BALANCE=&quot;<i>n</i>&quot;</font></code></td>
+    <td>Determines the division of sound power between the left and right speakers. 
+    Valid values are between -10,000 and +10,000, with 0 being perfect balance between 
+    the two.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">CLASS=&quot;<i>classname</i>&quot;</font></code></td>
+    <td>The class of the tag to be used for assigning sub-class style sheet.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">TITLE=&quot;<i>text</i>&quot;</font></code></td>
+    <td>Specifies text to accompany the sound.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">LANG=&quot;<i>language</i>&quot;</font></code></td>
+    <td>Specifies the language to be used, in ISO standard abbreviation format.</td>
+  </tr>
+</table>
+<p>You can reference the <code><font color="#0000cc">&lt;BGSOUND&gt;</font></code> element 
+in a JavaScript script. The sound-related properties are <code>
+<font color="#0000cc">balance</font></code>, <code><font color="#0000cc">loop</font></code>,
+<code><font color="#0000cc">src</font></code>, and <code><font color="#0000cc">volume</font></code>. 
+The <code><font color="#0000cc">src</font></code> and <code>
+<font color="#0000cc">loop</font></code> properties are supported on both the PC 
+and the Mac computers. The <code><font color="#0000cc">volume</font></code> property 
+is supported only on PC.</p>
+<p>To demonstrate the usage of JavaScript for controlling the background sound of 
+a page, here is
+<script>
+<!--
+
+if (IEsound)  
+  document.write("<A HREF='bgsoundChanger.html'>an example<\/A>")
+else 
+  document.write("an example");
+
+// -->
+</script>
+<a href="http://www.webreference.com/js/column20/bgsoundChanger.html">an example</a> 
+that will switch between the Aladding and X-files soundtracks every 30 seconds:</p>
+<p>&nbsp;</p>
+<pre><code><font color="#0000cc">&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt; testing  &lt;/TITLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;BGSOUND SRC=&quot;aladdin.mid&quot; ID=&quot;changetrack&quot;&gt;
+&lt;SCRIPT&gt;
+&lt;!--
+setInterval(&quot;switchMelody()&quot;,30000);
+
+function switchMelody(){
+  if (document.all.changetrack.src == &quot;aladdin.mid&quot;) 
+    document.all.changetrack.src = &quot;xfiles.mid&quot;
+  else document.all.changetrack.src = &quot;aladdin.mid&quot;;
+}
+//--&gt;
+&lt;/SCRIPT&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;</font></code></pre>
+<p>&nbsp;</p>
+<p>This code does not have any effect on the Mac computer. On Mac, <code>
+<font color="#0000cc">&lt;BGSOUND&gt;</font></code>&#39;s properties cannot be changed by 
+a JavaScript script in the middle of a soundtrack. </p>
+<hr>
+<p align="center"><font size="4">Navigator&#39;s LiveAudio Plug-in</font></p>
+<p>Navigator uses the LiveAudio plug-in to play sound tracks embedded in Web pages. 
+You can use the JavaScript&#39;s object associated with the <code>
+<font color="#0000cc">EMBED</font></code> HTML element. On the Mac, calling JavaScript 
+methods does not affect the buttons of the Navigator&#39;s control panel. Here are the 
+methods supported by the <code><font color="#0000cc">EMBED</font></code> object:</p>
+<table cellSpacing="0" cellPadding="3" border="1">
+  <tr>
+    <td bgColor="#ffffcc"><b>Method</b></td>
+    <td bgColor="#ffffcc"><b>Description</b></td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">play(</font></code>{<code><font color="#0000cc"><i>loop</i></font></code>[<code><font color="#0000cc">true</font></code>|<code><font color="#0000cc">false</font></code>|<code><font color="#0000cc"><i>n</i></font></code>]}<code><font color="#0000cc">,
+    <i>URL</i>)</font></code></td>
+    <td>Plays the soundtrack saved in the specified URL. The first parameter specifies 
+    whether to loop the sound track forever (<code><font color="#0000cc">true</font></code>), 
+    for a specified number of times (<code><font color="#0000cc"><i>n</i></font></code>), 
+    or not at all (<code><font color="#0000cc">false</font></code>). Parameters 
+    are optional. The default for the first one is <code><font color="#0000cc">false</font></code>. 
+    The default for the second one is the current object&#39;s sound track. The first 
+    parameter is mandatory on Mac (no default is supported).</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">pause()</font></code></td>
+    <td>Pauses the sound track at the current position along the track. You can 
+    continue playing from the same spot by calling the <code>
+    <font color="#0000cc">play()</font></code> method.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">stop()</font></code></td>
+    <td>Stops playing the sound and returns the track position to its beginning. 
+    You can start playing the sound again by calling the <code>
+    <font color="#0000cc">play()</font></code> method.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">StopAll()</font></code></td>
+    <td>Stops all playing plug-ins. </td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">start_time(<i>n</i>)</font></code></td>
+    <td>Starts playing the audio track from a position that is <code>
+    <font color="#0000cc"><i>n</i></font></code> seconds from the beginning of the 
+    track.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">end_time(<i>n</i>)</font></code></td>
+    <td>Stops playing the audio track at a position that is <code>
+    <font color="#0000cc"><i>n</i></font></code> seconds from the beginning of the 
+    track.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">setvol(<i>n</i>)</font></code></td>
+    <td>Sets the volume at <code><font color="#0000cc"><i>n</i></font></code> percents 
+    of the maximum level (no % sign).</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">fade_to(<i>n</i>)</font></code></td>
+    <td>Fades to a volume level that is <code><font color="#0000cc"><i>n</i></font></code> 
+    percents of the maximum level (no % sign).</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">fade_from_to(<i>n</i>, <i>m</i>)</font></code></td>
+    <td>Fades from a volume level of <code><font color="#0000cc"><i>n</i></font></code> 
+    percents to a volume level of <code><font color="#0000cc"><i>m</i></font></code> 
+    percents (no % sign).</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">start_at_beginning()</font></code></td>
+    <td>Starts playing at the beginning of the sound track. You can achieve this 
+    effect also by stopping the sound track and playing it again. This method overwrites 
+    the <font color="#0000cc"><code>start_time()</code></font> method.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">stop_at_end()</font></code></td>
+    <td>Stops playing at the end of the sound track. This method overwrites the
+    <font color="#0000cc"><code>end_time()</code></font> method.</td>
+  </tr>
+</table>
+<p>The following methods are state indicators which do not control the plug-in but 
+rather give its state:</p>
+<table cellSpacing="0" cellPadding="3" border="1">
+  <tr>
+    <td bgColor="#ffffcc"><b>Method</b></td>
+    <td bgColor="#ffffcc"><b>Description</b></td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">IsReady()</font></code></td>
+    <td>Returns <code><font color="#0000cc">true</font></code> if the plug-in instance 
+    has completed loading, <code><font color="#0000cc">false</font></code> otherwise.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">IsPlaying()</font></code></td>
+    <td>Returns <code><font color="#0000cc">true</font></code> if the plug-in is 
+    currently playing the sound track, <code><font color="#0000cc">false</font></code> 
+    otherwise. </td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">IsPaused()</font></code></td>
+    <td>Returns <code><font color="#0000cc">true</font></code> if the plug-in is 
+    currently paused, <code><font color="#0000cc">false</font></code> otherwise.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">GetVolume()</font></code></td>
+    <td>Returns the volume level in percents.</td>
+  </tr>
+</table>
+<hr>
+<p align="center"><font size="4">The ActiveMovie Control Properties</font></p>
+<p>Internet Explorer uses the ActiveMovie Control to play sound tracks embedded 
+in Web pages. ActiveMovie Control is a programming interface for Microsoft&#39;s DirectShow 
+media architecture that supports many media formats and operations on them. ActiveMovie 
+supports media tracks embedded in <code><font color="#0000cc">&lt;EMBED&gt;</font></code>,
+<code><font color="#0000cc">&lt;OBJECT&gt;</font></code>, and <code>
+<font color="#0000cc">&lt;IMG&gt;</font></code> HTML tags. The <code>
+<font color="#0000cc">&lt;OBJECT&gt;</font></code> and <code><font color="#0000cc">&lt;IMG&gt;</font></code> 
+HTML tags will be covered in the next column, but the ActiveMovie Control interface 
+explained in this and following pages applies to them as well. Although ActiveMovie 
+Control supports many media formats, this column deals only with the audio ones.</p>
+<p>The ActiveMovie Control programming interface includes control properties, methods, 
+events, property sheet, and shortcut keys. Their names are case-insensitive, so, 
+for example, all the following methods will stop a playing sound track: <code>
+<font color="#0000cc">Stop()</font></code>, <code><font color="#0000cc">stop()</font></code>,
+<code><font color="#0000cc">sTop()</font></code>, and <code>
+<font color="#0000cc">stoP()</font></code>.The following table summarizes the control 
+object properties, accessible by JavaScript:</p>
+<table cellSpacing="0" cellPadding="3" border="1">
+  <tr>
+    <td bgColor="#ffffcc"><b>Property</b></td>
+    <td bgColor="#ffffcc"><b>Description</b></td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">AllowChangeDisplayMode = true</font></code> 
+    | <code><font color="#0000cc">false</font></code></td>
+    <td>Specifies whether or not the user can change the display panel to show frames 
+    instead of seconds. Default is <code><font color="#0000cc">true</font></code>.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">AllowHideControls = true</font></code> |
+    <code><font color="#0000cc">false</font></code></td>
+    <td>Specifies whether or not the user can hide the control panel at run time. 
+    Default is <code><font color="#0000cc">true</font></code>.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">AllowHideDisplay = true</font></code> |
+    <code><font color="#0000cc">false</font></code></td>
+    <td>Specifies whether or not the user can hide the display panel at run time. 
+    Default is <code><font color="#0000cc">true</font></code>.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">Appearance = 0</font></code> | <code>
+    <font color="#0000cc">1</font></code></td>
+    <td>Specifies the appearance of the display panel border. <code>
+    <font color="#0000cc">Appearance = 1</font></code> specifies an inset border 
+    which gives the illusion of depth. <code><font color="#0000cc">Appearance = 
+    0</font></code> indicates the display panel has no border. Default is <code>
+    <font color="#0000cc">1</font></code>.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">AutoRewind = true</font></code> | <code>
+    <font color="#0000cc">false</font></code></td>
+    <td>Specifies whether or not to rewind the sound track to the initial position. 
+    Default is <code><font color="#0000cc">true</font></code>.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">Balance = <i>n</i></font></code></td>
+    <td>Specifies the stereo balance. Ranges between -10000 (left channel only), 
+    through 0 (perfect balance), and 10000 (right channel only).</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">BorderStyle = 0</font></code> | <code>
+    <font color="#0000cc">1</font></code></td>
+    <td>Specifies the control border&#39;s style. <code><font color="#0000cc">BorderStyle=0</font></code> 
+    indicates no border, while <code><font color="#0000cc">BorderStyle = 1</font></code> 
+    means a single-line border. Default is <code><font color="#0000cc">1</font></code>.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">CurrentPosition = <i>n</i></font></code></td>
+    <td>Specifies a new position into the sound track, in seconds from the beginning 
+    of the track.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">CurrentState</font></code></td>
+    <td>Specifies the current state of the sound track: stopped (<code><font color="#0000cc">0</font></code>), 
+    paused (<code><font color="#0000cc">1</font></code>), or running (<code><font color="#0000cc">2</font></code>). 
+    You cannot set this property, just read its value. You can change its value 
+    by calling the <code><font color="#0000cc">Stop()</font></code>, <code>
+    <font color="#0000cc">Pause()</font></code>, or <code><font color="#0000cc">
+    Play()</font></code> methods.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">DisplayBackColor = <i>color</i></font></code></td>
+    <td>Specifies the display panel&#39;s background color. First way to specify colors 
+    is by normal RGB colors. The valid range for normal RGB colors is between 0 
+    and 16,777,215 (00ffffff). The high byte of this number is zero. The lower three 
+    bytes determine, from least to most significant byte, the amount of Red, Green, 
+    and Blue, respectively. Each color is represented by a number between 0 and 
+    255 (ff). The second way to specify color is by system color constants listed 
+    in the Object Browser&#39;s object library. The operating system substitutes the 
+    user&#39;s choices as specified in the Control Panel settings.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">DisplayForeColor = <i>color</i></font></code></td>
+    <td>Specifies the display panel&#39;s foreground color. First way to specify colors 
+    is by normal RGB colors. The valid range for normal RGB colors is between 0 
+    and 16,777,215 (00ffffff). The high byte of this number is zero. The lower three 
+    bytes determine, from least to most significant byte, the amount of Red, Green, 
+    and Blue, respectively. Each color is represented by a number between 0 and 
+    255 (ff). The second way to specify color is by system color constants listed 
+    in the Object Browser&#39;s object library. The operating system substitutes the 
+    user&#39;s choices as specified in the Control Panel settings.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">DisplayMode = 0</font></code> | <code>
+    <font color="#0000cc">1</font></code></td>
+    <td>Specifies whether the display panel shows the track position in seconds 
+    (<code><font color="#0000cc">DisplayMode=0</font></code>) or frames (<code><font color="#0000cc">DisplayMode=1</font></code>). 
+    Default is <code><font color="#0000cc">0</font></code>.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">EnableContextMenu = true</font></code> |
+    <font color="#0000cc"><code>false</code></font></td>
+    <td>Specifies whether or not to enable the shortcut menu. You can invoke this 
+    menu by right-clicking anywhere on the control. Default is <code>
+    <font color="#0000cc">true</font></code>.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">Enabled = -1</font></code> | <code>
+    <font color="#0000cc">0</font></code></td>
+    <td>Specifies whether the control panel is enabled (<font color="#0000cc"><code>Enabled=-1</code></font>) 
+    or not (<font color="#0000cc"><code>Enabled = 0</code></font>). Default is
+    <code><font color="#0000cc">-1</font></code>.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">EnablePositionControls = true</font></code> 
+    | <code><font color="#0000cc">false</font></code></td>
+    <td>Specifies whether or not to show the position buttons in the control panel. 
+    Default is <code><font color="#0000cc">true</font></code>.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">EnableSelectionControls = true</font></code> 
+    | <code><font color="#0000cc">false</font></code></td>
+    <td>Specifies whether or not to show the selection buttons in the control panel. 
+    Default is <code><font color="#0000cc">true</font></code>.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">EnableTracker = true</font></code> | <code>
+    <font color="#0000cc">false</font></code></td>
+    <td>Specifies whether or not to show the trackbar control in the control panel. 
+    Default is <code><font color="#0000cc">true</font></code>.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">FileName = <i>URL</i></font></code></td>
+    <td>Specifies the file name where the sound track is stored.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">PlayCount = <i>n</i></font></code></td>
+    <td>Specifies the number of times to loop the sound track.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">rate = <i>d</i></font></code></td>
+    <td>Specifies the playing speed with respect to its authored one. <code>
+    <font color="#0000cc">rate = 1.0</font></code> indicates a normal sound playing.
+    <code><font color="#0000cc">rate = 2.0</font></code>, for example, indicates 
+    a double speed. Audio tracks are difficult to understand when <code>
+    <font color="#0000cc">rate &lt; 0.5</font></code> and when <code>
+    <font color="#0000cc">rate &gt; 1.5</font></code></td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">ReadyState</font></code></td>
+    <td>Returns the control&#39;s state of readiness. There are four possible return 
+    values: <code><font color="#0000cc">0</font></code> if the control is synchronously 
+    loading a file, <code><font color="#0000cc">1</font></code> if the <code>
+    <font color="#0000cc">FileName</font></code> property has not been initialized,
+    <code><font color="#0000cc">3</font></code> if the control has loaded enough 
+    data to start playing but not all data, and <code><font color="#0000cc">4</font></code> 
+    if all data has been downloaded. This property is read-only and cannot be set. 
+    The <code><font color="#0000cc">play()</font></code> method will work only if
+    <code><font color="#0000cc">ReadyState</font></code> is equal to or greater 
+    than <code><font color="#0000cc">3</font></code>.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">SelectionEnd = <i>n</i></font></code></td>
+    <td>Specifies the desired end position in seconds from the beginning of the 
+    sound track. The property is accessible only after the file is loaded completely. 
+    Shown on the digital display panel.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">SelectionStart = <i>n</i></font></code></td>
+    <td>Specifies the desired start position in seconds from the beginning of the 
+    sound track. The property is accessible only after the file is loaded completely. 
+    Shown on the digital display panel.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">ShowControls = true</font></code> | <code>
+    <font color="#0000cc">false</font></code></td>
+    <td>Specifies whether or not to show the control panel. Default is <code>
+    <font color="#0000cc">true</font></code></td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">ShowDisplay = true</font></code> | <code>
+    <font color="#0000cc">false</font></code></td>
+    <td>Specifies whether or not to show the display panel. Default is <code>
+    <font color="#0000cc">true</font></code></td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">ShowPositionControls = true</font></code> |
+    <code><font color="#0000cc">false</font></code></td>
+    <td>Specifies whether or not to show the position controls. Position controls 
+    include four buttons: Previous, Rewind, Forward, and Next. If the current media 
+    position is after SelectionStart, Previous returns the media position to SelectionStart. 
+    If the current media position is before the SelectionStart, Previous returns 
+    the media position to the beginning of the sound track. If the current media 
+    position is before SelectionStart, Next sets the media position to SelectionStart. 
+    If the current media position is after the SelectionStart, Next sets the media 
+    position at the end of the sound track. Default is <code>
+    <font color="#0000cc">false</font></code></td>
+  </tr>
+</table>
+<hr>
+<p align="center"><font size="4">The ActiveMovie Control Methods</font></p>
+<p>The ActiveMovie Control supports the following methods (names are case-insensitive):</p>
+<table cellSpacing="0" cellPadding="3" border="1">
+  <tr>
+    <td bgColor="#ffffcc"><b>Method</b></td>
+    <td bgColor="#ffffcc"><b>Description</b></td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">AboutBox()</font></code></td>
+    <td>Displays the &quot;About ActiveMovie Control&quot; information, i.e. the version and 
+    copyright information about ActiveMovie Control.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">IsSoundCardEnabled()</font></code></td>
+    <td>Finds if the computer&#39;s sound card is enabled. Returns <code>
+    <font color="#0000cc">true</font></code> if it is, <code>
+    <font color="#0000cc">false</font></code> otherwise.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">Pause()</font></code></td>
+    <td>Pauses the sound track playing without changing its position. Use the
+    <code><font color="#0000cc">Stop()</font></code> method to stop the playback 
+    and return the track to its initial position. Use the <code>
+    <font color="#0000cc">Play()</font></code> method to continue playing from the 
+    paused position.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">Play()</font></code></td>
+    <td>Starts a sound track from the specified starting position in <code>
+    <font color="#0000cc">SelectionStart</font></code> property. <code>
+    <font color="#0000cc">SelectionStart</font></code> defaults to <code>
+    <font color="#0000cc">0</font></code>, so if you don&#39;t change it, <code>
+    <font color="#0000cc">Play()</font></code> will start at the beginning of the 
+    sound track. The <code><font color="#0000cc">Play()</font></code> method continues 
+    playing the sound track until the position specified by the <code>
+    <font color="#0000cc">SelectionEnd</font></code> property. Call the <code>
+    <font color="#0000cc">Pause()</font></code> method to pause the playback, the
+    <code><font color="#0000cc">Stop()</font></code> method to stop the sound track.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">Stop()</font></code></td>
+    <td>Stops the playback and returns the sound track to the position specified 
+    in the <code><font color="#0000cc">SelectionStart</font></code> property, if 
+    the <code><font color="#0000cc">AutoRewind</font></code> property is <code>
+    <font color="#0000cc">true</font></code>. Use the <code>
+    <font color="#0000cc">Pause()</font></code> method to stop playing the sound 
+    track without rewinding it to the selection&#39;s start position.</td>
+  </tr>
+</table>
+<hr>
+<p align="center"><font size="4">Audio Control Example Code</font></p>
+<p>Here is the code for the example on the previous page:</p>
+<pre><code><font color="#0000cc">&lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;
+&lt;!--
+
+var NSsound = navigator.plugins &amp;&amp; navigator.plugins[&quot;LiveAudio&quot;];
+var IEsound = navigator.plugins &amp;&amp; document.all;
+var audioEnabled = NSsound || IEsound;
+
+if (!audioEnabled)
+  document.write(&quot;Your browser does not support
+   JavaScript-enabled audio control&quot;); <font color="#000000">// join with previous line</font>
+if (!navigator.javaEnabled()) alert(&quot;Your browser is not Java-enabled.
+Please edit preferences.&quot;);
+
+onload = init;
+timerID = null;
+
+function init() {
+  if (!navigator.javaEnabled()) return;
+  if (!audioEnabled) return;
+  document.display.soundcard.value = (IEsound) ?</font><font color="#cc0000">
+document.audiopanel.isSoundCardEnabled()</font><font color="#0000cc"> : </font><font color="#009900">&quot;not supported&quot;</font><font color="#0000cc">;
+  document.display.filename.value = (IEsound) ?</font><font color="#cc0000">
+document.audiopanel.fileName</font><font color="#0000cc"> : </font><font color="#009900">&quot;not supported&quot;;</font><font color="#0000cc">
+  endTime = (IEsound) ? </font><font color="#cc0000">
+document.audiopanel.selectionEnd </font><font color="#0000cc">:</font><font color="#009900"> &quot;not supported&quot;</font><font color="#0000cc">; </font>// global variable<font color="#0000cc">
+  document.display.position.value =
+    (IEsound) ? Math.floor(document.audiopanel.currentPosition) : </font>
+       <font color="#009900">&quot;not supported&quot;</font><font color="#0000cc">; <font color="#000000">// join with previous line</font>
+  state();
+}
+
+function showPosition() {
+  if (!navigator.javaEnabled()) return;
+  if (!audioEnabled) return;
+  document.display.position.value = (IEsound) ?</font><font color="#cc0000">
+Math.floor(document.audiopanel.currentPosition)</font><font color="#0000cc"> : </font><font color="#009900">&quot;not supported&quot;</font><font color="#0000cc">;
+  setTimeout(&quot;showPosition()&quot;, 1000);
+}
+
+function playIt() {
+  if (!navigator.javaEnabled()) return;
+  if (!audioEnabled) return;
+  if (IEsound) </font><font color="#cc0000">document.audiopanel.play()</font><font color="#0000cc">
+  else if (NSsound) <font color="#009900">document.audiopanel.play(true);</font>
+  state();
+  timerID = setTimeout(&quot;showPosition()&quot;, 1000);
+}
+
+function stopIt() {
+  if (!navigator.javaEnabled()) return;
+  if (!audioEnabled) return;
+  document.audiopanel.stop();
+  state();
+  clearInterval(timerID);
+}
+
+function pauseIt() {
+  if (!navigator.javaEnabled()) return;
+  if (!audioEnabled) return;
+  document.audiopanel.pause();
+  state();
+  clearInterval(timerID);
+}
+
+function state() {
+  if (!navigator.javaEnabled()) return;
+  var field = document.display.state;
+  if (IEsound) <font color="#cc0000">{
+    var cur = document.audiopanel.currentState;
+    if (cur == 0) field.value = &quot;stopped&quot;;
+    if (cur == 1) field.value = &quot;paused&quot;;
+    if (cur == 2) field.value = &quot;playing&quot;;
+  }</font> else if (NSsound) <font color="#009900">{
+      if (document.audiopanel.IsReady()) field.value = &quot;stopped&quot;;
+      if (document.audiopanel.IsPlaying()) field.value = &quot;playing&quot;;
+      if (document.audiopanel.IsPaused()) field.value = &quot;paused&quot;;
+  }</font>
+}
+
+function toggleControls() {
+  if (!navigator.javaEnabled()) return;
+  if (IEsound)
+    <font color="#cc0000">document.audiopanel.showControls = !document.audiopanel.showControls;</font>
+}
+
+function startAtGivenSec(sec) {
+  if (!navigator.javaEnabled()) return;
+  if (IEsound)
+    <font color="#cc0000">document.audiopanel.selectionStart = sec</font>
+  else if (NSsound)
+         <font color="#009900">document.audiopanel.start_time(sec);</font>
+}
+
+function stopAtGivenSec(sec) {
+  if (!navigator.javaEnabled()) return;
+  if (IEsound)
+    <font color="#cc0000">document.audiopanel.selectionEnd = sec</font>
+  else if (NSsound)
+    <font color="#009900">document.audiopanel.end_time(sec);</font>
+}
+
+function stopAtEnd() {
+  if (!navigator.javaEnabled()) return;
+  if (IEsound)
+    <font color="#cc0000">document.audiopanel.selectionEnd = endTime</font>
+  else if (NSsound)
+    <font color="#009900">document.audiopanel.stop_at_end();</font>
+}
+
+function decreaseVolume() {
+  if (!navigator.javaEnabled()) return;
+  if (IEsound)
+    <font color="#cc0000">document.audiopanel.volume -= 10</font>
+  else if (NSsound)
+    <font color="#009900">document.audiopanel.setvol(parseInt(document.audiopanel.GetVolume() - 10))</font>
+}
+
+function increaseVolume() {
+  if (!navigator.javaEnabled()) return;
+  if (IEsound)
+    <font color="#cc0000">document.audiopanel.volume += 10</font>
+  else if (NSsound)
+    <font color="#009900">document.audiopanel.setvol(document.audiopanel.GetVolume() + 10)</font>
+}
+
+function setDefaultVolume() {
+  if (!navigator.javaEnabled()) return;
+  if (IEsound)
+    <font color="#cc0000">document.audiopanel.volume = 50</font>
+  else if (NSsound)
+    <font color="#009900">document.audiopanel.setvol(50)</font>
+}
+
+if (audioEnabled)
+  document.write(&quot;&lt;EMBED NAME=&#39;audiopanel&#39; SRC=&#39;aladdin.mid&#39; MASTERSOUND
+    HEIGHT=&#39;60&#39; WIDTH=&#39;144&#39; HIDDEN=&#39;false&#39;&gt;&quot;) <font color="#000000">//join with previous line</font>
+else
+  document.write(&quot;Your browser cannot play sound files.&quot;);
+&lt;/SCRIPT&gt;
+&lt;FORM NAME=&quot;display&quot;&gt;
+Sound card enabled: &lt;INPUT TYPE=&quot;text&quot; NAME=&quot;soundcard&quot; SIZE=&quot;14&quot;&gt;&lt;BR&gt;
+State: &lt;INPUT TYPE=&quot;text&quot; NAME=&quot;state&quot; SIZE=&quot;10&quot;&gt;&lt;BR&gt;
+Position: &lt;INPUT TYPE=&quot;text&quot; NAME=&quot;position&quot; SIZE=&quot;14&quot;&gt;&lt;BR&gt;
+Filename: &lt;INPUT TYPE=&quot;text&quot; NAME=&quot;filename&quot; SIZE=&quot;50&quot;&gt;&lt;BR&gt;
+&lt;INPUT TYPE=&quot;button&quot; VALUE=&quot;Play&quot; onClick=&quot;playIt()&quot;&gt;
+&lt;INPUT TYPE=&quot;button&quot; VALUE=&quot;Pause&quot; onClick=&quot;pauseIt()&quot;&gt;
+&lt;INPUT TYPE=&quot;button&quot; VALUE=&quot;Stop&quot; onClick=&quot;stopIt()&quot;&gt;&lt;BR&gt;
+&lt;INPUT TYPE=&quot;button&quot; VALUE=&quot;Toggle Controls&quot; onClick=&quot;toggleControls()&quot;&gt;&lt;BR&gt;
+&lt;INPUT TYPE=&quot;button&quot; VALUE=&quot;Start @ 10 Second&quot; onClick=&quot;startAtGivenSec(10)&quot;&gt;
+&lt;INPUT TYPE=&quot;button&quot; VALUE=&quot;Stop @ 30 Second&quot; onClick=&quot;stopAtGivenSec(30)&quot;&gt;&lt;BR&gt;
+&lt;INPUT TYPE=&quot;button&quot; VALUE=&quot;Start @ 0 Second&quot; onClick=&quot;startAtGivenSec(0)&quot;&gt;
+&lt;INPUT TYPE=&quot;button&quot; VALUE=&quot;Stop @ End of Track&quot; onClick=&quot;stopAtEnd()&quot;&gt;&lt;BR&gt;
+&lt;INPUT TYPE=&quot;button&quot; VALUE=&quot;&lt;=====&quot; onClick=&quot;decreaseVolume()&quot;&gt;
+&lt;INPUT TYPE=&quot;button&quot; VALUE=&quot;==^==&quot; onClick=&quot;setDefaultVolume()&quot;&gt;
+&lt;INPUT TYPE=&quot;button&quot; VALUE=&quot;=====&gt;&quot; onClick=&quot;increaseVolume()&quot;&gt;&lt;BR&gt;
+&lt;/FORM&gt;</font></code></pre>
+<hr>
+<p align="center"><font size="4">Audio File Formats</font></p>
+<p>Many audio formats can be used to embed sound in Web pages, but the following 
+are the most popular ones: WAVE, AU, and MIDI. WAVE (<b>Wave</b>form Audio File 
+Format) is stored in files with a &quot;.wav&quot; extension, and was invented by Microsoft 
+for the Windows platform. AU (<b>Au</b>dio File Format) is stored in files with 
+a &quot;.au&quot; extension, and was invented by Apple for the Macintosh platform. Both the 
+WAVE an AU formats store &quot;recorded&quot; sounds and tend to occupy a lot of space. A 
+one-second sound track may require approximately 50 kilobytes of disk space, depending 
+on its quality.</p>
+<p>The MIDI format is entirely different. If we compare the various audio formats 
+to well-known graphic representations, AU and WAVE relate to bitmap graphics, while 
+MIDI resembles vector art. The MIDI format actually includes commands, specifying 
+the note to play next and for how long. A MIDI command looks like this: &quot;play the 
+high D for 0.25 seconds.&quot; Due to its command structure, MIDI format is relatively 
+compact. The down side of MIDI format is that it is quite difficult to compose a 
+music with a command sequence.</p>
+<p>The only problem with MIDI files is that some servers are not yet familiar with 
+it and tend to send wrong identification information to the browser. When a server 
+sends a file to the browser (after the browser had requested the file), it first 
+identifies the type of data being sent via the MIME (Multipart Internet Mail Extension 
+-- see later in this column) header. For instance, plain HTML text is recognized 
+by the &quot;text/html&quot; MIME type. Although MIDI files are stored with &quot;.mid&quot; or &quot;.midi&quot; 
+extensions, some servers still incorrectly identify them. The MIME type for a MIDI 
+file should be &quot;audio/midi,&quot; and the best way to solve this problem (if it exists) 
+is to send a note to your server administrator. Note that the server should also 
+support the &quot;audio/x-midi&quot; MIME type.</p>
+<hr>
+<p align="center"><font size="4">Plug-ins and Plugin objects</font></p>
+<p>A plug-in is a software module which is installed on the user&#39;s machine for the 
+purpose of displaying specialized types of data embedded in Web pages. If you&#39;re 
+running Navigator, you can discover which plug-ins are installed by selecting the 
+&quot;About Plug-ins&quot; option from the &quot;Help&quot; menu. There are hundreds of plug-ins available 
+on the Web, for displaying audio, video, 3D/VRML, and more. An audio plug-in must 
+be installed in order to play an audio file, unless the browser is equipped with 
+built-in audio support. When you embed sound in your Web pages, it is important 
+to check that the required plug-in is indeed installed on the user&#39;s machine. You 
+cannot take it for granted, as some users install their browsers without plug-ins. 
+If you don&#39;t take the right measures to avoid displaying audio when the necessary 
+plug-in is missing, the browser will display an alert.</p>
+<p>Some versions of Netscape Navigator 3.0x and 4.0x come with the LiveAudio plug-in, 
+while some versions of Microsoft Internet Explorer 4.0x include the ActiveMovie 
+Control, which is required in order to play sounds.</p>
+<p>In Navigator, an installed plug-in is represented by a JavaScript <code>
+<font color="#0000cc">Plugin</font></code> object. A <code>
+<font color="#0000cc">Plugin</font></code> object stores all available information 
+about the relevant plug-in and MIME types supported by that plug-in. The following 
+table summarizes the properties of a <code><font color="#0000cc">Plugin</font></code> 
+object:</p>
+<table cellSpacing="0" cellPadding="3" border="1">
+  <tr>
+    <td bgColor="#ffffcc"><b>Property</b></td>
+    <td bgColor="#ffffcc"><b>Description</b></td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">name</font></code></td>
+    <td>The name of the plug-in.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">description</font></code></td>
+    <td>A short description of the plug-in.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">filename</font></code></td>
+    <td>The name of plug-in&#39;s file on disk.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">length</font></code></td>
+    <td>The length of the plug-in&#39;s array of <code><font color="#0000cc">MimeType</font></code> 
+    objects. In other words, this property reflects the number of MIME types supported 
+    by the plug-in.</td>
+  </tr>
+</table>
+<p>All <code><font color="#0000cc">Plugin</font></code> objects can be accessed 
+through the <code><font color="#0000cc">navigator.plugins</font></code> array. An 
+individual <code><font color="#0000cc">Plugin</font></code> object can be accessed 
+through the <code><font color="#0000cc">plugins</font></code> array. For example,
+<code><font color="#0000cc">plugins[0]</font></code> is a <code>
+<font color="#0000cc">Plugin</font></code> object, representing one of the browser&#39;s 
+plug-ins. Remember that the <code><font color="#0000cc">navigator.plugins</font></code> 
+array (and the <code><font color="#0000cc">Plugin</font></code> object) is only 
+supported by Navigator. In Internet Explorer, the <code><font color="#0000cc">navigator.plugins</font></code> 
+property is an empty array. Plugin objects can also be referenced by their name. 
+The LiveAudio plugin object, for example, is <code><font color="#0000cc">plugins[&quot;LiveAudio&quot;]</font></code>. 
+The properties of LiveAudio <code><font color="#0000cc">plugin</font></code> can 
+be found by printing the following variables: </p>
+<p>&nbsp;</p>
+<pre><code><font color="#0000cc">&lt;SCRIPT LANGUAGE=&quot;JavaScript1.1&quot;&gt;
+&lt;!--
+
+if (navigator.plugins[&quot;LiveAudio&quot;]) {
+  var liveAudioName = navigator.plugins[&quot;LiveAudio&quot;].name;
+  var liveAudioDescription = navigator.plugins[&quot;LiveAudio&quot;].description;
+  var liveAudioFilename = navigator.plugins[&quot;LiveAudio&quot;].filename;
+  var liveAudioMimeCount = navigator.plugins[&quot;LiveAudio&quot;].length;
+
+  document.write(&quot;name = &quot;, liveAudioName, &quot;&lt;BR&gt;&quot;,
+    &quot;description = &quot;, liveAudioDescription, &quot;&lt;BR&gt;&quot;,
+    &quot;filename = &quot;, liveAudioFilename, &quot;&lt;BR&gt;&quot;,
+    &quot;length = &quot;, liveAudioMimeCount);
+}
+
+// --&gt;
+&lt;/SCRIPT&gt;</font></code></pre>
+<p>&nbsp;</p>
+<p>For example, the script&#39;s output could be:</p>
+<p>&nbsp;</p>
+<pre><code>name = LiveAudio
+description = Sound Player for Netscape Navigator, v.1.1.1513
+filename = D:\PROGRAM FILES\NETSCAPE\COMMUNICATOR <font color="#0000cc">--&gt;</font>
+4.04\PROGRAM\plugins\npaudio.dll
+length = 9</code></pre>
+<p>&nbsp;</p>
+<p>The script looks very simple, but there are several important issues. First of 
+all, notice that the <code><font color="#0000cc">LANGUAGE</font></code> attribute 
+is set to <code><font color="#0000cc">&quot;JavaScript1.1&quot;</font></code>. That is, the 
+script is only executed if the browser is Internet Explorer 4.0x (and above) or 
+Navigator 3.0x (and above). LiveAudio, Navigator&#39;s audio plug-in, is only installed 
+in various versions of Navigator 3.0x and 4.0x. Furthermore, the <code>
+<font color="#0000cc">navigator.plugins</font></code> property is an empty collection 
+in Internet Explorer 4.0x, so we can access its &quot;properties,&quot; but none actually 
+exist. The <code><font color="#0000cc">if</font></code> statement, as explained 
+in Column 6, <a href="http://www.webreference.com/js/column6/">Browser Compatibility</a>, 
+is used to check if an existing object features a specific property.</p>
+<p>Let&#39;s take another look at the statements referring to the LiveAudio plug-in&#39;s
+<code><font color="#0000cc">Plugin</font></code> properties:</p>
+<p>&nbsp;</p>
+<pre><code><font color="#0000cc">var liveAudioName = </font><font color="#cc00cc">navigator.plugins[&quot;LiveAudio&quot;]</font>.name;
+var liveAudioDescription = <font color="#cc00cc">navigator.plugins[&quot;LiveAudio&quot;]</font><font color="#0000cc">.description;
+var liveAudioFilename = </font><font color="#cc00cc">navigator.plugins[&quot;LiveAudio&quot;]</font><font color="#0000cc">.filename;
+var liveAudioMimeCount = </font><font color="#cc00cc">navigator.plugins[&quot;LiveAudio&quot;]</font><font color="#0000cc">.length;</font></code></pre>
+<p>&nbsp;</p>
+<p>All four properties refer to the same parent object. Instead of specifying the 
+object&#39;s entire path each time, we can assign its reference to a variable:</p>
+<p>&nbsp;</p>
+<pre><code><font color="#0000cc">var liveAudio = navigator.plugins[&quot;LiveAudio&quot;];
+var liveAudioName = liveAudio.name;
+var liveAudioDescription = liveAudio.description;
+var liveAudioFilename = liveAudio.filename;
+var liveAudioMimeCount = liveAudio.length;</font></code></pre>
+<p>&nbsp;</p>
+<p>Now suppose we want to find out what <code><font color="#0000cc">navigator.plugins[0]</font></code> 
+reflects. The following script segment shows how:</p>
+<p>&nbsp;</p>
+<pre><code><font color="#0000cc">var liveAudioName = navigator.plugins[0].name;
+var liveAudioDescription = navigator.plugins[0].description;
+var liveAudioFilename = navigator.plugins[0].filename;
+var liveAudioMimeCount = navigator.plugins[0].length;</font></code></pre>
+<p>&nbsp;</p>
+<p>Once again, you can assign <code><font color="#0000cc">navigator.plugins[0]</font></code> 
+to a variable. Note that each <code><font color="#0000cc">Plugin</font></code> object 
+also serves as an array containing one element for each MIME type supported by the 
+plug-in module. The referencing schemes above apply to MIME types as well. You can 
+reference them by name or by index. MIME types are covered extensively later in 
+this column. The following code segment determines whether or not the LiveAudio 
+plug-in supports &quot;audio/wav&quot; files:</p>
+<p>&nbsp;</p>
+<pre><code><font color="#0000cc">if (navigator.plugins[&quot;LiveAudio&quot;] &amp;&amp; 
+navigator.plugins[&quot;LiveAudio&quot;][&quot;audio/wav&quot;])
+  alert(&quot;supported&quot;)
+else
+  alert(&quot;not supported&quot;);</font></code></pre>
+<p>&nbsp;</p>
+<p>Notice that the script also checks if the LiveAudio plug-in exists, because accessing 
+a property of an object that does not exist generates an error (as opposed to an 
+unexisting property of an existing object). Once again, remember that <code>
+<font color="#0000cc">navigator.plugins</font></code> is an empty array in Internet 
+Explorer, so the script would display &quot;not supported.&quot;</p>
+<hr>
+<p align="center"><font size="4">A Plugin Object Example</font></p>
+<p>We&#39;ll round up this section about plug-ins and <code><font color="#0000cc">Plugin</font></code> 
+objects, by an example that prints the list of plug-ins. Our list resembles the 
+output of the &quot;About Plug-ins&quot; option in the &quot;Help&quot; menu entry of Netscape Navigator. 
+The script is a straightforward loop through the <code><font color="#0000cc">plugins</font></code> 
+array, creating a separate row for each plug-in. We extract the number of plug-ins 
+from the <code><font color="#0000cc">plugins.length</font></code> property. Here 
+is the code for the loop: </p>
+<p>&nbsp;</p>
+<pre><code><font color="#0000cc">for (var i = 0; i &lt; navigator.plugins.length; i++) {
+  document.write(&quot;&lt;TR VALIGN=&#39;top&#39;&gt;&lt;TD&gt;&quot;, i, &quot;&lt;/TD&gt;&quot;,
+&nbsp;&nbsp;  &quot;&lt;TD&gt;&quot;, navigator.plugins[i].name, &quot;&lt;/TD&gt;&quot;,
+&nbsp;&nbsp;  &quot;&lt;TD&gt;&quot;, navigator.plugins[i].description, &quot;&lt;/TD&gt;&quot;,
+&nbsp;&nbsp;  &quot;&lt;TD&gt;&quot;, navigator.plugins[i].filename, &quot;&lt;/TD&gt;&quot;,
+&nbsp;&nbsp;  &quot;&lt;TD&gt;&quot;, navigator.plugins[i].length, &quot;&lt;/TD&gt;&lt;/TR&gt;&quot;);
+}</font></code></pre>
+<p>&nbsp;</p>
+<p>And here is a sample output:</p>
+<table cellSpacing="0" cellPadding="3" border="1">
+  <tr vAlign="top">
+    <td>0</td>
+    <td>VDOLive small plugin</td>
+    <td>VDOLive small plugin</td>
+    <td>D:\PROGRAM FILES\NETSCAPE\COMMUNICATOR 4.04\PROGRAM\plugins\npsmlvdo.dll</td>
+    <td>1</td>
+  </tr>
+  <tr vAlign="top">
+    <td>1</td>
+    <td>Cosmo Player 1.0</td>
+    <td>VRML World</td>
+    <td>D:\PROGRAM FILES\NETSCAPE\COMMUNICATOR 4.04\PROGRAM\plugins\npcosmop.dll</td>
+    <td>2</td>
+  </tr>
+  <tr vAlign="top">
+    <td>2</td>
+    <td>Netscape Media Player</td>
+    <td>Netscape Media Player, Audio Streaming Plugin, v.1.1.1516</td>
+    <td>D:\PROGRAM FILES\NETSCAPE\COMMUNICATOR 4.04\PROGRAM\plugins\nplau32.dll</td>
+    <td>1</td>
+  </tr>
+  <tr vAlign="top">
+    <td>3</td>
+    <td>LiveAudio</td>
+    <td>Sound Player for Netscape Navigator, v.1.1.1513</td>
+    <td>D:\PROGRAM FILES\NETSCAPE\COMMUNICATOR 4.04\PROGRAM\plugins\npaudio.dll</td>
+    <td>9</td>
+  </tr>
+  <tr vAlign="top">
+    <td>4</td>
+    <td>QuickTime Plug-In</td>
+    <td>QuickTime Plug-In for Win32 v.1.1.0</td>
+    <td>D:\PROGRAM FILES\NETSCAPE\COMMUNICATOR 4.04\PROGRAM\plugins\NPQTW32.DLL</td>
+    <td>1</td>
+  </tr>
+  <tr vAlign="top">
+    <td>5</td>
+    <td>NPAVI32 Dynamic Link Library</td>
+    <td>NPAVI32, avi plugin DLL</td>
+    <td>D:\PROGRAM FILES\NETSCAPE\COMMUNICATOR 4.04\PROGRAM\plugins\npavi32.dll</td>
+    <td>2</td>
+  </tr>
+  <tr vAlign="top">
+    <td>6</td>
+    <td>Netscape vCalendar Plug-in</td>
+    <td>Netscape vCalendar Plug-in v.4.0</td>
+    <td>D:\PROGRAM FILES\NETSCAPE\COMMUNICATOR 4.04\PROGRAM\plugins\NPVCAL32.DLL</td>
+    <td>1</td>
+  </tr>
+  <tr vAlign="top">
+    <td>7</td>
+    <td>Netscape Default Plug-in</td>
+    <td>Default Plug-in</td>
+    <td>D:\PROGRAM FILES\NETSCAPE\COMMUNICATOR 4.04\PROGRAM\plugins\npnul32.dll</td>
+    <td>1</td>
+  </tr>
+</table>
+<hr>
+<p align="center"><font size="4">MIME Types</font></p>
+<p>Navigator 3.0x and 4.0x support the <code><font color="#0000cc">MimeType</font></code> 
+object (Internet Explorer 4.0x doesn&#39;t). A <code><font color="#0000cc">MimeType</font></code> 
+object can be an element of the <code><font color="#0000cc">navigator.mimeTypes</font></code> 
+array:</p>
+<p>&nbsp;</p>
+<pre><code><font color="#0000cc">navigator.mimeTypes[<i>index</i>]</font></code></pre>
+<p>&nbsp;</p>
+<p>where <code><i>index</i></code> is either an integer or a string containing the 
+desired MIME type. For example, you can reference the &quot;audio/wav&quot;
+<font color="#0000cc"><code>MimeType</code></font> object as follows:</p>
+<p>&nbsp;</p>
+<pre><code><font color="#0000cc">navigator.mimeTypes[&quot;audio/wav&quot;]
+</font></code></pre>
+<p>&nbsp;</p>
+<p>A <code><font color="#0000cc">MimeType</font></code> object can also be a property 
+of a specific <code><font color="#0000cc">Plugin</font></code> object:</p>
+<p>&nbsp;</p>
+<pre><code><font color="#0000cc">navigator.plugins[&quot;LiveAudio&quot;][<i>index</i>]</font></code></pre>
+<p>&nbsp;</p>
+<p>where <code><i>index</i></code> is either an integer or a string containing the 
+MIME type. For example, you can reference the &quot;audio/wav&quot; <font color="#0000cc">
+<code>MimeType</code></font> via the LiveAudio <font color="#0000cc"><code>Plugin</code></font> 
+object as follows:</p>
+<p>&nbsp;</p>
+<pre><code><font color="#0000cc">navigator.plugins[&quot;LiveAudio&quot;][&quot;audio/wav&quot;]
+</font></code></pre>
+<p>&nbsp;</p>
+<p>The following table summarizes the properties of a <font color="#0000cc">
+<code>MimeType</code></font> object:</p>
+<table cellSpacing="0" cellPadding="3" border="1">
+  <tr>
+    <td bgColor="#ffffcc"><b>Property</b></td>
+    <td bgColor="#ffffcc"><b>Description</b></td>
+  </tr>
+  <tr vAlign="top">
+    <td><font color="#0000cc"><code>type</code></font></td>
+    <td>The name of the MIME type.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><font color="#0000cc"><code>description</code></font></td>
+    <td>A description of the MIME type.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><font color="#0000cc"><code>suffixes</code></font></td>
+    <td>A string containing the MIME type&#39;s possible extensions. For example:
+    <font color="#0000cc"><code>&quot;jpeg, jpg, jpe, jpv, vbs, jpegv&quot;</code></font>.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">enabledPlugin</font></code></td>
+    <td>The <code><font color="#0000cc">Plugin</font></code> object that can display 
+    data of the MIME type. <code><font color="#0000cc">enabledPlugin</font></code> 
+    is <code><font color="#0000cc">null</font></code> when there is no plug-in to 
+    display data of the specificied MIME type format.</td>
+  </tr>
+</table>
+<p>The following example prints all MIME types supported by the browser. We extract 
+the number of MIME types from the <code><font color="#0000cc">navigator.mimeTypes</font></code> 
+object&#39;s <code><font color="#0000cc">length</font></code> property. The loop generates 
+a table row for each MIME type:</p>
+<p>&nbsp;</p>
+<pre><code><font color="#0000cc">document.write(&quot;&lt;TABLE BORDER=&#39;1&#39; CELLSPACING=&#39;0&#39; CELLPADDING=&#39;3&#39;&gt;&quot;);
+for (var i = 0; i &lt; navigator.mimeTypes.length ; i++) {
+  document.writeln(&quot;&lt;TR VALIGN=&#39;top&#39;&gt;&lt;TD&gt;&quot;, i, &quot;&lt;/TD&gt;&quot;,
+  &quot;&lt;TD&gt;&quot;, navigator.mimeTypes[i].type, &quot;&lt;/TD&gt;&quot;,
+  &quot;&lt;TD&gt;&quot;, navigator.mimeTypes[i].description, &quot;&lt;/TD&gt;&quot;,
+  &quot;&lt;TD&gt;&quot;)
+  if (navigator.mimeTypes[i].suffixes != &quot;&quot;)
+    document.write(navigator.mimeTypes[i].suffixes)
+  else
+    document.write(navigator.mimeTypes[i].suffixes + &quot; * &quot;);
+  document.write(&quot;&lt;/TD&gt;&lt;TD&gt;&quot;);
+  if (navigator.mimeTypes[i].enabledPlugin)
+    document.write(navigator.mimeTypes[i].enabledPlugin.name);
+  else
+    document.write(&quot;None&quot;);
+  document.write(&quot;&lt;/TD&gt;&lt;TR&gt;&quot;);
+}
+document.write(&quot;&lt;/TABLE&gt;&quot;);</font></code></pre>
+<p>&nbsp;</p>
+<p>Here is a sample output generated by Navigator 3.0x or 4.0x:</p>
+<table cellSpacing="0" cellPadding="3" border="1">
+  <tr vAlign="top">
+    <td>0</td>
+    <td>model/vrml</td>
+    <td>VRML Worlds </td>
+    <td>wrl, wrz</td>
+    <td>Cosmo Player 1.0</td>
+  </tr>
+  <tr vAlign="top">
+    <td>1</td>
+    <td>x-world/x-vrml</td>
+    <td>VRML Worlds </td>
+    <td>wrl, wrz</td>
+    <td>Cosmo Player 1.0</td>
+  </tr>
+  <tr vAlign="top">
+    <td>2</td>
+    <td>audio/x-liveaudio</td>
+    <td>Streaming Audio Metafiles </td>
+    <td>lam</td>
+    <td>Netscape Media Player</td>
+  </tr>
+  <tr vAlign="top">
+    <td>3</td>
+    <td>audio/x-midi</td>
+    <td>MIDI </td>
+    <td>mid, midi</td>
+    <td>LiveAudio</td>
+  </tr>
+  <tr vAlign="top">
+    <td>4</td>
+    <td>audio/midi</td>
+    <td>MIDI </td>
+    <td>mid, midi</td>
+    <td>LiveAudio</td>
+  </tr>
+  <tr vAlign="top">
+    <td>5</td>
+    <td>audio/nspaudio</td>
+    <td>Netscape Packetized Audio</td>
+    <td>la, lma</td>
+    <td>LiveAudio</td>
+  </tr>
+  <tr vAlign="top">
+    <td>6</td>
+    <td>audio/x-nspaudio</td>
+    <td>Netscape Packetized Audio</td>
+    <td>la, lma</td>
+    <td>LiveAudio</td>
+  </tr>
+  <tr vAlign="top">
+    <td>7</td>
+    <td>video/msvideo</td>
+    <td>Video for Windows </td>
+    <td>avi</td>
+    <td>NPAVI32 Dynamic Link Library</td>
+  </tr>
+</table>
+<p>Since Navigator cannot handle hundred line tables, we have restricted the printout 
+to the first few MIME types (Navigator supports a few hundreds MIME types!). The 
+script also prints a <code><font color="#0000cc">*</font></code> character if the
+<code><font color="#0000cc">suffixes</font></code> property is an empty string</p>
+<p>It&#39;s important to understand the relationship between plug-ins (software modules) 
+and MIME types. <code><font color="#0000cc">enabledPlugin</font></code> is the plug-in 
+configured for the specified MIME type. Each MIME type can be supported by multiple 
+plug-ins, and each plug-in can handle multiple MIME types, but only one plug-in 
+can be activated for a single MIME type. The <code><font color="#0000cc">enabledPlugin</font></code> 
+property is a reference to a <code><font color="#0000cc">Plugin</font></code> object 
+which represents the plug-in that handles the given MIME type.</p>
+<p>Audio support on the Web is quite complicated. Navigator 3.0x and above can play 
+embedded tracks provided that the LiveAudio plug-in is installed. Internet Explorer 
+4.0x and above can can play audio if the ActiveMovie Control is installed (it comes 
+pre-packaged with Windows 95, but can also be downloaded for other platforms along 
+with the browser). Note that many other plug-ins, for both browsers, support audio. 
+However, since we are interested in JavaScript-enabled sound implementations, we 
+will stick with the default LiveAudio plug-in (Navigator) and the Active Movie Control 
+(Internet Explorer).</p>
+<p>&nbsp;</p>
+<pre><code>
+<font color="#0000cc">var </font><font color="#cc00cc">NSsound</font><font color="#0000cc"> =
+  navigator.plugins &amp;&amp; navigator.plugins[&quot;LiveAudio&quot;] &amp;&amp; navigator.javaEnabled();</font>
+<font color="#0000cc">var </font><font color="#cc00cc">IEsound</font><font color="#0000cc"> = navigator.plugins &amp;&amp; document.all</font>;
+<font color="#0000cc">var </font><font color="#cc00cc">audioEnabled</font><font color="#0000cc"> = NSsound || IEsound;</font>
+</code></pre>
+<p>&nbsp;</p>
+<p>We check if Navigator supports sound by verifying that <code>
+<font color="#0000cc">plugins</font></code> arrays exists and one of the supported 
+plug-ins is <code><font color="#0000cc">&quot;LiveAudio&quot;</font></code>. On Explorer, 
+it&#39;s enough to check that the platform is Windows 95 (<code><font color="#0000cc">plugins</font></code> 
+array exists), and the its version is 4.0x or above (<code><font color="#0000cc">document.all</font></code> 
+exists).
+<script>
+
+  var NSsound = navigator.plugins && navigator.plugins["LiveAudio"];
+  var IEsound = navigator.plugins && document.all;
+  var audioEnabled = NSsound || IEsound;
+
+</script>
+</p>
+<hr>
+<p align="center"><font size="4">The EMBED Tag</font></p>
+<p>The <code><font color="#0000cc">&lt;EMBED&gt;</font></code> tag is the most common 
+way of adding sound to a Web page. Its advantage over the <code>
+<font color="#0000cc">&lt;BGSOUND&gt;</font></code> tag is that it is supported by both 
+browsers, and more consistently across the PC and Mac platforms. The <code>
+<font color="#0000cc">&lt;EMBED&gt;</font></code> tag introduces many features that aren&#39;t 
+supported by <code><font color="#0000cc">&lt;BGSOUND&gt;</font></code>. Furthermore, while 
+the <code><font color="#0000cc">&lt;BGSOUND&gt;</font></code> tag only supports background 
+sounds, the <code><font color="#0000cc">&lt;EMBED&gt;</font></code> tag also features 
+an interactive interface (including various buttons to play, stop, and handle the 
+sound).
+<script>
+<!--
+
+  var NSsound = navigator.plugins && navigator.plugins["LiveAudio"];
+  var IEsound = navigator.plugins && document.all;
+  var audioEnabled = NSsound || IEsound;
+  if (!audioEnabled)
+    alert("Your browser cannot play sound files.");
+  if (audioEnabled)
+    document.write("Let's take a look at the <CODE><FONT COLOR='#0000cc'>&lt;EMBED&gt;</FONT></CODE> tag in action (requires a sound-enabled browser):</P><EMBED SRC='xfiles.mid' AUTOSTART='false' HEIGHT='60' WIDTH='144'></P>")
+else document.write("Your browser cannot play sound files.");
+
+// -->
+</script>
+Let&#39;s take a look at the <code><font color="#0000cc">&lt;EMBED&gt;</font></code> tag in 
+action (requires a sound-enabled browser):</p>
+<p>
+<embed src="../Games/Midi/Extra/Extra.mid" width="144" height="60" type="audio/midi" AUTOSTART="false">
+</p>
+<p>&nbsp;</p>
+<p>The HTML code that generates a control panel is very simple:</p>
+<p>&nbsp;</p>
+<pre><code><font color="#0000cc">&lt;EMBED SRC=&quot;xfiles.mid&quot; VOLUME=&quot;50&quot; HEIGHT=&quot;60&quot; WIDTH=&quot;144&quot;&gt;</font></code></pre>
+<p>&nbsp;</p>
+<p>Try reading this page on both browsers. You&#39;ll be surprised to see that the design 
+of the control panel is totally different. For example, Navigator&#39;s control panel 
+includes a volume control while Explorer&#39;s has a position control. Also, Navigator 
+4.0.5 uses a different control panel than 4.0.4. Explorer features an optional digital 
+display, invoked by right-clicking the control panel. Navigator does not have a 
+digital display.</p>
+<p>JavaScript support is also different between the two browsers. Navigator and 
+Explorer support different sets of the <code><font color="#0000cc">&lt;EMBED&gt;</font></code>&#39;s 
+attributes. Here are the attributes supported by both browsers:</p>
+<table cellSpacing="0" cellPadding="3" border="1">
+  <tr>
+    <td bgColor="#ffffcc"><b>Attribute</b></td>
+    <td bgColor="#ffffcc"><b>Description</b></td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">SRC=&quot;<i>URL</i>&quot;</font></code></td>
+    <td>Specifies the URL of the sound file. Sound files can be in any recognizable 
+    format (For example: <code><font color="#0000cc">&quot;midi, wav, au&quot;</font></code>)</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">WIDTH=&quot;<i>n</i>&quot;</font></code></td>
+    <td>Specifies the width of the control panel. The optimal width to use is 144 
+    pixels. Navigator chops the control panel if a smaller value is used (or if 
+    the attribute is omitted altogether), and adds a blank area to its right side, 
+    if a larger number is specified. Explorer also yields a reasonable panel with 
+    this value.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">HEIGHT=&quot;<i>n</i>&quot;</font></code></td>
+    <td>Specifies the height of the control panel. The optimal width to use is 60 
+    pixels. Navigator chops the control panel if a smaller value is used (or if 
+    the attribute is omitted altogether), and adds a blank area on its top, if a 
+    larger number is specified. Explorer also yields a reasonable panel with this 
+    value.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">ALIGN=&quot;<i>alignoption</i>&quot;</font></code></td>
+    <td>Specifies how the alignment of the control panel should be, much like the 
+    alignment of images (<code><font color="#0000cc">&lt;IMG&gt;</font></code> tag). Possible 
+    options are: <code><font color="#0000cc">TOP</font></code>, <code>
+    <font color="#0000cc">BOTTOM</font></code>, <code><font color="#0000cc">CENTER</font></code>,
+    <code><font color="#0000cc">BASELINE</font></code>, <code>
+    <font color="#0000cc">LEFT</font></code>, <code><font color="#0000cc">RIGHT</font></code>,
+    <code><font color="#0000cc">TEXTTOP</font></code>, <code>
+    <font color="#0000cc">MIDDLE</font></code>, <code><font color="#0000cc">ABSMIDDLE</font></code>, 
+    or <code><font color="#0000cc">ABSBOTTOM</font></code>.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">NAME=&quot;<i>name</i>&quot;</font></code></td>
+    <td>Specifies the name of the object. Can be used to access the object from 
+    JavaScript via <code><font color="#0000cc">document.<i>name</i> </font>
+    </code></td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">HIDDEN=&quot;true&quot;</font></code>|<code><font color="#0000cc">&quot;false&quot;</font></code></td>
+    <td>Specifies if the embedded object is visible (<code><font color="#0000cc">HIDDEN=&quot;false&quot;</font></code>) 
+    or hidden (<code><font color="#0000cc">HIDDEN=&quot;true&quot;</font></code>). The default 
+    is <code><font color="#0000cc">HIDDEN=&quot;false&quot;</font></code>.</td>
+  </tr>
+</table>
+<p>The following attributes are not supported by both browsers:</p>
+<table cellSpacing="0" cellPadding="3" border="1">
+  <tr>
+    <td bgColor="#ffffcc"><b>Attribute</b></td>
+    <td bgColor="#ffffcc"><b>Description</b></td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">VOLUME=&quot;<i>n</i>&quot;</font></code></td>
+    <td>Specifies the sound volume. Can range from 0 to 100, 50 is the default. 
+    Navigator&#39;s control panel reflects this setting when the element is loaded. 
+    Supported only by Netscape Navigator. The Windows 95&#39;s default is 50 (midpoint), 
+    while that on the Mac is 75.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">LOOP=&quot;true&quot;</font></code>|<code><font color="#0000cc">&quot;false&quot;</font></code>|<code><font color="#0000cc">&quot;<i>n</i>&quot;</font></code></td>
+    <td>Specifies if the sound should be played continuously (<code><font color="#0000cc">LOOP=&quot;true&quot;</font></code>), 
+    for a specified number of times (<code><font color="#0000cc"><i>n</i></font></code>), 
+    or should not be repeated (<code><font color="#0000cc">LOOP=&quot;false&quot;</font></code>). 
+    Supported only by Navigator; You will get continuous sound on Explorer. For 
+    same effect on Explorer, use <code><font color="#0000cc">playcount</font></code> 
+    (see below).</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">PLAYCOUNT=&quot;<i>n</i>&quot;</font></code></td>
+    <td>Specifies the number of times to play the sound. Supported only by Explorer.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">PLUGINSPAGE=&quot;<i>URL</i>&quot;</font></code></td>
+    <td>Specifies the location of the plug-in software needed to run the sound file. 
+    This attribute is needed only if the plug-in software is not one of the common 
+    ones that are already installed on the computer. Supported only by Navigator.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">PLUGINURL=&quot;<i>URL</i>&quot;</font></code></td>
+    <td>Specifies the location of the software needed to install the specified plug-in 
+    (JAR Installation Manager). This attribute is needed only if the plug-in software 
+    is not one of the common ones that are already installed on the computer. Supported 
+    only by Navigator.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">HREF=&quot;<i>URL</i>&quot;</font></code></td>
+    <td>Converts the control panel into a hyperlink. Works like <code>
+    <font color="#0000cc">&lt;A HREF=&quot;<i>URL</i>&quot;&gt;</font></code> and only with Explorer.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">TARGET=&quot;<i>URL</i>&quot;</font></code></td>
+    <td>Converts the control panel into a hyperlink. Works like <code>
+    <font color="#0000cc">&lt;A TARGET=&quot;<i>URL</i>&quot;&gt;</font></code> and only with Explorer.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">AUTOSTART=&quot;true&quot;</font></code>|<code><font color="#0000cc">&quot;false&quot;</font></code></td>
+    <td>Indicates if the sound track should start automatically upon loading. A
+    <code><font color="#0000cc">&quot;true&quot;</font></code> value means it should, a
+    <code><font color="#0000cc">&quot;false&quot;</font></code> value means it should not. 
+    The Explorer&#39;s default is <code><font color="#0000cc">&quot;false&quot;</font></code> 
+    while Navigator&#39;s one is <code><font color="#0000cc">&quot;true&quot;</font></code>. The 
+    default on the Mac is <code><font color="#0000cc">&quot;false&quot;</font></code> for 
+    both browsers.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">STARTTIME=&quot;<i>mm:ss</i>&quot;</font></code></td>
+    <td>Indicates the spot on the track where to begin playing. Notice that the 
+    playing will start immediately, at the specified spot. The spot is specified 
+    in minutes from the beginning of the track. The track begins to play immediately 
+    when you download it (<code><font color="#0000cc">AUTOSTART=&quot;true&quot;</font></code>), 
+    or when you hit the play button (<code><font color="#0000cc">AUTOSTART=&quot;false&quot;</font></code>). 
+    Time is denoted in minutes and seconds. If you specify a time longer than the 
+    soundtrack length, the browser will give you an error. Supported only by Navigator.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">ENDTIME=&quot;<i>mm:ss</i>&quot;</font></code></td>
+    <td>Indicates the spot on the sound track where to stop playing. The spot is 
+    specified in minutes from the beginning of the track. The track begins to play 
+    immediately when you download it (<code><font color="#0000cc">AUTOSTART=&quot;true&quot;</font></code>), 
+    or when you hit the play button (<code><font color="#0000cc">AUTOSTART=&quot;false&quot;</font></code>). 
+    Time is denoted in minutes and seconds. If you specify a time longer than the 
+    soundtrack length, the browser will give you an error. Supported only by Navigator.</td>
+  </tr>
+</table>
+<p>Let&#39;s demonstrate the last two attributes, <code><font color="#0000cc">STARTTIME</font></code> 
+and <code><font color="#0000cc">ENDTIME</font></code>. The following code plays 
+20 seconds of the Aladdin soundtrack, starting at the 10th second (please reload 
+the page):</p>
+<p>&nbsp;</p>
+<pre><code>
+<font color="#0000cc">&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt; testing  &lt;/TITLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;EMBED SRC=&quot;aladdin.mid&quot; HIDDEN=&quot;true&quot; AUTOSTART=&quot;true&quot;
+  STARTTIME=&quot;00:10&quot; ENDTIME=&quot;00:30&quot;&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;</font>
+</code></pre>
+
+<hr>
+<p align="center"><font size="4">The EMBED Tag's Controls Attribute</font></p>
+<p>Navigator's Controls attribute determines the shape of the <code>
+<font color="#0000cc">&lt;EMBED&gt;</font></code> tag's control panel. The following 
+table summarizes the different option values:</p>
+<table cellSpacing="0" cellPadding="3" border="1">
+  <tr>
+    <td bgColor="#ffffcc"><b>Attribute</b></td>
+    <td bgColor="#ffffcc"><b>Description</b></td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">CONTROLS=&quot;console&quot;</font></code></td>
+    <td>Specifies the default control panel with a start button, a stop button, 
+    a pause button, and a volume lever. Use <code><font color="#0000cc">
+    WIDTH=&quot;144&quot;</font></code> and <code><font color="#0000cc">HEIGHT=&quot;60&quot;</font></code>.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">CONTROLS=&quot;smallconsole&quot;</font></code></td>
+    <td>Specifies a much shorter control panel with a start button, a stop 
+    button, and a volume lever. Use <code><font color="#0000cc">WIDTH=&quot;144&quot;</font></code> 
+    and <code><font color="#0000cc">HEIGHT=&quot;15&quot;</font></code>.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">CONTROLS=&quot;playbutton&quot;</font></code></td>
+    <td>Specifies a much reduced control panel with only a play button. Use
+    <code><font color="#0000cc">WIDTH=&quot;35&quot;</font></code> and <code>
+    <font color="#0000cc">HEIGHT=&quot;23&quot;</font></code>. Usually used with the <code>
+    <font color="#0000cc">MASTERSOUND</font></code> attribute (see below). 
+    Navigator 4.04 on Mac crashes if <code><font color="#0000cc">CONTROLS=&quot;playbutton&quot;</font></code>.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">CONTROLS=&quot;pausebutton&quot;</font></code></td>
+    <td>Specifies a much reduced control panel with only a pause button. Use
+    <code><font color="#0000cc">WIDTH=&quot;35&quot;</font></code> and <code>
+    <font color="#0000cc">HEIGHT=&quot;23&quot;</font></code>. Usually used with the <code>
+    <font color="#0000cc">MASTERSOUND</font></code> attribute (see below).</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">CONTROLS=&quot;stopbutton&quot;</font></code></td>
+    <td>Specifies a much reduced control panel with only a stop button. Use
+    <code><font color="#0000cc">WIDTH=&quot;35&quot;</font></code> and <code>
+    <font color="#0000cc">HEIGHT=&quot;23&quot;</font></code>. Usually used with the <code>
+    <font color="#0000cc">MASTERSOUND</font></code> attribute (see below).</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">CONTROLS=&quot;volumelever&quot;</font></code></td>
+    <td>Specifies a much reduced control panel with only a volume lever. Use
+    <code><font color="#0000cc">WIDTH=&quot;74&quot;</font></code> and <code>
+    <font color="#0000cc">HEIGHT=&quot;20&quot;</font></code>. Usually used with the <code>
+    <font color="#0000cc">MASTERSOUND</font></code> attribute (see below).</td>
+  </tr>
+</table>
+<p>The <code><font color="#0000cc">MASTERSOUND</font></code> attribute lets you 
+control a single sound track with multiple control panels, usually 
+single-buttoned, as explained above. When combining several buttons to control a 
+single sound file, you must follow certain rules: </p>
+<ul>
+  <li>Use the same <code><font color="#0000cc">NAME</font></code> attribute on 
+  all buttons. </li>
+  <li>Only one button is tagged with <code><font color="#0000cc">MASTERSOUND</font></code>.
+  </li>
+  <li>The button tagged with <code><font color="#0000cc">MASTERSOUND</font></code> 
+  must point to the sound file. Other may point to other files, but they must 
+  point to some files.</li>
+</ul>
+<p>Here is a simple example that shows how to synchronize four different buttons 
+to control a single sound track:</p>
+<p>&nbsp;</p>
+<pre><code><font color="#0000cc">&lt;TABLE BORDER=&quot;1&quot; CELLSPACING=&quot;0&quot; CELLPADDING=&quot;3&quot;&gt;
+&lt;TR&gt;&lt;TD&gt;&lt;EMBED SRC=&quot;aladdin.mid&quot; WIDTH=&quot;35&quot; HEIGHT=&quot;23&quot;</font> --&gt;
+<font color="#0000cc">     CONTROLS=&quot;playbutton&quot; NAME=&quot;foobar&quot; MASTERSOUND&gt;&lt;/TD&gt;
+&lt;TD&gt;&lt;EMBED SRC=&quot;xfiles.mid&quot; WIDTH=&quot;35&quot; HEIGHT=&quot;23&quot;</font> --&gt;
+<font color="#0000cc">     CONTROLS=&quot;pausebutton&quot; NAME=&quot;foobar&quot;&gt;&lt;/TD&gt;
+&lt;TD&gt;&lt;EMBED SRC=&quot;xfiles.mid&quot; WIDTH=&quot;35&quot; HEIGHT=&quot;23&quot;</font> --&gt;
+<font color="#0000cc">     CONTROLS=&quot;stopbutton&quot; NAME=&quot;foobar&quot;&gt;&lt;/TD&gt;
+&lt;TD&gt;&lt;EMBED SRC=&quot;xfiles.mid&quot; VOLUME=&quot;50&quot; WIDTH=&quot;74&quot; HEIGHT=&quot;20&quot;</font> --&gt;
+<font color="#0000cc">     CONTROLS=&quot;volumelever&quot; NAME=&quot;foobar&quot;&gt;&lt;/TD&gt;&lt;/TR&gt;
+&lt;/TABLE&gt;</font></code></pre>
+<p>&nbsp;</p>
+<script>
+if (NSsound) document.write("<P>Here is the output:</P><TABLE BORDER='1' CELLSPACING='0' CELLPADDING='3'><TR><TD>");
+if (NS404 && !win95) 
+  document.write("Navigator 4.04 on Mac does not support the playbutton")
+else if (NSsound)  
+       document.write("<EMBED SRC='aladdin.mid' WIDTH='35' HEIGHT='23' CONTROLS='playbutton' NAME='foobar' MASTERSOUND>");
+if (NSsound) document.write("</TD><TD><EMBED SRC='xfiles.mid' WIDTH='35' HEIGHT='23' CONTROLS='pausebutton'  NAME='foobar'></TD><TD><EMBED SRC='xfiles.mid' WIDTH='35' HEIGHT='23' CONTROLS='stopbutton'  NAME='foobar'></TD><TD><EMBED SRC='xfiles.mid' VOLUME='50' WIDTH=74 HEIGHT=20 CONTROLS='volumelever' NAME='foobar'></TD></TR></TABLE><P>Some buttons may not come up as visible as others, but go ahead and try them. The blurred ones become sharp as you click them.</P>");
+</script>
+<p>Explorer's <code><font color="#0000cc">CONTROLLER</font></code> attribute is 
+similar to Navigator's <code><font color="#0000cc">CONTROL</font></code> 
+attribute. It specifies whether to display the control panel or not. Even if the 
+control panel is not displayed, you can still control the media object by 
+clicking the right mouse on it, and then selecting one of the menu options 
+(bringing back the control, adding the digital display, or just running the 
+sound track). Notice that the digital display can be added to any control panel 
+by the same right clicking.</p>
+<table cellSpacing="0" cellPadding="3" border="1">
+  <tr>
+    <td bgColor="#ffffcc"><b>Attribute</b></td>
+    <td bgColor="#ffffcc"><b>Description</b></td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">CONTROLLER=&quot;true&quot;</font></code></td>
+    <td>Specifies the default control panel with a start&amp;pause button, a stop 
+    button, and a position lever. Use <code><font color="#0000cc">WIDTH=&quot;200&quot;</font></code> 
+    and <code><font color="#0000cc">HEIGHT=&quot;60&quot;</font></code>.</td>
+  </tr>
+  <tr vAlign="top">
+    <td><code><font color="#0000cc">CONTROLLER=&quot;false&quot;</font></code></td>
+    <td>Specifies no control panel. Use <code><font color="#0000cc">WIDTH=&quot;200&quot;</font></code> 
+    and <code><font color="#0000cc">HEIGHT=&quot;15&quot;</font></code>. Try 
+    right-clicking the object where it is supposed to be placed. The popup menu 
+    allows you to bring back the controls and the digital control display.</td>
+  </tr>
+</table>
+
+</body>
+
+</html>

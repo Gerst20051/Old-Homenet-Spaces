@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>SYS</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#s">Commands N-Z</a>
+    &gt; <a href="../INDEXS.HTM#sys">Commands S</a>
+    <h1>SYS</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Creates a startup disk by copying hidden operating system files
+    (IO.SYS and MSDOS.SYS), the operating system command interpreter
+    (COMMAND.COM), and the part of the operating system that provides
+    access to compressed drives (DRVSPACE.BIN) to the disk. (SYS copies
+    DRVSPACE.BIN only if the DRVSPACE.BIN file exists in the root
+    directory of the source drive or directory.)</p>
+    <p>IO.SYS, MSDOS.SYS and DRVSPACE.BIN are hidden files and do not
+    typically appear when you type the <a href="../D/DIR.HTM">DIR</a>
+    command. To see these files, type:
+<pre>
+    <a href="../D/DIR.HTM">DIR</a> <a
+href="../D/DIR.HTM#SwitchA">/A</a>
+</pre>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>SYS
+    [<a href="#ParameterDrive1">drive1:</a>][<a
+    href= "#ParameterPath">path</a>]
+    <a href="#ParameterDrive2">drive2:</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive1"></a> drive1:
+      (<a href="../../Version/MSDOS/400.HTM">v4.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/ME.HTM">WinME</a>)</dt>
+      <dt><a name="ParameterPath"></a> path
+      (<a href="../../Version/MSDOS/620.HTM">v6.2</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the location of the system files. If you do not
+      specify a path, the operating system searches the root
+      directory on the current drive for the system files.</dd>
+
+      <dt><a name="ParameterDrive2"></a> drive2:
+      (<a href="../../Version/MSDOS/100.HTM">v1.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the drive to which you want to copy the system
+      files. These files can be copied only to a root directory, not to
+      a subdirectory.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about copying files, see the
+    <a href="../C/COPY.HTM">COPY</a> and
+    <a href="../X/XCOPY.HTM">XCOPY</a> commands.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Copies">How the SYS command copies files</a></li>
+      <li><a href="#Contiguous">No requirement for contiguous files</a></li>
+      <li><a href="#Network">Using the SYS command on assigned drives and network drives</a></li>
+      <li><a href="#Compressed">Using the SYS command on compressed drives</a></li>
+    </ul>
+
+    <hr>
+    <a name="Copies"></a> <b>How the SYS command copies files</b>
+    <p>The SYS command copies the files in the order: IO.SYS,
+    MSDOS.SYS, <a href="../C/COMMAND.HTM">COMMAND.COM</a> and DRVSPACE.BIN.</p>
+
+    <hr>
+    <a name="Contiguous"></a> <b>No requirement for contiguous files</b>
+    <p>The operating system no longer requires the two system files to
+    be contiguous. This means that when you want to copy a new version
+    of the operating system to a disk containing system files for
+    <a href="../../Version/MSDOS/330.HTM">v3.30</a> or earlier,
+    you need not reformat the disk.</p>
+
+    <hr>
+    <a name="Compressed"></a> <b>Using the SYS command on compressed drives</b>
+    <p>The SYS command does not work on compressed drives. If drive C
+    is compressed and you need to make your hard disk bootable, use the
+    SYS command on drive C's host drive. (If you are using DriveSpace,
+    to find out which is drive C's host drive, type
+    <a href="../D/DBLSPACE.HTM">DRVSPACE</a>
+    <a href="../D/DBLSPACE.HTM#SwitchInfo">/INFO</a>
+    <a href="../D/DBLSPACE.HTM#ParameterDrive">C:</a>
+    at the command prompt.)</p>
+
+    <hr>
+    <a name="Network"></a> <b>Using the SYS command on assigned drives and network drives</b>
+    <p>The SYS command does not work on drives that have been
+    redirected by using the <a href="../A/ASSIGN.HTM">ASSIGN</a>,
+    <a href="../J/JOIN.HTM">JOIN</a>, or <a href="SUBST.HTM">SUBST</a>
+    command. SYS also does not work on network drives or drives
+    redirected using <a href="../I/INTERLNK.HTM">INTERLNK</a>.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To copy the operating system files and command interpreter from
+    the disk in the current drive to a disk in drive A, type:</p>
+<pre>
+    SYS <a
+href="#ParameterDrive1">A:</a>
+</pre>
+
+    <p>To copy the operating system files and command interpreter
+    from a disk in drive B to a disk in drive A, type:</p>
+<pre>
+    SYS <a
+href="#ParameterDrive1">B:</a> <a
+href="#ParameterDrive2">A:</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/100.HTM">v1.0</a>
+          <a href="../../Version/MSDOS/105.HTM">v1.05</a>
+          <a href="../../Version/MSDOS/110.HTM">v1.1</a>
+          <a href="../../Version/MSDOS/111.HTM">v1.11</a>
+          v1.24
+          v1.25
+          <a href="../../Version/MSDOS/185.HTM">v1.85</a>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

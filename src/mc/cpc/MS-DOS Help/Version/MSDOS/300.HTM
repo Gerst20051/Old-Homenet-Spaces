@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DOS v3.00</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../INDEX.HTM">Versions</a>
+    <h1>DOS v3.00</h1>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    | <a href="#Added">Added</a>
+    | <a href="#Changed">Changed</a>
+    | <a href="#Removed">Removed</a>
+    | <a href="#Files">Files</a>
+    <ul>
+      <li>Released with the 16-bit 6MHz (overclocked to 8-9MHz) 80286
+          IBM PC AT, in August 1984.</li>
+      <li>OEM IBM Corporation and various other manufacturers.</li>
+      <li>Added support for 40ms 20Mb hard disk, holds 56 standard 360K
+          double-density floppies of information.</li>
+      <li>Added support for 'high capacity' (high density) 1.2Mb disk
+          drives.</li>
+      <li>Added 16-bit FAT entries to minimize slack space on hard
+          disks.</li>
+      <li>Added extended error reporting for DOS functions.</li>
+      <li>Added DOS functions 3dH through 62H and INT 24H.</li>
+      <li>DOS function 4fH (Find Next File) requires you to keep DS:DX
+          pointing to the information from a 4eH (Find First File)
+          call.</li>
+      <li>DOS function 30H modifies BX and CX.</li>
+      <li>The three 16-bit words at the end of the BPB are
+          mandatory.</li>
+      <li>Lets you run a program by specifying a path in the
+          filename.</li>
+      <li>Stored computer setup information in CMOS chip.</li>
+      <li>Future support of Local-Area-Networks (LAN) begun, IBM.</li>
+      <li>Commands introduced:
+        <ul>
+          <li><a href="../../Command/A/ATTRIB.HTM">ATTRIB</a></li>
+          <li><a href="../../Command/C/COUNTRY.HTM">COUNTRY</a></li>
+          <li><a href="../../Command/D/DEVICE.HTM">DEVICE</a></li>
+          <li><a href="../../Command/F/FCBS.HTM">FCBS</a></li>
+          <li><a href="../../Command/G/GRAFTABL.HTM">GRAFTABL</a></li>
+          <li>KEYBFR</li>
+          <li>KEYBGR</li>
+          <li>KEYBIT</li>
+          <li>KEYBSP</li>
+          <li>KEYBUK</li>
+          <li><a href="../../Command/L/LABEL.HTM">LABEL</a></li>
+          <li><a href="../../Command/L/LASTDRIV.HTM">LASTDRIVE</a></li>
+          <li><a href="../../Command/S/SELECT.HTM">SELECT</a></li>
+          <li><a href="../../Command/S/SHARE.HTM">SHARE</a></li>
+          <li>VDISK.SYS (<a href="../../Command/R/RAMDRIVE.HTM">RAMDRIVE.SYS</a>), RAM disk</li>
+        </ul>
+      </li>
+      <li>Commands enhanced:
+        <ul>
+          <li><a href="../../Command/B/BACKUP.HTM">BACKUP</a></li>
+          <li><a href="../../Command/D/DATE.HTM">DATE</a></li>
+          <li><a href="../../Command/D/DISKCOMP.HTM">DISKCOMP</a></li>
+          <li><a href="../../Command/D/DISKCOPY.HTM">DISKCOPY</a></li>
+          <li><a href="../../Command/F/FORMAT.HTM">FORMAT</a></li>
+          <li><a href="../../Command/G/GRAPHICS.HTM">GRAPHICS</a></li>
+          <li><a href="../../Command/R/RESTORE.HTM">RESTORE</a></li>
+        </ul>
+      </li>
+      <li>Extremely buggy:
+        <ul>
+          <li>Batch file parsing problems.</li>
+          <li>DOS environment problems.</li>
+          <li>Network support nonfunctional.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <hr>
+    <a name="Added"></a> <b>Added</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Changed"></a> <b>Changed</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Removed"></a> <b>Removed</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Files"></a> <b>Files</b>
+    <p><a href="../../Filelist/MSDOS/300.HTM">Filelist</a></p>
+
+    <hr>
+    Last Updated: 2004/03/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

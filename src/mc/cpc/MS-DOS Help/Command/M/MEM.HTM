@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>MEM</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#m">Commands A-M</a>
+    &gt; <a href="../INDEXM.HTM#mem">Commands M</a>
+    <h1>MEM</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Displays the amount of used and free memory on your
+    computer.</p>
+    <p>You can use the MEM command to display information about
+    allocated memory areas, free memory areas, and programs that are
+    currently loaded into memory.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>MEM
+    [<a href="#SwitchProgram">/P[ROGRAM]</a>
+    | <a href="#SwitchClassify">/C[LASSIFY]</a>
+    | <a href="#SwitchDebug">/D[EBUG]</a>
+    | <a href="#SwitchFree">/F[REE]</a>
+    | <a href="#SwitchModule">/M[ODULE]</a> programname]
+    [<a href="#SwitchPage">/P[AGE]</a>]
+    [<a href="#SwitchA">/A</a>]
+    [<a href="#SwitchH">/H</a>]</p>
+
+    <p>To display the status of your computer's used and free memory:</p>
+    <p>MEM</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchA"></a> /A
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd><b>UNDOCUMENTED</b> Add extra line about available High
+      Memory Area space.</dd>
+
+      <dt><a name="SwitchClassify"></a> /C[LASSIFY]
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Lists the programs that are currently loaded into memory and
+      shows how much conventional and upper memory each program is
+      using. MEM /CLASSIFY also summarizes overall memory use and lists
+      the largest free memory blocks. You can use the /CLASSIFY switch
+      with <a href="#SwitchPage">/PAGE</a> but not with other MEM
+      switches. You can abbreviate /CLASSIFY as /C.</dd>
+
+      <dt><a name="SwitchDebug"></a> /D[EBUG]
+      (<a href="../../Version/MSDOS/400.HTM">v4.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Lists the programs and internal drivers that are currently
+      loaded into memory. MEM /DEBUG shows each module's size, segment
+      address, and module type, summarizes overall memory use, and
+      displays other information useful for programming. You can use
+      the /DEBUG switch with <a href="#SwitchPage">/PAGE</a> but not
+      with other MEM switches. You can abbreviate /DEBUG as /D.</dd>
+
+      <dt><a name="SwitchFree"></a> /F[REE]
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Lists the free areas of conventional and upper memory. MEM
+      /FREE shows the segment address and size of each free area of
+      conventional memory, and shows the largest free upper memory
+      block in each region of upper memory. You can use the /FREE
+      switch with <a href="#SwitchPage">/PAGE</a> but not with other
+      MEM switches. You can abbreviate /FREE as /F.</dd>
+
+      <dt><a name="SwitchH"></a> /H
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd><b>UNDOCUMENTED</b> Brief help, like /?.</dd>
+
+      <dt><a name="SwitchModule"></a> /M[ODULE] programname
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Shows how a program module is currently using memory. You
+      must specify the program name after the /MODULE switch. MEM
+      /MODULE lists the areas of memory the specified program module
+      has allocated and shows the address and size of each area. You
+      can use the /MODULE switch with <a href="#SwitchPage">/PAGE</a>,
+      but not with other MEM switches. You can abbreviate /MODULE as
+      /M.</dd>
+
+      <dt><a name="SwitchPage"></a> /P[AGE]
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Pauses after each screen of output. This switch can be used
+      with any of the other MEM switches. You can abbeviate /PAGE as
+      /P.</dd>
+
+      <dt><a name="SwitchProgram"></a> /P[ROGRAM]
+      (<a href="../../Version/MSDOS/400.HTM">v4.0</a> through
+      <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the name, location, size, and type of each program
+      for which memory information is to be displayed. You can
+      abbeviate /PROGRAM as /P.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about checking the amount of space available on
+    a disk, see the <a href="../C/CHKDSK.HTM">CHKDSK</a> command.
+    <br><a href="../C/CLEARMEM.HTM">CLEARMEM</a> (Resource Kit) -
+    Clear Memory Leaks.
+    <br><a href="../W/WINMSD.HTM">WINMSD</a> - Windows NT Diagnostics (including Physical Memory).
+    <br>GUI Task Manager - for all program details including Win32
+    applications.
+    <br><a href="../T/TLIST.HTM">TLIST</a> - Task List.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>free -t - Display a summary of current memory usage and
+    availability.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Extended">Allocating extended memory</a></li>
+      <li><a href="#CMD">Current CMD shell only</a></li>
+      <li><a href="#Status">Displaying memory status</a></li>
+      <li><a href="#Q126962">Q126962 - Increase desktop heap memory for non-interactive processes</a></li>
+      <li><a href="#Q184419">Q184419 - DisablePagingExecutive</a></li>
+      <li><a href="#SwitchPageNote">Specifying the /PAGE switch automatically</a></li>
+    </ul>
+
+    <hr>
+    <a name="CMD"></a> <b>Current CMD shell only</b>
+    <p>MEM will only display details about the current CMD shell
+    environment, programs running in a separate shell (or WIN32 programs)
+    will not be listed - so it won't tell you anything about total memory
+    usage.</p>
+
+    <hr>
+    <a name="Q126962"></a> <b>Q126962 - Increase desktop heap memory for non-interactive processes</b>
+    <p>Increase desktop heap memory for non-interactive processes - Q126962
+    (SharedSection=1024,3072,3072). NOTE that NT 4 has a system wide limit
+    of ~48MB for all desktops, so a 3M heap will allow a max 16 processes
+    while 512K heap will allow a max 96 processes.</p>
+
+    <hr>
+    <a name="Q184419"></a> <b>Q184419 - DisablePagingExecutive</b>
+    <p>DisablePagingExecutive - Q184419 (use this when &gt;500M RAM is
+    available).</p>
+
+    <hr>
+    <a name="SwitchPageNote"></a> <b>Specifying the /PAGE switch automatically</b>
+    <p>You can use the <a href="../D/DOSKEY.HTM">DOSKEY</a> program to automatically add the
+    <a href="#SwitchPage">/PAGE</a> switch to the MEM command.
+    Then, each time you use MEM, it will pause after each screenful of
+    information even if you don't type the
+    <a href="#SwitchPage">/P</a> switch on the MEM command-line.
+    To do this, add the commands to your AUTOEXEC.BAT file:</p>
+<pre>
+    <a href="../D/DOSKEY.HTM">C:\DOS\DOSKEY</a>
+    <a href="../D/DOSKEY.HTM">DOSKEY</a> mem=MEM.EXE $* <a
+href="#SwitchPage">/P</a>
+</pre>
+
+    <hr>
+    <a name="Status"></a> <b>Displaying memory status</b>
+    <p>The operating system displays the status of extended memory
+    only if you have installed memory above the 1-megabyte (MB)
+    boundary in your system. The operating system displays the
+    status of expanded memory only if you use expanded memory that
+    conforms to version 4.0 of the Lotus/Intel/Microsoft Expanded
+    Memory Specification (LIM EMS). The operating system displays
+    the status of the upper memory area only if a UMB provider such
+    as <a href="../E/EMM386EX.HTM">EMM386.EXE</a> is installed and the command
+    <a href="../D/DOS.HTM">DOS</a>=<a href="../D/DOS.HTM#ParameterUmb">UMB</a>
+    is included in the
+    CONFIG.SYS file. The operating system does not display the status
+    of the upper memory area if you issue the MEM command while you are
+    running <a href="../../Version/MSWIN/300.HTM">Win3x</a>.</p>
+
+    <hr>
+    <a name="Extended"></a> <b>Allocating extended memory</b>
+    <p>To allocate Interrupt 15h memory and XMS memory at the same
+    time, use the <a href="../H/HIMEMSYS.HTM#SwitchInt15">/INT15</a>
+    switch when you load the <a href="../H/HIMEMSYS.HTM">HIMEM.SYS</a>
+    device driver.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <ul>
+      <li><a href="#General">Getting general program and memory information</a></li>
+      <li><a href="#Specific">Getting information about a specific program</a></li>
+    </ul>
+
+    <hr>
+    <a name="General"></a> <b>Getting general program and memory information</b>
+    <p>Suppose your system has both expanded memory and extended
+    memory. To display a summary of your system's total memory --
+    conventional, expanded, extended, and upper -- and to display a
+    list of programs currently loaded into memory, type:</p>
+<pre>
+    MEM <a
+href="#SwitchClassify">/CLASSIFY</a>
+</pre>
+
+    <p>The results might look similar to:</p>
+<pre>
+    Modules using memory below 1 MB:
+    Name           Total       =   Conventional   +   Upper Memory
+    --------  ----------------   ----------------   ----------------
+    SYSTEM      16,477   (16K)     16,461   (16K)         16    (0K)
+    SETVER         784    (1K)        784    (1K)          0    (0K)
+    HIMEM        1,168    (1K)      1,168    (1K)          0    (0K)
+    EMM386       3,120    (3K)      3,120    (3K)          0    (0K)
+    USPI14       9,120    (9K)      9,120    (9K)          0    (0K)
+    COMMAND      3,680    (4K)      3,680    (4K)          0    (0K)
+    SMARTDRV    37,680   (37K)     21,280   (21K)     16,400   (16K)
+    MOUSE       17,088   (17K)     17,088   (17K)          0    (0K)
+    NETBEUI     42,432   (41K)     41,760   (41K)        672    (1K)
+    REDIR       86,064   (84K)     76,128   (74K)      9,936   (10K)
+    ANARKEY     14,384   (14K)          0    (0K)     14,384   (14K)
+    ZPOWER       4,368    (4K)          0    (0K)      4,368    (4K)
+    ANSI         4,208    (4K)          0    (0K)      4,208    (4K)
+    DRVSPACE    36,848   (36K)          0    (0K)     36,848   (36K)
+    PROTMAN        128    (0K)          0    (0K)        128    (0K)
+    EXP16        9,056    (9K)          0    (0K)      9,056    (9K)
+    WORKGRP      4,368    (4K)          0    (0K)      4,368    (4K)
+    RAMDRIVE     1,312    (1K)          0    (0K)      1,312    (1K)
+    Free       472,464  (461K)    464,448  (454K)      8,016    (8K)
+  Memory Summary:
+    Type of Memory       Total   =    Used    +    Free
+    ----------------  ----------   ----------   ----------
+    Conventional         655,360      190,912      464,448
+    Upper                109,712      101,696        8,016
+    Reserved             393,216      393,216            0
+    Extended (XMS)    15,618,928   12,424,048    3,194,880
+    ----------------  ----------   ----------   ----------
+    Total memory      16,777,216   13,109,872    3,667,344
+    Total under 1 MB     765,072      292,608      472,464
+    Largest executable program size        464,352   (453K)
+    Largest free upper memory block          7,888     (8K)
+    MS-DOS is resident in the high memory area.
+</pre>
+
+    <p>"Reserved" is the memory located on add-on boards such as video
+    adapter boards. "Largest executable program size" is the largest
+    contiguous block of conventional memory available for a program.
+    "Largest free upper memory block" is the largest area of upper
+    memory available for a program. "MS-DOS is resident in the high
+    memory area" indicates that the operating system is running in the
+    first 64K of extended memory rather than in conventional memory.</p>
+
+    <hr>
+    <a name="Specific"></a> <b>Getting information about a specific program</b>
+    <p>To find out what memory a specific program module has allocated,
+    use the MEM <a href="#SwitchModule">/MODULE</a> command. For example,
+    to find out what memory the WIN386 module has allocated, you would
+    type:</p>
+<pre>
+    MEM <a
+href="#SwitchModule">/MODULE</a> win386
+</pre>
+
+    <p>If you were running WIN386, the results might look similar to:</p>
+<pre>
+    WIN386 is using the following memory:
+    Segment  Region       Total        Type
+    -------  ------  ----------------  --------
+     0081D                 80    (0K)  Data
+     02EF8                384    (0K)  Environment
+     02F10             89,856   (88K)  Program
+     0D4D0       1         96    (0K)  Data
+     0D611       1      7,888    (8K)  Data
+     0EFFE       2         32    (0K)  Data
+                     ----------------
+    Total Size: 98,336   (96K)
+</pre>
+
+    <p>Some program modules, such as WIN386, allocate more than one
+    area of memory. The MEM <a href="#SwitchModule">/MODULE</a>
+    command displays all the areas of
+    memory allocated by the specified program, and shows the segment
+    address and size of each allocation. For upper memory blocks, MEM
+    <a href="#SwitchModule">/MODULE</a>
+    also shows the region number. The Type column shows how the
+    program is using that particular area of memory. The "total size,"
+    in this case 98,336 bytes (96K), shows the total amount of memory
+    allocated by the operating system for the specified program.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

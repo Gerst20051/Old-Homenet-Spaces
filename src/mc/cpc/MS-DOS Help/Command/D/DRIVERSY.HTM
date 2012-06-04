@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DRIVER.SYS</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDA.HTM#driversys">Configuration Da-Dr</a>
+    <h1>DRIVER.SYS</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Creates a logical drive that you can use to refer to
+    a physical floppy disk drive. This device driver must be
+    loaded by a <a href="DEVICE.HTM">DEVICE</a> or
+    <a href="DEVICEHI.HTM">DEVICEHIGH</a> command in your
+    CONFIG.SYS file.</p>
+
+    <p>A logical drive is a pointer to a physical disk drive
+    in your system. The logical drive is associated with a
+    drive letter (ie, A or B). You can specify parameters to
+    describe the disk drive to the operating system.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p><a href="DEVICE.HTM">DEVICE</a>=<a
+    href="#ParameterDrivePath">[drive:][\path\]</a>DRIVER.SYS
+    [<a href="#SwitchC">/C</a>]
+    <a href="#SwitchD">/D:n</a>
+    [<a href="#SwitchF">/F:factor</a>]
+    [<a href="#SwitchH">/H:heads</a>]
+    [<a href="#SwitchS">/S:sectors</a>]
+    [<a href="#SwitchT">/T:tracks</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrivePath"></a> [drive:][\path\]
+      (<a href="../../Version/MSDOS/320.HTM">v3.20</a>)</dt>
+      <dd>Specifies the location of the DRIVER.SYS file.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchC"></a> /C
+      (<a href="../../Version/MSDOS/320.HTM">v3.20</a>)</dt>
+      <dd>Specifies that the physical disk drive can detect
+      whether the drive door is closed (change-line support).</dd>
+
+      <dt><a name="SwitchD"></a> /D:n
+      (<a href="../../Version/MSDOS/320.HTM">v3.20</a>)</dt>
+      <dd>Specifies the number of the physical floppy disk
+      drive. Valid values for number are in the range 0
+      through 127. The first physical floppy disk drive
+      (drive A) is drive 0; a second physical floppy disk
+      drive is drive 1; a third physical floppy disk drive,
+      which must be external, is drive 2; 128 is the first
+      hard disk drive, 129 the second hard disk drive. For
+      a computer with one floppy disk drive, drives A and B
+      are both numbered 0; for a computer with multiple
+      floppy disk drives, drive B is numbered 1.</dd>
+
+      <dt><a name="SwitchF"></a> /F:factor
+      (<a href="../../Version/MSDOS/320.HTM">v3.20</a>)</dt>
+      <dd>Specifies the type of disk drive.
+      Valid values for factor are:
+        <ul>
+          <li><b>0</b> 160K/180K or 320K/360K (single-sided)/(double-sided)</li>
+          <li><b>1</b> 1.2 megabyte (MB)</li>
+          <li><b>2</b> 720K (3.5-inch disk) or other, the default</li>
+          <li><b>7</b> 1.44 MB (3.5-inch disk)</li>
+          <li><b>9</b> 2.88 MB (3.5-inch disk) <a href="../../Version/MSDOS/500.HTM">v5.0</a></li>
+        </ul>
+      </dd>
+      <dd>Generally, if you use the /F switch, you can omit
+      the <a href="#SwitchH">/H</a>,
+      <a href="#SwitchS">/S</a>, and
+      <a href="#SwitchT">/T</a> switches. Check the default
+      values for these switches to make sure they are
+      correct for the type of disk drive you are using. To
+      determine the appropriate values for the disk drive,
+      see the disk-drive manufacturer's documentation.</dd>
+      <dd>If you specify the <a href="#SwitchH">/H</a>,
+      <a href="#SwitchS">/S</a>, and
+      <a href="#SwitchT">/T</a> switches, you can omit the
+      /F switch.</dd>
+
+      <dt><a name="SwitchH"></a> /H:heads
+      (<a href="../../Version/MSDOS/320.HTM">v3.20</a>)</dt>
+      <dd>Specifies the number of heads in the disk drive.
+      Valid values for heads are in the range 1 through 99.
+      The default value is 2. To determine the correct value
+      for your disk drive, see the disk-drive manufacturer's
+      documentation.</dd>
+
+      <dt><a name="SwitchS"></a> /S:sectors
+      (<a href="../../Version/MSDOS/320.HTM">v3.20</a>)</dt>
+      <dd>Specifies the number of sectors per track.  Valid
+      values for sectors are in the range 1 through 99. The
+      default value depends on the value of
+      <a href="#SwitchF">/F:factor</a>:
+        <ul>
+          <li><b>8</b> <a href="#SwitchF">/F:0</a> 160K/320K</li>
+          <li><b>9</b> <a href="#SwitchF">/F:0</a> 180K/360K</li>
+          <li><b>9</b> <a href="#SwitchF">/F:2</a> 720K (3.5-inch disk) or other, the default</li>
+          <li><b>15</b> <a href="#SwitchF">/F:1</a> 1.2 megabyte (MB)</li>
+          <li><b>18</b> <a href="#SwitchF">/F:7</a> 1.44 MB (3.5-inch disk)</li>
+          <li><b>36</b> <a href="#SwitchF">/F:9</a> 2.88 MB (3.5-inch disk)</li>
+        </ul>
+      </dd>
+      <dd>To determine the correct value for your disk
+      drive, see the disk-drive manufacturer's
+      documentation.</dd>
+
+      <dt><a name="SwitchT"></a> /T:tracks
+      (<a href="../../Version/MSDOS/320.HTM">v3.20</a>)</dt>
+      <dd>Specifies the number of tracks per side on the
+      block device. Valid values for tracks are in the range
+      1 through 999.  The default value is 40 when
+      <a href="#SwitchF">/F:0</a>, otherwise
+      the default value is 80. To determine the correct
+      value for your disk drive, see the disk-drive
+      manufacturer's documentation.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Duplicate">Creating a duplicate logical drive</a></li>
+      <li><a href="#Different">Creating a new logical drive with different parameters</a></li>
+      <li><a href="#ChangeLine">Disk-drive change-line support</a></li>
+      <li><a href="#Limitations">Limitations on DRIVER.SYS</a></li>
+      <li><a href="#Redefining">Modifying or redefining a supported physical disk drive</a></li>
+    </ul>
+
+    <hr>
+    <a name="ChangeLine"></a> <b>Disk-drive change-line support</b>
+    <p>The term "change-line support" means that a physical
+    disk drive can detect when the drive door is opened and
+    closed. Change-line support allows faster operating
+    system operation with floppy disks. The
+    <a href="#SwitchC">/C</a> switch indicates to the
+    operating system that the physical disk drive can
+    support change-line error detection. To determine
+    whether your disk drive has change-line support, see
+    the disk-drive manufacturer's documentation.</p>
+
+    <hr>
+    <a name="Redefining"></a> <b>Modifying or redefining a supported physical disk drive</b>
+    <p>For information about modifying the parameters of a
+    physical disk drive that is supported by your hardware,
+    see the <a href="DRIVPARM.HTM">DRIVPARM</a>
+    command. You can also use DRIVER.SYS to redefine a
+    physical floppy disk drive.</p>
+
+    <hr>
+    <a name="Limitations"></a> <b>Limitations on DRIVER.SYS</b>
+    <p>You cannot use DRIVER.SYS with hard disk drives. For
+    information about substituting a logical drive letter
+    for a hard disk drive, see the
+    <a href="../S/SUBST.HTM">SUBST</a> command.</p>
+
+    <hr>
+    <a name="Duplicate"></a> <b>Creating a duplicate logical drive</b>
+    <p>Suppose you want to use one physical floppy disk
+    drive to copy files from one floppy disk to another.
+    Because you cannot copy from and to the same logical
+    drive by using the <a href="../C/COPY.HTM">COPY</a> or
+    <a href="../X/XCOPY.HTM">XCOPY</a> command, you must
+    assign a second drive letter to that physical drive.</p>
+
+    <p>If your system has just one physical floppy disk
+    drive, you do not need to install DRIVER.SYS for this
+    purpose. The operating system already assigns both
+    logical drive A and logical drive B to that drive.
+    Just copy files from drive A to drive B and switch
+    disks when the operating system prompts you.</p>
+
+    <p>If your system has more than one floppy disk drive,
+    then you need to use DRIVER.SYS to assign a second
+    drive letter to the physical floppy disk drive.</p>
+
+    <hr>
+    <a name="Different"></a> <b>Creating a new logical drive with different parameters</b>
+    <p>If you use DRIVER.SYS to assign a logical drive that
+    has parameters different from those of the previously
+    assigned logical drive, then the parameters of the
+    previous logical drive will be invalid. Therefore, you
+    should no longer use the drive letter corresponding to
+    the previous logical drive.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To add an external 720K drive to your system, add to
+    your CONFIG.SYS file:
+<pre>
+    <a href="DEVICE.HTM">DEVICE</a>=DRIVER.SYS <a
+href="#SwitchD">/D:2</a>
+</pre>
+
+    <p>Since no location is specified, the operating system
+    searches for DRIVER.SYS in the root directory of your
+    startup drive.</p>
+
+    <p>Suppose you want to use a single 1.44-megabyte
+    external disk drive to copy files from one floppy disk
+    to another. To do this, you must add two identical
+    <a href="DEVICE.HTM">DEVICE</a> commands for
+    DRIVER.SYS in your CONFIG.SYS file. This will assign
+    two logical drive letters to the same physical drive.
+    You can then swap disks in the same drive during the
+    copying process:
+<pre>
+    <a href="DEVICE.HTM">DEVICE</a>=DRIVER.SYS <a
+href="#SwitchD">/D:2</a> <a
+href="#SwitchF">/F:7</a>
+    <a href="DEVICE.HTM">DEVICE</a>=DRIVER.SYS <a
+href="#SwitchD">/D:2</a> <a
+href="#SwitchF">/F:7</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

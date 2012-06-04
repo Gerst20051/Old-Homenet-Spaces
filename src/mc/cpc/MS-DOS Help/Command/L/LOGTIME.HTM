@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>LOGTIME</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#l">Commands A-M</a>
+    &gt; <a href="../INDEXL.HTM#logtime">Commands L</a>
+    <h1>LOGTIME</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Create logtime.txt and adds the date, time and a message.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>LOGTIME
+    "<a href="#ParameterText">Text</a>"</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterText"></a> "Text"
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Text message you want logged.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../E/ECHO.HTM">ECHO</a> - Display message on screen.
+    <br><a href="../D/DATE.HTM">DATE</a>
+    <a href="../D/DATE.HTM#SwitchT">/T</a> - Display or set the date.
+    <br><a href="../T/TOUCH.HTM">TOUCH</a> - Change file timestamps.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>echo - Display message on screen.
+    <br>select - Accept keyboard input.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>The date is stored in the US mm/dd/yy format.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+<pre>
+    LOGTIME "<a href="#ParameterText">begin import program</a>"
+    import.exe
+    LOGTIME "<a href="#ParameterText">end import program</a>"
+</pre>
+
+    <p>An alternative command is:</p>
+<pre>
+    <a href="../E/ECHO.HTM">ECHO</a>. | <a
+href="../D/DATE.HTM">DATE</a> | <a
+href="../F/FIND.HTM">FIND</a> <a
+href="../F/FIND.HTM#SwitchI">/I</a> "<a
+href="../F/FIND.HTM#ParameterString">current</a>"&gt;&gt;C:\Install_log.txt
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External Resource Kit</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd><a href="../../Version/MSWIN/NT400.HTM">NT4</a></dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

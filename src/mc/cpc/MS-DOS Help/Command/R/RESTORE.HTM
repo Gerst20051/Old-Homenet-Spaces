@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>RESTORE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#r">Commands N-Z</a>
+    &gt; <a href="../INDEXR.HTM#restore">Commands R</a>
+    <h1>RESTORE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Restores files that were backed up by using any version of
+    BACKUP from <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+    through <a href="../../Version/MSDOS/500.HTM">v5.0</a>. If
+    you are restoring files that were backed up using the MSBACKUP
+    program in <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+    or later, use that version of the
+    <a href="../M/MSBACKUP.HTM">MSBACKUP</a> program to restore
+    those files.</p>
+    <p>You can restore files from similar or dissimilar disk types.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>RESTORE
+    <a href="#ParameterDrive1">drive1:</a>
+    <a href="#ParameterDrive2">drive2:</a>[<a
+    href="#ParameterPath">path</a>[<a
+    href="#ParameterFilename">filename</a>]]
+    [<a href="#SwitchS">/S</a>]
+    [<a href="#SwitchP">/P</a>]
+    [[<a href="#SwitchB">/B:date</a>]
+    | [<a href="#SwitchA">/A:date</a>]
+    | [<a href="#SwitchN">/N</a>]]
+    [<a href="#SwitchE">/E:time</a>]
+    [<a href="#SwitchL">/L:time</a>]
+    [<a href="#SwitchM">/M</a>]
+    [<a href="#SwitchD">/D</a>]
+    [<a href="#SwitchY">/Y</a>]
+    [<a href="#SwitchZ">/Z</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive1"></a> drive1:
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the drive on which the backed-up files are
+      stored.</dd>
+
+      <dt><a name="ParameterDrive2"></a> drive2:
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the drive to which the backed-up files will be
+      restored.</dd>
+
+      <dt><a name="ParameterFilename"></a> filename
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the names of the backed-up files you want to
+      restore.</dd>
+
+      <dt><a name="ParameterPath"></a> path
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the directory to which the backed-up files will be
+      restored. You must specify the same directory from which the
+      files were backed up.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchA"></a> /A:date
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Restores only those files last modified on or after the
+      specified date. The format of date varies according to the
+      <a href="../C/COUNTRY.HTM">COUNTRY</a> setting in your CONFIG.SYS file. For information about
+      specifying date, see the
+      <a href="../D/DATE.HTM">DATE</a> command.</dd>
+
+      <dt><a name="SwitchB"></a> /B:date
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Restores only those files last modified on or before the
+      specified date. The format of date varies according to the
+      <a href="../C/COUNTRY.HTM">COUNTRY</a> setting in your CONFIG.SYS file. For information about
+      specifying date, see the
+      <a href="../D/DATE.HTM">DATE</a> command.</dd>
+
+      <dt><a name="SwitchD"></a> /D
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Displays a list of the files on the backup disk that match
+      the names specified in filename without restoring any files. Even
+      though no files are being restored, you must specify drive2 when
+      you use /D.</dd>
+
+      <dt><a name="SwitchE"></a> /E:time
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Restores only those files last modified at or earlier than
+      the specified time. The format of time varies according to the
+      <a href="../C/COUNTRY.HTM">COUNTRY</a> setting in your CONFIG.SYS file. For information about
+      specifying time, see the
+      <a href="../T/TIME.HTM">TIME</a> command.</dd>
+
+      <dt><a name="SwitchL"></a> /L:time
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Restores only those files last modified at or later than the
+      specified time. The format of time varies according to the
+      <a href="../C/COUNTRY.HTM">COUNTRY</a> setting in your CONFIG.SYS file. For information about
+      specifying time, see the
+      <a href="../T/TIME.HTM">TIME</a> command.</dd>
+
+      <dt><a name="SwitchM"></a> /M
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Restores only those files modified since the last
+      backup.</dd>
+
+      <dt><a name="SwitchN"></a> /N
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Restores only those files that no longer exist on the
+      destination disk.</dd>
+
+      <dt><a name="SwitchP"></a> /P
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Prompts you for permission to restore files that are
+      read-only (that have the read-only attribute set) or that have
+      changed since the last backup (that have the archive attribute
+      set).</dd>
+
+      <dt><a name="SwitchS"></a> /S
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Restores all subdirectories.</dd>
+
+      <dt><a name="SwitchY"></a> /Y
+      <a href="../../Version/MSDOS/200.HTM">v2.0</a>?</dt>
+      <dd><b>UNDOCUMENTED</b> unknown.</dd>
+
+      <dt><a name="SwitchZ"></a> /Z
+      <a href="../../Version/MSDOS/200.HTM">v2.0</a>?</dt>
+      <dd><b>UNDOCUMENTED</b> unknown.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about backing up files, see the
+    <a href="../M/MSBACKUP.HTM">MSBACKUP</a> command.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Checking">Checking restored files</a></li>
+      <li><a href="#Versions">Compatibility with previous Versions of BACKUP</a></li>
+      <li><a href="#Limitations">Limitations on RESTORE</a></li>
+      <li><a href="#Listing">Listing the names of backed-up files</a></li>
+      <li><a href="#Different">Restoring to different drives</a></li>
+    </ul>
+
+    <hr>
+    <a name="Checking"></a> <b>Checking restored files</b>
+    <p>Once a file has been restored, you can use the
+    <a href="../D/DIR.HTM">DIR</a> or <a href="../T/TYPE.HTM">TYPE</a>
+    command to make sure the file was restored properly.</p>
+
+    <hr>
+    <a name="Limitations"></a> <b>Limitations on RESTORE</b>
+    <p>You cannot use the RESTORE command to restore system files
+    (IO.SYS and MSDOS.SYS). RESTORE does not work with drives that have
+    been redirected with the <a href="../A/ASSIGN.HTM">ASSIGN</a> or
+    <a href="../J/JOIN.HTM">JOIN</a> command.</p>
+
+    <hr>
+    <a name="Versions"></a> <b>Compatibility with previous Versions of BACKUP</b>
+    <p>The <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+    RESTORE command can restore files that were backed up by using the
+    BACKUP command in
+    <a href="../../Version/MSDOS/200.HTM">v2.0</a> through
+    <a href="../../Version/MSDOS/500.HTM">v5.0</a>.</p>
+
+    <hr>
+    <a name="Listing"></a> <b>Listing the names of backed-up files</b>
+    <p>Use the <a href="#SwitchD">/D</a> switch to see a
+    list of the backed up files. If you specify filename with the
+    <a href="#SwitchD">/D</a> switch, RESTORE displays a list
+    of the backed up files that match the name you specify. If you use
+    the <a href="#SwitchD">/D</a> switch, RESTORE does not
+    restore any files.</p>
+
+    <hr>
+    <a name="Different"></a> <b>Restoring to different drives</b>
+    <p>While you must restore files to their original directory, you
+    can restore them to a different drive. For example, files backed up
+    from the C:\MYFILES\*.* directory can be restored to the
+    D:\MYFILES\*.* directory.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To restore the file INVEST.MNT from the backup disk in drive A
+    to the IRS directory on drive C, type:</p>
+<pre>
+    RESTORE <a
+href="#ParameterDrive1">A:</a> <a
+href="#ParameterDrive2">C:</a><a
+href="#ParameterPath">\IRS\</a><a
+href="#ParameterFilename">INVEST.MNT</a>
+</pre>
+
+    <p>The operating system prompts you to insert the backup disk
+    into drive A. Once the backup disk is in drive A, press ENTER
+    to continue.</p>
+    <hr>
+    <p>Suppose you backed up all of the files in the directory
+    \USER\ADAMS on drive C. To restore these files, insert the backup
+    disk in drive A and type:</p>
+<pre>
+    RESTORE <a
+href="#ParameterDrive1">A:</a> <a
+href="#ParameterDrive2">C:</a><a
+href="#ParameterPath">\USER\ADAMS\</a><a
+href="#ParameterFilename">*.*</a>
+</pre>
+
+    <p>It is important that you specify *.* for filename. Otherwise,
+    the RESTORE command attempts to restore a file named ADAMS in the
+    USER directory.</p>
+    <hr>
+    <p>To restore a complete hard disk from a backup disk (or disks) in
+    drive A, type:</p>
+<pre>
+    RESTORE <a
+href="#ParameterDrive1">A:</a> <a
+href="#ParameterDrive2">C:</a><a
+href="#ParameterPath">\</a><a
+href="#ParameterFilename">*.*</a> <a
+href="#SwitchS">/S</a>
+</pre>
+
+    <p>The <a href="#SwitchS">/S</a> switch and the
+    wildcards (*.*) specify that RESTORE is to restore all backed-up
+    files to their original directories and subdirectories on drive
+    C.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <ul>
+    <li><b>0</b> RESTORE successfully restored the file or files</li>
+    <li><b>1</b> RESTORE could not find the files to restore</li>
+    <li><b>2</b> File sharing conflict prevented complete restoration</li>
+    <li><b>3</b> The user pressed CTRL+C (^C) to stop the restoring operation</li>
+    <li><b>4</b> RESTORE stopped because of an error</li>
+    </ul>
+
+    <p>You can use the ERRORLEVEL parameter on the
+    <a href="../I/IF.HTM#errorlevel">IF</a> command-line in a
+    batch program to process exit codes returned by RESTORE.</p>
+    <p>For an example of a batch program that processes exit codes, see
+    the <a href="../I/IF.HTM#errorlevel">IF</a>
+    command or the
+    <a href="../C/CHOICE.HTM#errorlevel">CHOICE</a>
+    command.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>JOIN</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#j">Commands A-M</a>
+    &gt; <a href="../INDEXJ.HTM#join">Commands J</a>
+    <h1>JOIN</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Allows access to the directory structure and files of a drive
+    through a directory on a different drive.</p>
+    <p><b>Warning:</b> DO NOT use these commands while a Join is in
+    effect: <a href="../A/ASSIGN.HTM">ASSIGN</a>,
+    <a href="../B/BACKUP.HTM">BACKUP</a>,
+    <a href="../D/DISKCOMP.HTM">DISKCOMP</a>,
+    <a href="../D/DISKCOPY.HTM">DISKCOPY</a>,
+    <a href="../F/FORMAT.HTM">FORMAT</a>,
+    <a href="../R/RESTORE.HTM">RESTORE</a>. or
+    <a href="../S/SUBST.HTM">SUBST</a>.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>JOIN
+    <a href="#ParameterDrive1">d:</a>
+    [<a href="#ParameterDrive2">d:</a><a
+    href="#ParameterPath">path</a>]</p>
+
+    <p>To disconnect a previously joined drive:</p>
+    <p>JOIN
+    [<a href="#ParameterDrive1">d:</a>]
+    [<a href="#SwitchD">/D</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive1"></a> d:
+      (<a href="../../Version/MSDOS/310.HTM">v3.1</a>)</dt>
+      <dd>Drive to connect / disconnect.</dd>
+
+      <dt><a name="ParameterDrive2"></a> d:
+      (<a name="ParameterPath"></a> path
+      <a href="../../Version/MSDOS/310.HTM">v3.1</a>)</dt>
+      <dd>Drive and directory name to give it. If the directory you
+      specify in the second parameter does not exist, DOS will create
+      it. If the directory does exist, it must be empty.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchD"></a> /D
+      (<a href="../../Version/MSDOS/310.HTM">v3.1</a>)</dt>
+      <dd>Used to disconnect a joined drive.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Invalid">Attempts to access a joined drive</a></li>
+      <li><a href="#Files">Join to a directory containing files</a></li>
+      <li><a href="#Current">Join to current directory</a></li>
+    </ul>
+
+    <hr>
+    <a name="Invalid"></a> <b>Attempts to access a joined drive</b>
+    <p>After joining a drive to a directory, the files stored on the
+    joined drives can be accessed as if they were on the specified
+    directory. Attempts to access the joined drive will result in the
+    display of the error message:</p>
+<pre>
+    Invalid drive specification
+</pre>
+
+    <hr>
+    <a name="Files"></a> <b>Join to a directory containing files</b>
+    <p>If you try to join a directory containing files, the program
+    will display the error message:</p>
+<pre>
+    Directory not empty
+</pre>
+
+    <hr>
+    <a name="Current"></a> <b>Join to current directory</b>
+    <p>You cannot join the current directory. Also, you cannot join to
+    a directory that is more than one level below a root directory or
+    to the root directory itself.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To join drive B: to the directory FILES on drive A:, enter:</p>
+<pre>
+    JOIN <a
+href="#ParameterDrive1">B:</a> <a
+href="#ParameterDrive2">A:</a><a
+href="#ParameterPath">\FILES</a>
+</pre>
+
+    <p>If you now ask for a directory of A:\FILES, the files stored on
+    drive B: will be displayed. After entering this command, attempts
+    to access drive B: will result in the error message:</p>
+<pre>
+    Invalid drive specification
+</pre>
+
+    <p>To disconnect the join established in the previous example,
+    enter:</p>
+<pre>
+    JOIN <a
+href="#ParameterDrive1">B:</a> <a
+href="#SwitchD">/D</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+      <dt>External Supplemental disk</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

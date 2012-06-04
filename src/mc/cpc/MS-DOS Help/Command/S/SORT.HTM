@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>SORT</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#s">Commands N-Z</a>
+    &gt; <a href="../INDEXS.HTM#sort">Commands S</a>
+    <h1>SORT</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Reads input, sorts data, and writes the results to the screen, a
+    file, or another device.</p>
+    <p>SORT acts as a filter, reading characters in a specified column
+    and rearranging them in ascending or descending order.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>SORT
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>SORT
+    [<a href="#SwitchL">/L[OCALE] locale</a>]
+    [<a href="#SwitchM">/M[EMORY] kilobytes</a>]
+    [<a href="#SwitchO">/O[UTPUT] [drive:][pathname]</a>]
+    [<a href="#SwitchR">/R</a>]
+    [<a href="#SwitchRec">/REC[ORD_MAXIMUM] characters</a>]
+    [<a href="#SwitchT">/T[EMPORARY] [drive:][path]</a>]
+    [<a href="#SwitchN">/+n</a>] [&lt;]
+    [[<a href="#ParameterDrive1">drive1:</a>][<a
+    href="#ParameterPath1">path1</a>]<a
+    href="#ParameterFilename1">filename1</a>] [&gt;
+    [<a href="#ParameterDrive2">drive2:</a>][<a
+    href="#ParameterPath2">path2</a>]<a
+    href="#ParameterFilename2">filename2</a>]</p>
+
+    <p>[<a href="#ParameterCommand">command</a> |] SORT
+    [<a href="#SwitchL">/L[OCALE] locale</a>]
+    [<a href="#SwitchM">/M[EMORY] kilobytes</a>]
+    [<a href="#SwitchO">/O[UTPUT] [drive:][pathname]</a>]
+    [<a href="#SwitchR">/R</a>]
+    [<a href="#SwitchRec">/REC[ORD_MAXIMUM] characters</a>]
+    [<a href="#SwitchT">/T[EMPORARY] [drive:][path]</a>]
+    [<a href="#SwitchN">/+n</a>] [&gt;
+    [<a href="#ParameterDrive2">drive2:</a>][<a
+    href="#ParameterPath2">path2</a>]<a
+    href="#ParameterFilename2">filename2</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive1"></a> drive1:
+      (<a name="ParameterPath1"></a> path1
+      <a name="ParameterFilename1"></a> filename1
+      <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the location and name of the file whose data you
+      want to sort. If not specified, the standard input is sorted.
+      Specifying an input file is faster than redirecting the same
+      file as standard input.</dd>
+
+      <dt><a name="ParameterDrive2"></a> drive2:
+      (<a name="ParameterPath2"></a> path2
+      <a name="ParameterFilename2"></a> filename2
+      <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the location and name of a file in which the sorted
+      output is to be stored.</dd>
+
+      <dt><a name="ParameterCommand"></a> command
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies a command whose output is the data you want to
+      sort.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchL"></a> /L[OCALE] locale
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Override the system default locale with. The "C" locale
+      yields a faster collating sequence. The sort is always case
+      insensitive.</dd>
+
+      <dt><a name="SwitchM"></a> /M[EMORY] kilobytes
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>The amount of RAM to use for the sort. The best
+      performance is usually achieved by not specifying a memory
+      size. SORT will only create a temporary file when required
+      by limitations in available memory.</dd>
+
+      <dt><a name="SwitchN"></a> /+n
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Sorts the file according to the character in column n. If you
+      do not use this switch, the SORT command sorts data according to
+      the characters in column 1.</dd>
+
+      <dt><a name="SwitchO"></a> /O[UTPUT] [drive:][pathname]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>The file where the sorted input is to be stored.
+      If not specified, the data is written to standard output.
+      Specifying an output file is faster than redirecting
+      standard output to a file.</dd>
+
+      <dt><a name="SwitchR"></a> /R
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dt> /R[EVERSE]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Reverses the order of the sorting operation; that is, sorts
+      from Z to A, and then from 9 to 0.</dd>
+
+      <dt><a name="SwitchRec"></a> /REC[ORD_MAXIMUM] characters
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>The maximum number of characters in a row or record
+      (default 4096, maximum 65535).</dd>
+
+      <dt><a name="SwitchT"></a> /T[EMPORARY] [drive:][path]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>The path of the directory to hold SORT's working
+      storage, in case the data does not fit in RAM. The
+      default is <a href="../../ENV/MSDOS/TEMP.HTM">%TEMP%</a>.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about displaying information one screen at a
+    time, see the <a href="../M/MORE.HTM">MORE</a> command.
+    <br><a href="../T/TYPE.HTM">TYPE</a> - Display the contents of a text file.
+    <br>Redirection - Redirect files, command output and error messages.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>sort - Sort text files.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Collating">Collating sequence</a></li>
+      <li><a href="#Limits">Limits on file size</a></li>
+      <li><a href="#Length">Limits on line length</a></li>
+      <li><a href="#Source">Specifying a source</a></li>
+      <li><a href="#Uppercase">Uppercase vs. lowercase</a></li>
+      <li><a href="#Redirection">Using redirection symbols with SORT</a></li>
+    </ul>
+
+    <hr>
+    <a name="Source"></a> <b>Specifying a source</b>
+    <p>Unless you specify the command or filename parameter, SORT acts
+    as a filter and takes input from the operating system standard
+    input (usually from the keyboard, from a pipe, or from a file).</p>
+
+    <hr>
+    <a name="Redirection"></a> <b>Using redirection symbols with SORT</b>
+    <p>You can use the pipe (|) or the less-than sign (&lt;) to direct
+    data through the SORT command from command or filename. If you want
+    to display the information one screen at a time or direct the
+    information to a file, you can also specify the
+    <a href="../M/MORE.HTM">MORE</a> command or a filename. You can
+    use the greater-than sign (&gt;) to direct the sorted output
+    to a file.</p>
+    <p>Before using a pipe for redirection, you should set the TEMP
+    environment variable in your AUTOEXEC.BAT file.</p>
+
+    <hr>
+    <a name="Collating"></a> <b>Collating sequence</b>
+    <p>The SORT program uses the collating-sequence table corresponding
+    to the country code and code-page settings. Characters greater than
+    ASCII code 127 are sorted based on information in the COUNTRY.SYS
+    file or in an alternate file specified by the <a href="../C/COUNTRY.HTM">COUNTRY</a> command in
+    your CONFIG.SYS file.</p>
+
+    <hr>
+    <a name="Uppercase"></a> <b>Uppercase vs. lowercase</b>
+    <p>SORT does not distinguish between uppercase and lowercase
+    letters.</p>
+
+    <hr>
+    <a name="Limits"></a> <b>Limits on file size</b>
+    <p>The SORT command can handle files as large as 64K.</p>
+
+    <hr>
+    <a name="Length"></a> <b>Limits on line length</b>
+    <p>The SORT command has problems with lines longer than 510
+    characters.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>This command reads the file EXPENSES.TXT, sorts it in
+    reverse order, and displays it on your screen:</p>
+<pre>
+    SORT <a
+href="#SwitchR">/R</a> &lt; <a
+href="#ParameterFilename1">EXPENSES.TXT</a>
+</pre>
+
+    <p>Suppose you want to search a large file named MAILLST.TXT for
+    the text "Jones", and suppose you want to sort the results of the
+    search. To do this, use the pipe (|) to direct the output of a FIND
+    command to the SORT command, as shown in the example:</p>
+<pre>
+    <a href="../F/FIND.HTM">FIND</a> "<a
+href="../F/FIND.HTM#ParameterString">jones</a>" <a
+href="../F/FIND.HTM#ParameterFilename">MAILLST.TXT</a> | SORT
+</pre>
+
+    <p>The command produces a sorted list of lines that contain the
+    specified text.</p>
+    <p>To sort keyboard input and display the results alphabetically on
+    the screen, you can first use the SORT command with no parameters,
+    as the example shows:</p>
+<pre>
+    SORT
+</pre>
+
+    <p>Then type the text you want sorted, pressing ENTER at the end of
+    each line. When you have finished typing text, press CTRL+Z (^Z), and
+    then press ENTER. The SORT command displays the text you typed,
+    sorted alphabetically. You could also redirect sorted keyboard
+    input to a file.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

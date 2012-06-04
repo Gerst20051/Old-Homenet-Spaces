@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>WIN</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#w">Commands N-Z</a>
+    &gt; <a href="../INDEXW.HTM#win">Commands W</a>
+    <h1>WIN</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Starts the Windows Graphical User Interface (GUI).</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>WIN
+    [<a href="#SwitchD">/D</a>[[:]<a
+    href="#SwitchDF">F</a>][[:]<a
+    href="#SwitchDM">M</a>][[:]<a
+    href="#SwitchDN">N</a>][[:]<a
+    href="#SwitchDS">S</a>][[:]<a
+    href="#SwitchDV">V</a>][[:]<a
+    href="#SwitchDX">X</a>]]</p>
+
+    <p>WIN
+    [[<a href="#SwitchMq">/MQ</a>]
+    | [<a href="#SwitchW">/W</a>]
+    | [<a href="#SwitchWx">/WX</a>]
+    | [<a href="#SwitchZ">/Z</a>]
+    | [<a href="#SwitchColon"> : </a>]]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchColon"></a> :
+      (<a href="../../Version/MSWIN/300.HTM">Win30</a>)</dt>
+      <dd><b>UNDOCUMENTED</b> Disables display of startup logo.</dd>
+
+      <dt><a name="SwitchD"></a> /D
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Used for troubleshooting when Windows does not start
+      correctly.
+
+      <dl>
+        <dt><a name="SwitchDF"></a> :F
+        (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+        <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+        <dd>Turns off 32-bit disk access. Equivalent to SYSTEM.INI
+        file setting: 32BitDiskAccess=FALSE.</dd>
+
+        <dt><a name="SwitchDM"></a> :M
+        (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+        <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+        <dd>Enables Safe mode. This is automatically enabled during
+        Safe start (function key F5).</dd>
+
+        <dt><a name="SwitchDN"></a> :N
+        (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+        <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+        <dd>Enables Safe mode with networking. This is automatically
+        enabled during Safe start (function key F6).</dd>
+
+        <dt><a name="SwitchDS"></a> :S
+        (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+        <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+        <dd>Specifies that Windows should not use ROM address space
+        between F000:0000 and 1 MB for a break point. Equivalent to
+        SYSTEM.INI file setting: SystemROMBreakPoint=FALSE.</dd>
+
+        <dt><a name="SwitchDV"></a> :V
+        (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+        <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+        <dd>Specifies that the ROM routine will handle interrupts
+        from the hard disk controller. Equivalent to SYSTEM.INI
+        file setting: VirtualHDIRQ=FALSE.</dd>
+
+        <dt><a name="SwitchDX"></a> :X
+        (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+        <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+        <dd>Excludes all of the adapter area from the range of
+        memory that Windows scans to find unused space. Equivalent
+        to SYSTEM.INI file setting: EMMExclude=A000-FFFF.</dd>
+      </dl>
+      </dd>
+
+      <dt><a name="SwitchMq"></a> /MQ
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd><b>UNDOCUMENTED</b> Fast soft-reboot without prompting.</dd>
+
+      <dt><a name="SwitchW"></a> /W
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd><b>UNDOCUMENTED</b> Warm-reboot with prompt.</dd>
+
+      <dt><a name="SwitchWx"></a> /WX
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd><b>UNDOCUMENTED</b> Warm-reboot without prompt.</dd>
+
+      <dt><a name="SwitchZ"></a> /Z
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd><b>UNDOCUMENTED</b> Forces ATX power supply to
+      soft-power-off without prompting.</dd>
+   </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>Replaces <a href="WIN386.HTM">WIN386</a> used in previous
+    Windows versions</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/300.HTM">Win30</a>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2004/10/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

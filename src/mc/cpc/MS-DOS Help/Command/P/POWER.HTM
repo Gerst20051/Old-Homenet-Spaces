@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>POWER</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#p">Commands N-Z</a>
+    &gt; <a href="../INDEXP.HTM#power">Commands P</a>
+    <h1>POWER</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Turns power management on and off, reports the status of power
+    management, and sets levels of power conservation.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>POWER
+    [<a href="#ParameterADV">ADV</a>[:MAX|REG|MIN]
+    | <a href="#ParameterSTD">STD</a>
+    | <a href="#ParameterOFF">OFF</a>]</p>
+
+    <p>Display the current power setting:</p>
+    <p>POWER</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterADV"></a> drive:
+      (<a name="ParameterPath"></a> ADV[:MAX|REG|MIN]
+      <a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Conserves power when applications and hardware devices are
+      idle. In some cases, performance may be affected if an
+      application is active instead of idle. Use MAX for maximum power
+      conservation. Use REG, the default setting, to balance power
+      conservation with application and device performance. Use MIN if
+      the performance of an application or device is not satisfactory
+      when you specify MAX or REG.</dd>
+
+      <dt><a name="ParameterOFF"></a> OFF
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Turns off power management.</dd>
+
+      <dt><a name="ParameterSTD"></a> STD
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>If your computer supports the Advanced Power Management (APM)
+      specification, STD conserves power by using only the
+      power-management features of your computer's hardware. If your
+      computer does not support the APM specification, STD turns off
+      power management.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>You must use the <a href="../D/DEVICE.HTM">DEVICE</a> command in your CONFIG.SYS file
+    to install the POWER.EXE device driver before you can use
+    the POWER command.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>EVENTTRIGGERS /DELETE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#e">Commands A-M</a>
+    &gt; <a href="../INDEXE.HTM#eventtriggersdelete">Commands E</a>
+    <h1>EVENTTRIGGERS /DELETE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Deletes an event trigger from a system by event
+    trigger ID.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>EVENTTRIGGERS /DELETE
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>EVENTTRIGGERS /DELETE
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]
+    <a href="#SwitchTid">/tid event_id | *</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchP"></a> /p password
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the password of the user account that is
+      specified in <a href="#SwitchU">/u</a>.</dd>
+
+      <dt><a name="SwitchS"></a> /s computer
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the name or IP address of a remote computer
+      (do not use backslashes). The default is the local computer.</dd>
+
+      <dt><a name="SwitchTid"></a> /tid event_id | *
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the event trigger(s) to be deleted by
+      event_id. The (*) wildcard can be used.</dd>
+
+      <dt><a name="SwitchU"></a> /u [Domain\]User
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Runs the command with the account permissions of
+      the user specified by User or Domain\User.
+      The default is the permissions of the current logged
+      on user on the computer issuing the command.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="EVENTTRC.HTM">EVENTTRIGGERS /CREATE</a>
+    <br><a href="EVENTTRQ.HTM">EVENTTRIGGERS /QUERY</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

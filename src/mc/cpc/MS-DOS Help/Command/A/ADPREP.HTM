@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>ADPREP</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#a">Commands A-M</a>
+    &gt; <a href="../INDEXA.HTM#adprep">Commands A</a>
+    <h1>ADPREP</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Prepares Windows 2000 domains and forests for an upgrade to Windows Server 2003.</p>
+    <p>Extends the schema, updates default security descriptors of
+    selected objects, and adds new directory objects as required by
+    some applications.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>ADPREP
+    [<a href="#SwitchHelp">/?</a>]</p>
+
+    <p>ADPREP
+    {<a href="#SwitchForestPrep">/forestprep</a>
+    | <a href="#SwitchDomainPrep">/domainprep</a>}</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays Help at the command prompt.</dd>
+
+      <dt><a name="SwitchDomainPrep"></a> /domainprep
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Prepares a Windows 2000 domain for an upgrade to a
+      Windows Server 2003 domain.</dd>
+      <dd>You must be a member of the Domain Admins group or
+      the Enterprise Admins group in Active Directory, or you
+      must have been delegated delegated the appropriate
+      authority.</dd>
+      <dd>Wait for <a href="#SwitchForestPrep">/forestprep</a>
+      changes to replicate BEFORE running. You will receive
+      notification if <a href="#SwitchForestPrep">/forestprep</a>
+      has not finished.</dd>
+      <dd>Must be run on each infrastructure master in each
+      domain and ONLY after
+      <a href="#SwitchForestPrep">/forestprep</a> has been
+      run successfully for the forest.</dd>
+
+      <dt><a name="SwitchForestPrep"></a> /forestprep
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Prepares a Windows 2000 forest for an upgrade to a
+      Windows Server 2003 forest.</dd>
+      <dd>You must be a member of the Enterprise Admins group
+      and the Schema Admins group in Active Directory, or you
+      must have been delegated delegated the appropriate
+      authority.</dd>
+      <dd>Must be run on the schema master.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Should be run from Windows Server 2003 installation
+    media, such as a CD-ROM or a shared network resource.</p>
+    <p>All domain controllers in the forest should be upgraded
+    to Windows 2000 Service Pack 2 or later before preparing
+    the forest for an upgrade to the Windows Server 2003 family.</p>
+    <p>After you prepare your forests and domains, you can leave
+    your domain controllers running Windows 2000 for an indefinite
+    length of time, or you can begin the domain controller upgrade
+    immediately.</p>
+    <p>The log files can be found in
+    <a href="../../ENV/MSWIN/SYSTEMRO.HTM">%SYSTEMROOT%</a>\System32\Debug\Adprep\Logs.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To prepare a Windows 2000 forest for upgrade to the
+    Windows Server 2003 family:</p>
+<pre>
+    ADPREP <a href="#SwitchForestPrep">/forestprep</a>
+</pre>
+
+    <p>To prepare a Windows 2000 domain for upgrade to the
+    Windows Server 2003 family:</p>
+<pre>
+    ADPREP <a href="#SwitchDomainPrep">/domainprep</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

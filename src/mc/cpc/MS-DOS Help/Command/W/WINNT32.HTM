@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>WINNT32</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#w">Commands N-Z</a>
+    &gt; <a href="../INDEXW.HTM#winnt32">Commands W</a>
+    <h1>WINNT32</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Sets up or upgrades Windows 2000 Server or
+    Windows 2000 Professional. You can run the winnt32 command
+    at a Windows 95, Windows 98, or Windows NT command prompt.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>WINNT32
+    [<a href="#SwitchB">/b</a>]
+    [<a href="#SwitchCmd">/cmd:command_line</a>]
+    [<a href="#SwitchCopydir">/copydir:folder_name</a>]
+    [<a href="#SwitchCopysource">/copysource:folder_name</a>]
+    [<a href="#SwitchDebug">/debug[level]:[filename]</a>]
+    [<a href="#SwitchCheckupgradeonly">/checkupgradeonly</a>]
+    [<a href="#SwitchCmdcons">/cmdcons</a>]
+    [<a href="#SwitchDudisable">/dudisable</a>]
+    [<a href="#SwitchDuprepare">/duprepare:path_name</a>]
+    [<a href="#SwitchDushare">/dushare:path_name</a>]
+    [<a href="#SwitchI">/i:inf_file</a>]
+    [<a href="#SwitchM">/m:folder_name</a>]
+    [<a href="#SwitchMakelocalsource">/makelocalsource</a>]
+    [<a href="#SwitchNoreboot">/noreboot</a>]
+    [<a href="#SwitchO">/o</a>]
+    [<a href="#SwitchOx">/ox</a>]
+    [<a href="#SwitchS">/s:sourcepath</a>]
+    [[<a href="#SwitchTempdrive">/t[empdrive]:drive_letter</a>]
+     [<a href="#SwitchSyspart">/syspart:drive_letter</a>]]
+    [[<a href="#SwitchUnattend">/unattend[num]:[answer_file]</a>]
+     [<a href="#SwitchUdf">/udf:id[,UDF_file]</a>]]
+    [<a href="#SwitchX">/x</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchB"></a> /b
+      (<a href="../../Version/MSWIN/NT351.HTM">NT3.51</a> ONLY)</dt>
+      <dd>Causes the boot files to be loaded on the system's hard drive
+      rather than on floppy disks, so that floppy disks do not need to
+      be loaded or removed by the user.</dd>
+
+      <dt><a name="SwitchCheckupgradeonly"></a> /checkupgradeonly
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Checks your computer for upgrade compatibility with
+      Windows 2000. For Windows 95 or Windows 98 upgrades, Setup
+      creates a report named Upgrade.txt in the Windows
+      installation folder. For Windows NT 3.51 or 4.0 upgrades,
+      it saves the report to the Winnt32.log in the installation
+      folder.</dd>
+
+      <dt><a name="SwitchCmd"></a> /cmd:command_line
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Instructs Setup to carry out a specific command before
+      the final phase of Setup. This would occur after your
+      computer has restarted twice and after Setup has collected
+      the necessary configuration information, but before Setup
+      is complete.</dd>
+
+      <dt><a name="SwitchCmdcons"></a> /cmdcons
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Adds to the operating system selection screen a
+      Recovery Console option for repairing a failed
+      installation. It is only used post-Setup.</dd>
+
+      <dt><a name="SwitchCopydir"></a> /copydir:folder_name
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Creates an additional folder within the folder in
+      which the Windows 2000 files are installed.</dd>
+      <dd>For example, if the source folder contains a folder
+      called Private_drivers that has modifications just for
+      your site, you can type /copydir:Private_drivers to have
+      Setup copy that folder to your installed Windows 2000 folder,
+      making the new folder location C:\Winnt\Private_drivers.
+      You can use /copydir to create as many additional folders
+      as you want.</dd>
+
+      <dt><a name="SwitchCopysource"></a> /copysource:folder_name
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Creates a temporary additional folder within the folder
+      in which the Windows 2000 files are installed.</dd>
+      <dd>For example, if the source folder contains a folder
+      called Private_drivers that has modifications just for your
+      site, you can type /copysource:Private_drivers to have
+      Setup copy that folder to your installed Windows 2000
+      folder and use its files during Setup, making the temporary
+      folder location C:\Winnt\Private_drivers. Unlike the
+      folders /copydir creates, /copysource folders are deleted
+      after Setup completes.</dd>
+
+      <dt><a name="SwitchDebug"></a> /debug[level]:[filename]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Creates a debug log at the level specified, for example,
+      /debug4:C:\Win2000.log. The default log file is
+      C:\<a href="../../ENV/MSWIN/WINDIR.HTM">%WINDIR%</a>\Winnt32.log,
+      with the debug level set to 2.  The log levels are:
+      <ul>
+      <li><b>0</b> severe errors</li>
+      <li><b>1</b> errors</li>
+      <li><b>2</b> warnings</li>
+      <li><b>3</b> information</li>
+      <li><b>4</b> detailed information for debugging</li>
+      </ul>
+      Each level includes the levels below it.</dd>
+
+      <dt><a name="SwitchDudisable"></a> /dudisable
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Prevents Dynamic Update from running. Without
+      Dynamic Update, Setup runs only with the original
+      Setup files. This option will disable Dynamic Update
+      even if you use an answer file and specify Dynamic
+      Update options in that file.</dd>
+
+      <dt><a name="SwitchDuprepare"></a> /duprepare:[path_name]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Carries out preparations on an installation share
+      so that it can be used with Dynamic Update files that
+      you downloaded from the Windows Update Web site. This
+      share can then be used for installing Windows XP for
+      multiple clients.</dd>
+
+      <dt><a name="SwitchDushare"></a> /dushare:[path_name]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies a share on which you previously
+      downloaded Dynamic Update files (updated files for use
+      with Setup) from the Windows Update Web site, and on
+      which you previously ran
+      <a href="#SwitchDuprepare">/duprepare:pathname</a>.
+      When run on a client, specifies that the client
+      installation will make use of the updated files on the
+      share specified in path_name.</dd>
+
+      <dt><a name="SwitchI"></a> /i:inf_file
+      (<a href="../../Version/MSWIN/NT351.HTM">NT3.51</a> ONLY)</dt>
+      <dd>Specifies the filename (no path) of the setup information
+      file. The default is DOSNET.INF.</dd>
+
+      <dt><a name="SwitchM"></a> /m:folder_name
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Specifies that Setup copies replacement files from
+      an alternate location. Instructs Setup to look in the
+      alternate location first and if files are present, use
+      them instead of the files from the default location.</dd>
+
+      <dt><a name="SwitchMakelocalsource"></a> /makelocalsource
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Instructs Setup to copy all installation source files
+      to your local hard disk. Use /makelocalsource when
+      installing from a CD to provide installation files when
+      the CD is not available later in the installation.</dd>
+
+      <dt><a name="SwitchNoreboot"></a> /noreboot
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Instructs Setup to not restart the computer after
+      the file copy phase of winnt32 is completed so that you
+      can execute another command.</dd>
+
+      <dt><a name="SwitchO"></a> /o
+      (<a href="../../Version/MSWIN/NT351.HTM">NT3.51</a> ONLY)</dt>
+      <dd>Specifies that Setup only create boot floppies.</dd>
+
+      <dt><a name="SwitchOx"></a> /ox
+      (<a href="../../Version/MSWIN/NT351.HTM">NT3.51</a> ONLY)</dt>
+      <dd>Specifies that Setup create boot floppies for CD-ROM or
+      floppy-based installation.</dd>
+
+      <dt><a name="SwitchS"></a> /s:sourcepath
+      (<a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>)</dt>
+      <dd>Specifies the source location of the Windows 2000
+      files. To simultaneously copy files from multiple servers,
+      specify multiple /s sources. If you use multiple /s
+      switches, the first specified server must be available or
+      Setup will fail.</dd>
+
+      <dt><a name="SwitchSyspart"></a> /syspart:drive_letter
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Specifies that you can copy Setup startup files to a
+      hard disk, mark the disk as active, and then install the
+      disk into another computer. When you start that computer,
+      it automatically starts with the next phase of the Setup.
+      You must always use the
+      <a href="#SwitchTempdrive">/tempdrive</a> switch with
+      the /syspart switch.</dd>
+
+      <dt><a name="SwitchTempdrive"></a> /t[empdrive]:drive_letter
+      (<a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>)</dt>
+      <dd>Directs Setup to place temporary files on the specified
+      partition and to install on that partition.</dd>
+
+      <dt><a name="SwitchUdf"></a> /udf:id[,UDB_file]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Indicates an identifier (id) that Setup uses to specify
+      how a Uniqueness Database (UDB) file modifies an answer file
+      (see the <a href="#SwitchUnattend">/unattend</a> entry).
+      This switch overrides values in the answer file, and
+      the identifier determines which values in the UDB file are
+      used.</dd>
+      <dd>For example, /udf:RAS_user,Our_company.udb overrides
+      settings specified for the RAS_user identifier in the
+      Our_company.udb file. If no UDB_file is specified, Setup
+      prompts the user to insert a disk that contains the
+      $Unique$.udb file.</dd>
+
+      <dt><a name="SwitchUnattend"></a> /unattend
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Upgrades your previous version of Windows 2000,
+      Windows NT 4.0, Windows 3.51, Windows 95, or Windows 98 in
+      unattended Setup mode. All user settings are taken from the
+      previous installation, so no user intervention is required
+      during Setup.</dd>
+      <dd>Using the /unattend switch to automate Setup affirms
+      that you have read and accepted the Microsoft License
+      Agreement for Windows 2000. Before using this switch to
+      install Windows 2000 on behalf of an organization other
+      than your own, you must confirm that the end user (whether
+      an individual, or a single entity) has received, read, and
+      accepted the terms of the Windows 2000 Microsoft License
+      Agreement. OEMs may not specify this key on machines being
+      sold to end users.</dd>
+      <dt>/unattend[num]:[answer_file]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Performs a fresh installation in unattended Setup mode.
+      The answer file provides Setup with your custom specifications.
+      Num is the number of seconds between the time that Setup
+      finishes copying the files and when it restarts your computer.
+      You can use num on any computer running Windows NT or Windows 2000.
+      Answer_file is the name of the answer file.</dd>
+
+      <dt><a name="SwitchX"></a> /x
+      (<a href="../../Version/MSWIN/NT351.HTM">NT3.51</a> ONLY)</dt>
+      <dd>Prevents Setup from creating Setup boot floppies. Use this when
+      you already have Setup boot floppies (from your administrator, for
+      example.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

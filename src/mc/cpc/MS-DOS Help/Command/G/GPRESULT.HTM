@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>GPRESULT</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#g">Commands A-M</a>
+    &gt; <a href="../INDEXG.HTM#gpresult">Commands G</a>
+    <h1>GPRESULT</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Displays Group Policy settings and Resultant Set of Policy
+    (RSOP) for a user or a computer.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>GPRESULT
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>GPRESULT
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      <a href="#SwitchP">/p password</a>]]
+    [<a href="#SwitchUser">/user user_name</a>]
+    [<a href="#SwitchScope">/scope value</a>]
+    [<a href="#SwitchV">/v</a>
+    | <a href="#SwitchZ">/z</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchP"></a> /p password
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the password of the user account that is
+      specified in <a href="#SwitchU">/u</a>.</dd>
+
+      <dt><a name="SwitchS"></a> /s computer
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the name or IP address of a remote computer
+      (do not use backslashes). The default is the local computer.</dd>
+
+      <dt><a name="SwitchScope"></a> /scope value
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays either user or computer results.
+      Valid values are:
+        <ul>
+          <li><b>COMPUTER</b></li>
+          <li><b>USER</b></li>
+        </ul>
+      If omitted, displays both user and computer settings.
+      </dd>
+
+      <dt><a name="SwitchU"></a> /u [Domain\]User
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Runs the command with the account permissions of the
+      user specified by User or Domain\User. The default is the
+      permissions of the current logged on user on the computer
+      issuing the command.</dd>
+
+      <dt><a name="SwitchUser"></a> /user user_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the user name of the user whose RSOP data
+      is to be displayed.</dd>
+
+      <dt><a name="SwitchV"></a> /v
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that verbose event information be displayed
+      in the output.</dd>
+
+      <dt><a name="SwitchZ"></a> /z
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that the output display all available
+      information about Group Policy. Because this switch
+      produces more information than
+      <a href="#SwitchV">/v</a>, redirect output
+      to a text file when used.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Group Policy is the primary administrative tool for defining
+    and controlling how programs, network resources, and the operating
+    system operate for users and computers in an organization. In an
+    Active Directory environment, Group Policy is applied to users or
+    computers on the basis of their membership in sites, domains, or
+    organizational units.</p>
+    <p>Because you can apply overlapping levels of policies to any
+    computer or user, the Group Policy feature generates a resulting
+    set of policies at logon. Displays the resulting set of policies
+    that were enforced on the computer for the specified user at logon.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

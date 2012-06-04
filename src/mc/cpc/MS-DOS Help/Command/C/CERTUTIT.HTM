@@ -1,0 +1,597 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CERTUTIL troubleshooting</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCA.HTM#certutiltrouble">Commands Ca-Cg</a>
+    <h1>CERTUTIL troubleshooting</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Certutil tasks for troubleshooting certificates.</p>
+    <p>Certutil is a powerful tool for troubleshooting
+    problems associated with certification authorities.
+    You can use certutil to troubleshoot problems.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CERTUTIL
+    [<a href="#SwitchDump">-dump</a>]
+    [<a href="#SwitchHelp">/?</a>]</p>
+
+    <p>To display the information stored in public key related files:
+    <br>CERTUTIL
+    <a href="#SwitchDump">-dump</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchSplit">-split</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchP">-p password</a>]
+    <a href="#ParameterFileName">file_name</a></p>
+
+    <p>To view CA database information and restrict the CA schema information that is displayed:
+    <br>CERTUTIL
+    <a href="#SwitchView">-view</a>
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchSilent">-silent</a>]
+    [<a href="#SwitchSplit">-split</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    [<a href="#SwitchRestrict">-restrict restriction_list</a>]
+    [<a href="#SwitchOut">-out column_list</a>]
+    [<a href="#ParameterRequestId">request_id</a>]</p>
+
+    <p>To dump the serial numbers of the certificates in the database:
+    <br>CERTUTIL
+    <a href="#SwitchView">-view</a>
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchSilent">-silent</a>]
+    [<a href="#SwitchSplit">-split</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    [<a href="#SwitchRestrict">-restrict restriction_list</a>]
+    [<a href="#SwitchOut">-out column_list</a>]
+    [<a href="#ParameterDisposition">disposition</a>]
+    [<a href="#ParameterSerialNumberRequestId">"serialnumber,requestid"</a>]</p>
+
+    <p>To display CA registry settings:
+    <br>CERTUTIL
+    <a href="#SwitchGetReg">-getreg</a>
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterRegistryKey">registry_key</a>
+    [<a href="#ParameterProgramId">\program_id</a>]
+    [<a href="#ParameterRegistryValueName">\registry_value_name</a>]</p>
+
+    <p>To set the CA registry to perform a certain action when a request arrives:
+    <br>CERTUTIL
+    <a href="#SwitchSetReg">-setreg</a>
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterPolicyRequestDisposition">policy\request_distribution</a>
+    [<a href="#ParameterRequestValue">request_value</a>]</p>
+
+    <p>To set CA registry settings:
+    <br>CERTUTIL
+    <a href="#SwitchSetReg">-setreg</a>
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterRegistryKey">registry_key</a>
+    [<a href="#ParameterProgramId">\program_id</a>]
+    <a href="#ParameterRegistryValueName">\registry_value_name</a></p>
+
+    <p>To delete a registry value:
+    <br>CERTUTIL
+    <a href="#SwitchDelReg">-delreg</a>
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterRegistryKey">registry_key</a>
+    [<a href="#ParameterProgramId">\program_id</a>]
+    <a href="#ParameterRegistryValueName">\registry_value_name</a></p>
+
+    <p>To display error message text for an error code in the local language:
+    <br>CERTUTIL
+    <a href="#SwitchError">-error</a>
+    <a href="#ParameterErrorCode">error_code</a></p>
+
+    <p>To verify that the server is running (ICertRequest interface):
+    <br>CERTUTIL
+    <a href="#SwitchPing">-ping</a>
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]</p>
+
+    <p>To verify that the server is running (ICertAdmin interface):
+    <br>CERTUTIL
+    <a href="#SwitchPingAdmin">-pingadmin</a>
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]</p>
+
+    <p>To generate and display the cryptographic hash over a file:
+    <br>CERTUTIL
+    <a href="#SwitchHashFile">-hashfile</a>
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterInputFile">input_file</a></p>
+
+    <p>To dump the CA database schema:
+    <br>CERTUTIL
+    <a href="#SwitchSchema">-schema</a>
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    [<a href="#ParameterDumpType">dump_type</a>]</p>
+
+    <p>To display all key container names that are available to the current user:
+    <br>CERTUTIL
+    <a href="#SwitchKey">-key</a>
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchSilent">-silent</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    [<a href="#ParameterCspName">csp_name</a>]
+    [<a href="#ParameterSplat"> * </a>]</p>
+
+    <p>To display all key container names that are available to the current user:
+    <br>CERTUTIL
+    <a href="#SwitchSplit2">-split</a>
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterCmcFile">cmc_file.REQ</a></p>
+
+    <p>To reassociate a private key with its certificate:
+    <br>CERTUTIL
+    <a href="#SwitchRepairStore">-repairstore</a>
+    [<a href="#SwitchCsp">-csp</a>
+     [<a href="#ParameterCspName">csp_name</a>]
+     [<a href="#SwitchF">-f</a>]]
+    [<a href="#SwitchEnterprise">-enterprise</a>]
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchSplit">-split</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#ParameterCertificateStore">certificate_store</a>]
+    <a href="#ParameterCertificateIndex">certificate_index</a></p>
+
+    <p>To verify that the URLs in the AIA and CDP extensions are valid and correct:
+    <br>CERTUTIL
+    <a href="#SwitchUrl">-url</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchSplit">-split</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterCertificateFile">certificate_file.CRT</a></p>
+
+    <p>To check a certificate on a smart card:
+    <br>CERTUTIL
+    <a href="#SwitchScInfo">-scinfo</a>
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchSilent">-silent</a>]
+    [<a href="#SwitchSplit">-split</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterReaderName">reader_name</a></p>
+
+    <p>To view templates that are installed locally:
+    <br>CERTUTIL
+    <a href="#SwitchTemplate">-template</a>
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchUt">-ut</a>]
+    [<a href="#SwitchMt">-mt</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterTemplateName">template_name</a></p>
+
+    <p>To determine what CSP is used for a key pair:
+    <br>CERTUTIL
+    <a href="#ParameterPfxFile">pfx_file.PFX</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterCmcFile"></a> cmc_file.REQ
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the Cryptographic Message Syntax (CMS)
+      request (this protocol is also known as CMC) file that
+      you want to analyze.</dd>
+      <dd>For more information about creating a CMS request
+      from the root certificate by using the
+      <a href="CERTREQP.HTM">certreq</a>
+      <a href="CERTREQP.HTM#SwitchPolicy">-policy</a>.</dd>
+      <dd>If possible, when you construct a request from an
+      existing certificate, you should run the
+      <a href="CERTREQP.HTM">certreq</a>
+      <a href="CERTREQP.HTM#SwitchPolicy">-policy</a> on a
+      computer that has the input certificate's private key
+      installed. If the private key is unavailable (as is
+      usually the case for cross-certifying non-Microsoft
+      CAs), the PKCS #10 file is NULL-signed and the outer
+      CMS is also NULL-signed. A NULL-signed PKCS #10 is
+      unacceptable to most non-Microsoft CAs.</dd>
+
+      <dt><a name="ParameterCertificateFile"></a> certificate_file.CRT
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the certificate file.</dd>
+
+      <dt><a name="ParameterCertificateIndex"></a> certificate_index
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the Secure Hash Algorithm (SHA-1)
+      certificate hash, serial number, or certificate index
+      identifier.</dd>
+
+      <dt><a name="ParameterCertificateStore"></a> certificate_store
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>One of:
+        <ul>
+          <li><b>ca</b> Specifies certificates in the Intermediate Certification Authorities store</li>
+          <li><b>my</b> Specifies certificates issued to the local computer</li>
+          <li><b>root</b> Specifies certificates in the Trusted Root Certification Authorities store</li>
+          <li><b>spc</b> Specifies software publisher certificates</li>
+        </ul>
+      </dd>
+
+      <dt><a name="ParameterCspName"></a> csp_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the cryptographic service provider (CSP)
+      for which you want to display the key containers.</dd>
+      <dd>RSA is the default CSP for the Windows Server
+      2003 family.</dd>
+
+      <dt><a name="ParameterDisposition"></a> disposition
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>One of:
+        <ul>
+          <li><b>disposition==20</b>  Specifies DB_DISP_ISSUED</li>
+          <li><b>disposition==21</b>  Specifies DB_DISP_REVOKED</li>
+        </ul>
+      </dd>
+
+      <dt><a name="ParameterDumpType"></a> dump_type
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies one of:
+        <ul>
+          <li><b>ext</b> Displays the schema for Ext table</li>
+          <li><b>attib</b> Displays the schema for Attib table</li>
+          <li><b>crl</b> Displays the schema for the certificate revocation list (CRL)</li>
+        </ul>
+      </dd>
+
+      <dt><a name="ParameterErrorCode"></a> error_code
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the error code that you want to view in
+      the local language.</dd>
+      <dd>Can use signed or unsigned decimal format, or
+      hexadecimal format with a leading 0x.</dd>
+
+      <dt><a name="ParameterFileName"></a> file_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the file name of the configuration file
+      that you want to display.</dd>
+
+      <dt><a name="ParameterInputFile"></a> input_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the file for which you want to display
+      the hash.</dd>
+
+      <dt><a name="ParameterPfxFile"></a> pfx_file.pfx
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies a file with a .pfx extension.</dd>
+
+      <dt><a name="ParameterPolicyRequestDisposition"></a> policy\request_distribution
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the policy module and the disposition
+      request ID.</dd>
+
+      <dt><a name="ParameterProgramId"></a> \program_id
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the registry subkey name of the policy
+      or exit module.</dd>
+      <dd>If omitted, uses the default policy module,
+      CertificateAuthority_MicrosoftDefault.Policy.</dd>
+
+      <dt><a name="ParameterReaderName"></a> reader_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the name of the smart card reader.</dd>
+
+      <dt><a name="ParameterRegistryKey"></a> registry_key
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies one of these registry keys:
+        <ul>
+          <li><b>ca</b> Specifies the CA registry key</li>
+          <li><b>exit</b> Specifies the EXITMODE registry key</li>
+          <li><b>policy</b> Specifies the POLICYMODULE registry key</li>
+          <li><b>restore</b> Specifies the RESTORE registry key. Available only during restore mode</li>
+          <li><b>template</b> Specifies the TEMPLATE registry key</li>
+        </ul>
+      </dd>
+
+      <dt><a name="ParameterRegistryValueName"></a> registry_value_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies a particular value within the registry
+      key.</dd>
+
+      <dt><a name="ParameterRequestId"></a> request_id
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the request identifier number.</dd>
+      <dd>Must be in decimal format
+      (or hexadecimal format with a leading 0x).</dd>
+
+      <dt><a name="ParameterRequestValue"></a> request_value
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Adds a process to a pending request specified by
+        one of values described:
+        <ul>
+          <li><b>0</b> Places the incoming request in a pending state</li>
+          <li><b>1</b> Issues the incoming request</li>
+          <li><b>2</b> Denies the incoming request</li>
+          <li><b>3</b> Takes action based on the disposition request
+          attribute provided with the incoming request.
+        </ul>
+      </dd>
+
+      <dt><a name="ParameterSplat"></a> *
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the key containers for all of the CSPs.</dd>
+
+      <dt><a name="ParameterSerialNumberRequestId"></a> "serialnumber,requestid"
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies to display all serial numbers and
+      request identifier numbers.</dd>
+
+      <dt><a name="ParameterTemplateName"></a> template_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the name of the template that you want
+      to view.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchConfig"></a> -config machine\user
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Processes the operation by using the CA specified
+      in the machine/user configuration string.</dd>
+      <dd>You must specify the machine or user in -config.
+      Otherwise, the Select Certificate Authority dialog box
+      appears and displays a list of all CAs that are available.</dd>
+      <dd>If you use "-config -", the operation is processed
+      using the default CA.
+
+      <dt><a name="SwitchCsp"></a> -csp
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Uses only the cryptographic service provider (CSP)
+      specified to locate and repair the key.</dd>
+
+      <dt><a name="SwitchDelReg"></a> -delreg
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Deletes the registry value.</dd>
+
+      <dt><a name="SwitchDump"></a> -dump
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Dumps configuration information or files.</dd>
+
+      <dt><a name="SwitchEnterprise"></a> -enterprise
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Uses the local computer Enterprise registry
+      certificate store.</dd>
+
+      <dt><a name="SwitchError"></a> -error
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays error code message text in the local
+      language, which is specified by the Locale registry
+      key.</dd>
+      <dd>You can use this command to decode errors received
+      from the Certification Authority snap-in.</dd>
+
+      <dt><a name="SwitchF"></a> -f
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Overwrites existing files or keys.</dd>
+
+      <dt><a name="SwitchGetReg"></a> -getreg
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays registry information.</dd>
+
+      <dt><a name="SwitchGmt"></a> -gmt
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays time as Greenwich mean time.</dd>
+
+      <dt><a name="SwitchHashFile"></a> -hashfile
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Generates and displays cryptographic hash over a
+      file.</dd>
+
+      <dt><a name="SwitchKey"></a> -key
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the key containers for the local
+      computer.</dd>
+
+      <dt><a name="SwitchMt"></a> -mt
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the computer templates.</dd>
+
+      <dt><a name="SwitchOut"></a> -out column_list
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies a comma-separated column list.</dd>
+
+      <dt><a name="SwitchP"></a> -p password
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies a password.</dd>
+      <dd>The maximum length allowed for a PFX file password
+      is 32 characters.</dd>
+
+      <dt><a name="SwitchPing"></a> -ping
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Pings the Certificate Services ICertRequest
+      interface.</dd>
+
+      <dt><a name="SwitchPingAdmin"></a> -pingadmin
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Pings the Certificate Services ICertAdmin
+      interface.</dd>
+      <dd>To determine whether you have successfully
+      completed this command, make sure that the user has
+      administrative access to the server.</dd>
+
+      <dt><a name="SwitchRepairStore"></a> -repairstore
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Repairs the key provider information in the ca
+      store.</dd>
+
+      <dt><a name="SwitchRestrict"></a> -restrict restriction_list
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Restricts which rows from the schema are displayed.
+      Specifies a comma-separated restriction list.</dd>
+
+      <dt><a name="SwitchSchema"></a> -schema
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Dumps the CA database schema.</dd>
+
+      <dt><a name="SwitchScInfo"></a> -scinfo
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays smart card information.</dd>
+
+      <dt><a name="SwitchSeconds"></a> -seconds
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays time with seconds and milliseconds.</dd>
+
+      <dt><a name="SwitchSetReg"></a> -setreg
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets or edits the registry key value.</dd>
+
+      <dt><a name="SwitchSilent"></a> -silent
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Uses a silent flag to acquire CryptContext.</dd>
+
+      <dt><a name="SwitchSplit"></a> -split
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Splits the embedded Abstract Syntax Notation One
+      (ASN.1) elements, and saves them to files.</dd>
+
+      <dt><a name="SwitchSplit2"></a> -split
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Analyzes each binary (ASN.1-encoded) object in a
+      certificate request file, and then saves each object
+      to a separate blob file.</dd>
+
+      <dt><a name="SwitchTemplate"></a> -template
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the specified template.</dd>
+
+      <dt><a name="SwitchUrl"></a> -url
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Verifies certificate or certificate revocation
+      list (CRL) URLs.</dd>
+      <dd>To make sure that the URLs are valid and point to
+      the appropriate CRLs or issuing CA certificates, you
+      can use this to check the Authority Information Access
+      (AIA) and CRL Distribution Points (CDPs) extensions,
+      and then dereference the URLs inside these extensions.</dd>
+
+      <dt><a name="SwitchUser"></a> -user
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Uses the HKEY_CURRENT_USER keys or certificate
+      store.</dd>
+      <dd>If the certificate is located in the
+      HKEY_LOCAL_MACHINE certificate store, do not use.</dd>
+
+      <dt><a name="SwitchUt"></a> -ut
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the user templates.</dd>
+
+      <dt><a name="SwitchV"></a> -v
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies verbose output.</dd>
+
+      <dt><a name="SwitchView"></a> -view
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Dumps the certification authority database view.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="CERTUTIB.HTM">CERTUTIL backup/restore</a>
+    <br><a href="CERTUTIC.HTM">CERTUTIL configure</a>
+    <br><a href="CERTUTIE.HTM">CERTUTIL decode/encode</a>
+    <br><a href="CERTUTIF.HTM">CERTUTIL certificates</a>
+    <br><a href="CERTUTIL.HTM">CERTUTIL CRLs</a>
+    <br><a href="CERTUTIM.HTM">CERTUTIL manage</a>
+    <br><a href="CERTUTIR.HTM">CERTUTIL archival/recovery</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

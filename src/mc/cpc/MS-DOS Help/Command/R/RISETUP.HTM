@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>RISETUP</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#r">Commands N-Z</a>
+    &gt; <a href="../INDEXR.HTM#risetup">Commands R</a>
+    <h1>RISETUP</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Manages a server running Remote Installation Services (RIS).
+    Adds new installation images or verifies a server to ensure that
+    it is running properly.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>RISETUP
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>RISETUP
+    [<a href="#SwitchAdd">/add</a>]
+    [<a href="#SwitchAuto">/auto file_name.inf</a>]
+    [<a href="#SwitchCheck">/check</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchAdd"></a> /add
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Adds a new installation image to the Remote
+      Installation Services (RIS) server.</dd>
+
+      <dt><a name="SwitchAuto"></a> /auto file_name.inf
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Configures the server in an unattended manner as
+      defined by file_name.inf. The path to the folder
+      location of the .inf file must be under 255 characters.
+      The lines of an example .inf file
+      and explanation of each line:
+<pre>
+      ; Required. Heading and version line.
+      [Version]
+      Signature = "$Windows NT$"
+      ; Required. Heading.
+      [Risetup]
+      ; Required. Drive and folder that contain the Remote Installation files and folders. You must include this line every time RISetup is run. If RIS is already installed, the path must remain unchanged from the current path for the RIS installation. The maximum number of bytes is 127.
+      RootDir = "f:\RemoteInstall"
+      ; Required. Path to the source CD or shared folder from which to create an installation image. The maximum number of bytes allowed for this line is 260. For information about the supported operating systems for this type of image (a flat image), see Related Topics.
+      Source ="e:\"
+      ; Required. Directory in which to place the new installation image. The maximum number of bytes is 39.
+      Directory = "Windows_XP_Pro"
+      ; Required. Short description of the installation image. The maximum number of bytes is 65.
+      Description = "Windows XP"
+      ; Required. Long description of the installation image. The maximum number of bytes is 260.
+      HelpText = "For English-speaking users."
+      ; Required. Action to perform on existing .osc files, which contain text that displays in screens seen by users of the Client Installation Wizard. Specify only one of:
+      ; "overwrite" "backup" "leavealone"
+      Screens = "overwrite"
+      ; Required. Either x86 for an image that will be installed on x86 computers, or ia64 for an image that will be installed on Itanium-based computers.
+      Architecture = "x86"
+      ; Required
+      Language = "English"
+</pre>
+      </dd>
+
+      <dt><a name="SwitchCheck"></a> /check
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Verifies that the server is functioning properly.
+      Also, runs only the server portion of RISETUP, which
+      resolves most problems related to a RIS server that is
+      not running properly.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>:LABEL</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#l">Commands A-M</a>
+    &gt; <a href="../INDEX.HTM#label">Batch L</a>
+    <h1>:LABEL</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Used as the target of <a href="../G/GOTO.HTM">GOTO</a>
+    command(s).</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>GOTO
+    <a href="#ParameterLabel">label</a></p>
+    <p>:<a href="#ParameterLabel">label</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterLabel"></a> label
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Batch file execution branches from GOTO and resumes at
+      :LABEL.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>Most commonly used with <a href="../G/GOTO.HTM">GOTO</a>.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Eight">Keep the first 8 :LABEL characters unique</a></li>
+      <li><a href="#Colon">Prefix :LABEL with colon</a></li>
+      <li><a href="#Comment">Using :LABEL as a fast REMARK</a></li>
+    </ul>
+
+    <hr>
+    <a name="Colon"></a> <b>Prefix :LABEL with colon</b>
+    <p>The LABEL must begin with, at least, one colon (:).</p>
+
+    <hr>
+    <a name="Eight"></a> <b>Keep the first 8 :LABEL characters unique</b>
+    <p>The first 8 characters of the LABEL should be unique. Otherwise,
+    when the <a href="../G/GOTO.HTM">GOTO</a> is executed; it will
+    choose the LABEL to transfer control to (and that could be the
+    "wrong" LABEL, resulting in an infinite loop).</p>
+
+    <hr>
+    <a name="Comment"></a> <b>Using :LABEL as a fast REMARK</b>
+    <p>Use of a double colon (::) before a LABEL (::THIS IS A REMARK)
+    is a "fast" batch remark (for some reason, DOS parses any
+    <a href="../R/REM.HTM">REM</a> command it finds; taking "extra"
+    time).</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>The infinite loop:</p>
+<pre>
+    <a href="../A/ATSIGN.HTM">@</a><a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterOff">OFF</a>
+    :<a href="#ParameterLabel">AGAIN</a>
+     <a href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">Press CONTROL+BREAK to stop!</a>
+     <a href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">AGAIN</a>
+</pre>
+
+    <p>The fast (executes faster) remark:</p>
+<pre>
+    <a href="../A/ATSIGN.HTM">@</a><a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterOff">OFF</a>
+    ::<a href="#ParameterLabel">This is to remind me to backup...</a>
+     <a href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">backup!</a>
+</pre>
+
+    <hr>
+    <p>IF Branch to the appropriate message:</p>
+<pre>
+    <a href="../A/ATSIGN.HTM">@</a><a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterOff">OFF</a>
+     <a href="../F/FIND.HTM">FIND</a> <a
+href="../F/FIND.HTM#SwitchI">/I</a> "<a
+href="../F/FIND.HTM#ParameterString">error</a>" &lt; my.log
+     <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#ParameterErrorlevel">ERRORLEVEL</a> 2 <a
+href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">LERROR</a>
+     <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#ParameterErrorlevel">ERRORLEVEL</a> 1 <a
+href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">LNOT</a>
+     <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#ParameterErrorlevel">ERRORLEVEL</a> 0 <a
+href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">LFOUND</a>
+     <a href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">LEND</a>
+    :<a href="#ParameterLabel">LERROR</a>
+     <a href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">Houston, the "find" command had a problem!</a>
+     <a href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">LEND</a>
+    :<a href="#ParameterLabel">LNOT</a>
+     <a href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">not found.</a>
+     <a href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">LEND</a>
+    :<a href="#ParameterLabel">LFOUND</a>
+     <a href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">found at least once.</a>
+     <a href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">LEND</a>
+    :<a href="#ParameterLabel">LEND</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>Internal</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/01/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

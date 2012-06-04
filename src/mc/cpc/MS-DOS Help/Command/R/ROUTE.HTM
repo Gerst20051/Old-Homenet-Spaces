@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>ROUTE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#r">Commands N-Z</a>
+    &gt; <a href="../INDEXR.HTM#route">Commands R</a>
+    <h1>ROUTE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Manipulates network routing tables. This command is available
+    only if the TCP/IP protocol has been installed.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>ROUTE
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>ROUTE
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchP">-p</a>]
+    [<a href="#SwitchS">-s</a>]
+    [<a href="#ParameterCommand">command</a>
+     [<a href="#ParameterDestination">destination</a>]
+     [<a href="#ParameterMask">mask subnetmask</a>]
+     [<a href="#ParameterGateway">gateway</a>]
+     [<a href="#ParameterMetric">metric costmetric</a>]
+     [<a href="#ParameterIf">if interface</a>]]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterCommand"></a> command
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies one of:
+        <ul>
+          <li><b>add</b> Adds a route</li>
+          <li><b>change</b> Modifies an existing route</li>
+          <li><b>delete</b> Deletes a route</li>
+          <li><b>print</b> Prints a route</li>
+        </ul>
+      </dd>
+
+      <dt><a name="ParameterDestination"></a> destination
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the computer to send command.</dd>
+
+      <dt><a name="ParameterGateway"></a> gateway
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies gateway.</dd>
+      <dd>All symbolic names used for destination or gateway are
+      referenced in both the network database file called Networks,
+      and the computer name database file called Hosts. If the
+      command is print or delete, wildcards may be used for the
+      destination and gateway, or the gateway argument may be omitted.</dd>
+
+      <dt><a name="ParameterIf"></a> if interface
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the interface index for the interface
+      over which the destination is reachable. For a list
+      of interfaces and their corresponding interface
+      indexes, use the display of the route print command.
+      You can use either decimal or hexadecimal values for
+      the interface index. For hexadecimal values, precede
+      the hexadecimal number with 0x. When the if parameter
+      is omitted, the interface is determined from the
+      gateway address.</dd>
+
+      <dt><a name="ParameterMask"></a> mask subnetmask
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Specifies a subnet mask to be associated with this
+      route entry. If not specified, 255.255.255.255 is used.</dd>
+
+      <dt><a name="ParameterMetric"></a> metric costmetric
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Assigns an integer cost metric (ranging from 1 to 9999)
+      to be used in calculating the fastest, most reliable, and/or
+      least expensive routes.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchF"></a> -f
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Clears the routing tables of all gateway entries.
+      If this is used in conjunction with one of the commands,
+      the tables are cleared prior to running the command.</dd>
+
+      <dt><a name="SwitchP"></a> -p
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>When used with the add command, makes a route
+      persistent across boots of the system. By default, routes
+      are not preserved when the system is restarted.
+      When used with the print command, displays the list of
+      registered persistent routes. Ignored for all other
+      commands, which always affect the appropriate persistent
+      routes.</dd>
+      <dd>Only supported on the route command for Windows NT
+      4.0, Windows 2000, Windows Millennium Edition, and
+      Windows XP. Not supported by the route command for
+      Windows 95 or Windows 98.</dd>
+
+      <dt><a name="SwitchS"></a> -s
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> ONLY)</dt>
+      <dd>The operation refers to the smart gateway. One smart
+      gateway may be specified; packets for which no destination
+      is found in the gateway table are routed to the smart
+      gateway. The <a href="#ParameterDestination">destination</a>
+      field is not specified when this option is in use.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

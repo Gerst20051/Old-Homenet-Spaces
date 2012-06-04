@@ -1,0 +1,827 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>TCP / IP Protocols</title>
+<meta name="Microsoft Theme" content="layers 0011">
+</head>
+
+<body background="../../../_themes/layers/laybkgnd.gif" bgcolor="#FFFFFF" text="#000000" link="#330099" vlink="#999999" alink="#660033"><!--mstheme--><font face="georgia,times new roman,times">
+
+<h1 align="center"><!--mstheme--><font face="georgia,Times New Roman,Times"><!--mstheme--><b><b><b><b>TCP/IP Protocols</b></b></b><!--mstheme--></font><!--mstheme--></b></h1>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<p><span class="title2">IGMP</span></p>
+<p class="rfc"><font size="1"><span class="blacksmall">IETF RFC 1112 1989-08</span></font><a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1112.html" target="window2"><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc1112.html</font></a><br>
+<span class="blacksmall">RFC2236</span>
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc2236.html" target="_blank">
+<font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc2236.html</font></a><br>
+<span class="blacksmall">Internet Draft </span></p>
+<p class="blacktext">The Internet Group Management Protocol (IGMP) is used by IP 
+hosts to report their host group memberships to any immediately neighboring multicast 
+routers. IGMP is a integral part of IP. It must be implemented by all hosts conforming 
+to level 2 of the IP multicasting specification. IGMP messages are encapsulated 
+in IP datagrams, with an IP protocol number of 2.Version 3 of IGMP adds support 
+for source filtering. This indicates the ability for a system to report interest 
+in receiving packets;only from specific source addresses, or from all but specific 
+source addresses, sent to a particular multicast address.<br>
+<br>
+The format of the IGMP packet is shown in the following illustration:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="398" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr bgColor="#ffffff">
+    <td><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="right">
+      8</div>
+    <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="right">
+      16</div>
+    <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="right">
+      32 bits</div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr vAlign="top">
+    <td height="27"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      Type</div>
+    <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      Max response<br>
+      time
+    </div>
+    <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      Checksum</div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td colSpan="3" height="19"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      Group address</div>
+    <div align="center">
+&nbsp;</div>
+    <div align="center">
+&nbsp;</div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr bgColor="#ffffff">
+    <td colSpan="3" height="19"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <span class="blackitalic">IGMP packet structure</span>
+    </div>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<center>
+<p align="left"><span class="title4">Version</span><span class="redsmall"><br>
+</span><span class="blacktext">The protocol version.</span></p>
+</center>
+<p><span class="title4">Type</span><span class="redsmall"><br>
+</span><span class="blacktext">The message type:</span></p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="100%" border="0">
+  <tr class="blacktext" vAlign="top">
+    <td class="blacktext" width="10%"><!--mstheme--><font face="georgia,times new roman,times">0x11<!--mstheme--></font></td>
+    <td class="blacktext" width="90%"><!--mstheme--><font face="georgia,times new roman,times">Membership query. There are 2 sub-types of 
+    membership queries, general query and group-specific query.<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext" vAlign="top">
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">0x16<!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Version 2 membership report.<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext" vAlign="top">
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">0x17<!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Leave group. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext" vAlign="top">
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">0x12<!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Version 1 membership report. Provides compatibility with 
+    IGMPv1.<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext" vAlign="top">
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">0x22<!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Version 3 membership report.<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">Max Response Time</span><span class="blacktext"><br>
+Used only in Membership query messages. Specifies the maximum time allowed before 
+sending a responding report in units of 1/10 second. In all other messages, it is 
+set to 0 by the sender and ignored by the receiver.</span><br>
+<br>
+<span class="title4">Checksum</span><span class="redsmall"><br>
+</span><span class="blacktext">The checksum.</span></p>
+<p class="blacktext"><span class="title4">Group Address</span><br>
+In a Membership query message, The Group address is set to 0 when sending a general 
+query. It is set to the group address being queried, when sending a group specific 
+query or group-and-source-specific query. In a membership report of a leave group 
+message, it holds the IP multicast group address of the group being reported or 
+left.</p>
+<p class="blacktext"><span class="title4">IGMP Version Membership Report Messages</span><br>
+IGMP Version Membership Report messages have the following format:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="399" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <!--DWLayoutTable-->
+  <tr align="right" bgColor="#ffffff">
+    <td width="49" height="22"><!--mstheme--><font face="georgia,times new roman,times">8<!--mstheme--></font></td>
+    <td width="134"><!--mstheme--><font face="georgia,times new roman,times">16<!--mstheme--></font></td>
+    <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">32 bits<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td height="22"><!--mstheme--><font face="georgia,times new roman,times">Type<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Reserved<!--mstheme--></font></td>
+    <td vAlign="top" width="129"><!--mstheme--><font face="georgia,times new roman,times">Checksum <!--mstheme--></font></td>
+    <td width="61"><!--mstheme--><font face="georgia,times new roman,times">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td colSpan="2" height="22"><!--mstheme--><font face="georgia,times new roman,times">Reserved<!--mstheme--></font></td>
+    <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">Number of group record<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td colSpan="4" height="30"><!--mstheme--><font face="georgia,times new roman,times">Group record<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td colSpan="4" height="30"><!--mstheme--><font face="georgia,times new roman,times">Group record<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td colSpan="4" height="30"><!--mstheme--><font face="georgia,times new roman,times">Group record<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td colSpan="4" height="30"><!--mstheme--><font face="georgia,times new roman,times">Group record<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">Type</span><br>
+The Type field has a value of 21.</p>
+<p class="blacktext"><span class="title4">Reserved.</span><br>
+Set to zero on transmission, and ignored on reception.</p>
+<p class="blacktext"><span class="title4">Checksum</span><br>
+The Checksum is the 16-bit one&#39;s complement of the one&#39;s complement sum of the whole 
+IGMP message.</p>
+<p class="blacktext"><span class="title4">Number of Group Records (M)</span><br>
+The number of Group records present in this report.</p>
+<p class="blacktext"><span class="title4">Group Record</span><br>
+A block of fields containing information about the sender&#39;s membership in a single 
+multicast group, on the interface from which the report is sent.</p>
+<p class="blacktext"><span class="title4">Group Record Type</span><br>
+There are a number of different types of Group Records that may be included in a 
+Report message:<br>
+<br>
+Current-State Record, which has the following record types:
+<br class="blacktext">
+&nbsp;&nbsp;&nbsp; 1. Include mode<br>
+&nbsp;&nbsp;&nbsp; 2. Exclude mode<br>
+<br>
+Filter-Mode-Change Record, which has the following two record types:<br>
+&nbsp;&nbsp;&nbsp; 3. Change to Include Mode <br>
+&nbsp;&nbsp;&nbsp; 4. Change to Exclude Mode<br>
+<br>
+Source-List-Change Record, which has the following two record types:<br>
+&nbsp;&nbsp;&nbsp; 5. Allow New Sources <br>
+&nbsp;&nbsp;&nbsp; 6. Block Old Sources</p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="480" border="0">
+  <tr>
+    <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">
+    <a onclick="MM_openBrWindow('ScreenCaptures/IGMP.gif','ScreenCaptures','scrollbars=yes,resizable=yes,width=700,height=600')" href="javascript:;">
+    <img src="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/IGMP%20Small.gif" border="0" width="480" height="338"></a><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="purple"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <a href="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/IGMP.gif">
+      Enlarge</a></div>
+    <!--mstheme--></font></td>
+    <td class="purple"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <a href="http://www.radcom.com/Technologies.aspx?BoneId=376&ObjId=-1&=&=&=&staticName1=1&staticName2=" target="_blank">
+      More Details</a></div>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title2">MARS </span></p>
+<p class="blacksmall">RFC2022
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc2022.html" target="window2">
+<font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc2022.html</font></a></p>
+<p class="blacktext">Multicasting is the process whereby a source host or protocol 
+entity sends a packet to multiple destinations simultaneously using a single, local 
+&#39;transmit&#39; operation. ATM is being utilized as a new link layer technology to support 
+a variety of protocols, including IP. The MARS protocol has two broad goals: to 
+define a group address registration and membership distribution mechanism that allows 
+UNI 3.0/3.1 based networks to support the multicast service of protocols such as 
+IP and to define specific endpoint behaviors for managing point to multipoint VCs 
+to achieve multicasting of layer 3 packets. The Multicast Address Resolution Server 
+(MARS) is an extended analog of the ATM ARP Server. It acts as a registry, associating 
+layer 3 multicast group identifiers with the ATM interfaces representing the group&#39;s 
+members. MARS messages support the distribution of multicast group membership information 
+between MARS and endpoints (hosts or routers). Endpoint address resolution entities 
+query the MARS when a layer 3 address needs to be resolved to the set of ATM endpoints 
+making up the group at any one time. Endpoints keep the MARS informed when they 
+need to join or leave particular layer 3 groups. To provide for asynchronous notification 
+of group membership changes, the MARS manages a point to multipoint VC out to all 
+endpoints desiring multicast support. Each MARS manages a cluster of ATM-attached 
+endpoints.<br>
+(Compliant with IETF RFC2022.)</p>
+<p class="blacktext">The format of the header is shown in the following illustration:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="378" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr>
+    <td class="blacktext" vAlign="top" borderColor="#cccccc"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Address family (2 bytes) </p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><br>
+    <br>
+    Protocol identification (7 bytes)<br>
+    <br>
+&nbsp;</p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><br>
+    Reserved (3 bytes) </p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Checksum (2 bytes) </p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Extensions offset (2 bytes) </p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Operation code (2 bytes) </p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Type and length of source ATM number (1 byte) </p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Type and length of source ATM subaddress (1 byte) </p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <span class="blackitalic">MARS header structure</span>
+    </div>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">Address family</span><span class="redsmall"><br>
+</span><span class="blacktext">Defines the type of link layer addresses being carried.</span></p>
+<p><span class="title4">Protocol ID</span><span class="redsmall"><br>
+</span><span class="blacktext">Contains 2 subfields:<br>
+16 bits, protocol type<br>
+40 bits Optional SNAP extension to protocol type</span>.</p>
+<p><span class="title4">Reserved</span><span class="redsmall"><br>
+</span><span class="blacktext">This reserved field may be subdivided and assigned 
+specific meanings for other control protocols indicated by the version number.</span></p>
+<p><span class="title4">Checksum</span><span class="redsmall"><br>
+</span><span class="blacktext">This field carries a standard IP checksum calculated 
+across the entire message.</span></p>
+<p><span class="title4">Extension offset</span><span class="redsmall"><br>
+</span><span class="blacktext">This field identifies the existence and location 
+of an optional supplementary parameters list.</span></p>
+<p><span class="title4">Operation code</span><span class="redsmall"><br>
+</span><span class="blacktext">This field is divided into 2 sub fields: version 
+and type. Version indicates the operation being performed, within the context of 
+the control protocol version indicated by mar$op.version.</span></p>
+<p><span class="title4">Type and length of ATM source number</span><span class="redsmall"><br>
+</span><span class="blacktext">Information regarding the source hardware address.</span></p>
+<p><span class="title4">Type and length of ATM source subaddress</span><span class="redsmall"><br>
+</span><span class="blacktext">Information regarding the source hardware subaddress.</span></p>
+<p>&nbsp;</p>
+<p><span class="title2">PIM</span></p>
+<p class="blacksmall">RFC2362
+<a href="ftp://ftp.isi.edu./in-notes/rfc2362.txt" target="_blank">
+<font size="1">ftp://ftp.isi.edu./in-notes/rfc2362.txt</font></a></p>
+<p class="blacktext">Protocol Independent Multicast-Sparse Mode (PIM-SM) is a protocol 
+for efficiently routing to multicast groups that may span wide-area (and inter-domain) 
+internets. The protocol is not dependent on any particular unicast routing protocol, 
+and is designed to support sparse groups.</p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="2" width="401" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">PIM version<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Type<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Reserved<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Checksum<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td bgColor="#ffffff" colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <span class="blackitalic">PIM header structure</span>
+    </div>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext">Address length in new standard appears as reserved.</p>
+<p><span class="title4">Parameters</span><br>
+<span class="blacktext">PIM frames have the following parameters:</span></p>
+<p><span class="title4">PIM version</span><span class="redsmall"><br>
+</span><span class="blacktext">Current PIM version is 2.</span></p>
+<p><span class="title4">Type</span><span class="redsmall"><br>
+</span><span class="blacktext">Types for specific PIM messages.</span></p>
+<p class="blacktext">0 = Hello 1 = Register 2 = Register-Stop 3 = Join/Prune 4 = 
+Bootstrap 5 = Assert 6 = Graft (used in PIM-DM only) 7 = Graft-Ack (used in PIM-DM 
+only) 8 = Candidate-RP-Advertisement</p>
+<p><span class="title4">Address length</span><span class="redsmall"><br>
+</span><span class="blacktext">Address length in bytes. The length of the address 
+field throughout, in the specific message.<br>
+Reserved (the value of this field is set to 0, ignore on receipt)</span></p>
+<p><span class="title4">Checksum</span><span class="redsmall"><br>
+</span><span class="blacktext">The 16-bit one’s complement, of the one’s complement 
+sum of the entire PIM message (excluding the data portion in the register message). 
+For computing the checksum, the checksum field is zeroed.</span></p>
+<p>&nbsp;</p>
+<p><span class="title2">RIP2</span></p>
+<p class="blacksmall">RFC1058
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1058.html" target="window2">
+<u><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc1058.html</font></u></a><u><br>
+</u>RFC1528
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1528.html" target="window2">
+<u><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc1528.html</font></u></a><u><br>
+</u>RFC1723
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1723.html" target="window2">
+<u><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc1723.html</font></u><font color="blue"><u><br>
+</u></font></a>This RFC has been replaced by
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc2453.html" target="_blank">
+<font size="1">RFC 2453</font></a><font size="1">.</font><br>
+The information on this page will be updated to suit the new RFC in the near future.</p>
+<p class="blacktext">RIP2 (Routing Information Protocol) is used by Berkeley 4BSD 
+UNIX systems to exchange routing information. Implemented by a UNIX program, RIP2 
+derives from an earlier protocol of the same name developed by Xerox.</p>
+<p class="blacktext">RIP2 is an extension of the Routing Information Protocol (RIP) 
+intended to expand the amount of useful information carried in the RIP2 messages 
+and to add a measure of security.</p>
+<p class="blacktext">RIP2 is a UDP-based protocol. Each host that uses RIP2 has 
+a routing process that sends and receives datagrams on UDP port number 520. The 
+packet format of RIP2 is shown in the illustration below.</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="397" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr>
+    <td vAlign="top" width="37%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="right">
+      8
+    </div>
+    <!--mstheme--></font></td>
+    <td vAlign="top" width="15%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="right">
+      <font face="Arial,Helvetica,sans-serif" color="black">16 </font>
+    </div>
+    <!--mstheme--></font></td>
+    <td vAlign="top" width="48%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="right">
+      <font face="Arial,Helvetica,sans-serif" color="black">32 bits </font>
+    </div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" width="37%"><!--mstheme--><font face="georgia,times new roman,times">Command<!--mstheme--></font></td>
+    <td vAlign="top" width="15%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><font face="Arial,Helvetica,sans-serif" color="black">Version </font></p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="48%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><font face="Arial,Helvetica,sans-serif" color="black">Unused </font></p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Address family identifier </p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="48%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><font face="Arial,Helvetica,sans-serif" color="black">Route tag (only for 
+    RIP2; 0 for RIP) </font></p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" colSpan="3"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>IP address </p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" colSpan="3"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Subnet mask (only for RIP2; 0 for RIP) </p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" colSpan="3"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Next hop (only for RIP2; 0 for RIP) </p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" colSpan="3"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Metric </p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr bgColor="#ffffff">
+    <td vAlign="top" colSpan="3"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <span class="blackitalic">RIP2 packet structure</span>
+    </div>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext">The portion of the datagram from Address Family Identifier 
+through Metric may appear up to 25 times.</p>
+<p class="blacktext"><span class="title4">Command</span><br>
+The command field is used to specify the purpose of this datagram:</p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="466" border="0">
+  <tr>
+    <td class="blacktext" vAlign="top" width="26"><!--mstheme--><font face="georgia,times new roman,times">1. <!--mstheme--></font></td>
+    <td class="blacktext" width="428"><!--mstheme--><font face="georgia,times new roman,times">Request: A request for the responding system 
+    to send all or part of its routing table.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="26"><!--mstheme--><font face="georgia,times new roman,times">2.<!--mstheme--></font></td>
+    <td class="blacktext" width="428"><!--mstheme--><font face="georgia,times new roman,times">Response: A message containing all or part 
+    of the sender’s routing table. This message may be sent in response to a request 
+    or poll, or it may be an update message generated by the sender.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="26"><!--mstheme--><font face="georgia,times new roman,times">3.<!--mstheme--></font></td>
+    <td class="blacktext" width="428"><!--mstheme--><font face="georgia,times new roman,times">Traceon: Obsolete. Messages containing this 
+    command are to be ignored. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="26"><!--mstheme--><font face="georgia,times new roman,times">4.<!--mstheme--></font></td>
+    <td class="blacktext" width="428"><!--mstheme--><font face="georgia,times new roman,times">Traceoff: Obsolete. Messages containing this 
+    command are to be ignored. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="26"><!--mstheme--><font face="georgia,times new roman,times">5.<!--mstheme--></font></td>
+    <td class="blacktext" width="428"><!--mstheme--><font face="georgia,times new roman,times">Reserved: Used by Sun Microsystems for its 
+    own purposes.<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">Version</span><br>
+The RIP version number. Datagrams are processed according to version number, as 
+follows:</p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="466" border="0">
+  <tr>
+    <td class="blacktext" vAlign="top" width="26"><!--mstheme--><font face="georgia,times new roman,times">0 <!--mstheme--></font></td>
+    <td class="blacktext" width="428"><!--mstheme--><font face="georgia,times new roman,times">Datagrams whose version number is zero are 
+    to be ignored.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="26"><!--mstheme--><font face="georgia,times new roman,times">1<!--mstheme--></font></td>
+    <td class="blacktext" width="428"><!--mstheme--><font face="georgia,times new roman,times">Datagrams whose version number is one are 
+    processed. All fields that are to be 0, are to be checked. If any such field 
+    contains a non-zero value, the entire message is ignored.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="26"><!--mstheme--><font face="georgia,times new roman,times">2 <!--mstheme--></font></td>
+    <td class="blacktext" width="428"><!--mstheme--><font face="georgia,times new roman,times">Specifies RIP messages which use authentication 
+    or carry information in any of the newly defined fields.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="26"><!--mstheme--><font face="georgia,times new roman,times">&gt;2 <!--mstheme--></font></td>
+    <td class="blacktext" width="428"><!--mstheme--><font face="georgia,times new roman,times">Datagrams whose version numbers are greater 
+    than 1 are processed. All fields that are 0 are ignored.<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">Address family identifier</span><br>
+Indicates what type of address is specified in this particular entry. This is used 
+because RIP2 may carry routing information for several different protocols. The 
+address family identifier for IP is 2.</p>
+<p class="blacktext">When authentication is in use, the Address Family Identifier 
+field will be set to 0xFFFF, the Route Tag field contains the authentication type 
+and the remainder of the message contains the password.</p>
+<p class="blacktext"><span class="title4">Route tag</span><br>
+Attribute assigned to a route which must be preserved and readvertised with a route. 
+The route tag provides a method of separating internal RIP routes (routes for networks 
+within the RIP routing domain) from external RIP routes, which may have been imported 
+from an EGP or another IGP.</p>
+<p class="blacktext"><span class="title4">IP address</span><br>
+The IP address of the destination.</p>
+<p class="blacktext"><span class="title4">Subnet mask</span><br>
+Value applied to the IP address to yield the non-host portion of the address. If 
+zero, then no subnet mask has been included for this entry.</p>
+<p class="blacktext"><span class="title4">Next hop</span><br>
+Immediate next hop IP address to which packets to the destination specified by this 
+route entry should be forwarded.</p>
+<p class="blacktext"><span class="title4">Metric</span><br>
+Represents the total cost of getting a datagram from the host to that destination. 
+This metric is the sum of the costs associated with the networks that would be traversed 
+in getting to the destination.</p>
+<p>&nbsp;</p>
+<p><span class="title2">RIPng for IPv6</span></p>
+<p class="blacksmall">RFC2080
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc2080.html" target="window2">
+<font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc2080.html</font></a></p>
+<p class="blacktext">RIPng for IPv6 is a routing protocol for the IPv6 Internet. 
+It is based on protocols and algorithms used extensively in the IPv4 Internet.<br>
+(Compliant with IETF RFC2080 1997-01.)</p>
+<p class="blacktext">The format of the header is shown in the following illustration:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="378" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr>
+    <td vAlign="top" width="25%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">Command (1) </span></p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="32%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">Version (1 byte) </span></p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="43%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">0 (2 bytes) </span></p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr vAlign="center">
+    <td colSpan="3" height="40"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">Route table entry 1 (20 bytes)<br>
+&nbsp;</span></p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr vAlign="center">
+    <td colSpan="3" height="40"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">. . .<br>
+&nbsp;</span></p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr vAlign="center">
+    <td colSpan="3" height="40"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">Route table entry N (20 bytes)<br>
+&nbsp;</span></p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr vAlign="center" bgColor="#ffffff">
+    <td colSpan="3"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <span class="blackitalic">RIPng for IPv6 header structure</span>
+    </div>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">Command</span><span class="title3"><br>
+</span><span class="blacktext">The purpose of the message. Possible commands are:</span></p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="100%" border="0">
+  <tr>
+    <td class="blacktext" vAlign="top" width="22%"><!--mstheme--><font face="georgia,times new roman,times">Request:<!--mstheme--></font></td>
+    <td class="blacktext" width="78%"><!--mstheme--><font face="georgia,times new roman,times">A request for the responding system to send 
+    all or part of its routing table<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="22%"><!--mstheme--><font face="georgia,times new roman,times">Response:<!--mstheme--></font></td>
+    <td class="blacktext" width="78%"><!--mstheme--><font face="georgia,times new roman,times">A message containing all or part of the sender’s 
+    routing table.<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">Version</span><br>
+The version of the protocol. The current version is version 1.</p>
+<p class="blacktext"><span class="title4">Route table entry</span><br>
+Each route table entry contains a destination prefix, the number of significant 
+bits in the prefix and the cost of reaching that destination.</p>
+<p>&nbsp;</p>
+<p><span class="title2">RSVP</span></p>
+<p class="blacksmall">draft
+<a href="http://info.internet.isi.edu:80/in-drafts/files/draft-ietf-rsvp-spec-16.txt" target="window2">
+<font size="1">http://info.internet.isi.edu:80/in-drafts/files/draft-ietf-rsvp-spec-16.txt</font></a><br>
+draft
+<a href="http://info.internet.isi.edu:80/in-drafts/files/draft-ietf-rsvp-md5-06.txt" target="window2">
+<font size="1">http://info.internet.isi.edu:80/in-drafts/files/draft-ietf-rsvp-md5-06.txt</font></a></p>
+<p class="blacksmall">RFC2205
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc2205.html" target="_blank">
+<font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc2205.html</font><br>
+</a>RFC2750
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc2750.html" target="_blank">
+<font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc2750.html</font></a></p>
+<p class="blacktext">RSVP is a Resource ReSerVation setup Protocol designed for 
+an integrated services Internet. It is used by a host on behalf of an application 
+data stream to request a specific quality of service from the network for particular 
+data streams or flows. It is also used by routers to deliver QoS control requests 
+to all nodes.<br>
+(Compliant with IETF draft-ietf-rsvp-spec-13.txt 08-1996 and IETF draft-ietf-rsvp-md5-02.txt 
+06-199.)</p>
+<p class="blacktext">The format of the header is shown in the following illustration:</p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="2" width="397" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr class="blacktext">
+    <td vAlign="top" width="12%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="right">
+      4
+    </div>
+    <!--mstheme--></font></td>
+    <td vAlign="top" width="12%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="right">
+      8
+    </div>
+    <!--mstheme--></font></td>
+    <td vAlign="top" width="24%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="right">
+      16
+    </div>
+    <!--mstheme--></font></td>
+    <td vAlign="top" width="52%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="right">
+      32 bits
+    </div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="12%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Ver </p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="12%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Flags </p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="24%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Message type </p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="52%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>RSVP checksum </p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Send TTL </p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="24%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>(Reserved) </p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="52%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>RSVP length </p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext" bgColor="#ffffff">
+    <td vAlign="top" colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <span class="blackitalic">RSVP header structure</span>
+    </div>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4"><font face="Arial,Helvetica,sans-serif">Version</font></span><font face="Arial,Helvetica,sans-serif" color="#cc6600"><span class="redsmall"><br>
+</span></font><span class="blacktext">The protocol version number, this is version 
+1.</span></p>
+<p class="blacktext"><span class="title4">Flags</span><br>
+No flag bits are defined yet.</p>
+<p class="blacktext"><span class="title4">Message type</span><br>
+Possible values are:</p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="400" border="0">
+  <tr>
+    <td class="blacktext" width="8%"><!--mstheme--><font face="georgia,times new roman,times">1<!--mstheme--></font></td>
+    <td class="blacktext" width="92%"><!--mstheme--><font face="georgia,times new roman,times">Path.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="8%"><!--mstheme--><font face="georgia,times new roman,times">2<!--mstheme--></font></td>
+    <td class="blacktext" width="92%"><!--mstheme--><font face="georgia,times new roman,times">Resv.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="8%"><!--mstheme--><font face="georgia,times new roman,times">3<!--mstheme--></font></td>
+    <td class="blacktext" width="92%"><!--mstheme--><font face="georgia,times new roman,times">PathErr.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="8%"><!--mstheme--><font face="georgia,times new roman,times">4<!--mstheme--></font></td>
+    <td class="blacktext" width="92%"><!--mstheme--><font face="georgia,times new roman,times">ResvErr.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="8%"><!--mstheme--><font face="georgia,times new roman,times">5<!--mstheme--></font></td>
+    <td class="blacktext" width="92%"><!--mstheme--><font face="georgia,times new roman,times">PathTear.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="8%"><!--mstheme--><font face="georgia,times new roman,times">6<!--mstheme--></font></td>
+    <td class="blacktext" width="92%"><!--mstheme--><font face="georgia,times new roman,times">ResvTear.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="8%"><!--mstheme--><font face="georgia,times new roman,times">7<!--mstheme--></font></td>
+    <td class="blacktext" width="92%"><!--mstheme--><font face="georgia,times new roman,times">ResvConf.<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">RSVP checksum</span><br>
+The checksum.</p>
+<p class="blacktext"><span class="title4">Send TTL</span><br>
+The IP TTL value with which the message was sent.</p>
+<p class="blacktext"><span class="title4">RSVP length</span><br>
+The total length of the RSVP message in bytes, including the common header and the 
+variable length objects that follow.</p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="480" border="0">
+  <tr>
+    <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">
+    <a onclick="MM_openBrWindow('ScreenCaptures/rsvp.gif','ScreenCaptures','scrollbars=yes,resizable=yes,width=700,height=600')" href="javascript:;">
+    <img src="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/RSVP%20Small.gif" border="0" width="480" height="339"></a><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="purple"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <a href="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/RSVP.gif">
+      Enlarge</a></div>
+    <!--mstheme--></font></td>
+    <td class="purple"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <a href="http://www.radcom.com/Technologies.aspx?BoneId=376&ObjId=-1&=&=&=&staticName1=1&staticName2=" target="_blank">
+      More Details</a></div>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title2">VRRP</span></p>
+<p class="blacksmall"><a href="ftp://ftp.isi.edu/in-notes/rfc2338.txt">
+<span lang="EN-GB"><font size="1">ftp://ftp.isi.edu/in-notes/rfc2338.txt</font></span></a><font size="1"><span lang="EN-GB">
+</span></font></p>
+<p class="blacktext">(VRRP) specifies an election protocol that dynamically assigns 
+responsibility for a virtual router to one of the VRRP routers on a LAN. The VRRP 
+router controlling the IP address(es) associated with a virtual router is called 
+the Master, and forwards packets sent to these IP addresses. The election process 
+provides dynamic fail over in the forwarding responsibility should the Master become 
+unavailable. This allows any of the virtual router IP addresses on the LAN to be 
+used as the default first hop router by end-hosts. The advantage gained from using 
+VRRP is a higher availability default path without requiring configuration of dynamic 
+routing or router discovery protocols on every end-host. This protocol is intended 
+for use with IPv4 routers only. VRRP packets are sent encapsulated in IP packets.</p>
+<p class="blacktext">The structure of the VRRP packet is:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="88%" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr>
+    <td width="13%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">0<!--mstheme--></font></td>
+    <td width="12%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">&nbsp;<!--mstheme--></font></td>
+    <td width="25%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">7<!--mstheme--></font></td>
+    <td width="25%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">15<!--mstheme--></font></td>
+    <td width="25%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">23<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td align="middle" width="13%"><!--mstheme--><font face="georgia,times new roman,times">Version<!--mstheme--></font></td>
+    <td align="middle" width="12%"><!--mstheme--><font face="georgia,times new roman,times">Type<!--mstheme--></font></td>
+    <td align="middle" width="25%"><!--mstheme--><font face="georgia,times new roman,times">Virtual Rtr ID<!--mstheme--></font></td>
+    <td align="middle" width="25%"><!--mstheme--><font face="georgia,times new roman,times">Priority<!--mstheme--></font></td>
+    <td align="middle" width="25%"><!--mstheme--><font face="georgia,times new roman,times">Count IP Addrs<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td align="middle" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">Auth Type<!--mstheme--></font></td>
+    <td align="middle" width="25%"><!--mstheme--><font face="georgia,times new roman,times">Advet Int<!--mstheme--></font></td>
+    <td align="middle" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">Checksum<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td align="middle" colSpan="5"><!--mstheme--><font face="georgia,times new roman,times">IP Address (1)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td align="middle" colSpan="5"><!--mstheme--><font face="georgia,times new roman,times">&nbsp;
+    <p>&nbsp;</p>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td align="middle" colSpan="5"><!--mstheme--><font face="georgia,times new roman,times">IP Address (n)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td align="middle" colSpan="5"><!--mstheme--><font face="georgia,times new roman,times">Authentication Data (1)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td align="middle" colSpan="5"><!--mstheme--><font face="georgia,times new roman,times">Authentication Data (2)<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">Version</span><br>
+The version field specifies the VRRP protocol version of this packet. This version 
+is version 2.&nbsp; </p>
+<p class="blacktext"><span class="title4">Type</span><br>
+The type field specifies the type of this VRRP packet. The only packet type defined 
+in this version of the protocol is: 1 ADVERTISEMENT. <br>
+A packet with an unknown type must be discarded. </p>
+<p class="blacktext"><span class="title4">Virtual Rtr ID</span><br>
+The Virtual Router Identifier (VRID) field identifies the virtual router this packet 
+is reporting status for.</p>
+<p class="blacktext"><span class="title4">Priority</span><br>
+Specifies the sending VRRP router&#39;s priority for the virtual router. VRRP routers 
+backing up a virtual router MUST use priority values between 1-254 (decimal).</p>
+<p class="blacktext"><span class="title4">Count IP Addresses</span><br>
+The number of IP addresses contained in this VRRP advertisement.</p>
+<p class="blacktext"><span class="title4">Auth Type</span><br>
+Identifies the authentication method being utilized.</p>
+<p class="blacktext"><span class="title3">Authentication Methods</span><br>
+<br>
+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; No Authentication<br>
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Simple Text Password<br>
+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IP Authentication Header</p>
+<p class="blacktext"><span class="title4">Advertisement Interval</span><br>
+Indicates the time interval (in seconds) between advertisements.</p>
+<p class="blacktext"><span class="title4">Checksum</span><br>
+Used to detect data corruption in the VRRP message. The checksum is the 16-bit one&#39;s 
+complement of the one&#39;s complement sum of the entire VRRP message starting with 
+the version field. For computing the checksum, the checksum field is set to zero.</p>
+<p class="blacktext"><span class="title4">IP Address(es)</span><br>
+One or more IP addresses that are associated with the virtual router. The number 
+of addresses included is specified in the &quot;Count IP Addrs&quot; field. These fields are 
+used for troubleshooting misconfigured routers.</p>
+<p class="blacktext"><span class="title4">Authentication Data</span><br>
+The authentication string is currently only utilized for simple text authentication, 
+similar to the simple text authentication found in the Open Shortest Path First 
+routing protocol (OSPF). It is up to 8 characters of plain text.</p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<p align="center"><a href="../../../index.html">Home</a> -
+<a href="../index.html">Computers</a> -
+<a href="../IP%20Sub-Netting.htm">IP Sub-Netting</a> -
+<a href="../ISDN%20Tutorial.htm">ISDN Tutorial</a> -
+<a href="../IP%20Addressing%20and%20Subnetting.htm">IP Addressing</a></p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<p align="center"><a href="Page%201.htm">Page 1</a> - <a href="Page%202.htm">Page 
+2</a> - <a href="Page%203.htm">Page 3</a> - <a href="Page%204.htm">Page 4</a> -
+<a href="Page%205.htm">Page 5</a> - <a href="Page%206.htm">Page 6</a> -
+<a href="Page%207.htm">Page 7</a> - <a href="Page%208.htm">Page 8</a> -
+<a href="Page%209.htm">Page 9</a> - <a href="Page%2010.htm">Page 10</a></p>
+
+<!--mstheme--></font></body>
+
+</html>

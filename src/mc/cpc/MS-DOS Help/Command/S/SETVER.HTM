@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>SETVER</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#s">Commands N-Z</a>
+    &gt; <a href="../INDEXS.HTM#setver">Commands S</a>
+    <h1>SETVER</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Displays the version table. Reports a earlier version number to
+    programs or device drivers that were designed for earlier Versions
+    of the operating system.</p>
+    <p>You can also use this command to display and modify the version
+    table, which lists names of programs and the number of the operating
+    system version with which they are designed to run. If you are using
+    a program that has not been updated for this version of the
+    operating system, you can add its name to the version table by using
+    the SETVER command.</p>
+    <p>The operating system displays two columns: the left column lists
+    the names of the program files; the right column lists the
+    corresponding operating system version with which each file is set
+    to run.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>SETVER
+    [<a href="#ParameterDrive">drive:</a><a
+    href="#ParameterPath">path</a>]
+    <a href="#ParameterFilename">filename</a>
+    <a href="#ParameterNnn">n.nn</a></p>
+
+    <p>SETVER
+    [<a href="#ParameterDrive">drive:</a><a
+    href="#ParameterPath">path</a>]
+    <a href="#ParameterFilename">filename</a>
+    [<a href="#SwitchDelete">/D[ELETE]</a>]
+    [<a href="#SwitchQuiet">/Q[UIET]</a>]</p>
+
+    <p>To display the current version table:</p>
+    <p>SETVER
+    [<a href="#ParameterDrive">drive:</a><a
+    href="#ParameterPath">path</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a name="ParameterPath"></a> path
+      <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the location of the SETVER.EXE file.</dd>
+
+      <dt><a name="ParameterFilename"></a> filename
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the name of the program file (usually an .EXE or
+      .COM file) that you want to add to the version table. You cannot
+      use a wildcard character (* or ?).</dd>
+
+      <dt><a name="ParameterNnn"></a> n.nn
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the DOS version number 2.11 to 9.99 to be reported
+      by SETVER.EXE to the specified filename. The
+      <a href="#SwitchDelete">/DELETE</a> and
+      <a href="#SwitchQuiet">/QUIET</a> options cannot be used with this
+      option.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchDelete"></a> /D[ELETE]
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Used to remove a file from the version table. You cannot use
+      with <a href="#ParameterNnn">n.nn</a>.</dd>
+
+      <dt><a name="SwitchQuiet"></a> /QUIET
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dt>/Q[UIET]
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Used to keep DOS from displaying messages. You cannot use
+      with <a href="#ParameterNnn">n.nn</a>.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Load">Loading the version table into memory</a></li>
+      <li><a href="#Restart">Restarting after updating the version table</a></li>
+      <li><a href="#CommandNote">Setting the version number of a command interpreter</a></li>
+      <li><a href="#Confirmation">SETVER confirmation</a></li>
+      <li><a href="#Update">Updating existing entries</a></li>
+      <li><a href="#Table">Using the version table</a></li>
+    </ul>
+
+    <hr>
+    <a name="Confirmation"></a> <b>SETVER confirmation</b>
+    <p>If you make changes to the version table and no errors are
+    detected, the operating system displays the message:</p>
+<pre>
+    WARNING - Contact your software vendor for information about whether a
+    specific program works with
+    <a href="../../Version/MSDOS/622.HTM">v6.22</a>. It is possible that Microsoft
+    has not verified whether the program will successfully run if you use
+    the SETVER command to change the program version number and version
+    table. If you run the program after changing the version table, you may
+    lose or corrupt data or introduce system instabilities. Microsoft is not
+    responsible for any loss or damage, or for lost or corrupted data.
+    Version table successfully updated
+    The version change will take effect the next time you restart your
+    system.
+</pre>
+
+    <hr>
+    <a name="Load"></a> <b>Loading the version table into memory</b>
+    <p>Before you can use the SETVER command, the version table must be
+    loaded into memory by a <a href="../D/DEVICE.HTM">DEVICE</a> command in your CONFIG.SYS
+    file. By default, the operating system Setup program modifies your
+    CONFIG.SYS file to ensure that the version table is loaded into
+    memory each time you start your system.</p>
+
+    <hr>
+    <a name="CommandNote"></a> <b>Setting the version number of a command interpreter</b>
+    <p>You can use SETVER to set the version number of a command
+    interpreter; however, if you set the version number of the
+    <a href="../../Version/MSDOS/622.HTM">v6.22</a> command
+    interpreter (COMMAND.COM), you may not be able to start your
+    system.</p>
+
+    <hr>
+    <a name="Table"></a> <b>Using the version table</b>
+    <p>Many programs designed to run with a previous version of the
+    operating system will run correctly with
+    <a href="../../Version/MSDOS/622.HTM">v6.22</a>. In some cases,
+    however, a program might not run correctly unless its name is
+    included in the version table. The table indicates to the program
+    that it is running with the operating system version for which it
+    was designed, even though it is running with
+    <a href="../../Version/MSDOS/622.HTM">v6.22</a>. By interpreting
+    <a href="../../Version/MSDOS/622.HTM">v6.22</a> as the earlier
+    version, the program will probably run correctly; however, using
+    SETVER will not solve the problem if the program is not compatible
+    with <a href="../../Version/MSDOS/622.HTM">v6.22</a>.</p>
+
+    <hr>
+    <a name="Restart"></a> <b>Restarting after updating the version table</b>
+    <p>When you update the version table by adding or deleting entries,
+    you must restart your system before the changes will take
+    effect.</p>
+
+    <hr>
+    <a name="Update"></a> <b>Updating existing entries</b>
+    <p>If you specify a filename that is already in the version table,
+    the new entry replaces the existing entry.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>Suppose you have a program file named MYPROG.EXE that runs with
+    <a href="../../Version/MSDOS/330.HTM">v3.30</a>. To run
+    MYPROG.EXE, you must first use the SETVER command to create an
+    entry in the version table that will cause MYPROG.EXE to interpret
+    <a href="../../Version/MSDOS/500.HTM">v5.0</a>+ as
+    <a href="../../Version/MSDOS/330.HTM">v3.30</a>:</p>
+<pre>
+    SETVER <a
+href="#ParameterFilename">MYPROG.EXE</a> <a
+href="#ParameterNnn">3.30</a>
+</pre>
+
+    <p>To delete the MYPROG.EXE entry from the version table (without
+    otherwise affecting the MYPROG.EXE file), type:</p>
+<pre>
+    SETVER <a
+href="#ParameterFilename">MYPROG.EXE</a> <a
+href="#SwitchDelete">/D</a>
+</pre>
+
+    <p>To list the contents of the version table on drive C, type:</p>
+<pre>
+    SETVER <a
+href="#ParameterDrive">C:</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <ul>
+    <li><b>0</b> SETVER successfully completed its task</li>
+    <li><b>1</b> The user specified an invalid command switch</li>
+    <li><b>2</b> The user specified an invalid filename</li>
+    <li><b>3</b> There is insufficient system memory to carry out the
+    command</li>
+    <li><b>4</b> The user specified an invalid version-number format</li>
+    <li><b>5</b> SETVER could not find the specified entry in the version
+    table</li>
+    <li><b>6</b> SETVER could not find the SETVER.EXE file</li>
+    <li><b>7</b> The user specified an invalid drive</li>
+    <li><b>8</b> The user specified too many command-line parameters</li>
+    <li><b>9</b> SETVER detected missing command-line parameters</li>
+    <li><b>10</b> SETVER detected an error while reading the SETVER.EXE
+    file</li>
+    <li><b>11</b> The SETVER.EXE file is corrupt</li>
+    <li><b>12</b> The specified SETVER.EXE file does not support a
+    version table</li>
+    <li><b>13</b> There is insufficient space in the version table for a
+    new entry</li>
+    <li><b>14</b> SETVER detected an error while writing to the SETVER.EXE
+    file</li>
+    </ul>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

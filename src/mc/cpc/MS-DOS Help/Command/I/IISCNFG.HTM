@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>IISCNFG</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#i">Commands A-M</a>
+    &gt; <a href="../INDEXI.HTM#iiscnfg">Commands I</a>
+    <h1>IISCNFG</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Imports and exports all or selected elements of an
+    Internet Information Services (IIS) metabase on a local
+    or remote computer, or copies the entire IIS configuration
+    (metabase and schema) to another computer to replicate a
+    configuration.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>IISCNFG[.VBS]
+    [<a href="#SwitchCopy">/copy</a>
+    | <a href="#SwitchExport">/export</a>
+    | <a href="#SwitchImport">/import</a>
+    | <a href="#SwitchSave">/save</a>]
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>IISCNFG[.VBS]
+    <a href="#SwitchCopy">/copy</a>
+    <a href="#SwitchTs">/ts target_computer</a>
+    <a href="#SwitchTu">/tu target_user</a>
+    <a href="#SwitchTp">/tp target_password</a>
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <p>IISCNFG[.VBS]
+    <a href="#SwitchExport">/export</a>
+    [<a href="#SwitchChildren">/children</a>]
+    [<a href="#SwitchD">/d encryption_password</a>]
+    <a href="#SwitchF">/f [Path\]file_name.xml</a>
+    [<a href="#SwitchInherited">/inherited</a>]
+    <a href="#SwitchSp">/sp metabase_path</a>
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <p>IISCNFG[.VBS]
+    <a href="#SwitchImport">/import</a>
+    [<a href="#SwitchChildren">/children</a>]
+    [<a href="#SwitchD">/d encryption_password</a>]
+    <a href="#SwitchDp">/dp metabase_path</a>
+    <a href="#SwitchF">/f [Path\]file_name.xml</a>
+    [<a href="#SwitchInherited">/inherited</a>]
+    [<a href="#SwitchMerge">/merge</a>]
+    <a href="#SwitchSp">/sp metabase_path</a>
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <p>IISCNFG[.VBS]
+    <a href="#SwitchSave">/save</a>
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchChildren"></a> /children
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>When exporting, recursively adds the subkeys of
+      the specified key to the export file.</dd>
+      <dd>When importing, recursively imports the subkeys of
+      the specified key.</dd>
+
+      <dt><a name="SwitchCopy"></a> /copy
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Copies the IIS metabase and schema from one
+      computer to another.</dd>
+      <dd>The copy operation uses
+      <a href="IISBACK.HTM">IISBack.vbs</a> to make a backup
+      copy of the source metabase and the schema. Then, it
+      copies the backup copy files (.MDX and .SCX) to the
+      target computer and uses
+      <a href="IISBACK.HTM">IISBack.vbs</a> to replace the
+      metabase and schema of the target computer with the
+      backup copy. Although you can do these operations
+      manually, the copy operation provides a convenient,
+      one-step method to replicate an IIS configuration.</dd>
+      <dd>The copy operation does not copy server content
+      associated with the IIS configuration, such as Web
+      pages and FTP files.</dd>
+      <dd>The copy operation changes the computer-specific
+      and system-specific properties in the metabase so that
+      they are valid on the target computer. However, it
+      does not adjust the directory or file paths. As a
+      result, paths in the configuration might not be valid
+      on the target computer.</dd>
+      <dd>The /copy switch replaces the functionality of
+      IISSync.vbs and IISRepl.vbs,
+      tools formerly included in Windows.</dd>
+
+      <dt><a name="SwitchD"></a> /d encryption_password
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>When exporting, encrypts the export file with the
+      specified password. You can use any string as the
+      password.</dd>
+      <dd>Creates a secure export file by encrypting the
+      session key and secure properties with the specified
+      password. You must provide the password to use the
+      file in an <a href="#SwitchImport">/import</a> operation.</dd>
+      <dd>If you omit this parameter or omit the password
+      argument, then the export file is encrypted with a
+      blank password. As a result, only the secure
+      properties are encrypted and any Administrator can use
+      the export file to import the metabase configuration.</dd>
+      <dd>When importing, specifies the password that was
+      used to encrypt the configuration data.</dd>
+      <dd>Required when the configuration file is encrypted.
+      If you do not provide the password for an encrypted
+      file, or if you provide an incorrect password, the
+      command fails.</dd>
+
+      <dt><a name="SwitchDp"></a> /dp metabase_path
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies where in the metabase where the imported
+      keys are placed. Enter a metabase path.</dd>
+      <dd>If you specify a path that already exists in the
+      metabase, the imported keys overwrite and replace the
+      keys currently in that metabase path without warning.</dd>
+
+      <dt><a name="SwitchExport"></a> /export
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Copies all or part of an IIS metabase to an XML
+      file, in an encrypted or unencrypted format. The XML
+      file can then be used in an import operation to copy
+      all or part of the metabase to another IIS
+      configuration.</dd>
+
+      <dt><a name="SwitchF"></a> /f [Path\]file_name.xml
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies a unique name and location for the
+      export file.</dd>
+      <dd>When exporting, if you specify an existing file or
+      if the directories in the path you specify do not exist,
+      the command fails.</dd>
+      <dd>The file path must be local.
+      When exporting/importing a file from a remote computer,
+      the /f switch refers to a path on the remote computer.</dd>
+
+      <dt><a name="SwitchImport"></a> /import
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Adds configuration settings from an XML metabase
+      export file to the metabase of an IIS server.</dd>
+
+      <dt><a name="SwitchInherited"></a> /inherited
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>When exporting, adds inherited properties of the
+      exported keys to the export file. If omitted, the
+      export file does not include properties inherited from
+      higher-level keys.</dd>
+      <dd>When importing, imports the inherited properties
+      of the keys. This switch is effective only when the
+      source file includes inherited properties.</dd>
+
+      <dt><a name="SwitchMerge"></a> /merge
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Combines keys in the XML file with the existing
+      metabase keys. Without this switch, the keys in the
+      XML file replace existing keys in the same metabase
+      path.</dd>
+      <dd>This switch adds keys to the metabase that appear
+      only in the XML file, retains keys in the metabase
+      that are not in the XML file, and applies the values
+      in the XML file when a key appears in both the XML
+      file and the metabase.</dd>
+
+      <dt><a name="SwitchP"></a> /p password
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the password of the user account that is
+      specified in <a href="#SwitchU">/u</a>. If omitted,
+      you will be prompted.</dd>
+
+      <dt><a name="SwitchS"></a> /s computer
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Copies, exports, imports or saves the current
+      Internet Information Services (IIS) metabase
+      from the specified computer to the target computer.
+      The default is the local computer.</dd>
+
+      <dt><a name="SwitchSave"></a> /save
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Saves the IIS metabase and schema to disk.</dd>
+      <dd>Any changes made to the metabase, using scripts or
+      IIS Manager, are written to memory first first and to
+      disk at the next scheduled update, which may be
+      several minutes later. As a result, an administrator
+      may make metabase changes and then open metabase.xml
+      only to find the changes aren't reflected. The /save
+      command resolves the problem by saving changes to the
+      disk immediately.</dd>
+
+      <dt><a name="SwitchSp"></a> /sp metabase_path
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>When exporting, specifies the metabase keys to
+      export. Enter a metabase path to identify the selected
+      keys.</dd>
+      <dd>When importing, specifies the location in the XML
+      file of the keys being imported. Enter the metabase
+      path as it appears in the XML file. To import all of
+      the keys in the source file, enter the metabase path
+      of the root key.</dd>
+      <dd>Use quotation marks to enclose metabase path
+      elements that include spaces. Enclose only the element
+      with spaces, not the entire path.</dd>
+
+      <dt><a name="SwitchTp"></a> /tp target_password
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the password for the account specified
+      by the <a href="#SwitchTu">/tu</a> switch.</dd>
+
+      <dt><a name="SwitchTs"></a> /ts target_computer
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Copies the IIS metabase to the specified computer.
+      Type the IP address or computer name without
+      backslashes.</dd>
+
+      <dt><a name="SwitchTu"></a> /tu target_user
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the account used to connect to the
+      target computer. Type a user account in [Domain]\User
+      format. This account must be a member of the
+      Administrators group on the target computer.</dd>
+      <dd>This switch is required, even when the current
+      user of the local computer is an Administrator of the
+      target computer.</dd>
+
+      <dt><a name="SwitchU"></a> /u [Domain\]User
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Runs the command with the account permissions of the
+      user specified by User or Domain\User. The default is the
+      permissions of the current logged on user on the computer
+      issuing the command. Required when the current user is
+      not an Administrator of the remote computer.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>To perform this procedure, you must be a member of
+    the Administrators group on the local computer, or you
+    must have been delegated the appropriate authority. If
+    the computer is joined to a domain, members of the
+    Domain Admins group might be able to perform this
+    procedure. As a security best practice, consider using
+    "Run as" to perform this procedure.</p>
+    <p>The imported key must be the type expected in its new
+    position in the metabase path. If the key is not the
+    expected type, the configuration will not operate
+    properly.</p>
+    <p>Changes made are effective immediately. These changes
+    are reflected in the MetaBase.xml file when the file is
+    updated (every five minutes or every 50 changes).</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

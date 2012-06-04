@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>QBASIC</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#q">Commands N-Z</a>
+    &gt; <a href="../INDEXQ.HTM#qbasic">Commands Q</a>
+    <h1>QBASIC</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Starts QBasic, a program that reads instructions written
+    in the Basic computer language and interprets them into executable
+    computer code.</p>
+    <p>The QBasic program provides a complete environment for
+    programming in the Basic language. QBasic includes extensive online
+    Help. For more information about using QBasic, press ENTER
+    immediately after starting QBasic or press F1 any time while
+    running QBasic.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>QBASIC
+    [<a href="#SwitchB">/B</a>]
+    [<a href="#SwitchEdcom">/EDCOM</a>]
+    [<a href="#SwitchQbhelp">/QBHELP</a>]
+    [<a href="#SwitchEditor">/EDITOR</a>]
+    [<a href="#SwitchG">/G</a>]
+    [<a href="#SwitchH">/H</a>]
+    [<a href="#SwitchMbf">/MBF</a>]
+    [<a href="#SwitchNohi">/NOHI</a>]
+    [[<a href="#SwitchRun">/RUN</a>]
+    [<a href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path</a>]<a
+    href="#ParameterFilename">filename</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a name="ParameterPath"></a> path
+      <a name="ParameterFilename"></a> filename
+      <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the location and name of the file to load when
+      QBasic starts.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchB"></a> /B
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through
+      <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a></dt>
+      <dd>Displays QBasic in black and white if you have a color
+      monitor.</dd>
+
+      <dt><a name="SwitchEdcom"></a> /EDCOM
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd><b>UNDOCUMENTED:</b> Used by
+      <a href="../E/EDIT.HTM">EDIT.COM</a> to start the
+      editor. It <b>MUST</b> be typed in all capitals.</dd>
+
+      <dt><a name="SwitchEditor"></a> /EDITOR
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through
+      <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a></dt>
+      <dd>Invokes <a href="../E/EDIT.HTM">DOS Editor</a>,
+      a full-screen text editor.</dd>
+
+      <dt><a name="SwitchG"></a> /G
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through
+      <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a></dt>
+      <dd>Provides the fastest update of a CGA monitor.</dd>
+
+      <dt><a name="SwitchH"></a> /H
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through
+      <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a></dt>
+      <dd>Displays the maximum number of display lines possible on your
+      screen.</dd>
+
+      <dt><a name="SwitchMbf"></a> /MBF
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through
+      <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a></dt>
+      <dd>Converts the built-in functions MKS$, MKD$, CVS, and CVD to
+      MKSMBF$, MKDMBF$, CVSMBF, and CVDMBF, respectively.</dd>
+
+      <dt><a name="SwitchNohi"></a> /NOHI
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through
+      <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a></dt>
+      <dd>Allows the use of a monitor that does not support
+      high-intensity video. Do not use this switch with Compaq laptop
+      computers.</dd>
+
+      <dt><a name="SwitchQbhelp"></a> /QBHELP
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd><b>UNDOCUMENTED:</b> Used by HELP.COM to start the
+      operating system help.</dd>
+
+      <dt><a name="SwitchRun"></a> /RUN
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Runs the specified Basic program before displaying it. You
+      must specify a filename.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../G/GWBASIC.HTM">GW-BASIC</a> "gee whiz" basic interpreter.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Editor">Cannot use DOS Editor if DOS QBasic is not present</a></li>
+      <li><a href="#Shortcut">Display of shortcut keys</a></li>
+      <li><a href="#Consecutive">Running consecutive Basic programs</a></li>
+    </ul>
+
+    <hr>
+    <a name="Editor"></a> <b>Cannot use DOS Editor if DOS QBasic is not present</b>
+    <p>To use <a href="../E/EDIT.HTM">DOS Editor</a>, you must
+    have the QBASIC.EXE file in the current directory, or in the same
+    directory as the <a href="../E/EDIT.HTM">EDIT.COM</a> file in
+    your search path. If you delete QBASIC.EXE to save space on your
+    hard disk, you cannot use
+    <a href="../E/EDIT.HTM">DOS Editor</a>.</p>
+
+    <hr>
+    <a name="Consecutive"></a> <b>Running consecutive Basic programs</b>
+    <p>You can run consecutive Basic programs from a batch file by
+    using the Basic SYSTEM statement and the QBASIC command with the
+    <a href="#SwitchRun">/RUN</a> switch. A SYSTEM statement
+    quits QBASIC and returns control to the operating system after a
+    Basic program has run, instead of returning to QBasic. This
+    allows you to run more than one Basic program from a batch file
+    without having to intervene.</p>
+
+    <hr>
+    <a name="Shortcut"></a> <b>Display of shortcut keys</b>
+    <p>Some monitors may not support the display of shortcut keys by
+    default. If your monitor does not display shortcut keys, use the
+    <a href="#SwitchB">/B</a> switch (for CGA monitors) and
+    the <a href="#SwitchNohi">/NOHI</a> switch (for systems
+    that do not support bold characters).</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>TASKLIST</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#t">Commands N-Z</a>
+    &gt; <a href="../INDEXT.HTM#tasklist">Commands T</a>
+    <h1>TASKLIST</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Displays a list of applications and services with
+    their Process ID (PID) for all tasks running on either
+    a local or a remote computer.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>TASKLIST
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>TASKLIST
+    [<a href="#SwitchS">/S computer</a>
+     [<a href="#SwitchU">/U [domain\]user</a>
+      [<a href="#SwitchP">/P password</a>]]]
+    [<a href="#SwitchFi">/FI filter_name</a>
+     [<a href="#SwitchFi">/FI filter_name</a> [...]]
+    [<a href="#SwitchFo">/FO format</a>]
+    [<a href="#SwitchNh">/NH</a>]
+    [<a href="#SwitchM">/M [module_name]</a>
+    | <a href="#SwitchSvc">/SVC</a>
+    | <a href="#SwitchV">/V</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchFi"></a> /FI filter_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the types of process(es) to include in
+      or exclude from termination. These are valid
+      filter names, operators, and values:
+<pre>
+      <u>Name        Operators               Value</u>
+      CPUTime     eq, ne, gt, lt, ge, le  Valid time in the format of hh:mm:ss. The mm and ss parameters should be between 0 and 59 and hh can be any valid unsigned numeric value.
+      Imagename   eq, ne                  Any valid string.
+      Memusage    eg, ne, gt, lt, ge, le  Any valid integer.
+      Modules     eq, ne                  Any valid string. <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a> ONLY
+      PID         eg, ne, gt, lt, ge, le  Any valid positive integer.
+
+      Services    eq, ne                  Any valid string.
+      Session     eg, ne, gt, lt, ge, le  Any valid session number.
+      SessionName eq, ne                  Any valid string.
+      Status      eq, ne                  RUNNING|NOT RESPONDING
+      Username    eq, ne                  Any valid user name ([Domain\]User).
+      Windowtitle eq, ne                  Any valid string.
+      <u>Name        Operators               Value</u>
+</pre>
+      </dd>
+
+      <dt><a name="SwitchFo"></a> /FO format
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the format to use for the output.
+      Valid values are:
+        <ul>
+          <li><b>TABLE</b>  the default</li>
+          <li><b>LIST</b></li>
+          <li><b>CSV</b></li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchM"></a> /M [module_name]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies to show module information for each
+      process. When a module is specified, all the processes
+      using that module are shown. When a module is not
+      specified, all the processes for all the modules are
+      shown. Cannot be used with
+      <a href="#SwitchSvc">/svc</a> or <a href="#SwitchV">/v</a>.</dd>
+
+      <dt><a name="SwitchNh"></a> /NH
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Suppresses column headers in the output.
+      Valid when <a href="#SwitchFo">/fo</a> is set to
+      <b>TABLE</b> or <b>CSV</b>.</dd>
+
+      <dt><a name="SwitchP"></a> /P password
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the password of the user account that is
+      specified in <a href="#SwitchU">/u</a>.</dd>
+
+      <dt><a name="SwitchS"></a> /S computer
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the name or IP address of a remote
+      computer (do not use backslashes).
+      The default is the local computer.</dd>
+
+      <dt><a name="SwitchSvc"></a> /SVC
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Lists all the service information for each process
+      without truncation. Valid when <a href="#SwitchFo">/fo</a>
+      is set to <b>TABLE</b>.</dd>
+
+      <dt><a name="SwitchU"></a> /U [domain\]user
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Runs the command with the account permissions of
+      the user specified by User or Domain\User. The default
+      is the permissions of the current logged on user on
+      the computer issuing the command.</dd>
+
+      <dt><a name="SwitchV"></a> /V
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that verbose task information be
+      displayed in the output.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Tasklist is a replacement for the TList tool.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

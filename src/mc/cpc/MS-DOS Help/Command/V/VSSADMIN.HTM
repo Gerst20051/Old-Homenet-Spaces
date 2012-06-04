@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>VSSADMIN</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#v">Commands N-Z</a>
+    &gt; <a href="../INDEXV.HTM#vssadmin">Commands V</a>
+    <h1>VSSADMIN</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Displays current volume shadow copy backups and all
+    installed shadow copy writers and providers in the
+    command window.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>VSSADMIN
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>VSSADMIN
+    <a href="#ParameterAddShadowStorage">ADD SHADOWSTORAGE</a>
+    <a href="#SwitchFor">/for=for_volume</a>
+    <a href="#SwitchOn">/on=on_volume</a>
+    [<a href="#SwitchMaxSize">/maxsize=max_size</a>]</p>
+
+    <p>VSSADMIN
+    <a href="#ParameterCreateShadowStorage">CREATE SHADOWSTORAGE</a>
+    <a href="#SwitchFor">/for=for_volume</a>
+    [<a href="#SwitchAutoRetry">/autoretry=max_retry</a>]</p>
+
+    <p>VSSADMIN
+    <a href="#ParameterDeleteShadows">DELETE SHADOWS</a>
+    <a href="#SwitchFor">/for=for_volume</a>
+    [<a href="#SwitchAll">/all</a>]
+    [<a href="#SwitchOldest">/oldest</a>]
+    [<a href="#SwitchQuiet">/quiet</a>]
+    <a href="#SwitchShadow">/shadow=shadow_id</a></p>
+
+    <p>VSSADMIN
+    <a href="#ParameterDeleteShadowStorage">DELETE SHADOWSTORAGE</a>
+    <a href="#SwitchFor">/for=for_volume</a>
+    [<a href="#SwitchOn">/on=on_volume</a>]
+    [<a href="#SwitchQuiet">/quiet</a>]</p>
+
+    <p>VSSADMIN LIST
+    [<a href="#ParameterShadows">shadows</a>
+     [<a href="#SwitchSet">/set= [shadow_copy_set_GUID]</a>]
+    | <a href="#ParameterProviders">providers</a>
+    | <a href="#ParameterVolumes">volumes</a>
+    | <a href="#ParameterWriters">writers</a>]</p>
+
+    <p>VSSADMIN LIST
+    [<a href="#ParameterShadows">shadows</a>
+     [<a href="#SwitchFor">/for=for_volume</a>]
+     [<a href="#SwitchShadow">/shadow=shadow_id</a>]]</p>
+
+    <p>VSSADMIN
+    [<a href="#ParameterListShadowStorage">LIST SHADOWSTORAGE</a>
+     [<a href="#SwitchFor">/for=for_volume</a>]
+     [<a href="#SwitchOn">/on=on_volume</a>]]</p>
+
+    <p>VSSADMIN
+    <a href="#ParameterResizeShadowStorage">RESIZE SHADOWSTORAGE</a>
+    <a href="#SwitchFor">/for=for_volume</a>
+    <a href="#SwitchOn">/on=on_volume</a>
+    [<a href="#SwitchMaxSize">/maxsize=max_size</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterAddShadowStorage"></a> ADD SHADOWSTORAGE
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Adds a shadow copy storage association for the given
+      <a href="#SwitchFor">for_volume</a> on the
+      <a href="#SwitchOn">on_volume</a> shadow copy storage
+      volume.</dd>
+
+      <dt><a name="ParameterCreateShadowStorage"></a> CREATE SHADOWSTORAGE
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Adds a shadow copy storage association for the given
+      <a href="#SwitchFor">for_volume</a> on the
+      <a href="#SwitchOn">on_volume</a> shadow copy storage
+      volume.</dd>
+
+      <dt><a name="ParameterDeleteShadows"></a> DELETE SHADOWS
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Deletes all existing shadow copies for the given
+      <a href="#SwitchFor">for_volume</a>.</dd>
+      <dd>You can delete shadow copies that have the client
+      accessible type only.</dd>
+
+      <dt><a name="ParameterDeleteShadowStorage"></a> DELETE SHADOWSTORAGE
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Deletes volume shadow copy storage association
+      between <a href="#SwitchFor">for_volume</a> and
+      <a href="#SwitchOn">on_volume</a>.</dd>
+      <dd>If <a href="#SwitchOn">on_volume</a> omitted, all
+      shadow copy storage associations will be deleted for
+      the given <a href="#SwitchFor">for_volume</a>.</dd>
+
+      <dt><a name="ParameterListShadowStorage"></a> LIST SHADOWSTORAGE
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays all shadow copy storage associations on
+      the system.</dd>
+
+      <dt><a name="ParameterProviders"></a> providers
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Lists the name, type, GUID, and version of all
+      installed shadow copy providers.</dd>
+
+      <dt><a name="ParameterResizeShadowStorage"></a> RESIZE SHADOWSTORAGE
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Resizes the maximum size for a shadow copy
+      storage association between
+      <a href="#SwitchFor">for_volume</a> and
+      <a href="#SwitchOn">on_volume</a>.</dd>
+      <dd>Resizing the storage association may cause shadow
+      copies to disappear.</dd>
+
+      <dt><a name="ParameterShadows"></a> shadows
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Lists all shadow copies on the system
+      ordered by shadow copy set.</dd>
+
+      <dt><a name="ParameterVolumes"></a> volumes
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Lists volumes eligible for shadow copies.</dd>
+
+      <dt><a name="ParameterWriters"></a> writers
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Lists the name, GUID, instance ID, and status of
+      all installed shadow copy writers.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchAll"></a> /all
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>?</dd>
+
+      <dt><a name="SwitchAutoRetry"></a> /autoretry=auto_retry
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Try to create shadow for auto_retry minutes
+      when another process is creating a shadow copy.</dd>
+
+      <dt><a name="SwitchFor"></a> /for=for_volume
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Local storage volume drive letter or mount point.</dd>
+
+      <dt><a name="SwitchMaxSize"></a> /maxsize=max_size
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Maximum space that the association may occupy on
+      the shadow copy storage volume is max_size.
+      If omitted, there is no limit to the amount of space
+      it may use. If the maximum number of shadow copy
+      storage associations have already been made, an error
+      is given. max_size must be 100 MB or greater
+      (1 MB or greater for
+      <a href="#ParameterResizeShadowStorage">RESIZE SHADOWSTORAGE</a>)
+      and accepts the suffixes:
+        <ul>
+          <li><b>&nbsp;</b> (default is bytes)</li>
+          <li><b>KB</b></li>
+          <li><b>MB</b></li>
+          <li><b>GB</b></li>
+          <li><b>TB</b></li>
+          <li><b>PB</b></li>
+          <li><b>EB</b></li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchOldest"></a> /oldest
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Oldest shadow copy is deleted.</dd>
+
+      <dt><a name="SwitchOn"></a> /on=on_volume
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>On storage volume.</dd>
+
+      <dt><a name="SwitchQuiet"></a> /quiet
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>?</dd>
+
+      <dt><a name="SwitchSet"></a> /set= [shadow_copy_set_GUID]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a> ONLY)</dt>
+      <dd>Globally Unique Identifier (GUID) for the shadow
+      copy set (a group of shadow copies created at the
+      same time).</dd>
+
+      <dt><a name="SwitchShadow"></a> /shadow=shadow_id
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Deletes the shadow copy with that shadow_id.</dd>
+      <dd>You can get the shadow_id by using
+      <a href="#ParameterListShadowStorage">LIST SHADOWSTORAGE</a>.
+      When you type a shadow_id, use the format:
+      {XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX},
+      where the X's are hexadecimal characters.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

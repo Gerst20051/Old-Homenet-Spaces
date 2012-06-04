@@ -1,0 +1,111 @@
+/* CSS Document 
+ * Timeline 2006 Revision
+ *
+ */
+
+body { 
+	font-size: 10px;		
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 76%;
+}
+#title { 
+    color: #000066; 
+    font-family: "Times New Roman", Times, serif; 
+    font-size: 32px;
+    padding: 0 0 0 50px;
+}
+
+/* Navigation Table ------------------------------------------------------------------------------------- */
+#navTable {  background-color: #d9d9d9; padding: 0px; margin: 0px; border:0px solid #aaa;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #aa0711;
+	border-bottom: 4px solid #e6e6e6;
+	border-spacing: 0px;
+
+}
+
+#navYear {
+	border: 0px solid #000;
+	border-right: 4px solid #e6e6e6;
+}
+#navYear td {
+	padding: 5px;
+	text-align: center;
+}
+
+#navYear td a:visited, #navYear td a:active, #navYear td a:link  { color: #aa0711; font-weight: bold; font-size:16px; text-decoration: none;}
+
+#navYear td:hover{ background: url('../images/timelineBgBoxHL.gif') no-repeat; }
+#navYear td a:hover {color: #333333; }
+#yearSelected { background: url('../images/timelineBgBoxHL.gif') no-repeat;}
+table #yearSelected a:link, table #yearSelected a:active, table #yearSelected a:visited {color: #333}
+
+#navYear .disable {
+	color: #b9b9b9; font-weight: bold; font-size:16px; text-decoration: none;
+	
+}
+
+#navCat td { padding: 2px 5px 2px 15px; }
+#navCat td a:visited, #navCat td a:active, #navCat td a:link { color: #666666; font-size: 12px; font-weight: bold; text-decoration: none; }
+
+#navCat td:hover /*, #navCat td a:hover*/ { color: #333333; background: url('../images/timelineBgGray.gif') repeat-x;}
+#catSelected {color: #333; background: url('../images/timelineBgBlue.jpg') repeat-x;}
+table #catSelected a:link, table #catSelected a:visited, table #catSelected a:active {color: #fff};
+/* ---------------------------------------------------------------------------------------------------------- */
+.indexInfo { 
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 1.4em;
+}
+/* --- by Category ---------------------------------------------------------------- */
+#byCategory {font-family: Arial, Helvetica, sans-serif;}
+
+#catOdd { background-color: #f3f3f3; }
+#catEven { background-color: #e6e6e6; }
+
+#catOdd, #catEven { border-left: 1px solid #aaaaaa; border-bottom: 1px solid #aaaaaa; border-right: 1px solid #aaaaaa; }
+
+#container {padding: 20px; }
+#container2 {padding: 0px}
+
+.entryYear { color: #990000;  font-family:Verdana, Arial, Helvetica, sans-serif; font-size: 20px;  padding: 0px 0px 10px 0px;}
+.entryImage .entryCaption {font-family: Verdana, Arial, Helvetica, sans-serif; }
+.entryImage { relative;border: 1px solid #040404 }
+.entryCaption { color: #999999; font-size: 12px; line-height: 1.3em;}
+.entryCredits { color: #999999; font-size: 11px; line-height: 1.0em;}
+.entryDescription { color: #333; font-size: 0.8em; line-height: 1.4em; }
+
+/* ------------tab -------------------------------------------*/
+#tab { background-color: #97c4f4; border-top: 1px solid #aaaaaa; padding: 0px;}
+.tableft { background: url('../../../../Images/Other/Computer/History/Category/Timeline%20Tab%20Left.gif') no-repeat left;}
+.tabright { background: url('../../../../Images/Other/Computer/History/Category/Timeline%20Tab%20Right.gif') no-repeat right;}
+
+#heading { border-bottom: 1px solid #aaaaaa; border-spacing: 0px; }
+#headingBox { padding: 0px; }
+
+#tabHeading {border-bottom: 1px solid #aaaaaa; padding: 0px; border-collapse:separate;}
+
+
+#tabHeadingLeft { background: url('../../../../Images/Other/Computer/History/Category/Timeline%20Tab%20Left.gif') no-repeat; }
+#tabHeadingLeft { background: url('../../../../Images/Other/Computer/History/Category/Timeline%20Tab%20Right.gif') no-repeat; }
+#tabHeadingMiddle { background: url('../../../../Images/Other/Computer/History/Category/Timeline%20Tab%20Middle.gif') repeat-x; color:#990000; font-weight:bold; font-size: 20px; padding-left:20px; padding-right:20px; padding-top:0px; padding-bottom:0px}
+
+.entryCaption1 {color: #999999; font-size: 12px; font-weight: bold;}
+.entryImage1 {relative;border: 1px solid #040404 }
+
+
+/* top rollover */
+
+a.rollover:link, a.rollover:visited {
+display:block; /*allows width and height settings to apply*/
+width: 35px; /*match to width of the image*/
+line-height: 35px; /*match to height of the image*/
+text-indent:-100.0em; /*moves the text off screen*/
+text-decoration:none; /*removes the underline*/
+background:url('../images/timeline_top_button.gif') no-repeat; /*sets the unmoused image*/
+}
+a.rollover:link:hover, a.rollover:visited:hover {
+background:url('../images/timeline_top_button_rollover.gif') no-repeat; /*changes to the moused image on hover*/
+}
+

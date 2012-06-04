@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>COLOR</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCH.HTM#color">Commands Ch-Cz</a>
+    <h1>COLOR</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Sets the default console foreground and background colours.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>COLOR
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>COLOR
+    [<a href="#ParameterBackground">background_attr</a>][<a
+    href="#ParameterForeground">foreground_attr</a>]</p>
+
+    <p>Restores the colour to what it was when CMD.EXE started:</p>
+    <p>COLOR</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterBackground"></a> background_attr
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dt><a name="ParameterForeground"></a> foreground_attr
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Specifies colour attribute of console output.</dd>
+      <dd>Colour attributes are specified by TWO hex digits -- the
+      first corresponds to the background; the second the foreground.
+      Each digit can be any of the values:
+        <ul>
+        <li><b>0</b> Black</li>
+        <li><b>1</b> Blue</li>
+        <li><b>2</b> Green</li>
+        <li><b>3</b> Aqua</li>
+        <li><b>4</b> Red</li>
+        <li><b>5</b> Purple</li>
+        <li><b>6</b> Yellow</li>
+        <li><b>7</b> White</li>
+        <li><b>8</b> Gray</li>
+        <li><b>9</b> Light Blue</li>
+        <li><b>A</b> Light Green</li>
+        <li><b>B</b> Light Aqua</li>
+        <li><b>C</b> Light Red</li>
+        <li><b>D</b> Light Purple</li>
+        <li><b>E</b> Light Yellow</li>
+        <li><b>F</b> Bright White</li>
+        </ul>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="CMD.HTM">CMD</a> - Start a new CMD shell
+    <br><a href="../V/VERIFY.HTM">VERIFY</a>?
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>dircolors - Colour setup for `ls'</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Colour values are assigned in the order:</p>
+    <ul>
+    <li>The DefaultColor registry value.</li>
+    <li>The <a href="CMD.HTM">CMD</a> <a href="CMD.HTM#SwitchT">/T</a>
+    command-line switch.</li>
+    <li>The current colour settings when <a href="CMD.HTM">cmd</a> was
+    launched.</li>
+    </ul>
+    <p>The COLOR command sets ERRORLEVEL to 1 if an attempt is made to
+    execute the COLOR command with a foreground and background colour
+    that are the same.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>White on blue:</p>
+<pre>
+    COLOR <a
+href="#ParameterBackground">1</a><a
+href="#ParameterForeground">7</a>
+</pre>
+
+    <p>Red on blue, use for error conditions:</p>
+<pre>
+    COLOR <a
+href="#ParameterBackground">1</a><a
+href="#ParameterForeground">c</a>
+</pre>
+
+    <p>"Wordperfect style" white on light blue:</p>
+<pre>
+    COLOR <a
+href="#ParameterBackground">9</a><a
+href="#ParameterForeground">7</a>
+</pre>
+
+    <p>High contrast yellow on light blue:</p>
+<pre>
+    COLOR <a
+href="#ParameterBackground">9</a><a
+href="#ParameterForeground">e</a>
+</pre>
+
+    <p>White on black, the default:</p>
+<pre>
+    COLOR <a
+href="#ParameterBackground">0</a><a
+href="#ParameterForeground">7</a>
+</pre>
+
+    <p>Invalid, will set %ERRORLEVEL% to 1 (fails on some early builds
+    of NT 4).</p>
+<pre>
+    COLOR <a
+href="#ParameterBackground">0</a><a
+href="#ParameterForeground">0</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <ul>
+    <li><b>1</b> Attempt to set foreground and background to same colour</li>
+    </ul>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

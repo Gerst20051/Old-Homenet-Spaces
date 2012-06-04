@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>MODE (Configure Serial Port)</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#m">Commands A-M</a>
+    &gt; <a href="../INDEXM.HTM#modecs">Commands M</a>
+    <h1>MODE (Configure Serial Port)</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Configures a serial communications port.</p>
+    <p>This version of the MODE command sets the parameters for a
+    serial port (COM1, COM2, COM3, or COM4).</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>MODE
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>MODE
+    <a href="#ParameterCOM">COMn</a>[:]
+    [<a href="#ParameterBaud">b</a>[,<a
+    href="#ParameterParity">p</a>[,<a
+    href="#ParameterData">d</a>[,<a
+    href="#ParameterStop">s</a>[,<a
+    href="#ParameterRetry">r</a>]]]]]</p>
+
+    <p>MODE
+    <a href="#ParameterCOM">COMn</a>[:]
+    [<a href="#ParameterBaud">BAUD=b</a>]
+    [<a href="#ParameterParity">PARITY=p</a>]
+    [<a href="#ParameterData">DATA=d</a>]
+    [<a href="#ParameterStop">STOP=s</a>]
+    [<a href="#ParameterRetry">RETRY=r</a>]
+    [<a href="#ParameterDtr">dtr=ON | OFF | HS</a>]
+    [<a href="#ParameterIdsr">idsr=ON | OFF</a>]
+    [<a href="#ParameterOcts">octs=ON | OFF</a>]
+    [<a href="#ParameterOdsr">odsr=ON | OFF</a>]
+    [<a href="#ParameterRts">rts=ON | OFF | HS | TG</a>]
+    [<a href="#ParameterTo">to=ON | OFF</a>]
+    [<a href="#ParameterXon">xon=ON | OFF</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterBaud"></a> b
+      (<a href="../../Version/MSDOS/110.HTM">v1.1</a>)</dt>
+      <dt>BAUD=b
+      (<a href="../../Version/MSDOS/400.HTM">v4.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the first two digits of the transmission rate in bits
+      per second. The list shows each valid value for b and
+      its related rate:
+        <ul>
+          <li><b>11</b> 110</li>
+          <li><b>15</b> 150</li>
+          <li><b>30</b> 300</li>
+          <li><b>60</b> 600</li>
+          <li><b>12</b> 1200</li>
+          <li><b>24</b> 2400</li>
+          <li><b>48</b> 4800</li>
+          <li><b>96</b> 9600</li>
+          <li><b>19</b> 19,200</li>
+        </ul>
+
+      The b value of 19 is not supported on all computers (check
+      your hardware manual). You can abbreviate this parameter by
+      omitting BAUD= and specifying a value for b.</dd>
+
+      <dt><a name="ParameterCOM"></a> COMn[:]
+      (<a href="../../Version/MSDOS/110.HTM">v1.1</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the number of the serial (COM) port.
+      Valid values for m are in the range 1 through 4.</dd>
+      <dd>If you omit any of the five parameters, MODE uses
+      the most recent setting for the omitted parameter. If you are
+      using the shorter form of the syntax (without the words BAUD=,
+      PARITY=, DATA=, and so on), the MODE command "recognizes" the
+      parameters by their positions. Thus, if you do not specify a
+      value for a parameter, you must still type the comma that
+      precedes the next parameter.</dd>
+
+      <dt><a name="ParameterData"></a> d
+      (<a href="../../Version/MSDOS/110.HTM">v1.1</a>)</dt>
+      <dt>DATA=d
+      (<a href="../../Version/MSDOS/400.HTM">v4.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the number of data bits in a character.
+        <ul>
+          <li><b>5</b> (not supported by all computers)</li>
+          <li><b>6</b> (not supported by all computers)</li>
+          <li><b>7</b> default</li>
+          <li><b>8</b></li>
+        </ul>
+      You can abbreviate this parameter by omitting DATA= and
+      specifying a value for d.</dd>
+
+      <dt><a name="ParameterDtr"></a> dtr=ON | OFF | HS
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies whether the Data Terminal Ready (DTR) circuit
+      is on or off, or set to handshake.</dd>
+
+      <dt> dtr=ON | OFF | HS
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Specifies whether the Data Terminal Ready (DTR) circuit
+      is on or off.</dd>
+
+      <dt><a name="ParameterIdsr"></a> idsr=ON | OFF
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies whether the DSR circuit sensitivity is on or off.</dd>
+
+      <dt><a name="ParameterOcts"></a> octs=ON | OFF
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies whether output handshaking that uses the
+      Clear To Send (CTS) circuit is on or off.</dd>
+
+      <dt><a name="ParameterOdsr"></a> odsr=ON | OFF
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies whether output handshaking that uses the
+      Data Set Ready (DSR) circuit is on or off.</dd>
+
+      <dt><a name="ParameterParity"></a> p
+      (<a href="../../Version/MSDOS/110.HTM">v1.1</a>)</dt>
+      <dt>PARITY=p
+      (<a href="../../Version/MSDOS/400.HTM">v4.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies how the system uses the parity bit to check for
+      transmission errors. The p value can be one of:
+        <ul>
+          <li><b>N</b> (none)</li>
+          <li><b>E</b> (even), default</li>
+          <li><b>O</b> (odd)</li>
+          <li><b>M</b> (mark), not supported by all computers</li>
+          <li><b>S</b> (space), not supported by all computers</li>
+        </ul>
+      You can abbreviate this parameter by omitting PARITY= and
+      specifying a value for p.</dd>
+
+      <dt><a name="ParameterRetry"></a> r
+      (<a href="../../Version/MSDOS/110.HTM">v1.1</a>)</dt>
+      <dt>RETRY=r
+      (<a href="../../Version/MSDOS/400.HTM">v4.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the retry action to take if a time-out error occurs
+      when MODE attempts to send output to a serial printer. This
+      parameter causes part of MODE to remain resident in memory. The
+      list shows each valid value for r and a brief
+      description of its meaning:
+        <ul>
+          <li><b>B</b> Return "busy" from a status check of a busy port.  The RETRY=B setting provides the same support as the P parameter did in previous versions of DOS</li>
+          <li><b>E</b> Return an error from a status check of a busy port</li>
+          <li><b>N</b> Take no retry action (default value).  You can also specify none for this value</li>
+          <li><b>P</b> Continue retrying until printer accepts output</li>
+          <li><b>R</b> Return "ready" from a status check of a busy port</li>
+        </ul>
+      If you are using the MODE command over a network, do not use
+      any of the r values. You can abbreviate this parameter by
+      simply omitting RETRY= and specifying a value for r.</dd>
+
+      <dt><a name="ParameterRts"></a> rts=ON | OFF | HS | TG
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies whether the Request To Send (RTS) circuit
+      is set to on, off, handshake, or toggle.</dd>
+
+      <dt><a name="ParameterStop"></a> s
+      (<a href="../../Version/MSDOS/110.HTM">v1.1</a>)</dt>
+      <dt>STOP=s
+      (<a href="../../Version/MSDOS/400.HTM">v4.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the number of stop bits that define the end of a
+      character:
+        <ul>
+          <li><b>1</b> default, when NOT 110 baud</li>
+          <li><b>1.5</b> (not supported by all computers)</li>
+          <li><b>2</b> default, when 110 baud</li>
+        </ul>
+      You can abbreviate this parameter by omitting STOP= and
+      specifying a value for s.</dd>
+
+      <dt><a name="ParameterTo"></a> to=ON | OFF
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies whether infinite time-out processing is
+      on or off. The default is off.</dd>
+
+      <dt><a name="ParameterXon"></a> xon=ON | OFF
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies whether the xon or xoff protocol for
+      data-flow control is on or off.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="MODECP.HTM">MODE</a> - Configure Printer.
+    <br><a href="MODEDD.HTM">MODE</a> - Display Device Status.
+    <br><a href="MODERP.HTM">MODE</a> - Redirect Printing.
+    <br><a href="MODESC.HTM">MODE</a> - Set Device Code Pages.
+    <br><a href="MODESM.HTM">MODE</a> - Set Display Mode.
+    <br><a href="MODEST.HTM">MODE</a> - Set Typematic Rate.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/100.HTM">v1.0</a>
+          <a href="../../Version/MSDOS/105.HTM">v1.05</a>
+          <a href="../../Version/MSDOS/110.HTM">v1.1</a>
+          <a href="../../Version/MSDOS/111.HTM">v1.11</a>
+          v1.24
+          v1.25
+          <a href="../../Version/MSDOS/185.HTM">v1.85</a>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

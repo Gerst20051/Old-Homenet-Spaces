@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>SETX</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#s">Commands N-Z</a>
+    &gt; <a href="../INDEXS.HTM#setx">Commands S</a>
+    <h1>SETX</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Set environment variables permanently.</p>
+    <p><b>IMPORTANT:</b> SETX writes variables to the master environment
+    in the registry. Variables set using SETX are only available in
+    future command windows and not in the current command window.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>SETX
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>SETX
+    [<a href="#SwitchI">-i</a>]</p>
+
+    <p>SETX
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [domain\]user</a>
+      [<a href="#SwitchP">/p [password]</a>]]]
+    <a href="#ParameterVariable">variable</a>
+    <a href="#ParameterString">string</a>
+    [<a href="#SwitchM">/m</a>]</p>
+
+    <p>SETX
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [domain\]user</a>
+      [<a href="#SwitchP">/p [password]</a>]]]
+    [<a href="#ParameterVariable">variable</a>]
+    <a href="#SwitchK">/k path</a>
+    [<a href="#SwitchM">/m</a>]</p>
+
+    <p>SETX
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [domain\]user</a>
+      [<a href="#SwitchP">/p [password]</a>]]]
+    <a href="#SwitchF">/f file_name</a>
+    [<a href="#ParameterVariable">variable</a>]
+    [<a href="#SwitchA">/a X,y</a>
+    | <a href="#SwitchR">/r X,y "string"</a>]
+    [<a href="#SwitchM">/m</a>]
+    [<a href="#SwitchD">/d delimiters</a>]</p>
+
+    <p>SETX
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [domain\]user</a>
+      [<a href="#SwitchP">/p [password]</a>]]]
+    <a href="#SwitchF">/f file_name</a>
+    [<a href="#ParameterVariable">variable</a>]
+    [<a href="#SwitchM">/m</a>]
+    [<a href="#SwitchX">/x</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterString"></a> string
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Specifies the string you want to associate with the specified
+      variable.</dd>
+
+      <dt><a name="ParameterVariable"></a> variable
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Specifies the variable you want to set or modify. Variables
+      are not case sensitive.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display command help.</dd>
+
+      <dt><a name="SwitchA"></a> /a X,y
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies absolute coordinates and offset as
+      search parameters.</dd>
+
+      <dt><a name="SwitchD"></a> /d delimiters
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies additional delimiters such as "," or
+      "\". The four built-in delimiters are SPACE, TAB,
+      ENTER, and LINEFEED. You can use any ASCII character
+      as an additional delimiter. The maximum number of
+      delimiters, including the four built-in delimiters,
+      is 15.</dd>
+
+      <dt><a name="SwitchF"></a> /f file_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the file that you want to use.</dd>
+      <dd>File mode supports the parsing of CR-LF text files
+      only.</dd>
+
+      <dt><a name="SwitchI"></a> -i
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a> ONLY)</dt>
+      <dd>Edit CR-LF text files, (like win.ini).</dd>
+
+      <dt><a name="SwitchK"></a> /k path
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies that the variable is set based on
+      information from a registry key. Specify Path in the
+      \HIVE\KEY\...\Value format.</dd>
+      <dd>HKEY_CURRENT_USER and HKEY_LOCAL_MACHINE are the
+      only supported hives. REG_DWORD, REG_EXPAND_SZ, REG_SZ
+      AND REG_MULTI_SZ are the valid RegKey data types.</dd>
+      <dd>When gaining access to REG_MULTI_SZ values in the
+      registry, only the first item is extracted and used.</dd>
+      <dd>REG_DWORD registry values are extracted and used
+      in hexadecimal mode.</dd>
+
+      <dt><a name="SwitchM"></a> /m
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Sets value in the Machine (system) environment.
+      Default is User (local).</dd>
+
+      <dt><a name="SwitchP"></a> /p [password]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the password of the user account that is
+      specified in <a href="#SwitchU">/u</a>.</dd>
+
+      <dt><a name="SwitchR"></a> /r X,y "string"
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies relative coordinates and offset from
+      "string" as search parameters.</dd>
+
+      <dt><a name="SwitchS"></a> /s computer
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the name or IP address of a remote
+      computer (do not use backslashes). The default is the
+      local computer. Applies to all files and folders
+      specified in the command.</dd>
+
+      <dt><a name="SwitchU"></a> /u [domain\]user
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Runs the script with the permissions of the
+      specified user account.
+      The default is system permissions.</dd>
+
+      <dt><a name="SwitchX"></a> /x
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays file coordinates.</dd>
+   </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="SET.HTM">SET</a> - Display, set, or remove Windows NT environment variables.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>env - Display, set, or remove environment variables.
+    <br>export - Set an environment variable.
+    <br>setenv</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Registry Size can be increased in the control panel or from
+    HKLM\SYSTEM\CurrentControlSet\Control\RegistrySizeLimit</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>Sets value of v_machine to be COMPAQ in the users environment.
+    this is the same as the command
+    SET <a href="#ParameterVariable">v_machine</a>=<a href="#ParameterString">COMPAQ</a></p>
+<pre>
+    SETX <a
+href="#ParameterVariable">v_machine</a> <a
+href="#ParameterString">COMPAQ</a>
+</pre>
+
+    <p>Sets value of v_machine to be "COMPAQ COMPUTER" in the machine
+    environment:</p>
+<pre>
+    SETX <a
+href="#ParameterVariable">v_machine</a> <a
+href="#ParameterString">"COMPAQ COMPUTER"</a> <a
+href="#SwitchM">-m</a>
+</pre>
+
+    <p>Sets the value of v_mypath to the CURRENT value of the
+    <a href="../../ENV/MSDOS/PATH.HTM">%PATH%</a>
+    environment variable:</p>
+<pre>
+    SETX <a
+href="#ParameterVariable">v_mypath</a> <a
+href="#ParameterString">%PATH%</a>
+</pre>
+
+    <p>Sets the value of v_mypath to ALWAYS be equal to the value of
+    the <a href="../../ENV/MSDOS/PATH.HTM">%PATH%</a> environment variable
+    even in the event that the <a href="../../ENV/MSDOS/PATH.HTM">%PATH%</a>
+    variable changes:</p>
+<pre>
+    SETX <a
+href="#ParameterVariable">v_mypath</a> <a
+href="#ParameterString">~PATH~</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External Resource Kit</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

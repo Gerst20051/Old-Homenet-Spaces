@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DCGPOFIX</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDA.HTM#dcgpofix">Commands Da-Dr</a>
+    <h1>DCGPOFIX</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Restores the default Group Policy objects to their original
+    state (that is, the default state after initial installation).</p>
+    <p><b>Caution:</b> This tool can restore default domain policy
+    and default domain controllers policy to their original state
+    after installation. When you run DCGPOFIX, you will lose any
+    changes made to these Group Policy objects.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>DCGPOFIX
+    [<a href="#SwitchIgnoreSchema">/ignoreschema</a>]
+    [<a href="#SwitchTarget">/target:{both | dc | domain}</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchIgnoreSchema"></a> /ignoreschema
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Ignores the Active Directory schema version number.</dd>
+      <dd>By specifying the /ignoreschema option, you can
+      enable DCGPOFIX to work with different versions of
+      Active Directory. However, default policy objects
+      might not be restored to their original state. To
+      ensure compatibility, use the version of DCGPOFIX
+      that is installed with the current operating system.</dd>
+
+      <dt><a name="SwitchTarget"></a> /target:{both | dc | domain}
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the target domain, domain controller, or
+      both (default).</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

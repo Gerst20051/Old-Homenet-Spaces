@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>RESET SESSION</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#r">Commands N-Z</a>
+    &gt; <a href="../INDEXR.HTM#resetsession">Commands R</a>
+    <h1>RESET SESSION</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Enables you to reset (delete) a session from the
+    terminal server.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>RESET SESSION
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>RESET SESSION
+    {<a href="#ParameterSessionName">session_name</a>
+    | <a href="#ParameterSessionId">session_id</a>}
+    [<a href="#SwitchServer">-server:server_name</a>]
+    [<a href="#SwitchV">-v</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterSessionId"></a> session_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>The ID of the session to reset.</dd>
+
+      <dt><a name="ParameterSessionName"></a> session_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>The name of the session you want to reset. To
+      determine the name of the session, use
+      <a href="../Q/QUERYSES.HTM">query session</a>.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchServer"></a> /server:server_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the terminal server containing the
+      session you want to reset. Otherwise, the current
+      terminal server is used.</dd>
+      <dd>Required only if you use reset from a remote
+      server.</dd>
+
+      <dt><a name="SwitchV"></a> -v
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays information about the actions being
+      performed.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>You can always reset your own sessions, but you must
+    have Full Control access permission to reset another
+    user's session.</p>
+    <p>Be aware that resetting a user's session without
+    warning can result in loss of data at the session.</p>
+    <p>You should reset a session only when it malfunctions
+    or appears to have stopped responding.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

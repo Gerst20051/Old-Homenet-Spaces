@@ -1,0 +1,605 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>EMM386.EXE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#e">Commands A-M</a>
+    &gt; <a href="../INDEXE.HTM#emm386exe">Configuration E</a>
+    <h1>EMM386.EXE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p> Provides access to the upper memory area and uses extended memory to
+    simulate expanded memory. This device driver must be loaded by a
+    <a href="../D/DEVICE.HTM">DEVICE</a> command in your CONFIG.SYS file and
+    can be used only on computers with an 80386 or higher processor.</p>
+
+    <p>EMM386 uses extended memory to simulate expanded memory for programs
+    that can use expanded memory. EMM386 also makes it possible to load
+    programs and device drivers into upper memory blocks (UMBs).</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p><a href="../D/DEVICE.HTM">DEVICE</a>=<a
+    href="#ParameterDrivePath">[drive:][\path\]</a>EMM386.EXE
+    [<a href="#ParameterOn">ON</a>
+    | <a href="#ParameterOff">OFF</a>
+    | <a href="#ParameterAuto">AUTO</a>]
+    [<a href="#ParameterMemory">memory</a>]
+    [<a href="#ParameterMx">Mx</a>
+    | <a href="#ParameterFrame">FRAME=address</a>
+    | <a href="#SwitchP">/Pmmmm</a>]
+    [<a href="#ParameterA">A=altregs</a>]
+    [<a href="#ParameterAltboot">ALTBOOT</a>]
+    [<a href="#ParameterB">B=address</a>]
+    [<a href="#ParameterD">D=nnn</a>]
+    [<a href="#ParameterH">H=handles</a>]
+    [<a href="#ParameterHighscan">HIGHSCAN</a>]
+    [<a href="#ParameterI">I=mmmm-nnnn</a>]
+    [<a href="#ParameterL">L=minXMS</a>]
+    [<a href="#ParameterMin">MIN=size</a>]
+    [[<a href="#ParameterNoems">NOEMS</a>]
+     [<a href="#ParameterNovcpi">NOVCPI</a>]]
+    [<a href="#ParameterNohi">NOHI</a>]
+    [<a href="#ParameterNomovexbda">NOMOVEXBDA</a>]
+    [<a href="#ParameterNotr">NOTR</a>]
+    [<a href="#ParameterPn">Pn=address</a>]
+    [<a href="#ParameterRam">RAM=mmmm-nnnn</a>]
+    [<a href="#ParameterRom">ROM=mmmm-nnnn</a>]
+    [<a href="#ParameterVerbose">V[ERBOSE]</a>]
+    [W=<a href="#ParameterWOn">ON</a>
+    | <a href="#ParameterWOff">OFF</a>]
+    [<a href="#ParameterWin">WIN=mmmm-nnnn</a>]
+    [<a href="#ParameterX">X=mmmm-nnnn</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterA"></a> A=altregs
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies how many fast alternate register sets
+      (used for multitasking) you want to allocate to
+      EMM386. Valid values are in the range 0 through 254.
+      The default value is 7. Every alternate register set
+      adds about 200 bytes to the size in memory of EMM386.</dd>
+
+      <dt><a name="ParameterAltboot"></a> ALTBOOT
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies that EMM386 use an alternate handler to
+      restart your computer when you press CTRL+ALT+DEL. Use
+      this only if your computer stops responding or
+      exhibits other unusual behavior when EMM386 is loaded
+      and you press CTRL+ALT+DEL.</dd>
+
+      <dt><a name="ParameterB"></a> B=mmmm-nnnn
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the lowest segment address available for
+      EMS "banking" (swapping of 16-kilobyte pages). Valid
+      values are in the range 1000h through 4000h. The
+      default value is 4000h.</dd>
+
+      <dt><a name="ParameterD"></a> D=nnn
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies how many kilobytes of memory should be
+      reserved for buffered direct memory access (DMA).
+      Discounting floppy-disk DMA, this value should reflect
+      the largest DMA transfer that will occur while EMM386
+      is active. Valid values for nnn are in the range 16
+      through 256. The default value is 32.</dd>
+
+      <dt><a name="ParameterDrivePath"></a> [drive:][\path\]
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the location of the EMM386.EXE file.</dd>
+
+      <dt><a name="ParameterFrame"></a> FRAME=address
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the page-frame segment base directly. To
+      specify a specific segment-base address for the page
+      frame, use the FRAME switch and specify the address
+      you want. Valid values for address are in the ranges
+      8000h through 9000h and C000h through E000h, in
+      increments of 400h. To provide expanded memory and
+      disable the page frame, you can specify FRAME=NONE;
+      however, this may cause some programs that require
+      expanded memory to work improperly.</dd>
+
+      <dt><a name="ParameterH"></a> H=handles
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies how many handles EMM386 can use. Valid
+      values are in the range 2 through 255.
+      The default value is 64.</dd>
+
+      <dt><a name="ParameterHighscan"></a> HIGHSCAN
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies that EMM386 use an additional check to
+      determine the availablity of upper memory for use as
+      UMBs or EMS windows. On some computers, specifying
+      this switch may have no effect or cause EMM386 to
+      identify upper memory areas as available when they
+      are not. As a result, your computer might stop
+      responding.</dd>
+
+      <dt><a name="ParameterI"></a> I=mmmm-nnnn
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies a range of segment addresses to be used
+      (included) for an EMS page or for UMBs. Valid values
+      for mmmm and nnnn are in the range A000h through FFFFh
+      and are rounded down to the nearest 4-kilobyte
+      boundary. <a href="#ParameterX">X</a> takes precedence
+      over the I switch if the two ranges overlap.</dd>
+
+      <dt><a name="ParameterL"></a> L=minXMS
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Ensures that the specified amount (in kilobytes)
+      of extended memory will still be available after
+      EMM386 is loaded. The default value is 0.</dd>
+
+      <dt><a name="ParameterMemory"></a> memory
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the maximum amount of extended memory
+      (in kilobytes) that you want EMM386 to provide as
+      expanded/Virtual Control Program Interface (EMS/VCPI)
+      memory. This amount is in addition to the memory used
+      for UMBs and EMM386 itself. Values for memory are in
+      the range 64 through the lesser of either 32768 or the
+      amount of extended memory available when EMM386 is
+      loaded. The default value is the amount of free
+      extended memory. If you specify
+      <a href="#ParameterNoems">NOEMS</a>, the default value
+      is 0. EMM386 rounds the value down to the nearest
+      multiple of 16.</dd>
+
+      <dt><a name="ParameterMin"></a> MIN=size
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the minimum amount of EMS/VCPI memory
+      (in kilobytes) that EMM386 will provide, if that
+      amount of memory is available. EMM386 reserves this
+      amount of extended memory for use as EMS/VCPI memory
+      when EMM386 is loaded by the
+      <a href="../D/DEVICE.HTM">DEVICE</a>=EMM386.EXE
+      command in your CONFIG.SYS file. EMM386 may be able
+      to provide additional EMS/VCPI memory (up to the
+      amount specified by the <a href="#ParameterMemory">memory</a>
+      parameter) if sufficient XMS memory is available when
+      a program requests EMS/VCPI memory. Values are in the
+      range 0 through the value specified by the
+      <a href="#ParameterMemory">memory</a> parameter. The
+      default value is 256. If you specify
+      <a href="#ParameterNoems">NOEMS</a> NOEMS, the default
+      value is 0. If the value of MIN is greater than the
+      value of <a href="#ParameterMemory">memory</a>,
+      EMM386 uses the value specified by MIN.</dd>
+
+      <dt><a name="ParameterMx"></a> Mx
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the address of the page frame. Valid
+      values for x are in the range 1 through 14. The list
+      shows each value and its associated base address in
+      hexadecimal format:
+      <ul>
+        <li><b>1</b> =&gt; C000h</li>
+        <li><b>2</b> =&gt; C400h</li>
+        <li><b>3</b> =&gt; C800h</li>
+        <li><b>4</b> =&gt; CC00h</li>
+        <li><b>5</b> =&gt; D000h</li>
+        <li><b>6</b> =&gt; D400h</li>
+        <li><b>7</b> =&gt; D800h</li>
+        <li><b>8</b> =&gt; DC00h</li>
+        <li><b>9</b> =&gt; E000h</li>
+        <li><b>10</b> =&gt; 8000h</li>
+        <li><b>11</b> =&gt; 8400h</li>
+        <li><b>12</b> =&gt; 8800h</li>
+        <li><b>13</b> =&gt; 8C00h</li>
+        <li><b>14</b> =&gt; 9000h</li>
+      </ul>Values in the range 10 through 14 should be used
+      only on computers that have 512K of memory.</dd>
+
+      <dt><a name="ParameterNoems"></a> NOEMS
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Provides access to the upper memory area but
+      prevents access to expanded memory.</dd>
+
+      <dt><a name="ParameterNohi"></a> NOHI
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Prevents EMM386 from loading into the upper memory
+      area. Normally, a portion of EMM386 is loaded into
+      upper memory. Specifying this decreases available
+      conventional memory and increases the upper memory
+      area available for UMBs.</dd>
+
+      <dt><a name="ParameterNomovexbda"></a> NOMOVEXBDA
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Prevents EMM386 from moving the extended BIOS data
+      from conventional memory to upper memory.</dd>
+
+      <dt><a name="ParameterNotr"></a> NOTR
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd><b>UNDOCUMENTED</b> Prevents EMM386 from detecting
+      the presence of a Token Ring Network adapter.</dd>
+
+      <dt><a name="ParameterNovcpi"></a> NOVCPI
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Disables support for VCPI applications. This must
+      be used with <a href="#ParameterNoems">NOEMS</a>. If
+      you specify NOVCPI without specifying
+      <a href="#ParameterNoems">NOEMS</a>, EMM386 does not
+      disable VCPI support. If you specify both, EMM386
+      disregards <a href="#ParameterMemory">MEMORY</a> and
+      the <a href="#ParameterMin">MIN</a>. Disabling support
+      for VCPI applications reduces the amount of extended
+      memory allocated.</dd>
+
+      <dt><a name="ParameterOn"></a> ON
+      (<a name="ParameterOff"></a> | OFF
+      <a name="ParameterAuto"></a> | AUTO
+      <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Activates the EMM386 device driver (if set to ON),
+      or suspends the EMM386 device driver (if set to OFF),
+      or places the EMM386 device driver in auto mode (if
+      set to AUTO). Auto mode enables expanded-memory
+      support only when a program calls for it. The default
+      value is ON. Use the <a href="EMM386.HTM">EMM386</a>
+      command to change this value after EMM386 has started.</dd>
+
+      <dt><a name="ParameterPn"></a> Pn=address
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the segment address of a specific page,
+      where n is the number of the page you are specifying
+      and address is the segment address you want. Valid
+      values for n are in the range 0 through 255. Valid
+      values for address are in the ranges 8000h through
+      9C00h and C000h through EC00h, in increments of 400h.
+      The addresses for pages 0 through 3 must be contiguous
+      in order to maintain compatibility with version 3.2 of
+      the Lotus/Intel/Microsoft Expanded Memory
+      Specification (LIM EMS). If you use
+      <a href="#ParameterMx">Mx</a>,
+      <a href="#ParameterFrame">FRAME=address</a>,
+      or <a href="#SwitchP">/Pmmmm</a>, you cannot specify
+      the addresses for pages 0 through 3 for
+      <a href="#SwitchP">/Pmmmm</a>.</dd>
+
+      <dt><a name="ParameterRam"></a> RAM=mmmm-nnnn
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies a range of segment addresses to be used
+      for UMBs and also enables EMS support. If you do not
+      specify a range, EMM386 uses all available adapter
+      space to create UMBs and a page frame for EMS.</dd>
+
+      <dt><a name="ParameterRom"></a> ROM=mmmm-nnnn
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies a range of segment addresses that EMM386
+      uses for shadow RAM--random-access memory used for
+      read-only memory (ROM). Valid values for mmmm and nnnn
+      are in the range A000h through FFFFh and are rounded
+      down to the nearest 4-kilobyte boundary. Specifying
+      this switch may speed up your system if it does not
+      already have shadow RAM.</dd>
+
+      <dt><a name="ParameterVerbose"></a> V[ERBOSE]
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Directs EMM386 to display status and error
+      messages while loading. By default, EMM386 displays
+      messages only if it encounters an error condition.
+      (To display status messages without adding VERBOSE,
+      press and hold the ALT key while EMM386 starts and
+      loads.)</dd>
+
+      <dt><a name="ParameterWOn"></a> W=ON
+      (<a name="ParameterWOff"></a> | OFF
+      <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Enables (if set to W=ON) or disables (if set to W=OFF) Weitek
+      coprocessor support. The default value is W=OFF.</dd>
+
+      <dt><a name="ParameterWin"></a> WIN=mmmm-nnnn
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Reserves a specified range of segment addresses
+      for Windows instead of for EMM386. Valid values for
+      mmmm and nnnn are in the range A000h through FFFFh and
+      are rounded down to the nearest 4-kilobyte boundary.
+      <a href="#ParameterX">X</a> takes precedence over WIN
+      if the two ranges overlap. WIN takes precedence over
+      the <a href="#ParameterRam">RAM</a>,
+      <a href="#ParameterRom">ROM</a>, and
+      <a href="#ParameterI">I</a> if their ranges overlap.</dd>
+
+      <dt><a name="ParameterX"></a> X=mmmm-nnnn
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Prevents EMM386 from using a particular range of
+      segment addresses for an EMS page or for UMBs. Valid
+      values for mmmm and nnnn are in the range A000h
+      through FFFFh and are rounded down to the nearest
+      4-kilobyte boundary. X takes precedence over
+      <a href="#ParameterI">I</a> if the two ranges overlap.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchP"></a> /Pmmmm
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the address of the page frame. Valid
+      values for mmmm are in the ranges 8000h through 9000h
+      and C000h through E000h, in increments of 400h.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="EMM386.HTM">EMM386</a>.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Install">Must install HIMEM.SYS before EMM386.EXE</a></li>
+      <li><a href="#Sharing">Sharing XMS and EMS memory</a></li>
+      <li><a href="#Smartdrv">SMARTDRV double buffering may be required to use EMM386</a></li>
+      <li><a href="#Using">Using EMM386 memory switches</a></li>
+      <li><a href="#Upper">Using EMM386 to provide access to the upper memory area</a></li>
+      <li><a href="#Win31">Using EMM386 with Windows 3.1</a></li>
+    </ul>
+
+    <hr>
+    <a name="Sharing"></a> <b>Sharing XMS and EMS memory</b>
+    <p>EMM386 provides EMS/VCPI memory for programs that
+    require it by converting XMS memory to EMS/VCPI memory.
+    When it is loaded, EMM386 reserves the amount of memory
+    specified by <a href="#ParameterMin">MIN</a> for use as
+    EMS/VCPI memory (the default value is 256K). Once this
+    amount of XMS memory is reserved, it is always available
+    as EMS/VCPI memory and no longer available as XMS memory.
+    EMM386 may be able to convert additional amounts of XMS
+    memory to EMS/VCPI memory, up to the amount specified by
+    <a href="#ParameterMemory">memory</a>. EMM386 returns
+    the additional amount back to XMS memory when it is no
+    longer needed as EMS/VCPI memory.</p>
+
+    <p>If you specify <a href="#ParameterMin">MIN=0</a>,
+    EMM386 does not reserve any XMS memory for use as
+    EMS/VCPI memory. Instead, it converts XMS memory to
+    EMS/VCPI memory only when a program requests it. This
+    frees XMS memory when EMS/VCPI memory is not needed.
+    However, EMM386 will not be able to supply the requested
+    amount of EMS/VCPI memory if programs have allocated all
+    the XMS memory at the time of the request.</p>
+
+    <hr>
+    <a name="Install"></a> <b>Must install HIMEM.SYS before EMM386.EXE</b>
+    <p>You must include a <a href="../D/DEVICE.HTM">DEVICE</a>
+    command for the <a href="../H/HIMEMSYS.HTM">HIMEM.SYS</a>
+    device driver in your CONFIG.SYS file before the
+    <a href="../D/DEVICE.HTM">DEVICE</a> command for
+    EMM386.EXE.</p>
+
+    <hr>
+    <a name="Using"></a> <b>Using EMM386 memory switches</b>
+    <p>Unless you want to use EMM386 to provide access to
+    the upper memory area, you need not specify memory
+    switches on the <a href="../D/DEVICE.HTM">DEVICE</a>
+    command line. EMM386 usually runs properly with the
+    default values. In some cases, however, you might want
+    to control how EMM386 uses memory. For example, you can
+    control where EMM386 puts the EMS page frame or which
+    segments it uses for EMS pages. You can use as many of
+    these memory switches as you want, in any order you
+    want.</p>
+
+    <p><b>CAUTION:</b> Use EMM386.EXE parameters carefully.
+    You can make your computer inoperable if you use them
+    incorrectly.</p>
+
+    <hr>
+    <a name="Upper"></a> <b>Using EMM386 to provide access to the upper memory area</b>
+    <p>In addition to providing access to expanded memory,
+    EMM386 provides access to the upper memory area, which
+    you can use to load certain programs and device drivers.
+    You must use either <a href="#ParameterRam">RAM</a>
+    or <a href="#ParameterNoems">NOEMS</a> to provide access
+    to the upper memory area.</p>
+
+    <p>To give the operating system access to the upper
+    memory area but not to expanded memory, use
+    <a href="#ParameterNoems">NOEMS</a>. To give the
+    operating system access to both the upper memory area
+    and expanded memory, use the <a href="#ParameterRam">RAM</a>
+    switch. <a href="#ParameterRam">RAM</a> provides access
+    to less of the upper memory area for running device
+    drivers and programs than does
+    <a href="#ParameterNoems">NOEMS</a>. In either case, you
+    must include the <a href="../D/DOS.HTM">DOS</a>=<a
+    href="../D/DOS.HTM#ParameterUmb">UMB</a> command in your
+    CONFIG.SYS file. The
+    <a href="../D/DEVICE.HTM">DEVICE</a> command for
+    EMM386.EXE must precede any
+    <a href="../D/DEVICEHI.HTM">DEVICEHIGH</a> commands.</p>
+
+    <hr>
+    <a name="Win31"></a> <b>Using EMM386 with Windows 3.1</b>
+    <p>When EMM386 is used with
+    <a href="../../Version/MSWIN/310.HTM">Windows 3.1</a>,
+    the <a href="#ParameterI">I</a>, <a href="#ParameterX">X</a>,
+    <a href="#ParameterNoems">NOEMS</a>, <a href="#ParameterMx">Mx</a>,
+    <a href="#ParameterFrame">FRAME</a>, and <a href="#SwitchP">/Pmmmm</a>
+    have precedence over the EMMINCLUDE, EMMEXCLUDE, and
+    EMMPAGEFRAME settings in the Windows SYSTEM.INI file.
+    Changes to these settings in the SYSTEM.INI file have no
+    effect when EMM386 is loaded.</p>
+
+    <hr>
+    <a name="Smartdrv"></a> <b>SMARTDRV double buffering may be required to use EMM386</b>
+    <p>If you have a small computer system interface (SCSI)
+    or enhanced system device interface (ESDI) hard disk or
+    other device, you may have to add the following line to
+    your CONFIG.SYS file:
+<pre>
+    <a href="../D/DEVICE.HTM">DEVICE</a>=<a
+href="../S/SMARTDRV.HTM">smartdrv.exe</a> /double_buffer
+</pre>
+
+    <p>Add the line before any
+    <a href="../D/DEVICEHI.HTM">DEVICEHIGH</a> statements
+    and before any statements that load installable device
+    drivers that use expanded memory. The statement enables
+    an SCSI or EDSI controller to transfer information to
+    programs that use the upper memory area or expanded
+    memory.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To start EMM386 as an expanded-memory emulator, using
+    the default values, add to your CONFIG.SYS file:
+<pre>
+    <a href="../D/DEVICE.HTM">DEVICE</a>=<a
+href="../H/HIMEMSYS.HTM">himem.sys</a>
+    <a href="../D/DEVICE.HTM">DEVICE</a>=EMM386.EXE
+</pre>
+
+    <p>Since no location is specified, the operating system
+    searches for the EMM386.EXE file in the root directory
+    of your startup drive.</p>
+
+    <hr>
+    <p>To specify that EMM386 allocate a maximum of 4096K of
+    memory and a guaranteed 256K of memory (the default
+    value), and to specify that the EMM386.EXE file is
+    located in the DOS directory on drive C, add the line
+    to your CONFIG.SYS file:
+<pre>
+    <a href="../D/DEVICE.HTM">DEVICE</a>=EMM386.EXE <a
+href="#ParameterMemory">4096</a>
+</pre>
+
+    <hr>
+    <p>To emulate expanded memory, specify the segment-base
+    address D000h for the EMS page frame, and allocate 512K
+    of memory to EMM386, use one of the commands:
+<pre>
+    <a href="../D/DEVICE.HTM">DEVICE</a>=EMM386.EXE <a
+href="#ParameterMemory">512</a> <a
+href="#ParameterFrame">FRAME=d000</a>
+
+    <a href="../D/DEVICE.HTM">DEVICE</a>=EMM386.EXE <a
+href="#ParameterMemory">512</a> <a
+href="#ParameterPn">p0=d000</a> <a
+href="#ParameterPn">p1=d400</a> <a
+href="#ParameterPn">p2=d800</a> <a
+href="#ParameterPn">p3=dc00</a>
+</pre>
+
+    <hr>
+    <p>Suppose that, in addition to specifying the conditions
+    set in the preceding commands, you want to prevent EMM386
+    from using the segment addresses E000h through EC00h. To
+    do this and to specify that EMM386 can use 127 handles,
+    add to your CONFIG.SYS file:
+<pre>
+    <a href="../D/DEVICE.HTM">DEVICE</a>=EMM386.EXE <a
+href="#ParameterMemory">512</a> <a
+href="#ParameterFrame">FRAME=d000</a> <a
+href="#ParameterX">X=e000-ec00</a> <a
+href="#ParameterH">H=127</a>
+</pre>
+
+    <hr>
+    <p>To provide access to the upper memory area but not
+    provide EMS/VCPI memory, add to your CONFIG.SYS file:
+<pre>
+    <a href="../D/DEVICE.HTM">DEVICE</a>=EMM386.EXE <a
+href="#ParameterNoems">NOEMS</a> <a
+href="#ParameterNovcpi">NOVCPI</a>
+</pre>
+
+    <hr>
+    <p>To provide access to the upper memory area and
+    provide EMS/VCPI memory, add to your CONFIG.SYS file:
+<pre>
+    <a href="../D/DEVICE.HTM">DEVICE</a>=EMM386.EXE <a
+href="#ParameterRam">RAM</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2004/03/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

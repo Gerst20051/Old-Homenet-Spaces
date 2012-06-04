@@ -1,0 +1,508 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>TCP / IP Protocols</title>
+<script language="JavaScript" fptype="dynamicanimation">
+<!--
+function dynAnimation() {}
+function clickSwapImg() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicanimation" src="../../../animate.js">
+
+
+
+
+</script>
+<meta name="Microsoft Theme" content="layers 0011">
+</head>
+
+<body onload="dynAnimation()" background="../../../_themes/layers/laybkgnd.gif" bgcolor="#FFFFFF" text="#000000" link="#330099" vlink="#999999" alink="#660033"><!--mstheme--><font face="georgia,times new roman,times">
+
+<h1 align="center"><!--mstheme--><font face="georgia,Times New Roman,Times"><!--mstheme--><b><b>TCP/IP Protocols&nbsp; </b><!--mstheme--></font><!--mstheme--></b></h1>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<!--mstheme--></font><table width="654" border="0">
+  <tr>
+    <td class="blue" vAlign="top" width="381"><!--mstheme--><font face="georgia,times new roman,times">
+    <p class="purpletext"><span class="title2">Protocols according to layers</span><font size="3"><br>
+    </font><span class="blue"><a href="#Data Link Layer">Data Link Layer</a><br>
+    <a href="#Network Layer">Network Layer</a> <br>
+    <a href="#Transport Layer">Transport Layer</a> <br>
+    <a href="#Session Layer">Session Layer</a> <br>
+    <a href="#Application Layer">Application Layer</a> <br>
+    <a href="#Routing">Routing</a> <br>
+    <a href="#Tunneling">Tunneling</a><br>
+    <a href="#Security">Security</a></span></p>
+    <!--mstheme--></font></td>
+    <td vAlign="top" align="middle" width="263"><!--mstheme--><font face="georgia,times new roman,times">
+    <!--mstheme--></font><table width="385" align="left" border="0">
+      <tr>
+        <td width="50"><!--mstheme--><font face="georgia,times new roman,times">
+        <a onmouseover="document['fpAnimswapImgFP1'].imgRolln=document['fpAnimswapImgFP1'].src;document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].lowsrc;" onmouseout="document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].imgRolln" href="#Map">
+        <img src="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/Route%20Map.gif" border="0" name="fpAnimswapImgFP1" oSrc="http://www.protocols.com/pbook/images/routemap.gif" id="fpAnimswapImgFP1" dynamicanimation="fpAnimswapImgFP1" lowsrc="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/Route%20Map%201.gif" width="50" height="50"></a><!--mstheme--></font></td>
+        <td class="green" vAlign="top" width="325"><!--mstheme--><font face="georgia,times new roman,times"><a href="#Map">Click here</a> 
+        to view protocols route map
+        <a href="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/TCPIP%20Protocols.png">
+        Click Here</a><!--mstheme--></font></td>
+      </tr>
+      <tr>
+        <td class="orangetext" colSpan="2" width="379"><!--mstheme--><font face="georgia,times new roman,times"><font size="4">Shortcuts to popular Protocols</font><!--mstheme--></font></td>
+      </tr>
+      <tr>
+        <td class="orange" width="50"><!--mstheme--><font face="georgia,times new roman,times">
+        <a href="http://www.protocols.com/pbook/tcpip2.htm#IP">IP</a><!--mstheme--></font></td>
+        <td class="orangetext" width="325"><!--mstheme--><font face="georgia,times new roman,times">Internet Protocol version 4<!--mstheme--></font></td>
+      </tr>
+      <tr>
+        <td class="orange" width="50"><!--mstheme--><font face="georgia,times new roman,times">
+        <a href="http://www.protocols.com/pbook/tcpip2.htm#IPv6">IPv6</a><!--mstheme--></font></td>
+        <td class="orangetext" width="325"><!--mstheme--><font face="georgia,times new roman,times">Internet Protocol version 6<!--mstheme--></font></td>
+      </tr>
+      <tr>
+        <td class="orange" width="50"><!--mstheme--><font face="georgia,times new roman,times">
+        <a href="http://www.protocols.com/pbook/tcpip2.htm#TCP">TCP</a><!--mstheme--></font></td>
+        <td class="orangetext" width="325"><!--mstheme--><font face="georgia,times new roman,times">Transmission Control Protocol<!--mstheme--></font></td>
+      </tr>
+      <tr>
+        <td class="orange" height="18" width="50"><!--mstheme--><font face="georgia,times new roman,times">
+        <a href="http://www.protocols.com/pbook/tcpip2.htm#UDP">UDP</a><!--mstheme--></font></td>
+        <td class="orangetext" width="325"><!--mstheme--><font face="georgia,times new roman,times">User Datagram Protocol<!--mstheme--></font></td>
+      </tr>
+    </table><!--mstheme--><font face="georgia,times new roman,times">
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="blacktext">The Defense Advance Research Projects Agency (DARPA) 
+originally developed Transmission Control Protocol/Internet Protocol (TCP/IP) to 
+interconnect various defense department computer networks. The Internet, an international 
+Wide Area Network, uses TCP/IP to connect government and educational institutions 
+across the world. TCP/IP is also in widespread use on commercial and private networks. 
+The TCP/IP suite includes the following protocols</span></p>
+<!--mstheme--></font><table class="blacktext" width="500" border="0">
+  <tr class="blacktext">
+    <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times"><span class="title3"><a name="Data Link Layer">Data Link Layer
+    </a></span><!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td class="blacktext" width="111"><!--mstheme--><font face="georgia,times new roman,times">
+    <a class="blacktext" href="http://www.protocols.com/pbook/tcpip3.htm#ARP">ARP/RARP</a><!--mstheme--></font></td>
+    <td width="379"><!--mstheme--><font face="georgia,times new roman,times">Address Resolution Protocol/Reverse Address<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip3.htm#DCAP">DCAP</a><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Data Link Switching Client Access Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times"><br>
+    <a name="Network Layer"><span class="title3">Network Layer</span><span class="title2">
+    </span></a><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip3.htm#DHCP">DHCP</a><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Dynamic Host Configuration Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip3.htm#DVMRP">DVMRP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Distance Vector Multicast Routing Protocol <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip3.htm#ICMP">ICMP</a>/<a href="http://www.protocols.com/pbook/tcpip3.htm#ICMPv6">ICMPv6</a><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Internet Control Message Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip4.htm#IGMP">IGMP</a><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Internet Group Management Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times"><a href="http://www.protocols.com/pbook/tcpip2.htm#IP">IP</a><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Internet Protocol version 4<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times"><a href="http://www.protocols.com/pbook/tcpip2.htm#IPv6">IPv6</a><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Internet Protocol version 6<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip4.htm#MARS">MARS</a><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Multicast Address Resolution Server<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip4.htm#PIM">PIM</a><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Protocol Independent Multicast-Sparse Mode (PIM-SM)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip4.htm#RIP2">RIP2</a><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Routing Information Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip4.htm#RIPng">RIPng for IPv6</a><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Routing Information Protocol for IPv6<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip4.htm#RSVP">RSVP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Resource ReSerVation setup Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip4.htm#VRRP">VRRP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Virtual Router Redundancy Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times"><span class="title2"><br>
+    </span><a name="Transport Layer"><span class="title3">Transport Layer</span>
+    </a><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip6.htm#ISTP">ISTP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip6.htm#MobileIP">Mobile IP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Mobile IP Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip6.htm#RUDP">RUDP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Reliable UDP<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip6.htm#TALI">TALI</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Transport Adapter Layer Interface<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times"><a href="http://www.protocols.com/pbook/tcpip2.htm#TCP">TCP</a><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Transmission Control Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times"><a href="http://www.protocols.com/pbook/tcpip2.htm#UDP">UDP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">User Datagram Protocol <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip6.htm#VAN">Van Jacobson</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">compressed TCP<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip6.htm#XOT">XOT</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">X.25 over TCP<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times"><span class="title2"><br>
+    </span><span class="title3"><a name="Session Layer">Session Layer </a>
+    </span><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip7.htm#BGMP">BGMP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Border Gateway Multicast Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip7.htm#Diameter">Diameter</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip7.htm#DIS">DIS</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Distributed Interactive Simulation<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip7.htm#DNS">DNS</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Domain Name Service<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip7.htm#ISAKMP">ISAKMP/IKE</a><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Internet Security Association and Key Management Protocol and Internet Key 
+    Exchange Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip7.htm#iSCSI">iSCSI</a><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Small Computer Systems Interface<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip7.htm#LDAP">LDAP</a><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Lightweight Directory Access Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip7.htm#MZAP">MZAP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Multicast-Scope Zone Announcement Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip7.htm#NetBIOS">NetBIOS/IP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">NetBIOS/IP for TCP/IP Environment<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times"><span class="title2"><br>
+    </span><span class="title3"><a name="Application Layer">Application Layer
+    </a></span><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip7.htm#COPS">COPS</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Common Open Policy Service<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip7.htm#fanp">FANP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Flow Attribute Notification Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip7.htm#Finger">Finger</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">User Information Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip7.htm#FTP">FTP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">File Transfer Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip7.htm#HTTP">HTTP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Hypertext Transfer Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip8.htm#IMAP4">IMAP4</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Internet Message Access Protocol rev 4<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip8.htm#IMPPpre">IMPPpre/IMPPmes</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Instant Messaging and Presence Protocols<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip8.htm#IPDC">IPDC</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">IP Device Control<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip8.htm#IRC">IRC</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">·Internet Relay Chat Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip8.htm#ISAKMP">ISAKMP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Internet Message Access Protocol version 4rev1<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip8.htm#ISP">ISP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip8.htm#NTP">NTP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Network Time Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip8.htm#POP3">POP3</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Post Office Protocol version 3<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip8.htm#Radius">Radius</a><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Remote Authentication Dial In User Service<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip9.htm#RLOGIN">RLOGIN</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Remote Login<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip9.htm#RTSP">RTSP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Real-time Streaming Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip9.htm#SCTP">SCTP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Stream Control Transmision Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip7.htm#SHTTP">S-HTTP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Secure Hypertext Transfer Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip9.htm#slp">SLP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Service Location Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip9.htm#SMTP">SMTP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Simple Mail Transfer Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip9.htm#SNMP">SNMP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Simple Network Management Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip9.htm#SOCKS">SOCKS</a><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Socket Secure (Server)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip9.htm#TACACS">TACACS+</a><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Terminal Access Controller Access Control System<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip9.htm#TELNET">TELNET</a><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">TCP/IP Terminal Emulation Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip7.htm#TFTP">TFTP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Trivial File Transfer Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip9.htm#WCCP">WCCP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Web Cache Coordination Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip9.htm#X-WINDOW">X-Window</a><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">X Window<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times"><span class="title2"><br>
+    </span><span class="title3"><a name="Routing">Routing </a></span><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip5.htm#BGP-4">BGP-4</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Border Gateway Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip5.htm#EGP">EGP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Exterior Gateway Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times"><span class="blacktext">
+    <a href="http://www.protocols.com/pbook/tcpip5.htm#EIGRP">EIGRP</a></span><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Enhanced Interior Gateway Routing Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip5.htm#HSRP">HSRP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Cisco Hot Standby Router Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip5.htm#IGRP">IGRP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Interior Gateway Routing<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip6.htm#NARP">NARP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">NBMA Address Resolution Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip6.htm#NHRP">NHRP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Next Hop Resolution Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip6.htm#OSPF">OSPF</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Open Shortest Path First<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip6.htm#TRIP">TRIP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Telephony Routing over IP<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td class="title2" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times"><br>
+    <span class="title3"><a name="Tunneling">Tunneling</a></span><!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times"><a href="http://www.protocols.com/pbook/tcpip3.htm#ATMP">ATMP</a><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Ascend Tunnel Management Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times"><a href="http://www.protocols.com/pbook/tcpip3.htm#L2F">L2F</a><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">The Layer 2 Forwarding Protocol <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times"><a href="http://www.protocols.com/pbook/tcpip3.htm#L2TP">L2TP</a><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Layer 2 Tunneling Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip3.htm#PPTP">PPTP</a><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Point to Point Tunneling Protocol<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times"><br>
+    <span class="title3"><a name="Security">Security</a></span><!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip5.htm#AH">AH</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Authentication Header<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip5.htm#ESP">ESP</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Encapsulating Security Payload<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <a href="http://www.protocols.com/pbook/tcpip5.htm#TLS">TLS</a><!--mstheme--></font></td>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">Transport Layer Security Protocol<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext" align="center"><span class="bluetext">The TCP/IP suite is illustrated 
+here in relation to the OSI model:</span></p>
+<p class="blacktext" align="center"><a name="Map">
+<img border="0" src="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/TCPIP%20Map.gif" width="500" height="665"></a></p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<p align="center"><a href="../../../index.html">Home</a> -
+<a href="../index.html">Computers</a> -
+<a href="../IP%20Sub-Netting.htm">IP Sub-Netting</a> -
+<a href="../ISDN%20Tutorial.htm">ISDN Tutorial</a> - 
+<a href="../IP%20Addressing%20and%20Subnetting.htm">
+IP Addressing</a></p>
+
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<p align="center"><a href="Page%201.htm">Page 1</a> - <a href="Page%202.htm">Page 
+2</a> - <a href="Page%203.htm">Page 3</a> - <a href="Page%204.htm">Page 4</a> -
+<a href="Page%205.htm">Page 5</a> - <a href="Page%206.htm">Page 6</a> -
+<a href="Page%207.htm">Page 7</a> - <a href="Page%208.htm">Page 8</a> -
+<a href="Page%209.htm">Page 9</a> - <a href="Page%2010.htm">Page 10</a></p>
+
+<!--mstheme--></font></body>
+
+</html>

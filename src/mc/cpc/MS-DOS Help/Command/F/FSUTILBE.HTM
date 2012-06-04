@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>FSUTIL BEHAVIOR</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#f">Commands A-M</a>
+    &gt; <a href="../INDEXF.HTM#fsutilbehavior">Commands F</a>
+    <h1>FSUTIL BEHAVIOR</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Queries the current settings for generating 8.3
+    character-length file names, allowing extended
+    characters in 8.3 character-length file names on NTFS
+    volumes, updating the last access timestamp on NTFS
+    volumes, how often quota events are written to the
+    system log, and the size of the master file table (MFT)
+    Zone. Enables or disables the use of 8.3
+    character-length file names, allowing extended
+    characters in 8.3 character-length file names on NTFS
+    volumes, and updating the last access timestamp on NTFS
+    volumes. Enables you to change how often quota events
+    are written to the system log and to change the amount
+    of disk space reserved for the MFT Zone.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>FSUTIL BEHAVIOR
+    <a href="#ParameterHelp">help</a></p>
+
+    <p>FSUTIL BEHAVIOR
+    <a href="#ParameterQuery">query</a>
+    <a href="#ParameterAllowExtChar">allowextchar</a>
+    | <a href="#ParameterDisable8dot3">disable8dot3</a>
+    | <a href="#ParameterDisableLastAccess">disablelastaccess</a>
+    | <a href="#ParameterMftZone">mftzone</a>
+    | <a href="#ParameterQuotaNotify">quotanotify</a></p>
+
+    <p>FSUTIL BEHAVIOR
+    <a href="#ParameterSet">set</a>
+    <a href="#ParameterAllowExtChar">allowextchar 1 | 0</a>
+    | <a href="#ParameterDisable8dot3">disable8dot3 1 | 0</a>
+    | <a href="#ParameterDisableLastAccess">disablelastaccess 1 | 0</a>
+    | <a href="#ParameterMftZone">mftzone value</a>
+    | <a href="#ParameterQuotaNotify">quotanotify frequency</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterAllowExtChar"></a> allowextchar 1 | 0
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Determines whether characters from the extended
+      character set, including diacritic characters, can be
+      used in 8.3 short file names on NTFS volumes.</dd>
+      <dd>Updates the
+      HKLM\SYSTEM\CurrentControlSet\Control\FileSystem\NtfsAllowExtendedCharacterIn8dot3Name
+      registry key.</dd>
+
+      <dt><a name="ParameterDisable8dot3"></a> disable8dot3 1 | 0
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Disables creation of 8.3 character-length file
+      names on FAT- and NTFS-formatted volumes.</dd>
+      <dd>Set to 0, every time you create a file with a long
+      file name, NTFS creates a second file entry that has
+      an 8.3 character-length file name. When NTFS creates
+      files in a folder, it must look up the 8.3
+      character-length file names associated with the long
+      file names.</dd>
+      <dd>Updates the
+      HKLM\SYSTEM\CurrentControlSet\Control\FileSystem\NtfsDisable8dot3NameCreation
+      registry key.</dd>
+
+      <dt><a name="ParameterDisableLastAccess"></a> disablelastaccess 1 | 0
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Determines whether NTFS updates the last access
+      timestamp on each directory when it lists the
+      directories on an NTFS volume.</dd>
+      <dd>Designed to reduce the logging impact of updating
+      the last access timestamp on folders and directories.
+      Disabling the Last Access Time improves the speed of
+      folder and file access.</dd>
+      <dd>Each file and folder on an NTFS volume contains an
+      attribute called Last Access Time. This attribute
+      defines when the file or folder was last accessed,
+      such as when a user lists folders, adds files to a
+      folder, reads a file, or makes changes to a file. The
+      most up-to-date Last Access Time is stored in memory
+      and is eventually written to the disk in two different
+      locations. One is within the file's attribute, which
+      is part of its MFT record. The second is in the index
+      of the directory that contains the file.</dd>
+      <dd>The Last Access Time on disk is not always current.
+      This lag occurs because NTFS delays writing the Last
+      Access Time to disk when users or programs perform
+      read-only operations on a file or folder, such as
+      listing the folder's contents or reading (but not
+      changing) a file in the folder. If the Last Access
+      Time is kept current on disk for read operations, all
+      read operations become write operations, which
+      impacts NTFS performance.</dd>
+      <dd>Note that file-based queries of Last Access Time
+      are accurate even if all on-disk values are not
+      current. NTFS returns the correct value on queries
+      because the accurate value is stored in memory.</dd>
+      <dd>NTFS typically updates a file's attribute on disk
+      if the current Last Access Time in memory differs by
+      more than an hour from the Last Access Time stored on
+      disk, or when all in-memory references to that file
+      are gone, whichever is more recent.</dd>
+      <dd>NTFS updates the index of the directory that
+      contains the file when NTFS updates the file's Last
+      Access Time and detects that the Last Access Time for
+      the file differs by more than an hour from the Last
+      Access Time stored in the directory's index. This
+      update typically occurs after a program closes the
+      handle used to access a file within the directory. If
+      the user holds the handle open for an extended time,
+      a lag occurs before the change appears in the index
+      entry of the directory.</dd>
+      <dd>Note that one hour is the maximum time that NTFS
+      defers updating the Last Access Time on disk. If NTFS
+      updates other file attributes such as Last Modify
+      Time, and a Last Access Time update is pending, NTFS
+      updates the Last Access Time along with the other
+      updates without additional performance impact.</dd>
+      <dd>Note this parameter can affect programs such as
+      backup and Remote Storage that rely on this feature.</dd>
+      <dd>Updates the
+      HKLM\SYSTEM\CurrentControlSet\Control\FileSystem\NtfsDisableLastAccessUpdate
+      registry key.</dd>
+
+      <dt><a name="ParameterHelp"></a> help
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="ParameterMftZone"></a> mftzone value
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>The master file table (MFT) Zone is a reserved
+      area that enables the MFT to expand as needed, in
+      order to prevent MFT fragmentation.
+      Set the value from 1 (default) to 4 (maximum).
+      The value is in 8ths of the disk.</dd>
+      <dd>The value is an approximation of the initial size
+      of the MFT plus the MFT Zone on a new volume and is
+      set at mount time for each file system. As space on
+      the volume is used, NTFS adjusts the space reserved
+      for future MFT growth. If the MFT Zone is already
+      large, the full MFT Zone size is not reserved again.
+      Since the MFT Zone is based on the contiguous range
+      past the end of the MFT, it shrinks as the space is
+      used.</dd>
+      <dd>The file system does not redetermine the MFT Zone
+      location until the current MFT Zone is completely
+      used. This never occurs on a typical system.</dd>
+
+      <dt><a name="ParameterQuery"></a> query
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Queries the file system behavior parameters.</dd>
+
+      <dt><a name="ParameterQuotaNotify"></a> quotanotify frequency
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Configures how frequently NTFS quota violations
+      are reported in the system log. Enter a frequency 0
+      through 4294967295 seconds for how often quota
+      violations are written to the system log.
+      Default is 1 hour (3600 seconds).</dd>
+
+      <dt><a name="ParameterSet"></a> set
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Queries the file system behavior parameters.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="FSUTILDI.HTM">FSUTIL DIRTY</a>
+    <br><a href="FSUTILFI.HTM">FSUTIL FILE</a>
+    <br><a href="FSUTILFS.HTM">FSUTIL FSINFO</a>
+    <br><a href="FSUTILHA.HTM">FSUTIL HARDLINK</a>
+    <br><a href="FSUTILOB.HTM">FSUTIL OBJECTID</a>
+    <br><a href="FSUTILQU.HTM">FSUTIL QUOTA</a>
+    <br><a href="FSUTILRE.HTM">FSUTIL REPARSEPOINT</a>
+    <br><a href="FSUTILSP.HTM">FSUTIL SPARSE</a>
+    <br><a href="FSUTILUS.HTM">FSUTIL USN</a>
+    <br><a href="FSUTILVO.HTM">FSUTIL VOLUME</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CERTUTIL configure</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCA.HTM#certutilconfigure">Commands Ca-Cg</a>
+    <h1>CERTUTIL configure</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Certutil tasks for configuring a Certification Authority (CA).</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CERTUTIL
+    [<a href="#SwitchCaPropInfo">-capropinfo</a>]
+    [<a href="#SwitchHelp">/?</a>]</p>
+
+    <p>To display CA property type information:
+    <br>To display the configuration string for a CA:
+    <br>CERTUTIL
+    {<a href="#SwitchCaPropInfo">-capropinfo</a>
+    | <a href="#SwitchGetConfig">-getconfig</a>}
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]</p>
+
+    <p>To create or delete the standard set of virtual roots and file shares for the Certificate Services Web server:
+    <br>CERTUTIL
+    <a href="#SwitchVroot">-vroot</a>
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchDelete">-delete</a>]</p>
+
+    <p>To display CA information:
+    <br>CERTUTIL
+    <a href="#SwitchCaInfo">-cainfo</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchSplit">-split</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    [<a href="#ParameterInfoName">info_name</a>]</p>
+
+    <p>To change the length of the validity period for certificates issued from a CA:
+    <br>CERTUTIL
+    <a href="#SwitchSetReg">-setreg</a>
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterKeys">HKLM\system\currentcontrolset\services\certsvc\configuration</a>[{<a
+     href="#ParameterName">\name</a>
+     | <a href="#ParameterCa">\ca</a>}]
+    <a href="#ParameterValidityPeriod">\ValidityPeriod time_value</a></p>
+    <p>CERTUTIL
+    <a href="#SwitchSetReg">-setreg</a>
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterKeys">HKLM\system\currentcontrolset\services\certsvc\configuration</a>[{<a
+     href="#ParameterName">\name</a>
+     | <a href="#ParameterCa">\ca</a>}]
+    <a href="#ParameterValidityPeriodUnits">\ValidityPeriodUnits unit_value</a></p>
+
+    <p>To force a CA to include expired certificates in future base and delta CRLs:
+    <br>CERTUTIL
+    <a href="#SwitchSetReg">-setreg</a>
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterCaKey">ca\</a><a
+    href="#ParameterCaValueName">ca_value_name</a>}]
+    <a href="#ParameterCrlf">+CRLF_PUBLISH_EXPIRED_CERT_CRLS</a></p>
+
+    <p>To configure a CA to issue certificates beyond the default two year limit:
+    <br>CERTUTIL
+    <a href="#SwitchSetReg">-setreg</a>
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterCaKey">ca\</a><a
+    href="#ParameterValidityPeriod">ValidityPeriod "years"</a></p>
+    <p>CERTUTIL
+    <a href="#SwitchSetReg">-setreg</a>
+    <a href="#ParameterCaKey">ca\</a><a
+    href="#ParameterValidityPeriodUnits">ValidityPeriodUnits "2"</a></p>
+
+    <p>To increase the session limit on the CA database:
+    <br>CERTUTIL
+    <a href="#SwitchSetReg">-setreg</a>
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterDbSessionCount">dbsessioncount value</a></p>
+
+    <p>To disable or restore the enforcement of the distinguished name length on the CA:
+    <br>CERTUTIL
+    <a href="#SwitchSetReg">-setreg</a>
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterCaKey">ca\</a><a
+    href="#ParameterEnforce">ENFORCEX500NAMELENGTHS value</a></p>
+
+    <p>To add extensions to a certificate that will be issued by the CA:
+    <br>CERTUTIL
+    <a href="#SwitchSetReg">-setreg</a>
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    policy\enablerequestextensionlist
+    <a href="#ParameterExtensionValue">extension_value</a>
+    <a href="#ParameterExtensionOid">extension_oid</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterCa"></a> \ca
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the default CA on the local computer.</dd>
+
+      <dt><a name="ParameterCaKey"></a> ca\
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the CA registry key.</dd>
+
+      <dt><a name="ParameterCaValueName"></a> ca_value_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the registry value name.</dd>
+
+      <dt><a name="ParameterCrlf"></a> +CRLF_PUBLISH_EXPIRED_CERT_CRLS
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the new numeric or string registry value.</dd>
+      <dd>If a numeric registry value starts with a plus
+      sign (+) or a dash (-), the bits specified in the new
+      value are set or cleared in the existing registry value.</dd>
+      <dd>If a string registry value starts with a plus sign
+      (+) or a dash (-) and the existing value is a
+      REG_MULTI_SZ value, the string value is either added to
+      or removed from the existing registry value.</dd>
+
+      <dt><a name="ParameterDbSessionCount"></a> dbsessioncount value
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the new session limit of value.</dd>
+
+      <dt><a name="ParameterEnforce"></a> ENFORCEX500NAMELENGTHS value
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the path to the REG_DWORD\ENFORCEX500NAMELENGTHS registry value.
+      <ul>
+      <li><b>0</b> disable default registry value</li>
+      <li><b>1</b> restore default registry value</li>
+      </ul>
+      </dd>
+
+      <dt><a name="ParameterExtensionOid"></a> extension_oid
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the object identifier of the extension.</dd>
+
+      <dt><a name="ParameterExtensionValue"></a> extension_value
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>List of request extensions that enable policy module:
+      <ul>
+      <li><b>0</b> Adds the extension</li>
+      <li><b>1</b> Removes the extension</li>
+      </ul>
+      </dd>
+
+      <dt><a name="ParameterInfoName"></a> info_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the CA information that you want to
+      display. Use one of:
+      <ul>
+      <li><b>ads</b> Displays Advanced Server</li>
+      <li><b>cert [<a href="#ParameterIndex">Index</a>]</b> Displays a CA certificate</li>
+      <li><b>certchain [<a href="#ParameterIndex">Index</a>]</b> Displays a CA certificate chain</li>
+      <li><b>certcount</b> Displays the CA certificate count</li>
+      <li><b>certcrlchain [<a href="#ParameterIndex">Index</a>]</b> Displays a CA certificate chain with CRLs</li>
+      <li><b>certstate [<a href="#ParameterIndex">Index</a>]</b> Displays CA certificate status. <b>0</b> NOT renewed</li>
+      <li><b>certstatuscode [<a href="#ParameterIndex">Index</a>]</b> Displays CA certificate verification status</li>
+      <li><b>crl [<a href="#ParameterIndex">Index</a>]</b> Displays a base CRL</li>
+      <li><b>crlstate [<a href="#ParameterIndex">Index</a>]</b> Displays a certificate revocation list (CRL)</li>
+      <li><b>crlstatus [<a href="#ParameterIndex">Index</a>]</b> Displays CRL publish status</li>
+      <li><b>cross- [<a href="#ParameterIndex">Index</a>]</b> Backwards cross-certification</li>
+      <li><b>cross+ [<a href="#ParameterIndex">Index</a>]</b> Forward cross-certification</li>
+      <li><b>crossstate- [<a href="#ParameterIndex">Index</a>]</b> Backward cross-certification</li>
+      <li><b>crossstate+ [<a href="#ParameterIndex">Index</a>]</b> Forward cross-certification</li>
+      <li><b>deltacrl [<a href="#ParameterIndex">Index</a>]</b> Displays a delta CRL</li>
+      <li><b>deltacrlstatus [<a href="#ParameterIndex">Index</a>]</b> Displays delta CRL publish status</li>
+      <li><b>dns</b> Displays the DNS name</li>
+      <li><b>error1 <a href="#ParameterErrorCode">ErrorCode</a></b> Displays the error code message in the local language. For ErrorCode, specify the error code that you want to retrieve</li>
+      <li><b>error2 <a href="#ParameterErrorCode">ErrorCode</a></b> Displays the error code message and the error code in the local language. For ErrorCode, specify the error code that you want to retrieve</li>
+      <li><b>exit [<a href="#ParameterIndex">Index</a>]</b> Displays the exit module description</li>
+      <li><b>exitcount</b> Displays the exit module count</li>
+      <li><b>file</b> Displays information about the file version</li>
+      <li><b>info</b> Displays the CA info</li>
+      <li><b>kra [<a href="#ParameterIndex">Index</a>]</b> Displays a KRA certificate</li>
+      <li><b>kracount</b> Displays the number of key recovery agent (KRA) certificates</li>
+      <li><b>krastate [<a href="#ParameterIndex">Index</a>]</b> Displays a KRA certificate</li>
+      <li><b>kraused</b> Displays the number of KRA certificate that are being used</li>
+      <li><b>name</b> Displays the CA name</li>
+      <li><b>parent</b> Displays the parent CA</li>
+      <li><b>policy</b> Displays the policy module description</li>
+      <li><b>product</b> Displays the product version</li>
+      <li><b>propidmax</b> Displays maximum CA PropID</li>
+      <li><b>role</b> Displays role separation</li>
+      <li><b>sanitizedname</b> Displays the sanitized CA name</li>
+      <li><b>sharedfolder</b> Displays the shared folder</li>
+      <li><b>templates</b> Displays the templates</li>
+      <li><b>type</b> Displays the CA type</li>
+      <li><b>xchg [<a href="#ParameterIndex">Index</a>]</b> Displays a CA exchange certificate</li>
+      <li><b>xchgchain [<a href="#ParameterIndex">Index</a>]</b> Displays a CA exchange certificate chain</li>
+      <li><b>xchgcount</b> Displays the CA Exchange certificate count</li>
+      <li><b>xchgcrlchain [<a href="#ParameterIndex">Index</a>]</b> Displays a CA exchange certificate chain with CRLs</li>
+      </ul>
+
+        <dl>
+          <dt><a name="ParameterErrorCode"></a> ErrorCode</dt>
+          <dd>Specifies the error code retrieved from the error message.</dd>
+
+          <dt><a name="ParameterIndex"></a> Index</dt>
+          <dd>Identifies a unique element from the InfoName table.</dd>
+        </dl>
+      </dd>
+
+      <dt><a name="ParameterKeys"></a> HKLM\system\currentcontrolset\services\certsvc\configuration
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the path to the
+      <a href="#ParameterValidityPeriod">\ValidityPeriod</a> and
+      <a href="#ParameterValidityPeriodUnits">\ValidityPeriodUnits</a>
+      registry keys.</dd>
+
+      <dt><a name="ParameterName"></a> \name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the name of the CA.</dd>
+
+      <dt><a name="ParameterValidityPeriod"></a> \ValidityPeriod time_value
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the period of time that you want the
+      certificate to be valid:
+      <ul>
+      <li><b>"days"</b></li>
+      <li><b>"weeks"</b></li>
+      <li><b>"months"</b></li>
+      <li><b>"years"</b></li>
+      </ul>
+      </dd>
+
+      <dt><a name="ParameterValidityPeriodUnits"></a> \ValidityPeriodUnits unit_value
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd><a href="#ParameterValidityPeriod">\ValidityPeriod</a>
+      numeric value.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchCaInfo"></a> -cainfo
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays CA information.</dd>
+
+      <dt><a name="SwitchCaPropInfo"></a> -capropinfo
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays CA property type information.</dd>
+
+      <dt><a name="SwitchConfig"></a> -config machine\user
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Processes the operation by using the CA specified
+      in the machine/user configuration string.</dd>
+      <dd>You must specify the machine or user in -config.
+      Otherwise, the Select Certificate Authority dialog box
+      appears and displays a list of all CAs that are available.</dd>
+      <dd>If you use "-config -", the operation is processed
+      using the default CA.
+
+      <dt><a name="SwitchDelete"></a> -delete
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Deletes the virtual roots for the Certificate
+      Services Web server.</dd>
+
+      <dt><a name="SwitchF"></a> -f
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Overwrites existing files or keys.</dd>
+
+      <dt><a name="SwitchGetConfig"></a> -getconfig
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Retrieves the default configuration string.</dd>
+
+      <dt><a name="SwitchGmt"></a> -gmt
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays time as Greenwich mean time.</dd>
+
+      <dt><a name="SwitchSeconds"></a> -seconds
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays time with seconds and milliseconds.</dd>
+
+      <dt><a name="SwitchSetReg"></a> -setreg
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets or edits the registry key value.</dd>
+
+      <dt><a name="SwitchSplit"></a> -split
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Splits the embedded Abstract Syntax Notation One
+      (ASN.1) elements, and saves them to files.</dd>
+
+      <dt><a name="SwitchV"></a> -v
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies verbose output.</dd>
+
+      <dt><a name="SwitchUser"></a> -user
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Uses the HKEY_CURRENT_USER keys or certificate
+      store.</dd>
+
+      <dt><a name="SwitchVroot"></a> -vroot
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Creates the virtual roots for the Certificate
+      Services Web server.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="CERTUTIC.HTM">CERTUTIL configure</a>
+    <br><a href="CERTUTIE.HTM">CERTUTIL decode/encode</a>
+    <br><a href="CERTUTIF.HTM">CERTUTIL certificates</a>
+    <br><a href="CERTUTIL.HTM">CERTUTIL CRLs</a>
+    <br><a href="CERTUTIM.HTM">CERTUTIL manage</a>
+    <br><a href="CERTUTIR.HTM">CERTUTIL archival/recovery</a>
+    <br><a href="CERTUTIT.HTM">CERTUTIL troubleshooting</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

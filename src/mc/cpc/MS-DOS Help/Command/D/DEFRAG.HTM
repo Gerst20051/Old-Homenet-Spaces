@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DEFRAG</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDA.HTM#defrag">Commands Da-Dr</a>
+    <h1>DEFRAG</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Reorganizes the files on a disk to optimize disk performance. Do
+    not use this command when Windows 2 or 3.x is running.</p>
+    <p><b>note:</b> Win9x no problems.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>DEFRAG
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>DEFRAG
+    [<a href="#ParameterDrive">drive:</a>]
+    [<a href="#SwitchF">/F</a>]
+    [<a href="#SwitchS">/S[:]order</a>]
+    [<a href="#SwitchB">/B</a>]
+    [<a href="#SwitchSKIPHIGH">/SKIPHIGH</a>]
+    [<a href="#SwitchLCD">/LCD</a>
+    | <a href="#SwitchBW">/BW</a>
+    | <a href="#SwitchG0">/G0</a>]
+    [<a href="#SwitchH">/H</a>]
+    [<a href="#SwitchV">/V</a>]</p>
+
+    <p>DEFRAG
+    [<a href="#ParameterDrive">drive:</a>]
+    [<a href="#SwitchU">/U</a>]
+    [<a href="#SwitchB">/B</a>]
+    [<a href="#SwitchSKIPHIGH">/SKIPHIGH</a>]
+    [<a href="#SwitchLCD">/LCD</a>
+    | <a href="#SwitchBW">/BW</a>
+    | <a href="#SwitchG0">/G0</a>]
+    [<a href="#SwitchH">/H</a>]
+    [<a href="#SwitchV">/V</a>]</p>
+
+    <p>DEFRAG
+    [<a href="#ParameterDrive">drive:</a>]
+    [<a href="#SwitchA">/A</a>]
+    [<a href="#SwitchF">/F</a>]
+    [<a href="#SwitchV">/V</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the drive that contains the disk you want to
+      optimize.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchA"></a> /A
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Analyzes the volume and displays a summary of the
+      analysis report.</dd>
+
+      <dt><a name="SwitchB"></a> /B
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Restarts your computer after files have been
+      reorganized.</dd>
+      <dt>(<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> Pushes all commonly used programs and
+      boot files to the edge of the hard drive for faster access.</dd>
+
+      <dt><a name="SwitchBW"></a> /BW
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Starts DEFRAG using a black and white color scheme.</dd>
+
+      <dt><a name="SwitchF"></a> /F
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Defragments files and ensures that the disk contains no
+      empty spaces between files.</dd>
+      <dt>(<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Forces defragmentation of the volume regardless of whether
+      it needs to be defragmented.</dd>
+
+      <dt><a name="SwitchG0"></a> /G0
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Disables the graphic mouse and graphic character set.</dd>
+
+      <dt><a name="SwitchH"></a> /H
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Moves hidden files.</dd>
+
+      <dt><a name="SwitchLCD"></a> /LCD
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Starts DEFRAG using an LCD color scheme.</dd>
+
+      <dt><a name="SwitchS"></a> /S
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>
+        Controls how the files are sorted in their directories. If you
+        omit this switch, DEFRAG uses the current order on the disk.
+        The colon (:) is optional. The list describes each of
+        the values you can use to sort files. Use any combination of
+        the values, and do not separate these values with spaces.
+        <ul>
+          <li><b>N</b> In alphabetic order by name</li>
+          <li><b>N-</b> In reverse alphabetic order by name (Z through A)</li>
+          <li><b>E</b> In alphabetic order by extension</li>
+          <li><b>E-</b> In reverse alphabetic order by extension (Z through A)</li>
+          <li><b>D</b> By date and time, earliest first</li>
+          <li><b>D-</b> By date and time, latest first</li>
+          <li><b>S</b> By size, smallest first</li>
+          <li><b>S-</b> By size, largest first</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchSKIPHIGH"></a> /SKIPHIGH
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Loads DEFRAG into conventional memory. By default, DEFRAG is
+      loaded into upper memory, if upper memory is available.</dd>
+
+      <dt><a name="SwitchU"></a> /U
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Defragments files and leaves empty spaces, if any, between
+      files.</dd>
+
+      <dt><a name="SwitchV"></a> /V
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> Verifies data as written to disk. This
+      option slows the defragment.</dd>
+      <dt>(<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the complete analysis and defragmentation reports.</dd>
+      <dd>When used in combination with <a href="#SwitchA">/A</a>,
+      displays only the analysis report. When used alone, displays
+      both the analysis and defragmentation reports.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Disk">Disk information reported by DEFRAG and CHKDSK</a></li>
+      <li><a href="#Network">Network and INTERLNK drives</a></li>
+      <li><a href="#Start">Start DEFRAG only from DOS</a></li>
+    </ul>
+
+    <hr>
+    <a name="Network"></a> <b>Network and INTERLNK drives</b>
+    <p>You cannot use DEFRAG to optimize network drives or drives
+    created with <a href="../I/INTERLNK.HTM">INTERLNK</a>.</p>
+
+    <hr>
+    <a name="Disk"></a> <b>Disk information reported by DEFRAG and CHKDSK</b>
+    <p>Disk information that DEFRAG reports differs from information
+    that <a href="../C/CHKDSK.HTM">CHKDSK</a> reports. DEFRAG reports
+    hidden and user files as one number;
+    <a href="../C/CHKDSK.HTM">CHKDSK</a> reports numbers for each type.
+    DEFRAG counts the root as a directory;
+    <a href="../C/CHKDSK.HTM">CHKDSK</a> does not. DEFRAG does not count
+    the volume label as a file; <a href="../C/CHKDSK.HTM">CHKDSK</a>
+    does.</p>
+
+    <hr>
+    <a name="Start"></a> <b>Start DEFRAG only from DOS</b>
+    <p>If you start DEFRAG from a program such as Microsoft Windows,
+    you may lose data.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To load DEFRAG into conventional memory and specify that DEFRAG
+    sort files according to the date they were created, from latest
+    created to earliest created, type:</p>
+<pre>
+    DEFRAG <a
+href="#ParameterDrive">C:</a> <a
+href="#SwitchF">/F</a> <a
+href="#SwitchS">/SD-</a> <a
+href="#SwitchSKIPHIGH">/SKIPHIGH</a>
+</pre>
+    <p>This example fully optimizes drive C, but slows DEFRAG.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <ul>
+    <li><b>0</b> The defragmentation was successful</li>
+    <li><b>1</b> An internal error occurred</li>
+    <li><b>2</b> The disk contained no free clusters. To operate, DEFRAG needs 1 free cluster</li>
+    <li><b>3</b> The user pressed CTRL+C (^C) to stop the process</li>
+    <li><b>4</b> A general error occurred</li>
+    <li><b>5</b> DEFRAG encountered an error while reading a cluster</li>
+    <li><b>6</b> DEFRAG encountered an error while writing a cluster</li>
+    <li><b>7</b> An allocation error occurred. To correct the error, use <a href="../S/SCANDISK.HTM">SCANDISK</a></li>
+    <li><b>8</b> A memory error occurred</li>
+    <li><b>9</b> There was insufficient memory to defragment the disk</li>
+    </ul>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2005/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

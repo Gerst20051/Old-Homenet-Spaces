@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>MV</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#m">Commands A-M</a>
+    &gt; <a href="../INDEXM.HTM#mv">Commands M</a>
+    <h1>MV</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Move File - Copy a file to another location even if the file is
+    in use (Locked).</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>MV
+    [<a href="#SwitchX">/x</a>]
+    [<a href="#SwitchD">/d</a>]
+    <a href="#ParameterSource">Source</a>
+    <a href="#ParameterDestination">Destination</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDestination"></a> Destination
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>File destination. Note that you must use a FULL pathname.</dd>
+
+      <dt><a name="ParameterSource"></a> Source
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>File to be copied. Note that you must use a FULL pathname.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchD"></a> /d
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Does not copy the file until reboot time allows in-use
+      files to be replaced. Not available in the posix version.</dd>
+
+      <dt><a name="SwitchX"></a> /x
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Prevents the default action that will otherwise create a
+      folder called "deleted" containing a copy of the original
+      file.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../I/INUSE.HTM">INUSE</a> - updated file replacement utility.
+    <br><a href="../C/COPY.HTM">COPY</a> - Copy one or more files to another location.
+    <br><a href="MOVE.HTM">MOVE</a> - Move a file from one folder to another.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>mv - Move or rename files or directories.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>The NT resource kit contains 2 versions of MV.EXE - a posix
+    version and a Windows NT version - they are not the same!</p>
+
+    <p>You can do a file replace at boot time by manually updating the
+    registry (which is what MV.exe does).</p>
+    <ol>
+    <li>Start the registry editor (regedt32.exe not regedit.exe)</li>
+    <li>Move to HKLM\SYSTEM\CurrentControlSet\Control\Session Manager</li>
+    <li>Double click on PendingFileRenameOperations (if it does not
+    exist - create of type multi_str )</li>
+    <li>On the first line is the name of the new file with \??\ in front,
+    e.g. \??\d:\temp\ntfs.sys</li>
+    <li>On the second line is the file to replaced with !\??\ in front,
+    e.g. !\??\c:\winnt\system32\drivers\ntfs.sys</li>
+    <li>Click OK.</li>
+    </ol>
+    <p>So the complete Multi-String Data would appear like:</p>
+<pre>
+\??\d:\temp\ntfs.sys
+!\??\c:\winnt\system32\drivers\ntfs.sys
+</pre>
+    <p>Once the reboot is complete and the file replaced the
+    PendingFileRenameOperations value will be deleted from the registry.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+<pre>
+    MV <a
+href="#SwitchX">/x</a> <a
+href="#SwitchD">/d</a> <a
+href="#ParameterSource">d:\temp\ntfs.sys</a> <a
+href="#ParameterDestination">C:\winnt\system32\drivers\ntfs.sys</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External Resource Kit</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>ASSIGN</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#a">Commands A-M</a>
+    &gt; <a href="../INDEXA.HTM#assign">Commands A</a>
+    <h1>ASSIGN</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Redirects requests for disk read/write operations on one drive
+    to a different drive.</p>
+    <p>Lets you use a drive other than the one the operating system
+    normally uses when it writes to a file or reads from a file. Some
+    application programs use only drive A: with the Assign command you
+    could make drive C: the drive used by the application. Assignments
+    stay in effect until you change them or turn your computer off.</p>
+    <p><b>This command is part of the supplemental programs beginning
+    with <a href="../../Version/MSDOS/600.HTM">(MSDOS6.00)</a></b></p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>ASSIGN
+    [<a href="#ParameterDrive1">x</a>[:][=]<a href="#ParameterDrive2">y</a>[:][...]]</p>
+
+    <p>ASSIGN [<a href="#SwitchStatus">/STA[TUS]</a>]</p>
+
+    <p>To reset all drive letters to original assignments.</p>
+    <p>ASSIGN</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive1"></a> x
+      (<a href="../../Version/MSDOS/300.HTM">v3.0</a>)</dt>
+      <dd>Specifies the drive letter to reassign.</dd>
+
+      <dt><a name="ParameterDrive2"></a> y
+      (<a href="../../Version/MSDOS/300.HTM">v3.0</a>)</dt>
+      <dd>Specifies the drive that <a href="#ParameterDrive1">x</a>:
+      will be assigned to.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchStatus"></a> /STA[TUS]
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Displays current drive assignments. Can abbreviate as
+      /S?</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>Replaced by <a href="../S/SUBST.HTM">SUBST</a>.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>This command is especially useful when you are using a program
+    that automatically attempts to read or write to a specified drive.
+    By reassigning that drive letter, you tell the operating system to
+    ignore requests to the first drive letter and instead carry out
+    both reads and writes on the second drive letter. When you want
+    the operating system to again carry out drive requests as usual,
+    enter ASSIGN without any options.</p>
+    <p>You can use this command with application programs that attempt
+    to act on drives you don't want to use (or don't have installed in
+    your computer).</p>
+    <p>This command should not be used with other operating system
+    commands that need to get drive information. The
+    <a href="../F/FORMAT.HTM">FORMAT</a>,
+    <a href="../D/DISKCOPY.HTM">DISKCOPY</a> and
+    <a href="../D/DISKCOMP.HTM">DISKCOMP</a> will ignore any drive
+    reassignments. Also, don't use the
+    <a href="../B/BACKUP.HTM">BACKUP</a>,
+    <a href="../R/RESTORE.HTM">RESTORE</a>,
+    <a href="../L/LABEL.HTM">LABEL</a>,
+    <a href="../J/JOIN.HTM">JOIN</a>,
+    <a href="../S/SUBST.HTM">SUBST</a>, or
+    <a href="../P/PRINT.HTM">PRINT</a>
+    COMMANDS with redirected drives.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+<pre>
+    ASSIGN <a
+href="#ParameterDrive1">A</a>=<a
+href="#ParameterDrive2">B</a>
+</pre>
+
+    <p>DOS sends any requests for drive A to drive B. After this form
+    of the command is entered, the command:</p>
+<pre>
+    <a href="../D/DIR.HTM">DIR</a> <a
+href="../D/DIR.HTM#ParameterDrive">A:</a>
+</pre>
+
+    <p>will result in a display of the files on drive B instead of
+    drive A.</p>
+
+    <hr>
+    <p>You can reassign more than one drive at a time (leave a space
+    between entries). For example, enter:</p>
+<pre>
+    ASSIGN <a
+href="#ParameterDrive1">A</a>=<a
+href="#ParameterDrive2">B</a> <a
+href="#ParameterDrive1">C</a>=<a
+href="#ParameterDrive2">B</a>
+</pre>
+
+    <p>Requests for either drive A or drive C would automatically be
+    sent to drive B.</p>
+
+    <hr>
+    <p>For example, if you enter:</p>
+<pre>
+    <a href="../D/DIR.HTM">DIR</a> <a
+href="../D/DIR.HTM#ParameterDrive">A:</a>
+</pre>
+
+    <p>DOS will display a directory of the files on drive B (not of
+    drive A).</p>
+
+    <hr>
+    <p>Enter:</p>
+<pre>
+    ASSIGN <a
+href="#SwitchStatus">/STA</a>
+</pre>
+
+    <p>and a report of the assigned drives will be displayed:</p>
+<pre>
+    Original A: set to D:
+    Original B: set to D:
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>UNFORMAT</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#u">Commands N-Z</a>
+    &gt; <a href="../INDEXU.HTM#unformat">Commands U</a>
+    <h1>UNFORMAT</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Restores a disk that was erased by using the
+    <a href="../F/FORMAT.HTM">FORMAT</a> command.</p>
+    <p>UNFORMAT restores only local hard disk drives and floppy disk
+    drives; it cannot be used on network drives. The UNFORMAT command
+    can also rebuild a corrupted disk partition table on a hard disk
+    drive.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>UNFORMAT
+    <a href="#ParameterDrive">drive:</a>
+    [<a href="#SwitchJ">/J</a>]
+    [<a href="#SwitchP">/P</a>]
+    [<a href="#SwitchU">/U</a>]</p>
+
+    <p>UNFORMAT
+    <a href="#ParameterDrive">drive:</a>
+    [<a href="#SwitchL">/L</a>]
+    [<a href="#SwitchTEST">/TEST</a>]
+    [<a href="#SwitchP">/P</a>]</p>
+
+    <p>UNFORMAT
+    <a href="#ParameterDrive">drive:</a>
+    [<a href="#SwitchJ">/J</a>]
+    [<a href="#SwitchL">/L</a>]
+    [<a href="#SwitchPARTN">/PARTN</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Specifies the drive that contains the disk on which you want
+      to recover files.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchJ"></a> /J
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Verifies current root directory and FAT matches the last
+      MIRROR file. This does NOT rebuild the disk.</dd>
+
+      <dt><a name="SwitchL"></a> /L
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Lists every file and subdirectory found by UNFORMAT. If you
+      do not specify this switch, UNFORMAT lists only subdirectories
+      and files that are fragmented. To suspend scrolling of the
+      displayed list, press CTRL+S (^S); to resume scrolling, press any
+      key.</dd>
+
+      <dt><a name="SwitchP"></a> /P
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Sends output messages to the printer connected to LPT1.</dd>
+
+      <dt><a name="SwitchPARTN"></a> /PARTN
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Restores corrupted partition table using
+      <a href="../M/MIRROR.HTM">MIRROR</a> from floppy
+      diskette.</dd>
+
+      <dt><a name="SwitchTEST"></a> /TEST
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Shows how UNFORMAT would recreate the information on the
+      disk, but does not actually unformat the disk.</dd>
+
+      <dt><a name="SwitchU"></a> /U
+      <a href="../../Version/MSDOS/500.HTM">v5.0</a> through
+      <a href="../../Version/MSDOS/600.HTM">v6.0</a>.</dt>
+      <dd>Used to tell the operating system to recover files from
+      a formatted disk without using the
+      <a href="../M/MIRROR.HTM">MIRROR</a> file information.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about formatting a disk, see the
+    <a href="../F/FORMAT.HTM">FORMAT</a> command.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Limitation">Limitation on the UNFORMAT command</a></li>
+      <li><a href="#Sector">Sector size of the hard disk</a></li>
+      <li><a href="#Disk">Unformatting a disk</a></li>
+    </ul>
+
+    <hr>
+    <a name="Limitation"></a> <b>Limitation on the UNFORMAT command</b>
+    <p>If the <a href="../F/FORMAT.HTM">FORMAT</a> command was used
+    with the <a href="../F/FORMAT.HTM#SwitchU">/U</a> switch,
+    UNFORMAT cannot restore the disk to its previous condition.</p>
+
+    <hr>
+    <a name="Disk"></a> <b>Unformatting a disk</b>
+    <p>The UNFORMAT command can restore your disk by using information
+    in the root directory and file allocation table on the disk.</p>
+    <p>As UNFORMAT rebuilds the disk, it displays how many
+    subdirectories it has found; if you specified the
+    <a href="#SwitchL">/L</a> switch, it also shows you all
+    files in each subdirectory.</p>
+    <p>If UNFORMAT finds a file that appears to be fragmented (that is,
+    stored in separate places on the disk), it cannot recover the file
+    because it cannot locate the remaining portions of the file. In
+    this case, the UNFORMAT command prompts you to confirm whether you
+    want UNFORMAT to truncate the file (that is, recover only the first
+    part of the file that it can locate) or delete the file
+    altogether.</p>
+    <p>If UNFORMAT does not prompt you for a specific file, that file
+    is most likely intact. In certain circumstances, however, UNFORMAT
+    may not recognize that a file is fragmented, even though it has
+    located only a portion of the file. If this happens to a program
+    file, the program does not run properly. If this happens to a data
+    file, information is lost and the program that created the data
+    file may not be able to read it. In these cases, your only recourse
+    is to restore the files from your original floppy disks or backup
+    files.</p>
+
+    <hr>
+    <a name="Sector"></a> <b>Sector size of the hard disk</b>
+    <p>The sectors on your hard disk must be 512, 1024, or 2048
+    bytes.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To determine whether UNFORMAT can restore a formatted disk in
+    drive A, type:</p>
+<pre>
+    UNFORMAT <a
+href="#ParameterDrive">A:</a> <a
+href="#SwitchTEST">/TEST</a>
+</pre>
+
+    <hr>
+    <p>To restore a formatted disk in drive A, listing all files and
+    subdirectories, type:</p>
+<pre>
+    UNFORMAT <a
+href="#ParameterDrive">A:</a> <a
+href="#SwitchL">/L</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

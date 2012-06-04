@@ -1,0 +1,545 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DSADD</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDS.HTM#dsadd">Commands Ds-Dz</a>
+    <h1>DSADD</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Adds specific types of objects to the directory.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>DSADD
+    {<a href="#ParameterComputer">computer</a>
+    | <a href="#ParameterContact">contact</a>
+    | <a href="#ParameterGroup">group</a>
+    | <a href="#ParameterOu">ou</a>
+    | <a href="#ParameterQuota">quota</a>
+    | <a href="#ParameterUser">user</a>}
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>DSADD
+    <a href="#ParameterComputer">computer</a>
+    <a href="#ParameterComputerDN">computer_dn</a>
+    [<a href="#SwitchDesc">-desc description</a>]
+    [<a href="#SwitchLoc">-loc location</a>]
+    [<a href="#SwitchMemberOf">-memberof group_dn ...</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchSamId">-samid sam_name</a>]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSADD
+    <a href="#ParameterContact">contact</a>
+    <a href="#ParameterContactDN">contact_dn</a>
+    [<a href="#SwitchCompany">-company company_name</a>]
+    [<a href="#SwitchDept">-dept department</a>]
+    [<a href="#SwitchDesc">-desc description</a>]
+    [<a href="#SwitchDisplay">-display display_name</a>]
+    [<a href="#SwitchEmail">-email email</a>]
+    [<a href="#SwitchFax">-fax fax_number</a>]
+    [<a href="#SwitchFn">-fn first_name</a>]
+    [<a href="#SwitchHomeTel">-hometel home_phone_number</a>]
+    [<a href="#SwitchIpTel">-iptel ip_phone_number</a>]
+    [<a href="#SwitchLn">-ln last_name</a>]
+    [<a href="#SwitchMi">-mi middle_initial</a>]
+    [<a href="#SwitchMobile">-mobile cell_phone_number</a>]
+    [<a href="#SwitchOffice">-office office</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchPager">-pager pager_number</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchTel">-tel phone_number</a>]
+    [<a href="#SwitchTitle">-title title</a>]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSADD
+    <a href="#ParameterGroup">group</a>
+    <a href="#ParameterGroupDN">group_dn</a>
+    [<a href="#SwitchDesc">-desc description</a>]
+    [<a href="#SwitchMemberOf">-memberof group_dn ...</a>]
+    [<a href="#SwitchMembers">-members member ...</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchSamId">-samid sam_name</a>]
+    [<a href="#SwitchScope">-scope {g | l | u}</a>]
+    [<a href="#SwitchSecGrp">-secgrp {yes | no}</a>]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSADD
+    <a href="#ParameterOu">ou</a>
+    <a href="#ParameterOrganizationalUnitDN">organizational_unit_dn</a>
+    [<a href="#SwitchDesc">-desc description</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSADD
+    <a href="#ParameterQuota">quota</a>
+    <a href="#SwitchAcct">-acct name</a>
+    [<a href="#SwitchDesc">-desc description</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    <a href="#SwitchPart">-part partition_dn</a>
+    [<a href="#SwitchQ">-q</a>]
+    <a href="#SwitchQLimit">-qlimit value</a>
+    [<a href="#SwitchRdn">-rdn relative_distinguished_name</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSADD
+    <a href="#ParameterUser">user</a>
+    <a href="#ParameterUserDN">user_dn</a>
+    <a href="#SwitchSamId">-samid sam_name</a>
+    [<a href="#SwitchAcctExpires">-acctexpires number_of_days</a>]
+    [<a href="#SwitchCanChPwd">-canchpwd {yes | no}</a>]
+    [<a href="#SwitchCompany">-company company_name</a>]
+    [<a href="#SwitchDept">-dept department</a>]
+    [<a href="#SwitchDesc">-desc description</a>]
+    [<a href="#SwitchDisabled">-disabled {yes | no}</a>]
+    [<a href="#SwitchDisplay">-display display_name</a>]
+    [<a href="#SwitchEmail">-email email</a>]
+    [<a href="#SwitchEmpId">-empid employee_id</a>]
+    [<a href="#SwitchFax">-fax fax_number</a>]
+    [<a href="#SwitchFn">-fn first_name</a>]
+    [<a href="#SwitchHmDir">-hmdir home_directory</a>]
+    [<a href="#SwitchHmDrv">-hmdrv home_drive_letter</a>]
+    [<a href="#SwitchHomeTel">-hometel home_phone_number</a>]
+    [<a href="#SwitchIpTel">-iptel ip_phone_number</a>]
+    [<a href="#SwitchLoscr">-loscr script_path</a>]
+    [<a href="#SwitchLn">-ln last_name</a>]
+    [<a href="#SwitchMi">-mi middle_initial</a>]
+    [<a href="#SwitchMemberOf">-memberof group_dn ...</a>]
+    [<a href="#SwitchMgr">-mgr manager</a>]
+    [<a href="#SwitchMobile">-mobile cell_phone_number</a>]
+    [<a href="#SwitchMustChPwd">-mustchpwd {yes | no}</a>]
+    [<a href="#SwitchOffice">-office office</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchPager">-pager pager_number</a>]
+    [<a href="#SwitchProfile">-profile profile_path</a>]
+    [<a href="#SwitchPwd">-pwd {Password | *}</a>]
+    [<a href="#SwitchPwdNeverExpires">-pwdneverexpires {yes | no}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [<a href="#SwitchReversiblePwd">-reversiblepwd {yes | no}</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchTel">-tel phone_number</a>]
+    [<a href="#SwitchTitle">-title title</a>]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]
+    [<a href="#SwitchUpn">-upn upn</a>]
+    [<a href="#SwitchWebPg">-webpg web_page</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterComputer"></a> computer
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Adds a single computer to the directory.</dd>
+
+      <dt><a name="ParameterComputerDN"></a> computer_dn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the distinguished name of the computer
+      you want to add.</dd>
+
+      <dt><a name="ParameterContact"></a> contact
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Adds a single contact to the directory.</dd>
+
+      <dt><a name="ParameterContactDN"></a> contact_dn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the distinguished name of the contact
+      you want to add.</dd>
+
+      <dt><a name="ParameterGroup"></a> group
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Adds a single group to the directory.</dd>
+
+      <dt><a name="ParameterGroupDN"></a> group_dn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the distinguished name of the group you
+      want to add.</dd>
+
+      <dt><a name="ParameterOu"></a> ou
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Adds a single organizational unit to the
+      directory.</dd>
+
+      <dt><a name="ParameterOrganizationalUnitDN"></a> organizational_unit_dn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the distinguished name of the
+      organizational unit you want to add.</dd>
+
+      <dt><a name="ParameterQuota"></a> quota
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Adds a quota specification to a directory partition.</dd>
+
+      <dt><a name="ParameterUser"></a> user
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Adds a single user to the directory.</dd>
+
+      <dt><a name="ParameterUserDN"></a> user_dn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the distinguished name of the user you
+      want to add.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchAcct"></a> -acct name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the security principal (user, group,
+      computer, or InetOrgPerson) to whom the quota
+      specification applies. You can use for name:
+      <ul>
+      <li><b>Distinguished Name</b> (DN) of the security principal</li>
+      <li><b>Domain\SAMAccountName</b> of the security principal</li>
+      </ul>
+      </dd>
+
+      <dt><a name="SwitchAcctExpires"></a> -acctexpires number_of_days
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the number of days from today that the
+      user account will expire. A value of 0 sets expiration
+      at the end of today. A positive value sets expiration
+      in the future. A negative value sets expiration in the
+      past. The value NEVER sets the account to never
+      expire.</dd>
+
+      <dt><a name="SwitchCanChPwd"></a> -canchpwd {yes | no}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies if users can change their passwords at
+      all (yes) or not (no). By default, yes. The value
+      must be yes if <a href="#SwitchMustChPwd">-mustchpwd</a>
+      is yes.</dd>
+
+      <dt><a name="SwitchCompany"></a> -company company
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the company information for the contact/user
+      you want to add.</dd>
+
+      <dt><a name="SwitchD"></a> -d domain
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Connects the computer to a specified domain. By
+      default, the computer is connected to the domain
+      controller in the logon domain.</dd>
+
+      <dt><a name="SwitchDept"></a> -dept department
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the department of the contact/user you want
+      to add.</dd>
+
+      <dt><a name="SwitchDesc"></a> -desc description
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the description of the
+      computer/contact/group/organizational unit/user
+      you want to add.</dd>
+
+      <dt><a name="SwitchDisabled"></a> -disabled {yes | no}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies if the user account is disabled for log
+      on (yes) or not (no). By default, no.</dd>
+
+      <dt><a name="SwitchDisplay"></a> -display display_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the display name of the contact/user you want
+      to add.</dd>
+
+      <dt><a name="SwitchEmail"></a> -email email
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the e-mail address of the contact/user you
+      want to add.</dd>
+
+      <dt><a name="SwitchEmpId"></a> -empid employee_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the employee ID of the user you want to
+      add.</dd>
+
+      <dt><a name="SwitchFax"></a> -fax fax_number
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the fax number of the contact/user you want
+      to add.</dd>
+
+      <dt><a name="SwitchFn"></a> -fn first_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the first name of the contact/user you want
+      to add.</dd>
+
+      <dt><a name="SwitchHmDir"></a> -hmdir home_directory
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the home directory location of the user
+      you want to add. If home_directory is given as a
+      universal naming convention (UNC) path, then you must
+      specify a drive letter to be mapped to this path
+      using <a href="#SwitchHmDrv">-hmdrv</a>.</dd>
+
+      <dt><a name="SwitchHmDrv"></a> -hmdrv home_drive_letter
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the home directory drive letter of the
+      user you want to add.</dd>
+
+      <dt><a name="SwitchHomeTel"></a> -hometel home_phone_number
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the home telephone number of the contact/user
+      you want to add.</dd>
+
+      <dt><a name="SwitchIpTel"></a> -iptel ip_phone_number
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the IP phone number of the contact/user you
+      want to add.</dd>
+
+      <dt><a name="SwitchLn"></a> -ln last_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the last name of the contact/user you want
+      to add.</dd>
+
+      <dt><a name="SwitchLoc"></a> -loc location
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the location of the computer you want to
+      add.</dd>
+
+      <dt><a name="SwitchLoscr"></a> -loscr script_path
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the logon script path of the user you
+      want to add.</dd>
+
+      <dt><a name="SwitchMemberOf"></a> -memberof group_dn ...
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the groups in which you want the
+      computer/group/user as a member.</dd>
+
+      <dt><a name="SwitchMembers"></a> -members member ...
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the members to add to the new group.</dd>
+
+      <dt><a name="SwitchMgr"></a> -mgr manager_dn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the distinguished name of the manager of
+      the user you want to add.</dd>
+
+      <dt><a name="SwitchMi"></a> -mi middle_initial
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the middle initial of the contact/user you
+      want to add.</dd>
+
+      <dt><a name="SwitchMobile"></a> -mobile cell_phone_number
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the mobile phone number of the contact/user
+      you want to add.</dd>
+
+      <dt><a name="SwitchMustChPwd"></a> -mustchpwd {yes | no}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies if users must change their passwords at
+      the time of next logon (yes) or not (no). By default,
+      no.</dd>
+
+      <dt><a name="SwitchOffice"></a> -office office
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the office location of the contact/user you
+      want to add.</dd>
+
+      <dt><a name="SwitchP"></a> -p {password | *}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies to use either a password or a * to log
+      on to a remote server.
+      If *, then prompted for password.</dd>
+
+      <dt><a name="SwitchPager"></a> -pager pager_number
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the pager number of the contact/user you want
+      to add.</dd>
+
+      <dt><a name="SwitchPart"></a> -part partition_dn
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the distinguished name of the directory
+      partition on which you want to create a quota.
+      If you do not specify the partition_dn
+      it is taken from standard input (stdin).</dd>
+
+      <dt><a name="SwitchProfile"></a> -profile profile_path
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the profile path of the user you want
+      to add.</dd>
+
+      <dt><a name="SwitchPwd"></a> -pwd {password | *}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies password or a * user password.
+      If *, then prompts for password.</dd>
+
+      <dt><a name="SwitchPwdNeverExpires"></a> -pwdneverexpires {yes | no}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies if the user password never expires (yes)
+      or not (no). By default, no.</dd>
+
+      <dt><a name="SwitchQ"></a> -q
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Suppresses all output to standard output
+      (quiet mode).</dd>
+
+      <dt><a name="SwitchQLimit"></a> -qlimit value
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the number of objects within the
+      directory partition that can be owned by the security
+      principal. Use -1 for unlimited quota.</dd>
+
+      <dt><a name="SwitchRdn"></a> -rdn relative_distinguished_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the relative distinguished name of the
+      quota specification being created. If you do not specify,
+      it is set to Domain\SAMaccountname, using the domain and
+      account name of the security principal specified by the
+      <a href="#SwitchAcct">-acct</a> switch.</dd>
+
+      <dt><a name="SwitchReversiblePwd"></a> -reversiblepwd {yes | no}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies if the user password should be stored
+      using reversible encryption (yes) or not (no). By
+      default, no.</dd>
+
+      <dt><a name="SwitchS"></a> -s server
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Connects the computer to a specified server.</dd>
+
+      <dt><a name="SwitchSamId"></a> -samid sam_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies to use the SAM name as the unique SAM
+      account name for this computer/group/user. If omitted,
+      then a SAM account name is derived from the value of
+      the common name attribute used in
+      <a href="#ParameterComputerDN">computer_dn</a>.</dd>
+
+      <dt><a name="SwitchScope"></a> -scope {g | l | u}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies whether the scope of the group you want
+      to add is domain global(g), local (l), or universal
+      (u). If the domain is in mixed-mode, then the
+      universal scope is not supported. Defaults to global.</dd>
+
+      <dt><a name="SwitchSecGrp"></a> -secgrp {yes | no}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies whether the group you want to add is a
+      security group (yes), the default, or a distribution
+      group (no).</dd>
+
+      <dt><a name="SwitchTel"></a> -tel phone_number
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the telephone number of the contact/user you
+      want to add.</dd>
+
+      <dt><a name="SwitchTitle"></a> -title title
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the title of the contact/user you want to
+      add.</dd>
+
+      <dt><a name="SwitchU"></a> -u user_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the user name with which user will log
+      on to a remote server. By default, the logged on user
+      name is used. You can specify a user name using one
+      of the formats:
+<pre>
+      user name
+      domain\user name
+      user principal name (UPN)
+</pre>
+      </dd>
+
+      <dt><a name="SwitchUc"></a> -uc | -uci | -uco
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies that output or input data is
+      formatted in Unicode:
+        <ul>
+          <li><b>-uc</b> input from or output to a pipe (|)</li>
+          <li><b>-uco</b> output to a pipe (|) or a file</li>
+          <li><b>-uci</b> input from a pipe (|) or a file</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchUpn"></a> -upn upn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the user principal name of the user you
+      want to add.</dd>
+
+      <dt><a name="SwitchWebPg"></a> -wegpg web_page
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the Web page URL of the user you want
+      to add.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

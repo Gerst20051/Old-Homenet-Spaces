@@ -1,0 +1,396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CHOICE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEX.HTM#choice">Batch Ch-Cz</a>
+    <h1>CHOICE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Prompts the user to make a choice in a batch program. Displays a
+    specified prompt and pauses for the user to choose from among a
+    specified set of keys. You can use this command only in batch
+    programs.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CHOICE
+    [<a href="#SwitchC">/C[:]keys</a>]
+    [<a href="#SwitchN">/N</a>]
+    [<a href="#SwitchS">/S</a>]
+    [<a href="#SwitchT">/T[:]c,nn</a>]
+    [<a href="#ParameterText">text</a>]</p>
+
+    <p>CHOICE
+    [<a href="#SwitchC">/C keys</a>]
+    [<a href="#SwitchN">/N</a>]
+    [<a href="#SwitchS">/CS</a>]
+    [<a href="#SwitchT">/T c /D nn</a>]
+    [<a href="#ParameterText">/M text</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterText"></a> text
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a> ONLY)</dt>
+      <dt>/M text
+      (<a href="../../Version/MSWIN/NT2K3.HTM">2003</a>)</dt>
+      <dd>Specifies up to 120 characters of text you want to be
+      displayed before the prompt. Quotation marks are necessary only
+      if you include a switch character (/) as part of the text before
+      the prompt. If you don't specify text, CHOICE displays only a
+      prompt.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchC"></a> /C[:]keys
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a> ONLY)</dt>
+      <dt> /C keys
+      (<a href="../../Version/MSWIN/NT2K3.HTM">2003</a>)</dt>
+      <dd>Specifies allowable keys in the prompt. When displayed, the
+      keys will be separated by commas, will appear in brackets ([]),
+      and will be followed by a question mark. If you don't specify the
+      /C switch, CHOICE uses YN as the default. The colon (:) is
+      optional.</dd>
+
+      <dt><a name="SwitchN"></a> /N
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a> ONLY
+      <a href="../../Version/MSWIN/NT2K3.HTM">2003</a>)</dt>
+      <dd>Causes CHOICE not to display the prompt. The text before the
+      prompt is still displayed, however. If you specify the /N switch,
+      the specified keys are still valid.</dd>
+
+      <dt><a name="SwitchS"></a> /S
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a> ONLY)</dt>
+      <dt> /CS
+      (<a href="../../Version/MSWIN/NT2K3.HTM">2003</a>)</dt>
+      <dd>Causes CHOICE to be case sensitive. If the /S switch is not
+      specified, CHOICE will accept either upper or lower case for any
+      of the keys that the user specifies.</dd>
+
+      <dt><a name="SwitchT"></a> /T[:]c,nn
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a> ONLY)</dt>
+      <dt> /T c /D nn
+      (<a href="../../Version/MSWIN/NT2K3.HTM">2003</a>)</dt>
+      <dd>Causes CHOICE to pause for a specified number of seconds before
+        defaulting to a specified key. The values for the /T switch are:
+        <dl>
+          <dt>c</dt>
+          <dd>Specifies the character to default to after nn seconds.
+          The character must be in the set of choices specified in the
+          <a href="#SwitchC">/C</a> switch.</dd>
+
+          <dt>nn</dt>
+          <dd>Specifies the number of seconds to pause. Acceptable
+          values are from 0 to 99. If 0 is specified, there will be no
+          pause before defaulting said Microsoft but a zero won't work
+          whether it's
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a> or
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>. Causes
+          CHOICE to be case sensitive. If the <a href="#SwitchS">/S</a>
+          switch is not specified, CHOICE will accept either upper or
+          lower case for any of the keys that the user specifies.</dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For more information on the
+    <a href="../I/IF.HTM#ParameterErrorlevel">ERRORLEVEL</a> parameter,
+    and the <a href="../I/IF.HTM">IF</a> command.
+    <br>Replaced starting with
+    <a href="../../Version/MSWIN/NTXP.HTM">WinXP</a> with
+    <a href="../S/SET.HTM">SET</a>
+    <a href="../S/SET.HTM#SwitchP">/P</a>.</p>
+
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Errorlevel">ERRORLEVEL parameters</a></li>
+      <li><a href="#NTProblems">NT Problems</a></li>
+    </ul>
+
+    <hr>
+    <a name="Errorlevel"></a> <b>ERRORLEVEL parameters</b>
+    <p>The first key you assign returns a value of 1, the second a
+    value of 2, the third a value of 3, and so on. If the user presses
+    a key that is not among the keys you assigned, CHOICE sounds a
+    warning beep (that is, it sends a BEL, or 07h, character to the
+    console).</p>
+    <p>If CHOICE detects an error condition, it returns an
+    <a href="../I/IF.HTM#ParameterErrorlevel">ERRORLEVEL</a> value of
+    255. If the user presses CTRL+BREAK (^BREAK) or CTRL+C (^C),
+    CHOICE returns an
+    <a href="../I/IF.HTM#ParameterErrorlevel">ERRORLEVEL</a> value
+    of 0.</p>
+    <p>When you use <a
+    href="../I/IF.HTM#ParameterErrorlevel">ERRORLEVEL</a> parameters
+    in a batch program, list them in decreasing order.</p>
+
+    <hr>
+    <a name="NTProblems"></a> <b>NT Problems</b>
+    <p>Choice.com was originally supplied on the
+    <a href="../../Version/MSWIN/95.HTM">Windows 95</a> install
+    CD (and <a href="../../Version/MSDOS/600.HTM">DOS v6.0</a>
+    before that) and the same utility has also been
+    released in the NT resource kits, hovever there are some problems
+    under NT - multiple concurrent invocations of CHOICE will clobber
+    each other. Choice.com will also burn a lot of CPU's when in a
+    wait state.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <ul>
+      <li><a href="#SetErrorlevel">Setting a specific ERRORLEVEL</a></li>
+      <li><a href="#Menu">Using CHOICE in a batch program</a></li>
+      <li><a href="#NoPrompt">What the user sees if you leave out a prompt</a></li>
+      <li><a href="#SwitchTSees">What the user sees if you use the T switch</a></li>
+      <li><a href="#UserSees">What the user sees when you use CHOICE in a batch file</a></li>
+    </ul>
+
+    <hr>
+    <a name="UserSees"></a> <b>What the user sees when you use CHOICE in a batch file</b>
+    <p>If you use this syntax in a batch file,</p>
+<pre>
+    CHOICE <a
+href="#SwitchC">/C:YNC</a>
+</pre>
+
+    <p>the user sees when CHOICE is started:</p>
+<pre>
+    [Y,N,C]?
+</pre>
+
+    <p>If you add text to the syntax,</p>
+<pre>
+    CHOICE <a
+href="#SwitchC">/C:YNC</a> <a
+href="#ParameterText">Yes, No, or Continue</a>
+</pre>
+
+    <p>the user sees when CHOICE is started:</p>
+<pre>
+    Yes, No, or Continue [Y,N,C]?
+</pre>
+
+    <hr>
+    <a name="NoPrompt"></a> <b>What the user sees if you leave out a prompt</b>
+    <p>If, you use the
+    <a href="#SwitchN">/N</a> switch to leave out the prompt in
+    a batch program,</p>
+<pre>
+    CHOICE <a
+href="#SwitchN">/N</a> <a
+href="#ParameterText">Yes, No, or Continue?</a>
+</pre>
+
+    <p>the user sees only the text you specified when CHOICE is
+    started:</p>
+<pre>
+    Yes, No, or Continue?
+</pre>
+
+    <hr>
+    <a name="SwitchTSees"></a> <b>What the user sees if you use the T switch</b>
+    <p>If you use this syntax in a batch program,</p>
+<pre>
+    CHOICE <a
+href="#SwitchC">/C:YNC</a> <a
+href="#SwitchT">/T:n,5</a>
+</pre>
+
+    <p>the user sees when CHOICE is started:</p>
+<pre>
+    [Y,N,C]?
+</pre>
+
+    <p>If, after 5 seconds, the user hasn't pressed a key, CHOICE
+    chooses N and returns an
+    <a href="../I/IF.HTM#ParameterErrorlevel">ERRORLEVEL</a> value of
+    2. If the user presses a key before 5 seconds, CHOICE returns the
+    value corresponding to the user's choice.</p>
+    <p>To have the option of defragmenting drive C when you start your
+    computer, you could add these lines to your AUTOEXEC.BAT
+    file:</p>
+<pre>
+    CHOICE <a
+href="#ParameterText">Defrag drive</a> <a
+href="#SwitchT">/T:y,5</a>
+    <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#ParameterErrorlevel">ERRORLEVEL</a> 2 <a
+href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">SKIPDEFR</a>
+    <a href="../D/DEFRAG.HTM">DEFRAG</a> <a
+href="../D/DEFRAG.HTM#ParameterDrive">C:</a>
+    :<a href="../L/LABEL.HTM#ParameterLabel">SKIPDEFR</a>
+</pre>
+
+    <p>If you press N within 5 seconds,
+    <a href="../D/DEFRAG.HTM">DEFRAG</a> will not run and
+    CHOICE returns an
+    <a href="../I/IF.HTM#ParameterErrorlevel">ERRORLEVEL</a> value of
+    2. If you do not press N within 5 seconds, or if you choose Y,
+    <a href="../D/DEFRAG.HTM">DEFRAG</a> is run on
+    drive C.</p>
+
+    <hr>
+    <a name="Menu"></a> <b>Using CHOICE in a batch program</b>
+    <p>This batch program demonstrates using the CHOICE option
+    to select one of three programs: MS-DOS Editor, Microsoft
+    Anti-Virus, or Microsoft Backup.</p>
+    <p>Notice that the <a href="../I/IF.HTM">IF</a>
+    <a href="../I/IF.HTM#ParameterErrorlevel">ERRORLEVEL</a>
+    statements are listed in decreasing order. The operating system
+    will consider the
+    <a href="../I/IF.HTM">IF</a> statement true if the
+    <a href="../I/IF.HTM#ParameterErrorlevel">ERRORLEVEL</a> parameter
+    returned by CHOICE is greater than or equal to the parameter
+    specified in the <a href="../I/IF.HTM">IF</a> command.</p>
+<pre>
+    <a href="../A/ATSIGN.HTM">@</a><a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterOff">OFF</a>
+     <a href="CLS.HTM">CLS</a>
+     <a href="../E/ECHO.HTM">ECHO</a><a
+href="../E/ECHO.HTM#ParameterMessage">.</a>
+     <a href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">A   Microsoft Editor</a>
+     <a href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">B   Microsoft Anti-Virus</a>
+     <a href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">C   Microsoft Backup</a>
+     <a href="../E/ECHO.HTM">ECHO</a><a
+href="../E/ECHO.HTM#ParameterMessage">.</a>
+     CHOICE <a
+href="#SwitchC">/C:abc</a> <a
+href="#ParameterText">Choose an option</a>
+     <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#ParameterErrorlevel">ERRORLEVEL</a> 3 <a
+href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">MSBACKUP</a>
+     <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#ParameterErrorlevel">ERRORLEVEL</a> 2 <a
+href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">MSAV</a>
+     <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#ParameterErrorlevel">ERRORLEVEL</a> 1 <a
+href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">EDIT</a>
+    :<a href="../L/LABEL.HTM#ParameterLabel">EDIT</a>
+     <a href="../E/EDIT.HTM">EDIT</a>
+     <a href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">END</a>
+    :<a href="../L/LABEL.HTM#ParameterLabel">MSAV</a>
+     <a href="../M/MSAV.HTM">MSAV</a>
+     <a href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">END</a>
+    :<a href="../L/LABEL.HTM#ParameterLabel">MSBACKUP</a>
+     <a href="../M/MSBACKUP.HTM">MSBACKUP</a>
+     <a href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">END</a>
+    :<a href="../L/LABEL.HTM#ParameterLabel">END</a>
+</pre>
+
+    <hr>
+    <a name="SetErrorlevel"></a> <b>Setting a specific ERRORLEVEL</b>
+    <p>CHOICE can be used to set a specific ERRORLEVEL for
+    example to set the ERRORLEVEL to 6:</p>
+<pre>
+     <a href="../E/ECHO.HTM">ECHO</a><a
+href="../E/ECHO.HTM#ParameterMessage">6</a>|CHOICE <a
+href="#SwitchC">/C:123456</a> <a
+href="#SwitchN">/N</a> &gt;NUL
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <ul>
+    <li><b>0</b> User pressed CTRL+BREAK (^BREAK) or CTRL+C (^C)</li>
+    <li><b>255</b> Error condition</li>
+    </ul>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+
+      <dt>External NT Resource Kit</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/01/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

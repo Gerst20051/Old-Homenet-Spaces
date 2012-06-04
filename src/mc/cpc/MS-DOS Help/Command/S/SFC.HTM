@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>SFC</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#s">Commands N-Z</a>
+    &gt; <a href="../INDEXS.HTM#sfc">Commands S</a>
+    <h1>SFC</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>System File Checker (SFC) scans and verifies the
+    versions of all protected system files after you restart
+    your computer.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>SFC
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>SFC
+    [<a href="#SwitchCacheSize">/CACHESIZE=x</a>]
+    [<a href="#SwitchPurgeCache">/PURGECACHE</a>]
+    [<a href="#SwitchRevert">/REVERT</a>]
+    [<a href="#SwitchScanBoot">/SCANBOOT</a>]
+    [<a href="#SwitchScanNow">/SCANNOW</a>]
+    [<a href="#SwitchScanOnce">/SCANONCE</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchCacheSize"></a> /CACHESIZE=x
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Sets the size, in MB, of the Windows File
+      Protection file cache.</dd>
+
+      <dt><a name="SwitchPurgeCache"></a> /PURGECACHE
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Purges the Windows File Protection file cache and
+      scans all protected system files immediately.</dd>
+
+      <dt><a name="SwitchRevert"></a> /REVERT
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Returns the scan to its default operation.</dd>
+
+      <dt><a name="SwitchScanBoot"></a> /SCANBOOT
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Scans all protected system files every time the
+      computer is restarted.</dd>
+
+      <dt><a name="SwitchScanOnce"></a> /SCANONCE
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Scans all protected system files once.</dd>
+
+      <dt><a name="SwitchScanNow"></a> /SCANNOW
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Scans all protected system files immediately.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>You must be logged on as a member of the
+    Administrators group to run.</p>
+    <p>If SFC discovers that a protected file has been
+    overwritten, it retrieves the correct version of the
+    file from the
+    <a href="../../ENV/MSWIN/SYSTEMRO.HTM">%SYSTEMROOT%</a>\system32\dllcache
+    folder and then replaces the incorrect file.</p>
+    <p>If the <a href="../../ENV/MSWIN/SYSTEMRO.HTM">%SYSTEMROOT%</a>\system32\dllcache folder becomes
+    corrupt or unusable, use SFC <a href="#SwitchScanNow">/SCANNOW</a>,
+    SFC <a href="#SwitchScanOnce">/SCANONCE</a>, or
+    SFC <a href="#SwitchScanBoot">/SCANBOOT</a> to repair
+    the contents of the Dllcache directory.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

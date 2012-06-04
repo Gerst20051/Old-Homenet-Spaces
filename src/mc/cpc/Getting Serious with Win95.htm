@@ -1,0 +1,198 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Getting Serious with Win95</title>
+</head>
+
+<body>
+
+<h2 align="center">Getting Serious with Win95</h2>
+<hr>
+<p align="justify">Too many times on the newsgroups I see posts like &quot;teach me to 
+hack&quot; and &quot;all I have is Win95, will I ever learn to hack?&quot;</p>
+<p align="justify">******************************************************</p>
+<p align="justify">In this Guide you will learn:</p>
+<p align="justify">1. Important files on your system.</p>
+<p align="justify">2. My first program.</p>
+<p align="justify">3. Getting help.</p>
+<p align="justify">4. Finding out about programs.</p>
+<p align="justify">5. What can I do with an Internet connection?</p>
+<p align="justify">******************************************************</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">Well, you&#39;re in luck, the answer is a resounding YES!! However, 
+there is a very basic step that must first be taken, and that is to define what 
+is meant by &quot;hacking.&quot; We&#39;ll start with what hacking is not...it&#39;s not denial of 
+service (DoS) attacks, nuking, mail bombing, IRC, or ICQ. Anyone can run a program, 
+but a hacker learns how things work, and tries to push them to their limits. Exposing 
+vulnerabilities is only part of what a hacker does, and when he finds them, the 
+hacker has the maturity and sense of responsibility to not use the vulnerability 
+for his own gain.</p>
+<p align="justify">The Hacker Manifesto clearly states &quot;thou shalt do no harm.&quot;</p>
+<p align="justify">**Historical Note: If you want a role model for becoming a hacker, 
+try these names: Dennis Ritchie, Bob Metcalfe, Steve Wozniak, and yes, Bill Gates.</p>
+<p align="justify">With that aside, on with the show. Past editions of the Guides 
+to (mostly) Harmless Hacking have talked about how to make modifications to a Win95 
+system to WOW your friends. The point of those articles was that you can begin hacking 
+by learning all there is to know about your system. I know a lot of text files out 
+there talk about using Linux and FreeBSD, shell accounts, Un*x tools, and telnet, 
+but if you don&#39;t have any of these available to you, not to worry. You can still 
+learn, which is the whole point.</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">**Note: Linux and FreeBSD are freeware or commercial (depending 
+upon where you go) versions of Un*x that run on the Intel platform (a PC computer).</p>
+<p align="justify">These systems have uses throughout academia and research facilities, 
+but maybe a bit difficult to get running on your own system unless you know quite 
+a bit about your system and the operating system. The word &quot;Un*x&quot; uses the star 
+to refer to the various flavors of the Unix operating system.</p>
+<p align="justify">1. IMPORTANT FILES ON YOUR SYSTEM.</p>
+<p align="justify">The first thing we&#39;ll look at are the important files of the 
+Win95 operating system. The autoexec.bat, config.sys, win.ini, and system.ini files 
+are holdovers from DOS, but are also still used. The config.sys file is used to 
+configure hardware on your system and the autoexec.bat file is used to load parameters 
+and environment variables that are needed when your system first starts.</p>
+<p align="justify">In the next section, we&#39;ll discuss how to load environment variables 
+for specific purposes using batch files. We&#39;ll look specifically at the autoexec.bat 
+file, as it will lead into batch file programming in the next section.</p>
+<p align="justify">To take a look at this file, go to the DOS prompt and type:</p>
+<p align="justify">c:\&gt;edit autoexec.bat</p>
+<p align="justify">Your screen will turn blue when the editor opens and the autoexec.bat 
+file will be loaded automatically, because it&#39;s located in the current directory.</p>
+<p align="justify">If you had typed:</p>
+<p align="justify">c:\&gt;notepad autoexec.bat</p>
+<p align="justify">the file would&#39;ve been opened in NotePad. Use whichever is easier.</p>
+<p align="justify">**Note: This leads us to the subject of paths. Paths in DOS are 
+areas where DOS will look on your hard drive for programs that you type in at the 
+prompt. You may have the program on your hard drive but you won&#39;t be able to run 
+it from the prompt unless it&#39;s in your path or you are in the directory where the 
+program resides.</p>
+<p align="justify">One command that should be visible in the autoexec.bat file is 
+the PATH statement. It may look something like this:</p>
+<p align="justify">SET PATH=.;c:\;c:\Windows;c:\windows\command</p>
+<p align="justify">You don&#39;t need much more than this in your path, and you don&#39;t 
+want it to get out of control, so it&#39;s best if you leave it like as it is. The &quot;.&quot; 
+(period) that is in the beginning of the line says to begin the search for the command 
+in the current working directory.</p>
+<p align="justify">You can add other tasks in the autoexec.bat file that you want 
+run upon startup, and you can even include command line parameters, as necessary.</p>
+<p align="justify">Now let&#39;s change directories at the DOS prompt:</p>
+<p align="justify">c:\&gt;cd windows</p>
+<p align="justify">Now open the win.ini file in Notepad, and take a look at it. 
+We&#39;re not going to make any changes to it, or go into a long explanation of it&#39;s 
+contents. You can see that it contains different sections that pertain to different 
+components and applications on your system.</p>
+<p align="justify">*****************************************************</p>
+<p align="justify">Evil Genius\Elite Hacker Tip: Go to the section of the win.ini 
+file called &quot;[Extensions]&quot;. One of the first lines should be:</p>
+<p align="justify">txt=notepad.exe ^.txt</p>
+<p align="justify">You can use this line to plant messages on your computer. Simply 
+change the reference to a batch file that contains some commands and the line:</p>
+<p align="justify">notepad %1 %2 %3 %4</p>
+<p align="justify">...at the end.</p>
+<p align="justify">*****************************************************</p>
+<p align="justify">Now, open the system.ini file.</p>
+<p align="justify">**Note: To avoid having to type the same commands over and over, 
+type in &quot;doskey&quot; at the prompt, or edit the autoexec.bat file to include the command 
+&quot;doskey on&quot;. Then when you are in a DOS window, you can hit the up and down arrow 
+keys to move amongst commands you&#39;ve already typed in.</p>
+<p align="justify">You&#39;ll see that the system.ini file contains sections similar 
+to the win.ini file.</p>
+<p align="justify">*******************************************************</p>
+<p align="justify">Evil Genius\Elite Hacker Tip: Go to the &quot;[boot]&quot; section and 
+locate the line that reads:</p>
+<p align="justify">shell=Explorer.exe</p>
+<p align="justify">This is the line that tells Win95 which shell to use for your 
+system. The commands that control what colors to use are locatedin the win.ini file. 
+However, you can change shells. Change the line to read:</p>
+<p align="justify">shell=progman.exe</p>
+<p align="justify">The next time you reboot the computer, the old Win3.1 Program 
+Manager shell will be loaded.</p>
+<p align="justify">****************************************************</p>
+<p align="justify">2. MY FIRST PROGRAM.</p>
+<p align="justify">Most program languages that I have used have all started out 
+with the ubiquitous &quot;Hello, World&quot; program, so we&#39;ll start there.</p>
+<p align="justify">A batch file is really more of an interpreted file. The system 
+reads the file, and executes the commands within the file one at a time. You can 
+run into problems if the command you put into the file requires input from the user, 
+but some useful tasks can be accomplished through the use of batch files.</p>
+<p align="justify">So, for our first program, type:</p>
+<p align="justify">@echo off</p>
+<p align="justify">echo Hello, World!</p>
+<p align="justify">Save the file as &quot;hello.bat&quot;, and at the prompt, type:</p>
+<p align="justify">c:\&gt;hello</p>
+<p align="justify">You have now written your first program! Now, open hello.bat 
+again, and type change the second line to:</p>
+<p align="justify">echo Hello, %1</p>
+<p align="justify">Save this, and run the program again, but enter in an argument:</p>
+<p align="justify">c:\&gt;hello Dave</p>
+<p align="justify">What the &quot;%1&quot; does is take the first argument (&quot;Dave&quot;) and includes 
+it inthe echo statement.</p>
+<p align="justify">You can use batch file programming to load specific environment 
+variables, as well. If you do Java programming, for instance, you can leave the 
+autoexec.bat file the way it is, but you will need to load specific environment 
+variables so that you can use your development environment, specifically the JDK 
+from Sun. So type:</p>
+<p align="justify">@echo off</p>
+<p align="justify">SET PATH=%PATH%;c:\java\;c:\java\bin</p>
+<p align="justify">SET CLASSPATH=c:\java\lib\classes.zip</p>
+<p align="justify">SET JAVAHOME=c:\java</p>
+<p align="justify">Save this file as &quot;java.bat&quot; and whenever you want to do some 
+development, run the file. You can even include a reference to the batch file in 
+the autoexec.bat file. Notice the &quot;%PATH%&quot; in the second line...this is an environment 
+variable that exists for the DOS environment. It refers to the PATH variable, as 
+it exists before you run the new batch file. To view the path, type:</p>
+<p align="justify">c:\&gt;path</p>
+<p align="justify">3. GETTING HELP.</p>
+<p align="justify">It&#39;s actually pretty easy to find out about particular things 
+on your Win95 computer. The first and easiest way to find anything is to use the 
+Start -&gt;Help (click on the Start button, then choose Help) feature. From there select 
+a topic. Some of the entries are pretty detailed, with examples.</p>
+<p align="justify">A resource that is very often overlooked by folks who are new 
+to computing in general is your local public library. DOS has been available for 
+quite a while, and you will likely find books about DOS and Windows at the library. 
+Some books even cover the specifics of batch files or other aspects of DOS, and 
+will prove to be very useful. Now, you won&#39;t be interested in sections on EDLIN, 
+but you find lots of valuable information.</p>
+<p align="justify">After libraries are used bookstores. Lots of folks would rather 
+sell their old books rather than donate them to a library. You can find many useful 
+books on a wide range of subjects.</p>
+<p align="justify">Finally, new bookstores, such as Barnes and Noble, Borders, and 
+especially Computer Literacy are excellent sources of information. If you can&#39;t 
+afford some of the new books, don&#39;t worry. Just drop by the bookstore, look something 
+up, and put the book back. Many of these bookstores also carry a wide variety of 
+magazines, many of which are specific to computer systems. There are even magazines 
+available for Atari and Amiga systems!</p>
+<p align="justify">4. FINDING OUT ABOUT PROGRAMS.</p>
+<p align="justify">While in DOS, if you want to get some quick information about 
+a command on your computer and don&#39;t want to go through the steps of opening the 
+online Help, just type the command, followed by &quot;/?&quot;:</p>
+<p align="justify">c:\&gt;edit /?</p>
+<p align="justify">This provides a quick explanation of the command and a list of 
+arguments that can be used with it. Keep in mind that this technique works with 
+DOS commands...programs written by folks outside of Microsoft don&#39;t have to provide 
+this functionality.</p>
+<p align="justify">5. WHAT CAN I DO WITH AN INTERNET CONNECTION?</p>
+<p align="justify">So you have an Internet connection, eh? Well, you already have 
+a shell account, of sorts. It&#39;s your DOS window. Yes, you can run commands from 
+your DOS window, as well as from the GUI. For example, once you have connected, 
+try this:</p>
+<p align="justify">c:\&gt;telnet rs.internic.net <font color="#ff0000">(Sorry, this 
+doesn&#39;t work anymore)</font></p>
+<p align="justify">This will open up a telnet window directly to InterNIC. After 
+the host, you can even specify a port:</p>
+<p align="justify">c:\&gt;telnet [host] [port]</p>
+<p align="justify">This is useful if you want to see if a host has a particular 
+port open.</p>
+<p align="justify">Your system also has a command line FTP program. Just type:</p>
+<p align="justify">c:\&gt;ftp [host]</p>
+<p align="justify">and it will attempt to connect you to the host. You can use this 
+FTP client to connect to your own ftp sites, or to anonymous ftp sites such as ftp.microsoft.com.</p>
+<p align="justify">There are also other commands that you can use in a networked 
+environment, but they will be covered in another article.</p>
+
+</body>
+
+</html>

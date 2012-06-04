@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CERTREQ ACCEPT</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCA.HTM#certreqaccept">Commands Ca-Cg</a>
+    <h1>CERTREQ ACCEPT</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>To accept and install a response to a previous new request.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CERTREQ
+    [<a href="#SwitchAccept">-accept</a>]
+    [<a href="#SwitchHelp">/?</a>]</p>
+
+    <p>CERTREQ
+    <a href="#SwitchAccept">-accept</a>
+    [{<a href="#ParameterFileChainIn">chain_input_file</a>
+    | <a href="#ParameterFileResponseIn">response_input_file</a>
+    | <a href="#ParameterFileCertIn">certificate_input_file</a>}]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterFileCertIn"></a> certificate_input_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the binary or a base64-encoded input
+      file that you want to use.</dd>
+
+      <dt><a name="ParameterFileChainIn"></a> chain_input_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the binary or a base64-encoded input
+      file that you want to use.</dd>
+
+      <dt><a name="ParameterFileResponseIn"></a> response_input_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the binary or a base64-encoded input
+      file that you want to use.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display cluster group syntax. Default.</dd>
+
+      <dt><a name="SwitchAccept"></a> -accept
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Accept and install a response to a previous new
+      request.</dd>
+
+      <dt><a name="SwitchAttrib"></a> -attrib attribute_string
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the Name and Value string pairs,
+      separated by a colon.
+      Separate Name and Value string pairs with \n
+      (ie. Name1: Value1\n Name2: Value2).</dd>
+
+      <dt><a name="SwitchBinary"></a> -binary
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Formats output files as binary instead of
+      base64-encoded.</dd>
+
+      <dt><a name="SwitchCert"></a> -cert certificate_id
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the signing certificate by common name,
+      serial number, Secure Hash Algorithm (SHA-1) key, or
+      certificate hash.</dd>
+
+      <dt><a name="SwitchNew"></a> -new
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Creates a new request.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="CERTREQN.HTM">CERTREQ NEW</a>
+    <br><a href="CERTREQP.HTM">CERTREQ POLICY</a>
+    <br><a href="CERTREQR.HTM">CERTREQ RETRIEVE</a>
+    <br><a href="CERTREQS.HTM">CERTREQ SIGN</a>
+    <br><a href="CERTREQT.HTM">CERTREQ SUBMIT</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>FORFILES</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#f">Commands A-M</a>
+    &gt; <a href="../INDEX.HTM#forfiles">Batch F</a>
+    <h1>FORFILES</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Batch process multiple files.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>FORFILES
+    [<a href="#SwitchP">-pPath</a>]
+    [<a href="#SwitchS">-s</a>]
+    [<a href="#SwitchD">-dDate</a>]
+    [<a href="#SwitchM">-mMask</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchC">-cCommand</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchC"></a> -cCommand
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Command to execute on each file, default="CMD /C Echo @FILE"</dd>
+      <dd>The variables can be used in the -cCommand
+      (must be upper case):
+      <ul>
+      <li>@FILE</li>
+      <li>@FNAME_WITHOUT_EXT</li>
+      <li>@EXT</li>
+      <li>@PATH</li>
+      <li>@RELPATH</li>
+      <li>@ISDIR</li>
+      <li>@FSIZE</li>
+      <li>@FDATE</li>
+      <li>@FTIME</li>
+      </ul>
+      To ECHO Hex characters in the Command use: 0xHH</dd>
+
+      <dt><a name="SwitchD"></a> -dDate
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Date can be:
+      <ul>
+      <li>+DDMMYY to select files newer than a given date
+      (filedate &gt;=DDMMYY) (<a href="#v10">v1.0</a>) (<a href="#v11">v1.1</a>)</li>
+      <li>-DDMMYY to select files older than a given date
+      (filedate &lt;=DDMMYY) (<a href="#v11">v1.1</a>)</li>
+      <li>+DD to select files newer than DD days ago (<a href="#v10">v1.0</a>) (<a href="#v11">v1.1</a>)</li>
+      <li>-DD to select files older than DD days ago (<a href="#v11">v1.1</a>)</li>
+      </ul>
+      </dd>
+
+      <dt><a name="SwitchM"></a> -mMask
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Search mask (wildcards allowed), default=*.*</dd>
+
+      <dt><a name="SwitchP"></a> -pPath
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Path to search, default=current folder</dd>
+
+      <dt><a name="SwitchS"></a> -s
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Recurse into sub-folders.</dd>
+
+      <dt><a name="SwitchV"></a> -v
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Verbose report.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="FOR_0.HTM">FOR</a> - Conditionally perform a command several
+    times.
+    <br><a href="../M/MUNGE.HTM">MUNGE</a> - Find and Replace text
+    within file(s).
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>for - Expand words, and execute commands.
+    <br>case - Conditionally perform a command.
+    <br>eval - Evaluate several COMMANDS/arguments.
+    <br>if - Conditionally perform a command.
+    <br>gawk - Find and Replace text within file(s).
+    <br>m4 - Macro processor.
+    <br>until - Execute commands (until error).
+    <br>while - Execute commands.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#v10">Version 1.0</a></li>
+      <li><a href="#v11">Version 1.1</a></li>
+    </ul>
+
+    <hr>
+    <a name="v10"></a> <b>Version 1.0</b>
+    <p>Version 1.0 of FORFILES will only search for files newer
+    than a specified date <a href="#SwitchD">-dDate</a>).</p>
+
+    <hr>
+    <a name="v11"></a> <b>Version 1.1</b>
+    <p>Version 1.1 of FORFILES will search for files Newer
+    or Older than a specified date <a href="#SwitchD">-dDate</a>).</p>
+    <p>Version 1.1 can be downloaded from ftp://www.microsoft.com/</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+
+    <p>To find every text file on the C: drive:</p>
+<pre>
+    FORFILES <a
+href="#SwitchP">-pC:\</a> <a
+href="#SwitchS">-s</a> <a
+href="#SwitchM">-m*.TXT</a> <a
+href="#SwitchC">-c"CMD /C Echo @FILE is a text file"</a>
+</pre>
+
+    <hr>
+    <p>To show the path of every HTML file on the C: drive:</p>
+<pre>
+    FORFILES <a
+href="#SwitchP">-pC:\</a> <a
+href="#SwitchS">-s</a> <a
+href="#SwitchM">-m*.HTML</a> <a
+href="#SwitchC">-c"CMD /C Echo @RELPATH is the location of @FILE"</a>
+</pre>
+
+    <hr>
+    <p>List every folder on the C: drive:</p>
+<pre>
+    FORFILES <a
+href="#SwitchP">-pC:\</a> <a
+href="#SwitchS">-s</a> <a
+href="#SwitchM">-m*.</a> <a
+href="#SwitchC">-c"CMD /C if @ISDIR==TRUE echo @FILE is a folder"</a>
+</pre>
+
+    <hr>
+    <p>For every file on the C: drive list the file extension
+    in double quotes:</p>
+<pre>
+    FORFILES <a
+href="#SwitchP">-pC:\</a> <a
+href="#SwitchS">-s</a> <a
+href="#SwitchM">-m*.*</a> <a
+href="#SwitchC">-c"CMD /c echo extension of @FILE is 0x22@EXT0x22</a>
+</pre>
+
+    <hr>
+    <p>List every file on the C: drive last modified over 100 days ago:</p>
+<pre>
+    FORFILES <a
+href="#SwitchP">-pC:\</a> <a
+href="#SwitchS">-s</a> <a
+href="#SwitchM">-m*.*</a> <a
+href="#SwitchD">-d-100</a> <a
+href="#SwitchC">-c"CMD /C Echo @FILE : date &gt;= 100 days"</a>
+</pre>
+
+    <hr>
+    <p>Find files last modified before 01-Jan-1995:</p>
+<pre>
+    FORFILES <a
+href="#SwitchP">-pC:\</a> <a
+href="#SwitchS">-s</a> <a
+href="#SwitchM">-m*.*</a> <a
+href="#SwitchD">-d-010195</a> <a
+href="#SwitchC">-c"CMD /C Echo @FILE is quite old!"</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External Resource Kit</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

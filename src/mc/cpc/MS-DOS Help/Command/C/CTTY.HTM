@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CTTY</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCH.HTM#ctty">Commands Ch-Cz</a>
+    <h1>CTTY</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Changes the terminal device used to control your computer.</p>
+    <p>Use the CTTY command if you want to use another device to enter
+    commands.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CTTY
+    <a href="#ParameterDevice">device</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDevice"></a> device
+      (<a href="../../Version/MSDOS/300.HTM">v3.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the alternative device you want to use to type
+      commands. Valid values for the device parameter are:
+        <ul>
+          <li><b>AUX</b></li>
+          <li><b>COM1</b></li>
+          <li><b>COM2</b></li>
+          <li><b>COM3</b></li>
+          <li><b>COM4</b></li>
+          <li><b>CON</b></li>
+          <li><b>LPT1</b></li>
+          <li><b>LPT2</b></li>
+          <li><b>LPT3</b></li>
+          <li><b>NUL</b></li>
+          <li><b>PRN</b></li>
+        </ul>
+      </dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For more information about changing the input device when
+    specifying a command interpreter, see the
+    <a href="COMMAND.HTM">COMMAND</a> command.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Terminal">Setting the terminal device with COMMAND</a></li>
+      <li><a href="#Serial">Setting up a serial port for CTTY</a></li>
+      <li><a href="#NonDos">Using CTTY with programs that do not use DOS</a></li>
+    </ul>
+
+    <hr>
+    <a name="Serial"></a> <b>Setting up a serial port for CTTY</b>
+    <p>Use the <a href="../M/MODECS.HTM">MODE</a> command to set up
+    your serial port for
+    <a href="../M/MODECS.HTM#ParameterBaud">baud rate</a>,
+    <a href="../M/MODECS.HTM#ParameterParity">parity</a>,
+    <a href="../M/MODECS.HTM#ParameterData">bits</a>, and
+    <a href="../M/MODECS.HTM#ParameterStop">stop bit</a> before using
+    the CTTY command.</p>
+
+    <hr>
+    <a name="NonDos"></a> <b>Using CTTY with programs that do not use DOS</b>
+    <p>Many programs do not use DOS for input or output. These
+    programs send input directly to the hardware on your computer. The
+    CTTY command has no effect on these programs; it affects only
+    programs that use DOS for reading keyboard input and displaying
+    output.</p>
+
+    <hr>
+    <a name="Terminal"></a> <b>Setting the terminal device with COMMAND</b>
+    <p>In addition to the CTTY command, you can use the device
+    parameter of the <a href="COMMAND.HTM">COMMAND</a> command to
+    specify the
+    <a href="COMMAND.HTM#ParameterDevice">input device</a>.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To change control of all input and output from the current
+    device (your computer monitor and keyboard) to the AUX port, type:</p>
+<pre>
+    CTTY <a href="#ParameterDevice">AUX</a>
+</pre>
+    <p>In this example, a remote terminal device connected to the AUX
+    port controls input and output for your system.</p>
+    <p>To transfer input and output back to the monitor and keyboard,
+    type:</p>
+<pre>
+    CTTY <a href="#ParameterDevice">CON</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>Internal</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+
+          <dt>Windows NT</dt>
+          <dd><a href="../../Version/MSWIN/NT400.HTM">NT4</a></dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

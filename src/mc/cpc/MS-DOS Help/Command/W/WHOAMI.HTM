@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>WHOAMI</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#w">Commands N-Z</a>
+    &gt; <a href="../INDEXW.HTM#whoami">Commands W</a>
+    <h1>WHOAMI</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Displays the CURRENT username and domain.</p>
+    <p>Displays the complete contents of the access token in the
+    command window. Displays the user name and security identifier
+    (SID), the group names, types, attributes and their SIDs, the
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>WHOAMI
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>WHOAMI
+    [<a href="#SwitchFqdn">/FQDN</a>
+    | <a href="#SwitchLogonId">/LOGONID</a>
+    | <a href="#SwitchUpn">/UPN</a>]</p>
+
+    <p>WHOAMI
+    [<a href="#SwitchGroups">/GROUPS</a>
+    | <a href="#SwitchPriv">/PRIV</a>
+    | <a href="#SwitchUser">/USER</a>]
+    [<a href="#SwitchFo">/FO format</a>]</p>
+
+    <p>WHOAMI
+    [<a href="#SwitchAll">/ALL</a>]
+    [<a href="#SwitchFo">/FO format</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display command help.</dd>
+
+      <dt><a name="SwitchAll"></a> /ALL
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Shows all permissions and group memberships.</dd>
+      <dt>(<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the active user name and groups, and the
+      security identifiers (SID) and privileges in the
+      current access token.</dd>
+
+      <dt><a name="SwitchFo"></a> /FO format
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the output format:
+        <ul>
+          <li><b>csv</b> Displays output in comma-delimited (.csv)</li>
+          <li><b>list</b> Displays output in a list</li>
+          <li><b>table</b> Displays output in a table (default)</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchFqdn"></a> /FQDN
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the user name in fully qualified domain
+      name (FQDN) format.</dd>
+
+      <dt><a name="SwitchGroups"></a> /GROUPS
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays group names.</dd>
+
+      <dt><a name="SwitchLogonId"></a> /LOGONID
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays logon ID.</dd>
+
+      <dt><a name="SwitchPriv"></a> /PRIV
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays privileges.</dd>
+
+      <dt><a name="SwitchUpn"></a> /UPN
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the user name in user principal name
+      (UPN) format.</dd>
+
+      <dt><a name="SwitchUser"></a> /USER
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the current user name.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../S/SET.HTM">SET</a> - Display, set, or remove Windows NT environment variables.
+    <br><a href="../V/VER.HTM">VER</a> - Display version information.
+    <br><a href="../V/VOL.HTM">VOL</a> - Display a disk label.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>id - Print user and group id's.
+    <br>who - Print who is currently logged in.
+    <br>whoami - Print the current user id and name (`id -un').</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>The whoami output is the same as the 2 environment variables
+    <a href="../../ENV/MSWIN/USERDOMA.HTM">%USERDOMAIN%</a> and
+    <a href="../../ENV/MSWIN/USERNAME.HTM">%USERNAME%</a>.</p>
+    <p>The same output can be achieved with:</p>
+<pre>
+    <a href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">%USERDOMAIN%\%USERNAME%</a>
+</pre>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External Resource Kit</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>PATHPING</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#p">Commands N-Z</a>
+    &gt; <a href="../INDEXP.HTM#pathping">Commands P</a>
+    <h1>PATHPING</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>IP trace utility.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>PATHPING
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>PATHPING
+    [<a href="#Switch4">-4 IPv4</a>]
+    [<a href="#Switch6">-6 IPv6</a>]
+    [<a href="#SwitchG">-g host_list</a>]
+    [<a href="#SwitchH">-h max_hops</a>]
+    [<a href="#SwitchI">-i ip_address</a>]
+    [<a href="#SwitchN">-n</a>]
+    [<a href="#SwitchP">-p period</a>]
+    [<a href="#SwitchQ">-q num_queries</a>]
+    [<a href="#SwitchRUpper">-R</a>]
+    [<a href="#SwitchR">-r</a>]
+    [<a href="#SwitchT">-T</a>]
+    [<a href="#SwitchW">-w timeout</a>]
+    <a href="#ParameterTargetName">target_name</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterTargetName"></a> target_name
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Specifies IP address to test.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="Switch4"></a> -4 IPv4
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies use IPv4 only.</dd>
+
+      <dt><a name="Switch6"></a> -6 IPv6
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies use IPv6 only.</dd>
+
+      <dt><a name="SwitchG"></a> -g host_list
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Loose source route along host_list.</dd>
+
+      <dt><a name="SwitchH"></a> -h max_hops
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Max number of hops to search. Default 30.</dd>
+
+      <dt><a name="SwitchI"></a> -i ip_address
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the source address.</dd>
+
+      <dt><a name="SwitchN"></a> -n
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Don't resolve addresses to hostnames.</dd>
+
+      <dt><a name="SwitchP"></a> -p period
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Wait between pings (milliseconds). Default 250.</dd>
+
+      <dt><a name="SwitchQ"></a> -q num_queries
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Number of queries per hop. Default 100.</dd>
+
+      <dt><a name="SwitchRUpper"></a> -R
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a> through
+      <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Test if each hop is RSVP aware.</dd>
+
+      <dt><a name="SwitchR"></a> -r
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a> ONLY)</dt>
+      <dd>?</dd>
+
+      <dt><a name="SwitchT"></a> -T
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a> through
+      <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Test each hop with Layer-2 priority tags.</dd>
+
+      <dt><a name="SwitchW"></a> -w timeout
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Wait timeout for each reply (milliseconds).
+      Default 1000.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../T/TRACERT.HTM">TRACERT</a> - Trace route to a remote host.
+    <br><a href="../I/IPCONFIG.HTM">IPCONFIG</a> - IP Configuration.
+    <br><a href="PING.HTM">PING</a> - Test a network connection.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>ping - ?
+    <br>trace - Find the IP address of a remote host.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

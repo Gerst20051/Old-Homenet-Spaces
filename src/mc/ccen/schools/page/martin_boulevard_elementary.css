@@ -1,0 +1,147 @@
+body{
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 10pt;
+}
+table{
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 10pt;
+}
+.footer_text{
+	font-family:arial, helvetica, san serif;
+	text-align:center;
+	font-size : 8pt;
+}
+
+.hdr_date{
+	font-size:10pt; 
+	font-family:arial, helvetica, "san serif";
+ 	vertical-align: bottom;
+}
+
+td.small_events{
+	font-family:arial, helvetica, sans-serif; 
+	font-size:8pt;
+	text-decoration: none; 
+	color: #000099;
+	vertical-align: top;
+}
+
+td.spotlight{
+	font-family:arial, helvetica, sans-serif; 
+	font-size:7pt;
+	text-decoration: none; 
+	color: #ffffff;
+	background: #000000;
+	vertical-align: top;
+}
+
+li.hi{
+        font-family:arial, helvetica, sans-serif;
+        font-size:9px; text-decoration: underline;
+        color:#0000ff;background-color:#E1EFF0;
+; list-style-type: disc
+}
+.small_caption{
+	font-family:arial, helvetica, sans-serif; 
+	font-size:8pt;
+	text-decoration: none; 
+	color: #000099;
+	vertical-align: top;
+}
+h5.scnd {font-family:arial, helvetica, sans-serif; font-size:12pt}
+h5.thrd {font-family:arial,helvetica,sans-serif; font-size:14pt; color:#000099} 
+h3.scnd { color:0099cc; text-align:center}
+p.ccc {letter-spacing: 5px}
+       
+.link1       {font-family:arial, helvetica, sans-serif;color:#000099; text-decoration:none; font-size:10pt; font-weight:bold}
+.link1:hover {font-family:arial, helvetica, sans-serif;color:#0000FF;font-size:10pt; text-decoration:underline; font-weight:bold}
+.link2       {font-family:arial, helvetica, sans-serif; font-size:8pt; text-decoration: none; color: #000099}
+.link2:hover {font-family:arial, helvetica, sans-serif; font-size:8pt; text-decoration: underline;color:#0000FF}
+.link3       {font-family:arial, helvetica, sans-serif; font-size:9px; color: #FFFFFF; text-decoration: none; letter-spacing: 2px}
+.link3:hover {font-family:arial, helvetica, sans-serif; font-size:9px; color: #FFFFCC; text-decoration: underline; font-weight:normal; letter-spacing: 2px}
+.link4       {font-family:arial, helvetica, sans-serif; font-size:10pt; text-decoration: none; color: #000099}
+.link4:hover {font-family:arial, helvetica, sans-serif; font-size:10pt; text-decoration: underline;color:#0000FF}
+.link5       {font-family:arial, helvetica, sans-serif; font-size:8pt; text-decoration: none; color: #ffffff}
+.link5:hover {font-family:arial, helvetica, sans-serif; font-size:8pt; text-decoration: underline;color:#ffffff}
+.large_bold       {
+	font-family:arial, helvetica, sans-serif;
+	font-size:10pt;
+	text-decoration: none;
+	color: #000099;
+	font-weight : bold;
+}
+.large_bold:hover 
+{
+	font-family:arial, helvetica, sans-serif;
+	font-size:10pt;
+	text-decoration: underline;
+	color:#000099;
+	font-weight : bold;
+}
+.large_bold_white       {
+	font-family:arial, helvetica, sans-serif;
+	font-size:10pt;
+	text-decoration: none;
+	color: #ffffff;
+	font-weight : bold;
+}
+.large_bold_white:hover 
+{
+	font-family:arial, helvetica, sans-serif;
+	font-size:10pt;
+	text-decoration: underline;
+	color:#ffffff;
+	font-weight : bold;
+}
+.headline{
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 16pt;
+	font-weight : bold;
+}
+
+.subhead{
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 10pt;
+	font : italic;
+}
+.news_header{
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 8pt;
+}
+div.light {
+	margin:1pt;
+	text-align:right;
+	background-color:#cccccc;
+	padding:2 2 2 2;
+}
+  
+.light2 {
+	margin:1pt;
+	text-align:left;
+	background-color:#cccccc;
+	padding:2 2 2 2;
+	font-weight : bold;
+	font-size:10pt;;
+}
+td.small_events_blk { font-family:arial, helvetica, sans-serif; font-size:8pt; text-decoration: none; color: #000000; vertical-align: top; }
+.link2_white { font-family:arial, helvetica, sans-serif; font-size:8pt; text-decoration: none; color: #FFFFFF}
+.link2_white:hover { font-family:arial, helvetica, sans-serif; font-size:8pt; text-decoration: underline;color:#FFFFFF}
+td.small_events_white { font-family:arial, helvetica, sans-serif; font-size:8pt; text-decoration: none; color: #FFFFFF; vertical-align: top; ; font-weight: bold}
+.light3 { margin:1pt; text-align:left; background-color:#FFFFCC; padding:2 2 2 2; font-weight : normal; font-size:8pt;; }
+.link_yellow {  font-family: Arial, Helvetica, sans-serif; font-size: 9px; color: #FFFFCC; text-decoration: none}
+.menu-text {  font-size: 8pt}
+.parentstip {
+	color: #000000;
+	text-decoration: none;
+}
+.email {
+	color: #FFFFFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: small;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+
+}

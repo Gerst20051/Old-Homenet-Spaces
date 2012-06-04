@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>EXPAND</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#e">Commands A-M</a>
+    &gt; <a href="../INDEXE.HTM#expand">Commands E</a>
+    <h1>EXPAND</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Expands a compressed file. You can use this command to retrieve
+    one or more files from the Setup disks that accompany
+    <a href="../../Version/MSDOS/622.HTM">v6.22</a>.
+    These files are not usable unless you expand them.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>EXPAND
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>EXPAND
+    [<a href="#SwitchD">-d</a>]
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchR">-r</a>]
+    [<a href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path</a>]<a
+    href="#ParameterFilename">filename</a>
+    [[<a href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path</a>]<a
+    href="#ParameterFilename">filename</a> [...]]
+    <a href="#ParameterDestination">destination</a></p>
+
+    <p>Prompt for the location and/or name to give the expanded file:</p>
+    <p>EXPAND
+    [<a href="#SwitchR">-r</a>]
+    [<a href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path</a>]<a
+    href="#ParameterFilename">filename</a></p>
+
+    <p>Prompt for the location and name of the compressed file to
+    expand, then prompt for the location and/or name to give the
+    expanded file:</p>
+    <p>EXPAND</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a name="ParameterPath"></a> path
+      <a name="ParameterFilename"></a> filename
+      <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the location and name of a compressed file or files
+      to be expanded. You cannot use wildcards (* and ?).</dd>
+
+      <dt><a name="ParameterDestination"></a> destination
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the location and/or name of the expanded file or
+      files. Destination can consist of a drive letter and colon, a
+      directory name, a filename, or a combination. However, you cannot
+      specify a filename for destination unless you also specify a
+      single compressed file for filename.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchD"></a> -d
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Displays a list of files in the source location.
+      Does not expand or extract the files.</dd>
+
+      <dt><a name="SwitchF"></a> -f
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Specifies the files in a cabinet (.cab) file that
+      you want to expand. You can use wildcards.</dd>
+
+      <dt><a name="SwitchR"></a> -r
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Rename expanded files.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../A/ATTRIB.HTM">ATTRIB</a> - Display or change
+    file attributes.
+    <br><a href="../C/COPY.HTM">COPY</a> - Copy one or more files
+    to another location.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>gzip - Compress or decompress named file(s).</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Prompt">Letting EXPAND prompt you</a></li>
+      <li><a href="#Retrieve">Retrieving files from the Setup disks</a></li>
+    </ul>
+
+    <hr>
+    <a name="Retrieve"></a> <b>Retrieving files from the Setup disks</b>
+    <p>Most of the files on the Setup disks provided with
+    <a href="../../Version/MSDOS/622.HTM">v6.22</a> are compressed.
+    Each of these compressed files has a file extension that ends with
+    an underscore character (_). When you installed the operating system,
+    you ran the Setup program, which expanded these files before copying
+    them to your system. However, if you need to retrieve just one or a
+    few files from the original disks, you can use the EXPAND command.</p>
+
+    <hr>
+    <a name="Prompt"></a> <b>Letting EXPAND prompt you</b>
+    <p>If you don't include the destination, or don't include the
+    compressed file and the destination, EXPAND prompts you for the
+    information and provides examples.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>Suppose you accidentally delete the SORT.EXE file from your DOS
+    directory on drive C. You can copy and expand the compressed file
+    SORT.EX_ from the <a href="../../Version/MSDOS/622.HTM">DOS v6.22</a>
+    Setup disks to your hard disk. First,
+    find out which disk contains SORT.EX_ by opening the PACKING.LST
+    file on Setup Disk 1. Then insert the appropriate disk into drive A
+    and use this command to copy and expand the file:</p>
+<pre>
+    EXPAND <a
+href="#ParameterDrive">A:</a><a
+href="#ParameterPath">\</a><a
+href="#ParameterFilename">SORT.EX_</a> <a
+href="#ParameterDrive">C:</a><a
+href="#ParameterPath">\DOS\</a><a
+href="#ParameterFilename">SORT.EXE</a>
+</pre>
+
+    <hr>
+    <p>To copy and expand the SORT.EX_ file to the hard disk by letting
+    EXPAND prompt you, type:</p>
+<pre>
+    EXPAND
+</pre>
+
+    <p>EXPAND prompts you with:</p>
+<pre>
+    Type the location and name of the compressed file you
+    want to expand. (Example: A:\EGA.SY_)
+    Compressed file:
+</pre>
+
+    <p>To expand and copy the SORT.EX_ file from the Setup disk in
+    drive A, type:</p>
+<pre>
+    <a href="#ParameterDrive">A:</a><a
+href="#ParameterPath">\</a><a
+href="#ParameterFilename">SORT.EX_</a>
+</pre>
+
+    <p>EXPAND prompts you with:</p>
+    <p>Type the location and/or name you want to give the expanded
+    file. (Example: C:\DOS\EGA.SYS)</p>
+<pre>
+    Expanded file:
+</pre>
+
+    <p>If your operating system files are in the C:\DOS directory,
+    type:</p>
+<pre>
+    <a href="#ParameterDrive">C:</a><a
+href="#ParameterPath">\DOS\</a><a
+href="#ParameterFilename">SORT.EXE</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>IISRESET</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#i">Commands A-M</a>
+    &gt; <a href="../INDEXI.HTM#iisreset">Commands I</a>
+    <h1>IISRESET</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Restart Web services without rebooting the computer.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>IISRESET
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>IISRESET
+    [<a href="#ParameterComputerName">computer_name</a>]
+    [<a href="#SwitchDisable">/disable</a>
+    | <a href="#SwitchEnable">/enable</a>]
+    [<a href="#SwitchNoForce">/noforce</a>]
+    [<a href="#SwitchReboot">/reboot</a>
+    | <a href="#SwitchRestart">/restart</a>
+    | <a href="#SwitchStart">/start</a>
+    | <a href="#SwitchStatus">/status</a>
+    | <a href="#SwitchStop">/stop</a>]
+    [<a href="#SwitchRebootOnError">/rebootonerror</a>]
+    [<a href="#SwitchTimeout">/timeout:value</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterComputerName"></a> computer_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the name of the computer to reset.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchDisable"></a> /disable
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Disable restarting of Internet Services on the
+      local system.</dd>
+
+      <dt><a name="SwitchEnable"></a> /enable
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Enable restarting of Internet Services on the
+      local system.</dd>
+
+      <dt><a name="SwitchNoForce"></a> /noforce
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Do not forcefully terminate Internet services if
+      attempting to stop them gracefully fails.</dd>
+
+      <dt><a name="SwitchReboot"></a> /reboot
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Reboot the computer.</dd>
+
+      <dt><a name="SwitchRebootOnError"></a> /rebootonerror
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Reboot the computer if an error occurs when
+      <a href="#SwitchStart">start</a>ing,
+      <a href="#SwitchStop">stop</a>ing, or
+      <a href="#SwitchRestart">restart</a>ing
+      Internet services.</dd>
+
+      <dt><a name="SwitchRestart"></a> /restart
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Stop and then restart all Internet services.</dd>
+
+      <dt><a name="SwitchStart"></a> /start
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Start all Internet services.</dd>
+
+      <dt><a name="SwitchStatus"></a> /status
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display the status of all Internet services.</dd>
+
+      <dt><a name="SwitchStop"></a> /stop
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Stop all Internet services.</dd>
+
+      <dt><a name="SwitchTimeout"></a> /timeout:value
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specify the timeout value (in seconds) to wait for
+      a successful stop of Internet services. On expiration
+      of this timeout the computer can be rebooted if
+      <a href="#SwitchRebootOnError">/REBOOTONERROR</a> is
+      specified. The default value is
+      20 for <a href="#SwitchRestart">restart</a>,
+      60 for <a href="#SwitchStop">stop</a>, and
+      0 for <a href="#SwitchReboot">reboot</a>.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Introduced with IIS 5.0.</p>
+    <p>Only use to recover from serious problems that a Web
+    server experiences. Changes made to the metabase may not
+    be saved to disk losing any recent changes you made.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2005/07/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

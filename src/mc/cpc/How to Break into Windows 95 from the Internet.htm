@@ -1,0 +1,255 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>How to Break into Windows 95 from the Internet</title>
+</head>
+
+<body>
+
+<h2 align="center">How to Break into Windows 95 from the Internet<br>
+(continued)</h2>
+<hr>
+<p align="justify">Hacking from Win95 <br>
+Accessing shares via the Internet <br>
+Alpha Edition:&nbsp; Oct, 1998</p>
+<p align="justify">[Protecting Yourself] <br>
+[What can they do] <br>
+[Getting set up] <br>
+[Connecting to shares] <br>
+[Final Words]</p>
+<p align="justify">The purpose of this Guide is to show the reader how to set up
+<br>
+their Win95 computer to use sharing via the Internet.</p>
+<p align="justify">Readers are encouraged to explore the information provided here,
+<br>
+but only after obtaining permission to do so on the remote <br>
+computer.&nbsp; Get with your friends and try these techniques!</p>
+<p align="justify">The information in this Guide is meant for use by Win95 users,
+<br>
+as the steps that are outlined are specifically for Win95.&nbsp; This <br>
+same subject for NT has been dealt with in a previous Guide.</p>
+<p align="justify">Before we start, I should point out that I made extensive use 
+of <br>
+a free source of information...the Microsoft KnowledgeBase.&nbsp; I <br>
+searched for a lot of information, and found a lot of good <br>
+references, by going to http://support.microsoft.com and <br>
+registering my email address.&nbsp; I will be referencing several <br>
+KnowledgeBase throughout this Guide, and you can easily go to <br>
+the Support site and print out copies of the articles...just <br>
+choose to search for a particular article, rather than by <br>
+keyword.</p>
+<p align="justify">[Protecting yourself]</p>
+<p align="justify">First, the method of protecting yourself needs to be made <br>
+perfectly clear.&nbsp; DON&#39;T SHARE!!&nbsp; I can&#39;t stress that enough. <br>
+If you are a home user, and you are connecting a Win95 computer <br>
+to the Internet via some dial-up method, DISABLE SHARING!</p>
+<p align="justify">If you must share, use a strong password...8 characters minimum,
+<br>
+a mix of upper and lower case letters and numbers, change the <br>
+password every now and again.&nbsp; If you need to transmit the <br>
+password to someone, do so over the phone or by written letter. <br>
+Another method for exchanging the information is to use PGP, or <br>
+&#39;Pretty Good Privacy&#39; (obtaining and installing PGP was covered <br>
+in a previous Guide).&nbsp; Using PGP will not only allow you to <br>
+encrypt the information so that only your friend(s) can <br>
+decrypt it, but you can also digitally sign the file so that <br>
+your friends know that only you could have sent it.</p>
+<p align="justify">To disable sharing, click on My Computer -&gt; Control Panel -&gt;
+<br>
+Network -&gt; File and Print Sharing.&nbsp; In the dialogue box that <br>
+appears, uncheck both boxes.&nbsp; It&#39;s that easy.&nbsp; If you are using <br>
+NT, disable the Server service to disable sharing...click on <br>
+My Computer -&gt; Control Panel -&gt; Services, and disable the <br>
+Server service.</p>
+<p align="justify">[What can they do]</p>
+<p align="justify">If someone can access you hard drive via the Internet, there 
+are <br>
+many things they can do...it all depends upon their knowledge and <br>
+their intent.&nbsp; Given correct access permissions, they could <br>
+erase your hard drive...or leave a &#39;hidden bomb&#39; behind so that <br>
+your hard drive is erased the next time you boot up.&nbsp; Or they <br>
+could simply modify your system.ini file so that the next time <br>
+your computer boots up, it opens into the old Program Manager <br>
+shell from Windows 3.1, instead of the nice friendly Explorer <br>
+shell that you are used to.&nbsp; Or they could just copy your <br>
+email mailboxes, some data, and be merrily on their way.</p>
+<p align="justify">Of course, there are all sorts of pathological uses for DOS
+<br>
+commands like deltree and ctty, and toys like BO...</p>
+<p align="justify">[Getting set up]</p>
+<p align="justify">First of all, you need to make sure that your system is set up
+<br>
+correctly to access another win95 machine via the Internet.&nbsp; The <br>
+assumptions made in the following steps are that:</p>
+<p align="justify">(a) you have your win95 disks or CD, and <br>
+(b) you have a modem in your computer.</p>
+<p align="justify">By assuming that the reader has a modem, we can keep the <br>
+Guide simple, but users who are on a LAN should have no trouble <br>
+following the Guide.</p>
+<p align="justify">1.&nbsp; The first thing you need to do is make sure that you 
+have <br>
+the latest version of DUN (Dial-Up Networking) for Win95.&nbsp; The <br>
+current version is DUN v1.3, and can be obtained by going to:</p>
+<p align="justify">http://www.microsoft.com/msdownload</p>
+<p align="justify">Choose &quot;Windows95 Shareware and Utilities&quot; from the &quot;Support
+<br>
+Drivers, Patches and Service Packs&quot; section, and then choose <br>
+the update from the &quot;Networking &amp; Communications&quot; section.</p>
+<p align="justify">NOTE:&nbsp; Feel free to gather any other updates that you may 
+be <br>
+interested in, such as TweakUI.&nbsp; Another useful tool that you <br>
+will find here under &quot;Resource Kits&quot; is the Windows95 Resource <br>
+Kit Help File and Utilities.</p>
+<p align="justify">Once you have obtained and installed the DUN update, you should
+<br>
+be ready to begin.</p>
+<p align="justify">************************************************************
+<br>
+NEWBIE NOTE:&nbsp; Before you go on, you might want to look at <br>
+or print out the following Microsoft KnowledgeBase articles:</p>
+<p align="justify">Q178729:&nbsp; How to configure Win95 to dial into a RAS/RRAS
+<br>
+server <br>
+<a href="http://support.microsoft.com/support/kb/articles/q178/7/29.asp">http://support.microsoft.com/support/kb/articles/q178/7/29.asp</a></p>
+<p align="justify">Q145843:&nbsp; How to connect to a remote server <br>
+<a href="http://support.microsoft.com/support/kb/articles/q145/8/43.asp">http://support.microsoft.com/support/kb/articles/q145/8/43.asp</a></p>
+<p align="justify">Q183368:&nbsp; Requirements to browse network with dial-up
+<br>
+networking <br>
+<a href="http://support.microsoft.com/support/kb/articles/q183/3/68.asp">http://support.microsoft.com/support/kb/articles/q183/3/68.asp</a><br>
+************************************************************</p>
+<p align="justify">Let&#39;s get started...</p>
+<p align="justify">2.&nbsp; Click on Control Panel -&gt; Network, and open the applet
+<br>
+to the Configuration tab.&nbsp; You should see the following entries <br>
+at a minimum:&nbsp; Client for Microsoft Networks, DialUp Adapter, <br>
+and TCP/IP.</p>
+<p align="justify">If one or more of these entries aren&#39;t there, choose Add, and
+<br>
+select the appropriate choice.&nbsp; Make sure that you have your <br>
+disks or CD-ROM available...just in case.</p>
+<p align="justify">**If you don&#39;t already have it, add NetBEUI to your system by
+<br>
+choosing Control Panel -&gt; Network -&gt; Add, and choose Protocol. <br>
+Select the NetBEUI protocol and install it.</p>
+<p align="justify">3.&nbsp; Select TCP/IP, and open the Properties for it.&nbsp; 
+In the IP <br>
+Address tab, you will most likely have the &#39;Obtain an IP address <br>
+automatically&#39; choice selected.</p>
+<p align="justify">4.&nbsp; Now double click on My Computer, choose DialUp Networking,
+<br>
+and&nbsp; double click on icon for the connection to your ISP.&nbsp; Under <br>
+the Server Type tab, you should have the following selections:</p>
+<p align="justify">Type of Dial-Up Server:&nbsp; PPP: Windows 95, Windows NT 3.5, 
+Internet</p>
+<p align="justify">Advanced Options:&nbsp; &#39;Log on to network&#39; and &#39;Enable software
+<br>
+compression&#39;</p>
+<p align="justify">Allowed network protocols:&nbsp; TCP/IP</p>
+<p align="justify">5.&nbsp; Now, click the &#39;TCP/IP Settings...&#39; button, and you 
+should see <br>
+the &#39;Server assigned IP address&#39; and &#39;Server assigned name server <br>
+addresses&#39; radio buttons selected.&nbsp; Both &#39;Use IP header <br>
+compression&#39; and &#39;Use default gateway on remote network&#39; should <br>
+be checked.</p>
+<p align="justify">[Connecting to shares]</p>
+<p align="justify">6.&nbsp; Before connecting to shares via the Internet, you need 
+to <br>
+make sure that you machine is configured to use the &#39;lmhosts&#39; <br>
+file on your computer to resolve NetBIOS names to IP addresses. <br>
+To do this, click Start -&gt; Settings -&gt; Control Panel -&gt; <br>
+Network.</p>
+<p align="justify">On the Configuration tab, click &#39;TCP/IP&#39;, and click &#39;Properties&#39;.</p>
+<p align="justify">On the WINS Configuration tab, click &#39;Disable WINS Resolution&#39;.</p>
+<p align="justify">Click Ok, then Ok, again.</p>
+<p align="justify">Reboot your machine.</p>
+<p align="justify">7.&nbsp; Now we need to configure lmhosts file entries.&nbsp; 
+You might <br>
+want to start by opening the lmhosts.sam file:</p>
+<p align="justify">***********************************************************
+<br>
+NEWBIE NOTE:&nbsp; The lmhosts file is similar to the hosts file <br>
+in that it is used to resolve names to IP addresses.&nbsp; WINS <br>
+and lmhosts files are the Microsoft versions of the DNS and <br>
+hosts files systems.&nbsp; DNS/hosts files are used to resolve <br>
+Internet names like &quot;www.example.com&quot; to IP addresses. <br>
+WINS/lmhosts files are used to resolve NetBIOS names of <br>
+machines to their IP addresses. <br>
+***********************************************************</p>
+<p align="justify">c:\windows\lmhosts.sam</p>
+<p align="justify">..in Notepad and reading through it.&nbsp; Then from the command
+<br>
+prompt, type:</p>
+<p align="justify">c:\windows&gt;edit lmhosts</p>
+<p align="justify">or</p>
+<p align="justify">c:\windows&gt;notepad lmhosts</p>
+<p align="justify">The entries in the file should look like:</p>
+<p align="justify">[IP address] [NetBIOS name]&nbsp; #PRE</p>
+<p align="justify">Each entry in the lmhosts file needs to look like this <br>
+if you are going to access shares on the machines.</p>
+<p align="justify">***********************************************************
+<br>
+NEWBIE NOTE:&nbsp; If you don&#39;t have the NetBIOS name of your <br>
+friend&#39;s computer, you can get it using the nbtstat command. <br>
+You have to have the IP address...type:</p>
+<p align="justify">c:\&gt;nbtstat -A [ip_addr] <br>
+**NOTE:&nbsp; The letter &quot;A&quot; MUST be capitalized!</p>
+<p align="justify">You should see something similar to:</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NetBIOS Remote Machine Name 
+Table <br>
+&nbsp; <br>
+&nbsp;</p>
+<p align="justify">&nbsp;&nbsp; Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Status</p>
+<p align="justify">---------------------------------------------</p>
+<p align="justify">Registered Registered Registered Registered Registered</p>
+<p align="justify">MAC Address = 00-00-00-00-00-00 <br>
+&nbsp;</p>
+<p align="justify">95_Box&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;00&gt;&nbsp; UNIQUE
+<br>
+95_Box&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;20&gt;&nbsp; UNIQUE <br>
+domain&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;00&gt;&nbsp; GROUP <br>
+domain&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;1C&gt;&nbsp; GROUP <br>
+domain&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;1E&gt;&nbsp; GROUP <br>
+95_Box&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;03&gt;&nbsp; UNIQUE</p>
+<p align="justify">What you are looking for is the line with &quot;&lt;00&gt; <br>
+UNIQUE&quot;...the name at the beginning of the line is <br>
+the NetBIOS name of the computer.&nbsp; This is what gets <br>
+entered in the lmhosts file.</p>
+<p align="justify">If you get the error message &quot;Host not found&quot;, it may <br>
+mean one of several things...your friend is not logged <br>
+on, there is a firewall between the two of you, etc. <br>
+***********************************************************</p>
+<p align="justify">8.&nbsp; Now we need to refresh the NetBIOS cache for your
+<br>
+machine...</p>
+<p align="justify">In the DOS command window, type:</p>
+<p align="justify">c:\&gt;nbtstat -R</p>
+<p align="justify">This command reloads the cache from the lmhosts file you just
+<br>
+created.</p>
+<p align="justify">Now, click on Start -&gt; Find -&gt; Computer, and type in the NetBIOS
+<br>
+name of the computer...the same one you added to the lmhosts file. <br>
+If your attempt to connect to the machine is successful, you should <br>
+be presented with a window containing an icon representing your <br>
+friend&#39;s machine.</p>
+<p align="justify">You may be presented with a password prompt window; your friend
+<br>
+should have given you the password, but if he didn&#39;t just try <br>
+guessing it.</p>
+<p align="justify">[Final words]</p>
+<p align="justify">Please remember that this file is for instructional purposes 
+only <br>
+and is meant to educate the sysadmin and user alike.&nbsp; Accessing <br>
+computers via the Internet that you do not have permission to access is a violation 
+of federal law in the US.&nbsp; It is best to use the <br>
+information in this Guide and others to pursue the one and only <br>
+guaranteed method of gaining root on a system...become the sysadmin!!</p>
+
+</body>
+
+</html>

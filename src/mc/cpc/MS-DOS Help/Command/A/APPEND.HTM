@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>APPEND</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#a">Commands A-M</a>
+    &gt; <a href="../INDEXA.HTM#append">Commands A</a>
+    <h1>APPEND</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Enables programs to open data files in specified directories as
+    if the files were in the current directory.</p>
+    <b>Do not use this command when Windows is running.</b>
+    <p>The specified directories are called appended directories
+    because, for the sake of opening data files, they can be found as
+    if they were appended to the current directory.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>APPEND
+    [<a href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path[;...]</a>]
+    [<a href="#SwitchX">/X | /X[:ON | :OFF]</a>]
+    [<a href="#SwitchPath">/PATH[:ON | :OFF]</a>]
+    [<a href="#SwitchE">/E</a>]</p>
+
+    <p>To clear the appended directory list:</p>
+    <p>APPEND
+    <a href="#SwitchColon">;</a></p>
+
+    <p>To display the list of appended directories:</p>
+    <p>APPEND</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the drive (if other than the current drive) you
+      want to append to the current directory. You can specify multiple
+      entries by separating the entries with semicolons.</dd>
+
+      <dt><a name="ParameterPath"></a> path[;...]
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the directory you want to append to the current
+      directory. You can specify multiple entries by separating the
+      entries with semicolons.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchColon"></a> ;
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>To cancel the existing list of appended directories.</dd>
+
+      <dt><a name="SwitchE"></a> /E
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Assigns the list of appended directories to an environment
+      variable named APPEND. This switch can be used only the first
+      time you use APPEND after starting your system. If you use /E,
+      you can use the <a href="../S/SET.HTM">SET</a> command to display
+      the list of appended directories. For information about
+      environment variables, see the
+      <a href="../S/SET.HTM">SET</a> command.</dd>
+
+      <dt><a name="SwitchPath"></a> /PATH[:ON | :OFF]
+      (<a href="../../Version/MSDOS/400.HTM">v4.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies whether a program is to search appended directories
+      for a data file when a path is already included with the name of
+      the file the program is looking for. The default setting is
+      /PATH:ON.</dd>
+
+      <dt><a name="SwitchX"></a> /X
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>)</dt>
+      <dt>/X[:ON | :OFF]
+      (<a href="../../Version/MSDOS/400.HTM">v4.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies whether to search (/X:ON) or not search (/X:OFF)
+      appended directories when executing programs. You can abbreviate
+      /X:ON to /X. If you want to specify X:ON, you must do it the
+      first time you use APPEND after starting your system. After that,
+      you can switch between X:ON and X:OFF. The default value is
+      /X:OFF.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><b>Caution</b> Do not use APPEND with Microsoft Windows or the
+    Windows Setup program.</p>
+    <p><a href="../P/PATH.HTM">PATH</a> -
+    To set a search path for executable files.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#DIR">Appended directories and the DIR command</a></li>
+      <li><a href="#Filenames">Filename conflicts</a></li>
+      <li><a href="#Functions">Operating system functions that always use appended directories</a></li>
+      <li><a href="#Multiple">Running APPEND multiple times</a></li>
+      <li><a href="#Windows">Running APPEND with Microsoft Windows</a></li>
+      <li><a href="#Directories">Specifying multiple appended directories</a></li>
+      <li><a href="#Environ">Storing the list of appended directories in the environment</a></li>
+      <li><a href="#Network">Using APPEND with network drives</a></li>
+      <li><a href="#Create">Using APPEND with programs that create new files</a></li>
+      <li><a href="#Path">Using the /X:ON switch and the path command</a></li>
+    </ul>
+
+    <hr>
+    <a name="Windows"></a> <b>Running APPEND with Microsoft Windows</b>
+    <p>Do not use APPEND with Microsoft Windows or the Windows Setup
+    program.</p>
+
+    <hr>
+    <a name="Multiple"></a> <b>Running APPEND multiple times</b>
+    <p>You can use APPEND as many times as you want after starting your
+    system. However:</p>
+    <ul>
+      <li>The <a href="#SwitchE">/E</a> switch is valid only the first
+      time you use APPEND after starting your system.</li>
+      <li>The second and subsequent times you run APPEND, you must omit
+      the .EXE filename extension. If you try to run APPEND by typing
+      APPEND.EXE, it will not load more than once.</li>
+    </ul>
+
+    <hr>
+    <a name="Environ"></a> <b>Storing the list of appended directories in the environment</b>
+    <p>You can use the <a href="#SwitchE">/E</a> switch with APPEND to
+    assign the list of appended directories to an environment variable
+    named APPEND. To do this, first use the APPEND command with only
+    the <a href="#SwitchE">/E</a> switch. Then use APPEND again, this
+    time including the directories you want to append. You cannot
+    specify <a href="#SwitchE">/E</a> and
+    <a href="#ParameterDrive">[drive:]</a><a href="#ParameterPath">path</a>
+    on the same command-line.</p>
+
+    <hr>
+    <a name="Directories"></a> <b>Specifying multiple appended directories</b>
+    <p>To append more than one directory, separate multiple entries
+    with semicolons. If you use the APPEND command with the
+    <a href="#ParameterDrive">[drive:]</a><a href="#ParameterPath">path</a>
+    parameters again, the specified directory or directories replace
+    any directories specified in a previous APPEND command.</p>
+
+    <hr>
+    <a name="DIR"></a> <b>Appended directories and the DIR command</b>
+    <p>If you specify the DIR command, the resulting list does not
+    include filenames from appended directories.</p>
+
+    <hr>
+    <a name="Filenames"></a> <b>Filename conflicts</b>
+    <p>If a file in an appended directory has the same name as a file
+    in the current directory, programs open the file in the current
+    directory.</p>
+
+    <hr>
+    <a name="Create"></a> <b>Using APPEND with programs that create new files</b>
+    <p>When a program opens a file in an appended directory, the file
+    can be found as if it were in the current directory. If the program
+    then saves the file by creating a new file with the same name, the
+    new file is created in the current directory (not the appended
+    directory). APPEND is appropriately used for data files that are
+    not to be modified or that are to be modified without creating new
+    copies of the files. Database programs often modify data files
+    without making new copies. Text editors and word processors,
+    however, usually save modified data files by making new copies. To
+    avoid confusion, do not use APPEND with these programs.</p>
+
+    <hr>
+    <a name="Path"></a> <b>Using the /X:ON switch and the path command</b>
+    <p>When <a href="#SwitchX">/X:ON</a> is specified, you can run a
+    program located in an appended directory by typing the program name
+    at the command prompt. Usually, you use the PATH command to specify
+    directories that contain programs. However, when your program is in
+    an appended directory, you do not need to use the
+    <a href="../P/PATH.HTM">PATH</a> command to specify that directory.
+    A program in found in an appended directory by following the usual
+    order in which is searched for a program; that is, first in the
+    current directory, then in the appended directories, and then in
+    the search path.</p>
+
+    <hr>
+    <a name="Functions"></a> <b>Operating system functions that always use appended directories</b>
+    <p>Even when the <a href="#SwitchX">/X:ON</a> switch is not
+    specified, appended directories are used when programs call
+    operating system Interrupt 21h functions:</p>
+    <ul>
+      <li>Open File (0Fh)</li>
+      <li>Open File Handle (3Dh)</li>
+      <li>Get File Size (23h)</li>
+    </ul>
+    <p>When <a href="#SwitchX">/X:ON</a> is specified, appended
+    directories are used when programs call any of the Interrupt 21h
+    functions in the preceding list or any of the Interrupt 21h
+    functions:</p>
+    <ul>
+      <li>Find First Entry (11h)</li>
+      <li>Find First File (4Eh)</li>
+      <li>Execute Program (EXEC) (4Bh)</li>
+    </ul>
+
+    <hr>
+    <a name="Network"></a> <b>Using APPEND with network drives</b>
+    <p>You can use the APPEND command to append directories that are
+    located on network drives.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To allow programs to open data files in a directory named
+    LETTERS on the disk in drive B and in a directory named REPORTS on
+    the disk in drive A as if the files were in the current directory,
+    type:</p>
+<pre>
+    APPEND <a href="#ParameterDrive">B:</a><a
+href="#ParameterPath">\LETTERS</a>;<a
+href="#ParameterDrive">A:</a><a
+href="#ParameterPath">\REPORTS</a>
+</pre>
+
+    <hr>
+    <p>To append the same directories and keep a copy of the list of
+    appended directories in the environment, type:</p>
+<pre>
+    APPEND <a href="#SwitchE">/E</a>
+    APPEND <a href="#ParameterDrive">B:</a><a
+href="#ParameterPath">\LETTERS</a>;<a
+href="#ParameterDrive">A:</a><a
+href="#ParameterPath">\REPORTS</a>
+</pre>
+
+    <p>These must be the first APPEND commands you use after starting
+    your system.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External Resident</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          </dd>
+
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          </dd>
+
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

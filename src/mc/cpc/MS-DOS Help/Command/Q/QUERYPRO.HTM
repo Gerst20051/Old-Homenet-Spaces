@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>QUERY PROCESS</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#q">Commands N-Z</a>
+    &gt; <a href="../INDEXQ.HTM#queryprocess">Commands Q</a>
+    <h1>QUERY PROCESS</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Displays information about processes running on a
+    terminal server. You can use this command to find out
+    which programs a specific user is running, and also
+    which users are running a specific program.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>QUERY PROCESS
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>QUERY PROCESS
+    [{<a href="#ParameterAsterisk">*</a>
+    | <a href="#ParameterProcessid">process_id</a>
+    | <a href="#ParameterUsername">user_name</a>
+    | <a href="#ParameterSessionname">session_name</a>
+    | <a href="#SwitchId">/id:nn</a>
+    | <a href="#ParameterProgramname">program_name</a>}]
+    [<a href="#SwitchServer">/server:server_name</a>]
+    [<a href="#SwitchSystem">/system</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterAsterisk"></a> *
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Lists the processes for all sessions.</dd>
+      <dd>If omitted, displays only the processes belonging
+      to the current user.</dd>
+
+      <dt><a name="ParameterProcessid"></a> process_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the numeric ID identifying the process
+      you want to query.</dd>
+
+      <dt><a name="ParameterProgramname"></a> program_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the name of the program whose processes
+      you want to query. The .exe extension is required.</dd>
+      <dd>If omitted, displays only the processes belonging
+      to the current user.</dd>
+
+      <dt><a name="ParameterSessionname"></a> session_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the name of the session whose processes
+      you want to list.</dd>
+      <dd>If a session is specified, it must identify an
+      active session. You can use wildcards to identify the
+      process.</dd>
+      <dd>If omitted, displays only the processes belonging
+      to the current user.</dd>
+
+      <dt><a name="ParameterUsername"></a> user_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the name of the user whose processes
+      you want to list.</dd>
+      <dd>If omitted, displays only the processes belonging
+      to the current user.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchId"></a> /id:nn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the ID of the session whose processes
+      you want to list.</dd>
+      <dd>If omitted, displays only the processes belonging
+      to the current user.</dd>
+
+      <dt><a name="SwitchServer"></a> /server:server_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the terminal server whose processes you
+      want to list. If omitted, the server where you
+      are currently logged on is used.</dd>
+
+      <dt><a name="SwitchSystem"></a> /system
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a> ONLY)</dt>
+      <dd>Specifies that current information about system
+      processes is displayed. If you do not want system
+      processes to be displayed, do not use this switch.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Administrators have full access to all query process
+    functions.</p>
+    <p>When query process returns information, a less than
+    (&lt;) symbol is displayed before each process belonging
+    to the current session.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

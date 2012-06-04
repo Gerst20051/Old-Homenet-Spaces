@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>BREAK</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#b">Commands A-M</a>
+    &gt; <a href="../INDEXB.HTM#break">Commands B</a>
+    <h1>BREAK</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Sets or clears extended CTRL+C (^C) checking. You can use this
+    command at the command prompt or in your CONFIG.SYS file.</p>
+    <p>You can press CTRL+C (^C) to stop a program or an activity (file
+    sorting, for example). Typically, the operating system checks for
+    CTRL+C (^C) only while it reads from the keyboard or writes to the
+    screen or a printer. If you set BREAK to ON, you extend CTRL+C (^C)
+    checking to other functions, such as disk read and write
+    operations.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>BREAK
+    [<a href="#ParameterOnOff">ON | OFF</a>]</p>
+
+    <p>To display the current BREAK setting:</p>
+    <p>BREAK</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterOnOff"></a> ON | OFF
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Turns extended CTRL+C (^C) checking on or off. Default is:
+      OFF.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="BREAKSYS.HTM">BREAK.SYS</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>This is present for Compatibility with DOS systems.
+    It has no effect after
+    <a href="../../Version/MSWIN/NT35.HTM">Windows 3.5</a>.</p>
+
+    <p>If Command Extensions are enabled, and running on the
+    <a href="../../Version/MSWIN/NT2K.HTM">Windows 2000</a>
+    platform, then the BREAK command will enter a hard-coded
+    breakpoint if being debugged by a debugger.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To specify that the operating system is to check for CTRL+C (^C) only
+    while it is reading from the keyboard or writing to the screen or
+    printer, type:</p>
+<pre>
+    BREAK <a
+href="#ParameterOnOff">OFF</a>
+</pre>
+
+    <hr>
+    <p>To specify that the operating system is to check for CTRL+C (^C)
+    while it is reading from a disk or the keyboard or writing to a
+    disk or the screen, type:</p>
+<pre>
+    BREAK <a
+href="#ParameterOnOff">ON</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

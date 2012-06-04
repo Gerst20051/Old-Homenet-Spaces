@@ -1,0 +1,360 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>IISEXT</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#i">Commands A-M</a>
+    &gt; <a href="../INDEXI.HTM#iisext">Commands I</a>
+    <h1>IISEXT</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Configures and manages Web service extensions, applications,
+    and individual files on servers running Windows Server 2003 with
+    Internet Information Services (IIS) 6.0. Administrators can use
+    this script to enable and list applications; add and remove
+    application dependencies; enable, disable, and list Web service
+    extensions; and add, remove, enable, disable, and list individual
+    files.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>IISEXT[.VBS]
+    [<a href="#SwitchAddDep">/adddep</a>
+    | <a href="#SwitchAddFile">/addfile</a>
+    | <a href="#SwitchDisExt">/disext</a>
+    | <a href="#SwitchDisFile">/disfile</a>
+    | <a href="#SwitchEnApp">/enapp</a>
+    | <a href="#SwitchEnExt">/enext</a>
+    | <a href="#SwitchEnFile">/enfile</a>
+    | <a href="#SwitchListApp">/listapp</a>
+    | <a href="#SwitchListExt">/listext</a>
+    | <a href="#SwitchListFile">/listfile</a>
+    | <a href="#SwitchRemDep">/remdep</a>
+    | <a href="#SwitchRmFile">/rmfile</a>]
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>IISEXT[.VBS]
+    <a href="#SwitchAddDep">/adddep</a>
+    <a href="#ParameterApplication">application</a>
+    <a href="#ParameterId">id [id...]</a>
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <p>IISEXT[.VBS]
+    <a href="#SwitchAddFile">/addfile</a>
+    <a href="#ParameterPathFilename">Path\file_name</a>
+    <a href="#ParameterAccess">access {0 | 1}</a>
+    <a href="#ParameterId">id [id...]</a>
+    <a href="#ParameterDeletable">deletable {0 | 1}</a>
+    <a href="#ParameterShortDescription">short_description</a>
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <p>IISEXT[.VBS]
+    <a href="#SwitchDisExt">/disext</a>
+    <a href="#ParameterId">id [id...]</a>
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <p>IISEXT[.VBS]
+    <a href="#SwitchDisFile">/disfile</a>
+    <a href="#ParameterPathFilename">Path\file_name</a>
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <p>IISEXT[.VBS]
+    <a href="#SwitchEnApp">/enapp</a>
+    <a href="#ParameterApplication">application</a>
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <p>IISEXT[.VBS]
+    <a href="#SwitchEnExt">/enext</a>
+    <a href="#ParameterId">id [id...]</a>
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <p>IISEXT[.VBS]
+    <a href="#SwitchEnFile">/enfile</a>
+    <a href="#ParameterPathFilename">Path\file_name</a>
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <p>IISEXT[.VBS]
+    <a href="#SwitchListApp">/listapp</a>
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <p>IISEXT[.VBS]
+    <a href="#SwitchListExt">/listext</a>
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <p>IISEXT[.VBS]
+    <a href="#SwitchListFile">/listfile</a>
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <p>IISEXT[.VBS]
+    <a href="#SwitchRemDep">/remdep</a>
+    <a href="#ParameterApplication">application</a>
+    <a href="#ParameterId">id [id...]</a>
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <p>IISEXT[.VBS]
+    <a href="#SwitchRmFile">/rmfile</a>
+    <a href="#ParameterPathFilename">Path\file_name</a>
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterAccess"></a> access {0 | 1}
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Numeric designation of whether the file is
+      disabled (0) or enabled(1) after it is added.</dd>
+
+      <dt><a name="ParameterApplication"></a> application
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the name of the application.</dd>
+
+      <dt><a name="ParameterDeletable"></a> deletable {0 | 1}
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Numeric designation of whether the entry can be
+      deleted from the Web service extension restriction
+      list using IISEXT or IIS Manager.
+      Set to 0 to prevent the entry from being deleted or
+      1 to allow it to be deleted.</dd>
+
+      <dt><a name="ParameterId"></a> id [id...]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the id of the Web service extension upon
+      which the application is dependent/disabled/enabled.
+      Additional dependencies are optional.</dd>
+
+      <dt><a name="ParameterPathFilename"></a> Path\file_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the file name and path of the Web
+      service extension entry to be added.</dd>
+      <dd>Can include special cases such as:
+      *.dll to enable/disable unlisted ISAPI files and
+      *.exe to enable/disable unlisted CGI files.</dd>
+
+      <dt><a name="ParameterShortDescription"></a> short_description
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>A short description of the Web service extension
+      associated with the entry. This text can be localized
+      and should be the same for all entries associated with
+      the same Web service extension.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchAddDep"></a> /adddep
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Adds a dependency between an application and one
+      or more Web service extensions.</dd>
+      <dd>If the
+      <a href="#ParameterApplication">application</a>
+      does not exist in the ApplicationDependencies
+      property, IISEXT will create it.</dd>
+
+      <dt><a name="SwitchAddFile"></a> /addfile
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Adds a single file to the Web service extension
+      restriction list (WebSvcExtRestrictionList) property
+      in the metabase.</dd>
+      <dd>If the <a href="#ParameterId">ID</a> does not exist,
+      IISEXT will create it.</dd>
+
+      <dt><a name="SwitchDisExt"></a> /disext
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Disables a Web service extension with a specific
+      Web service extension
+      <a href="#ParameterId">ID</a>.</dd>
+      <dd>Can only be performed on one Web service extension
+      at a time.</dd>
+      <dd>Applies to groups of entries that have the same
+      Web service <a href="#ParameterId">ID</a> in
+      WebSvcExtRestrictionList property of the metabase.
+      Sets the Access flag to 0 (Deny) on each
+      of the ISAPIRestrictions or CGIRestrictions properties
+      for that <a href="#ParameterId">ID</a>.</dd>
+
+      <dt><a name="SwitchDisFile"></a> /disfile
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Disables a specific Web service extension file in
+      the Web service extension restriction list
+      (WebSvcExtRestrictionList) property.</dd>
+
+      <dt><a name="SwitchEnApp"></a> /enapp
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Enables a specific
+      <a href="#ParameterApplication">application</a>
+      in the ApplicationDependencies metabase property.</dd>
+
+      <dt><a name="SwitchEnExt"></a> /enext
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Enables a Web service extension with a specific
+      Web service extension
+      <a href="#ParameterId">ID</a>.</dd>
+      <dd>Can only be performed on one Web service extension
+      at a time.</dd>
+      <dd>Applies to groups of entries that have the same
+      Web service <a href="#ParameterId">ID</a> in
+      WebSvcExtRestrictionList property of the metabase.
+      Sets the Access flag to 1 (Allow) on each
+      of the ISAPIRestrictions or CGIRestrictions properties
+      for that <a href="#ParameterId">ID</a>.</dd>
+
+      <dt><a name="SwitchEnFile"></a> /enfile
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Enables a specific Web service extension file in
+      the Web service extension restriction list
+      (WebSvcExtRestrictionList) property.</dd>
+
+      <dt><a name="SwitchListApp"></a> /listapp
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Lists applications in the ApplicationDependencies
+      metabase property.</dd>
+
+      <dt><a name="SwitchListExt"></a> /listext
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Lists Web service extension
+      <a href="#ParameterId">IDs</a> for all defined Web
+      service extensions. If there are multiple entries with
+      the same <a href="#ParameterId">ID</a>, the Web
+      service extension is only listed once.</dd>
+
+      <dt><a name="SwitchListFile"></a> /listfile
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Lists Web service extension files for all defined
+      Web service extensions.</dd>
+
+      <dt><a name="SwitchP"></a> /p password
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the password of the user account that is
+      specified in <a href="#SwitchU">/u</a>. If omitted,
+      you will be prompted.</dd>
+
+      <dt><a name="SwitchRemDep"></a> /remdep
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Removes a dependency between an application and one
+      or more Web service extensions.</dd>
+
+      <dt><a name="SwitchRmFile"></a> /rmfile
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Removes a specific Web service extension file in
+      the Web service extension restriction list
+      (WebSvcExtRestrictionList) property.</dd>
+      <dd>If file flagged as not deletable,
+      IISEXT returns an error.</dd>
+
+      <dt><a name="SwitchS"></a> /s computer
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Runs the script on the specified remote computer.
+      Type the computer name or IP address without
+      backslashes. Defaults to the local computer.</dd>
+
+      <dt><a name="SwitchU"></a> /u [Domain\]User
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Runs the script with the permissions of the
+      specified user account. This account must be a member
+      of the Administrators group on the remote computer.
+      By default, the script runs with the permissions of
+      the current user of the local computer.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>To perform this procedure, you must be a member of
+    the Administrators group on the local computer, or you
+    must have been delegated the appropriate authority. If
+    the computer is joined to a domain, members of the
+    Domain Admins group might be able to perform this
+    procedure. As a security best practice, consider using
+    "Run as" to perform this procedure.</p>
+    <p>Applies to entries in the ApplicationDependencies
+    metabase property and is used to manage the Web
+    service extensions an
+    <a href="#ParameterApplication">application</a>
+    depends upon. A Web service extension is any
+    combination of CGI or ISAPI files that extend IIS
+    functionality.</p>
+    <p>An
+    <a href="#ParameterApplication">application</a>
+    must have at least one preexisting dependency in the
+    ApplicationDependencies metabase property in order to
+    be enabled/listed.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

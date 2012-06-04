@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>SHORTCUT</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#s">Commands N-Z</a>
+    &gt; <a href="../INDEXS.HTM#shortcut">Commands S</a>
+    <h1>SHORTCUT</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Create a windows shortcut (.LNK file).</p>
+    <p>Not installed by default, you will find it on the Windows
+    installation CD. Not found on some OEM/Windows 95 installation CD's.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>SHORTCUT
+    [<a href="#SwitchT">-t</a> target]
+    [<a href="#SwitchA">-a</a> arguments]
+    [<a href="#SwitchD">-d</a> directory]
+    [<a href="#SwitchI">-i</a> iconfile]
+    [<a href="#SwitchX">-x</a> index]
+    [<a href="#SwitchN">-n</a> name]
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchR">-r</a>]
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchS">-s</a>]
+    [<a href="#SwitchU">-u</a> [spec]]
+    [<a href="#SwitchL">-l</a> logfile</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchA"></a> -a arguments
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Source option, the arguments passed when the shortcut is used.</dd>
+
+      <dt><a name="SwitchC"></a> -c
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Change existing shortcut.</dd>
+
+      <dt><a name="SwitchD"></a> -d directory
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Source option, the folder to start the application in.</dd>
+
+      <dt><a name="SwitchF"></a> -f
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Force overwrite of an existing short cut.</dd>
+
+      <dt><a name="SwitchI"></a> -i iconfile
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Source option, the file the icon is in.</dd>
+
+      <dt><a name="SwitchL"></a> -l logfile
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Export option, save any error messages in the specified
+      file.</dd>
+
+      <dt><a name="SwitchN"></a> -n name
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>The path and file name (.LNK) of the shortcut file.</dd>
+
+      <dt><a name="SwitchR"></a> -r
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Resolve broken shortcut.</dd>
+
+      <dt><a name="SwitchS"></a> -s
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Make shortcut non-tracking (Stupid).</dd>
+
+      <dt><a name="SwitchT"></a> -t target
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Source option, the path and file name of the application.</dd>
+
+      <dt><a name="SwitchU"></a> -u [spec]
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Export option, ECHO the contents of an existing shortcut.
+      'all' is the same as 'natdix' but the letters of 'natdix'
+      specify the options to be exported (the same option can be
+      specified more than once e.g. -u natn).</dd>
+
+      <dt><a name="SwitchX"></a> -x index
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Source option, the index into the icon file.</dd>
+   </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../M/MKDIR.HTM">MD</a> - Create folder(s).
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>symlink - Make a new name for a file.
+    <br>ln - Make links between files.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>If shortcut fails to create a new shortcut, it does <b>NOT</b>
+    set an errorlevel.</p>
+    <p>An alternative for Internet Explorer users is to create a
+    Favourite (.URL) file. These are simple text files which you
+    can create with ECHO statements.</p>
+<pre>
+    [InternetShortcut]
+     URL=http://www.microsoft.com/
+</pre>
+
+    <p>Another option is to use WSH - save the script below with a
+    .VBS extension. (optional sections in the script below are REMed out).</p>
+<pre>
+    Set oWS = WScript.CreateObject("WScript.Shell")
+    sLinkFile = "C:\MyShortcut.LNK"
+    Set oLink = oWS.CreateShortcut(sLinkFile)
+    oLink.TargetPath = "C:\Program Files\MyApp\MyProgram.EXE"
+    '    oLink.Arguments = ""
+    '    oLink.Description = "MyProgram"
+    '    oLink.HotKey = "ALT+CTRL+F"
+    '    oLink.IconLocation = "C:\Program Files\MyApp\MyProgram.EXE, 2"
+    '    oLink.WindowStyle = "1"
+    '    oLink.WorkingDirectory = "C:\Program Files\MyApp"
+    oLink.Save
+</pre>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+<pre>
+    <a href="../A/ATSIGN.HTM">@</a><a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterOff">OFF</a>
+    ::
+    :: Install.cmd
+    ::
+    <a href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">setting up MY APP</a>
+    <a href="../M/MKDIR.HTM">MD</a> <a
+href="../M/MKDIR.HTM#ParameterPath">%userprofile%"\start menu\programs\MY APP"</a>
+    SHORTCUT <a
+href="#SwitchF">-f</a> <a
+href="#SwitchT">-t</a> C:\MyApp.exe <a
+href="#SwitchN">-n</a> <a
+href="../../ENV/MSWIN/USERPROF.HTM">%userprofile%</a>"\start menu\programs\MY APP\MY APP"
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/01/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

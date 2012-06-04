@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>TYPEPERF</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#t">Commands N-Z</a>
+    &gt; <a href="../INDEXT.HTM#typeperf">Commands T</a>
+    <h1>TYPEPERF</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Writes performance counter data to the command
+    window, or to a supported log file format. To stop,
+    press CTRL+C (^C).</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>TYPEPERF
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>TYPEPERF
+    [<a href="#SwitchC">-c path [path ...]</a>
+    | <a href="#SwitchCf">-cf file_name</a>]
+    [<a href="#SwitchConfig">-config file_name</a>]
+    [<a href="#SwitchF">-f format</a>]
+    [<a href="#SwitchO">-o file_name</a>]
+    [<a href="#SwitchQ">-q [object]</a>]
+    [<a href="#SwitchQx">-qx [object]</a>]
+    [<a href="#SwitchS">-s \\computer_name</a>]
+    [<a href="#SwitchSc">-sc samples</a>]
+    [<a href="#SwitchSi">-si [mm:]ss</a>]
+    [<a href="#SwitchY">-y</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchC"></a> -c path [path ...]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the performance counter path to log. To
+      list multiple counter paths, separate each command
+      path by a space.</dd>
+
+      <dt><a name="SwitchCf"></a> -cf file_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the file name of the file that contains
+      the counter paths that you want to monitor,
+      one per line.</dd>
+
+      <dt><a name="SwitchConfig"></a> -config file_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the pathname of the settings file that
+      contains command-line parameters.</dd>
+      <dd>The contents of the setting file used should have
+      the format:
+<pre>
+      [command_option]
+      value
+</pre>
+      where command_option is a command-line option and
+      value specifies its value:
+<pre>
+      [-c]
+      \Windows\mypath
+      [-o]
+      report.csv
+      [-s]
+      mysystem
+</pre>
+      </dd>
+
+      <dt><a name="SwitchF"></a> -f format
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the output file format. File formats are:
+        <ul>
+          <li><b>bin</b> (binary)</li>
+          <li><b>csv</b> (comma-delimited), the default</li>
+          <li><b>tsv</b> (tab-delimited)</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchO"></a> -o file_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the pathname of the output file.
+      Defaults to stdout.</dd>
+
+      <dt><a name="SwitchQ"></a> -q [object]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays and queries available counters without
+      instances. To display counters for one object,
+      include the object name.</dd>
+
+      <dt><a name="SwitchQx"></a> -qx [object]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays and queries all available counters with
+      instances. To display counters for one object,
+      include the object name.</dd>
+
+      <dt><a name="SwitchS"></a> -s \\computer_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the system to monitor if no server is
+      specified in the counter path.</dd>
+
+      <dt><a name="SwitchSc"></a> -sc samples
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the number of samples to collect.
+      Default is to sample until you press CTRL+C (^C).</dd>
+
+      <dt><a name="SwitchSi"></a> -si [mm:]ss
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the time between samples.
+      Default is one second.</dd>
+
+      <dt><a name="SwitchY"></a> -u
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Answer yes to all questions without prompting.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

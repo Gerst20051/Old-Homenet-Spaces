@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>XCACLS</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#x">Commands N-Z</a>
+    &gt; <a href="../INDEXX.HTM#xcacls">Commands X</a>
+    <h1>XCACLS</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Display or modify Access Control Lists (ACLs) for files and folders.
+    Unlike <a href="../C/CACLS.HTM">CACLS</a>, xcacls can apply
+    'Special Access' rights.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>XCACLS
+    <a href="#ParameterFilename">filename</a>
+    [<a href="#SwitchC">/C</a>]
+    [<a href="#SwitchD">/D user</a>]
+    [<a href="#SwitchE">/E</a>]
+    [<a href="#SwitchG">/G user:permision;FolderSpec</a>]
+    [<a href="#SwitchP">/P user:permision;FolderSpec</a>]
+    [<a href="#SwitchR">/R user</a>]
+    [<a href="#SwitchT">/T</a>]
+    [<a href="#SwitchY">/Y</a>]</p>
+
+    <p>Display the ACLs for the file(s):</p>
+    <p>XCACLS
+    <a href="#ParameterFilename">filename</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterFilename"></a> filename
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Filename(s) to affect.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchC"></a> /C
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Continue on access denied errors.</dd>
+
+      <dt><a name="SwitchD"></a> /D user
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Deny specified user access, this will over-ride
+      all other permissions the user has.</dd>
+
+      <dt><a name="SwitchE"></a> /E
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Edit ACL instead of replacing it.</dd>
+
+      <dt><a name="SwitchG"></a> /G user:permision;FolderSpec
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Grant specified user access rights, permision can be:
+      <ul>
+      <li>:c  Change (write)</li>
+      <li>:d  Delete (Special access)</li>
+      <li>:e  REad (Special access)</li>
+      <li>:f  Full control</li>
+      <li>:o  Take Ownership (Special access)</li>
+      <li>:p  Change Permissions (Special access)</li>
+      <li>:r  Read</li>
+      <li>:w  Write (Special access)</li>
+      <li>:x  EXecute (Special access)</li>
+      </ul>
+      </dd>
+
+      <dt><a name="SwitchP"></a> /P user:permision;FolderSpec
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Replace user's rights, permision can be:
+      <ul>
+      <li>:c  Change (write)</li>
+      <li>:d  Delete (Special access)</li>
+      <li>:e  REad (Special access)</li>
+      <li>:f  Full control</li>
+      <li>:o  Take Ownership (Special access)</li>
+      <li>:p  Change Permissions (Special access)</li>
+      <li>:r  Read</li>
+      <li>:w  Write (Special access)</li>
+      <li>:x  EXecute (Special access)</li>
+      </ul>
+      </dd>
+
+      <dt><a name="SwitchR"></a> /R user
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Revoke specified user's access rights.</dd>
+
+      <dt><a name="SwitchT"></a> /T
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Traverse all subfolders and change all matching files found.</dd>
+
+      <dt><a name="SwitchY"></a> /Y
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Replace user's rights without verify.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../C/CACLS.HTM">CACLS</a> - Display or modify Access Control Lists (ACLs) for files and folders.
+    <br><a href="../P/PERMS.HTM">PERMS</a> - Show permissions for a user.
+    <br>SHOWACL -
+    Show file Access Control Lists (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>).
+    <br>SUBINACL - Change an ACL's user/domain (use when the file
+    owner has moved to a new domain).
+    <br><a href="../A/ATTRIB.HTM">ATTRIB</a> -
+    Display or change file attributes.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>chmod - Change access permissions.
+    <br>chown - Change file owner and group.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>FolderSpec is a permission applied to a folder.</p>
+    <p>Folder permissions are inherited by new files added to the folder.
+    If FolderSpec is not specified then permission will apply to
+    both files and folders.</p>
+    <p>FolderSpec: T@ where @ is one of the rights above, when this is
+    specified new files will not inherit folder permissions. At least
+    one folder access right must follow T Entries between ';' and T
+    will be ignored.</p>
+    <p>Wildcards can be used to specify more that one file in a command.
+    You can specify more than one user in a command. You can combine
+    access rights.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>Allow guests the right to read and execute in myFolder:</p>
+<pre>
+    XCACLS <a
+href="#ParameterFilename">myFolder</a> <a
+href="#SwitchE">/E</a> <a
+href="#SwitchG">/G guests:rx</a>
+</pre>
+
+    <hr>
+    <p>Allow guests the Full Control permission in myFolder and all
+    subfolders:</p>
+<pre>
+    XCACLS <a
+href="#ParameterFilename">myFolder</a> <a
+href="#SwitchT">/T</a> <a
+href="#SwitchE">/E</a> <a
+href="#SwitchG">/G guests:f</a>
+</pre>
+
+    <hr>
+    <p>This will grant guests only read access to all files in and
+    below myFolder, new folders created will be Read Access only,
+    new files will not inherit any rights:</p>
+<pre>
+    XCACLS <a
+href="#ParameterFilename">myFolder</a> <a
+href="#SwitchT">/T</a> <a
+href="#SwitchP">/P guests:R;Tr</a>
+</pre>
+
+    <hr>
+    <p>This will grant guests only execute access to all files in
+    and below myFolder:</p>
+<pre>
+    XCACLS <a
+href="#ParameterFilename">myFolder</a> <a
+href="#SwitchT">/T</a> <a
+href="#SwitchP">/P guests:x</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External Server Resource Kit</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

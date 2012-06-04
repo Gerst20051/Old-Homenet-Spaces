@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>MSINFO32</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#m">Commands A-M</a>
+    &gt; <a href="../INDEXM.HTM#msinfo32">Commands M</a>
+    <h1>MSINFO32</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Windows NT diagnostics; Reports: Memory use, Drivers, DLL versions,
+    Audio,Video and Print settings.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>MSINFO32
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>MSINFO32
+    [<a href="#SwitchC">/c</a>]
+    [<a href="#SwitchCategories">/categories category_id</a>]
+    [<a href="#SwitchCategory">/category category_id</a>]
+    [<a href="#SwitchComputer">/computer computer_name</a>]
+    [<a href="#SwitchMsinfo">/msinfo_file</a>]
+    [<a href="#SwitchNfo">/nfo filename.nfo</a>
+    | <a href="#SwitchS">/s filename.nfo</a>]
+    [<a href="#SwitchPch">/pch</a>]
+    [<a href="#SwitchReport">/report filename.txt</a>]
+    [<a href="#SwitchShowCategories">/showcategories</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchC"></a> /c
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a> ONLY)</dt>
+      <dd>List the version, date, and build of each DLL in a
+      user-specified folder and determine whether it's loaded in
+      memory.</dd>
+
+      <dt><a name="SwitchMsinfo"></a> /msinfo_file
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a> ONLY)</dt>
+      <dd>Open the specified .nfo or .cab file.</dd>
+
+      <dt><a name="SwitchNfo"></a> /nfo filename.nfo
+      (<a name="SwitchS"></a> /s filename.nfo
+      <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Output an .nfo file with the specified filename.</dd>
+
+      <dt><a name="SwitchReport"></a> /report filename.txt
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Output a text file with the specified filename.</dd>
+
+      <dt><a name="SwitchComputer"></a> /computer computer_name
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Get details from a remote computer_name.</dd>
+
+      <dt><a name="SwitchCategories"></a> /categories category_id
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Starts System Information with only the specified
+      category or categories displayed. It also limits the
+      output to the selected category or categories. Use
+      <a href="#SwitchShowCategories">/showcategories</a> to
+      display a list of available category IDs.</dd>
+
+      <dt><a name="SwitchCategory"></a> /category category_id
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Starts System Information with the specified
+      category selected. Use
+      <a href="#SwitchShowCategories">/showcategories</a> to
+      display a list of available category IDs.</dd>
+
+      <dt><a name="SwitchPch"></a> /pch
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the history view.</dd>
+
+      <dt><a name="SwitchShowCategories"></a> /showcategories
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Starts System Information with all available
+      category IDs displayed.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../W/WINMSDP.HTM">WINMSDP</a> - Windows NT Diagnostics II.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>The GUI interface will open if no options are specified.</p>
+    <p>Early versions of MSInfo do not support all the switches listed.</p>
+    <p>MSInfo32 is typically started from Help,About rather than the
+    command-line, if not in the system path, MSInfo32 can usually be
+    found in: C:\Program Files\Common Files\Microsoft Shared\MSInfo.</p>
+    <p>Generation of the text file can take some time, depending on the
+    complexity of the system.</p>
+    <p>If you have problems getting MSInfo32 to run, check permissions on
+    the key:
+    HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Shared Tools\MSInfo\.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+<pre>
+    msinfo32 <a href="#SwitchC">/c</a> [My DLL's] c:\mydir
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External MSOffice</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

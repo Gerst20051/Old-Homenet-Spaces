@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>OPENFILES</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#o">Commands N-Z</a>
+    &gt; <a href="../INDEXO.HTM#openfiles">Commands O</a>
+    <h1>OPENFILES</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Queries, displays, or disconnects files opened.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>OPENFILES
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>OPENFILES
+    <a href="#SwitchDisconnect">/DISCONNECT</a>
+    [<a href="#SwitchA">/A user_name</a>
+    | <a href="#SwitchId">/ID open_file_id</a>
+    | <a href="#SwitchO">/O open_mode</a>]
+    [<a href="#SwitchOp">/OP open_file_name</a>]
+    [<a href="#SwitchS">/S Computer</a>
+     [<a href="#SwitchU">/U [Domain\]User</a>
+      [<a href="#SwitchP">/P password</a>]]]
+    [<a href="#SwitchSe">/SE session_name</a>]</p>
+
+    <p>OPENFILES
+    <a href="#SwitchLocal">/LOCAL [ON | OFF]</a></p>
+
+    <p>OPENFILES
+    <a href="#SwitchQuery">/QUERY</a>
+    [<a href="#SwitchFo">/FO forma</a>]
+    [<a href="#SwitchNh">/NH</a>]
+    [<a href="#SwitchS">/S Computer</a>
+     [<a href="#SwitchU">/U [Domain\]User</a>
+      [<a href="#SwitchP">/P password</a>]]]
+    [<a href="#SwitchV">/V</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchA"></a> /A user_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Disconnects all open files that were accessed by
+      the specified user on the computer specified by the
+      <a href="#SwitchS">/S</a> switch. Use
+      <a href="#SwitchQuery">/QUERY</a> to learn the file
+      ID. The wildcard (*) can be used to disconnect all
+      open files on the specified computer.</dd>
+
+      <dt><a name="SwitchDisconnect"></a> /DISCONNECT
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Disconnects one or more remote users connected to
+      open shared files.</dd>
+
+      <dt><a name="SwitchFo"></a> /FO format
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the format to use for the query output.
+      Valid values are:
+        <ul>
+          <li><b>CSV</b></li>
+          <li><b>LIST</b></li>
+          <li><b>TABLE</b> (default)</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchId"></a> /ID open_file_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Disconnects the file opened with the specified
+      numeric open_file_id on the computer specified by the
+      <a href="#SwitchS">/S</a> switch. Use
+      <a href="#SwitchQuery">/QUERY</a> to learn the file
+      ID. The wildcard (*) can be used to disconnect all
+      open files on the specified computer.</dd>
+
+      <dt><a name="SwitchLocal"></a> /LOCAL [ON | OFF]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Enables or disables the system Maintain Objects
+      List global flag, which tracks local file handles.
+      Changes made by this switch will take effect only
+      after restarting the system.</dd>
+      <dd>Enabling the Maintain Objects List global flag may
+      slow down your system.</dd>
+
+      <dt><a name="SwitchNh"></a> /NH
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Suppresses column header in the output. Valid only
+      when <a href="#SwitchFo">/FO forma</a> is set to TABLE
+      or CSV.</dd>
+
+      <dt><a name="SwitchO"></a> /O open_mode
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Disconnects all open files with the specified
+      open_mode on the computer specified by the
+      <a href="#SwitchS">/S</a> switch. Includes the
+      Read/Write and Read modes. The wildcard (*) can be
+      used to disconnect all open files on the specified
+      computer.</dd>
+
+      <dt><a name="SwitchOp"></a> /OP open_file_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Disconnects the open file that was created with
+      the specified OpenFileName on the computer specified
+      by the <a href="#SwitchS">/S</a> switch. The
+      wildcard (*) can be used to disconnect all open files
+      on the specified computer.</dd>
+
+      <dt><a name="SwitchP"></a> /P password
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the password of the user account that is
+      specified in the <a href="#SwitchU">/U</a> switch.</dd>
+
+      <dt><a name="SwitchQuery"></a> /QUERY
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Queries and displays all open files.</dd>
+
+      <dt><a name="SwitchS"></a> /S Computer
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the name or IP address of a remote
+      computer. (Do not use backslashes.)
+      The default is the local computer.</dd>
+
+      <dt><a name="SwitchSe"></a> /SE session_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a> ONLY)</dt>
+      <dd>Disconnects all open files that were created by
+      the specified session on the computer specified by the
+      <a href="#SwitchS">/S</a> switch. The wildcard (*)
+      can be used to disconnect all open files on the
+      specified computer.</dd>
+
+      <dt><a name="SwitchU"></a> /U [Domain\]User
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Runs the command with the account permissions of
+      the user specified by User or Domain\User. The default
+      is the permissions of the current logged on user on
+      the computer issuing the command.</dd>
+
+      <dt><a name="SwitchV"></a> /V
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that verbose task information be
+      displayed in the output.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

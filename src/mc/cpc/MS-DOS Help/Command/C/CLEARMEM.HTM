@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CLEARMEM</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCH.HTM#clearmem">Commands Ch-Cz</a>
+    <h1>CLEARMEM</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Forces pages out of RAM.</p>
+    <p>Attempts to allocate and commit more memory then is physically
+    available, as well as flushing the file cache. In Windows,
+    working sets are allowed to grow until memory pressure forces
+    them to decline. Flushing the file cache is important because
+    some pages in the process working set are part of the file cache
+    (for example, code loaded from a file).</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CLEARMEM
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>CLEARMEM
+    [<a href="#SwitchB">-B</a>]
+    [<a href="#SwitchD">-D</a>]
+    [<a href="#SwitchM">-Mnumber</a>]
+    [<a href="#SwitchP">-Pnumber</a>]
+    [<a href="#SwitchQ">-Q</a>]
+    [<a href="#SwitchT">-Tnumber</a>]
+    [<a href="#SwitchW">-W</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchB"></a> -B
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Read and write the virtual memory section.</dd>
+
+      <dt><a name="SwitchD"></a> -D
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Debug break on entry into and exit from
+      application.</dd>
+
+      <dt><a name="SwitchM"></a> -Mnumber
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Number of megabytes to allocate.
+      Default is use all physical memory.</dd>
+
+      <dt><a name="SwitchP"></a> -Pnumber
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Number of pages to read.
+      Default is 63.</dd>
+
+      <dt><a name="SwitchQ"></a> -Q
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Quiet mode, print nothing.</dd>
+
+      <dt><a name="SwitchT"></a> -Tnumber
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>times to touch a page.
+      Default is 1.</dd>
+
+      <dt><a name="SwitchW"></a> -W
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Write to the virtual memory section.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Running twice will usually force most applications out of
+    memory. Has to run multiple times to present a real-life memory
+    load because the system does not immediately trim all possible
+    pages in a process working set, but does so gradually over time.
+    When run, the system pauses because of the flood of high priority
+    activity.</p>
+    <p><b>Note:</b> Use Vadump to see the contents of the working set.</p>
+    <p>To run, the computer's paging file must be at least as large
+    as its RAM. If you are running Windows Server configured for
+    "Maximize Throughput for Network Applications," you might have to
+    run more than twice to reduce application working sets to the
+    minimum. Use System Monitor to check on progress.</p>
+    <p>Working set: a set of memory pages. It is all the physical
+    pages "owned" by a process. Each memory page can be:
+    <ul>
+    <li><b>Shared</b> memory that is shared with some other process
+    or processes. If these other processes are usually running
+    then the effect of these pages can be ignored as removing them
+    from the working set would not free any pages because they will
+    still be in use.</li>
+    <li><b>Shareable</b> memory that could potentially be shared with
+    another process but is not. This memory is not shared because
+    there is no demand for its content anywhere else.</li>
+    <li><b>Private</b> memory which cannot be shared.</li>
+    </ul>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External Resource Kit</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

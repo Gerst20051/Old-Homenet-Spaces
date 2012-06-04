@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>TRUENAME</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#t">Commands N-Z</a>
+    &gt; <a href="../INDEXT.HTM#truename">Commands T</a>
+    <h1>TRUENAME</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Displays the actual path corresponding to virtual drives created
+    using the SUBST (and ASSIGN?) (and JOIN?) command.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>TRUENAME
+    [[[<a href="#ParameterDrive">drive:</a>]
+    <a href="#ParameterPath">path</a>]
+    <a href="#ParameterFilename">filename</a>]</p>
+
+    <p>To display current drive/directory:</p>
+    <p>TRUENAME</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a href="../../Version/MSDOS/400.HTM">v4.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the "real" drive when you give it the "SUBST"
+      drive.</dd>
+
+      <dt><a name="ParameterPath"></a> path
+      (<a href="../../Version/MSDOS/400.HTM">v4.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the "real" directory when you give it the "SUBST"
+      directory.</dd>
+
+      <dt><a name="ParameterFilename"></a> path
+      (<a href="../../Version/MSDOS/400.HTM">v4.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the "real" filename when you give it the "SUBST"
+      filename.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about "alias" commands:</p>
+    <ol>
+      <li><a href="../A/ASSIGN.HTM">ASSIGN</a></li>
+      <li><a href="../J/JOIN.HTM">JOIN</a></li>
+      <li><a href="../S/SUBST.HTM">SUBST</a></li>
+    </ol>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>If <i>"c:\data\docs\manuals\Dos"</i> has been assigned to drive
+    Z: using the <a href="../S/SUBST.HTM">SUBST</a> command, then:</p>
+<pre>
+    TRUENAME <a
+href="#ParameterDrive">Z:</a>
+</pre>
+
+    <p>would display:</p>
+<pre>
+    C:\DATA\DOCS\MANUALS\DOS
+</pre>
+
+    <p>and, whether "<i>copy.com</i>" exists on "<b>z:</b>" or not:</p>
+<pre>
+    TRUENAME <a
+href="#ParameterDrive">Z:</a><a
+href="TREE.HTM#ParameterPath">\</a><a
+href="TREE.HTM#ParameterFilename">XCOPY.EXE</a>
+</pre>
+
+    <p>would display:</p>
+<pre>
+    C:\DATA\DOCS\MANUALS\DOS\XCOPY.EXE
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt><b>UNDOCUMENTED</b> Internal</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

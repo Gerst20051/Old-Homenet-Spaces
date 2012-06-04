@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>EDLIN</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#e">Commands A-M</a>
+    &gt; <a href="../INDEXE.HTM#edlin">Commands E</a>
+    <h1>EDLIN</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>A line editor to create or modify text files. This
+    command is now used rarely, if ever.</p>
+    <p>Loads the file into memory and waits for you to enter
+    commands.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>EDLIN
+    [[<a href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path</a>]<a
+    href="#ParameterFilename">filename</a>]
+    [<a href="#SwitchB">/B</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a href="../../Version/MSDOS/100.HTM">v1.0</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the location of an ASCII text file.</dd>
+
+      <dt><a name="ParameterPath"></a> path
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the location of an ASCII text file.</dd>
+
+      <dt><a name="ParameterFilename"></a> filename
+      (<a href="../../Version/MSDOS/100.HTM">v1.0</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the name of an ASCII text file. If the file does
+      not exist, DOS Editor creates it. If the file exists, DOS
+      Editor opens it and displays its contents on the screen.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchB"></a> /B
+      (<a href="../../Version/MSDOS/100.HTM">v1.0</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Read the file without stopping at any CTRL-Z (1A hex) aka
+      END-OF-TEXT-FILE characters in the file.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>Replaced by the <a href="EDIT.HTM">Edit</a>/<a
+    href="../Q/QBASIC.HTM">QBASIC.EXE</a> full-screen editor.
+    <a href="../../Version/MSDOS/500.HTM">v5.0</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Commands">Edlin commands</a></li>
+      <li><a href="#Read">How much file is read into memory?</a></li>
+      <li><a href="#ControlCharacters">How to embed control characters</a></li>
+      <li><a href="#Features">Special features</a></li>
+    </ul>
+
+    <hr>
+    <a name="Features"></a> <b>Special features</b>
+    <ul>
+      <li>It can read and edit a file of ANY length</li>
+      <li>It works with files that contain an embedded CTRL-Z (1A hex)
+          character</li>
+      <li>It lets you embed control characters in text (use CTRL-V
+          first)</li>
+    </ul>
+
+    <hr>
+    <a name="ControlCharacters"></a> <b>How to embed control characters</b>
+    <p>Use CTRL-V to embed any ASCII control code into the text. For
+    instance, use ^VA to input a CTRL-A (^A) character into a file. To
+    embed the ESC character, use ^V[. This allows you to write batch
+    files for accessing printer modes and for setting values used by
+    the <a href="../A/ANSISYS.HTM">ANSI.SYS</a> extended console driver.</p>
+
+    <hr>
+    <a name="Read"></a> <b>How much file is read into memory?</b>
+    <p>Edlin reads as much of the file as will fit into 75% of
+    available memory. Use the (W)rite and (A)ppend commands to save
+    changes and read more of the file.</p>
+
+    <hr>
+    <a name="Commands"></a> <b>Edlin commands</b>
+    <p><b>lnX</b> line number (1 thru 65529 decimal)<br>
+    <b>.</b> current line<br>
+    <b>#</b> for the last line of the file +1<br>
+    <b>-NNNN</b> or <b>+NNNN</b> for lines relative to the current
+    line.</p>
+    <p>Optional line numbers, when omitted, are assumed to be the
+    current line.</p>
+<pre>
+<u>Command                Function</u>
+<b>?</b>                        List commands. Added in <a
+href="../../Version/MSDOS/500.HTM">v5.0</a>
+<b>ENTER</b>                    Save the changes on the currently-visible line
+                         and start editing the next line.
+<b>[ln1]</b>                    Edit line LN1
+                         (just press Enter to edit current line)
+[nnn] <b>A</b>                  Append. Reads "nnn" lines from the file
+                         (for large files)
+[ln1],[ln2],ln3,[nnn] <b>C</b>  Copy lines LN1 thru LN2 to LN3.
+                         Repeat "nnn" times.
+
+[ln1],[ln2] <b>D</b>            Delete lines from LN1 thru LN2
+<b>E</b>                        Exit. Saves the changes to the file.
+[ln1] <b>I</b>                  Insert lines starting at LN1.
+                         CTRL+BREAK (^BREAK) to stop
+[ln1],[ln2] <b>L</b>            List lines LN1 thru LN2 or 23 lines starting
+                         at LN1
+[ln1],[ln2],ln3 <b>M</b>        Move lines LN1 thru LN2 to start at line LN3
+
+[ln1],[ln2] <b>P</b>            list a Page (23 lines). Changes "current line"
+<b>Q</b>                        Quit. Exit without saving changes.
+[ln1],[ln2] [?]<b>R</b>[str1][&lt;F6&gt;str2] Replace text in lines LN1 thru LN2.
+                         String STR1 is replaced with STR2.
+                         ? prompts before each.
+                         Note: &lt;F6&gt; is the same as CTRL-Z (^Z)
+[ln1],[ln2] [?]<b>S</b>[str1]   Search for string STR1 in lines LN1 thru LN2.
+                         ? repeats
+[ln1] <b>T</b>:[d:]filename     Transfer (merge into memory) a file, starting
+                         at LN1
+
+[nnn] <b>W</b>                  Write "nnn" lines to file (use before Append)
+<u>Command                Function</u>
+</pre>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/100.HTM">v1.0</a>
+          <a href="../../Version/MSDOS/105.HTM">v1.05</a>
+          <a href="../../Version/MSDOS/110.HTM">v1.1</a>
+          <a href="../../Version/MSDOS/111.HTM">v1.11</a>
+          v1.24
+          v1.25
+          <a href="../../Version/MSDOS/185.HTM">v1.85</a>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

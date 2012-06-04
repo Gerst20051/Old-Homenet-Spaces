@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>FTYPE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#f">Commands A-M</a>
+    &gt; <a href="../INDEXF.HTM#ftype">Commands F</a>
+    <h1>FTYPE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Display or change the link between a fileType and an
+    executable program.</p>
+    <p>The FileType should always be created before making a
+    File Association.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>FTYPE
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>FTYPE
+    [<a href="#ParameterFiletype">filetype</a>]=[<a
+    href="#ParameterPath">executable_path</a>]</p>
+
+    <p>Display all FileTypes and the executable program for each:</p>
+    <p>FTYPE</p>
+
+    <p>Display the current executable program for that file type:</p>
+    <p>FTYPE
+    <a href="#ParameterFiletype">filetype</a></p>
+
+    <p>Delete a file type:</p>
+    <p>FTYPE
+    <a href="#ParameterFiletype">filetype</a>=</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterFiletype"></a> filetype
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>The type of file.</dd>
+      <dd>More than one file extension may be associated with the
+      same File Type. e.g. both the extension .JPG and the extension
+      .JPEG may be associated with the File Type "jpegfile".</dd>
+      <dd>File Types can be displayed in the Windows Explorer GUI:
+      [View, Options, File Types] however the spelling is usually
+      different to that expected by the FTYPE command e.g. the File
+      Type "txtfile" is displayed in the GUI as "Text Document" and
+      "jpegfile" is displayed as "image/jpeg".</dd>
+      <dd>Several FileTypes can be linked to the same executable
+      application, but one FileType cannot be linked to more than
+      one executable application.</dd>
+
+      <dt><a name="ParameterPath"></a> executable_path
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>The executable program including any command-line parameters.</dd>
+      <dd>It is almost always necessary to supply command-line parameters
+      so that when a document is opened not only is the relevant
+      application loaded into memory but the document itself also loaded
+      into the application. To make this happen the filename of the
+      document must be passed back to the application.</dd>
+      <dd>command-line parameters are exactly like batch file
+      parameters, %0 is the executable program and %1 will reference the
+      document filename so a simple command-line might be:</dd>
+      <dd>MyApplication.exe "%1"</dd>
+      <dd>If any further parameters are required by the application they
+      can be passed as %2, %3. To pass ALL parameters to an application
+      use %*. To pass all the remaining parameters starting with the nth
+      parameter, use %~n where n is between 2 and 9.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../A/ASSOC.HTM">ASSOC</a> - Change file extension associations.
+    <br><a href="../A/ASSOCIAT.HTM">ASSOCIATE</a> - One step file association.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Switching a File Association between multiple applications</p>
+    <p>If you have multiple applications that use the same file
+    extension, the <a href="../A/ASSOC.HTM">ASSOC</a> command can
+    be used to switch the file extension between the different
+    FileTypes.</p>
+
+    <p>Backing up your FileTypes:</p>
+<pre>
+    FTYPE &gt;backup_types.txt
+    <a href="../A/ASSOC.HTM">ASSOC</a> &gt;backup_ext.txt
+</pre>
+
+    <p>Restoring your FileTypes from a Backup:</p>
+<pre>
+    <a href="FOR_F.HTM">FOR</a> /F "<a
+href="FOR_F.HTM#ParameterTokens">tokens=*</a> <a
+href="FOR_F.HTM#ParameterDelims">delims=</a>" <a
+href="FOR_F.HTM#ParameterVariable">%G</a> IN (<a
+href="FOR_F.HTM#ParameterSetFilename">backup_types.txt</a>) DO <a
+href="FOR_F.HTM#ParameterCommand">FTYPE</a> <a
+href="FOR_F.HTM#ParameterCommandParameters">%G</a>
+    <a href="FOR_F.HTM">FOR</a> /F "<a
+href="FOR_F.HTM#ParameterTokens">tokens=*</a> <a
+href="FOR_F.HTM#ParameterDelims">delims=</a>" <a
+href="FOR_F.HTM#ParameterVariable">%G</a> IN (<a
+href="FOR_F.HTM#ParameterSetFilename">backup_ext.txt</a>) DO <a
+href="FOR_F.HTM#ParameterCommand">ASSOC</a> <a
+href="FOR_F.HTM#ParameterCommandParameters">%G</a>
+</pre>
+    <p>Note that unlike simply backing up the registry, this method
+    will actually recreate all the CLASS id's. If you put the
+    commands above in a batch file change the %G to be %%G.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+
+<pre>
+    FTYPE <a
+href="#ParameterFiletype">htmlfile</a>=<a
+href="#ParameterPath">"C:\PROGRA~1\Plus!\MICROS~1\iexplore.exe" -nohome</a>
+    <a href="../A/ASSOC.HTM">ASSOC</a> <a
+href="../A/ASSOC.HTM#ParameterExtension">.html</a>=htmlfile
+</pre>
+
+<pre>
+    FTYPE <a
+href="#ParameterFiletype">pagemill.html</a>=<a
+href="#ParameterPath">C:\PROGRA~1\Adobe\PAGEMI~1.0\PageMill.exe "%1"</a>
+    <a href="../A/ASSOC.HTM">ASSOC</a> <a
+href="../A/ASSOC.HTM#ParameterExtension">.html</a>=pagemill.html
+</pre>
+
+<pre>
+    FTYPE <a
+href="#ParameterFiletype">rtffile</a>=<a
+href="#ParameterPath">"C:\Program Files\Windows NT\Accessories\WORDPAD.EXE" "%1"</a>
+    <a href="../A/ASSOC.HTM">ASSOC</a> <a
+href="../A/ASSOC.HTM#ParameterExtension">.rtf</a>=rtffile
+</pre>
+
+<pre>
+    FTYPE <a
+href="#ParameterFiletype">word.rtf.8</a>=<a
+href="#ParameterPath">"C:\Program Files\Microsoft Office\Office\winword.exe" /n</a>
+    <a href="../A/ASSOC.HTM">ASSOC</a> <a
+href="../A/ASSOC.HTM#ParameterExtension">.rtf</a>=word.rtf.8
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>Internal</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

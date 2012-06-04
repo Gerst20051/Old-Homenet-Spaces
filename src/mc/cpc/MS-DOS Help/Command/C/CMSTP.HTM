@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CMSTP</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCH.HTM#cmstp">Commands Ch-Cz</a>
+    <h1>CMSTP</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Installs or removes a Connection Manager service profile.
+    Used without optional parameters, installs a service profile
+    with default settings appropriate to the operating system
+    and to the user's permissions.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CMSTP
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>CMSTP
+    [<a href="#SwitchNf">/nf</a>]
+    [<a href="#SwitchNi">/ni</a>]
+    [<a href="#SwitchNs">/ns</a>]
+    [<a href="#SwitchSu">/su</a>]
+    [<a href="#SwitchU">/u</a>
+    [<a href="#SwitchS">/s</a>]]
+    <a href="#ParameterInf">"[d:][path]serviceprofile_filename.INF"</a></p>
+
+    <p><a href="#ParameterExe">serviceprofile_filename.EXE</a>
+    <a href="#SwitchQ">/q:a</a>
+    <a href="#SwitchC">/c:</a>"CMSTP
+    <a href="#ParameterInf">serviceprofile_filename.INF</a>
+    [<a href="#SwitchNf">/nf</a>]
+    [<a href="#SwitchNi">/ni</a>]
+    [<a href="#SwitchNs">/ns</a>]
+    [<a href="#SwitchU">/u</a>
+    [<a href="#SwitchS">/s</a>]]
+    [<a href="#SwitchSu">/su</a>]"</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterExe"></a> serviceprofile_filename.EXE
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies, by name, the installation package that
+      contains the profile that you want to install.</dd>
+
+      <dt><a name="ParameterInf"></a> "[d:][path]serviceprofile_filename.INF"
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dt> serviceprofile_filename.INF
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Required. Specifies, by name, the configuration
+      file that determines how the profile should be installed.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchC"></a> /c:"CMSTP ..."
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>?</dd>
+
+      <dt><a name="SwitchNf"></a> /nf
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that the support files should not be installed.</dd>
+
+      <dt><a name="SwitchNi"></a> /ni
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that a desktop icon should not be created.
+      This is only valid for computers running
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/98.HTM">Win98</a>
+      <a href="../../Version/MSWIN/ME.HTM">WinME</a> or
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a>.</dd>
+
+      <dt><a name="SwitchNs"></a> /ns
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that a desktop shortcut should not be created.
+      This is only valid for computers running
+      <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a> or
+      <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>.</dd>
+
+      <dt><a name="SwitchQ"></a> /q:a
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that the profile should be installed without
+      prompting the user. The verification message that the
+      installation has succeeded will still appear.</dd>
+
+      <dt><a name="SwitchS"></a> /s
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that the service profile should be
+      installed or uninstalled silently (without prompting
+      for user response or displaying verification message).</dd>
+
+      <dt><a name="SwitchSu"></a> /su
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that the service profile should be installed
+      for a single user rather than for all users. This is only
+      valid for computers running
+      <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a> or
+      <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>.</dd>
+
+      <dt><a name="SwitchU"></a> /u
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that the service profile should be uninstalled.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DOSSHELL</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDA.HTM#dosshell">Commands Da-Dr</a>
+    <h1>DOSSHELL</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Starts a command Shell, a graphical interface to the operating system.</p>
+    <p>A command Shell is available in the DOS Resource Kit.
+    To order the Resource Kit, use the coupon in the back
+    of your DOS User's Guide.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>To start in text mode:</p>
+    <p>DOSSHELL
+    [<a href="#SwitchT">/T</a>[:<a
+    href="#ParameterRes">res</a>[<a
+    href="#ParameterN">n</a>]]]
+    [<a href="#SwitchB">/B</a>]</p>
+
+    <p>To start in graphics mode:</p>
+    <p>DOSSHELL
+    [<a href="#SwitchG">/G</a>[:<a
+    href="#ParameterRes">res</a>[<a
+    href="#ParameterN">n</a>]]]
+    [<a href="#SwitchB">/B</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterN"></a> n
+      (<a href="../../Version/MSDOS/400.HTM">v4.0</a>)</dt>
+      <dd>Specifies a screen resolution when there is more than one
+      choice within a category. The default value of n depends on your
+      hardware.</dd>
+
+      <dt><a name="ParameterRes"></a> res
+      (<a href="../../Version/MSDOS/400.HTM">v4.0</a>)</dt>
+      <dd>
+        Specifies a screen-resolution category. Valid values are L, M,
+        and H to specify low, medium, and high resolution,
+        respectively. The default value of res depends on your
+        hardware.
+        <ul>
+          <li><b>/G:L</b> 25 graphics lines</li>
+          <li><b>/G:M1</b> 30 graphics lines</li>
+          <li><b>/G:M2</b> 34 graphics lines</li>
+          <li><b>/G:H1</b> 43 graphics lines</li>
+          <li><b>/G:H2</b> 60 graphics lines</li>
+          <li><b>/T:L</b> 25 text lines</li>
+          <li><b>/T:H1</b> 43 text lines</li>
+          <li><b>/T:H2</b> 50 text lines</li>
+        </ul>
+      </dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchB"></a> /B
+      (<a href="../../Version/MSDOS/400.HTM">v4.0</a>)</dt>
+      <dd>Starts the operating system Shell using a black-and-white color
+      scheme.</dd>
+
+      <dt><a name="SwitchG"></a> /G
+      (<a href="../../Version/MSDOS/400.HTM">v4.0</a>)</dt>
+      <dd>Starts the operating system Shell in graphics mode.</dd>
+
+      <dt><a name="SwitchT"></a> /T
+      (<a href="../../Version/MSDOS/400.HTM">v4.0</a>)</dt>
+      <dd>Starts the operating system Shell in text mode.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about comparing two files, see the
+    <a href="../F/FC.HTM">FC</a> command.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Screen">Adjusting screen resolution</a></li>
+      <li><a href="#Memory">Memory requirement</a></li>
+      <li><a href="#Windows">Running DOS Shell with Microsoft Windows</a></li>
+      <li><a href="#Temp">Setting the location to store temporary files</a></li>
+      <li><a href="#IniFile">The DOSSHELL.INI file</a></li>
+    </ul>
+
+    <hr>
+    <a name="Windows"></a> <b>Running DOS Shell with Microsoft Windows</b>
+    <p>Do not start Microsoft Windows from within the operating
+    system Shell. If you want to use both Microsoft Windows and
+    the operating system Shell, start Windows, and then start
+    the operating system Shell from within Windows.</p>
+
+    <hr>
+    <a name="Memory"></a> <b>Memory requirement</b>
+    <p>To run the operating system Shell, you should ensure that
+    your computer has at least 384K of available conventional memory.</p>
+
+    <hr>
+    <a name="Screen"></a> <b>Adjusting screen resolution</b>
+    <p>Once you have started the operating system Shell, you can
+    adjust the screen resolution by using the Display command on
+    the Options menu. A dialog box displays the mode (text or
+    graphics), the number of lines, the resolution category, and
+    the specific number within each category for all possible
+    screen-resolution modes available for your hardware.</p>
+
+    <hr>
+    <a name="IniFile"></a> <b>The DOSSHELL.INI file</b>
+    <p>Your current operating system Shell settings for program items and groups,
+    options, screen resolution, colors, and so on, are stored in a file
+    called DOSSHELL.INI. The DOSSHELL.INI file will be updated whenever
+    you make a change or start a program item, so it must be located on
+    a drive that is not write-protected. You can specify the location
+    of the DOSSHELL.INI file by setting a
+    <a href="../../ENV/MSDOS/DOSSHELL.HTM">%DOSSHELL%</a>
+    environment variable in your AUTOEXEC.BAT file.</p>
+    <p>For example, if the DOSSHELL.INI file is located in the DOS
+    directory on drive C, type in your
+    AUTOEXEC.BAT file:</p>
+<pre>
+    dosshell=c:\dos
+</pre>
+
+    <p>If you customize the operating system Shell to suit your own
+    needs, you should back up this file regularly. If the
+    DOSSHELL.INI file is deleted or corrupted, a new file will be
+    created the next time you start the operating system Shell.</p>
+
+    <hr>
+    <a name="Temp"></a> <b>Setting the location to store temporary files</b>
+    <p>When you run a program from the operating system Shell,
+    temporary files are created in the directory where the
+    DOSSHELL.EXE file is located. You can specify that temporary
+    files should be placed elsewhere by setting the
+    <a href="../../ENV/MSDOS/TEMP.HTM">%TEMP%</a> environment
+    variable in your AUTOEXEC.BAT file.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To start the operating system Shell in graphics mode, type:</p>
+<pre>
+    DOSSHELL <a href="#SwitchG">/G</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

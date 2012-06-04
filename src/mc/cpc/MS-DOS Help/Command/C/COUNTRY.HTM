@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>COUNTRY</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCH.HTM#country">Configuration Ch-Cz</a>
+    <h1>COUNTRY</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Enables MS-DOS to use country-specific conventions for
+    displaying times, dates, and currency; for determining
+    the order by which characters are sorted; and for
+    determing which characters can be used in filenames.
+    You can use this command only in your CONFIG.SYS file.</p>
+
+    <p> he COUNTRY command configures MS-DOS to recognize the
+    character set and punctuation conventions observed when
+    using one of the supported languages.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>COUNTRY=<a
+    href="#ParameterXXX">xxx</a>[,[<a
+    href="#ParameterYYY">yyy</a>][,[<a
+    href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path</a>]<a
+    href="#ParameterFilename">filename</a>]]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterXXX"></a> xxx
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the <a href="#SpecifyLanguage">country code</a>.
+      </dd>
+      <dt><a name="ParameterYYY"></a> yyy
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the <a href="#SpecifyLanguage">character set</a>
+      for the country.</dd>
+
+      <dt><a name="ParameterDrive"></a>
+      <a name="ParameterPath"></a>
+      <a name="ParameterFilename"></a> [drive:][\path\]filename
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the location and name of the file
+      containing country information.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about changing characters and their
+    arrangement on your keyboard, see the
+    <a href="../K/KEYB.HTM">KEYB</a> command,
+    or see the chapter Customizing for International Use
+    in the MS-DOS User's Guide.
+    <br>For information about preparing and selecting character
+    sets, see
+    <a href="../M/MODESC.HTM">MODE (set device code pages)</a>.
+    <br>For information about loading country-specific
+    information, see
+    <a href="../N/NLSFUNC.HTM">NLSFUNC</a>.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#ChangeDefault">Changing default settings</a></li>
+      <li><a href="#SpecifyTimeDate">Specifying international time and date formats</a></li>
+      <li><a href="#SpecifyLanguage">Specifying supported languages</a></li>
+    </ul>
+
+    <hr>
+    <a name="ChangeDefault"></a> <b>Changing default settings</b>
+    <p>MS-DOS uses the United States as the default setting.
+    You can use the COUNTRY command in your CONFIG.SYS file
+    to change the setting.</p>
+
+    <p>If you do not specify the location and name of the
+    file containing country-specific information, MS-DOS
+    tries to find the COUNTRY.SYS file in the root
+    directory of your startup drive.</p>
+
+    <hr>
+    <a name="SpecifyLanguage"></a> <b>Specifying supported languages</b>
+    <p>The following table lists each country or language
+    supported by MS-DOS. The table also lists the character
+    sets you can use with each country code. For example,
+    if you use country code 003, you can use only character
+    set 437 or 850 for the yyy parameter. The first of the
+    two character sets listed for each country or language
+    is its default character set.</p>
+
+<pre>
+    <u>Country or language    Country Character sets code</u>
+    Belgium                032     850, 437
+    Brazil                 055     850, 437
+    Canadian-French        002     863, 850
+    Croatia                038     852, 850
+    Czech Republic         042     852, 850
+
+    Denmark                045     850, 865
+    Finland                358     850, 437
+    France                 033     850, 437
+    Germany                049     850, 437
+    Hungary                036     852, 850
+
+    International. English 061     437, 850
+    Italy                  039     850, 437
+    Latin America          003     850, 437
+    Netherlands            031     850, 437
+    Norway                 047     850, 865
+
+    Poland                 048     852, 850
+    Portugal               351     850, 860
+    Serbia/Yugoslavia      038     852, 850
+    Slovakia               042     852, 850
+    Slovenia               038     852, 850
+
+    Spain                  034     850, 437
+    Sweden                 046     437, 850
+    Switzerland            041     850, 437
+    United Kingdom         044     437, 850
+    United States          001     437, 850
+    <u>Country or language    Country Character sets code</u>
+</pre>
+
+    <p>Character sets for the following countries or languages
+    are also available with special versions of MS-DOS:
+    Arabic, Israel, Japan, Korea, People's Republic of
+    China, and Taiwan.</p>
+
+    <hr>
+    <a name="SpecifyTimeDate"></a> <b>Specifying international time and date formats</b>
+
+    <p>The country code specifies the time and date formats
+    used by the commands:
+    <ul>
+        <li><a href="../B/BACKUP.HTM">BACKUP</a></li>
+        <li><a href="../D/DATE.HTM">DATE</a></li>
+        <li><a href="../R/RESTORE.HTM">RESTORE</a></li>
+        <li><a href="../T/TIME.HTM">TIME</a></li>
+    </ul>
+
+    <p>The following table lists the date and time formats
+    related to each country code. For each country code,
+    the &quot;Date&quot; column shows how MS-DOS
+    displays January 3, 1993, and the
+    &quot;Time&quot; column shows how MS-DOS displays
+    5:35 P.M. (with 0 seconds and 0 hundredths of a second).
+    </p>
+
+<pre>
+    <u>Country or language    Country Date       Time</u>
+    Belgium                032     23/01/1993 17:35:00
+    Brazil                 055     23/01/1993 17:35:00
+    Canadian-French        002     1993-01-23 17:35:00
+    Czechoslovakia         042     1993-01-23 17:35:00
+    Denmark                045     23-01-1993 17.35.00
+
+    Finland                358     23.01.1993 17.35.00
+    France                 033     23.01.1993 17:35:00
+    Germany                049     23.01.1993 17:35:00
+    Hungary                036     1993-01-23 17:35:00
+    International. English 061     23-01-1993 5:35:00.00p
+
+    Italy                  039     23/01/1993 17.35.00
+    Latin America          003     23/01/1993 5:35:00.00p
+    Netherlands            031     23-01-1993 17:35:00
+    Norway                 047     23.01.1993 17:35:00
+    Poland                 048     1993-01-23 17:35:00
+
+    Portugal               351     23-01-1993 17:35:00
+    Spain                  034     23/01/1993 17:35:00
+    Sweden                 046     1993-01-23 17.35.00
+    Switzerland            041     23.01.1993 17,35,00
+    United Kingdom         044     23/01/1993 17:35:00.00
+
+    United States          001     01-23-1993 5:35:00.00p
+    Yugoslavia             038     1993-01-23 17:35:00
+    <u>Country or language    Country Date       Time</u>
+</pre>
+
+    <p>Character sets for the following countries or languages
+    are also available with special versions of MS-DOS:
+    Arabic, Israel, Japan, Korea, People's Republic of
+    China, and Taiwan.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To convert international currency, time, date, and case
+    to French conventions, add the following to
+    your CONFIG.SYS file:</p>
+
+<pre>
+    country=<a href="#ParameterXXX">033</a>
+</pre>
+
+    <p>Assume that the COUNTRY.SYS file is
+    in the root directory of the startup drive. If
+    COUNTRY.SYS is in a different location, you would
+    specify the location in [drive:]path on the command
+    line.</p>
+
+    <p>To specify a character set with the country code for
+    France, type:</p>
+
+<pre>
+    country=<a href="#ParameterXXX">033</a>,<a
+    href="#ParameterYYY">850</a>
+</pre>
+
+    <p>If you omit the character set but include the
+    [drive:][path] filename parameter, you must still type
+    the comma that would have preceded the character set:</p>
+
+<pre>
+    country=<a href="#ParameterXXX">033</a>,,<a
+    href="#ParameterDrive">C:</a>][<a
+    href="#ParameterPath">\DOS\</a>]<a
+    href="#ParameterFilename">COUNTRY.SYS</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>Internal</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

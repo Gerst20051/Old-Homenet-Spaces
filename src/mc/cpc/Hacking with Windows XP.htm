@@ -1,0 +1,587 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Hacking with Windows XP</title>
+</head>
+
+<body>
+
+<h1 align="center">Hacking with Windows XP</h1>
+<h2 align="center">Part I: The Magic of DOS</h2>
+<p align="justify"><tt>In this guide you will learn how to telnet, forge email, 
+and use nslookup with Windows XP.<br>
+<br>
+So you have the newest, glitziest, &quot;Fisher Price&quot; version of Windows: XP. How can 
+you use XP in a way that sets you apart from the boring millions of ordinary users?<br>
+<br>
+****************<br>
+<i>Luser Alert</i>: Anyone who thinks this GTMHH will reveal how to blow up people&#39;s 
+TV sets and steal Sandra Bullock&#39;s email is going to find out that I won&#39;t tell 
+them how. <br>
+****************<br>
+<br>
+The key to doing amazing things with XP is as simple as D O S. Yes, that&#39;s right, 
+DOS as in MS-DOS, as in MicroSoft Disk Operating System. Windows XP (as well as 
+NT and 2000) comes with two versions of DOS. Command.com is an old DOS version. 
+Various versions of command.com come with Windows 95, 98, SE, ME, Window 3, and 
+DOS only operating systems. <br>
+<br>
+The other DOS, which comes only with XP, 2000 and NT, is cmd.exe. Usually cmd.exe 
+is better than command.com because it is easier to use, has more commands, and in 
+some ways resembles the bash shell in Linux and other Unix-type operating systems. 
+For example, you can repeat a command by using the up arrow until you back up to 
+the desired command. Unlike bash, however, your DOS command history is erased whenever 
+you shut down cmd.exe. The reason XP has both versions of DOS is that sometimes 
+a program that won?t run right in cmd.exe will work in command.com<br>
+<br>
+****************<br>
+<i>Flame Alert</i>: Some readers are throwing fits because I dared to compare DOS 
+to bash. I can compare cmd.exe to bash if I want to. Nanny nanny nah nah.<br>
+****************<br>
+<br>
+DOS is your number one Windows gateway to the Internet, and the open sesame to local 
+area networks. From DOS, without needing to download a single hacker program, you 
+can do amazingly sophisticated explorations and even break into poorly defended 
+computers.<br>
+<br>
+****************<br>
+You can go to jail warning: Breaking into computers is against the law if you do 
+not have permission to do so from the owner of that computer. For example, if your 
+friend gives you permission to break into her Hotmail account, that won&#39;t protect 
+you because Microsoft owns Hotmail and they will never give you permission.<br>
+****************<br>
+****************<br>
+You can get expelled warning: Some kids have been kicked out of school just for 
+bringing up a DOS prompt on a computer. Be sure to get a teacher&#39;s WRITTEN permission 
+before demonstrating that you can hack on a school computer.<br>
+****************<br>
+<br>
+<b>So how do you turn on DOS? <br>
+</b>Click All Programs -&gt; Accessories -&gt; Command Prompt<br>
+That runs cmd.exe. You should see a black screen with white text on it, saying something 
+like this:<br>
+<br>
+Microsoft Windows XP [Version 5.1.2600]<br>
+(C) Copyright 1985-2001 Microsoft Corp.<br>
+<br>
+C:\&gt;<br>
+<br>
+Your first step is to find out what commands you can run in DOS. If you type &quot;help&quot; 
+at the DOS prompt, it gives you a long list of commands. However, this list leaves 
+out all the commands hackers love to use. Here are some of those left out hacker 
+commands. <br>
+<br>
+TCP/IP commands:<br>
+telnet<br>
+netstat<br>
+nslookup<br>
+tracert<br>
+ping<br>
+ftp<br>
+<br>
+NetBIOS commands (just some examples):<br>
+nbtstat<br>
+net use<br>
+net view<br>
+net localgroup<br>
+<br>
+<br>
+TCP/IP stands for transmission control protocol/Internet protocol. As you can guess 
+by the name, TCP/IP is the protocol under which the Internet runs. along with user 
+datagram protocol (UDP). So when you are connected to the Internet, you can try 
+these commands against other Internet computers. Most local area networks also use 
+TCP/IP.<br>
+<br>
+NetBIOS (Net Basic Input/Output System) protocol is another way to communicate between 
+computers. This is often used by Windows computers, and by Unix/Linux type computers 
+running Samba. You can often use NetBIOS commands over the Internet (being carried 
+inside of, so to speak, TCP/IP). In many cases, however, NetBIOS commands will be 
+blocked by firewalls. Also, not many Internet computers run NetBIOS because it is 
+so easy to break in using them. We will cover NetBIOS commands in the next Guide 
+to XP Hacking.<br>
+<br>
+The queen of hacker commands is telnet. To get Windows help for telnet, in the cmd.exe 
+window give the command:<br>
+<br>
+C:\&gt;telnet /?<br>
+<br>
+Here&#39;s what you will get:<br>
+<br>
+telnet [-a][-e escape char][-f log file][-l user][-t term][host<br>
+[port]]<br>
+-a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Attempt automatic logon. Same as -l option except 
+uses the currently logged on user&#39;s name.<br>
+-e&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Escape character to enter telnet client prompt.<br>
+-f&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; File name for client side logging<br>
+-l&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Specifies the user name to log in with on the remote 
+system. Requires that the remote system support the TELNET ENVIRON option.<br>
+-t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Specifies terminal type. Supported term types are 
+vt100, vt52, ansi and vtnt only.<br>
+host&nbsp;&nbsp;&nbsp; Specifies the hostname or IP address of the remote computer 
+to connect to.<br>
+port&nbsp;&nbsp;&nbsp; Specifies a port number or service name.<br>
+<br>
+<br>
+****************<br>
+<i>Newbie note</i>: what is a port on a computer? A computer port is sort of like 
+a seaport. It&#39;s where things can go in and/or out of a computer. Some ports are 
+easy to understand, like keyboard, monitor, printer and modem. Other ports are virtual, 
+meaning that they are created by software. When that modem port of yours (or LAN 
+or ISDN or DSL) is connected to the Internet, your computer has the ability to open 
+or close any of over 65,000 different virtual ports, and has the ability to connect 
+to any of these on another computer - if it is running that port, and if a firewall 
+doesn?t block it.<br>
+****************<br>
+****************<br>
+<i>Newbie note</i>: How do you address a computer over the Internet? There are two 
+ways: by number or by name. <br>
+****************<br>
+<br>
+The simplest use of telnet is to log into a remote computer. Give the command:<br>
+<br>
+C:/&gt;telnet targetcomputer.com (substituting the name of the computer you want to 
+telnet into for targetcomputer.com)<br>
+<br>
+If this computer is set up to let people log into accounts, you may get the message:<br>
+<br>
+login: <br>
+<br>
+Type your user name here, making sure to be exact. You can&#39;t swap between lower 
+case and capital letters. For example, user name Guest is not the same as guest.<br>
+<br>
+****************<br>
+<i>Newbie note</i>: Lots of people email me asking how to learn what their user 
+name and password are. Stop laughing, darn it, they really do. If you don&#39;t know 
+your user name and password, that means whoever runs that computer didn&#39;t give you 
+an account and doesn&#39;t want you to log on.<br>
+****************<br>
+<br>
+Then comes the message:<br>
+<br>
+Password:<br>
+<br>
+Again, be exact in typing in your password.<br>
+<br>
+What if this doesn&#39;t work?<br>
+<br>
+Every day people write to me complaining they can&#39;t telnet. That is usually because 
+they try to telnet into a computer, or a port on a computer that is set up to refuse 
+telnet connections.&nbsp; Here&#39;s what it might look like when a computer refuses 
+a telnet connection:<br>
+<br>
+C:\ &gt;telnet 10.0.0.3<br>
+Connecting To 10.0.0.3...Could not open connection to the host, on port 23. A connection 
+attempt failed because the connected party did not properly respond after a period 
+of time, or established connection failed because connected host has failed to respond.<br>
+<br>
+Or you might see:<br>
+<br>
+C:\ &gt;telnet techbroker.com<br>
+Connecting To techbroker.com...Could not open connection to the host, on port 23. 
+No connection could be made because the target machine actively refused it.<br>
+<br>
+If you just give the telnet command without giving a port number, it will automatically 
+try to connect on port 23, which sometimes runs a telnet server.<br>
+<br>
+**************<br>
+<i>Newbie note</i>: your Windows computer has a telnet client program, meaning it 
+will let you telnet out of it. However you have to install a telnet server before 
+anyone can telnet into port 23 on your computer.<br>
+*************<br>
+<br>
+If telnet failed to connect, possibly the computer you were trying to telnet into 
+was down or just plain no longer in existence. Maybe the people who run that computer 
+don&#39;t want you to telnet into it. <br>
+<br>
+Even though you can&#39;t telnet into an account inside some computer, often you can 
+get some information back or get that computer to do something interesting for you. 
+Yes, you can get a telnet connection to succeed -without doing anything illegal 
+--against almost any computer, even if you don&#39;t have permission to log in. There 
+are many legal things you can do to many randomly chosen computers with telnet. 
+For example:<br>
+<br>
+C:/telnet freeshell.org 22<br>
+&nbsp;<br>
+SSH-1.99-OpenSSH_3.4p1<br>
+<br>
+That tells us the target computer is running an SSH server, which enables encrypted 
+connections between computers. If you want to SSH into an account there, you can 
+get a shell account for free at <a href="http://freeshell.org">http://freeshell.org</a> 
+. You can get a free SSH client program from <a href="http://winfiles.com">http://winfiles.com</a> 
+.<br>
+<br>
+***************<br>
+You can get punched in the nose warning: Your online provider might kick you off 
+for making telnet probes of other computers. The solution is to get a local online 
+provider and make friends with the people who run it, and convince them you are 
+just doing harmless, legal explorations.<br>
+*************<br>
+<br>
+Sometimes a port is running an interesting program, but a firewall won&#39;t let you 
+in. For example, 10.0.0.3, a computer on my local area network, runs an email sending 
+program, (sendmail working together with Postfix, and using Kmail to compose emails). 
+I can use it from an account inside 10.0.0.3 to send emails with headers that hide 
+from where I send things. <br>
+<br>
+If I try to telnet to this email program from outside this computer, here&#39;s what 
+happens:<br>
+<br>
+C:\&gt;telnet 10.0.0.3 25<br>
+Connecting To 10.0.0.3...Could not open connection to the host, on port 25. No connection 
+could be made because the target machine actively refused it.<br>
+<br>
+However, if I log into an account on 10.0.0.3 and then telnet from inside to port 
+25, here&#39;s what I get:<br>
+<br>
+Last login: Fri Oct 18 13:56:58 2002 from 10.0.0.1<br>
+Have a lot of fun...<br>
+cmeinel@test-box:~&gt; telnet localhost 25<br>
+Trying ::1...<br>
+telnet: connect to address ::1: Connection refused<br>
+Trying 127.0.0.1... [Carolyn&#39;s note: 127.0.0.1 is the numerical address meaning 
+localhost, the same computer you are logged into]<br>
+Connected to localhost.<br>
+Escape character is &#39;^]&#39;.<br>
+220 test-box.local ESMTP Postfix<br>
+<br>
+The reason I keep this port 25 hidden behind a firewall is to keep people from using 
+it to try to break in or to forge email. Now the ubergeniuses reading this will 
+start to make fun of me because no Internet address that begins with 10. is reachable 
+from the Internet. However, sometimes I place this &quot;test-box&quot; computer online with 
+a static Internet address, meaning whenever it is on the Internet, it always has 
+the same numerical address. I&#39;m not going to tell you what its Internet address 
+is because I don&#39;t want anyone messing with it. I just want to mess with other people&#39;s 
+computers with it, muhahaha. That&#39;s also why I always keep my Internet address from 
+showing up in the headers of my emails. <br>
+<br>
+***************<br>
+<i>Newbie note</i>: What is all this about headers? It&#39;s stuff at the beginning 
+of an email that may - or may not - tell you a lot about where it came from and 
+when. To see full headers, in Outlook click view -&gt; full headers. In Eudora, click 
+the &quot;Blah blah blah&quot; icon.<br>
+****************<br>
+<br>
+Want a computer you can telnet into and mess around with, and not get into trouble 
+no matter what you do to it? I&#39;ve set up my techbroker.com (206.61.52.33) with user 
+xyz, password guest for you to play with. Here&#39;s how to forge email to xyz@techbroker.com 
+using telnet. Start with the command:<br>
+<br>
+C:\&gt;telnet techbroker.com 25<br>
+Connecting To Techbroker.com<br>
+<br>
+220 &lt;techbroker.com&gt; Service ready<br>
+<br>
+Now you type in who you want the message to appear to come from:<br>
+<br>
+helo santa@techbroker.com<br>
+Techbroker.com will answer:<br>
+<br>
+250 &lt;techbroker.com&gt; host ready<br>
+<br>
+Next type in your mail from address:<br>
+<br>
+mail from:santa@techbroker.com<br>
+<br>
+250 Requested mail action okay, completed<br>
+<br>
+Your next command:<br>
+<br>
+rcpt to:xyz@techbroker.com<br>
+250 Requested mail action okay, completed<br>
+<br>
+Your next command:<br>
+data<br>
+354 Start main input; end with &lt;CRLF&gt;.&lt;CRLF&gt; <br>
+<br>
+Carolyn&#39;s note: &lt;CRLF&gt; just means hit return. In case you can&#39;t see that little 
+period between the &lt;CRLF&gt;s, what you do to end composing your email is to hit enter, 
+type a period, then hit enter again. Anyhow, try typing:<br>
+<br>
+This is a test.<br>
+.<br>
+250 Requested mail action okay, completed<br>
+quit<br>
+221 &lt;techbroker.com&gt; Service closing transmission channel<br>
+<br>
+Connection to host lost.<br>
+<br>
+Using techbroker&#39;s mail server, even if you enable full headers, the message we 
+just composed looks like:<br>
+<br>
+Status: R<br>
+X-status: N<br>
+<br>
+This is a test.<br>
+<br>
+That&#39;s a pretty pathetic forged email, huh? No &quot;from&quot;, no date. However, you can 
+make your headers better by using a trick with the data command. After you give 
+it, you can insert as many headers as you choose. The trick is easier to show than 
+explain:<br>
+<br>
+220 &lt;techbroker.com&gt; Service ready<br>
+helo santa@northpole.org<br>
+250 &lt;techbroker.com&gt; host ready<br>
+mail from:santa@northpole.com<br>
+250 Requested mail action okay, completed<br>
+rcpt to:cmeinel@techbroker.com<br>
+250 Requested mail action okay, completed<br>
+data<br>
+354 Start main input; end with &lt;CRLF&gt;.&lt;CRLF&gt;<br>
+from:santa@deer.northpole.org<br>
+Date: Mon, 21 Oct 2002 10:09:16 -0500<br>
+Subject: Rudolf<br>
+This is a Santa test.<br>
+.<br>
+250 Requested mail action okay, completed<br>
+quit<br>
+221 &lt;techbroker.com&gt; Service closing transmission channel<br>
+<br>
+Connection to host lost.<br>
+<br>
+The message then looks like:<br>
+<br>
+from:santa@deer.northpole.org<br>
+Date: Mon, 21 Oct 2002 10:09:16 -0500<br>
+Subject: Rudolf<br>
+This is a Santa test.<br>
+<br>
+The trick is to start each line you want in the headers with one word followed by 
+a colon, and the a line followed by &quot;return&quot;. As soon as you write a line that doesn&#39;t 
+begin this way, the rest of what you type goes into the body of the email.<br>
+<br>
+Notice that the santa@northpole.com from the &quot;mail from:&quot; command didn&#39;t show up 
+in the header. Some mail servers would show both &quot;from&quot; addresses.<br>
+<br>
+You can forge email on techbroker.com within one strict limitation. Your email has 
+to go to someone at techbroker.com. If you can find any way to send email to someone 
+outside techbroker, let us know, because you will have broken our security, muhahaha! 
+Don&#39;t worry, you have my permission.<br>
+<br>
+Next, you can read the email you forge on techbroker.com via telnet:<br>
+<br>
+C:\&gt;telnet techbroker.com 110<br>
+<br>
++OK &lt;30961.5910984301@techbroker.com&gt; service ready<br>
+<br>
+Give this command:<br>
+user xyz<br>
++OK user is known<br>
+<br>
+Then type in this:<br>
+pass test<br>
++OK mail drop has 2 message(s)<br>
+<br>
+retr 1<br>
++OK message follows<br>
+This is a test.<br>
+<br>
+If you want to know all possible commands, give this command:<br>
+<br>
+help<br>
++OK help list follows<br>
+USER user<br>
+PASS password<br>
+STAT<br>
+LIST [message]<br>
+RETR message<br>
+DELE message<br>
+NOOP<br>
+RSET<br>
+QUIT<br>
+APOP user md5<br>
+TOP message lines<br>
+UIDL [message]<br>
+HELP<br>
+<br>
+Unless you use a weird online provider like AOL, you can use these same tricks to 
+send and receive your own email. Or you can forge email to a friend by telnetting 
+to his or her online provider&#39;s email sending computer(s).<br>
+<br>
+With most online providers you need to get the exact name of their email computer(s). 
+Often it is simply mail.targetcomputer.com (substitute the name of the online provider 
+for targetcomputer). If this doesn&#39;t work, you can find out the name of their email 
+server with the DOS nslookup program, which only runs from cmd.exe. Here&#39;s an example:<br>
+<br>
+<br>
+C:\ &gt;nslookup<br>
+Default Server:&nbsp; DNS1.wurld.net<br>
+Address:&nbsp; 206.61.52.11<br>
+<br>
+&gt; set q=mx<br>
+&gt; dimensional.com<br>
+Server:&nbsp; DNS1.wurld.net<br>
+Address:&nbsp; 206.61.52.11<br>
+<br>
+dimensional.com MX preference = 5, mail exchanger =<br>
+mail.dimensional.com<br>
+dimensional.com MX preference = 10, mail exchanger =<br>
+mx2.dimensional.com<br>
+dimensional.com MX preference = 20, mail exchanger =<br>
+mx3.dimensional.com<br>
+dimensional.com nameserver = ns.dimensional.com<br>
+dimensional.com nameserver = ns-1.dimensional.com<br>
+dimensional.com nameserver = ns-2.dimensional.com<br>
+dimensional.com nameserver = ns-3.dimensional.com<br>
+dimensional.com nameserver = ns-4.dimensional.com<br>
+mail.dimensional.com&nbsp;&nbsp;&nbsp; internet address = 206.124.0.11<br>
+mx2.dimensional.com&nbsp;&nbsp;&nbsp;&nbsp; internet address = 206.124.0.30<br>
+mx3.dimensional.com&nbsp;&nbsp;&nbsp;&nbsp; internet address = 209.98.32.54<br>
+ns.dimensional.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address = 206.124.0.10<br>
+ns.dimensional.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address = 206.124.26.254<br>
+ns.dimensional.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address = 206.124.0.254<br>
+ns.dimensional.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address = 206.124.1.254<br>
+ns.dimensional.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address = 209.98.32.54<br>
+ns.dimensional.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address = 206.124.0.32<br>
+ns.dimensional.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address = 206.124.0.30<br>
+ns.dimensional.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address = 206.124.0.25<br>
+ns.dimensional.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address = 206.124.0.15<br>
+ns.dimensional.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address = 206.124.0.21<br>
+ns.dimensional.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address = 206.124.0.9<br>
+ns-1.dimensional.com&nbsp;&nbsp;&nbsp; internet address = 206.124.26.254<br>
+ns-2.dimensional.com&nbsp;&nbsp;&nbsp; internet address = 209.98.32.54<br>
+ns-3.dimensional.com&nbsp;&nbsp;&nbsp; internet address = 206.124.1.254<br>
+ns-4.dimensional.com&nbsp;&nbsp;&nbsp; internet address = 206.124.0.254<br>
+&gt;<br>
+<br>
+The lines that tell you what computers will let you forge email to people with @dimensional.com 
+addresses are:<br>
+<br>
+dimensional.com MX preference = 5, mail exchanger =<br>
+mail.dimensional.com<br>
+dimensional.com MX preference = 10, mail exchanger =<br>
+mx2.dimensional.com<br>
+dimensional.com MX preference = 20, mail exchanger =<br>
+mx3.dimensional.com<br>
+<br>
+MX stands for mail exchange. The lower the preference number, the more they would 
+like you to use that address for email. If that lowest number server is too busy, 
+then try another server.<br>
+<br>
+Sometimes when you ask about a mail server, nslookup will give you this kind of 
+error message:<br>
+<br>
+DNS request timed out.<br>
+&nbsp;&nbsp;&nbsp; timeout was 2 seconds.<br>
+DNS request timed out.<br>
+&nbsp;&nbsp;&nbsp; timeout was 2 seconds.<br>
+*** Request to [207.217.120.202] timed-out<br>
+<br>
+To get around this problem, you need to find out what are the domain servers for 
+your target online provider. A good place to start looking is
+<a href="http://netsol.com/cgi-bin/whois/whois">http://netsol.com/cgi-bin/whois/whois</a> 
+. If this doesn&#39;t work, see <a href="http://happyhacker.org/HHA/fightback.shtml">
+http://happyhacker.org/HHA/fightback.shtml</a> for how to find the domain servers 
+for any Internet address.<br>
+<br>
+****************<br>
+<i>Newbie note</i>: A domain name server provides information on the names and numbers 
+assigned to computers on the Internet. For example, dns1.wurld.net and dns2.wurld.net 
+contain information on happyhacker.org, techbroker.com, securitynewsportal.com, 
+thirdpig.com and sage-inc.com. When you query dns1.wurld.net about other computers, 
+it might have to go hunting for that information from other name servers. That&#39;s 
+why you might get a timed out failure.<br>
+***************<br>
+<br>
+Once you know the domain servers for an online service, set one of them for the 
+server for your nslookup program. Here&#39;s how you do it:<br>
+<br>
+C:\ &gt;nslookup<br>
+Default Server:&nbsp; DNS1.wurld.net<br>
+Address:&nbsp; 206.61.52.11<br>
+<br>
+Now give the command:<br>
+<br>
+&gt; server 207.217.126.41<br>
+Default Server:&nbsp; ns1.earthlink.net<br>
+Address:&nbsp; 207.217.126.41<br>
+<br>
+Next command should be:<br>
+&gt; set q=mx<br>
+&gt; earthlink.net<br>
+Server:&nbsp; ns1.earthlink.net<br>
+Address:&nbsp; 207.217.126.41<br>
+<br>
+earthlink.net&nbsp;&nbsp; MX preference = 5, mail exchanger = mx04.earthlink.net<br>
+earthlink.net&nbsp;&nbsp; MX preference = 5, mail exchanger = mx05.earthlink.net<br>
+earthlink.net&nbsp;&nbsp; MX preference = 5, mail exchanger = mx06.earthlink.net<br>
+earthlink.net&nbsp;&nbsp; MX preference = 5, mail exchanger = mx00.earthlink.net<br>
+earthlink.net&nbsp;&nbsp; MX preference = 5, mail exchanger = mx01.earthlink.net<br>
+earthlink.net&nbsp;&nbsp; MX preference = 5, mail exchanger = mx02.earthlink.net<br>
+earthlink.net&nbsp;&nbsp; MX preference = 5, mail exchanger = mx03.earthlink.net<br>
+earthlink.net&nbsp;&nbsp; nameserver = ns3.earthlink.net<br>
+earthlink.net&nbsp;&nbsp; nameserver = ns1.earthlink.net<br>
+earthlink.net&nbsp;&nbsp; nameserver = ns2.earthlink.net<br>
+mx00.earthlink.net&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address = 207.217.120.28<br>
+mx01.earthlink.net&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address = 207.217.120.29<br>
+mx02.earthlink.net&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address = 207.217.120.79<br>
+mx03.earthlink.net&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address = 207.217.120.78<br>
+mx04.earthlink.net&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address = 207.217.120.249<br>
+mx05.earthlink.net&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address = 207.217.120.31<br>
+mx06.earthlink.net&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address = 207.217.120.23<br>
+ns1.earthlink.net&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address = 207.217.126.41<br>
+ns2.earthlink.net&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address = 207.217.77.42<br>
+ns3.earthlink.net&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; internet address = 207.217.120.43<br>
+&gt; <br>
+<br>
+Your own online service will usually not mind and may even be glad if you use telnet 
+to read your email. Sometimes a malicious person or faulty email program will send 
+you a message that is so screwed up that your email program can&#39;t download it. With 
+telnet you can manually delete the bad email. Otherwise tech support has to do it 
+for you.<br>
+<br>
+If you think about it, this ability to forge email is a huge temptation to spammers. 
+How can your online provider keep the bad guys from filling up a victim&#39;s email 
+box with garbage? The first time a bad guy tries this, probably nothing will stop 
+him or her. The second time the online provider might block the bad guy at the firewall, 
+maybe call the bad guy&#39;s online provider and kick him or her and maybe get the bad 
+guy busted or sued.<br>
+<br>
+**************<br>
+You can go to jail warning: Sending hundreds or thousands of junk emails to bomb 
+someone&#39;s email account is a felony in the US.<br>
+***************<br>
+<br>
+***************<br>
+You can get sued warning: Spamming, where you send only one email to each person, 
+but send thousands or millions of emails, is borderline legal. However, spammers 
+have been successfully sued when they forge the email addresses of innocent people 
+as senders of their spam.<br>
+****************<br>
+<br>
+Now that you know how to read and write email with telnet, you definitely have something 
+you can use to show off with. Happy hacking!<br>
+<br>
+Oh, here&#39;s one last goodie for advanced users. Get netcat for Windows. It&#39;s a free 
+program written by Weld Pond and Hobbit, and available from many sites, for example<br>
+<a href="http://www.atstake.com/research/tools/#network_utilities">http://www.atstake.com/research/tools/#network_utilities</a> 
+. It is basically telnet on steroids. For example, using netcat, you can set up 
+a port on your Windows computer to allow people to telnet into a DOS shell by using 
+this command:<br>
+<br>
+C:\&gt;nc -L -p 5000 -t -e cmd.exe<br>
+&nbsp;<br>
+You can specify a different port number than 5000. Just make sure it doesn&#39;t conflict 
+with another port by checking with the netstat command. Then you and your friends, 
+enemies and random losers can either telnet in or netcat in with the command:<br>
+<br>
+C:\&gt;nc -v [ipaddress of target] [port]<br>
+<br>
+Of course you will probably get hacked for setting up this port. However, if you 
+set up a sniffer to keep track of the action, you can turn this scary back door 
+into a fascinating honeypot. For example, you could run it on port 23 and watch 
+all the hackers who attack with telnet hoping to log in. With some programming you 
+could even fake a unix-like login sequence and play some tricks on your attackers.<br>
+<br>
+For more on how to hack with telnet, see the Beginners? Guide #8 at
+<a href="http://www.happyhacker.org/gtmhh/begin11.shtml">http://www.happyhacker.org/gtmhh/begin11.shtml</a></tt></p>
+
+<p align="center"><a href="../../index.html">Home</a> -
+<a href="index.html">Computers</a> -
+<a href="Hacking%20with%20Windows%20XP2.htm">Magic of NetBIOS</a></p>
+
+</body>
+
+</html>

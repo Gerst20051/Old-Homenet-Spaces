@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CERTUTIL encode/decode</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCA.HTM#certutilencode">Commands Ca-Cg</a>
+    <h1>CERTUTIL encode/decode</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Certutil tasks for encoding and decoding certificates.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CERTUTIL
+    [<a href="#SwitchEncode">-encode</a>]
+    [<a href="#SwitchHelp">/?</a>]</p>
+
+    <p>To encode a certificate as a base64 file:
+    <br>To encode a DER-encoded request to a base64-encoded request:
+    <br>CERTUTIL
+    <a href="#SwitchEncode">-encode</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterFileIn">input_file</a>
+    <a href="#ParameterFileOut">output_file</a></p>
+
+    <p>To decode a base64-encoded certificate:
+    <br>To decode a base64-encoded request to a DER-encoded request:
+    <br>CERTUTIL
+    <a href="#SwitchDecode">-decode</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterFileIn">input_file</a>
+    <a href="#ParameterFileOut">output_file</a></p>
+
+    <p>To encode a certificate as a hexadecimal file:
+    <br>CERTUTIL
+    <a href="#SwitchEncodeHex">-encodehex</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterFileIn">input_file</a>
+    <a href="#ParameterFileOut">output_file</a></p>
+
+    <p>To decode a hexadecimal-encoded file:
+    <br>CERTUTIL
+    <a href="#SwitchDecodeHex">-decodehex</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterFileIn">input_file</a>
+    <a href="#ParameterFileOut">output_file.DER</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterFileIn"></a> input_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the certificate that you want to encode
+      as a base64/hexadecimal file.</dd>
+      <dd>Specifies the base64-encoded request (.REQ extesion)
+      file that you want to decode.</dd>
+      <dd>Specifies the DER-encoded request (.DER extension),
+      which is compatible with Entrust, that you want to
+      decode.</dd>
+
+      <dt><a name="ParameterFileOut"></a> output_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the base64-encoded/hexadecimal file to
+      which you want to send the certificate information.</dd>
+      <dd>Specifies the base64-encoded request (.REQ extesion)
+      file that you want to create.</dd>
+      <dd>Specifies the DER-encoded request (.DER extension),
+      which is compatible with Entrust, that you want to
+      create.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchDecode"></a> -decode
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Decodes a base64-encoded file.</dd>
+
+      <dt><a name="SwitchDecodeHex"></a> -decodehex
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Decodes a hexadecimal-encoded file.</dd>
+
+      <dt><a name="SwitchEncode"></a> -encode
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Encodes a certificate as a base64 file.</dd>
+
+      <dt><a name="SwitchEncodeHex"></a> -encodehex
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Encodes a certificate as a hexadecimal file.</dd>
+
+      <dt><a name="SwitchF"></a> -f
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Overwrites existing files or keys.</dd>
+
+      <dt><a name="SwitchV"></a> -v
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies verbose output.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="CERTUTIB.HTM">CERTUTIL backup/restore</a>
+    <br><a href="CERTUTIC.HTM">CERTUTIL configure</a>
+    <br><a href="CERTUTIF.HTM">CERTUTIL certificates</a>
+    <br><a href="CERTUTIL.HTM">CERTUTIL CRLs</a>
+    <br><a href="CERTUTIM.HTM">CERTUTIL manage</a>
+    <br><a href="CERTUTIR.HTM">CERTUTIL archival/recovery</a>
+    <br><a href="CERTUTIT.HTM">CERTUTIL troubleshooting</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

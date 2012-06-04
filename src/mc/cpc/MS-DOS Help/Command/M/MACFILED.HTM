@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>MACFILE DIRECTORY</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#m">Commands A-M</a>
+    &gt; <a href="../INDEXM.HTM#macfiledirectory">Commands M</a>
+    <h1>MACFILE DIRECTORY</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>To modify directories in Macintosh-accessible volumes.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>MACFILE DIRECTORY
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>MACFILE DIRECTORY
+    [<a href="#SwitchGroup">/group:group_name</a>]
+    [<a href="#SwitchOwner">/owner:owner_name</a>]
+    <a href="#SwitchPath">/path:directory</a>
+    [<a href="#SwitchPermissions">/permissions:nnnnnnnnnnn</a>]
+    [<a href="#SwitchServer">/server:\\Computer</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchGroup"></a> /group:group_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies or changes the Macintosh primary group
+      that is associated with the directory.
+      If omitted, the primary group remains unchanged.</dd>
+
+      <dt><a name="SwitchOwner"></a> /owner:owner_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Changes the owner of the directory.
+      If omitted, the owner remains unchanged.</dd>
+
+      <dt><a name="SwitchPath"></a> /path:directory
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the path to the directory that you want
+      to change. The directory must exist. (use MACFILE NEW
+      FOLDER to create a directory in a Macintosh-accessible
+      volume).</dd>
+
+      <dt><a name="SwitchPermissions"></a> /permissions:nnnnnnnnnnn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Sets permissions on the directory for the owner,
+      primary group, and world (everyone).
+      An 11-digit number is used to set permissions.
+      The number 1 grants permission and 0 revokes permission.
+      The position of the digit determines which permission
+      is set (If omitted, permissions remain unchanged):
+<pre>
+      <u>nnnnnnnnnnn</u>
+      <b>1</b>----------  Owner: See Files
+      -<b>1</b>---------  Owner: See Folders
+      --<b>1</b>--------  Owner: Make Changes
+      ---<b>1</b>-------  Group: See Files
+      ----<b>1</b>------  Group: See Folders
+      -----<b>1</b>-----  Group: Make Changes
+      ------<b>1</b>----  World: See Files
+      -------<b>1</b>---  World: See Folders
+      --------<b>1</b>--  World: Make Changes
+      ---------<b>1</b>-  Directory cannot be renamed, moved, or deleted
+      ----------<b>1</b>  Changes apply to current directory and subdirectories
+</pre>
+      </dd>
+
+      <dt><a name="SwitchServer"></a> /server:\\Computer
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the server on which to change a directory.
+      If omitted, the operation is performed on the local
+      computer.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>PATH</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#p">Commands N-Z</a>
+    &gt; <a href="../INDEXP.HTM#path">Commands P</a>
+    <h1>PATH</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Indicates which directories the operating system should search
+    for executable files.</p>
+    <p>The operating system uses the PATH command to search for
+    executable files in the directories you specify in the
+    <a href="../../ENV/MSDOS/PATH.HTM">%PATH%</a> environment
+    variable. By default, the search path is the current directory
+    only.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>PATH
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>PATH
+    [[<a href="#ParameterEnvPath">%PATH%</a>]
+     [<a href="#ParameterDrive">drive:</a>]<a
+     href="#ParameterPath">path</a>[;...]]</p>
+
+    <p>or</p>
+    <p>PATH=[[<a
+    href="#ParameterEnvPath">%PATH%</a>]
+    [<a href="#ParameterDrive">drive:</a>]<a
+    href="#ParameterPath">path</a>[;...]]</p>
+
+    <p>Display current search path:</p>
+    <p>PATH</p>
+
+    <p>Clear all search-path settings other than the default setting
+    (the current directory):</p>
+    <p>PATH
+    <a href="#ParameterSemicolon">;</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a name="ParameterPath"></a> path
+      <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies a drive, directory, and any subdirectories to
+      search.</dd>
+
+      <dt><a name="ParameterEnvPath"></a> %PATH%
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Appends the command path to the existing set of
+      directories listed in the
+      <a href="../../ENV/MSDOS/PATH.HTM">%PATH%</a>
+      environment variable.</dd>
+
+      <dt><a name="ParameterSemicolon"></a> ;
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>When used as the only parameter, clears all search-path
+      settings and specifies that the operating system is to search
+      only the current directory.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about setting a search path for data files, see
+    the <a href="../A/APPEND.HTM">APPEND</a> command.
+    <br><a href="../S/SET.HTM">SET</a> - Display, set, or remove environment variables.
+    <br>PATHMAN - This Resource Kit utility allows quick modification
+    of both the system and user paths. Pathman can resolve many
+    problems such as duplicate characters, and can improve performance
+    by removing duplicate paths. For details see Pathman.wri in the
+    resource kit.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>env - Display, set, or remove environment variables.
+    <br>CDPATH - Environment variable.
+    <br>MAILPATH - Environment variable.
+    <br>PATH - Environment variable.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Current">Current directory searched first</a></li>
+      <li><a href="#Extensions">Files with the same name, different extensions</a></li>
+      <li><a href="#Length">Length limit for the PATH command</a></li>
+      <li><a href="#Multiple">Specifying multiple directories in PATH command</a></li>
+      <li><a href="#Identical">Two or more identical filenames in the PATH</a></li>
+      <li><a href="#Autoexec">Using PATH in your AUTOEXEC.BAT file</a></li>
+    </ul>
+
+    <hr>
+    <a name="Current"></a> <b>Current directory searched first</b>
+    <p>The operating system always searches in the current directory
+    first, before it searches directories in the search path.</p>
+
+    <hr>
+    <a name="Length"></a> <b>Length limit for the PATH command</b>
+    <p>The maximum length of the PATH command is 127 characters. To fit
+    more directories in the search path, you can shorten directory
+    names, use the <a href="../S/SUBST.HTM">SUBST</a> redirect
+    directories to logical drives (which shortens the entries on the
+    PATH command-line), or use the <a href="../A/APPEND.HTM">APPEND</a>
+    <a href="../A/APPEND.HTM#SwitchX">/X:ON</a> command.</p>
+    <p><a href="../../Version/MSDOS/600.HTM">v6.0</a> and
+    <a href="../../Version/MSDOS/620.HTM">v6.2</a>: PATH Not
+    Limited to 128 Characters. For more information, see Microsoft Q97</p>
+
+    <hr>
+    <a name="Extensions"></a> <b>Files with the same name, different extensions</b>
+    <p>You might have some files in the same directory that share the
+    same filename but have different extensions. For example, you might
+    have a file named ACCNT.COM that starts an accounting program and
+    another file named ACCNT.BAT that connects your system to the
+    accounting system network.</p>
+    <p>The operating system searches for a file by using default
+    filename extensions in the order of precedence: .COM,
+    .EXE, and .BAT. To run ACCNT.BAT when ACCNT.COM exists in the
+    same directory, you must include the .BAT extension on the
+    command-line.</p>
+
+    <hr>
+    <a name="Identical"></a> <b>Two or more identical filenames in the PATH</b>
+    <p>You might have two or more files in the search path that have
+    the same filename and extension. The operating system searches
+    for the specified filename first in the current directory. Then
+    it searches directories in the order in which they are listed in
+    the PATH command.</p>
+
+    <hr>
+    <a name="Multiple"></a> <b>Specifying multiple directories in PATH command</b>
+    <p>To specify more than one path for the operating system to
+    search, separate entries with a semicolon (;).</p>
+
+    <hr>
+    <a name="Autoexec"></a> <b>Using PATH in your AUTOEXEC.BAT file</b>
+    <p>If you place the PATH command in your AUTOEXEC.BAT file, the
+    operating system automatically initiates the specified search
+    path every time you start your computer.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>This command specifies that the operating system
+    is to search three directories to find commands (the three paths
+    for these directories are C:\USER\TAXES, B:\USER\INVEST, and
+    B:\BIN):</p>
+<pre>
+    PATH <a
+href="#ParameterDrive">C:</a><a
+href="#ParameterPath">\USER\TAXES</a>;<a
+href="#ParameterDrive">B:</a><a
+href="#ParameterPath">\USER\INVEST</a>;<a
+href="#ParameterDrive">B:</a><a
+href="#ParameterPath">\BIN</a>
+</pre>
+
+    <hr>
+    <p>A batch example. Specifies that the operating system is
+    to search in the order: folder_3 + folder_2 +
+    folder_1 + same as above.</p>
+<pre>
+    PATH <a
+href="#ParameterDrive">C:</a><a
+href="#ParameterPath">\USER\TAXES</a>;<a
+href="#ParameterDrive">B:</a><a
+href="#ParameterPath">\USER\INVEST</a>;<a
+href="#ParameterDrive">B:</a><a
+href="#ParameterPath">\BIN</a>
+    <a href="../S/SET.HTM">SET</a> path=<a
+href="#ParameterPath">..\</a>;<a
+href="#ParameterPath">..\..\</a>;<a
+href="#ParameterEnvPath">%PATH%</a>
+    <a href="../C/CHDIR.HTM">CD</a> <a
+href="../C/CHDIR.HTM#ParameterPath">\FOLDER_1\FOLDER_2\FOLDER_3</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>Internal</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

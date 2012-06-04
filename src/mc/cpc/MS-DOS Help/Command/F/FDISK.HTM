@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>FDISK</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#f">Commands A-M</a>
+    &gt; <a href="../INDEXF.HTM#fdisk">Commands F</a>
+    <h1>FDISK</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Starts the Fdisk program, which configures a hard disk for use
+    with the operating system.</p>
+    <p>Fdisk displays a series of menus to help you partition your hard
+    disk(s).</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>FDISK
+    [<a href="#SwitchActok">/ACTOK</a>]
+    [<a href="#SwitchFprmt">/FPRMT</a>]
+    [<a href="#SwitchMbr">/MBR</a>]
+    [<a href="#SwitchPartn">/PARTN</a>]
+    [<a href="#SwitchStatus">/STATUS</a>]
+    [<a href="#SwitchX">/X</a>]</p>
+
+    <p>FDISK
+    <a href="#SwitchCmbr">/CMBR</a>
+    <a href="#ParameterDriveletter">DriveLetter:</a></p>
+
+    <p>FDISK
+    <a href="#SwitchCmbrN">/CMBR n</a></p>
+
+    <p>FDISK
+    [<a href="#SwitchX">/X</a>]
+    <a href="#ParameterDrivenumber">DriveNumber</a>
+    [[<a href="#SwitchPri">/PRI:n</a>]
+    | [<a href="#SwitchPrio">/PRIO:n</a>]]
+    [<a href="#SwitchExt">/EXT:n</a>]
+    [[<a href="#SwitchLog">/LOG:n</a>]
+    | [<a href="#SwitchLogo">/LOGO:n</a>]]
+    [<a href="#SwitchPrmt">/PRMT</a>
+    | <a href="#SwitchQ">/Q</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDriveletter"></a> DriveLetter:
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>)</dt>
+      <dd>Drive to write/re-write.</dd>
+
+      <dt><a name="ParameterDrivenumber"></a> DriveNumber
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>)</dt>
+      <dd>Drive number, starting at 1 (for C:).</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchActok"></a> /ACTOK
+      (<a href="../../Version/MSDOS/710.HTM">v7.10</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> Skip disk integrity check.</dd>
+
+      <dt><a name="SwitchCmbr"></a> /CMBR
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> To rewrite the Master Boot Record of
+      NON-PRIMARY drive <a href="#ParameterDriveletter">(drive:)</a>.
+      (Can be used to get rid of a Boot Sector Virus).</dd>
+
+      <dt><a name="SwitchCmbrN"></a> /CMBR n
+      (<a href="../../Version/MSDOS/710.HTM">v7.10</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> To rewrite the Master Boot Record of
+      physical drive number n. (Can be used to get rid of a Boot Sector
+      Virus).</dd>
+
+      <dt><a name="SwitchExt"></a> /EXT:n
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> Create EXTended partition (size in Mb).
+      Limit one (1) per physical hard drive.</dd>
+
+      <dt><a name="SwitchFprmt"></a> /FPRMT
+      (<a href="../../Version/MSDOS/710.HTM">v7.10</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> Bypass startup screen and enables
+      FAT16/FAT32 support.</dd>
+
+      <dt><a name="SwitchLog"></a> /LOG:n
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> Create LOGical DOS volume in extended
+      partition (size in Mb). Limit twenty three (23) per extended
+      partition (one for each drive letter C through Z, A and B
+      reserved for diskette drives).</dd>
+
+      <dt><a name="SwitchLogo"></a> /LOGO:n
+      (<a href="../../Version/MSDOS/600.HTM">v6.00</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> Create LOGical DOS volume in extended
+      partition (size in Mb). Limit twenty three (23) per extended
+      partition (one for each drive letter C through Z, A and B
+      reserved for diskette drives). Overrides FAT16/FAT32
+      support.</dd>
+
+      <dt><a name="SwitchMbr"></a> /MBR
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> To rewrite the Master Boot Record of
+      PRIMARY drive. (Can be used to get rid of a Boot Sector
+      Virus).</dd>
+
+      <dt><a name="SwitchPartn"></a> /PARTN
+      (<a href="../../Version/MSDOS/600.HTM">v6.00</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> Save partition information to text file
+      named: PARTSAV.FIL.</dd>
+
+      <dt><a name="SwitchPri"></a> /PRI:n
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> Create PRImary partition (size in Mb).
+      Limit one (1) per physical hard drive. Maximum size: using FAT16
+      is 2Gb, using FAT32 is 2000Gb. Win95 limited to 32Mb? Win98
+      limited to 64Mb?</dd>
+
+      <dt><a name="SwitchPrio"></a> /PRIO:n
+      (<a href="../../Version/MSDOS/600.HTM">v6.00</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> Create PRImary partition (size in Mb).
+      Limit one (1) per physical hard drive. Maximum size: using FAT16
+      is 2Gb, using FAT32 is 2000Gb. Win95 limited to 32Mb? Win98
+      limited to 64Mb? Overrides FAT16/FAT32 support.</dd>
+
+      <dt><a name="SwitchPrmt"></a> /PRMT
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> Prompt for actions.</dd>
+
+      <dt><a name="SwitchQ"></a> /Q
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> Quiet, do not display messages.
+      Prevents rebooting after altering partition information.</dd>
+
+      <dt><a name="SwitchStatus"></a> /STATUS
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Displays an overview of the partition information of your
+      computer's hard disk(s), without starting the Fdisk program.</dd>
+
+      <dt><a name="SwitchX"></a> /X
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Ignores extended disk-access support. Use if disk-access or
+      stack overflow errors occur.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#ChangeSize">Changing the size of a partition</a></li>
+      <li><a href="#Compressed">Fdisk and Compressed Drives</a></li>
+      <li><a href="#Limits">Limits of Fdisk</a></li>
+      <li><a href="#MaximumSize">Maximum partition size</a></li>
+      <li><a href="#Using">Using Fdisk to partition a hard disk</a></li>
+      <li><a href="#Subst">Using Fdisk with SUBST</a></li>
+      <li><a href="#Viewing">Viewing partition information quickly and easily</a></li>
+    </ul>
+
+    <hr>
+    <a name="Using"></a> <b>Using Fdisk to partition a hard disk</b>
+    <p>You can use FDISK for:</p>
+    <ul>
+      <li>Creating a primary operating system partition</li>
+      <li>Creating an extended operating system partition</li>
+      <li>Setting a partition to active</li>
+      <li>Deleting a partition</li>
+      <li>Displaying partition data</li>
+      <li>Selecting the next hard disk for partitioning, if a system
+          has multiple hard disks</li>
+    </ul>
+    <br> <br>
+    <b>CAUTION</b> Do not experiment with Fdisk. If you accidently
+    delete a drive or partition, you will lose data from your hard
+    disk.<br> <br>
+
+    <hr>
+    <a name="Viewing"></a> <b>Viewing partition information quickly and easily</b>
+    <p>To display an overview of your computer's partition information
+    without having to start the Fdisk program, use the
+    <a href="#SwitchStatus">/STATUS</a> switch. If the
+    <a href="#SwitchStatus">/STATUS</a> switch doesn't provide
+    enough detail about your hard disk, then start the Fdisk program
+    without the <a href="#SwitchStatus">/STATUS</a> switch
+    and choose option 4.</p>
+
+    <hr>
+    <a name="ChangeSize"></a> <b>Changing the size of a partition</b>
+    <p>To change the size of a partition, you must actually delete the
+    partition and create a new one with a different size or use a
+    Partition Resizer.</p>
+
+    <hr>
+    <a name="MaximumSize"></a> <b>Maximum partition size</b>
+    <p>The maximum partition size was 2 gigabytes.</p>
+    <p><b>CAUTION:</b> Deleting a partition deletes all the data stored
+    on that partition.</p>
+
+    <hr>
+    <a name="Subst"></a> <b>Using Fdisk with SUBST</b>
+    <p>Fdisk does not work on a drive formed by using the
+    <a href="../S/SUBST.HTM">SUBST</a> command.</p>
+
+    <hr>
+    <a name="Limits"></a> <b>Limits of Fdisk</b>
+    <p>Fdisk does not work on a network or an
+    <a href="../I/INTERLNK.HTM">Interlnk</a> drive. Fdisk
+    works only on hard disks physically installed on your computer.</p>
+
+    <hr>
+    <a name="Compressed"></a> <b>Fdisk and Compressed Drives</b>
+    <p>If your computer includes compressed drives, Fdisk does not
+    display information about those drives. A compressed disk drive
+    exists on your physical disk as a hidden, read-only system file
+    called a compressed volume file (CVF). The CVF is associated with a
+    drive letter; you can then use the files stored in that CVF.
+    However, to Fdisk, the compressed volume file is not a separate
+    drive; it is a file just like any other file.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2004/03/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

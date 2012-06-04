@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>IPSECCMD QUERY MODE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#i">Commands A-M</a>
+    &gt; <a href="../INDEXI.HTM#ipseccmdquery">Commands I</a>
+    <h1>IPSECCMD QUERY MODE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>You can use query mode to display data from the IPSec
+    security policies database.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>IPSECCMD
+    <a href="#ParameterShow">show</a>
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>IPSECCMD
+    [<a href="#ParameterComputer">\\computer_name</a>]
+    <a href="#ParameterShow">show</a>
+    <a href="#ParameterQueries">queries</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterComputer"></a> \\computer_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies, by name, the remote computer for which
+      you want to display data. Defaults to local computer.</dd>
+
+      <dt><a name="ParameterQueries"></a> queries
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>
+        <ul>
+          <li><b>All</b> all the following</li>
+          <li><b>Auth</b> main mode authentication methods</li>
+          <li><b>Filters</b> main/quick mode filters</li>
+          <li><b>Policies</b> main/quick mode policies</li>
+          <li><b>Sas</b> main/quick mode security associations (SAs)</li>
+          <li><b>Stats</b> Internet Key Exchange (IKE) and IPSec</li>
+        </ul>
+      </dd>
+
+      <dt><a name="ParameterShow"></a> show
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Indicates that Ipseccmd should run in query mode.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="IPSECCMD.HTM">IPSECCMD DYNAMIC/STATIC MODE</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Cannot be used to configure rules on computers
+    running <a href="../../Version/MSWIN/NT2K.HTM">Windows 2000</a>.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

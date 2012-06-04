@@ -1,0 +1,822 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DSGET</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDS.HTM#dsget">Commands Ds-Dz</a>
+    <h1>DSGET</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Displays the selected properties of a specific object
+    in the directory.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>DSGET
+    {<a href="#ParameterComputer">computer</a>
+     | <a href="#ParameterContact">contact</a>
+     | <a href="#ParameterGroup">group</a>
+     | <a href="#ParameterOu">ou</a>
+     | <a href="#ParameterPartition">partition</a>
+     | <a href="#ParameterQuota">quota</a>
+     | <a href="#ParameterServer">server</a>
+     | <a href="#ParameterSite">site</a>
+     | <a href="#ParameterSubnet">subnet</a>
+     | <a href="#ParameterUser">user</a>}
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>DSGET
+    <a href="#ParameterComputer">computer</a>
+    <a href="#ParameterComputerDN">computer_dn ...</a>
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchDesc">-desc</a>]
+    [<a href="#SwitchDisabled">-disabled</a>]
+    [<a href="#SwitchDn">-dn</a>]
+    [<a href="#SwitchL">-l</a>]
+    [<a href="#SwitchLoc">-loc</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchPart">-part partition_dn</a>
+     [<a href="#SwitchQLimit">-qlimit</a>]
+     [<a href="#SwitchQUsed">-qused</a>]]
+    [<a href="#SwitchQ">-q</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchSamId">-samid</a>]
+    [<a href="#SwitchSId">-sid</a>]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSGET
+    <a href="#ParameterComputer">computer</a>
+    <a href="#ParameterComputerDN">computer_dn</a>
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchL">-l</a>]
+    [<a href="#SwitchMemberOf">-memberof</a>
+     [<a href="#SwitchExpand">-expand</a>]]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSGET
+    <a href="#ParameterContact">contact</a>
+    <a href="#ParameterContactDN">contact_dn ...</a>
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchCompany">-company</a>]
+    [<a href="#SwitchDept">-dept</a>]
+    [<a href="#SwitchDesc">-desc</a>]
+    [<a href="#SwitchDisplay">-display</a>]
+    [<a href="#SwitchDn">-dn</a>]
+    [<a href="#SwitchEmail">-email</a>]
+    [<a href="#SwitchFax">-fax</a>]
+    [<a href="#SwitchFn">-fn</a>]
+    [<a href="#SwitchHomeTel">-hometel</a>]
+    [<a href="#SwitchIpTel">-iptel</a>]
+    [<a href="#SwitchL">-l</a>]
+    [<a href="#SwitchLn">-ln</a>]
+    [<a href="#SwitchMi">-mi</a>]
+    [<a href="#SwitchMobile">-mobile</a>]
+    [<a href="#SwitchOffice">-office</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchPager">-pager</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [{<a href="#SwitchS">-s server</a>
+     | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchTel">-tel</a>]
+    [<a href="#SwitchTitle">-title</a>]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSGET
+    <a href="#ParameterGroup">group</a>
+    <a href="#ParameterGroupDN">group_dn ...</a>
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchDesc">-desc</a>]
+    [<a href="#SwitchDn">-dn</a>]
+    [<a href="#SwitchL">-l</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchPart">-part partition_dn</a>
+     [<a href="#SwitchQLimit">-qlimit</a>]
+     [<a href="#SwitchQUsed">-qused</a>]]
+    [<a href="#SwitchQ">-q</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchSamId">-samid</a>]
+    [<a href="#SwitchScope">-scope</a>]
+    [<a href="#SwitchSecGrp">-secgrp</a>]
+    [<a href="#SwitchSId">-sid</a>]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSGET
+    <a href="#ParameterGroup">group</a>
+    <a href="#ParameterGroupDN">group_dn</a>
+    [<a href="#SwitchC">-c</a>]
+    [{<a href="#SwitchMemberOf">-memberof</a>
+     | <a href="#SwitchMembers">-members</a>}]
+    [<a href="#SwitchExpand">-expand</a>]]
+    [<a href="#SwitchL">-l</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSGET
+    <a href="#ParameterOu">ou</a>
+    <a href="#ParameterOrganizationalUnitDN">organizational_unit_dn ...</a>
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchDesc">-desc</a>]
+    [<a href="#SwitchDn">-dn</a>]
+    [<a href="#SwitchL">-l</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSGET
+    <a href="#ParameterPartition">partition</a>
+    <a href="#ParameterPartitionDN">partition_dn ...</a>
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchDn">-dn</a>]
+    [<a href="#SwitchL">-l</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [<a href="#SwitchQDefault">-qdefault</a>]
+    [<a href="#SwitchQTmbstnWt">-qtmbstnwt</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchTopObjOwner">-topobjowner display</a>]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSGET
+    <a href="#ParameterQuota">quota</a>
+    <a href="#ParameterQuotaDN">quota_dn ...</a>
+    [<a href="#SwitchAcct">-acct</a>]
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchDn">-dn</a>]
+    [<a href="#SwitchL">-l</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [<a href="#SwitchQLimit">-qlimit</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSGET
+    <a href="#ParameterServer">server</a>
+    <a href="#ParameterServerDN">server_dn ...</a>
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchDesc">-desc</a>]
+    [<a href="#SwitchDn">-dn</a>]
+    [<a href="#SwitchDnsName">-dnsname</a>]
+    [<a href="#SwitchIsGC">-isgc</a>]
+    [<a href="#SwitchL">-l</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchPart">-part partition_dn</a>
+    | <a href="#SwitchTopObjOwner">-topobjowner display</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [<a href="#SwitchSite">-site</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSGET
+    <a href="#ParameterSite">site</a>
+    <a href="#ParameterSiteCN">site_cn ...</a>
+    [<a href="#SwitchAutoTopology">-autotopology</a>]
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchCacheGroups">-cachegroups</a>]
+    [<a href="#SwitchDesc">-desc</a>]
+    [<a href="#SwitchDn">-dn</a>]
+    [<a href="#SwitchL">-l</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchPrefGCsite">-prefGCsite</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSGET
+    <a href="#ParameterSubnet">subnet</a>
+    <a href="#ParameterSubnetDN">subnet_dn ...</a>
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchDesc">-desc</a>]
+    [<a href="#SwitchDn">-dn</a>]
+    [<a href="#SwitchL">-l</a>]
+    [<a href="#SwitchLoc">-loc</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchSite">-site</a>]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSGET
+    <a href="#ParameterUser">user</a>
+    <a href="#ParameterUserDN">user_dn ...</a>
+    [<a href="#SwitchAcctExpires">-acctexpires</a>]
+    [<a href="#SwitchCanChPwd">-canchpwd</a>]
+    [<a href="#SwitchCompany">-company</a>]
+    [<a href="#SwitchDept">-dept</a>]
+    [<a href="#SwitchDesc">-desc</a>]
+    [<a href="#SwitchDisabled">-disabled</a>]
+    [<a href="#SwitchDisplay">-display</a>]
+    [<a href="#SwitchDn">-dn</a>]
+    [<a href="#SwitchEmail">-email</a>]
+    [<a href="#SwitchEmpId">-empid</a>]
+    [<a href="#SwitchFax">-fax</a>]
+    [<a href="#SwitchFn">-fn</a>]
+    [<a href="#SwitchFull">-full</a>]
+    [<a href="#SwitchHmDir">-hmdir</a>]
+    [<a href="#SwitchHmDrv">-hmdrv</a>]
+    [<a href="#SwitchHomeTel">-hometel</a>]
+    [<a href="#SwitchIpTel">-iptel</a>]
+    [<a href="#SwitchLn">-ln</a>]
+    [<a href="#SwitchLoscr">-loscr</a>]
+    [<a href="#SwitchMgr">-mgr</a>]
+    [<a href="#SwitchMi">-mi</a>]
+    [<a href="#SwitchMobile">-mobile</a>]
+    [<a href="#SwitchMustChPwd">-mustchpwd</a>]
+    [<a href="#SwitchOffice">-office</a>]
+    [<a href="#SwitchPager">-pager</a>]
+    [<a href="#SwitchPart">-part partition_dn</a>
+     [<a href="#SwitchQLimit">-qlimit</a>]
+     [<a href="#SwitchQUsed">-qused</a>]]
+    [<a href="#SwitchProfile">-profile</a>]
+    [<a href="#SwitchPwdNeverExpires">-pwdneverexpires</a>]
+    [<a href="#SwitchReversiblePwd">-reversiblepwd</a>]
+    [<a href="#SwitchSamId">-samid</a>]
+    [<a href="#SwitchSId">-sid</a>]
+    [<a href="#SwitchTel">-tel</a>]
+    [<a href="#SwitchTitle">-title</a>]
+    [<a href="#SwitchUpn">-upn</a>]
+    [<a href="#SwitchWebPg">-webpg</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSGET
+    <a href="#ParameterUser">user</a>
+    <a href="#ParameterUserDN">user_dn</a>
+    [<a href="#SwitchExpand">-expand</a>]
+    [<a href="#SwitchMemberOf">-memberof</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterComputer"></a> computer
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the properties of a computer in the
+      directory. There are two variations of this command.
+      The first variation allows you to view the properties
+      of multiple computers. The second variation allows you
+      to view the membership information of a single
+      computer.</dd>
+
+      <dt><a name="ParameterComputerDN"></a> computer_dn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>First variation, specifies the distinguished names
+      of the computer object list that you want to view. If
+      values are omitted, they are obtained through standard
+      input (stdin) to support piping of output from another
+      command to input of this command.</dd>
+      <dd>Second variation, specifies the distinguished name
+      of the single computer you want to view.</dd>
+
+      <dt><a name="ParameterContact"></a> contact
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the various properties of a contact in
+      the directory.</dd>
+
+      <dt><a name="ParameterContactDN"></a> contact_dn ...
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the distinguished names of the contact
+      objects that you want to view. If omitted, its value
+      is taken from standard input (stdin) to support piping
+      of output from another command to input of this
+      command.</dd>
+
+      <dt><a name="ParameterGroup"></a> group
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the various properties of a group
+      including the members of a group in the directory.
+      There are two variations of this command. The first
+      variation allows you to view the properties of
+      multiple groups. The second variation allows you to
+      view the group membership information of a single
+      group.</dd>
+
+      <dt><a name="ParameterGroupDN"></a> group_dn ...
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>First variation, specifies the distinguished names
+      of the group objects that you want to view. If
+      omitted, they are obtained through standard input
+      (stdin) to support piping of output from another
+      command to input of this command.</dd>
+      <dd>Second variation, specifies the distinguished name
+      of the computer you want to view.</dd>
+
+      <dt><a name="ParameterOu"></a> ou
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the various properties of an
+      organizational unit in the directory.</dd>
+
+      <dt><a name="ParameterOrganizationalUnitDN"></a> organizational_unit_dn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the distinguished names of the
+      organizational units that you want to view. If
+      omitted, they are obtained through standard input
+      (stdin) to support piping of output from another
+      command to input of this command.</dd>
+
+      <dt><a name="ParameterPartition"></a> partition
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the properties of a directory partition.</dd>
+
+      <dt><a name="ParameterPartitionDN"></a> partition_dn ...
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the distinguished names of the partition
+      objects to view. If omitted, they are obtained through
+      standard input (stdin) to support piping of output
+      from another command to input of this command.</dd>
+
+      <dt><a name="ParameterQuota"></a> quota
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the properties of a quota specification
+      defined in the directory.</dd>
+
+      <dt><a name="ParameterQuotaDN"></a> quota_dn ...
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the distinguished names of the quota
+      objects to view. If omitted, they are obtained through
+      standard input (stdin) to support piping of output
+      from another command to input of this command.</dd>
+
+      <dt><a name="ParameterServer"></a> server
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the properties of a domain controller
+      defined in the directory.</dd>
+
+      <dt><a name="ParameterServerDN"></a> server_dn ...
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the list of server object distinguished
+      names to view. If omitted, they are obtained through
+      standard input (stdin) to support piping of output
+      from another command to input of this command.</dd>
+
+      <dt><a name="ParameterSite"></a> site
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the various properties of a site defined
+      in the directory.</dd>
+
+      <dt><a name="ParameterSiteCN"></a> site_cn ...
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the common name of one or more sites
+      that you want to view. If values are omitted, they are
+      obtained through standard input (stdin) to support
+      piping of output from another command to input of this
+      command. </dd>
+
+      <dt><a name="ParameterSubnet"></a> subnet
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays properties of a subnet defined in the
+      directory.</dd>
+
+      <dt><a name="ParameterSubnetDN"></a> subnetr_dn ...
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the common names of one or more subnets
+      that you want to view.</dd>
+
+      <dt><a name="ParameterUser"></a> user
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display the various properties of a user in the
+      directory. There are two variations of this command.
+      The first variation allows you to view the properties
+      of multiple users. The second variation allows you to
+      view the group membership information of a single
+      user.</dd>
+
+      <dt><a name="ParameterUserDN"></a> user_dn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>First variation, specifies the distinguished names
+      of the user objects that you want to view. If omitted,
+      they are obtained through standard input (stdin) to
+      support piping of output from another command to input
+      of this command.</dd>
+      <dd>Second variation, specifies the distinguished name
+      of the user you want to view.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchAcct"></a> -acct
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the distinguished names of the accounts
+      to which the quotas are assigned.</dd>
+
+      <dt><a name="SwitchAcctExpires"></a> -acctexpires
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays dates indicating when user accounts
+      expire. If the accounts never expire, never is
+      displayed.</dd>
+
+      <dt><a name="SwitchAutoTopology"></a> -autotopology
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays information about whether automatic
+      intersite topology generation is enabled (yes) or
+      disabled (no) for specified sites.</dd>
+
+      <dt><a name="SwitchC"></a> -c
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Reports errors, but continues with the next object
+      in the argument list when multiple target objects are
+      specified (continuous operation mode). If omitted, the
+      command exits on the first error.</dd>
+
+      <dt><a name="SwitchCacheGroups"></a> -cachegroups
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays information about whether caching of
+      universal group memberships for this site is enabled
+      (yes) or disabled (no) to support logons that do not
+      check the global catalog.</dd>
+
+      <dt><a name="SwitchCanChPwd"></a> -canchpwd
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays information about whether users can
+      change their password (yes) or not (no).</dd>
+
+      <dt><a name="SwitchCompany"></a> -company
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the company information for the
+      contacts/users.</dd>
+
+      <dt><a name="SwitchD"></a> -d domain
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Connects to a specified domain. By default, the
+      computer is connected to the domain controller in the
+      logon domain.</dd>
+
+      <dt><a name="SwitchDept"></a> -dept
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the departments of the contacts/users.</dd>
+
+      <dt><a name="SwitchDesc"></a> -desc
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the descriptions of the
+      computers/contacts/groups/organizational
+      units/servers/sites/subnets/users.</dd>
+
+      <dt><a name="SwitchDisabled"></a> -disabled
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the status of the computer accounts. A
+      value yes returned establishes that the account is
+      disabled (for logon); a value of no establishes that
+      the account is enabled (for logon).</dd>
+
+      <dt><a name="SwitchDisplay"></a> -display
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the display names of the contacts/users.</dd>
+
+      <dt><a name="SwitchDn"></a> -dn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the distinguished names of the
+      computers/contacts/groups/organizational
+      units/servers/sites/subnets/users.</dd>
+
+      <dt><a name="SwitchDnsName"></a> -dnsname
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the DNS host names of the servers.</dd>
+
+      <dt><a name="SwitchEmail"></a> -email
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the e-mail addresses of the
+      contacts/users.</dd>
+
+      <dt><a name="SwitchEmpId"></a> -empid
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the employee IDs of the users.</dd>
+
+      <dt><a name="SwitchExpand"></a> -expand
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the recursively expanded list of
+      groups/members of which the computer/group/user is a member.
+      Takes the immediate group membership list of the
+      computer/group/user and then recursively expands each group
+      in this list to determine its group memberships as
+      well to arrive at a complete closure set of the groups.</dd>
+
+      <dt><a name="SwitchFax"></a> -fax
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the fax numbers of the contacts/users.</dd>
+
+      <dt><a name="SwitchFn"></a> -fn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the first names of the contacts/users.</dd>
+
+      <dt><a name="SwitchFull"></a> -full
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the full names of the users.</dd>
+
+      <dt><a name="SwitchHmDir"></a> -hmdir
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the home directory the user is mapped
+      to, may be an UNC path.</dd>
+
+      <dt><a name="SwitchHmDrv"></a> -hmdrv
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the user's home drive letter if home
+      directory is a UNC path.</dd>
+
+      <dt><a name="SwitchHomeTel"></a> -hometel
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the home telephone numbers of the
+      contacts/users.</dd>
+
+      <dt><a name="SwitchIpTel"></a> -iptel
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the IP phone numbers of the
+      contacts/users.</dd>
+
+      <dt><a name="SwitchIsGC"></a> -isgc
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays information about whether the server is
+      a global catalog (yes) or not (no).</dd>
+
+      <dt><a name="SwitchL"></a> -l
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays entries in a list format. By default,
+      entries are displayed in a table format.</dd>
+
+      <dt><a name="SwitchLn"></a> -ln
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the last names of the contacts/users.</dd>
+
+      <dt><a name="SwitchLoc"></a> -loc
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the computer/subnet locations.</dd>
+
+      <dt><a name="SwitchLoscr"></a> -loscr
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the user logon script paths.</dd>
+
+      <dt><a name="SwitchMemberOf"></a> -memberof
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the immediate list of groups of which the
+      computer/group/user is a member. This takes a single
+      target object only as input.</dd>
+
+      <dt><a name="SwitchMembers"></a> -members
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the immediate list of members of the
+      group.</dd>
+
+      <dt><a name="SwitchMgr"></a> -mgr
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the user managers of the users.</dd>
+
+      <dt><a name="SwitchMi"></a> -mi
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the middle initial of the
+      contacts/users.</dd>
+
+      <dt><a name="SwitchMobile"></a> -mobile
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the mobile phone numbers of the
+      contacts/users.</dd>
+
+      <dt><a name="SwitchMustChPwd"></a> -mustchpwd
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays information about whether users must
+      change their passwords at the time of next logon
+      (yes) or not (no).</dd>
+
+      <dt><a name="SwitchOffice"></a> -office
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the office locations of the
+      contacts/users.</dd>
+
+      <dt><a name="SwitchP"></a> -p {password | *}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies to use either a password or * to log on
+      to a remote server.
+      If *, then prompted for password.</dd>
+
+      <dt><a name="SwitchPager"></a> -pager
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the pager numbers of the contacts/users.</dd>
+
+      <dt><a name="SwitchPart"></a> -part partition_dn
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the distinguished name of the directory
+      partition on which you want to create a quota.
+      If you do not specify the partition_dn
+      it is taken from standard input (stdin).</dd>
+
+      <dt><a name="SwitchPrefGCsite"></a> -prefGCsite
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the name of the preferred global catalog
+      site used to refresh universal group membership
+      caching for this site?s domain controllers, if
+      universal group membership caching has been enabled.</dd>
+
+      <dt><a name="SwitchProfile"></a> -profile
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the user profile paths.</dd>
+
+      <dt><a name="SwitchPwdNeverExpires"></a> -pwdneverexpires
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays information about whether the user
+      passwords never expires (yes) or not (no).</dd>
+
+      <dt><a name="SwitchQ"></a> -q
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Suppresses all output to standard output
+      (quiet mode).</dd>
+
+      <dt><a name="SwitchQDefault"></a> -qdefault
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the default quota that applies to any
+      security principal (user, group, computer, or iNetOrg
+      person) creating an object in the directory partition,
+      if no specific quota specification governs that
+      security principal.
+      An unlimited quota displays as "-1".</dd>
+
+      <dt><a name="SwitchQLimit"></a> -qlimit
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the effective quota of the computer
+      within the specified directory partition.</dd>
+
+      <dt><a name="SwitchQTmbstnWt"></a> -qtmbstnwt
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the percent by which the tombstone
+      object count should be reduced when calculating quota
+      usage.</dd>
+
+      <dt><a name="SwitchQUsed"></a> -qused
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays how much of its quota the computer has
+      used within the specified directory partition.</dd>
+
+      <dt><a name="SwitchReversiblePwd"></a> -reversiblepwd
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays information about whether the user
+      passwords are allowed to be stored using reversible
+      encryption (yes) or not (no).</dd>
+
+      <dt><a name="SwitchS"></a> -s server
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Connects to a specified remote server. By default,
+      the computer is connected to the domain controller in
+      the logon domain.</dd>
+
+      <dt><a name="SwitchSamId"></a> -samid
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the computer/group/users SAM account names.</dd>
+
+      <dt><a name="SwitchScope"></a> -scope
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display information about whether group scopes are
+      local, global, or universal.</dd>
+
+      <dt><a name="SwitchSecGrp"></a> -secgrp
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays information about whether groups are
+      security groups (yes) or a distribution groups (no).</dd>
+
+      <dt><a name="SwitchSId"></a> -sid
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the computer/group/users security IDs (SIDs).</dd>
+
+      <dt><a name="SwitchSite"></a> -site
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the site names to which the
+      servers/subnets belong.</dd>
+
+      <dt><a name="SwitchTel"></a> -tel
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the telephone numbers of the
+      contacts/users.</dd>
+
+      <dt><a name="SwitchTitle"></a> -title
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the titles of the contacts/users.</dd>
+
+      <dt><a name="SwitchTopObjOwner"></a> -topobjowner display
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays a sorted list of the security principals
+      (users, computers, security groups, and inetOrgPersons)
+      that own the largest number of directory objects across
+      all directory partitions on the server and the number
+      of directory objects that they own. The number of
+      accounts to display in the list is specified by
+      display (0 - all, 10 - default).</dd>
+      <dd>Overrides any other specified switches, so that
+      only the results of -topobjowner are displayed.</dd>
+
+      <dt><a name="SwitchU"></a> -u user_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the user name with which user will log
+      on to a remote server. By default, the logged on user
+      name is used. You can specify a user name using one
+      of the formats:
+<pre>
+      user name
+      domain\user name
+      user principal name (UPN)
+</pre>
+      </dd>
+
+      <dt><a name="SwitchUc"></a> -uc | -uci | -uco
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies that output or input data is
+      formatted in Unicode:
+        <ul>
+          <li><b>-uc</b> input from or output to a pipe (|)</li>
+          <li><b>-uco</b> output to a pipe (|) or a file</li>
+          <li><b>-uci</b> input from a pipe (|) or a file</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchUpn"></a> -upn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the user principal names of the users.</dd>
+
+      <dt><a name="SwitchWebPg"></a> -wegpg
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the user Web page URLs.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

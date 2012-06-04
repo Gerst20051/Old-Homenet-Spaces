@@ -1,0 +1,136 @@
+body	{
+	background-attachment: scroll;
+/*	background-attachment: fixed; */
+	background-color:black;
+	background-position: 0% 0%;
+	background-repeat: repeat;
+/*	background-repeat: no-repeat; */
+/*	background-repeat: repeat-x; */
+/*	background-repeat: repeat-y; */
+	clear: none;
+/*	clear: both; */
+/*	clear: left; */
+/*	clear: right; */
+	color:darkorange;
+	display: block;
+/*	display: inline; */
+/*	display: list-item; */
+/*	display: none; */
+	float: none;
+/*	float: left; */
+/*	float: right; */
+	font-family: times, arial, zapf-chancery, western, courier, serif;
+	font-size: medium
+/*	font-size: large; */
+/*	font-size: small; */
+/*	font-size: x-large; */
+/*	font-size: x-small; */
+/*	font-size: xx-large; */
+/*	font-size: xx-small; */
+	font-style: normal;
+/*	font-style: italic; */
+/*	font-style: oblique; */
+	font-variant: normal;
+/*	font-variant: small-caps; */
+	font-weight: normal;
+/*	font-weight: bold; */
+/*	font-weight: bolder; */
+/*	font-weight: lighter; */
+	height: auto;
+	letter-spacing: normal;
+	line-height: 100%;
+	list-style-position: outside;
+/*	list-style-position: inside; */
+	list-style-type: disc;
+/*	list-style-type: circle; */
+/*	list-style-type: decimal; */
+/*	list-style-type: lower-alpha; */
+/*	list-style-type: lower-roman; */
+/*	list-style-type: none; */
+/*	list-style-type: square; */
+/*	list-style-type: upper-alpha; */
+/*	list-style-type: upper-roman; */
+	margin-left: 0;
+	scrollbar-arrow-color: yellow;
+	scrollbar-face-color: orange;
+	scrollbar-track-color: darkorange;
+	text-align: left;
+/*	text-align: center; */
+/*	text-align: justify; */
+/*	text-align: right; */
+	text-decoration: none;
+/*	text-decoration: blink; */
+/*	text-decoration: line-through; */
+/*	text-decoration: overline; */
+/*	text-decoration: underline; */
+	text-indent: 0;
+	text-transform: none;
+/*	text-transform: capitalize; */
+/*	text-transform: lowercase; */
+/*	text-transform: uppercase; */
+	vertical-align: baseline;
+/*	vertical-align: bottom; */
+/*	vertical-align: middle; */
+/*	vertical-align: sub; */
+/*	vertical-align: super; */
+/*	vertical-align: text-bottom; */
+/*	vertical-align: text-top; */
+/*	vertical-align: top; */
+	white-space: normal;
+/*	white-space: nowrap; */
+/*	white-space: pre; */
+	width: auto;
+	word-spacing: normal;
+	}
+a	{
+	color:orange;
+	}
+a:active {
+	}
+a:hover	{
+	color:yellow;
+	text-decoration: underline overline;
+	}
+a:link  {
+	}
+a:visited {
+	color:yellow;
+	text-decoration: none;
+	}
+
+b	{
+	font-weight: bold;
+	}
+dl	{
+	}
+dd	{
+	}
+dt	{
+	}
+h1	{
+	}
+hr	{
+	color: orange;
+	}
+i	{
+	font-style: italic;
+	}
+p	{
+	}
+
+pre	{
+	background-color:darkslategray;
+	}
+pre b	{
+	font-weight: bold;
+	}
+pre i	{
+	font-style: italic;
+	}
+
+li	{
+	}
+ol	{
+	}
+ul	{
+	}

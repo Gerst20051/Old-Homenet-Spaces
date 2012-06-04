@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>GPUPDATE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#g">Commands A-M</a>
+    &gt; <a href="../INDEXG.HTM#gpupdate">Commands G</a>
+    <h1>GPUPDATE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Refreshes local and Active Directory-based Group Policy settings,
+    including security settings.
+    This command supersedes <a href="../S/SECEDIT.HTM">SECEDIT</a>
+    /refreshpolicy.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>GPUPDATE
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>GPUPDATE
+    [<a href="#SwitchBoot">/boot</a>]
+    [<a href="#SwitchForce">/force</a>]
+    [<a href="#SwitchLogoff">/logoff</a>]
+    [<a href="#SwitchTarget">/target:value</a>]
+    [<a href="#SwitchWait">/wait:value</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchBoot"></a> /boot
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Restarts the computer after the refresh has completed.
+      This is required for those Group Policy client-side extensions
+      that do not process on a background refresh cycle but that do
+      process when the computer starts up, such as computer Software
+      Installation. This option has no effect if there are no
+      extensions called that require the computer to be restarted.</dd>
+
+      <dt><a name="SwitchForce"></a> /force
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Ignores all processing optimizations and reapplies all
+      settings.</dd>
+
+      <dt><a name="SwitchLogoff"></a> /logoff
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Logs off after the refresh has completed. This is
+      required for those Group Policy client-side extensions
+      that do not process on a background refresh cycle but
+      that do process when the user logs on, such as user
+      Software Installation and Folder Redirection. This
+      option has no effect if there are no extensions called
+      that require the user to log off.</dd>
+
+      <dt><a name="SwitchTarget"></a> /target:value
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Processes only the Computer settings or the current User
+      settings. By default, both the computer settings and the user
+      settings are processed. Valid value is:
+        <ul>
+          <li><b>COMPUTER</b></li>
+          <li><b>USER</b></li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchWait"></a> /wait:value
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Number of seconds that policy processing waits to finish.
+      The default is 600 seconds. 0 means "no wait";
+      -1 means "wait indefinitely."</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

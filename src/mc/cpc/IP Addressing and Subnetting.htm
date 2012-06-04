@@ -1,0 +1,531 @@
+<html>
+
+<head>
+<title>IP Addressing and Subnetting</title>
+<meta name="Microsoft Theme" content="strtedge 0011">
+</head>
+
+<body background="../../_themes/strtedge/strbkgde.gif" bgcolor="#FFFFFF" text="#000000" link="#660000" vlink="#003399" alink="#999933"><!--mstheme--><font face="arial,helvetica">
+
+<h1 align="center"><!--mstheme--><font face="Arial,Helvetica"><!--mstheme--><b><a name="Top">IP Addressing and Sub-Netting for New Users</a><!--mstheme--></font><!--mstheme--></b></h1>
+<!--msthemeseparator--><p align="center"><img src="../../_themes/strtedge/strrulee.gif" width="600" height="10" alt="horizontal rule"></p>
+<h2><!--mstheme--><font face="Arial,Helvetica">Contents<!--mstheme--></font></h2>
+<blockquote>
+  <b><a href="#Introduction">Introduction</a></b><br />
+  <b><a href="#Prerequisites">Prerequisites</a></b><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#Requirements">Requirements</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#Components Used">Components Used</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#Additional Information">Additional Information</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#Conventions">Conventions</a><br />
+  <b><a href="#Understanding IP Addresses">Understanding IP Addresses</a></b><br />
+  <b><a href="#Network Masks">Network Masks</a></b><br />
+  <b><a href="#Understanding Sub-Netting">Understanding Sub-netting</a></b><br />
+  <b><a href="#Examples">Homepage</a></b><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#Ex1">Sample Exercise 1</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#Ex2">Sample Exercise 2</a><br />
+  <b><a href="#VLSM Example">VLSM Example</a></b><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#VLSMExample">VLSM Example</a><br />
+  <b><a href="#CIDR">CIDR</a></b><br />
+  <b><a href="#Appendix">Appendix</a></b><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#Sample Config">Sample Config</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#Host/Subnet">Host/Subnet Quantities Table</a><br />
+  <b><a href="#Related Information">Related Information</a></b><br />
+  </blockquote>
+  <!--msthemeseparator--><p align="center"><img src="../../_themes/strtedge/strrulee.gif" width="600" height="10" alt="horizontal rule"></p>
+  <h2><!--mstheme--><font face="Arial,Helvetica"><a name="Introduction">Introduction</a> <!--mstheme--></font></h2>
+  <p>This document will give you basic information you will need to configure your 
+  router for routing IP, such as how addresses are broken down and how sub-netting 
+  works. You will learn how to assign each interface on the router an IP address 
+  with a unique subnet. And do not worry, we will show you lots of examples to help 
+  tie everything together. </p>
+  <p align="center"><a href="#Top">
+  <img border="0" src="../../i/sy/na/Top%203.gif" alt="Top" width="40" height="40"></a></p>
+  <h2><!--mstheme--><font face="Arial,Helvetica"><a name="Prerequisites">Prerequisites</a> <!--mstheme--></font></h2>
+  <h3><a name="Requirements">Requirements</a> </h3>
+  <p>There are no specific prerequisites for this document.</p>
+  <h3><a name="Components Used">Components Used</a> </h3>
+  <p>This document is not restricted to specific software and hardware versions.</p>
+  <h3><a name="Additional Information">Additional Information</a> </h3>
+  <p>If definitions are helpful to you, use these vocabulary terms to get you started:
+  </p>
+  <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/strtedge/astrbul1e.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="arial,helvetica">
+    <p><b>Address</b>—The unique number ID assigned to one host or interface in 
+    a network.</p>
+    <!--mstheme--></font><!--msthemelist--></td></tr>
+    <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/strtedge/astrbul1e.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="arial,helvetica">
+    <p><b>Subnet</b>—A portion of a network sharing a particular subnet address.</p>
+    <!--mstheme--></font><!--msthemelist--></td></tr>
+    <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/strtedge/astrbul1e.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="arial,helvetica">
+    <p><b>Subnet mask</b>—A 32-bit combination used to describe which portion of 
+    an address refers to the subnet and which part refers to the host.</p>
+    <!--mstheme--></font><!--msthemelist--></td></tr>
+    <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/strtedge/astrbul1e.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="arial,helvetica">
+    <p><b>Interface</b>—A network connection.</p>
+    <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--></table><!--mstheme--><font face="arial,helvetica">
+  <p>If you have already received your legitimate address(es) from the InterNIC 
+  (Internet Network Information Center), you are ready to begin. If you are not 
+  planning on connecting to the Internet, we strongly suggest that you use reserved 
+  addresses from <a target="_blank" href="http://www.ietf.org/rfc/rfc1918.txt">RFC 
+  1918</a>
+  <img alt="leaving website" src="../../i/sy/Extra/Exit.gif" width="0" height="0" />.
+  </p>
+  <h3><a name="Conventions">Conventions</a> </h3>
+  <p>For more information on document conventions, see the
+  <a href="http://www.cisco.com/warp/public/459/techtip_conventions.html">Cisco 
+  Technical Tips Conventions</a>.</p>
+  <p align="center"><a href="#Top">
+  <img border="0" src="../../i/sy/na/Top%203.gif" alt="Top" width="40" height="40"></a></p>
+  <h2><!--mstheme--><font face="Arial,Helvetica"><a name="Understanding IP Addresses">Understanding IP Addresses</a> <!--mstheme--></font></h2>
+  <p>An IP address is an address used to uniquely identify a device on an IP network. 
+  The address is made up of 32 binary bits which can be divisible into a network 
+  portion and host portion with the help of a subnet mask. The 32 binary bits are 
+  broken into four octets (1 octet = 8 bits). Each octet is converted to decimal 
+  and separated by a period (dot). For this reason, an IP address is said to be 
+  expressed in dotted decimal format (for example, 172.16.81.100). The value in 
+  each octet ranges from 0 to 255 decimal, or 00000000 - 11111111 binary. </p>
+  <p>Here is how binary octets convert to decimal: The right most bit, or least 
+  significant bit, of an octet will hold a value of 2<sup>0</sup>. The bit just 
+  to the left of that will hold a value of 2<sup>1</sup>. This continues until the 
+  left-most bit, or most significant bit, which will hold a value of 2<sup>7</sup>. 
+  So if all binary bits are a one, the decimal equivalent would be 255 as shown 
+  here:</p>
+  <blockquote>
+    <!--mstheme--></font><pre>    1  1  1  1 1 1 1 1
+  128 64 32 16 8 4 2 1 (128+64+32+16+8+4+2+1=255)</pre><!--mstheme--><font face="arial,helvetica">
+  </blockquote>
+  <p>Here is a sample octet conversion when not all of the bits are set to 1.</p>
+  <blockquote>
+    <!--mstheme--></font><pre>  0  1 0 0 0 0 0 1
+  0 64 0 0 0 0 0 1 (0+64+0+0+0+0+0+1=65)</pre><!--mstheme--><font face="arial,helvetica">
+  </blockquote>
+  <p>And this is sample shows an IP address represented in both binary and decimal.</p>
+  <blockquote>
+    <!--mstheme--></font><pre>        10.       1.      23.      19 (decimal)
+  00001010.00000001.00010111.00010011 (binary)</pre><!--mstheme--><font face="arial,helvetica">
+  </blockquote>
+  <p>These octets are broken down to provide an addressing scheme that can accommodate 
+  large and small networks. There are five different classes of networks, A to E. 
+  This document focuses on addressing classes A to C, since classes D and E are 
+  reserved and discussion of them is beyond the scope of this document.</p>
+  <p><b>Note: </b>Also note that the terms &quot;Class A, Class B&quot; and so on are used 
+  in this document to help facilitate the understanding of IP addressing and subnetting. 
+  These terms are rarely used in the industry anymore because of the introduction 
+  of <a href="#cidr">classless interdomain routing (CIDR)</a>.</p>
+  <p>Given an IP address, its class can be determined from the three high-order 
+  bits. <a href="#Figure 1">Figure 1</a> shows the significance in the three high 
+  order bits and the range of addresses that fall into each class. For informational 
+  purposes, Class D and Class E addresses are also shown. </p>
+  <a name="Figure 1"><b>Figure 1</b> </a>
+  <p><a name="Figure1"></a></p>
+  <a name="figone"></a>
+  <p><a name="figone">
+  <img alt="3a.gif" border="1" src="../../i/mc/cpc/Bottom%20Table/IP%20Addressing/A.gif" usemap width="533" height="416" />
+  </a></p>
+  <a name="figone"></a>
+  <p><a name="Figureone">In a Class A address, the first octet is the network portion, 
+  so the Class A example in </a><a href="#Figure 1">Figure 1</a> has a major network 
+  address of 10. Octets 2, 3, and 4 (the next 24 bits) are for the network manager 
+  to divide into subnets and hosts as he/she sees fit. Class A addresses are used 
+  for networks that have more than 65,536 hosts (actually, up to 16777214 hosts!).
+  </p>
+  <p>In a Class B address, the first two octets are the network portion, so the 
+  Class B example in <a href="#Figure 1">Figure 1</a> has a major network address 
+  of 172.16. Octets 3 and 4 (16 bits) are for local subnets and hosts. Class B addresses 
+  are used for networks that have between 256 and 65534 hosts. </p>
+  <p>In a Class C address, the first three octets are the network portion. The Class 
+  C example in <a href="#Figure 1">Figure 1</a> has a major network address of 193.18.9. 
+  Octet 4 (8 bits) is for local subnets and hosts - perfect for networks with less 
+  than 254 hosts. </p>
+  <p align="center"><a href="#Top">
+  <img border="0" src="../../i/sy/na/Top%203.gif" alt="Top" width="40" height="40"></a></p>
+  <h2><!--mstheme--><font face="Arial,Helvetica"><a name="Network Masks">Network Masks</a> <!--mstheme--></font></h2>
+  <p>A network mask helps you know which portion of the address identifies the network 
+  and which portion of the address identifies the node. Class A, B, and C networks 
+  have default masks, also known as natural masks, as shown here:</p>
+  <blockquote>
+    <!--mstheme--></font><pre>Class A: 255.0.0.0
+Class B: 255.255.0.0
+Class C: 255.255.255.0</pre><!--mstheme--><font face="arial,helvetica">
+  </blockquote>
+  <p>An IP address on a Class A network that has not been subnetted would have an 
+  address/mask pair similar to: 8.20.15.1 255.0.0.0. To see how the mask helps you 
+  identify the network and node parts of the address, convert the address and mask 
+  to binary numbers.</p>
+  <blockquote>
+    <!--mstheme--></font><pre>8.20.15.1 = 00001000.00010100.00001111.00000001
+255.0.0.0 = 11111111.00000000.00000000.00000000</pre><!--mstheme--><font face="arial,helvetica">
+  </blockquote>
+  <p>Once you have the address and the mask represented in binary, then identifying 
+  the network and host ID is easier. Any address bits which have corresponding mask 
+  bits set to 1 represent the network ID. Any address bits that have corresponding 
+  mask bits set to 0 represent the node ID.</p>
+  <blockquote>
+    <!--mstheme--></font><pre>8.20.15.1 = 00001000.00010100.00001111.00000001
+255.0.0.0 = 11111111.00000000.00000000.00000000
+            -----------------------------------
+             net id |      host id             
+
+netid =  00001000 = 8
+hostid = 00010100.00001111.00000001 = 20.15.1</pre><!--mstheme--><font face="arial,helvetica">
+    <div align="center">
+      <!--mstheme--></font><pre><a href="#Top"><img border="0" src="../../i/sy/na/Top%203.gif" alt="Top" width="40" height="40"></a></pre><!--mstheme--><font face="arial,helvetica">
+    </div>
+  </blockquote>
+  <h2><!--mstheme--><font face="Arial,Helvetica"><a name="Understanding Sub-Netting">Understanding Sub-Netting</a> <!--mstheme--></font></h2>
+  <p>Subnetting allows you to create multiple logical networks that exist within 
+  a single Class A, B, or C network. If you do not subnet, you will only be able 
+  to use one network from your Class A, B, or C network, which is unrealistic.
+  </p>
+  <p>Each data link on a network must have a unique network ID, with every node 
+  on that link being a member of the same network. If you break a major network 
+  (Class A, B, or C) into smaller subnetworks, it allows you to create a network 
+  of interconnecting subnetworks. Each data link on this network would then have 
+  a unique network/subnetwork ID. Any device, or gateway, connecting <i>n</i> networks/subnetworks 
+  has <i>n</i> distinct IP addresses, one for each network / subnetwork that it 
+  interconnects.</p>
+  <p>To subnet a network, extend the natural mask using some of the bits from the 
+  host ID portion of the address to create a subnetwork ID. For example, given a 
+  Class C network of 204.15.5.0 which has a natural mask of 255.255.255.0, you can 
+  create subnets in this manner:</p>
+  <blockquote>
+    <!--mstheme--></font><pre>204.15.5.0 -      11001100.00001111.00000101.00000000
+255.255.255.224 - 11111111.11111111.11111111.11100000
+                  --------------------------|sub|----</pre><!--mstheme--><font face="arial,helvetica">
+  </blockquote>
+  <p>By extending the mask to be 255.255.255.224, you have taken three bits (indicated 
+  by &quot;sub&quot;) from the original host portion of the address and used them to make 
+  subnets. With these three bits, it is possible to create eight subnets. With the 
+  remaining five host ID bits, each subnet can have up to 32 host addresses, 30 
+  of which can actually be assigned to a device <i>since host ids of all zeros or 
+  all ones are not allowed</i> (it is very important to remember this). So, with 
+  this in mind, these subnets have been created.</p>
+  <blockquote>
+    <!--mstheme--></font><pre>204.15.5.0 255.255.255.224     host address range 1 to 30
+204.15.5.32 255.255.255.224    host address range 33 to 62
+204.15.5.64 255.255.255.224    host address range 65 to 94
+204.15.5.96 255.255.255.224    host address range 97 to 126
+204.15.5.128 255.255.255.224   host address range 129 to 158
+204.15.5.160 255.255.255.224   host address range 161 to 190
+204.15.5.192 255.255.255.224   host address range 193 to 222
+204.15.5.224 255.255.255.224   host address range 225 to 254</pre><!--mstheme--><font face="arial,helvetica">
+  </blockquote>
+  <p><b>Note: </b>There are two ways to denote these masks. First, since you are 
+  using three bits more than the &quot;natural&quot; Class C mask, you can denote these addresses 
+  as having a 3-bit subnet mask. Or, secondly, the mask of 255.255.255.224 can also 
+  be denoted as /27 as there are 27 bits that are set in the mask. This second method 
+  is used with <a href="#cidr">CIDR</a>. Using this method, one of thse networks 
+  can be described with the notation prefix/length. For example, 204.15.5.32/27 
+  denotes the network 204.15.5.32 255.255.255.224. When appropriate the prefix/length 
+  notation is used to denote the mask throughout the rest of this document.</p>
+  <p>The network subnetting scheme in this section allows for eight subnets, and 
+  the network might appear as:</p>
+  <a name="Figure 2"><b>Figure 2</b> </a>
+  <p><a name="Figure2"></a></p>
+  <a name="figtwo"></a>
+  <p><a name="figtwo">
+  <img alt="3b.gif" border="0" src="../../i/mc/cpc/Bottom%20Table/IP%20Addressing/B.gif" usemap width="497" height="190" />
+  </a></p>
+  <a name="figtwo"></a>
+  <p><a name="Figuretwo">Notice that each of the routers in </a>
+  <a href="#Figure 2">Figure 2</a> is attached to four subnetworks, one subnetwork 
+  is common to both routers. Also, each router has an IP address for each subnetwork 
+  to which it is attached. Each subnetwork could potentially support up to 30 host 
+  addresses.</p>
+  <p>This brings up an interesting point. The more host bits you use for a subnet 
+  mask, the more subnets you have available. However, the more subnets available, 
+  the less host addresses available per subnet. For example, a Class C network of 
+  204.17.5.0 and a mask of 255.255.255.224 (/27) allows you to have eight subnets, 
+  each with 32 host addresses (30 of which could be assigned to devices). If you 
+  use a mask of 255.255.255.240 (/28), the break down is:</p>
+  <blockquote>
+    <!--mstheme--></font><pre>204.15.5.0 -      11001100.00001111.00000101.00000000
+255.255.255.240 - 11111111.11111111.11111111.11110000
+                  --------------------------|sub |---</pre><!--mstheme--><font face="arial,helvetica">
+  </blockquote>
+  <p>Since you now have four bits to make subnets with, you only have four bits 
+  left for host addresses. So in this case you can have up to 16 subnets, each of 
+  which can have up to 16 host addresses (14 of which can be assigned to devices).</p>
+  <p>Take a look at how a Class B network might be subnetted. If you have network 
+  172.16.0.0 ,then you know that its natural mask is 255.255.0.0 or 172.16.0.0/16. 
+  Extending the mask to anything beyond 255.255.0.0 means you are subnetting. You 
+  can quickly see that you have the ability to create a lot more subnets than with 
+  the Class C network. If you use a mask of 255.255.248.0 (/21), how many subnets 
+  and hosts per subnet does this allow for?</p>
+  <blockquote>
+    <!--mstheme--></font><pre>172.16.0.0  -   10101100.00010000.00000000.00000000
+255.255.248.0 - 11111111.11111111.11111000.00000000
+                -----------------| sub |-----------</pre><!--mstheme--><font face="arial,helvetica">
+  </blockquote>
+  <p>You are using five bits from the original host bits for subnets. This will 
+  allow you to have 32 subnets (2<sup>5</sup>). After using the five bits for subnetting, 
+  you are left with 11 bits for host addresses. This will allow each subnet so have 
+  2048 host addresses (2<sup>11</sup>), 2046 of which could be assigned to devices.</p>
+  <p><b>Note: </b>In the past, there were limitations to the use of a subnet 0 (all 
+  subnet bits are set to zero) and all ones subnet (all subnet bits set to one). 
+  Some devices would not allow the use of these subnets. Cisco Systems devices will 
+  allow the use of these subnets when the<b>ip subnet zero</b> command is configured.
+  </p>
+  <p align="center"><a href="#Top">
+  <img border="0" src="../../i/sy/na/Top%203.gif" alt="Top" width="40" height="40"></a></p>
+  <h2><!--mstheme--><font face="Arial,Helvetica"><a name="Examples">Examples</a> <!--mstheme--></font></h2>
+  <h3><a name="Ex1">Sample Exercise 1</a> </h3>
+  <p>Now that you have an understanding of subnetting, put this knowledge to use. 
+  In this example, you are given two address / mask combinations, written with the 
+  prefix/length notation, which have been assigned to two devices. Your task is 
+  to determine if these devices are on the same subnet or different subnets. You 
+  can do this by using the address and mask of each device to determine to which 
+  subnet each address belongs. </p>
+  <blockquote>
+    <!--mstheme--></font><pre>DeviceA: 172.16.17.30/20
+DeviceB: 172.16.28.15/20</pre><!--mstheme--><font face="arial,helvetica">
+  </blockquote>
+  <p><b>Determining the Subnet for DeviceA:</b> </p>
+  <blockquote>
+    <!--mstheme--></font><pre>172.16.17.30  -   10101100.00010000.00010001.00011110
+255.255.240.0 -   11111111.11111111.11110000.00000000
+                  -----------------| sub|------------
+subnet =          10101100.00010000.00010000.00000000 = 172.16.16.0</pre><!--mstheme--><font face="arial,helvetica">
+  </blockquote>
+  <p>Looking at the address bits that have a corresponding mask bit set to one, 
+  and setting all the other address bits to zero (this is equivalent to performing 
+  a logical &quot;AND&quot; between the mask and address), shows you to which subnet this 
+  address belongs. In this case, DeviceA belongs to subnet 172.16.16.0.</p>
+  <p><b>Determining the Subnet for DeviceB:</b> </p>
+  <blockquote>
+    <!--mstheme--></font><pre>172.16.28.15  -   10101100.00010000.00011100.00001111
+255.255.240.0 -   11111111.11111111.11110000.00000000
+                  -----------------| sub|------------
+subnet =          10101100.00010000.00010000.00000000 = 172.16.16.0</pre><!--mstheme--><font face="arial,helvetica">
+  </blockquote>
+  <p>From these determinations, DeviceA and DeviceB have addresses that are part 
+  of the same subnet.</p>
+  <p align="center"><a href="#Top">
+  <img border="0" src="../../i/sy/na/Top%203.gif" alt="Top" width="40" height="40"></a></p>
+  <h3><a name="Ex2">Sample Exercise 2</a> </h3>
+  <p>Given the Class C network of 204.15.5.0/24, subnet the network in order to 
+  create the network in <a href="#Figure 3">Figure 3</a> with the host requirements 
+  shown.</p>
+  <a name="Figure 3"><b>Figure 3</b> </a>
+  <p><a name="Figure3"></a></p>
+  <a name="figthree"></a>
+  <p><a name="figthree">
+  <img alt="3c.gif" border="0" src="../../i/mc/cpc/Bottom%20Table/IP%20Addressing/C.gif" usemap width="284" height="153" />
+  </a></p>
+  <a name="figthree"></a>
+  <p><a name="Figurethree">Looking at the network shown in </a>
+  <a href="#Figure 3">Figure 3</a>, you can see that you are required to create 
+  five subnets. The largest subnet must support 28 host addresses. Is this possible 
+  with a Class C network? and if so, then how?</p>
+  <p>You can start by looking at the subnet requirement. In order to create the 
+  five needed subnets you would need to use three bits from the Class C host bits. 
+  Two bits would only allow you four subnets (2<sup>2</sup>).</p>
+  <p>Since you need three subnet bits, that leaves you with five bits for the host 
+  portion of the address. How many hosts will this support? 2<sup>5</sup> = 32 (30 
+  usable). This meets the requirement.</p>
+  <p>Therefore you have determined that it is possible to create this network with 
+  a Class C network. An example of how you might assign the subnetworks is:</p>
+  <blockquote>
+    <!--mstheme--></font><pre>netA: 204.15.5.0/27      host address range 1 to 30
+netB: 204.15.5.32/27     host address range 33 to 62
+netC: 204.15.5.64/27     host address range 65 to 94
+netD: 204.15.5.96/27     host address range 97 to 126
+netE: 204.15.5.128/27    host address range 129 to 158</pre><!--mstheme--><font face="arial,helvetica">
+  </blockquote>
+  <h2 align="center"><!--mstheme--><font face="Arial,Helvetica"><a href="#Top">
+  <img border="0" src="../../i/sy/na/Top%203.gif" alt="Top" width="40" height="40"></a><!--mstheme--></font></h2>
+  <h2><!--mstheme--><font face="Arial,Helvetica"><a name="VLSM Example">VLSM Example</a> <!--mstheme--></font></h2>
+  <p>In all of the previous examples of subnetting you will notice that the same 
+  subnet mask was applied for all the subnets. This means that each subnet has the 
+  same number of available host addresses. You may need this in some cases, but, 
+  in most cases, having the same subnet mask for all subnets ends up wasting address 
+  space. For example, in the <a href="#ex2">Sample Exercise 2</a> section, a class 
+  C network was split into eight equal-size subnets; however, each subnet did not 
+  utilize all available host addresses, which results in wasted address space.
+  <a href="#Figure 4">Figure 4</a> illustrates this wasted address space.</p>
+  <a name="Figure 4"><b>Figure 4</b> </a>
+  <p><a name="Figure4"></a></p>
+  <a name="figfour"></a>
+  <p><a name="figfour">
+  <img alt="3d.gif" border="0" src="../../i/mc/cpc/Bottom%20Table/IP%20Addressing/D.gif" usemap width="278" height="489" />
+  </a></p>
+  <a name="figfour"></a>
+  <p><a name="Figurefour"></a><a href="#Figure 4">Figure 4</a> illustrates that 
+  of the subnets that are being used, NetA, NetC, and NetD have a lot of unused 
+  host address space. This may have been a deliberate design accounting for future 
+  growth, but in many cases this is just wasted address space due to the fact that 
+  the same subnet mask is being used for all the subnets.</p>
+  <p>Variable Length Subnet Masks (VLSM) allows you to use different masks for each 
+  subnet, thereby using address space efficiently.</p>
+  <h3><a name="VLSMExample">VLSM Example</a> </h3>
+  <p>Given the same network and requirements as in <a href="#ex2">Sample Exercise 
+  2</a> develop a subnetting scheme using VLSM, given:</p>
+  <blockquote>
+    <!--mstheme--></font><pre>netA: must support 14 hosts
+netB: must support 28 hosts
+netC: must support 2 hosts
+netD: must support 7 hosts
+netE: must support 28 host</pre><!--mstheme--><font face="arial,helvetica">
+  </blockquote>
+  <p>Determine what mask allows the required number of hosts.</p>
+  <blockquote>
+    <!--mstheme--></font><pre>netA: requires a /28 (255.255.255.240) mask to support 14 hosts
+netB: requires a /27 (255.255.255.224) mask to support 28 hosts
+netC: requires a /30 (255.255.255.252) mask to support 2 hosts
+netD*: requires a /28 (255.255.255.240) mask to support 7 hosts
+netE: requires a /27 (255.255.255.224) mask to support 28 hosts
+
+* a /29 (255.255.255.248) would only allow 6 usable host addresses
+  therefore netD requires a /28 mask.</pre><!--mstheme--><font face="arial,helvetica">
+  </blockquote>
+  <p>The easiest way to assign the subnets is to assign the largest first. For example, 
+  you can assign in this manner:</p>
+  <blockquote>
+    <!--mstheme--></font><pre>netB: 204.15.5.0/27  host address range 1 to 30
+netE: 204.15.5.32/27 host address range 33 to 62
+netA: 204.15.5.64/28 host address range 65 to 78
+netD: 204.15.5.80/28 host address range 81 to 94
+netC: 204.15.5.96/30 host address range 97 to 98</pre><!--mstheme--><font face="arial,helvetica">
+  </blockquote>
+  <p>This can be graphically represented as shown in Figure 5:</p>
+  <a name="Figure 5"><b>Figure 5</b> </a>
+  <p><a name="Figure5"></a></p>
+  <a name="figfive"></a>
+  <p><a name="figfive">
+  <img alt="3e.gif" border="0" src="../../i/mc/cpc/Bottom%20Table/IP%20Addressing/E.gif" usemap width="293" height="428" />
+  </a></p>
+  <a name="figfive"></a>
+  <p><a name="Figurefive"></a><a href="#Figure 5">Figure 5</a> illustrates how using 
+  VLSM helped save more than half of the address space.</p>
+  <h2><!--mstheme--><font face="Arial,Helvetica"><a name="CIDR">CIDR</a> <!--mstheme--></font></h2>
+  <p>Classless Interdomain Routing (CIDR) was introduced to improve both address 
+  space utilization and routing scalability in the Internet. It was needed because 
+  of the rapid growth of the Internet and growth of the IP routing tables held in 
+  the Internet routers.</p>
+  <p>CIDR moves way from the traditional IP classes (Class A, Class B, Class C, 
+  and so on). In CIDR , an IP network is represented by a prefix, which is an IP 
+  address and some indication of the length of the mask. Length means the number 
+  of left-most contiguous mask bits that are set to one. So network 172.16.0.0 255.255.0.0 
+  can be represented as 172.16.0.0/16. CIDR also depicts a more hierarchical Internet 
+  architecture, where each domain takes its IP addresses from a higher level. This 
+  allows for the summarization of the domains to be done at the higher level. For 
+  example, if an ISP owns network 172.16.0.0/16, then the ISP can offer 172.16.1.0/24, 
+  172.16.2.0/24,and so on to customers. Yet, when advertising to other providers, 
+  the ISP only needs to advertise 172.16.0.0/16.</p>
+  <p>For more information on CIDR, see
+  <a target="_blank" href="http://www.ietf.org/rfc/rfc1518.txt">RFC 1518</a>
+  <img alt="leaving website" src="../../i/sy/Extra/Exit.gif" width="0" height="0" /> 
+  and <a target="_blank" href="http://www.ietf.org/rfc/rfc1519.txt">RFC 1519</a>
+  <img alt="leaving website" src="../../i/sy/Extra/Exit.gif" width="0" height="0" />.</p>
+  <h2><!--mstheme--><font face="Arial,Helvetica"><a name="Appendix">Appendix</a> <!--mstheme--></font></h2>
+  <h3><a name="Sample Config">Sample Config</a> </h3>
+  <p>Routers A and B are connected via serial interface.</p>
+  <h4><a name="Router A">Router A</a> </h4>
+  <blockquote>
+    <!--mstheme--></font><pre>  hostname routera
+  !
+  ip routing
+  !
+  int e 0
+  ip address 172.16.50.1 255.255.255.0
+  !(subnet 50)
+  int e 1 ip address 172.16.55.1 255.255.255.0
+  !(subnet 55)
+  int t 0 ip address 172.16.60.1 255.255.255.0
+  !(subnet 60) int s 0
+  ip address 172.16.65.1 255.255.255.0 (subnet 65)
+  !S 0 connects to router B
+  router rip
+  network 172.16.0.0</pre><!--mstheme--><font face="arial,helvetica">
+  </blockquote>
+  <h4><a name="Router B">Router B</a> </h4>
+  <blockquote>
+    <!--mstheme--></font><pre>  hostname routerb
+  !
+  ip routing
+  !
+  int e 0
+  ip address 192.1.10.200 255.255.255.240
+  !(subnet 192)
+  int e 1
+  ip address 192.1.10.66 255.255.255.240
+  !(subnet 64)
+  int s 0
+  ip address 172.16.65.2 (same subnet as router A&#39;s s 0)
+  !Int s 0 connects to router A
+  router rip
+  network 192.1.10.0
+  network 172.16.0.0</pre><!--mstheme--><font face="arial,helvetica">
+  </blockquote>
+  <h3><a name="Host/Subnet">Host/Subnet Quantities Table</a> </h3>
+  <blockquote>
+    <!--mstheme--></font><pre>Class B                   Effective  Effective
+# bits        Mask         Subnets     Hosts
+-------  ---------------  ---------  ---------
+  1      255.255.128.0           2     32766
+  2      255.255.192.0           4     16382
+  3      255.255.224.0           8      8190
+  4      255.255.240.0          16      4094
+  5      255.255.248.0          32      2046
+  6      255.255.252.0          64      1022
+  7      255.255.254.0         128       510
+  8      255.255.255.0         256       254
+  9      255.255.255.128       512       126
+  10     255.255.255.192      1024        62
+  11     255.255.255.224      2048        30
+  12     255.255.255.240      4096        14
+  13     255.255.255.248      8192         6
+  14     255.255.255.252     16384         2
+
+Class C                   Effective  Effective
+# bits        Mask         Subnets     Hosts
+-------  ---------------  ---------  ---------
+  1      255.255.255.128      2        126 
+  2      255.255.255.192      4         62
+  3      255.255.255.224      8         30
+  4      255.255.255.240     16         14
+  5      255.255.255.248     32          6
+  6      255.255.255.252     64          2
+
+  
+*Subnet all zeroes and all ones included. These 
+ might not be supported on some legacy systems.
+*Host all zeroes and all ones excluded.</pre><!--mstheme--><font face="arial,helvetica">
+    <div align="center">
+      <!--mstheme--></font><pre><a href="#Top"><img border="0" src="../../i/sy/na/Top%203.gif" alt="Top" width="40" height="40"></a></pre><!--mstheme--><font face="arial,helvetica">
+    </div>
+  </blockquote>
+  <!--msthemeseparator--><p align="center"><img src="../../_themes/strtedge/strrulee.gif" width="600" height="10" alt="horizontal rule"></p>
+  <h2><!--mstheme--><font face="Arial,Helvetica"><a name="Related Information">Related Information</a> <!--mstheme--></font></h2>
+  <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/strtedge/astrbul1e.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="arial,helvetica"><b><a href="http://www.cisco.com/pcgi-bin/Support/IpSubnet/home.pl">IP Subnet 
+    Calculator</a></b><!--mstheme--></font><!--msthemelist--></td></tr>
+    <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/strtedge/astrbul1e.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="arial,helvetica"><b>
+    <a href="http://www.cisco.com/en/US/tech/tk365/tsd_technology_support_protocol_home.html">
+    IP Routing Protocols Support Page</a></b><!--mstheme--></font><!--msthemelist--></td></tr>
+    <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/strtedge/astrbul1e.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="arial,helvetica"><b>
+    <a href="http://www.cisco.com/en/US/tech/tk648/tk361/technologies_tech_note09186a0080093f18.shtml">
+    Subnet Zero and the All-Ones Subnet</a></b><!--mstheme--></font><!--msthemelist--></td></tr>
+    <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/strtedge/astrbul1e.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="arial,helvetica"><b>
+    <a href="http://www.cisco.com/en/US/tech/tk365/technologies_tech_note09186a0080093f33.shtml">
+    Host and Subnet Quantities</a></b><!--mstheme--></font><!--msthemelist--></td></tr>
+    <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/strtedge/astrbul1e.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="arial,helvetica"><b><a href="http://www.cisco.com/techtools/ip_addr_help.html">IP Subnet 
+    Calculation &amp; Design Online Documentation</a></b><!--mstheme--></font><!--msthemelist--></td></tr>
+    <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/strtedge/astrbul1e.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="arial,helvetica"><b><a href="http://www.cisco.com/en/US/support/index.html">Technical Support 
+    - Cisco Systems</a></b><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--></table><!--mstheme--><font face="arial,helvetica">
+  <p align="center"><a href="#Top">
+  <img border="0" src="../../i/sy/na/Top%203.gif" alt="Top" width="40" height="40"></a></p>
+  <p></p>
+  <!--msthemeseparator--><p align="center"><img src="../../_themes/strtedge/strrulee.gif" width="600" height="10" alt="horizontal rule"></p>
+  <p align="center"><a href="../../index.html">Home</a> -
+  <a href="index.html">Computers</a> -
+  <a href="IP%20Sub-Netting.htm">IP Sub-Netting</a> -
+  <a href="ISDN%20Tutorial.htm">ISDN Tutorial</a> -
+  <a href="TCP%20IP%20Protocols/Page%201.htm">TCP / IP Protocols</a> -
+  <a href="http://www.cisco.com/warp/public/701/3.html">Original Link</a></p>
+
+  <!--mstheme--></font></body>
+
+  </html>

@@ -1,0 +1,228 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Wireless USB Print Server&nbsp; User Guide</title>
+</head>
+
+<body>
+
+<table cellSpacing="0" cellPadding="0" width="100%" border="0" style="border-collapse: collapse" bordercolor="#111111">
+  <tr>
+    <td vAlign="top" align="left" width="100%">
+    <h1 align="center"><font color="#000000"><a name="Top"></a>Wireless USB Print 
+    Server <br>
+    User Guide </font></h1>
+    <h1>IPP (Internet Printing Protocol)</h1>
+    <p class="MsoNormal">IPP (Internet Printing Protocol) is a standards-based system 
+    to allow remote printing from a PC to any accessible printer. Normally, the 
+    printer will be attached to a computer or other device which functions as an 
+    IPP Server.</p>
+    <p class="MsoNormal">Client PCs need a compatible IPP Client program. Windows 
+    2000 and XP include a suitable IPP client. For other versions of Windows, a 
+    client program is supplied on the Print Server&#39;s CD-ROM. The Client must also 
+    know the IP Address or URL of the IPP Server.</p>
+    <p><strong>IPP Server Configuration</strong></p>
+    <p class="MsoNormal">The Print Server contains the necessary firmware to act 
+    as an IPP Server. No additional configuration is necessary. However, the following 
+    requirements must be met.</p>
+    <ul>
+      <li>The Print Server must have a valid IP Address. </li>
+      <li>Any router, gateway, or firewall linking your LAN to the Internet must 
+      NOT block the IPP protocol (TCP port 631). Your router, gateway or firewall 
+      must open or forward port TCP port 631 to the IP address of the Print Server.
+      </li>
+      <li>You must advise clients of the correct URL or IP Address of the IPP Server. 
+      To use a URL rather than an IP Address, you need to register the domain name 
+      for the URL. </li>
+      <li>Unless clients are using Windows 2000 or XP, you must provide your clients 
+      with the supplied IPP Client software. If it is not convenient to provide 
+      the CD-ROM, supply the IPP_CLIENT.EXE file, located in the IPP folder.
+      </li>
+    </ul>
+    <p style="PAGE-BREAK-BEFORE: always"><strong>IPP Client Setup - Windows 98/ME</strong></p>
+    <p class="MsoNormal">For these platforms, IPP Client software is supplied on 
+    the CD-ROM. You can also distribute the setup program (IPP_CLIENT.EXE) to users 
+    vial E-mail.</p>
+    <h4 style="BORDER-RIGHT: medium none; PADDING-RIGHT: 0in; BORDER-TOP: medium none; PADDING-LEFT: 0in; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; PADDING-TOP: 0in; BORDER-BOTTOM: medium none">
+    Installing from the Installation CD-ROM</h4>
+    <ol>
+      <li><span style="FONT: 7pt 'Times New Roman'">&nbsp;</span>Insert the Installation 
+      CD-ROM into your CD-ROM drive. <br>
+      <br>
+      <font color="#ff0000"><strong>Note:</strong></font> If your CD-ROM does not 
+      automatically launch, click Windows <strong>Start</strong>, <strong>Run</strong>, 
+      type <strong>D:\autorun</strong> (if your CD-ROM drive uses a different letter, 
+      type that letter in place of “D”), and click <strong>OK</strong>.<br>
+      <br>
+&nbsp;</li>
+      <li>Click <strong>Additional Installs</strong> and follow the on-screen prompts 
+      until you reach the Setup Type screen. </li>
+      <li>Select <strong>IPP (Internet Printing Protocol) Client</strong>.<br>
+&nbsp;</li>
+    </ol>
+    <p>
+    <img alt src="../../i/mc/cpc/Bottom%20Table/Internet%20Printing%20Protocol/additional2-ipp.jpg" width="477" height="362"><br>
+&nbsp;</p>
+    <ol start="4">
+      <li>Click <strong>Next</strong> and proceed though the remaining screens to 
+      complete the installation. </li>
+    </ol>
+    <h4 style="BORDER-RIGHT: medium none; PADDING-RIGHT: 0in; BORDER-TOP: medium none; PADDING-LEFT: 0in; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; PADDING-TOP: 0in; BORDER-BOTTOM: medium none">
+    Installing using IPP_CLIENT.EXE</h4>
+    <ol>
+      <li>Run this program to unzip the included files. </li>
+      <li>The IPP Setup program will then run. </li>
+      <li>Follow the prompts to complete the installation. </li>
+    </ol>
+    <h4 style="BORDER-RIGHT: medium none; PADDING-RIGHT: 0in; BORDER-TOP: medium none; PADDING-LEFT: 0in; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; PADDING-TOP: 0in; BORDER-BOTTOM: medium none">
+    IPP Client Configuration</h4>
+    <ol>
+      <li>Run the &quot;<ST1:PLACE w:st="on"><ST1:PLACENAME w:st="on">Add</ST1:PLACENAME>
+      <ST1:PLACENAME w:st="on">IPP</ST1:PLACENAME>
+      <ST1:PLACETYPE w:st="on">Port</ST1:PLACETYPE></ST1:PLACE>&quot; program entry created 
+      by the installation. A screen like the following will be displayed.<br>
+      <br>
+      <img alt src="../../i/mc/cpc/Bottom%20Table/Internet%20Printing%20Protocol/image090.jpg" v:shapes="_x0000_i1079" width="385" height="289">
+      <br>
+      <br>
+&nbsp;<ST1:PLACE w:st="on"><ST1:PLACETYPE w:st="on"></ST1:PLACETYPE></ST1:PLACE></li>
+      <li>If Internet access from your location is via a Proxy Server, select
+      <strong>Access IPP Server via Proxy Server</strong> and enter the details 
+      of your Proxy Server. (This will be the same as your Browser configuration.)
+      </li>
+      <li>Enter the IP Address or URL of the IPP Server. </li>
+      <li>
+      <ST1:PLACE w:st="on">
+      <ST1:PLACENAME w:st="on">Click</ST1:PLACENAME>
+      <ST1:PLACENAME w:st="on"><strong>Select</strong></ST1:PLACENAME> <strong>
+      <ST1:PLACENAME w:st="on">Device</ST1:PLACENAME>
+      <ST1:PLACETYPE w:st="on">Port</ST1:PLACETYPE></strong><ST1:PLACETYPE w:st="on"></ST1:PLACETYPE></ST1:PLACE> 
+      to view the available ports on the IPP Server and select the appropriate port. 
+      A connection to the IPP Server will be established at this time. </li>
+      <li>Click <strong>Save</strong> to create the IPP port on your system. You 
+      will see a message confirming that the port has been created, then the following 
+      dialog:<br>
+      <br>
+      <img alt src="../../i/mc/cpc/Bottom%20Table/Internet%20Printing%20Protocol/image092.jpg" v:shapes="_x0000_i1080" width="355" height="319"><br>
+      <br>
+&nbsp;</li>
+      <li>
+      <ST1:PLACE w:st="on">
+      <ST1:PLACETYPE w:st="on"></ST1:PLACETYPE>
+      </ST1:PLACE>
+      Perform one of the following options: </li>
+    </ol>
+    <ul>
+      <li>Select an existing printer to use the new port and click <strong>OK</strong>.
+      <p>OR</p>
+      </li>
+      <li>Click <strong>Add New Printer</strong> to create a new printer to use 
+      the IPP port. This will start the Add Printer wizard. Follow the prompts to 
+      complete the process. Ensure that the new printer uses the IPP port. </li>
+    </ul>
+    <p class="MsoNormal">Installation is now complete. To create additional IPP 
+    Ports, repeat the entire procedure. The Proxy Server and other options are set 
+    individually for each
+    <ST1:PLACE w:st="on">
+    <ST1:PLACENAME w:st="on">IPP</ST1:PLACENAME>
+    <ST1:PLACETYPE w:st="on">Port.</ST1:PLACETYPE></ST1:PLACE></p>
+    <h4 style="BORDER-RIGHT: medium none; PADDING-RIGHT: 0in; BORDER-TOP: medium none; PADDING-LEFT: 0in; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; PADDING-TOP: 0in; BORDER-BOTTOM: medium none">
+    <a name="Changing the IPP Port Settings">Changing the
+    <ST1:PLACE w:st="on">
+    <ST1:PLACENAME w:st="on">IPP</ST1:PLACENAME>
+    <ST1:PLACETYPE w:st="on">Port</ST1:PLACETYPE></ST1:PLACE> Settings</a></h4>
+    <p class="MsoNormal">After the IPP port is created, perform the following steps:</p>
+    <ol>
+      <li>Click Windows <strong>Start</strong>, <strong>Settings</strong>, and then
+      <strong>Printers</strong>. </li>
+      <li>Right-click the IPP Printer and select <strong>Properties</strong>.
+      </li>
+      <li>Locate and click <strong>Port Settings</strong> (in the Details or Port 
+      tab, depending on your version of Windows). </li>
+    </ol>
+    <p class="MsoNormal">There are 2 settings - Retry Interval and Retry Count - 
+    which can be adjusted if you have problems connecting to the IPP Server.</p>
+    <ul>
+      <li><strong>Retry Interval</strong> sets the time interval (in seconds) between 
+      connection attempts. Increase this number if you have a poor connection, or 
+      the remote server is very busy. </li>
+      <li><strong>Retry Count</strong> sets how many connection attempts will be 
+      made. Increase this number if you have a poor connection, or the remote server 
+      is very busy. </li>
+    </ul>
+    <p style="PAGE-BREAK-BEFORE: always"><strong>IPP Client Setup - Windows 2000/XP</strong></p>
+    <p class="MsoNormal">Windows 2000 and XP have their own IPP Client, and there 
+    is no need to install the supplied IPP Client Software. To use the Windows IPP 
+    Client with the Print Server, follow this procedure:</p>
+    <ol>
+      <li>Start the Add Printer wizard. </li>
+      <li>Select <strong>Network Printer</strong> and click <strong>Next
+      </strong>to see the Locate your Printer screen, as shown below. </li>
+    </ol>
+    <p class="Picture">
+    <img alt src="../../i/mc/cpc/Bottom%20Table/Internet%20Printing%20Protocol/image094.jpg" v:shapes="_x0000_i1068" width="428" height="327">
+    </p>
+    <ol start="3">
+      <li>Select <strong>Connect to a printer on the Internet or on your Intranet</strong> 
+      and enter the URL of the IPP Server as follows, where ip_address represents 
+      the IP Address of the IPP Server and 631 is the port number. </li>
+    </ol>
+    <table width="81%" align="center" border="1">
+      <tr>
+        <td>Port 1</td>
+        <td>ip_address:631/ipp/P1</td>
+      </tr>
+      <tr>
+        <td colSpan="2">These entries are case sensitive. They must be entered as 
+        shown, with &quot;ipp&quot; in lower case, and P1 in UPPER case.</td>
+      </tr>
+    </table>
+    <ol start="4">
+      <li>If the connection can be established and the printer on that port is online, 
+      the following dialog will be displayed: <br>
+      <br>
+      <img alt src="../../i/mc/cpc/Bottom%20Table/Internet%20Printing%20Protocol/image096.jpg" v:shapes="_x0000_i1070" width="408" height="101"><br>
+      <br>
+&nbsp;</li>
+      <li>Click <strong>OK</strong> and then select the printer manufacturer and 
+      model to match the printer connected to the port on the IPP Server. </li>
+      <li>Click <strong>Next</strong> and complete the Wizard. The IPP printer is 
+      now ready for use. </li>
+    </ol>
+    <p><strong>Using IPP Printers</strong></p>
+    <p class="MsoNormal">The IPP Printer can be selected and used like any other 
+    Windows printer. If the IPP Server is not on your network, your Internet connection 
+    needs to be active.</p>
+    <p class="MsoNormal">If using the supplied IPP Client software, you can use 
+    the Query IPP Printer program installed with Add IPP Port to check the availability 
+    of the remote IPP Server.</p>
+    <p class="MsoNormal">An IPP Server may be unavailable for any of the following 
+    reasons:</p>
+    <ul>
+      <li>It is powered off. </li>
+      <li>A printer problem has caused the IPP Server to cease responding, and a 
+      restart (reboot) is required. </li>
+      <li>The Server&#39;s IP Address has changed. </li>
+      <li>The Internet connection for the IPP Server is down. </li>
+      <li>Network congestion causes the connection attempt to time out. </li>
+    </ul>
+    <p class="MsoNormal">If using the supplied IPP Client software, there are 2 
+    settings - Retry Interval and Retry Count - which can be adjusted if you have 
+    problems connecting to the IPP Server. </p>
+    <p class="MsoNormal">See the <a href="#Changing the IPP Port Settings">
+    <font color="#0000ff">Changing the IPP Port Settings</font></a> section on this 
+    page for details.</p>
+    <p class="MsoNormal" align="right"><a href="#Top">
+    <img alt src="../../i/sy/a/26.gif" border="0" width="22" height="25"></a></p>
+    </td>
+  </tr>
+</table>
+<p align="center"><a href="../../index.html">Home</a> -
+<a href="index.html">Computers</a></p>
+
+</body>
+
+</html>

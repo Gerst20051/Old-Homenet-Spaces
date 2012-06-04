@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>GWBASIC</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#g">Commands A-M</a>
+    &gt; <a href="../INDEXG.HTM#gwbasic">Commands G</a>
+    <h1>GWBASIC</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Basic language command interpreter.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>GWBASIC
+    [<a href="#ParameterFilename">file_name</a>]
+    [<a href="#SwitchC">/c:n</a>]
+    [<a href="#SwitchD">/d</a>]
+    [[<a href="#SwitchF">/f:n</a>]
+     [<a href="#SwitchI">/i</a>]]
+    [<a href="#SwitchM">/m:[n][,nn]</a>]
+    [<a href="#SwitchS">/s:n</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterFilename"></a> filename
+      (<a href="../../Version/MSDOS/310.HTM">v3.1</a>)</dt>
+      <dd>Name of a GW-BASIC program file. The default
+      extension is .BAS.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchC"></a> /c:n
+      (<a href="../../Version/MSDOS/310.HTM">v3.1</a>)</dt>
+      <dd>Controls RS-232 communications. Allocates n bytes
+      for the receive buffer and 128 bytes for the transmit
+      buffer for each RS-232 card present. /c:0 disables
+      RS-232 support. Defaults to 256 bytes.</dd>
+
+      <dt><a name="SwitchD"></a> /d
+      (<a href="../../Version/MSDOS/310.HTM">v3.1</a>)</dt>
+      <dd>Allows ATN, COS, EXP, LOG, SIN, SQR, and TAN
+      functions to return double-precision results.
+      Approximately 3000 bytes of additional code space
+      is used.</dd>
+
+      <dt><a name="SwitchF"></a> /f:n
+      (<a href="../../Version/MSDOS/310.HTM">v3.1</a>)</dt>
+      <dd>Allocates maximum number of files opened
+      simultaneously. Each file requires 194 bytes for the
+      File Control Block (FCB) plus 128 bytes for the data
+      buffer. The data buffer size may be altered using
+      <a href="#SwitchS">/s</a>. Default is 3.</dd>
+
+      <dt><a name="SwitchI"></a> /i
+      (<a href="../../Version/MSDOS/310.HTM">v3.1</a>)</dt>
+      <dd>Statically allocate file operation space for
+      <a href="#SwitchS">/s</a> and
+      <a href="#SwitchF">/f</a>.</dd>
+
+      <dt><a name="SwitchM"></a> /m:[n][,nn]
+      (<a href="../../Version/MSDOS/310.HTM">v3.1</a>)</dt>
+      <dd>Sets n as the highest memory location and nn
+      maximum block size (in multiples of 16) used by
+      GW-BASIC. Defaults to 64K for data and stack segments.
+      Used to reserve memory space for machine language
+      subroutines beyond GW-BASIC's workspace.</dd>
+
+      <dt><a name="SwitchS"></a> /s:n
+      (<a href="../../Version/MSDOS/310.HTM">v3.1</a>)</dt>
+      <dd>Sets maximum file record length. Default is 128,
+      maximum is 32767.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>TELNET</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#t">Commands N-Z</a>
+    &gt; <a href="../INDEXT.HTM#telnet">Commands T</a>
+    <h1>TELNET</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Starts terminal emulation. The Windows Terminal program is started,
+    the Telnet port is opened, and the Telnet prompt is displayed. This
+    command is available only if the TCP/IP protocol has been installed.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>TELNET
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>TELNET
+    [<a href="#SwitchA">-a</a>]
+    [<a href="#SwitchE">-e escape_character</a>]
+    [<a href="#SwitchF">-f log_file</a>]
+    [<a href="#SwitchL">-l user_name</a>]
+    [<a href="#SwitchT">-t terminal_type</a>]
+    [<a href="#ParameterHost">host_name</a>
+     [<a href="#ParameterPort">port_number</a>]]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterHost"></a> host_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the hostname or IP address of the remote
+      computer to connect to.</dd>
+
+      <dt><a name="ParameterPort"></a> port_number
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies a port number or service name.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchA"></a> -a
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Attempt automatic logon. Same as <a href="#SwitchL">-l</a>
+      option except uses the currently logged on user's name.</dd>
+
+      <dt><a name="SwitchE"></a> -e escape_character
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Escape character to enter telnet client prompt.</dd>
+
+      <dt><a name="SwitchF"></a> -f log_file
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>File name for client side logging.</dd>
+
+      <dt><a name="SwitchL"></a> -l user_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the user name to log in with on the remote
+      system. Requires that the remote system support the TELNET
+      ENVIRON option.</dd>
+
+      <dt><a name="SwitchT"></a> -t terminal_type
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies terminal type:
+        <ul>
+          <li><b>vt100</b></li>
+          <li><b>vt52</b></li>
+          <li><b>ansi</b></li>
+          <li><b>vtnt</b></li>
+        </ul>
+      </dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Telnet simplifies TCP/IP terminal emulation with Windows NT.</p>
+    <p>First, telnet starts the telnet network service. Then telnet
+    starts TERMINAL.EXE, instructing it to open the telnet port.</p>
+    <p>The Telnet network service can also be started with the Control
+    Panel Services option or at the command prompt with the
+    <a href="../N/NETSTART.HTM">NET START</a>
+    <a href="../N/NETSTART.HTM#ParameterService">service</a> command.</p>
+    <p><b>Commands:</b>
+    <ul>
+      <li><b>bye</b> Ends telnet.</li>
+      <li><b>close</b> Disconnects from a host.</li>
+      <li><b>connect host [port]</b> Connects to the specified host.
+        Host can be a host name or Internet address and must be running
+        the TELNET service. If port is not specified, telnet will
+        attempt to contact a telnet server at the default port.</li>
+      <li><b>crmod [on | off]</b> Sets carriage return mode. Required
+        only for hosts that require local echoing.</li>
+      <li><b>debug</b> Not currently supported.</li>
+      <li><b>escape</b> Sets the escape character.</li>
+      <li><b>help or ?</b> Provides information about a command.</li>
+      <li><b>open host [port]</b> Same as <b>connect</b>.</li>
+      <li><b>options</b> Toggles viewing of telnet options processing.</li>
+      <li><b>quit</b> Same as <b>bye</b>.</li>
+      <li><b>status</b> Displays the current status of telnet.</li>
+    </ul>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2004/03/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

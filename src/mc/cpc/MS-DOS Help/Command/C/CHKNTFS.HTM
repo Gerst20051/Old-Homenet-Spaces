@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CHKNTFS</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCH.HTM#chkntfs">Commands Ch-Cz</a>
+    <h1>CHKNTFS</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Check the NTFS file system with CHKDSK.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CHKNTFS
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>CHKNTFS
+    <a href="#SwitchC">/C</a>
+    <a href="#ParameterDrive">drive:</a> [...]</p>
+
+    <p>CHKNTFS
+    <a href="#SwitchD">/D</a></p>
+
+    <p>CHKNTFS
+    <a href="#SwitchX">/X</a>
+    <a href="#ParameterDrive">drive:</a> [...]</p>
+
+    <p>CHKNTFS
+    <a href="#SwitchT">/T</a>[:time]</p>
+
+    <p>Display the status of the dirty bit for each drive:</p>
+    <p>CHKNTFS
+    <a href="#ParameterDrive">drive:</a> [...]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Specifies the drive that contains the disk that you want
+      to check.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchC"></a> /C
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Check - schedules to check at next reboot; chkdsk will run
+      if the drive is dirty.</dd>
+
+      <dt><a name="SwitchD"></a> /D
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Restore the machine to the default behavior; all drives are
+      checked at boot time and chkdsk is run on those that are dirty.
+      This undoes the effect of the <a href="#SwitchX">/X</a> option.</dd>
+
+      <dt><a name="SwitchT"></a> /T[:time]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Changes the AUTOCHK initiation count down time to the
+      specified amount of time in seconds. If time is not specified,
+      displays the current setting.</dd>
+
+      <dt><a name="SwitchX"></a> /X
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Exclude a drive from the default boot-time check. Excluded
+      drives are not accumulated between command invocations.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="CHKDSK.HTM">CHKDSK</a> - Check Disk - check and repair
+    disk problems</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

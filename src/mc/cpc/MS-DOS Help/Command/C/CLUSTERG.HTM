@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CLUSTER GROUP</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCH.HTM#clustergroup">Commands Ch-Cz</a>
+    <h1>CLUSTER GROUP</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>You can use cluster commands to administer server clusters from
+    the Windows command prompt. You can also call the program from
+    command scripts to automate many cluster administration tasks.
+    Cluster is provided on all Windows computers.</p>
+    <p>You can administer clusters from a node of the cluster, from
+    nodes of other clusters, or from other computers running Windows NT
+    4.0 with Service Pack 3 or later.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CLUSTER
+    GROUP
+    <br>[<a href="#SwitchHelp">/HELP</a>
+    <br>| <a href="#SwitchHelp">/?</a>]</p>
+
+    <p>CLUSTER
+    [<a href="#SwitchCluster">[/CLUSTER:]cluster_name]</a>
+    GROUP
+    <br>[<a href="#SwitchNode">/NODE:node_name</a>
+    <br>| <a href="#SwitchPrivProperties">/PRIV[PROPERTIES]</a>
+    <br>| <a href="#SwitchProperties">/PROP[ERTIES]</a>]</p>
+
+    <p>CLUSTER
+    [<a href="#SwitchCluster">[/CLUSTER:]cluster_name]</a>
+    GROUP
+    [<a href="#ParameterGroupName">group_name</a>]
+    [<a href="#SwitchStatus">/STAT[US]</a>]</p>
+
+    <p>CLUSTER
+    [<a href="#SwitchCluster">[/CLUSTER:]cluster_name]</a>
+    GROUP
+    <a href="#ParameterGroupName">group_name</a>
+    <br>[<a href="#SwitchCreate">/CREATE</a>
+    <br>| <a href="#SwitchDelete">/DELETE</a>
+    <br>| <a href="#SwitchListOwners">/LISTOWNERS</a>
+    <br>| <a href="#SwitchMoveTo">/MOVE[TO][:node_name]</a>
+      [<a href="#SwitchWait">/WAIT[:time_seconds]</a>]
+    <br>| <a href="#SwitchOffline">/OFF[LINE][:node_name]</a>
+      [<a href="#SwitchWait">/WAIT[:time_seconds]</a>]
+    <br>| <a href="#SwitchOnline">/ON[LINE][:node_name]</a>
+      [<a href="#SwitchWait">/WAIT[:time_seconds]</a>]
+    <br>| <a href="#SwitchPrivProperties">/PRIV[PROPERTIES]</a>
+      [<a href="#ParameterPropertyList">property_list</a>]
+    <br>| <a href="#SwitchPrivProperties">/PRIV[PROPERTIES]</a>
+      [<a href="#ParameterPropertyList">:propname[,propname ...]</a>]
+    <br>| <a href="#SwitchProperties">/PROP[ERTIES]</a>
+      [<a href="#ParameterPropertyList">property_list</a>]
+    <br>| <a href="#SwitchProperties">/PROP[ERTIES]</a>
+      [<a href="#ParameterPropertyList">:propname[,propname ...]</a>]
+    <br>| <a href="#SwitchRename">/REN[AME]:node_name</a>
+    <br>| <a href="#SwitchSetOwners">/SETOWNERS[:node_name[,node_name ...]]</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterGroupName"></a> group_name
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Online, Offline, or Partially Online.</dd>
+
+      <dt><a name="ParameterPropertyList"></a> name=value[,value ...][:format][name=value[,value ...][:format] ...]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dt> :name[,name ...] /userdefault
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>To revert to the default value of a common property or to
+      delete a private property, use the /usedefault option.
+        <ul>
+          <li><b>Binary</b> Separated list of values from 0 to 255</li>
+          <li><b>DWord</b> Double word</li>
+          <li><b>Str[ing]</b> Double quotation marks are required around strings with spaces</li>
+          <li><b>ExpandStr[ing]</b> Expanded by Cluster</li>
+          <li><b>MultiStr[ing]</b> List of strings separated by commas</li>
+          <li><b>Security</b> Set access privileges.
+            <ul>
+              <li>Access types:
+                <ul>
+                  <li><b>grant</b></li>
+                  <li><b>deny</b></li>
+                  <li><b>set</b></li>
+                  <li><b>revoke</b> (Does not require Access mask)</li>
+                </ul>
+              </li>
+              <li>Access masks:
+                <ul>
+                  <li><b>R</b> read</li>
+                  <li><b>C</b> change</li>
+                  <li><b>F</b> full</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><b>ULarge</b> Unsigned 64-bit value</li>
+        </ul>
+      </dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /HELP | /?
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Display cluster group syntax. Default.</dd>
+
+      <dt><a name="SwitchCluster"></a> /CLUSTER
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>If you do not specify a cluster, attempts to connect to the
+      cluster running on the node that is running the command.</dd>
+      <dd>If the name of your cluster is also a cluster command or its
+      abbreviation, use /cluster: to explicitly specify the cluster
+      name.</dd>
+
+      <dt><a name="SwitchCreate"></a> /CREATE
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Create a new group.</dd>
+
+      <dt><a name="SwitchDelete"></a> /DELETE
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Delete a group.</dd>
+
+      <dt><a name="SwitchListOwners"></a> /LISTOWNERS
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Display a list of preferred owners.</dd>
+
+      <dt><a name="SwitchMoveTo"></a> /MOVE[TO][:node_name]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Move a group to another node.</dd>
+
+      <dt><a name="SwitchNode"></a> /NODE:node_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the node that owns the group.</dd>
+
+      <dt><a name="SwitchOffline"></a> /OFF[LINE][:node_name]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Take a group offline.</dd>
+
+      <dt><a name="SwitchOnline"></a> /ON[LINE][:node_name]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Bring a group online.</dd>
+
+      <dt><a name="SwitchPrivProperties"></a> /PRIV[PROPERTIES]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>View or set the cluster private properties.</dd>
+      <dd>By default, there are no private properties for cluster
+      group. Software vendors can add private properties to extend
+      cluster functionality.</dd>
+
+      <dt><a name="SwitchProperties"></a> /PROP[ERTIES]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>View or set the cluster common properties.</dd>
+
+      <dt><a name="SwitchRename"></a> /REN[AME]:group_name
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Rename a group.</dd>
+
+      <dt><a name="SwitchSetOwners"></a> /SETOWNERS:node_name[,node_name ...]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Specify a preferred owner.</dd>
+
+      <dt><a name="SwitchStatus"></a> /STAT[US]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>?</dd>
+
+      <dt><a name="SwitchWait"></a> /WAIT[:time_seconds]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>How long to wait before canceling the command if it does not
+      successfully complete. If a time-out is not specified, waits
+      indefinitely or until the group state changes.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="CLUSTER.HTM">Cluster</a>
+    <br><a href="CLUSTERI.HTM">Cluster Netinterface</a>
+    <br><a href="CLUSTERW.HTM">Cluster Network</a>
+    <br><a href="CLUSTERN.HTM">Cluster Node</a>
+    <br><a href="CLUSTERR.HTM">Cluster Resource</a>
+    <br><a href="CLUSTERT.HTM">Cluster ResourceType</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Common group property names:
+      <ul>
+        <li><b>AutoFailbackType</b> Set to ClusterGroupPreventFailback (0) to prevent failback. Set to ClusterGroupAllowFailback (1) to allow failback</li>
+        <li><b>Description</b> Describes a group</li>
+        <li><b>FailoverPeriod</b> Specifies the interval (in hours) over which the Cluster service attempts to fail over a group</li>
+        <li><b>FailoverThreshold</b> Specifies the number of times the Cluster service attempts to fail over a group before it concludes that the group cannot be brought online anywhere in the cluster</li>
+        <li><b>FailbackWindowEnd</b> Specifies the end time (on a 24-hour clock) for failback of a group to its preferred node. These values must be between 0 (midnight) and 23 (11:00 p.m.) in local time. For immediate failback, set to -1</li>
+        <li><b>FailbackWindowStart</b> Specifies the start time (on a 24-clock) for failback of a group to its preferred node. These values must be between 0 (midnight) and 23 (11:00 p.m.) in local time. For immediate failback, set to -1</li>
+        <li><b>Name</b> Name of the cluster group object</li>
+        <li><b>PersistentState</b> Describes the last known persistent state of a group (1, (true) means online; 0 (false) means offline)</li>
+      </ul>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

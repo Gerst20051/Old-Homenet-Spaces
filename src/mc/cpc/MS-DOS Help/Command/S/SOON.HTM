@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>SOON</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#s">Commands N-Z</a>
+    &gt; <a href="../INDEXS.HTM#soon">Commands S</a>
+    <h1>SOON</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Schedule a command to run in the near future (calls the
+    <a href="../A/AT.HTM">AT</a> command).</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>SOON
+    [<a href="#ParameterComputer">\\computer_name</a>]
+    <a href="#ParameterDelay">delay</a>
+    [[<a href="#SwitchInteractive">/i[nteractive]</a>]
+    | [<a href="#SwitchI">/i:[on | off]</a>]]
+    <a href="#ParameterCommand">"command"</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterCommand"></a> "command"
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>A remote computer to shutdown.</dd>
+
+      <dt><a name="ParameterComputer"></a> \\computer_name
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>The UNC location of the remote machine.</dd>
+
+      <dt><a name="ParameterDelay"></a> delay
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>When the command should run, in SECONDS from now.</dd>
+      <dd>Because SOON passes a start time to <a href="../A/AT.HTM">AT</a>
+      in HH:MM you must set a delay &gt; 60 seconds.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchI"></a> /i:[on | off]
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Make <a href="#SwitchInteractive">/interactive</a>
+      the default behaviour use SOON /i:off to restore normal
+      behaviour.</dd>
+
+      <dt><a name="SwitchInteractive"></a> /interactive
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Allows any user to see the job as it runs,
+      this allows testing and monitoring of the command.
+      You can specify as just <a href="#SwitchI">/i</a>.</dd>
+   </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../A/AT.HTM">AT</a> - Schedule a command to run at a later time.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>cron - Daemon to execute scheduled commands.
+    <br>crontab - Schedule a command to run at a later time.
+    <br>watch - Execute/display a program periodically.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>The "Task Scheduler" service must be running to use SOON.</p>
+    <p>SOON schedules jobs to run at a time relative to the current
+    time "minutes from now"</p>
+    <p>Rescheduling a job with SOON therefore requires no editing of
+    the SOON command.</p>
+    <p>The most frequent difficulty people have with SOON is seemingly
+    unreliable execution when attempting to use a delay of 60 seconds
+    or less - see Q237840.</p>
+    <p>As with all <a href="../A/AT.HTM">AT</a> jobs you should test
+    your SOON scripts extensively by using the
+    <a href="#SwitchInteractive">/INTERACTIVE</a>
+    option to be sure that they:</p>
+    <ul>
+    <li>Start at the expected time</li>
+    <li>Execute the correct commands (specify a full pathname)</li>
+    <li>Finish and close successfully</li>
+    </ul>
+    <p>Recurring Jobs:</p>
+    <p>It is possible to set up a recurring job with SOON, the
+    advantage of this over <a href="../A/AT.HTM">AT</a> is that the
+    system will never try to execute the same CMD script twice at
+    the same time (because the SOON delay is relative to the last
+    completion).</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>Here's a trivial example - a 10 minute reminder:</p>
+<pre>
+    <a href="../A/ATSIGN.HTM">@</a><a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterOff">OFF</a>
+   ::remindme.cmd
+   <a href="../N/NETSEND.HTM">NET SEND</a>
+   <a href="../N/NETSEND.HTM#ParameterName">%username%</a>
+   <a href="../N/NETSEND.HTM#ParameterMessage">hello</a>
+   <a href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">Remind Me again?</a>
+   <a href="../P/PAUSE.HTM">PAUSE</a>
+   SOON <a
+href="#ParameterDelay">600</a> <a
+href="#SwitchInteractive">/interactive</a> <a
+href="#ParameterCommand">C:\examples\remindme.cmd</a>
+   :<a href="../L/LABEL.HTM">eof</a>
+</pre>
+
+   <p>Start the script above running with:</p>
+<pre>
+   SOON <a
+href="#ParameterDelay">600</a> <a
+href="#SwitchInteractive">/interactive</a> <a
+href="#ParameterCommand">C:\examples\remindme.cmd</a>
+</pre>
+
+   <p>and press Control-C to stop.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External Resource Kit</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd><a href="../../Version/MSWIN/NT400.HTM">NT4</a></dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/01/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

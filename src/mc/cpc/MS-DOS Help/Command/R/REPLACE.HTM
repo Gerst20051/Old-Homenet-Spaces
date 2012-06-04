@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>REPLACE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#r">Commands N-Z</a>
+    &gt; <a href="../INDEXR.HTM#replace">Commands R</a>
+    <h1>REPLACE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Replaces files in a destination directory with files in a source
+    directory that have the same name. You can also use REPLACE to add
+    unique filenames to the destination directory.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>REPLACE
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>REPLACE
+    [<a href="#ParameterDrive1">drive1:</a>][<a
+    href="#ParameterPath1">path1</a>]<a
+    href="#ParameterFilename">filename</a>
+    [<a href="#ParameterDrive2">drive2:</a>][<a
+    href="#ParameterPath2">path2</a>]
+    [[<a href="#SwitchA">/A</a>]
+    | [<a href="#SwitchS">/S</a>]
+     [[<a href="#SwitchD">/D</a>]
+     | [<a href="#SwitchU">/U</a>]]]
+    [<a href="#SwitchP">/P</a>]
+    [<a href="#SwitchR">/R</a>]
+    [<a href="#SwitchW">/W</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive1"></a> drive1:
+      (<a name="ParameterPath1"></a> path1
+      <a name="ParameterFilename"></a> filename
+      <a href="../../Version/MSDOS/320.HTM">v3.2</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the location and name of the source file or set of
+      files.</dd>
+
+      <dt><a name="ParameterDrive2"></a> drive2:
+      (<a name="ParameterPath2"></a> path2
+      <a href="../../Version/MSDOS/320.HTM">v3.2</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the location of the destination file. You cannot
+      specify a filename for files you replace. If you specify neither
+      a drive nor a directory, REPLACE uses the current drive and
+      directory as the destination.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchA"></a> /A
+      (<a href="../../Version/MSDOS/320.HTM">v3.2</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Adds new (missing) files to the destination directory instead of
+      replacing existing files. You cannot use this switch with the
+      <a href="#SwitchS">/S</a> or <a href="#SwitchU">/U</a> switch.</dd>
+
+      <dt><a name="SwitchP"></a> /P
+      (<a href="../../Version/MSDOS/320.HTM">v3.2</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Prompts you for confirmation before replacing a destination
+      file or adding a source file.</dd>
+
+      <dt><a name="SwitchR"></a> /R
+      (<a href="../../Version/MSDOS/320.HTM">v3.2</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Replaces read-only files as well as unprotected files. If you
+      do not specify this switch but attempt to replace a read-only
+      file, an error results and stops the replacement operation.</dd>
+
+      <dt><a name="SwitchS"></a> /S
+      (<a href="../../Version/MSDOS/320.HTM">v3.2</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Searches all subdirectories of the destination directory and
+      replaces matching files. You cannot use the /S switch with the <a
+      href="#SwitchA">/A</a> switch. The REPLACE command does not
+      search subdirectories specified in path1.</dd>
+
+      <dt><a name="SwitchD"></a> /D
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a> through
+      <a href="../../Version/MSDOS/400.HTM">v4.0</a>)</dt>
+      <dt><a name="SwitchU"></a> /U
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Replaces (updates) only those files on the destination
+      directory that are older than those in the source directory. You
+      cannot use the /U (or /D) switch with the <a href="#SwitchA">/A</a>
+      switch.</dd>
+
+      <dt><a name="SwitchW"></a> /W
+      (<a href="../../Version/MSDOS/320.HTM">v3.2</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Waits for you to insert a disk before REPLACE begins to
+      search for source files. If you do not specify /W, REPLACE begins
+      replacing or adding files immediately after you press ENTER.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../A/ATTRIB.HTM">ATTRIB</a> - Changing file attributes.
+    <br><a href="ROBOCOPY.HTM">ROBOCOPY</a> - Robust File and Folder copy.
+    <br><a href="../M/MOVE.HTM">MOVE</a> - Move files from one folder to another folder on the same drive.
+    <br><a href="../D/DEL.HTM">DEL</a> - Delete one or more files.
+    <br><a href="../C/COPY.HTM">COPY</a> - Copy one or more files to another location.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>install - Copy files and set attributes.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Limitations">Limitations on REPLACE</a></li>
+      <li><a href="#Messages">REPLACE messages</a></li>
+      <li><a href="#Floppy">Replacing files on a floppy disk system</a></li>
+    </ul>
+
+    <hr>
+    <a name="Messages"></a> <b>REPLACE messages</b>
+    <p>As REPLACE adds or replaces files, the operating system
+    displays their filenames on the screen. After the REPLACE command
+    is finished, the operating system displays a summary line in one
+    of the formats:</p>
+<pre>
+    nnn files added
+    nnn files replaced
+    no file added
+    no file replaced
+</pre>
+
+    <hr>
+    <a name="Floppy"></a> <b>Replacing files on a floppy disk system</b>
+    <p>If you have a floppy disk system and need to switch disks during
+    the REPLACE operation, you can specify the
+    <a href="#SwitchW">/W</a> switch so that REPLACE will wait
+    for you to switch disks, as necessary.</p>
+
+    <hr>
+    <a name="Limitations"></a> <b>Limitations on REPLACE</b>
+    <p>You cannot use the REPLACE command to update hidden files or
+    system files such as IO.SYS and MSDOS.SYS. For information about
+    changing hidden and system attributes, see the
+    <a href="../A/ATTRIB.HTM">ATTRIB</a> command.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>Suppose that several directories on drive C contain different
+    Versions of a file named PHONES.CLI, which contains client names
+    and phone numbers. To replace all of these files with the latest
+    version of the PHONES.CLI file from the disk in drive A, type:</p>
+<pre>
+    REPLACE <a
+href="#ParameterDrive1">A:</a><a
+href="#ParameterPath1">\</a><a
+href="#ParameterFilename">PHONES.CLI</a> <a
+href="#ParameterDrive2">C:</a><a
+href="#ParameterPath2">\</a> <a
+href="#SwitchS">/S</a>
+</pre>
+
+    <hr>
+    <p>Suppose you want to add new printer device drivers to a
+    directory on drive C named TOOLS, which already contains several
+    printer device-driver files for a word processor. To do this, type:</p>
+<pre>
+    REPLACE <a
+href="#ParameterDrive1">A:</a><a
+href="#ParameterFilename">*.PRD</a> <a
+href="#ParameterDrive2">C:</a><a
+href="#ParameterPath2">\TOOLS</a> <a
+href="#SwitchA">/A</a>
+</pre>
+
+    <p>This command searches the current directory on drive A for any
+    files that have the extension .PRD and then adds these files to the
+    TOOLS directory on drive C. Because the
+    <a href="#SwitchA">/A</a> switch is included, REPLACE adds
+    only those files from drive A that do not exist on drive C.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <ul>
+    <li><b>0</b> REPLACE successfully replaced or added the files</li>
+    <li><b>1</b> The computer has a version of the operating system that is incompatible with REPLACE?</li>
+    <li><b>2</b> REPLACE could not find the source files</li>
+    <li><b>3</b> REPLACE could not find the source or destination path</li>
+    <li><b>5</b> The user does not have access to the files you want to replace</li>
+    <li><b>8</b> There is insufficient system memory to carry out the command</li>
+    <li><b>11</b> The user used the wrong syntax on the command-line</li>
+    <li><b>15</b> Invalid drive specified</li>
+    <li><b>22</b> The computer has a version of the operating system that is incompatible with REPLACE?</li>
+    </ul>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

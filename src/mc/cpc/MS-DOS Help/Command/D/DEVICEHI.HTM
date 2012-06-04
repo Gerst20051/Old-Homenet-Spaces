@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DEVICEHIGH</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDA.HTM#devicehigh">Configuration Da-Dr</a>
+    <h1>DEVICEHIGH</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Loads device driver you specify into the upper memory area. Loading a
+    device driver into the upper memory area frees more bytes of conventional
+    memory for other programs. If upper memory is not available, the
+    DEVICEHIGH command functions just like the
+    <a href="DEVICE.HTM">DEVICE</a> command.</p>
+
+    <p>You can use this command only in your CONFIG.SYS file.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>MS-DOS 5 syntax:
+    <br>DEVICEHIGH
+    <a href="#ParameterSize">SIZE=hexsize</a>
+    <a href="#ParameterDrivePath">[drive:][\path\]</a><a
+    href="#ParameterFilename">filename</a>
+    <a href="#ParameterParms">parameters</a></p>
+
+    <p>DEVICEHIGH
+    [[<a href="#SwitchL">/L:region1[,minsize1][;region2[,minsize2]]</a>]
+    [<a href="#SwitchS">/S</a>]]=<a
+    href="#ParameterDrivePath">[drive:][\path\]</a><a
+    href="#ParameterFilename">filename</a>
+    <a href="#ParameterParms">parameters</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrivePath"></a> [drive:][\path\]
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the location of the device driver file.</dd>
+
+      <dt><a name="ParameterFilename"></a> filename
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the name of the device driver file.</dd>
+
+      <dt><a name="ParameterParms"></a> parameters
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies any command-line information required by
+      the device driver.</dd>
+
+      <dt><a name="ParameterSize"></a> SIZE=hexsize
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Provides a means of overriding the amount of UMB
+      memory that the operating system will allocate to the
+      driver. Hexsize sets the allocation, in bytes,
+      expressed in hexadecimal. By default, the operating
+      system gives each driver the largest block and waits
+      for it to free up the memory it doesn't need. You may
+      need to use SIZE= for drivers which, after
+      installation, need to have more memory available. Or
+      for drivers which will work fine if you limit the
+      amount of memory they consume.</dd>
+      <dd><b>Note:</b> This switch relates to the memory
+      needed for the driver code and its internally-used
+      data. It is NOT used to size the memory buffers for
+      drivers such as RamDrive.Sys or SmartDrv.Sys, which
+      base their buffer allocations on values in
+      <a href="#ParameterParms">parameters</a></dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchL"></a> /L:region1[,minsize1][;region2[,minsize2]]
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Specifies one or more regions of memory into which
+      to load the device driver. By default, the operating
+      system loads the driver into the largest free
+      upper-memory block (UMB) and makes all other UMBs
+      available for the driver's use. You can use the /L
+      switch to load the device driver into a specific
+      region of memory or to specify which region(s) the
+      driver can use.</dd>
+      <dd>To load the driver into the largest block in a
+      specific region of upper memory, specify the region
+      number after the /L switch. (To list the free areas
+      of memory, use <a href="../M/MEM.HTM">MEM</a>
+      <a href="../M/MEM.HTM#SwitchF">/F</a> at the command
+      prompt.)</dd>
+      <dd>When loaded with the /L switch, a device driver
+      can use only the specified memory region. Some device
+      drivers use more than one area of memory; for those
+      drivers, you can specify more than one region. (To
+      find out how a particular device driver uses memory,
+      issue the <a href="../M/MEM.HTM">MEM</a>
+      <a href="../M/MEM.HTM#SwitchM">/M</a> command and
+      specify the device-driver name as an argument.) To
+      specify two or more regions, separate the block
+      numbers with a semicolon (;).</dd>
+      <dd>Normally, the operating system loads a driver into
+      a UMB in the specified region only if that region
+      contains a UMB larger than the driver's load size
+      (usually equal to the size of the executable program
+      file). If the driver requires more memory while
+      running than it does when loaded, you can use the
+      minsize1 parameter to ensure that the driver will not
+      be loaded into a UMB that is too small for it. If you
+      specify a value for minsize1, the operating system
+      loads the driver into that region only if it contains
+      a UMB that is larger than both the driver's load size
+      and the minsize1 value.</dd>
+
+      <dt><a name="SwitchS"></a> /S
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Shrinks the UMB to its minimum size while the
+      driver is loading. Using this switch makes the most
+      efficient use of memory. This switch is normally used
+      only by the <a href="../M/MEMMAKER.HTM">MemMaker</a>
+      program, which can analyze a device driver's memory
+      use to determine whether the /S switch can safely be
+      used when loading that driver. This switch can be used
+      only in conjunction with the <a href="#SwitchL">/L</a>
+      switch and affects only UMBs for which a minimum size
+      was specified.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about loading programs into the upper
+    memory area, see the
+    <a href="../L/LOADHIGH.HTM">LOADHIGH</a> command.
+    <br>For information about loading device drivers into
+    conventional memory, see the
+    <a href="DEVICE.HTM">DEVICE</a> command.
+    <br>For information about using the
+    <a href="../M/MEMMAKER.HTM">MemMaker</a> program to move
+    programs to the upper memory area.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#NoUpper">If no upper memory area is available</a></li>
+      <li><a href="#HIMEM">Installing HIMEM.SYS and a UMB provider</a></li>
+      <li><a href="#Memmaker">Using MemMaker to optimize upper memory area automatically</a></li>
+      <li><a href="#Dos5">Using MS-DOS 5 DEVICEHIGH syntax</a></li>
+      <li><a href="#DosUmb">Using the DOS=UMB command</a></li>
+    </ul>
+
+    <hr>
+    <a name="DosUmb"></a> <b>Using the DOS=UMB command</b>
+    <p>To use the DEVICEHIGH command, you must also include
+    the <a href="DOS.HTM">DOS</a>=<a
+    href="DOS.HTM#ParameterUmb">UMB</a> command in your
+    CONFIG.SYS file. If you do not specify this command, all
+    device drivers are loaded into conventional memory, as
+    if you had used the <a href="DEVICE.HTM">DEVICE</a>
+    command.</p>
+
+    <hr>
+    <a name="Memmaker"></a> <b>Using MemMaker to optimize upper memory area automatically</b>
+    <p>The <a href="../M/MEMMAKER.HTM">MemMaker</a> program,
+    included with the operating system, automatically
+    optimizes your system's memory.
+    <a href="../M/MEMMAKER.HTM">MemMaker</a> surveys the
+    upper memory area, analyzes the memory use of your
+    drivers and programs, and determines which drivers and
+    programs fit best into the available UMBs.
+    <a href="../M/MEMMAKER.HTM">MemMaker</a> then changes
+    selected <a href="DEVICE.HTM">DEVICE</a> commands
+    in your CONFIG.SYS file to DEVICEHIGH commands and adds
+    <a href="#SwitchL">/L</a> and <a href="#SwitchS">/S</a>
+    switches as necessary.</p>
+
+
+    <hr>
+    <a name="Dos5"></a> <b>Using MS-DOS 5 DEVICEHIGH syntax</b>
+    <p>The version of DEVICEHIGH provided with
+    <a href="../../Version/MSDOS/500.HTM">MS-DOS 5</a> used
+    the syntax:</p>
+<pre>
+    DEVICEHIGH <a
+href="#ParameterSize">SIZE=hexsize</a> <a
+href="#ParameterDrivePath">[drive:][\path\]</a><a
+href="#ParameterFilename">filename</a> <a
+href="#ParameterParms">parameters</a>
+</pre>
+
+    <p>Although the
+    <a href="../../Version/MSDOS/500.HTM">MS-DOS 5</a>
+    DEVICEHIGH syntax will still work with
+    <a href="../../Version/MSDOS/622.HTM">MS-DOS 6.22</a>,
+    it is strongly recommended that you use the current
+    DEVICEHIGH syntax whenever possible.</p>
+
+    <hr>
+    <a name="HIMEM"></a> <b>Installing HIMEM.SYS and a UMB provider</b>
+    <p>To load a device driver into the upper memory area,
+    your computer must have extended memory. You must use
+    the <a href="DEVICE.HTM">DEVICE</a> command once
+    to install the <a href="../H/HIMEMSYS.HTM">HIMEM.SYS</a>
+    device driver and then again to install an
+    upper-memory-block (UMB) provider. These commands must
+    appear before the DEVICEHIGH command in your CONFIG.SYS
+    file. If your computer has an 80386 or 80486 processor,
+    you can use <a href="../E/EMM386.HTM">EMM386.EXE</a> as
+    the UMB provider. If your computer has a different
+    processor, you must supply a different UMB provider.</p>
+
+    <hr>
+    <a name="NoUpper"></a> <b>If no upper memory area is available</b>
+    <p>If there is not enough upper memory area available to
+    load the device driver you specified with the DEVICEHIGH
+    command, the operating system will load it into
+    conventional memory (as if you had used the
+    <a href="DEVICE.HTM">DEVICE</a> command).</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>The following CONFIG.SYS commands make the upper
+    memory area available for running device drivers and
+    programs:
+<pre>
+    <a href="DEVICE.HTM">device</a>=<a
+href="#ParameterDrivePath">c:\dos\</a><a
+href="#ParameterFilename">himem.sys</a>
+    <a href="DEVICE.HTM">device</a>=<a
+href="#ParameterDrivePath">c:\dos\</a><a
+href="#ParameterFilename">emm386.exe</a> <a
+href="#ParameterParms">ram</a>
+    <a href="DOS.HTM">dos</a>=umb
+</pre>
+
+    <p>Direct the operating system to load a device driver
+    named MYDRIV.SYS into the upper memory area of an 80386
+    computer:
+<pre>
+    DEVICEHIGH=<a
+href="#ParameterFilename">mydriv.sys</a>
+</pre>
+
+    <p>Direct the operating system to run the MOUSE.SYS
+    driver in the upper memory area and load the driver into
+    upper memory block 2:
+<pre>
+    DEVICEHIGH=<a
+href="#SwitchL">/L:2</a> <a
+href="#ParameterDrivePath">C:\drivers\</a><a
+href="#ParameterFilename">mouse.sys</a>
+</pre>
+
+    <p>Loads the MYDRIV.SYS driver into region 1 of upper
+    memory, and also allows the driver to use region 3 if it
+    needs to:
+<pre>
+    DEVICEHIGH=<a
+href="#SwitchL">/L:1;3</a> <a
+href="#ParameterDrivePath">C:\util\</a><a
+href="#ParameterFilename">mydriv.sys</a>
+</pre>
+
+    <p>Load the same driver into upper memory regions 1 and
+    3, but only if each region is at least 30 bytes in size:
+<pre>
+    DEVICEHIGH=<a
+href="#SwitchL">/L:1,30;3,30</a> <a
+href="#ParameterDrivePath">C:\util\</a><a
+href="#ParameterFilename">mydriv.sys</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>PBADMIN</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#p">Commands N-Z</a>
+    &gt; <a href="../INDEXP.HTM#pbadmin">Commands P</a>
+    <h1>PBADMIN</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Administers phone books.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>PBADMIN
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>PBADMIN
+    <a href="#SwitchN">/N phonebook_name</a>
+    [<a href="#SwitchP">/P data_filepath\data_filename</a>]
+    [<a href="#SwitchR">/R region_filepath\region_filename</a>]</p>
+
+    <p>PBADMIN
+    <a href="#SwitchI">/I phonebook_name</a>
+    [<a href="#SwitchP">/P data_filepath\data_filename</a>
+    | <a href="#SwitchR">/R region_filepath\region_filename</a>]</p>
+
+    <p>PBADMIN
+    <a href="#SwitchO">/O phonebook_name</a>
+    <a href="#ParameterServerName">server_name</a>
+    <a href="#ParameterUserName">user_name</a>
+    <a href="#ParameterPassword">password</a></p>
+
+    <p>PBADMIN
+    <a href="#SwitchB">/B phonebook_name</a></p>
+
+    <p>Starts Phone Book Administrator:</p>
+    <p>PBADMIN</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterPassword"></a> password
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the password for the user account on the
+      PBS server.</dd>
+
+      <dt><a name="ParameterServerName"></a> server_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the name of the server to which the
+      phone book is published.</dd>
+
+      <dt><a name="ParameterUserName"></a> user_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies a user account with FTP permissions on
+      the Phone Book Service (PBS) server.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchB"></a> /B phonebook_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Publishes a phone book. The phonebook_name
+      parameter specifies the name of the phone book to
+      publish. Before you can use the /B switch, you
+      must configure the phone book with the
+      <a href="#SwitchO">/O</a> switch.</dd>
+
+      <dt><a name="SwitchI"></a> /I phonebook_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Imports data into a phone book (.mdb) from a
+      region (.txt) file or a phone book (.pbk or .txt)
+      file. Specifies the phone book into which you want to
+      import data.</dd>
+
+      <dt><a name="SwitchN"></a> /N phonebook_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Creates a phone book (.mdb).
+      Specifies the name of the file to create.</dd>
+
+      <dt><a name="SwitchO"></a> /O phonebook_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Configures options for a phone book. The
+      PhoneBookName specifies the name of the phone book for
+      which you want to set options.</dd>
+
+      <dt><a name="SwitchP"></a> /P data_pathname/data_filename
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the location and the name of the phone
+      book file (.pbk or .txt) you want to import into a
+      phone book.</dd>
+
+      <dt><a name="SwitchR"></a> /R region_pathname/region_filename
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the location and the name of the region
+      file you want to import into a phone book.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>A phone book name cannot consist of more than eight
+    characters, cannot consist of all digits, and must not
+    contain a space or any of the symbols:
+    ! , ; * = / \ : ? ' " &lt; &gt; | . &amp; % {} [] @ ( ) ´ ` ~</p>
+
+    <p>If you specify a path, you must specify the full path.
+    You cannot use spaces in the path to the phone book, to
+    a phone book file, or to a region file.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>ACLCONV</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#a">Commands A-M</a>
+    &gt; <a href="../INDEXA.HTM#aclconv">Commands A</a>
+    <h1>ACLCONV</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Converts OS/2 HPFS386 file and directory permissions
+    to NTFS volumes.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>ACLCONV
+    <a href="#SwitchData">/data:datafile</a>
+    <a href="#SwitchLog">/log:logfile</a>
+    [<a href="#SwitchNewDrive">/newdrive:drive</a>]
+    [<a href="#SwitchDomain">/domain:domain</a>]
+    [<a href="#SwitchCodePage">/codepage:n</a>]</p>
+
+    <p>ACLCONV
+    <a href="#SwitchList">/list</a>
+    <a href="#SwitchLog">/log:logfile</a>
+    <a href="#SwitchCodePage">/codepage:n</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchCodePage"></a> /codepage:n
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Specifies the Code Page associated with the
+      BACKACC data file.</dd>
+
+      <dt><a name="SwitchData"></a> /data:datafile
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the LAN Manager for OS/2 BACKACC data
+      file.</dd>
+
+      <dt><a name="SwitchDomain"></a> /domain:domain
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Searches only the specified domain for account
+      names.</dd>
+
+      <dt><a name="SwitchList"></a> /list
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Lists the contents of the specified log file.</dd>
+
+      <dt><a name="SwitchLog"></a> /log:logfile
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the file to log information about failed
+      conversions.</dd>
+
+      <dt><a name="SwitchNewDrive"></a> /newdrive:drive
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the drive on which to restore
+      permissions. Necessary only if the the permissions
+      were backed up from a different drive letter.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../P/PORTUAS.HTM">PORTUAS</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Allows you to restore the access permissions recorded
+    by the LAN Manager 2.x BACKACC utility onto an NTFS
+    volume.</p>
+    <p>If the drive letter for the NTFS files is not the
+    same as the original files, you must use the
+    <a href="#SwitchNewDrive">/newdrive</a> switch to
+    specify the new drive.</p>
+    <p>You must be a member of an administrator group to use
+    ACLCONV.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To restore to drive E the access permissions to files
+    backed up on drive D using LAN Manager BACKACC:</p>
+<pre>
+    ACLCONV <a
+href="#SwitchData">/data:d:\lanman\accounts\aclbakd.acl</a> <a
+href="#SwitchLog">/log:c:\admin\aclconv.log</a> <a
+href="#SwitchNewDrive">/newdrive:e</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

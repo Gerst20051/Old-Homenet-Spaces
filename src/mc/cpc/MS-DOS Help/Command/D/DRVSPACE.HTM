@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DBLSPACE.SYS (DRVSPACE.SYS)</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDA.HTM#drvspace">Configuration Da-Dr</a>
+    <h1>DBLSPACE.SYS (DRVSPACE.SYS)</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Determines the final memory location of DRVSPACE.BIN, the part of
+    the operating system that provides access to your compressed drives.</p>
+
+    <p>When you start your computer, the operating system loads DRVSPACE.BIN
+    along with other operating system functions, before carrying out the
+    commands in your CONFIG.SYS and AUTOEXEC.BAT files. DRVSPACE.BIN initially
+    loads in conventional memory because it loads before device drivers that
+    provide access to upper memory.</p>
+
+    <p>When you run DriveSpace Setup, it adds a command for DRVSPACE.SYS to
+    your CONFIG.SYS file.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p><a href="DEVICE.HTM">DEVICE</a>=<a
+    href="#ParameterDrivePath">[drive:][\path\]</a>DRVSPACE.SYS
+    <a href="#SwitchMove">/MOVE</a>
+    [<a href="#SwitchNohma">/NOHMA</a>]</p>
+
+    <p><a href="DEVICEHI.HTM">DEVICEHIGH</a>=<a
+    href="#ParameterDrivePath">[drive:][\path\]</a>DRVSPACE.SYS
+    <a href="#SwitchMove">/MOVE</a>
+    [<a href="#SwitchNohma">/NOHMA</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrivePath"></a> [drive:][\path\]
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Specifies the location of the DRVSPACE.SYS file.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchMove"></a> /MOVE
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Moves DRVSPACE.BIN to its final location in memory.</dd>
+      <dd>Initially, DRVSPACE.BIN loads at the top of
+      conventional memory. After the operating system
+      finishes carrying out the commands in the CONFIG.SYS
+      file, it moves DRVSPACE.BIN to the bottom of
+      conventional memory. When DRVSPACE.SYS is loaded by
+      using the <a href="DEVICE.HTM">DEVICE</a>
+      command, it moves DRVSPACE.BIN from the top of
+      conventional memory to the bottom. This can be useful
+      for avoiding conflicts with programs that are loaded
+      from the CONFIG.SYS file and require access to the top
+      of conventional memory.</dd>
+      <dd>When DRVSPACE.SYS is loaded by using the
+      <a href="DEVICEHI.HTM">DEVICEHIGH</a> command,
+      DRVSPACE.BIN moves to upper memory, if available.
+      Moving DRVSPACE.BIN to upper memory makes more
+      conventional memory available.</dd>
+
+      <dt><a name="SwitchNohma"></a> /NOHMA
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Prevents DRVSPACE.SYS from moving a portion of
+      DRVSPACE.BIN to the high memory area (HMA).</dd>
+      <dd>If the operating system is loaded into the HMA,
+      DRVSPACE.SYS moves a portion of DRVSPACE.BIN to the
+      HMA (if there is enough room in the HMA). Use this
+      switch if you do not want DRVSPACE.BIN to use the HMA.
+      (It is not necessary to use this switch if you
+      upgraded to
+      <a href="../../Version/MSDOS/622.HTM">MS-DOS 6.22</a> from
+      <a href="../../Version/MSDOS/600.HTM">MS-DOS 6.0</a>.)
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#AccessTop">Avoiding conflicts with programs that require access to the top of conventional memory</a></li>
+      <li><a href="#CompressedDrive">DRVSPACE.SYS does not provide access to compressed drives</a></li>
+      <li><a href="#DeviceDriver">If your compressed drive's host drive requires a device driver</a></li>
+      <li><a href="#MovingUpper">Moving DRVSPACE.BIN to upper memory</a></li>
+      <li><a href="#MovingPart">Moving part of DRVSPACE.BIN to the high memory area</a></li>
+      <li><a href="#Buffers">Using BUFFERS with DriveSpace</a></li>
+    </ul>
+
+    <hr>
+    <a name="CompressedDrive"></a> <b>DRVSPACE.SYS does not provide access to compressed drives</b>
+    <p>The DRVSPACE.SYS device driver does not provide access
+    to compressed drives; it simply moves DRVSPACE.BIN to
+    its final location in memory. (DRVSPACE.BIN is the part
+    of the operating system that provides access to
+    compressed drives; it loads with other operating system
+    functions, before the operating system carries out the
+    commands in your CONFIG.SYS file.)</p>
+
+    <hr>
+    <a name="DeviceDriver"></a> <b>If your compressed drive's host drive requires a device driver</b>
+    <p>A few disk drives require an installable device driver.
+    If such a drive contains compressed volume files (either
+    you compressed that drive, or you created new compressed
+    drives on that drive), the command for the DRVSPACE.SYS
+    device driver must appear in the CONFIG.SYS file after
+    the command for your drive's device driver. Otherwise,
+    DriveSpace will not mount any compressed volume files
+    located on that drive when your computer starts.</p>
+
+    <hr>
+    <a name="AccessTop"></a> <b>Avoiding conflicts with programs that require access to the top of conventional memory</b>
+    <p>When you start your computer, the operating system
+    loads DRVSPACE.BIN at the top of conventional memory;
+    after processing the CONFIG.SYS file, the operating
+    system moves DRVSPACE.BIN to the bottom of conventional
+    memory.</p>
+
+    <p>However, a few programs that are loaded from the
+    CONFIG.SYS file require access to the top of
+    conventional memory and do not work properly if
+    DRVSPACE.BIN is located there. To avoid such conflicts,
+    DriveSpace Setup adds a command for DRVSPACE.SYS before
+    any command that starts a program that is known to
+    require this area of memory. The DRVSPACE.SYS device
+    driver moves DRVSPACE.BIN from the top of conventional
+    memory to another area of memory (either to the bottom
+    of conventional memory or to upper memory).</p>
+
+    <p>Depending on your configuration, your CONFIG.SYS
+    file might contain more than one command for
+    DRVSPACE.SYS. This will not cause any problems.</p>
+
+    <hr>
+    <a name="MovingPart"></a> <b>Moving part of DRVSPACE.BIN to the high memory area</b>
+    <p>By default, if your CONFIG.SYS file contains a
+    <a href="DOS.HTM">DOS</a>=HIGH command,
+    DRVSPACE.SYS moves the compression server, a portion of
+    DRVSPACE.BIN, to the HMA. To move a portion of
+    DRVSPACE.BIN to the HMA, you must have an 80286 or
+    higher computer with extended memory, and must be
+    running <a href="../H/HIMEMSYS.HTM">HIMEM.SYS</a> or another
+    extended-memory manager.</p>
+
+    <hr>
+    <a name="MovingUpper"></a> <b>Moving DRVSPACE.BIN to upper memory</b>
+    <p>When loaded with a <a href="DEVICEHI.HTM">DEVICEHIGH</a>
+    command, the DRVSPACE.SYS device driver moves
+    DRVSPACE.BIN from conventional to upper memory. If there
+    is no upper memory block large enough to accommodate
+    DRVSPACE.BIN, it is instead moved to the bottom of
+    conventional memory.</p>
+
+    <p>To use the upper memory area, you must have an 80386
+    or 80486 computer with extended memory.</p>
+
+    <hr>
+    <a name="Buffers"></a> <b>Using BUFFERS with DriveSpace</b>
+    <p>If you are using DriveSpace and
+    <a href="../S/SMARTDRV.HTM">SMARTDrive</a>, and the
+    operating system is loaded into the HMA, set
+    <a href="../B/BUFFERS.HTM">BUFFERS=10</a>. This ensures
+    that there will be enough room in the HMA for the
+    operating system, DriveSpace, and all your buffers. (If
+    <a href="../B/BUFFERS.HTM">BUFFERS</a> is set to a value
+    higher than 10, there might not be enough room in the
+    HMA for all your buffers, and the operating system will
+    place all the buffers into conventional memory.) If
+    you're using <a href="../S/SMARTDRV.HTM">SMARTDrive</a>,
+    specifying more than 10 buffers will not speed up your
+    system much, but will use additional memory.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To move a portion of DRVSPACE.BIN to the HMA and move
+    the rest to the bottom of conventional memory, you must
+    have an 80286 or higher computer, and your CONFIG.SYS
+    file must contain a <a href="DOS.HTM">DOS</a>=HIGH
+    command and a <a href="DEVICE.HTM">DEVICE</a>
+    command for <a href="../H/HIMEMSYS.HTM">HIMEM.SYS</a> or
+    another extended-memory manager. Load DRVSPACE.SYS by:
+<pre>
+    <a href="DEVICE.HTM">device</a>=drvspace.sys <a
+    href="#SwitchMove">/move</a>
+</pre>
+
+    <p>To move a portion of DRVSPACE.BIN to the HMA and the
+    rest to the upper memory area (if available), you must
+    have an 80386 or higher computer with extended memory.
+    Ensure that your CONFIG.SYS file contains a
+    <a href="DEVICE.HTM">DEVICE</a> command for
+    DRVSPACE.SYS, and then run
+    <a href="../M/MEMMAKER.HTM">MemMaker</a>.</p>
+
+    <p>To move all of DRVSPACE.BIN to the bottom of
+    conventional memory, and to prevent DRVSPACE.BIN from
+    using the HMA or upper memory, load DRVSPACE.SYS by:
+<pre>
+    <a href="DEVICE.HTM">device</a>=drvspace.sys <a
+    href="#SwitchMove">/move</a> <a
+    href="#SwitchNohma">/nohma</a>
+</pre>
+
+    <p>To move all of DRVSPACE.BIN to upper memory (if
+    available), and to prevent DRVSPACE.BIN from using the
+    HMA, load DRVSPACE.SYS by:
+<pre>
+    <a href="DEVICEHI.HTM">devicehigh</a>=drvspace.sys <a
+    href="#SwitchMove">/move</a> <a
+    href="#SwitchNohma">/nohma</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>EVENTTRIGGERS /CREATE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#e">Commands A-M</a>
+    &gt; <a href="../INDEXE.HTM#eventtriggerscreate">Commands E</a>
+    <h1>EVENTTRIGGERS /CREATE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Creates a new event trigger that monitors and acts
+    upon the occurrence of log events of given criteria.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>EVENTTRIGGERS /CREATE
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>EVENTTRIGGERS /CREATE
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]
+    [<a href="#SwitchD">/d description</a>]
+    [<a href="#SwitchEid">/eid event_id</a>
+    | <a href="#SwitchSo">/so source_name</a>
+    | <a href="#SwitchT">/t type</a>]
+    [<a href="#SwitchRu">/ru [Domain\]User | "System"</a>]
+    [<a href="#SwitchRp">/rp password</a>]
+    <a href="#SwitchTk">/tk task_name</a>
+    <a href="#SwitchTr">/tr trigger_name</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchD"></a> /d description
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies a detailed description of the event trigger.</dd>
+
+      <dt><a name="SwitchEid"></a> /eid event_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies a specific event ID for which the event
+      trigger should monitor.
+      A valid event_id is any number from 1 to 65535.</dd>
+
+      <dt><a name="SwitchL"></a> /l log
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the event log(s) to monitor.
+      Valid types include:
+        <ul>
+          <li><b>*</b> (default)</li>
+          <li><b>APPLICATION</b></li>
+          <li><b>Directory log</b></li>
+          <li><b>DNS server</b></li>
+          <li><b>LOG</b></li>
+          <li><b>SECURITY</b></li>
+          <li><b>SYSTEM</b></li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchP"></a> /p password
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the password of the user account that is
+      specified in <a href="#SwitchU">/u</a>.</dd>
+
+      <dt><a name="SwitchRp"></a> /rp password
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a> ONLY)</dt>
+      <dd>Specifies the password of the user account that is
+      specified in <a href="#SwitchRu">/ru</a>. If omitted
+      when specifying a user account,
+      <a href="../S/SCHTASKS.HTM">SchTasks</a> prompts you
+      for the password and obscures the text you type.
+      Tasks run with with permissions of the NT
+      Authority\System account do not require a password and
+      <a href="../S/SCHTASKS.HTM">SchTasks</a> does not
+      prompt for one.</dd>
+
+      <dt><a name="SwitchRu"></a> /ru [Domain\]User | "System"
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a> ONLY)</dt>
+      <dd>Runs the tasks with the permission of the specified
+      user account. By default, the task runs with the permissions
+      of the user logged on to the computer running
+      <a href="../S/SCHTASKS.HTM">SchTasks</a>.</dd>
+
+      <dt><a name="SwitchS"></a> /s computer
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the name or IP address of a remote computer
+      (do not use backslashes). The default is the local computer.</dd>
+
+      <dt><a name="SwitchSo"></a> /so source_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies an event source for which the event
+      trigger should monitor.</dd>
+
+      <dt><a name="SwitchT"></a> /t source_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies an event type for which the event trigger
+      should monitor. Valid values include:
+        <ul>
+          <li><b>ERROR</b></li>
+          <li><b>FAILUREAUDIT</b></li>
+          <li><b>INFORMATION</b></li>
+          <li><b>SUCCESSAUDIT</b></li>
+          <li><b>WARNING</b></li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchTk"></a> /tk task_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the task/command/line to execute when
+      the event trigger conditions are met.</dd>
+
+      <dt><a name="SwitchTr"></a> /tr trigger_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies a friendly trigger_name to associate
+      with the event trigger.</dd>
+
+      <dt><a name="SwitchU"></a> /u [Domain\]User
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Runs the command with the account permissions of
+      the user specified by User or Domain\User.
+      The default is the permissions of the current logged
+      on user on the computer issuing the command.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="EVENTTRD.HTM">EVENTTRIGGERS /DELETE</a>
+    <br><a href="EVENTTRQ.HTM">EVENTTRIGGERS /QUERY</a>
+    <br><a href="../S/SCHTASKS.HTM">SchTasks</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

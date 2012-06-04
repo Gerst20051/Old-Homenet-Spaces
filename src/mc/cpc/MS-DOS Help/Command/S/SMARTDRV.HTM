@@ -1,0 +1,454 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>SMARTDRV</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#s">Commands N-Z</a>
+    &gt; <a href="../INDEXS.HTM#smartdrv">Commands S</a>
+    <h1>SMARTDRV</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Starts or configures SMARTDrive, which creates a disk cache in
+    extended memory. A disk cache can significantly speed up the
+    operating system's disk operations. When used for disk caching,
+    SMARTDrive is loaded by using the SMARTDRV command in your
+    AUTOEXEC.BAT file or at the command prompt.</p>
+    <p>SMARTDrive can also perform double buffering, which provides
+    compatibility for hard-disk controllers that cannot work with
+    memory provided by <a href="../E/EMM386.HTM">EMM386</a> or
+    Windows running in 386 enhanced mode.
+    To use double buffering, load the SMARTDRV.EXE device
+    driver by using a <a href="../D/DEVICE.HTM">DEVICE</a> command in your CONFIG.SYS file.</p>
+    <p><b>CAUTION:</b><br>
+    SMARTDrive will not load after Windows has started.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>When starting SMARTDrive from your AUTOEXEC.BAT file or from the
+    command prompt:</p>
+    <p>[<a href="#ParameterDrive1">drive1:</a>][<a
+    href="#ParameterPath">path</a>]SMARTDRV
+    [<a href="#SwitchX">/X</a>]
+    [[<a href="#ParameterDrive2">drive2</a>[+|-]]...]
+    [<a href="#SwitchU">/U</a>]
+    [<a href="#SwitchC">/C</a>
+    | <a href="#SwitchR">/R</a>]
+    [<a href="#SwitchF">/F</a>
+    | <a href="#SwitchN">/N</a>]
+    [<a href="#SwitchL">/L</a>]
+    [<a href="#SwitchV">/V</a>
+    | <a href="#SwitchQ">/Q</a>
+    | <a href="#SwitchS">/S</a>]
+    [<a href="#ParameterInitCacheSize">InitCacheSize</a>[<a
+    href="#ParameterWinCacheSize">WinCacheSize</a>]]
+    [<a href="#SwitchE">/E</a>:ElementSize]
+    [<a href="#SwitchB">/B</a>:BufferSize]</p>
+
+    <p>Once SMARTDrive is running:</p>
+    <p>SMARTDRV
+    [<a href="#SwitchX">/X</a>]
+    [[<a href="#ParameterDrive2">drive2</a>[+|-]]...]
+    [<a href="#SwitchC">/C</a>
+    | <a href="#SwitchR">/R</a>]
+    [<a href="#SwitchF">/F</a>
+    | <a href="#SwitchN">/N</a>]
+    [<a href="#SwitchQ">/Q</a>
+    | <a href="#SwitchS">/S</a>]</p>
+
+    <p>To view the current status after SMARTDrive has loaded:</p>
+    <p>SMARTDRV</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive1"></a> drive1:
+      (<a name="ParameterPath"></a> path
+      <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the location of the SMARTDRV.EXE file.</dd>
+
+      <dt><a name="ParameterDrive2"></a> [[drive+|-]
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>
+        Specifies the letter of the disk drive for which you want to
+        control caching. Include the plus (+) sign to enable caching
+        for the specified drive; include the minus (-) sign to disable
+        caching for that drive. You can specify multiple disk drives.
+      </dd>
+      <dd>
+        If you specify a drive letter without a plus or minus sign,
+        read-caching is enabled and write-caching is disabled. If you
+        specify a drive letter followed by a plus sign (+),
+        read-caching and write-caching are enabled. If you specify a
+        drive letter followed by a minus sign (-), both read-caching
+        and write-caching are disabled. If you don't specify a drive
+        letter, floppy disk drives, CD-ROM drives, and drives created
+        using Interlnk are read-cached but not write-cached, hard disk
+        drives are both read-cached and write-cached, and network
+        drives and Microsoft Flash memory-card drives are ignored. (For
+        information about how DriveSpace caches compressed drives, see
+        Notes.)
+      </dd>
+
+      <dt><a name="ParameterInitCacheSize"></a> InitCacheSize
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the size in kilobytes of the cache when SMARTDrive
+      starts (when Windows is not running). The size of the disk cache
+      affects how efficiently SMARTDrive runs. In general, the larger
+      the cache, the less often SMARTDrive needs to read information
+      from the disk, which speeds up your system's performance. If you
+      do not specify an InitCacheSize value, SMARTDrive sets the value
+      according to how much memory your system has (see the table
+      below).</dd>
+
+      <dt><a name="ParameterWinCacheSize"></a> WinCacheSize
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>
+        Specifies, in kilobytes, how much SMARTDrive will reduce the
+        cache size for Windows. When you start Windows, SMARTDrive
+        reduces the size of the cache to recover memory for Windows'
+        use. When you quit Windows, the cache returns to its normal
+        size. WinCacheSize specifies the smallest size to which
+        SMARTDrive will reduce the cache. The default value depends
+        on how much available memory your system has (see the table
+        below). If you specify a value for
+        <a href="#ParameterInitCacheSize">InitCacheSize</a> that is
+        smaller than the value specified for WinCacheSize,
+        <a href="#ParameterInitCacheSize">InitCacheSize</a> is set to
+        the same size as WinCacheSize.
+      </dd>
+      <dd>
+        The table shows what the default values for
+        <a href="#ParameterInitCacheSize">InitCacheSize</a> and
+        WinCacheSize will be, depending on the amount of available
+        extended memory your computer has.
+<pre>
+        <u>Extended Memory  InitCacheSize        WinCacheSize</u>
+        Up to 1 MB       All extended memory  Zero (no caching)
+        Up to 2 MB       1 MB                 256K
+        Up to 4 MB       1 MB                 512K
+        Up to 6 MB       2 MB                 1 MB
+        6 MB or more     2 MB                 2 MB
+        <u>Extended Memory  InitCacheSize        WinCacheSize</u>
+</pre>
+
+      </dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchB"></a> /B:BufferSize
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies in bytes the size of the read-ahead buffer. A
+      read-ahead buffer is additional information that SMARTDrive reads
+      when an application reads information from the hard disk. For
+      example, if an application reads 512K of information from a file,
+      SMARTDrive then reads the amount of information specified by
+      BufferSize and saves it in memory. The next time the application
+      needs to read information from that file, it can read it from
+      memory instead. The default size of the read-ahead buffer is 16K
+      (16384 bytes). Its value can be any multiple of
+      <a href="#SwitchE">/E</a>:ElementSize. The larger the value of
+      BufferSize, the more conventional memory SMARTDrive uses.</dd>
+
+      <dt><a name="SwitchC"></a> /C
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Writes all cached information from memory to cached disks.
+      SMARTDrive writes information from memory to the disk at times
+      when other disk activity has slowed. You might use this option if
+      you are going to turn off your computer and want to make sure all
+      cached information has been written to the disk. (SMARTDrive
+      writes all cached information to the disk if you restart your
+      computer by pressing CTRL+ALT+DELETE, but not if you simply turn
+      off the power or press your computer's reset button.)</dd>
+
+      <dt><a name="SwitchE"></a> /E:ElementSize
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies in bytes the amount of the cache that SMARTDrive
+      moves at a time. Valid values are 1024, 2048, 4096, and 8192. The
+      default value is 8192. The larger the value, the more
+      conventional memory SMARTDrive uses.</dd>
+
+      <dt><a name="SwitchF"></a> /F
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Writes cached data after each command completes. This is the
+      default value.</dd>
+
+      <dt><a name="SwitchL"></a> /L
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Prevents SMARTDrive from automatically loading into upper
+      memory blocks (UMBs), even if there are UMBs available. You can
+      use the /L switch if upper memory is enabled for use by programs.
+      If you are using SMARTDrive's double-buffering feature and your
+      system appears to be running slowly, try adding the /L switch to
+      the SMARTDrive command in your AUTOEXEC.BAT file.</dd>
+
+      <dt><a name="SwitchN"></a> /N
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Writes cached data when the system is idle. When the command
+      prompt returns, not all cached data may be written yet. To ensure
+      that all the cached data is written, use the
+      <a href="#SwitchC">/C</a> switch.</dd>
+
+      <dt><a name="SwitchQ"></a> /Q
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Instructs SMARTDrive not to display status messages when it
+      starts. (By default, SMARTDrive does not display status messages
+      when loading, but does for most other operations.) If SMARTDrive
+      encounters an error while starting, it displays an error message
+      whether or not it was loaded with the /Q switch. The /Q switch
+      cannot be used in conjunction with the <a href="#SwitchV">/V</a>
+      switch.</dd>
+
+      <dt><a name="SwitchR"></a> /R
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Clears the contents of the existing cache, including writing
+      all write-cached information to disk, and restarts
+      SMARTDrive.</dd>
+
+      <dt><a name="SwitchS"></a> /S
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Displays additional information about the status of
+      SMARTDrive.</dd>
+
+      <dt><a name="SwitchU"></a> /U
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Does not load the CD-ROM caching module of SMARTDrive even if
+      you have a CD-ROM drive. If SMARTDrive is loaded with the /U
+      switch, you cannot enable CD-ROM drive caching. If SMARTDrive is
+      loaded without the /U switch, you can disable or enable caching
+      individual CD-ROM drives using the
+      <a href="#ParameterDrive2">drive2:</a>+|- parameter.</dd>
+
+      <dt><a name="SwitchV"></a> /V
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Instructs SMARTDrive to display status and error messages
+      when it starts. (By default, SMARTDrive does not display any
+      messages unless it encounters an error condition.) The /V switch
+      cannot be used in conjunction with the <a href="#SwitchQ">/Q</a>
+      switch.</dd>
+
+      <dt><a name="SwitchX"></a> /X
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Disables write-behind caching for all drives. You can then
+      enable caching for individual drives by using the
+      <a href="#ParameterDrive2">drive2:</a>+|- parameter.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><b>CAUTION:</b><br>
+    Check that SMARTDrive has completed all write-caching before you
+    restart or turn off your computer. (This is not necessary if you
+    restart your computer by pressing CTRL+ALT+DELETE.) To have
+    SMARTDrive write all cached information to cached disks, type
+    SMARTDRV <a href="#SwitchC">/C</a> at the command prompt. After all
+    disk activity has stopped, you can safely restart or turn off your
+    computer.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Cache">Enabling write caching on specific drives</a></li>
+      <li><a href="#Upper">Loading SMARTDrive into the upper memory area</a></li>
+      <li><a href="#Cdrom">SMARTDrive and CD-ROM drives</a></li>
+      <li><a href="#Compressed">SMARTDrive and compressed drives</a></li>
+      <li><a href="#Extended">Using extended memory</a></li>
+    </ul>
+
+    <hr>
+    <a name="Cache"></a> <b>Enabling write caching on specific drives</b>
+    <p>By default, the operating system Setup configures SMARTDrive
+    so that write-caching is disabled. This configuration is extremely
+    safe, but does not provide optimum speed. After SMARTDrive starts,
+    you can use the SMARTDRV command to enable write caching on specific
+    drives. This can significantly speed up your system. To enable
+    write-caching on a particular drive, carry out the SMARTDRV command
+    and specify the drive letter and a plus sign. For example, to
+    enable write-caching on drive C, you would type:</p>
+<pre>
+    SMARTDRV <a
+href="#ParameterDrive2">C+</a>
+</pre>
+
+    <p>For information about enabling write-caching for compressed
+    drives, see "SMARTDrive and Compressed Drives" later in this help
+    topic.</p>
+
+    <hr>
+    <a name="Extended"></a> <b>Using extended memory</b>
+    <p>For SMARTDrive to use extended memory, your CONFIG.SYS file must
+    contain a <a href="../D/DEVICE.HTM">DEVICE</a> command for <a href="../H/HIMEMSYS.HTM">HIMEM.SYS</a> or another extended-memory
+    manager that conforms to the Lotus/Intel/Microsoft/AST eXtended
+    Memory Specification (XMS).</p>
+
+    <hr>
+    <a name="Upper"></a> <b>Loading SMARTDrive into the upper memory area</b>
+    <p>If the upper memory area is available through the operating
+    system, SMARTDrive will automatically load into upper memory.
+    You do not need to use the <a href="../L/LOADHIGH.HTM">LOADHIGH</a> command with SMARTDrive.</p>
+    <p>If your hard disk requires double buffering, SMARTDrive may run
+    faster if its cache is located in conventional memory. To load
+    SMARTDrive into upper memory and its cache in conventional memory,
+    use:</p>
+<pre>
+    <a href="../L/LOADHIGH.HTM">LOADHIGH</a> SMARTDRV <a
+href="#SwitchL">/L</a>
+</pre>
+
+    <hr>
+    <a name="Compressed"></a> <b>SMARTDrive and compressed drives</b>
+    <p>SMARTDrive does not actually cache compressed drives; instead,
+    it caches the physical (host) drive on which the compressed volume
+    file is located. This improves the speed of both the physical drive
+    and the compressed drive.</p>
+
+    <hr>
+    <a name="Cdrom"></a> <b>SMARTDrive and CD-ROM drives</b>
+    <p>If you are using a CD-ROM drive and you want to cache it, load
+    <a href="../M/MSCDEX.HTM">MSCDEX</a> before you load SMARTDrive.
+    If you do not want to cache the CD-ROM drive, load SMARTDrive with
+    the <a href="#SwitchU">/U</a> switch. (Note that the operating
+    system Setup adds the SMARTDRV command to the beginning of your
+    AUTOEXEC.BAT file, before any other commands.)</p>
+    <p>To find out whether SMARTDrive is caching your CD-ROM drive,
+    type SMARTDRV at the command prompt.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To create a SMARTDrive disk cache and use the default cache
+    size, add the command to your AUTOEXEC.BAT file:</p>
+<pre>
+    <a href="#ParameterDrive1">C:</a><a
+href="#ParameterPath">\DOS\</a>SMARTDRV
+</pre>
+
+    <p><b>Example: A typical SMARTDrive command</b></p>
+    <p>Suppose you want to create a disk cache with a cache size of
+    2048K, and ensure that Windows will not reduce the size of the
+    cache to less than 1024K. To do this and to specify that the
+    SMARTDRV.EXE file is located in the DOS directory on drive C, add
+    the line to your AUTOEXEC.BAT file:</p>
+<pre>
+    <a href="#ParameterDrive1">C:</a><a
+href="#ParameterPath">\DOS\</a>SMARTDRV <a
+href="#ParameterInitCacheSize">2048</a> <a
+href="#ParameterWinCacheSize">1024</a>
+</pre>
+
+    <p><b>Example: Enabling and disabling caching on specific
+    drives</b></p>
+    <p>Suppose that SMARTDrive is already running and you want to
+    enable write caching on drive C. To do this, type:</p>
+<pre>
+    SMARTDRV <a
+href="#ParameterDrive2">C+</a>
+</pre>
+
+    <p>Suppose you want to configure SMARTDrive to disable all caching
+    of your floppy-disk drives and enable write caching on Interlnk
+    drive D. (Interlnk drives, like floppy-disk drives, are not
+    write-cached by default because it's possible to lose access to the
+    drive before all information has been written from the cache). To
+    do this, you would add the command to your
+    AUTOEXEC.BAT:</p>
+<pre>
+    <a href="#ParameterDrive1">C:</a><a
+href="#ParameterPath">\DOS\</a>SMARTDRV <a
+href="#ParameterDrive2">A-</a> <a
+href="#ParameterDrive2">B-</a> <a
+href="#ParameterDrive2">D+</a>
+</pre>
+
+    <p><b>Example: Saving cached information on the hard disk</b></p>
+    <p>Before pressing your computer's reset button or turning off your
+    computer, it is a good idea to have SMARTDrive write all cached
+    information from memory to any cached disks. To do this, type:</p>
+<pre>
+    SMARTDRV <a
+href="#SwitchC">/C</a>
+</pre>
+
+    <p>You will not need to use this command before restarting your
+    computer by pressing the CTRL+ALT+DELETE keys: SMARTDrive detects
+    the CTRL+ALT+DELETE key sequence and automatically writes all
+    information to cached disks before allowing the system to
+    restart.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

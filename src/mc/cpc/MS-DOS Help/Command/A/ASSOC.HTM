@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>ASSOC</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#a">Commands A-M</a>
+    &gt; <a href="../INDEXA.HTM#assoc">Commands A</a>
+    <h1>ASSOC</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Display or change the association between a file extension and a
+    fileType</p>
+    <p>Using this command will create or change values in the registry
+    at HKCR\\ .&lt;file extension&gt;</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>ASSOC
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>ASSOC
+    <a href="#ParameterExtension">.ext</a> =
+    [<a href="#ParameterFiletype">filetype</a>]</p>
+
+    <p>Display all the current file associations:</p>
+    <p>ASSOC</p>
+
+    <p>Display the current File Type for that extension:</p>
+    <p>ASSOC
+    <a href="#ParameterExtension">.ext</a></p>
+
+    <p>Delete the association for that file extension:</p>
+    <p>ASSOC
+    <a href="#ParameterExtension">.ext</a>=</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterExtension"></a> .ext
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>The file extension. A file extension is the last few
+      characters in a FileName after the period. So a file called
+      JANUARY.HTML has the file extension .HTML.</dd>
+      <dd>The File extension is used by Windows NT to determine the
+      type of information stored in the file and therefore which
+      application(s) will be able to display the information in the
+      file. File extensions are not case sensitive and are not limited
+      to 3 characters.</dd>
+      <dd>More than one file extension may be associated with the same
+      File Type.</dd>
+      <dd>e.g. both the extension .JPG and the extension .JPEG may be
+      associated with the File Type "jpegfile"</dd>
+      <dd>At any one time a given file extension may only be associated
+      with one File Type.</dd>
+      <dd>e.g. If you change the extension .JPG so it is associated
+      with the File Type "txtfile" then it's normal association with
+      "jpegfile" will disappear. Removing the association to "txtfile"
+      does not restore the association to "jpegfile"</dd>
+
+      <dt><a name="ParameterFiletype"></a> filetype
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Specifies the file type to associate with the file
+      extension.</dd>
+      <dd>File Types can be displayed in the Windows Explorer GUI:
+      [View, Options, File Types] however the spelling is usually
+      different to that expected by the ASSOC command e.g. the File
+      Type "txtfile" is displayed in the GUI as "Text Document"and
+      "jpegfile" is displayed as "image/jpeg"</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Display help.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../F/FTYPE.HTM">FTYPE</a> - Edit file types (used in
+    file extension associations)
+    <br><a href="ASSOCIAT.HTM">ASSOCIATE</a> - One step file
+    association
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>export - Set an environment variable</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>Viewing file associations:</p>
+<pre>
+    ASSOC <a href="#ParameterExtension">.txt</a>
+    ASSOC <a href="#ParameterExtension">.doc</a>
+    ASSOC backup<a href="#ParameterExtension">.txt</a>
+</pre>
+
+    <hr>
+    <p>Editing file associations:</p>
+<pre>
+    ASSOC <a href="#ParameterExtension">.txt</a>=txtfile
+    ASSOC <a href="#ParameterExtension">.DIC</a>=txtfile
+    ASSOC <a href="#ParameterExtension">.html</a>=Htmlfile
+</pre>
+
+    <hr>
+    <p>Deleting a file association:</p>
+<pre>
+    ASSOC <a href="#ParameterExtension">.html</a>=
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

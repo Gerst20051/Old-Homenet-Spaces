@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>MSD</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#m">Commands A-M</a>
+    &gt; <a href="../INDEXM.HTM#msd">Commands M</a>
+    <h1>MSD</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Provides detailed technical information about your computer.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>To use MSD to create a report:</p>
+    <p>MSD
+    [<a href="#SwitchI">/I</a>]
+    [<a href="#SwitchF">/F</a>[<a
+    href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path</a>]<a
+    href="#ParameterFilename">filename</a>]
+    [<a href="#SwitchP">/P</a>[<a
+    href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path</a>]<a
+    href="#ParameterFilename">filename</a>]
+    [<a href="#SwitchS">/S</a>[<a
+    href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path</a>][<a
+    href="#ParameterFilename">filename</a>]]</p>
+
+    <p>To run the MSD program and examine technical information through
+    its interface:</p>
+    <p>MSD
+    [<a href="#SwitchB">/B</a>]
+    [<a href="#SwitchI">/I</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      <a name="ParameterPath"></a> path
+      <a name="ParameterFilename"></a> filename
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Specifies the drive, directory, and filename to which you
+      want to write the report.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchB"></a> /B
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Runs MSD in black and white instead of color. Use the /B
+      switch when you have a monitor that does not correctly display
+      MSD in color.</dd>
+
+      <dt><a name="SwitchF"></a> /F[<a
+      href="#ParameterDrive">drive:</a>][<a
+      href="#ParameterPath">path</a>]<a
+      href="#ParameterFilename">filename</a>
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Prompts you for name, company, address, country, phone
+      number, and comments, then writes a complete MSD report to the
+      file you specify.</dd>
+
+      <dt><a name="SwitchI"></a> /I
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Specifies that MSD not initially detect hardware. Use the /I
+      switch if you are having problems starting MSD or if MSD is not
+      running properly.</dd>
+
+      <dt><a name="SwitchP"></a> /P[<a
+      href="#ParameterDrive">drive:</a>][<a
+      href="#ParameterPath">path</a>]<a
+      href="#ParameterFilename">filename</a>
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Writes a complete MSD report to the file you specify, without
+      prompting you for information.</dd>
+
+      <dt><a name="SwitchS"></a> /S[<a
+      href="#ParameterDrive">drive:</a>][<a
+      href="#ParameterPath">path</a>][<a
+      href="#ParameterFilename">filename</a>]
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Writes a summary MSD report to the file you specify, without
+      prompting you for information. If you do not specify any of the
+      parameters, MSD writes the report to the screen.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Information">Information provided by MSD</a></li>
+      <li><a href="#Buttons">MSD Button Options</a></li>
+    </ul>
+
+    <hr>
+    <a name="Information"></a> <b>Information provided by MSD</b>
+    <p>Whether you examine the information through MSD's interface or
+    through a report, the MSD program can provide detailed technical
+    information about your computer's:</p>
+    <ul>
+      <li>Model and processor</li>
+      <li>Memory</li>
+      <li>Video adapter</li>
+      <li>Version of MS-DOS</li>
+      <li>Mouse</li>
+      <li>Other adapters</li>
+      <li>Disk drives</li>
+      <li>LPT ports</li>
+      <li>COM ports</li>
+      <li>IRQ status</li>
+      <li>Terminate-and-stay-resident (TSR) programs</li>
+      <li>Device drivers</li>
+    </ul>
+
+    <hr>
+    <a name="Buttons"></a> <b>MSD Button Options</b>
+    <p>A brief description of the buttons that appear
+    on MSD's main screen:</p>
+    <dl>
+      <dt>Computer</dt>
+      <dd>Displays computer manufacturer, processor type, and bus type;
+      ROM BIOS manufacturer, version and date; keyboard type; DMA
+      controller configuration; and math coprocessor status.</dd>
+
+      <dt>Memory</dt>
+      <dd>Displays a map of the upper memory area (UMA) -- the memory
+      region from 640K to 1024K.</dd>
+
+      <dt>Video</dt>
+      <dd>Shows your video card manufacturer, model, and type; video
+      BIOS version and date; and current video mode.</dd>
+
+      <dt>Network</dt>
+      <dd>Displays network-specific configuration information.</dd>
+
+      <dt>Operating System</dt>
+      <dd>Displays the operating system version, location of MS-DOS in
+      memory, the drive the computer was started from, the current
+      environment settings, and the path from which MSD was run.</dd>
+
+      <dt>Mouse</dt>
+      <dd>Shows the MS-DOS mouse driver version, mouse type, mouse
+      interrupt request line (IRQ) number, and other information
+      specific to the configuration of the mouse.</dd>
+
+      <dt>Other Adapters</dt>
+      <dd>Displays the game card status for up to two game devices or
+      joysticks.</dd>
+
+      <dt>Disk Drives</dt>
+      <dd>Displays the size and number of bytes free on local and
+      remote drives.</dd>
+
+      <dt>LPT Ports</dt>
+      <dd>Displays the port addresses of all installed parallel ports,
+      and dynamically displays the status of each port.</dd>
+
+      <dt>COM Ports</dt>
+      <dd>Displays the port addresses and current communications
+      parameters of all installed serial ports, and displays the status
+      of each port.</dd>
+
+      <dt>IRQ Status</dt>
+      <dd>Displays the configuration of the hardware IRQs.</dd>
+
+      <dt>TSR Programs</dt>
+      <dd>Displays the name, location in memory, and size of each
+      program loaded in memory at the time MSD was run.</dd>
+
+      <dt>Device Drivers</dt>
+      <dd>Displays the names of all device drivers installed at the
+      time MSD was run.</dd>
+    </dl>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <ul>
+      <li><a href="#Report">Creating a report</a></li>
+      <li><a href="#Starting">Starting the MSD program</a></li>
+    </ul>
+
+    <hr>
+    <a name="Starting"></a> <b>Starting the MSD program</b>
+    <p>If you wanted to examine some of the technical information about
+    your computer before calling Microsoft Product Support Services,
+    you would start the MSD program by typing:</p>
+<pre>
+    MSD
+</pre>
+
+    <p>The MSD program has an interface that makes it easy for you to
+    access detailed technical information about your computer.</p>
+
+    <hr>
+    <a name="Report"></a> <b>Creating a report</b>
+    <p>Before calling Microsoft Product Support Services, you could
+    create a file called COMPUTER.TXT that contains a detailed
+    technical report about your computer. To do this, you could type:</p>
+<pre>
+    MSD <a
+href="#SwitchP">/P</a><a
+href="#ParameterFilename">COMPUTER.TXT</a>
+</pre>
+
+    <p>The COMPUTER.TXT file would contain the information about your
+    computer.</p>
+    <p>If you want MSD to create a detailed report about your computer
+    and you wanted the report to include such information as your name,
+    company, address, and phone number, you would type:</p>
+<pre>
+    MSD <a
+href="#SwitchF">/F</a><a
+href="#ParameterFilename">COMPUTER.TXT</a>
+</pre>
+
+    <p>The MSD program will prompt you for the information.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

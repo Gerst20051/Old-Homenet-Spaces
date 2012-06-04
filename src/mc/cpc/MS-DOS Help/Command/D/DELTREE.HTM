@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DELTREE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDA.HTM#deltree">Commands Da-Dr</a>
+    <h1>DELTREE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Deletes a directory and all the files and subdirectories that
+    are in it.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>DELTREE
+    [<a href="#SwitchY">/Y</a>]
+    [<a href="#ParameterDrive">drive:</a>]<a
+    href="#ParameterPath">path</a>
+    [[<a href="#ParameterDrive">drive:</a>]<a
+    href="#ParameterPath">path</a>[...]]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the drive where the directory you want to delete
+      resides. You can specify more than one drive.</dd>
+
+      <dt><a name="ParameterPath"></a> path
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the name of the directory you want to delete. The
+      DELTREE command will delete all the files contained in the
+      directory you specify, as well as all subdirectories and files in
+      the subdirectories subordinate to this directory. You can specify
+      more than one directory.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchY"></a> /Y
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Carries out the DELTREE command without first prompting you
+      to confirm the deletion.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about removing a directory, see the
+    <a href="../R/RMDIR.HTM">RMDIR</a> command.
+    <br>For information about deleting files, see the
+    <a href="DEL.HTM">DEL</a> command.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#FileAttributes">DELTREE and hidden, system, and read-only attributes</a></li>
+      <li><a href="#Empty">Leaving an "empty" directory</a></li>
+      <li><a href="#Wildcards">Using wildcards with DELTREE</a></li>
+    </ul>
+
+    <hr>
+    <a name="FileAttributes"></a> <b>DELTREE and hidden, system, and read-only attributes</b>
+    <p>The DELTREE command deletes all files contained in a directory
+    or subdirectory, regardless of attributes.</p>
+
+    <hr>
+    <a name="Wildcards"></a> <b>Using wildcards with DELTREE</b>
+    <p>You can use wildcards with the DELTREE command, but use them
+    with extreme caution. If you specify a wildcard that matches both
+    directory names and filenames, both the directories and files will
+    be deleted. Before specifying wildcards with the DELTREE command,
+    use the <a href="DIR.HTM">DIR</a> command to view the files and
+    directories you will delete.</p>
+
+    <hr>
+    <a name="Empty"></a> <b>Leaving an "empty" directory</b>
+    <p>If you specify the trailing slash with the directory name, the
+    directory will be left empty. If you don't specify the trailing
+    slash, the directory will also be deleted.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To delete the TEMP directory on drive C, including all files and
+    subdirectories of the TEMP directory, type:</p>
+<pre>
+    DELTREE <a
+href="#ParameterDrive">C:</a>]<a
+href="#ParameterPath">\TEMP</a> <a
+href="../../Version/MSDOS/622.HTM">(MSDOS6.22)</a> <a
+href="../../Version/MSWIN/98.HTM">(WIN98)</a>
+</pre>
+
+    <hr>
+    <p><b>Deletion in a directory</b></p>
+    <p>To delete all files and subdirectories of the TEMP directory on
+    drive C, type:</p>
+<pre>
+    DELTREE <a
+href="#ParameterDrive">C:</a>]<a
+href="#ParameterPath">\TEMP\</a>
+    <a href="../../Version/MSDOS/622.HTM">(MSDOS6.22)</a> <a
+href="../../Version/MSWIN/98.HTM">(WIN98)</a>
+
+    DELTREE <a
+href="#ParameterDrive">C:</a>]<a
+href="#ParameterPath">\TEMP\.</a>
+    <a href="../../Version/MSDOS/622.HTM">(MSDOS6.22)</a> <a
+href="../../Version/MSWIN/98.HTM">(WIN98)</a>
+
+    DELTREE <a
+href="#ParameterDrive">C:</a>]<a
+href="#ParameterPath">\TEMP\*.*</a>
+    <a href="../../Version/MSDOS/622.HTM">(MSDOS6.22)</a> <a
+href="../../Version/MSWIN/98.HTM">(WIN98)</a>
+
+    DELTREE <a
+href="#ParameterDrive">C:</a>]<a
+href="#ParameterPath">\TEMP\*</a>
+    <a href="../../Version/MSWIN/98.HTM">(WIN98)</a>
+</pre>
+
+    <hr>
+    <p>To delete (from TEMP directory on drive C) all those files and
+    subdirectories that do have an extension TMP, type:</p>
+<pre>
+    DELTREE <a
+href="#ParameterDrive">C:</a>]<a
+href="#ParameterPath">\TEMP\*.TMP</a>
+    <a href="../../Version/MSDOS/622.HTM">(MSDOS6.22)</a> <a
+href="../../Version/MSWIN/98.HTM">(WIN98)</a>
+</pre>
+
+    <p>To delete (from TEMP directory on drive C) only those files and
+    subdirectories that don't have an extension, type:</p>
+<pre>
+    DELTREE <a
+href="#ParameterDrive">C:</a>]<a
+href="#ParameterPath">\TEMP\*.</a>
+    <a href="../../Version/MSDOS/622.HTM">(MSDOS6.22)</a> <a
+href="../../Version/MSWIN/98.HTM">(WIN98)</a>
+
+    DELTREE <a
+href="#ParameterDrive">C:</a>]<a
+href="#ParameterPath">\TEMP\*</a>
+    <a href="../../Version/MSDOS/622.HTM">(MSDOS6.22)</a>
+</pre>
+
+    <p><b>Notes:</b> If you always give your filenames an extension but
+    never give your subdirectory names an extension (which is the usual
+    practice), then the above syntax can be used to delete ONLY
+    subdirectories of TEMP but leave normal files.</p>
+
+    <hr>
+    <p><b>All content AND named directory as well:</b></p>
+<pre>
+    DELTREE <a
+href="#SwitchY">/Y</a> <a
+href="#ParameterDrive">C:</a>]<a
+href="#ParameterPath">\TEMP</a> &gt; nul
+</pre>
+
+    <p><b>All content but NOT the named directory:</b></p>
+<pre>
+    DELTREE <a
+href="#SwitchY">/Y</a> <a
+href="#ParameterDrive">C:</a>]<a
+href="#ParameterPath">\TEMP\</a> &gt; nul
+</pre>
+
+    <p><b>Subdirectories of named directory (without .EXTension):</b></p>
+<pre>
+    DELTREE <a
+href="#SwitchY">/Y</a> <a
+href="#ParameterDrive">C:</a>]<a
+href="#ParameterPath">\TEMP\*.</a> &gt; nul
+</pre>
+
+    <p><b>All names whose extension are exact TMP:</b></p>
+<pre>
+    DELTREE <a
+href="#SwitchY">/Y</a> <a
+href="#ParameterDrive">C:</a>]<a
+href="#ParameterPath">\TEMP\*.TMP</a> &gt; nul
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <ul>
+    <li><b>0</b> Successfully deleted the directory</li>
+    </ul>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>NET STOP</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#n">Commands N-Z</a>
+    &gt; <a href="../INDEXN.HTM#netstop">Commands N</a>
+    <h1>NET STOP</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Stopping a service cancels any network connections the
+    service is using. Also, some services are dependent on others.
+    Stopping one service can stop others.</p>
+    <p>Services cannot be stopped from a command prompt within Windows.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>NET HELP STOP</p>
+
+    <p>NET STOP
+    [<a href="#ParameterBasic">BASIC</a>
+    | <a href="#ParameterNwredir">NWREDIR</a>
+    | <a href="#ParameterWorkstation">WORKSTATION</a>
+    | <a href="#ParameterNetbeui">NETBEUI</a>
+    | <a href="#ParameterNwlink">NWLINK</a>]
+    [<a href="#SwitchYes">/YES</a>]</p>
+
+    <p>NET STOP
+    <a href="#ParameterService">service</a></p>
+
+    <p>To stop the workgroup redirector, type:</p>
+    <p>NET STOP</p>
+    <p>(This breaks all your connections to shared resources and
+    removes the NET commands from your computer's memory).</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterBasic"></a> BASIC
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>)</dt>
+      <dd>Stops the basic redirector.</dd>
+
+      <dt><a name="ParameterNetbeui"></a> NETBEUI
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>)</dt>
+      <dd>Stops the NetBIOS interface.</dd>
+
+      <dt><a name="ParameterNwlink"></a> NWLINK
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>)</dt>
+      <dd>Stops the IPX/SPX-compatible interface.</dd>
+
+      <dt><a name="ParameterNwredir"></a> NWREDIR
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>)</dt>
+      <dd>Stops the Microsoft Novell(R) compatible redirector.</dd>
+
+      <dt><a name="ParameterService"></a> service
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>One of:
+      <ul>
+      <ul>
+      <li>ALERTER</li>
+      <li>BROWSER <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a></li>
+      <li>cisvc, Content Index
+      <li>CLIENT SERVICE FOR NETWARE</li>
+      <li>CLIPBOOK <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a></li>
+      <li>CLIPBOOK SERVER <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through <a href="../../Version/MSWIN/NT400.HTM">NT4</a></li>
+      <li>COMPUTER BROWSER <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through <a href="../../Version/MSWIN/NT400.HTM">NT4</a></li>
+      <li>DHCP CLIENT</li>
+      <li>DIRECTORY REPLICATOR <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through <a href="../../Version/MSWIN/NT400.HTM">NT4</a></li>
+      <li>EVENTLOG</li>
+      <li>FILE REPLICATION <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a></li>
+      <li>iisadmin, IIS Admin Service
+      <li>LPDSVC <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a> through <a href="../../Version/MSWIN/NT400.HTM">NT4</a></li>
+      <li>MESSENGER</li>
+      <li>msftpsvc, FTP Publishing Service
+      <li>NETLOGON</li>
+      <li>NETWORK DDE <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through <a href="../../Version/MSWIN/NT400.HTM">NT4</a></li>
+      <li>NETWORK DDE DSDM <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through <a href="../../Version/MSWIN/NT400.HTM">NT4</a></li>
+      <li>NETWORK MONITORING AGENT <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a> through <a href="../../Version/MSWIN/NT400.HTM">NT4</a></li>
+      <li>NT LM SECURITY SUPPORT PROVIDER</li>
+      <li>PLUG AND PLAY</li>
+      <li>REMOTE ACCESS CONNECTION MANAGER</li>
+      <li>REMOTE ACCESS ISNSAP SERVICE <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a> through <a href="../../Version/MSWIN/NT400.HTM">NT4</a></li>
+      <li>REMOTE ACCESS SERVER <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a> through <a href="../../Version/MSWIN/NT400.HTM">NT4</a></li>
+      <li>REMOTE PROCEDURE CALL (RPC) LOCATOR <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through <a href="../../Version/MSWIN/NT400.HTM">NT4</a></li>
+      <li>REMOTE PROCEDURE CALL (RPC) SERVICE <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through <a href="../../Version/MSWIN/NT400.HTM">NT4</a></li>
+      <li>ROUTING AND REMOVE ACCESS <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a></li>
+      <li>RPCLOCATOR <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a></li>
+      <li>RPCSS <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a></li>
+      <li>SCHEDULE <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a></li>
+      <li>SERVER</li>
+      <li>SIMPLE TCP/IP SERVICES <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a> through <a href="../../Version/MSWIN/NT400.HTM">NT4</a></li>
+      <li>smtpsvc, Microsoft SMTP Service
+      <li>SNMP <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through <a href="../../Version/MSWIN/NT400.HTM">NT4</a></li>
+      <li>SPOOLER</li>
+      <li>TASK SCHEDULER <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a> through <a href="../../Version/MSWIN/NT400.HTM">NT4</a></li>
+      <li>TCPIP NETBIOS HELPER</li>
+      <li>TELNET</li>
+      <li>UPS</li>
+      <li>w3svc, World Wide Web Publishing Service</li>
+      <li>WORKSTATION</li>
+      </ul>
+
+      <p>These services are available only on Windows Server:</p>
+      <ul>
+      <li>FILE SERVER FOR MACINTOSH <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through <a href="../../Version/MSWIN/NT400.HTM">NT4</a></li>
+      <li>GATEWAY SERVICE FOR NETWARE <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a> through <a href="../../Version/MSWIN/NT400.HTM">NT4</a></li>
+      <li>MICROSOFT DHCP SERVER <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a> through <a href="../../Version/MSWIN/NT400.HTM">NT4</a></li>
+      <li>PRINT SERVER FOR MACINTOSH <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through <a href="../../Version/MSWIN/NT400.HTM">NT4</a></li>
+      <li>WINDOWS INTERNET NAME SERVICE <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a> through <a href="../../Version/MSWIN/NT400.HTM">NT4</a></li>
+      </ul>
+      </dd>
+
+      <dt><a name="ParameterWorkstation"></a> WORKSTATION
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>)</dt>
+      <dd>Stops the default redirector.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchYes"></a> /YES
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>)</dt>
+      <dd>Carries out the command without first prompting you
+      to provide information or confirm actions.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>You must have administrative rights to stop the Server service.</p>
+    <p>The Eventlog service cannot be stopped.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2007/05/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

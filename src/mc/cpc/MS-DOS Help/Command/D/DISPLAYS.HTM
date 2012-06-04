@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DISPLAY.SYS</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDA.HTM#displaysys">Configuration Da-Dr</a>
+    <h1>DISPLAY.SYS</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Enables you to display international character sets
+    on EGA, VGA, and LCD monitors. This device driver must
+    be loaded by a <a href="DEVICE.HTM">DEVICE</a>
+    or <a href="DEVICEHI.HTM">DEVICEHIGH</a> command
+    in your CONFIG.SYS file.</p>
+
+    <p>For an introduction to preparing your screen and
+    keyboard for character sets, see the chapter
+    "Customizing for International Use" in the MS-DOS
+    User's Guide.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p><a href="DEVICE.HTM">DEVICE</a>=<a
+    href="#ParameterDrivePath">[drive:][\path\]</a>DISPLAY.SYS
+    CON[:]=(<a href="#ParameterType">type</a>[,[<a
+    href="#ParameterHwcp">hwcp</a>][,<a
+    href="#ParameterN">n</a>]])</p>
+
+    <p><a href="DEVICE.HTM">DEVICE</a>=<a
+    href="#ParameterDrivePath">[drive:][\path\]</a>DISPLAY.SYS
+    CON[:]=(<a href="#ParameterType">type</a>[,[<a
+    href="#ParameterHwcp">hwcp</a>][,(<a
+    href="#ParameterN">n</a>,<a
+    href="#ParameterM">m</a>)]])</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrivePath"></a> [drive:][\path\]
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>)</dt>
+      <dd>Specifies the location of the DISPLAY.SYS file.</dd>
+
+      <dt><a name="ParameterHwcp"></a> hwcp
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>)</dt>
+      <dd>Specifies the number of the character set that your
+      hardware supports. The list shows the character sets
+      that the operating system supports and the country or
+      language for each:
+        <ul>
+          <li><b>437</b> United States</li>
+          <li><b>850</b> Multilingual (Latin I)</li>
+          <li><b>852</b> Slavic (Latin II)</li>
+          <li><b>860</b> Portuguese</li>
+          <li><b>863</b> Canadian-French</li>
+          <li><b>865</b> Nordic</li>
+        </ul>
+      Additional character sets are supported by the
+      EGA2.CPI and EGA3.CPI files. For more information, see
+      the COUNTRY.TXT file (located in the directory that
+      contains your operating system files).</dd>
+      <dd>For more information about using character sets,
+      see the appendix "Keyboard Layouts and Character
+      Sets" in the MS-DOS User's Guide.</dd>
+
+      <dt><a name="ParameterM"></a> m
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>)</dt>
+      <dd>Specifies the number of subfonts the hardware
+      supports for each code page. The default value is 2
+      if type is EGA, and 1 if type is LCD.</dd>
+
+      <dt><a name="ParameterN"></a> n
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>)</dt>
+      <dd>Specifies the number of character sets the
+      hardware can support in addition to the primary
+      character set specified for the hwcp parameter. Valid
+      values for n are in the range 0 through 6. This value
+      depends on your hardware. For EGA display adapters,
+      the maximum value for n is 6; for LCD display adapters,
+      the maximum value for n is 1.</dd>
+
+      <dt><a name="ParameterType"></a> type
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>)</dt>
+      <dd>Specifies the display adapter in use. Valid values:
+        <ul>
+          <li><b>CGA</b> no effect, character set switching
+          is not enabled for this type device.</li>
+          <li><b>EGA</b> supports both EGA and VGA display
+          adapters.</li>
+          <li><b>LCD</b></li>
+          <li><b>MONO</b> no effect, character set switching
+          is not enabled for this type device.</li>
+        </ul>
+      If you omit the type parameter, DISPLAY.SYS checks
+      the hardware to determine which display adapter is in
+      use.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#ThirdParty">Installing a third-party console driver</a></li>
+      <li><a href="#MonoCga">Using DISPLAY.SYS with monochrome or CGA display adapters</a></li>
+    </ul>
+
+    <hr>
+    <a name="MonoCga"></a> <b>Using DISPLAY.SYS with monochrome or CGA display adapters</b>
+    <p>Because monochrome and CGA display adapters do not
+    support character set switching, using DISPLAY.SYS with
+    either type of adapter has no effect.</p>
+
+    <hr>
+    <a name="ThirdParty"></a> <b>Installing a third-party console driver</b>
+    <p>If you install both DISPLAY.SYS and a third-party
+    console driver, such as VT52.SYS, the third-party device
+    driver must be installed first. Otherwise, the
+    third-party device driver may disable DISPLAY.SYS.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>Suppose you want DISPLAY.SYS to support an EGA
+    display adapter with the United States hardware
+    character set (437) and the potential for two additional
+    the operating system character sets. To do this and to
+    specify that DISPLAY.SYS is in the DOS directory on
+    drive C, add this line to your CONFIG.SYS file:
+<pre>
+    <a href="DEVICE.HTM">DEVICE</a>=<a
+    href="#ParameterDrivePath">C:\dos\</a>DISPLAY.SYS
+    CON=(<a href="#ParameterType">ega</a>,<a
+    href="#ParameterHwcp">437</a>,(<a
+    href="#ParameterN">2</a>)
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

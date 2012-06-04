@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>FSUTIL USN</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#f">Commands A-M</a>
+    &gt; <a href="../INDEXF.HTM#fsutilusn">Commands F</a>
+    <h1>FSUTIL USN</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Manages the update sequence number (USN) change
+    journal, which provides a persistent log of all changes
+    made to files on the volume. As files, directories, and
+    other NTFS objects are added, deleted, and modified,
+    NTFS enters records into the USN change journal, one for
+    each volume on the computer. Each record indicates the
+    type of change and the object changed. New records are
+    appended to the end of the stream.</p>
+
+    <p>Programs can consult the USN change journal to
+    determine all the modifications made to a set of files.
+    The USN change journal is much more efficient than
+    checking time stamps or registering for file
+    notifications. The USN change journal is enabled and
+    used by the Indexing Service, File Replication Service
+    (FRS), Remote Installation Service (RIS), and Remote
+    Storage.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>FSUTIL USN
+    <a href="#ParameterHelp">help</a></p>
+
+    <p>FSUTIL USN
+    <a href="#ParameterCreateJournal">createjournal</a>
+    <a href="#ParameterMaximumSize">m=max_size</a>
+    <a href="#ParameterAllocationDelta">a=alloc_size</a>
+    <a href="#ParameterDrive">drive</a></p>
+
+    <p>FSUTIL USN
+    <a href="#ParameterDeleteJournal">deletejournal</a>
+    [<a href="#SwitchD">/D</a>
+    | <a href="#SwitchN">/N</a>]
+    <a href="#ParameterDrive">drive</a></p>
+
+    <p>FSUTIL USN
+    <a href="#ParameterEnumData">enumdata</a>
+    <a href="#ParameterFileRef">fileref</a>
+    <a href="#ParameterUsnLow">usnlow</a>
+    <a href="#ParameterUsnHigh">usnhigh</a>
+    <a href="#ParameterDrive">drive</a></p>
+
+    <p>FSUTIL USN
+    <a href="#ParameterQueryJournal">queryjournal</a>
+    <a href="#ParameterDrive">drive</a></p>
+
+    <p>FSUTIL USN
+    <a href="#ParameterReadData">readdata</a>
+    <a href="#ParameterFilename">file_name</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterAllocationDelta"></a> a=alloc_size
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the size, in bytes, of memory allocation
+      that is added to the end and removed from the
+      beginning of the change journal.</dd>
+      <dd>The change journal can grow to more than the sum
+      of the values of
+      <a href="#ParameterMaximumSize">max_size</a> and
+      alloc_size before being trimmed.</dd>
+
+      <dt><a name="ParameterCreateJournal"></a> createjournal
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Creates a USN change journal.</dd>
+      <dd>If a change journal already exists on a volume,
+      updates the change journal's
+      <a href="#ParameterMaximumSize">max_size</a> and
+      <a href="#ParameterAllocationDelta">alloc_size</a>.
+      This allows you to expand the number of records that
+      an active journal maintains without having to disable
+      it. If you specify zero for
+      <a href="#ParameterMaximumSize">max_size</a> and
+      <a href="#ParameterAllocationDelta">alloc_size</a>,
+      the system chooses a default value based on the volume
+      size.</dd>
+
+      <dt><a name="ParameterDeleteJournal"></a> deletejournal
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Deletes or disables an active USN change journal.</dd>
+      <dd>Deleting or disabling an active journal is very
+      time consuming, because the system must access all the
+      records in the master file table (MFT) and set the
+      last USN attribute to zero. This process can take
+      several minutes, and can continue after the system
+      restarts, if necessary. During this process, the
+      change journal is not considered active, nor is it
+      disabled. While the system is disabling the journal,
+      it cannot be accessed, and all journal operations
+      return errors. You should use extreme care when
+      disabling an active journal, because it adversely
+      affects other applications using the journal.</dd>
+
+      <dt><a name="ParameterDrive"></a> drive
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the drive letter (followed by a colon),
+      mount point, or volume name.</dd>
+
+      <dt><a name="ParameterEnumData"></a> enumdata
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Enumerates and lists the change journal entries
+      between two specified boundaries.</dd>
+
+      <dt><a name="ParameterFilename"></a> file_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the drive letter (followed by a colon),
+      mount point, or volume name.</dd>
+      <dt>(<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the full path to the file including the
+      file name and extension.</dd>
+
+      <dt><a name="ParameterFileRef"></a> fileref
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Ordinal position within the files on the volume
+      at which the enumeration is to begin.</dd>
+
+      <dt><a name="ParameterHelp"></a> help
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="ParameterMaximumSize"></a> m=max_size
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the maximum size, in bytes, that NTFS
+      allocates for the change journal.</dd>
+      <dd>The change journal can grow larger than this
+      target value, but the change journal is truncated at
+      the next NTFS checkpoint to less than this value. NTFS
+      examines the change journal and trims it when its size
+      exceeds the value of max_size plus the value of
+      <a href="#ParameterAllocationDelta">alloc_size</a>. At
+      NTFS checkpoints, the operating system writes records
+      to the NTFS log file that allow NTFS to determine what
+      processing is required to recover from a failure.</dd>
+
+      <dt><a name="ParameterQueryJournal"></a> queryjournal
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Queries a volume's USN data to gather information
+      about the current change journal, its records, and
+      its capacity.</dd>
+
+      <dt><a name="ParameterReadData"></a> readdata
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Read the USN data for a file.</dd>
+
+      <dt><a name="ParameterUsnHigh"></a> usnhigh
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Upper boundary of the range of USN values used to
+      filter which files are returned.</dd>
+
+      <dt><a name="ParameterUsnLow"></a> usnlow
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Lower boundary of the range of USN values used to
+      filter which records are returned. Only records whose
+      last change journal USN is between or equal to the
+      usnlow and usnhigh member values are returned.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchD"></a> /D
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Disables an active USN change journal, and returns
+      I/O control while the change journal is being disabled.</dd>
+
+      <dt><a name="SwitchN"></a> /N
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Disables an active USN change journal and returns
+      I/O control only after the change journal is disabled.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="FSUTILBE.HTM">FSUTIL BEHAVIOR</a>
+    <br><a href="FSUTILDI.HTM">FSUTIL DIRTY</a>
+    <br><a href="FSUTILFI.HTM">FSUTIL FILE</a>
+    <br><a href="FSUTILFS.HTM">FSUTIL FSINFO</a>
+    <br><a href="FSUTILHA.HTM">FSUTIL HARDLINK</a>
+    <br><a href="FSUTILOB.HTM">FSUTIL OBJECTID</a>
+    <br><a href="FSUTILQU.HTM">FSUTIL QUOTA</a>
+    <br><a href="FSUTILRE.HTM">FSUTIL REPARSEPOINT</a>
+    <br><a href="FSUTILSP.HTM">FSUTIL SPARSE</a>
+    <br><a href="FSUTILVO.HTM">FSUTIL VOLUME</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CSVDE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCH.HTM#csvde">Commands Ch-Cz</a>
+    <h1>CSVDE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Imports and exports data from Active Directory using
+    files that store data in the comma-separated value (CSV)
+    format.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CSVDE
+    <a href="#SwitchHelp">-?</a></p>
+
+    <p>CSVDE
+    [<a href="#SwitchA">-a user_distinguished_name password</a>]
+    [<a href="#SwitchB">-b user_name domain password</a>]
+    [<a href="#SwitchC">-c string1 string2</a>]
+    [<a href="#SwitchD">-d base_dn</a>]
+    [<a href="#SwitchF">-f file_name</a>]
+    [<a href="#SwitchG">-g</a>]
+    [<a href="#SwitchI">-i</a>]
+    [<a href="#SwitchJ">-j path</a>]
+    [<a href="#SwitchK">-k</a>]
+    [<a href="#SwitchL">-l ldap_attribute_list</a>]
+    [<a href="#SwitchM">-m</a>]
+    [<a href="#SwitchN">-n</a>]
+    [<a href="#SwitchO">-o ldap_attribute_list</a>]
+    [<a href="#SwitchP">-p scope</a>]
+    [<a href="#SwitchR">-r ldap_filter</a>]
+    [<a href="#SwitchS">-s server_name</a>]
+    [<a href="#SwitchT">-t port_number</a>]
+    [<a href="#SwitchV">-v</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> -?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display command help.</dd>
+
+      <dt><a name="SwitchA"></a> -a user_distinguished_name password
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets to run using the supplied
+      user_distinguished_name and password. By default, runs
+      using the credentials of the user currently logged on
+      to the network.</dd>
+
+      <dt><a name="SwitchB"></a> -b user_name domain password
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets to run as user_name domain password. By
+      default, runs using the credentials of the user
+      currently logged on to the network.</dd>
+
+      <dt><a name="SwitchC"></a> -c string1 string2
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Replaces all occurrences of string1 with string2.
+      Generally used when importing data from one domain to
+      another and the distinguished_name of the export domain
+      (string1) needs to be replaced with that of the import
+      domain (string2).</dd>
+
+      <dt><a name="SwitchD"></a> -d base_dn
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the distinguished name of the search base for
+      data export.</dd>
+
+      <dt><a name="SwitchF"></a> -f file_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Identifies the import or export file name.</dd>
+
+      <dt><a name="SwitchG"></a> -g
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Omits paged searches.</dd>
+
+      <dt><a name="SwitchI"></a> -i
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies import mode. If not specified, the
+      default mode is export.</dd>
+
+      <dt><a name="SwitchJ"></a> -j path
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the log file location.
+      The default is the current path.</dd>
+
+      <dt><a name="SwitchK"></a> -k
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Ignores errors during the import operation and
+      continues processing. A complete list
+      of ignored errors:
+        <ul>
+          <li>Object already exists</li>
+          <li>Constraint violation</li>
+          <li>Attribute or value already exists</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchL"></a> -l ldap_attribute_list
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the list of attributes to return in the
+      results of an export query.
+      If omitted, all attributes are returned.</dd>
+
+      <dt><a name="SwitchM"></a> -m
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Omit attributes that only apply to Active
+      Directory objects such as the ObjectGUID, objectSID,
+      pwdLastSet and samAccountType attributes.</dd>
+
+      <dt><a name="SwitchN"></a> -n
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Omits export of binary values.</dd>
+
+      <dt><a name="SwitchO"></a> -o ldap_attribute_list
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the list of attributes to omit from the
+      results of an export query. Typically used when
+      exporting objects from Active Directory and then
+      importing them into another LDAP-compliant directory.
+      If attributes are not supported by another directory,
+      you can omit the attributes from the result set using
+      this option.</dd>
+
+      <dt><a name="SwitchP"></a> -p scope
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the search scope. Search scope options:
+        <ul>
+          <li><b>Base</b></li>
+          <li><b>OneLevel</b></li>
+          <li><b>SubTree</b></li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchR"></a> -r ldap_filter
+      <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a></dt>
+      <dd>Creates an LDAP search filter for data export.</dd>
+
+      <dt><a name="SwitchS"></a> -s server_name
+      <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a></dt>
+      <dd>Specifies the domain controller to perform the
+      import or export operation.</dd>
+
+      <dt><a name="SwitchT"></a> -t port_number
+      <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a></dt>
+      <dd>Specifies an LDAP port number. The default LDAP
+      port is 389. The global catalog port is 3268.</dd>
+
+      <dt><a name="SwitchV"></a> -v
+      <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a></dt>
+      <dd>Sets verbose mode.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

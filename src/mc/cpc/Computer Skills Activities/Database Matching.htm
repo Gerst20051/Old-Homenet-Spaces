@@ -1,0 +1,1060 @@
+<html>
+
+<head>
+<title>Database Matching</title>
+<script LANGUAGE="JavaScript">
+
+// BrowserCheck Object
+
+function BrowserCheck() {
+	var b = navigator.appName
+//HBS extension
+	this.mac = (navigator.appVersion.indexOf('Mac') != -1)
+	if (b=="Netscape") this.b = "ns"
+	else if (b=="Microsoft Internet Explorer") this.b = "ie"
+	else this.b = b
+	this.version = navigator.appVersion
+	this.v = parseInt(this.version)
+	this.ns = (this.b=="ns" && this.v>=4)
+	this.ns4 = (this.b=="ns" && this.v==4)
+	this.ns5 = (this.b=="ns" && this.v==5)
+	this.ie = (this.b=="ie" && this.v>=4)
+	this.ie4 = (this.version.indexOf('MSIE 4')>0)
+	this.ie5 = (this.version.indexOf('MSIE 5')>0)
+	this.min = (this.ns||this.ie)
+}
+
+is = new BrowserCheck()
+
+var CanShow = true;
+if ((is.v<4)||(is.ns5)){CanShow=false;}
+if ((is.mac==true)&&((is.ie4==true)||(is.ie5==true))){CanShow=false;}
+if (CanShow==false){
+	alert('WARNING: Your browser version cannot show this page.');
+	history.back();
+}
+
+var ExerciseTitle = 'Database Matching'; 
+var ExerciseSubtitle = 'Matching exercise';
+var Instructions = 'Drag the items on the right to match with the correct definition on the left';
+var CorrectResponse = 'Correct! Well done.';
+var IncorrectResponse = 'Sorry! Try again. Incorrect matches have been removed.';
+var YourScoreIs = 'Your score is ';
+var CheckCaption = 'Check';
+var Correction = '[strCorrection]';
+var DivWidth = 400; //default value
+var FeedbackWidth = 200; //default
+var OKCaption = 'OK'; //'OK';
+var PopupBGColor = '#FFFFFF'; //'#FFFFFF';
+var ExBGColor = '#bbbbee'; //'#DDDDDD';
+var PageBGColor = '#ffffff'; //'#FFFFFF';
+var NavBarColor = '#000066'; //'#000000';
+var TextColor = '#000000';
+
+function PageDim(){
+//Get the page width and height
+	this.W = 600;
+	this.H = 400;
+	if (is.ns) this.W = window.innerWidth;
+	if (is.ie) this.W = document.body.clientWidth;
+	if (is.ns) this.H = window.innerHeight;
+	if (is.ie) this.H = document.body.clientHeight;
+}
+
+var NavBarCode = '<TABLE BORDER="0" WIDTH="[DivWidth]" CELLPADDING="2">';
+NavBarCode += '<FORM NAME="NavButtons"><TR><TD ALIGN="CENTER" VALIGN="MIDDLE">';
+NavBarCode += '<FONT FACE="Geneva,Arial" SIZE="-1">';
+
+
+
+NavBarCode += '<INPUT TYPE="button" VALUE="Index" onClick="location=\'http://www.catawba.k12.nc.us/onlinequiz/\'">';
+
+
+
+NavBarCode += '</FONT></TD></TR></FORM></TABLE>';
+
+var TitleCode = '<TABLE BORDER="0" WIDTH="[DivWidth]" CELLPADDING="10">';
+TitleCode += '<TR><TD ALIGN="CENTER" VALIGN="MIDDLE" BGCOLOR="#ffffff">';
+TitleCode += '<FONT SIZE="+1" FACE="Geneva,Arial" COLOR="#000033">' + ExerciseTitle + '</FONT><BR>';
+TitleCode += '<FONT SIZE="-1" FACE="Geneva,Arial" COLOR="#000033">' + ExerciseSubtitle + '<BR>';
+if (Instructions != ''){
+	TitleCode += Instructions + '<BR>';
+}
+
+
+
+TitleCode += '<FORM NAME="ExCheck">'
+TitleCode += '<INPUT TYPE="BUTTON" VALUE="Check" NAME="CheckButton" ';
+TitleCode += 'onClick="javascript:CheckResults();return false;"></FORM>';
+
+TitleCode += '</FONT></TD></TR></TABLE>';
+
+function ReplaceStuff(Token, Replacement, InString){
+	var i = InString.indexOf(Token);
+	var FirstBit = '';
+	var LastBit = '';
+	while (i>-1){
+		FirstBit = InString.substring(0, i);
+		LastBit = InString.substring(i + Token.length, InString.length);	
+		InString = FirstBit + Replacement + LastBit;
+		i = InString.indexOf(Token);
+	}
+	return InString;
+}
+
+
+
+// Dynamic Layer Object
+
+// sophisticated layer/element targeting and animation object which provides the core functionality needed in most DHTML applications
+// 19990604
+
+// Copyright (C) 1999 Dan Steinman
+// Distributed under the terms of the GNU Library General Public License
+// Available at http://www.dansteinman.com/dynduo/
+
+
+function DynLayer(id,nestref,frame) {
+	if (!DynLayer.set && !frame) DynLayerInit()
+	this.frame = frame || self
+	if (is.ns) {
+		if (is.ns4) {
+			if (!frame) {
+				if (!nestref) var nestref = DynLayer.nestRefArray[id]
+				if (!DynLayerTest(id,nestref)) return
+				this.css = (nestref)? eval("document."+nestref+".document."+id) : document.layers[id]
+			}
+			else this.css = (nestref)? eval("frame.document."+nestref+".document."+id) : frame.document.layers[id]
+			this.elm = this.event = this.css
+			this.doc = this.css.document
+		}
+
+		if (is.ns5) {
+			this.elm = document.getElementById(id)
+			this.css = this.elm.style
+			this.doc = document
+		}
+
+		this.x = this.css.left
+		this.y = this.css.top
+		this.w = this.css.clip.width
+		this.h = this.css.clip.height
+	}
+
+	else if (is.ie) {
+		this.elm = this.event = this.frame.document.all[id]
+		this.css = this.frame.document.all[id].style
+		this.doc = document
+		this.x = this.elm.offsetLeft
+		this.y = this.elm.offsetTop
+		this.w = (is.ie4)? this.css.pixelWidth : this.elm.offsetWidth
+		this.h = (is.ie4)? this.css.pixelHeight : this.elm.offsetHeight
+	}
+
+//HBS extra properties
+	this.showing = true;
+	this.key = -1;
+	this.tag = 0;
+
+	this.id = id
+	this.nestref = nestref
+	this.obj = id + "DynLayer"
+	eval(this.obj + "=this")
+}
+
+function DynLayerMoveTo(x,y) {
+
+	if (x!=null) {
+		this.x = x
+		if (is.ns) this.css.left = this.x
+		else this.css.pixelLeft = this.x
+	}
+
+	if (y!=null) {
+		this.y = y
+		if (is.ns) this.css.top = this.y
+		else this.css.pixelTop = this.y
+	}
+}
+
+function DynLayerMoveBy(x,y) {
+	this.moveTo(this.x+x,this.y+y)
+}
+
+function DynLayerShow() {
+	this.css.visibility = (is.ns)? "show" : "visible"
+//HBS extension
+	this.showing = true;
+}
+
+function DynLayerHide() {
+	this.css.visibility = (is.ns)? "hide" : "hidden"
+//HBS extension
+	this.showing = false;
+}
+
+DynLayer.prototype.moveTo = DynLayerMoveTo
+DynLayer.prototype.moveBy = DynLayerMoveBy
+DynLayer.prototype.show = DynLayerShow
+DynLayer.prototype.hide = DynLayerHide
+DynLayerTest = new Function('return true')
+
+//Dimension-setting extensions to DynLayer by S & M
+
+function DynLayerSetTop(NewTop) {
+	this.y = NewTop;
+	this.css.top = NewTop;
+}
+
+DynLayer.prototype.setTop = DynLayerSetTop;
+
+
+function DynLayerSetLeft(NewLeft) {
+	this.x = NewLeft;
+	this.css.left = NewLeft;
+}
+
+DynLayer.prototype.setLeft = DynLayerSetLeft;
+
+function DynLayerSetWidth(NewWidth) {
+	this.w = NewWidth;
+	if (is.ie){this.css.width = NewWidth;}
+	else{this.css.clip.width = NewWidth;}
+}
+
+DynLayer.prototype.setWidth = DynLayerSetWidth;
+
+// DynLayer GetContent Width/Height Methods
+// retrieves the total width/height of the contents of the layer when they are not known
+function DynLayerGetContentWidth() {
+	return (is.ns)? this.doc.width : this.elm.scrollWidth
+}
+function DynLayerGetContentHeight() {
+	return (is.ns)? this.doc.height : this.elm.scrollHeight
+}
+
+DynLayer.prototype.getContentWidth = DynLayerGetContentWidth
+DynLayer.prototype.getContentHeight = DynLayerGetContentHeight
+
+function DynLayerNormalizeHeight() {
+	this.h = this.getContentHeight();
+	if (is.ie4){this.css.height = this.h;}
+	else{this.css.clip.height = this.h;}
+//alert(this.id + ' height:' + this.h)
+}
+
+function DynLayerNormalizeWidth() {
+	this.w = this.getContentWidth();
+	if (is.ie4){this.css.width = this.w;}
+	else{this.css.clip.width = this.w;}
+}
+
+DynLayer.prototype.normalizeWidth = DynLayerNormalizeWidth;
+
+DynLayer.prototype.normalizeHeight = DynLayerNormalizeHeight;
+
+function DynLayerCenter(H,V){
+	var VScrollPos = 0;
+	var HScrollPos = 0;
+
+//Get the scrollbar position
+	if (is.ie){
+		VScrollPos = document.body.scrollTop;
+		HScrollPos = document.body.scrollLeft;
+	}
+	else {
+		VScrollPos = window.pageYOffset;
+		HScrollPos = window.pageXOffset;
+	}
+
+	var NewL = this.x;
+	if (H == true){
+		NewL = Math.floor((pg.W/2) + HScrollPos - (this.w/2));
+	}
+
+	var NewT = this.y;
+	if (V == true){
+		NewT = Math.floor((pg.H/2) + VScrollPos - (this.h/2));
+	}
+	this.moveTo(NewL, NewT);
+}
+
+DynLayer.prototype.center = DynLayerCenter;
+
+// DynLayer Set Background Method
+// changes the background (the layer must be clipped)
+function DynLayerSetbg(color) {
+	if (is.ns) this.doc.bgColor = color
+	else this.css.backgroundColor = color
+}
+DynLayer.prototype.setbg = DynLayerSetbg
+
+
+// DynLayerInit Function
+
+function DynLayerInit(nestref) {
+
+	if (!DynLayer.set) DynLayer.set = true
+	if (is.ns) {
+		if (nestref) ref = eval('document.'+nestref+'.document')
+		else {nestref = ''; ref = document;}
+		for (var i=0; i<ref.layers.length; i++) {
+			var divname = ref.layers[i].name
+			DynLayer.nestRefArray[divname] = nestref
+			var index = divname.indexOf("Div")
+			if (index > 0) {
+				eval(divname.substr(0,index)+' = new DynLayer("'+divname+'","'+nestref+'")')
+			}
+
+			if (ref.layers[i].document.layers.length > 0){
+				DynLayer.refArray[DynLayer.refArray.length] = (nestref=='')? ref.layers[i].name : nestref+'.document.'+ref.layers[i].name
+			}
+		}
+
+		if (DynLayer.refArray.i < DynLayer.refArray.length) {
+			DynLayerInit(DynLayer.refArray[DynLayer.refArray.i++])
+		}
+	}
+
+	else if (is.ie) {
+		for (var i=0; i<document.all.tags("DIV").length; i++) {
+			var divname = document.all.tags("DIV")[i].id
+			var index = divname.indexOf("Div")
+			if (index > 0) {
+				eval(divname.substr(0,index)+' = new DynLayer("'+divname+'")')
+			}
+		}
+	}
+	return true
+}
+
+DynLayer.nestRefArray = new Array()
+DynLayer.refArray = new Array()
+DynLayer.refArray.i = 0
+DynLayer.set = false
+
+
+// Write Method
+
+function DynLayerWrite(html) {
+	if (is.ns) {
+		this.doc.open()
+		this.doc.write(html)
+		this.doc.close()
+	}
+
+	else if (is.ie) {
+		this.event.innerHTML = html
+	}
+}
+
+DynLayer.prototype.write = DynLayerWrite
+
+function Shuffle(InArray){
+	Temp = new Array();
+	var Len = InArray.length;
+
+	var j = Len;
+
+	for (var i=0; i<Len; i++){
+		Temp[i] = InArray[i];
+	}
+
+	for (i=0; i<Len; i++){
+		Num = Math.floor(j  *  Math.random());
+		InArray[i] = Temp[Num];
+
+		for (var k=Num; k < j; k++) {
+			Temp[k] = Temp[k+1];
+		}
+		j--;
+	}
+	return InArray;
+}
+
+function WriteFeedback(Stuff){
+	var Content = '<TABLE BORDER="1" CELLPADDING="5">';
+	Content += '<TR><TD ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="Geneva,Arial">';
+	Content += Stuff;
+	Content += '<BR><FORM NAME="OKForm"><INPUT TYPE="button" NAME="CloseMe" VALUE="';
+	Content += OKCaption + '" onClick="Feedback.hide()"></FORM>'; 
+	Content += '</FONT></TD></TR></TABLE>';
+	Feedback.write(Content);
+	Feedback.normalizeWidth();
+	Feedback.normalizeHeight();
+	if (Feedback.w > FeedbackWidth){
+		Content = '<TABLE BORDER="1" CELLPADDING="5" WIDTH="' + FeedbackWidth + '">';
+		Content += '<TR><TD ALIGN="CENTER" VALIGN="MIDDLE"><FONT FACE="Geneva,Arial">';
+		Content += Stuff;
+		Content += '<BR><FORM NAME="OKForm"><INPUT TYPE="button" NAME="CloseMe" VALUE="';
+		Content += OKCaption + '" onClick="Feedback.hide()"></FORM>'; 
+		Content += '</FONT></TD></TR></TABLE>';
+		Feedback.write(Content);
+		Feedback.normalizeWidth();
+		Feedback.normalizeHeight();
+	}
+	Feedback.center(true,true);
+	if (Feedback.y < (Title.y + Title.h)){
+		Feedback.setTop(Title.y + Title.h);
+	}
+	Feedback.show();
+
+	Feedback.css.zIndex = DragLen + FixedLen +3;
+
+	if (is.ie){document.OKForm.CloseMe.focus();}
+	else{Feedback.doc.OKForm.CloseMe.focus();}
+}
+
+// Drag Object
+// an object that makes an unlimited number of DynLayers draggable
+// 19990326
+
+// Copyright (C) 1999 Dan Steinman
+// Distributed under the terms of the GNU Library General Public License
+// Available at http://www.dansteinman.com/dynduo/
+
+
+function Drag(dynlayer) {
+	this.element = dynlayer
+	this.obj = null
+	this.array = new Array()
+	this.active = false
+	this.offsetX = 0
+	this.offsetY = 0
+	this.zIndex = 0
+	this.resort = true
+	this.add = DragAdd
+	this.remove = DragRemove
+	this.setGrab = DragSetGrab
+	this.mouseDown = DragMouseDown
+	this.mouseMove = DragMouseMove
+	this.mouseUp = DragMouseUp
+}
+
+function DragAdd() {
+	for (var i=0; i<arguments.length; i++) {
+		var l = this.array.length
+		this.array[l] = arguments[i]
+		this.array[l].dragGrab = new Array(0,this.array[l].w,this.array[l].h,0)
+		this.zIndex += 1
+	}
+}
+
+function DragSetGrab(dynlayer,top,right,bottom,left) { 
+	dynlayer.dragGrab = new Array(top,right,bottom,left)
+}
+
+function DragRemove() {
+	for (var i=0; i<arguments.length; i++) {
+		for (var j=0; j<this.array.length; j++) {
+			if (this.array[j]==arguments[i]) {
+				for (var k=j;k<=this.array.length-2;k++) this.array[k] = this.array[k+1]
+				this.array[this.array.length-1] = null
+				this.array.length -= 1
+				break
+			}
+		}
+	}
+}
+
+
+function DragMouseDown(x,y) {
+	for (var i=this.array.length-1;i>=0;i--) {
+		var lyr = this.array[i]
+
+		if (this.element) {x+=this.element.x; y+=this.element.y}
+
+		if (checkWithin(x,y,lyr.x+lyr.dragGrab[3],lyr.x+lyr.dragGrab[1],lyr.y+lyr.dragGrab[0],lyr.y+lyr.dragGrab[2])) {
+			this.obj = this.array[i]
+			this.offsetX = x-this.obj.x
+			this.offsetY = y-this.obj.y
+			this.active = true
+			break
+		}
+	}
+
+	if (this.active && this.resort) {
+		this.obj.css.zIndex = this.zIndex++
+		for (var j=i;j<=this.array.length-2;j++) this.array[j] = this.array[j+1]
+		this.array[this.array.length-1] = this.obj
+	}
+
+	if (!this.active) return false
+	else return true
+}
+
+var CurBottom = 0;
+var CurTop = 0;
+var ScrollJump = 10;
+
+function DragMouseMove(x,y) {
+
+	if (!this.active) return false
+	else {
+		if (this.element) {x+=this.element.x; y+=this.element.y}
+		this.obj.moveTo(x-this.offsetX,y-this.offsetY)
+
+//HBS code to handle scrolling
+		if ((is.ns)||(is.ie5)){
+
+			if ((this.obj.y + this.obj.h)>(CurBottom)){
+				scrollBy(0, ScrollJump);
+				CurBottom += ScrollJump; 
+			}
+
+			var Temp = CurBottom-pg.H;
+
+			if ((Temp > CurTop)&&(this.obj.y < Temp)){
+				scrollBy(0, (0-ScrollJump));
+				CurBottom -= ScrollJump; 
+			}
+
+		}
+
+
+		return true
+	}
+}
+
+function DragMouseUp() {
+	if (!this.active) return false
+	else {
+		this.active = false
+		return true
+	}
+}
+
+
+// automatically define the "drag" object
+
+drag = new Drag()
+
+
+// checkWithin() function is required
+
+function checkWithin(x,y,left,right,top,bottom) {
+	if (x>=left && x<right && y>=top && y<bottom) return true
+	else return false
+}
+
+
+//---------------------------
+
+
+function mouseDown(e) {
+	if ((is.ns && e.which!=1) || (is.ie && event.button!=1)) return true
+//	var x = (is.ns)? e.pageX : event.x+document.body.scrollLeft
+//	var y = (is.ns)? e.pageY : event.y+document.body.scrollTop
+
+	var x = (is.ns)? e.pageX : event.x;
+	var y = (is.ns)? e.pageY : event.y;
+	if (is.ie5){x+=document.body.scrollLeft}
+	if (is.ie5){y+=document.body.scrollTop}
+
+//Check to see if the feedback box is showing; if so, hide it and quit
+	if (((is.ns)&&(Feedback.css.visibility == "show")) || ((is.ie)&&(Feedback.css.visibility == "visible"))){
+		Feedback.hide();
+		return true;
+	}
+
+	if (drag.mouseDown(x,y)) {
+// put more code here to do something else when starting a drag
+
+		draggableSelected(x,y)
+		return false
+	}
+	else return true
+}
+
+function mouseMove(e) {
+//	var x = (is.ns)? e.pageX : event.x+document.body.scrollLeft
+//	var y = (is.ns)? e.pageY : event.y+document.body.scrollTop
+
+	var x = (is.ns)? e.pageX : event.x;
+	var y = (is.ns)? e.pageY : event.y;
+	if (is.ie5){x+=document.body.scrollLeft}
+	if (is.ie5){y+=document.body.scrollTop}
+
+	if (drag.mouseMove(x,y)) {
+// put more code here to do something else while dragging
+
+		return false
+	}
+	else return true
+}
+
+function mouseUp(e) {
+//	var x = (is.ns)? e.pageX : event.x+document.body.scrollLeft
+//	var y = (is.ns)? e.pageY : event.y+document.body.scrollTop
+
+	var x = (is.ns)? e.pageX : event.x;
+	var y = (is.ns)? e.pageY : event.y;
+	if (is.ie5){x+=document.body.scrollLeft}
+	if (is.ie5){y+=document.body.scrollTop}
+
+	if (drag.mouseUp()) {
+
+// put more code here to do something else when finished a drag
+
+		draggableDropped(x,y)
+		return false
+	}
+	else {return true}
+}
+
+
+var ItemDivWidth = 200;
+var FixedLen = 0;
+var DragLen = 0;
+FixedStuff = new Array();
+DragStuff = new Array();
+Draggables = new Array();
+Fixeds = new Array();
+var activeDrag = 0;
+
+function draggableSelected (x,y) {
+
+	var temp = 0;
+
+//on mousedown, determine which draggable object is currently being dragged
+
+	if (checkWithin(x,y,Draggables[activeDrag].x,Draggables[activeDrag].x + Draggables[activeDrag].w,Draggables[activeDrag].y,Draggables[activeDrag].y + Draggables[activeDrag].h)) {
+
+//click is on same draggable as was clicked on before, so ignore any others that may be stacked
+
+	}
+
+	else {
+		for (var i=0;i<DragLen;i++){
+			if (checkWithin(x,y,Draggables[i].x,Draggables[i].x + Draggables[i].w,Draggables[i].y,Draggables[i].y + Draggables[i].h)) {
+				if (Draggables[i].css.zIndex >= Draggables[temp].css.zIndex) {
+					activeDrag = i;
+				}
+			}
+		}		
+	}
+}
+
+
+function draggableDropped (x,y) {
+
+//on mouseup
+	var TargetSlotFull = 'false';
+	var DroppedOutsideFixed = 'true';
+	var temp;
+
+	for (var i=0;i<FixedLen;i++) {
+
+//check draggable to see which if any target it is on top of
+		if (checkWithin(x,y,Fixeds[i].targetLeft,Fixeds[i].targetRight,Fixeds[i].targetTop,Fixeds[i].targetBottom)) {
+
+			
+// check to see if this slot is already occupied
+			for (var j=0;j<DragLen;j++) {
+				if (Draggables[j].besideFixed == i) {
+					TargetSlotFull = 'true';
+					break;
+				}
+			}		
+
+			if (TargetSlotFull == 'false') {
+
+// move draggable so it is just to right of fixed div it is on top of
+				Draggables[activeDrag].moveTo(Fixeds[i].targetRight-ItemDivWidth+5,Fixeds[i].targetTop);
+				if (Draggables[activeDrag].tag == Fixeds[i].tag) {
+					Draggables[activeDrag].correct = '1';
+				}
+				else {
+					Draggables[activeDrag].correct = '2';
+				}
+
+				Draggables[activeDrag].besideFixed = i;
+
+				DroppedOutsideFixed = 'false';
+
+				for (j=0; j<DragLen; j++){
+					if (Draggables[j].besideFixed != 'x'){
+						Draggables[j].css.zIndex = Draggables[j].besideFixed;
+					}
+				}
+				break;
+			}
+		}
+	}
+	
+	if (DroppedOutsideFixed == 'true') {
+		Draggables[activeDrag].correct = '0';
+		Draggables[activeDrag].besideFixed = 'x';
+
+// send draggable to its home
+		Draggables[activeDrag].moveTo(Draggables[activeDrag].homeLeft,Draggables[activeDrag].homeTop);
+		Draggables[activeDrag].css.zIndex = 0;
+	}
+
+}
+
+function CheckResults(){
+
+//Check to see if the feedback box is showing; if so, hide it and quit
+	if (Feedback.showing == true){
+		Feedback.hide();
+		return;
+	}
+
+//Set the default score and response
+	var TotalCorrect = 0;
+	var Score = 0;
+	var Response = '';
+
+//for each fixed, check to see if the tag value for the draggable is the same as the fixed
+
+	var temp = 0;
+	var somethingBesideThisFixed = 0;
+
+	for (var j=0;j<FixedLen;j++) {
+		somethingBesideThisFixed = 0;
+		for (var i=0;i<Draggables.length;i++) {
+			if (Draggables[i].besideFixed == j ) {
+
+//draggable i is sitting beside fixed j
+
+				somethingBesideThisFixed = 1;
+			}
+		}
+	}
+
+//assume user is correct, then test each draggable to see if it is correctly placed
+
+	for (var i=0;i<Draggables.length;i++) {
+		if (Draggables[i].correct == '1') {
+
+// draggable is where it should be, so increment counter
+			TotalCorrect++;
+		}
+
+		else{
+
+// draggable is not where it should be, so move it back to its home location
+			Draggables[i].moveTo(Draggables[i].homeLeft,Draggables[i].homeTop);
+			Draggables[i].css.zIndex = 0;
+			Draggables[i].besideFixed = 'x';
+			if (Draggables[i].tag < FixedLen) {
+
+//for draggables that are not distractors, reset appropriate variables and properties
+				Draggables[i].correct = 0;
+			}
+		}
+	}
+
+	if (TotalCorrect == FixedLen) {
+		Score = '100';
+		Response = YourScoreIs + ' ' + Score + '%.<BR>' + CorrectResponse;
+		WriteFeedback(Response);
+	}
+	else {
+		Score = Math.floor((100*TotalCorrect)/FixedLen);
+		Response = IncorrectResponse + '<BR>' + YourScoreIs + ' ' + Score + '%.';
+		WriteFeedback(Response);
+	}
+}
+
+function StartUp(){
+
+	pg = new PageDim();
+	CurBottom = pg.H;
+
+	DivWidth = Math.floor((pg.W*4)/5);
+	var PageIndent = Math.floor((pg.W - DivWidth)/2);
+	FeedbackWidth = Math.floor(DivWidth/2);
+
+//Insert this in all the variables
+	NavBarCode = ReplaceStuff('[DivWidth]', DivWidth, NavBarCode);
+	TitleCode = ReplaceStuff('[DivWidth]', DivWidth, TitleCode);
+
+	DynLayerInit();
+
+//Hide the feedback div
+	Feedback.hide();
+
+//Write the navigation bar
+	NavBar.write(NavBarCode);
+	NavBar.normalizeHeight();
+	NavBar.setWidth(DivWidth);
+	NavBar.center(true,false);
+	NavBar.setTop(10);
+
+	CurTop = NavBar.y + NavBar.h;
+
+//Write the title stuff
+	Title.write(TitleCode);
+	Title.normalizeHeight();
+	Title.setWidth(DivWidth);
+	Title.center(true,false);
+	Title.setTop(NavBar.y + NavBar.h);
+
+//Set up mouse event capturing
+	document.onmousedown = mouseDown;
+	document.onmousemove = mouseMove;
+	document.onmouseup = mouseUp;
+	if (is.ns) document.captureEvents(Event.MOUSEDOWN | Event.MOUSEMOVE | Event.MOUSEUP) 
+
+
+//Calculate an appropriate width for the items
+
+	ItemDivWidth = Math.floor(DivWidth / 4);
+
+//Write the content into each of the fixed divs, and adjust their sizes
+
+	FixedLen = FixedStuff.length;
+
+	for (i=0; i<FixedLen; i++){
+		WriteDiv('Fixed' + i, ItemDivWidth, FixedStuff[i][0]);
+		Fixeds[i] = eval('Fixed'+i);
+		Fixeds[i].tag = FixedStuff[i][1];
+		Fixeds[i].normalizeHeight();
+		Fixeds[i].normalizeWidth();	
+	}
+
+
+//Write the content into each of the draggable divs, and adjust their sizes
+	DragLen = DragStuff.length;
+	var temp = 0;
+	for (i=0; i<DragLen; i++){
+		WriteDiv('Drag' + i, ItemDivWidth, DragStuff[i][0]);
+
+//Add draggables to an array, define properties for draggables and set default values
+		Draggables[i] = eval('Drag' + i);
+		Draggables[i].tag = DragStuff[i][1];
+		Draggables[i].normalizeHeight();
+		Draggables[i].normalizeWidth();
+		if (DragStuff[i][2] == 1){
+			Draggables[i].correct = 1;	
+		}
+		else{		
+		Draggables[i].correct = 0; // 0=not on any target, 1= on correct target, 2= on wrong target
+
+		} 
+		Draggables[i].besideFixed = 'x'; //=not beside any target, takes number of target it is sitting on
+	}
+
+
+//Position the fixed divs, based on their height
+	Fixeds[0].setTop(Title.y + Title.h + 5);
+	Fixeds[0].setLeft(PageIndent);
+	for (i=1; i<FixedLen; i++){
+		Fixeds[i].setTop(Fixeds[i-1].y + Fixeds[i-1].getContentHeight() + 5);
+		Fixeds[i].setLeft(PageIndent);
+	}
+
+//put the rect of the target area for each fixed into its properties
+	for (i=0; i<FixedLen; i++){
+		Fixeds[i].targetLeft = Fixeds[i].x
+		Fixeds[i].targetTop = Fixeds[i].y
+		Fixeds[i].targetRight = Fixeds[i].x + Fixeds[i].w + ItemDivWidth
+		Fixeds[i].targetBottom = Fixeds[i].y + Fixeds[i].h
+	}
+
+//jumble the order in which the draggables are presented each time the page is run
+	var temp = 0;
+	var tempIn = new Array();
+	var tempOut = new Array();
+
+	for (i=0; i<DragLen; i++){tempIn[i] = i;}	
+
+	var max = DragLen
+	for (i=0; i<DragLen; i++) {
+		temp = Math.floor(Math.random()*max);
+		tempOut[i] = tempIn[temp];
+		for (j=temp; j<=max; j++) {
+			tempIn[j] = tempIn[j+1];
+		}
+
+		tempIn.length = tempIn.length-1;
+		max = max-1;
+	}
+
+//Position the draggable divs, based on their height
+
+	Draggables[tempOut[0]].setTop(Title.y + Title.h + 5);
+	for (i=1; i<DragLen; i++){
+		Draggables[tempOut[i]].setTop(Draggables[tempOut[i-1]].y + Draggables[tempOut[i-1]].getContentHeight() + 5);
+	}
+
+	tempIn.length = 0;
+	tempOut.length = 0;
+
+//Move the draggable divs to the correct point on the right of the screen
+
+//add the home topleft of each draggable to its properties, so we know where to relocate the div
+
+	for (i=0; i<DragLen; i++){
+		Draggables[i].moveTo(Math.floor(pg.W - (PageIndent+ItemDivWidth)),null);
+		Draggables[i].homeLeft = Draggables[i].x;
+		Draggables[i].homeTop = Draggables[i].y;
+		drag.add(Draggables[i]);
+	}
+
+
+
+
+
+}
+
+function WriteDiv(divName, tableWidth, newDivText){
+	var Content = '<TABLE BORDER="0" WIDTH="' + tableWidth + '"><TR><TD BGCOLOR="#bbbbee">';
+	Content += '<FONT FACE="Geneva,Arial" COLOR="#000000">';
+	Content += newDivText;
+	Content += '</TD></TR></TABLE>';
+	eval(divName).write(Content);
+	eval(divName).setWidth(tableWidth);
+}
+
+FixedStuff[0] = new Array()
+FixedStuff[0][0]='A method of sorting data in alphabetical order (A-Z) or numerical order (0-9)';
+FixedStuff[0][1] = 1;
+FixedStuff[1] = new Array()
+FixedStuff[1][0]='Words such as and, or, and not that join certain conditions together when performing a search';
+FixedStuff[1][1] = 2;
+FixedStuff[2] = new Array()
+FixedStuff[2][0]='Is an organized collection of information';
+FixedStuff[2][1] = 3;
+FixedStuff[3] = new Array()
+FixedStuff[3][0]='A method of sorting data in reverse alphabetical order (Z-A) or reverse numerical order (9-0)';
+FixedStuff[3][1] = 4;
+FixedStuff[4] = new Array()
+FixedStuff[4][0]='Data that is entered into a field';
+FixedStuff[4][1] = 5;
+FixedStuff[5] = new Array()
+FixedStuff[5][0]='A category of information in a database';
+FixedStuff[5][1] = 6;
+FixedStuff[6] = new Array()
+FixedStuff[6][0]='Related records in a database';
+FixedStuff[6][1] = 7;
+FixedStuff[7] = new Array()
+FixedStuff[7][0]='Shows all the records in a database file (looks like a spreadsheet)';
+FixedStuff[7][1] = 8;
+FixedStuff[8] = new Array()
+FixedStuff[8][0]='Mathematical symbols used in comparisons in searching a database.  > (greater than),  = (is equal to), < (is less than)';
+FixedStuff[8][1] = 9;
+FixedStuff[9] = new Array()
+FixedStuff[9][0]='A group of fields related to one topic';
+FixedStuff[9][1] = 10;
+FixedStuff[10] = new Array()
+FixedStuff[10][0]='A method of finding specific data with in a database that meets certain conditions or criteria';
+FixedStuff[10][1] = 11;
+FixedStuff[11] = new Array()
+FixedStuff[11][0]='To arrange data in a particular order';
+FixedStuff[11][1] = 12;
+
+
+DragStuff[0] = new Array()
+DragStuff[0][0]='Ascending';
+DragStuff[0][1] = 1;
+DragStuff[0][2] = 0;
+DragStuff[1] = new Array()
+DragStuff[1][0]='Connector';
+DragStuff[1][1] = 2;
+DragStuff[1][2] = 0;
+DragStuff[2] = new Array()
+DragStuff[2][0]='Database';
+DragStuff[2][1] = 3;
+DragStuff[2][2] = 0;
+DragStuff[3] = new Array()
+DragStuff[3][0]='Descending';
+DragStuff[3][1] = 4;
+DragStuff[3][2] = 0;
+DragStuff[4] = new Array()
+DragStuff[4][0]='Entry';
+DragStuff[4][1] = 5;
+DragStuff[4][2] = 0;
+DragStuff[5] = new Array()
+DragStuff[5][0]='Field';
+DragStuff[5][1] = 6;
+DragStuff[5][2] = 0;
+DragStuff[6] = new Array()
+DragStuff[6][0]='File';
+DragStuff[6][1] = 7;
+DragStuff[6][2] = 0;
+DragStuff[7] = new Array()
+DragStuff[7][0]='List View';
+DragStuff[7][1] = 8;
+DragStuff[7][2] = 0;
+DragStuff[8] = new Array()
+DragStuff[8][0]='Operators';
+DragStuff[8][1] = 9;
+DragStuff[8][2] = 0;
+DragStuff[9] = new Array()
+DragStuff[9][0]='Records';
+DragStuff[9][1] = 10;
+DragStuff[9][2] = 0;
+DragStuff[10] = new Array()
+DragStuff[10][0]='Search or Filter';
+DragStuff[10][1] = 11;
+DragStuff[10][2] = 0;
+DragStuff[11] = new Array()
+DragStuff[11][0]='Sort';
+DragStuff[11][1] = 12;
+DragStuff[11][2] = 0;
+
+
+</script>
+<meta name="Microsoft Theme" content="none, default">
+<meta name="Microsoft Border" content="none, default">
+</head>
+
+<!--<BODY>Fool those dumb ad-inserting ISPs</BODY>-->
+<body onLoad="StartUp()" onResize="location.reload()">
+
+<script LANGUAGE="JavaScript">
+	var OutStuff = '';
+	var TotFixed = FixedStuff.length;
+
+	for (i=0; i<TotFixed; i++){
+		OutStuff = '<STYLE TYPE="text/css">#Fixed'
+		OutStuff += i;
+		OutStuff += 'Div';
+		OutStuff += '{position:absolute; left:30; top:100; height: 10; background-color: #bbbbee; layer-background-color: #bbbbee;}';
+		OutStuff += '</STYLE>';
+		OutStuff += '<DIV ID="Fixed' + i + 'Div"></DIV>';
+		document.write(OutStuff);
+	}
+
+	var TotDrag = DragStuff.length;
+
+	for (i=0; i<TotDrag; i++){
+		OutStuff = '<STYLE TYPE="text/css">#Drag'
+		OutStuff += i;
+		OutStuff += 'Div';
+		OutStuff += '{position:absolute; left:350; top:100; height: 10; background-color: #bbbbee; layer-background-color: #bbbbee;}';
+		OutStuff += '</STYLE>';
+		OutStuff += '<DIV ID="Drag' + i + 'Div"></DIV>';
+		document.write(OutStuff);
+	}
+
+	OutStuff = '<STYLE TYPE="text/css">#NavBarDiv';
+	OutStuff += '{position:absolute; left:0; top:10; height: 10; width: 10;';
+	OutStuff += 'background-color:' + NavBarColor + '; layer-background-color: ' + NavBarColor + ';}';
+	OutStuff += '</STYLE>';
+	OutStuff += '<DIV ID="NavBarDiv"></DIV>';
+	document.write(OutStuff);
+
+	OutStuff = '<STYLE TYPE="text/css">#TitleDiv';
+	OutStuff += '{position:absolute; left:0; top:200; height: 10; width: 10;';
+	OutStuff += 'background-color:' + PageBGColor + '; layer-background-color: ' + PageBGColor + ';}';
+	OutStuff += '</STYLE>';
+	OutStuff += '<DIV ID="TitleDiv"></DIV>';
+	document.write(OutStuff);
+
+	OutStuff = '<STYLE TYPE="text/css">#FeedbackDiv';
+	OutStuff += '{position:absolute; left:0; top: 1500; height: 10; ';
+	OutStuff += 'background-color:' + PopupBGColor + '; layer-background-color: ' + PopupBGColor + ';}';
+	OutStuff += '</STYLE>';
+	OutStuff += '<DIV ID="FeedbackDiv"></DIV>';
+	document.write(OutStuff);
+
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>MUNGE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#m">Commands A-M</a>
+    &gt; <a href="../INDEXM.HTM#munge">Commands M</a>
+    <h1>MUNGE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Find and Replace text within file(s) Notice that munge looks for
+    a complete string (delimited with spaces) - it won't match part of a
+    string.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>MUNGE
+    <a href="#ParameterScript">ScriptFile</a>
+    [<a href="#SwitchQ">-q</a>]
+    [<a href="#SwitchE">-e</a>]
+    [<a href="#SwitchO">-o</a>]
+    [<a href="#SwitchK">-k</a>]
+    [<a href="#SwitchR">-r</a>]
+    [<a href="#SwitchM">-m</a>]
+    [<a href="#SwitchAt">-@</a>]
+    [<a href="#SwitchN">-n</a>]
+    [<a href="#SwitchL1">-L</a>]
+    [<a href="#SwitchL2">-l</a>]
+    [<a href="#SwitchI">-i</a>]
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchT">-t</a>]
+    [<a href="#SwitchA">-a</a>]
+    [<a href="#SwitchS">-s</a>]
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchU">-u undoFileName</a>]
+    [<a href="#SwitchZ">-z</a>]
+    <a href="#ParameterFiles">FilesToMunge...</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterFiles"></a> FilesToMunge...
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>One or more files to be changed (may use wildcards).</dd>
+
+      <dt><a name="ParameterScript"></a> ScriptFile
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>A text file containing the strings to Find &amp; Replace</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchQ"></a> -q
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>EDITING OPTION: Query only - don't actually make changes.</dd>
+
+      <dt><a name="SwitchE"></a> -e
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>EDITING OPTION: Query only - display entire line for each match.</dd>
+
+      <dt><a name="SwitchO"></a> -o
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>EDITING OPTION: Query only - just display filename once on first match.</dd>
+
+      <dt><a name="SwitchK"></a> -k
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>EDITING OPTION: Case - Case sensitive scriptFile.</dd>
+
+      <dt><a name="SwitchR"></a> -r
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>EDITING OPTION: Recurse into subfolders.</dd>
+
+      <dt><a name="SwitchM"></a> -m
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>EDITING OPTION: Collapse multiple carriage returns into one.</dd>
+
+      <dt><a name="SwitchAt"></a> -@
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>EDITING OPTION: Remove null characters.</dd>
+
+      <dt><a name="SwitchN"></a> -n
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>EDITING OPTION: Neuter - Surround all strings with TEXT().</dd>
+
+      <dt><a name="SwitchL1"></a> -L
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>EDITING OPTION: Literals - Dont process any quoted text (excludes comments).</dd>
+
+      <dt><a name="SwitchL2"></a> -l
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>EDITING OPTION: Literals - Dont process any quoted text (includes comments too).</dd>
+
+      <dt><a name="SwitchI"></a> -i
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>DISPLAY OPTION: Just output summary of files changed at end.</dd>
+
+      <dt><a name="SwitchC"></a> -c
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>DISPLAY OPTION: If no munge of file, then check for cleanlyness.</dd>
+
+      <dt><a name="SwitchV"></a> -v
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>DISPLAY OPTION: Verbose - show files being scanned.</dd>
+
+      <dt><a name="SwitchT"></a> -t
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>DESTINATION OPTION: Don't create .bak files.
+      Use when processing files that have a .BAK extension.</dd>
+
+      <dt><a name="SwitchA"></a> -a
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>DESTINATION OPTION: Use ATTRIB -r command for files that
+      are readonly.</dd>
+
+      <dt><a name="SwitchS"></a> -s
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>DESTINATION OPTION: Use OUT command command for files that
+      are readonly (OUT is not a standard documented NT command!).</dd>
+
+      <dt><a name="SwitchF"></a> -f
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>DESTINATION OPTION: Use <a href="#SwitchZ">-z</a> flag for
+      SLM OUT command.</dd>
+
+      <dt><a name="SwitchU"></a> -u undoFileName
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>DESTINATION OPTION: Generate an undo MUNGE script file for
+      the changes made.</dd>
+
+      <dt><a name="SwitchZ"></a> -z
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>DESTINATION OPTION: Truncate file after a CTRL-Z (^Z) character.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>CHANGE - Change values in a text file.
+    <br><a href="../F/FOR_0.HTM">FOR</a> - Conditionally perform a command several times.
+    <br><a href="../F/FIND.HTM">FIND</a> - Search for a text string in a file.
+    <br><a href="../F/FINDSTR.HTM">FINDSTR</a> - Search for strings in files.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>grep - Search file(s) for lines that match a given pattern.
+    <br>gawk - Find and Replace text within file(s).
+    <br>tr - Translate, squeeze, and/or delete characters.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Each line in the ScriptFile should take one of the
+    3 forms:</p>
+<pre>
+    oldName newName
+    "oldString" "newString"
+    <a href="#SwitchF">-f</a> .Ext  Name.  Name.Ext
+</pre>
+
+    <p>In the script file <a href="#SwitchF">-f</a> may be used to restrict the files
+    processed by MUNGE when FilesToMunge is a wildcard.</p>
+
+<pre>
+    <a href="#SwitchF">-f</a> [Name].[Ext]
+</pre>
+
+    <p>When FilesToMunge (on the command-line) is a specific file
+    then this filename will override any <a href="#SwitchF">-f</a> setting.</p>
+    <p>When MUNGE is used with a wildcard to modify multiple files
+    then you must specify <a href="#SwitchF">-f</a> in the scriptfile.</p>
+
+    <p>When writing a .ini script for munge watch out for trailing
+    spaces.</p>
+
+    <p>In the onscreen feedback a TOKEN means your script may replace
+    one word with another, while a LITERAL STRING means your script
+    will replace one "Quoted String" with "Another Quoted string".</p>
+    <p>Munge script files can contain multiple string replacements -
+    these will be applied in one pass only. In other words if you
+    replace A with B and also replace B with C. Then A will not be
+    changed into C (unless you run the MUNGE command twice.)</p>
+
+    <hr>
+    <p><b>Bugs:</b>
+    <br>Munge will not work reliably for files greater than 2 Mb -
+    specifically if the string being searched for is not found in
+    the first 2 MB of the file, then it won't be found at all. If
+    Munge is run twice in the same CMD shell against a large file
+    then the second attempt will fail with errors. [NT 4.0 + sp 6
+    + Reskit]</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+<pre>
+    MUNGE <a
+href="#ParameterScript">myChanges.ini</a> <a
+href="#ParameterFiles">FileToMunge.txt</a>
+</pre>
+
+    <p>Where myChanges.ini contains:</p>
+<pre>
+-F FileToMunge.txt
+"Driver32=C:\WINNT\System32\odbc16.dll" "Driver32=C:\WINNT\System32\odbc32.dll"
+"Driver32=C:\WINNT\System32\jct16.dll" "Driver32=C:\WINNT\System32\jct32.dll"
+</pre>
+
+    <p>Notice that the whole string has to be spelled out even though only
+    a small part is being changed. When changing a large or complex file
+    this is considered a good thing.</p>
+
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External Resource Kit</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

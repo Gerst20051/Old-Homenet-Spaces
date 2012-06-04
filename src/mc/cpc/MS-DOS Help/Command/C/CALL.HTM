@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CALL</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEX.HTM#call">Batch Ca-Cg</a>
+    <h1>CALL</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Calls one batch program from another without causing the first
+    batch program to stop (aka GOSUB).</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CALL
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>CALL
+    [<a href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path</a>]<a
+    href="#ParameterFilename">filename</a>
+    [<a href="#ParameterBatch">batch-parameters</a>]</p>
+
+    <p>CALL
+    <a href="#ParameterLabel">:label</a>
+    [<a href="#ParameterParms">parameters</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the drive location of batch program you want to
+      call.</dd>
+
+      <dt><a name="ParameterLabel"></a> :label
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Jump to a label somewhere within the current batch file.</dd>
+      <dd>When you jump to a subroutine with CALL, all statements
+      after the label are treated like a separate batch file. When
+      the end of the batch is reached, it will exit and control will
+      return back to just after the position where you used CALL.</dd>
+      <dd>You can therefore reach the end of the batch script file
+      more than once.</dd>
+      <dd>Don't forget you can also pass command-line arguments to
+      the :label and refer to these just like the parameters passed
+      to a separate batch file.</dd>
+
+      <dt><a name="ParameterParms"></a> parameters
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Any command-line arguments.</dd>
+      <dd>If Command Extensions are disabled, the CALL command will
+      not accept batch labels.</dd>
+
+      <dt><a name="ParameterPath"></a> path
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the path location of batch program you want to
+      call.</dd>
+
+      <dt><a name="ParameterFilename"></a> filename
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the name of the batch program you want to call.
+      Filename must have a .BAT extension.</dd>
+
+      <dt><a name="ParameterBatch"></a> batch-parameters
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies any command-line information required by the batch
+      program.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="CMD.HTM">CMD</a> - can be used to call
+    a subsequent batch and ALWAYS return even if errors occur.
+    <br><a href="../G/GOTO.HTM">GOTO</a> - jump to a label or GOTO
+    :eof
+    <br><a href="../S/START.HTM">START</a> - Start a
+    separate window to run a specified program or command
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>builtin - Run a shell builtin
+    <br>chroot - Run a command with a different root directory
+    <br>.period - Run commands from a file</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Recurse">Making a recursive call</a></li>
+      <li><a href="#Parms">Using (expanded) batch-parameters</a></li>
+      <li><a href="#Pipes">Using pipes and redirection symbols</a></li>
+    </ul>
+
+    <hr>
+    <a name="Parms"></a> <b>Using batch-parameters</b>
+    <p>Batch-parameters can contain any information that you can pass
+    to a batch program, including switches, filenames, the replaceable
+    parameters (%0) %1 through %9, and environment variables such as
+    %baud%.</p>
+
+    <p>Expansion of batch script argument references (%0, %1, ..., %9),
+    beginning with <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+    have been changed:</p>
+    <ul>
+    <li><b>%*</b> expands to all the arguments (%1, %2, ..., %9) The %~ modifiers may not be used with %*</li>
+    <li><b>%~</b> expands removing any surrounding quotes ("), ie. %~1</li>
+    <li><b>%~a</b> expands to file attributes, ie. %~a2</li>
+    <li><b>%~d</b> expands to a drive letter only, ie. %~d1</li>
+    <li><b>%~f</b> expands to a fully qualified path name, ie. %~f3</li>
+    <li><b>%~n</b> expands to a file name only, ie. %~n2</li>
+    <li><b>%~p</b> expands to a path only, ie. %~p1</li>
+    <li><b>%~s</b> expanded path contains short names only, ie. %~s2</li>
+    <li><b>%~t</b> expands to date/time of file, ie. %~t1</li>
+    <li><b>%~x</b> expands to a file extension only, ie. %~x3</li>
+    <li><b>%~z</b> expands to size of file, ie. %~z1</li>
+    <li><b>%~$PATH:</b> expands to full qualified name of first file found by searching the
+    <a href="../../ENV/MSDOS/PATH.HTM">%PATH%</a> directories, ie. %~$PATH:1 OR expands to the empty string (environment variable not defined or file not found)</li>
+    </ul>
+
+    <p>Combinations are allowed:</p>
+    <ul>
+    <li><b>%~dp1</b> expands %1 to a drive letter and path only</li>
+    <li><b>%~nx3</b> expands %3 to a file name and extension only</li>
+    <li><b>%~dp$PATH:2</b> searches the directories listed in the
+    <a href="../../ENV/MSDOS/PATH.HTM">%PATH%</a> environment variable for %2 and expands to the drive letter and path of the first one found</li>
+    <li><b>%~ftza1</b> expands %1 to a DIR like output line</li>
+    </ul>
+
+    <p>The %~ syntax is terminated by a valid argument number.</p>
+
+    <hr>
+    <a name="Pipes"></a> <b>Using pipes and redirection symbols</b>
+    <p>Do not use pipes ('|') and redirection symbols
+    ('&lt;&lt;','&lt;','&gt;', and '&gt;&gt;') with the CALL
+    command.</p>
+
+    <hr>
+    <a name="Recurse"></a> <b>Making a recursive call</b>
+    <p>You can create a batch program that calls itself; however, you
+    must provide an <a href="../E/EXIT.HTM">exit</a> command.
+    Otherwise, the parent and child batch programs can loop
+    endlessly.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <hr>
+    <p>To run the CHECKNEW.BAT program from another batch program,
+    include this command in the parent batch program:</p>
+<pre>
+    CALL <a
+href="#ParameterFilename">CHECKNEW</a>
+</pre>
+
+    <hr>
+    <p>Suppose the parent batch program accepts two replaceable
+    parameters and you want it to pass those parameters to
+    CHECKNEW.BAT. You can use the command in the parent batch
+    program:</p>
+<pre>
+    CALL <a
+href="#ParameterFilename">CHECKNEW</a> <a
+href="#ParameterBatch">%1 %2</a>
+</pre>
+
+    <hr>
+    <p>Passing parameters to a label:</p>
+<pre>
+    <a href="../A/ATSIGN.HTM">@</a><a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterOff">OFF</a>
+     <a href="../S/SETLOCAL.HTM">SETLOCAL</a>
+     CALL <a
+href="#ParameterLabel">:s_staff</a> <a
+href="#ParameterParms">SMITH 100</a>
+     <a href="../G/GOTO.HTM">GOTO</a> :<a
+href="../G/GOTO.HTM#ParameterLabel">eof</a>
+
+    :<a href="../L/LABEL.HTM#ParameterLabel">s_staff</a>
+     <a href="../S/SETLOCAL.HTM">SETLOCAL</a>
+     <a href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">Name is %1</a>
+     <a href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">Rate is %2</a>
+     <a href="../G/GOTO.HTM">GOTO</a> :<a
+href="../G/GOTO.HTM#ParameterLabel">eof</a>
+
+    :<a href="../L/LABEL.HTM#ParameterLabel">eof</a>
+</pre>
+
+    <hr>
+    <p>Returning parameters:</p>
+<pre>
+    <a href="../A/ATSIGN.HTM">@</a><a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterOff">OFF</a>
+     <a href="../S/SETLOCAL.HTM">SETLOCAL</a>
+     CALL <a
+href="#ParameterLabel">:s_calc</a> <a
+href="#ParameterParms">200 100</a>
+     <a href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">%v_return%</a>
+     <a href="../G/GOTO.HTM">GOTO</a> :<a
+href="../G/GOTO.HTM#ParameterLabel">eof</a>
+
+    :<a href="../L/LABEL.HTM#ParameterLabel">s_calc</a>
+     <a href="../S/SETLOCAL.HTM">SETLOCAL</a>
+     <a href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">v_sum</a>=<a
+href="../S/SET.HTM#ParameterString">0</a>
+     <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#ParameterItem">%1</a> <a
+href="../I/IF.HTM#ParameterCompareOp">GTR</a> <a
+href="../I/IF.HTM#ParameterItem">%2</a> <a
+href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">v_sum</a>=<a
+href="../S/SET.HTM#ParameterString">5</a>
+     <a href="../E/ENDLOCAL.HTM">ENDLOCAL</a> &amp; <a
+href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">v_return</a>=<a
+href="../S/SET.HTM#ParameterString">%v_sum%</a>
+     <a href="../G/GOTO.HTM">GOTO</a> :<a
+href="../G/GOTO.HTM#ParameterLabel">eof</a>
+
+    :<a href="../L/LABEL.HTM#ParameterLabel">eof</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>Internal</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DFSCMD</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDA.HTM#dfscmd">Commands Da-Dr</a>
+    <h1>DFSCMD</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Manages a distributed file system from the command line.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>DFSCMD
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>DFSCMD
+    <a href="#SwitchAdd">/add</a>
+    <a href="#ParameterDfs">\\dfs_name\share\path</a>
+    <a href="#ParameterServer">\\server_name\share\path</a>
+    [<a href="#SwitchRestore">/restore</a>]</p>
+
+    <p>DFSCMD
+    <a href="#SwitchMap">/map</a>
+    <a href="#ParameterDfs">\\dfs_name\share\path</a>
+    <a href="#ParameterServer">\\server_name\share\path</a>
+    [<a href="#ParameterComment">comment</a>]
+    [<a href="#SwitchRestore">/restore</a>]</p>
+
+    <p>DFSCMD
+    <a href="#SwitchRemove">/remove</a>
+    <a href="#ParameterDfs">\\dfs_name\share\path</a>
+    <a href="#ParameterServer">\\server_name\share\path</a></p>
+
+    <p>DFSCMD
+    <a href="#SwitchUnmap">/unmap</a>
+    <a href="#ParameterDfs">\\dfs_name\share\path</a></p>
+
+    <p>DFSCMD
+    <a href="#SwitchView">/view</a>
+    <a href="#ParameterDfs">\\dfs_name\share\path</a>
+    [<a href="#SwitchFull">/full</a>]
+    [<a href="#SwitchPartial">/partial</a>]
+    [<a href="#SwitchBatch">/batch</a>]
+    [<a href="#SwitchBatchRestore">/batchrestore</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterComment"></a> comment
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Target identification comment.</dd>
+
+      <dt><a name="ParameterDfs"></a> \\dfs_name\share\path
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Distributed file system access path.</dd>
+
+      <dt><a name="ParameterServer"></a> \\server_name\share\path
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Actual file system location mapped to a DFS link.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Ignores the Active Directory schema version number.</dd>
+
+      <dt><a name="SwitchAdd"></a> /add
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Adds a target to the specified DFS link. If the
+      specified link does not exist, will return an error.</dd>
+
+      <dt><a name="SwitchBatch"></a> /batch
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Returns a batch script you can use to restore the
+      root, with validation.</dd>
+
+      <dt><a name="SwitchBatchRestore"></a> /batchrestore
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Returns a batch script you can use to restore the
+      root, that does not validate the targets.</dd>
+
+      <dt><a name="SwitchFull"></a> /full
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the names of the root and its links,
+      any comments associated with the root,
+      and any targets associated with the links.</dd>
+
+      <dt><a name="SwitchMap"></a> /map
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Creates a link and maps a link to a target. If the
+      specified DFS root does not exist, returns an error.</dd>
+
+      <dt><a name="SwitchPartial"></a> /partial
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays any comments associated with the root.</dd>
+
+      <dt><a name="SwitchRemove"></a> /remove
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Removes a target from the specified DFS link.
+      You must specify the same link name that you used to
+      create the link.</dd>
+
+      <dt><a name="SwitchRestore"></a> /restore
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Does not attempt to validate the destination path.</dd>
+
+      <dt><a name="SwitchUnmap"></a> /unmap
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Deletes a DFS link and removes its targets from
+      the DFS root.</dd>
+
+      <dt><a name="SwitchView"></a> /view
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>View details for the specified DFS root. Without
+      additional switches, displays only the names of the
+      root and its links.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,622 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Hacking with Windows XP</title>
+</head>
+
+<body>
+
+<h1 align="center">Hacking with Windows XP</h1>
+<h3 align="center">Part 2: The Magic of NetBIOS</h3>
+<p align="justify"><tt>In this guide you will learn how to explore the Internet 
+using Windows XP and NetBIOS:<br>
+* How to Install NetBIOS<br>
+* How to Use Nbtstat <br>
+* The Net View Command<br>
+* What to Do Once you Are Connected <br>
+* More on the Net Commands<br>
+* How Crackers Log on as Administrator<br>
+* How to Scan for Computers that Use NetBIOS<br>
+* How to Play NetBIOS Hacker Wargames<br>
+* An Evil Genius Tip for Win NT Server Users<br>
+* Help for Windows 95, 98, SE and ME Users<br>
+<br>
+Not many computers are reachable over the Internet using NetBIOS commands - maybe 
+only a few million. But what the heck, a few million is enough to keep a hacker 
+from getting bored. And if you know what to look for, you will discover that there 
+are a lot of very busy hackers and Internet worms searching for computers they can 
+break into by using NetBIOS commands. By learning the dangers of NetBIOS, you can 
+get an appreciation for why it is a really, truly BAD!!! idea to use it.<br>
+<br>
+*****************<br>
+<i>Newbie note</i>: a worm is a program that reproduces itself.&nbsp; For example, 
+Code Red automatically searched over the Internet for vulnerable Windows computers 
+and broke into them. So if you see an attempt to break into your computer, it may 
+be either a human or a worm.<br>
+*****************<br>
+<br>
+If you run an intrusion detection system (IDS) on your computer, you are certain 
+to get a lot of alerts of NetBIOS attacks. Here&#39;s an example:<br>
+<br>
+The firewall has blocked Internet access to your computer (NetBIOS Session) from 
+10.0.0.2 (TCP Port 1032) [TCP Flags: S].<br>
+<br>
+Occurred: 2 times between 10/29/2002 7:38:20 AM and 10/29/2002 7:46:18 AM<br>
+<br>
+A Windows NT server on my home network, which has addresses that all start with 
+10.0.0, caused these alerts. In this case the server was just doing its innocent 
+thing, looking for other Windows computers on my LAN (local area network) that might 
+need to network with it. Every now and then, however, an attacker might pretend 
+to have an address from your internal network even though it is attacking from outside.<br>
+<br>
+If a computer from out on the Internet tries to open a NetBIOS session with one 
+of mine, I&#39;ll be mighty suspicious. Here&#39;s one example of what an outside attack 
+may look like:<br>
+<br>
+The firewall has blocked Internet access to your computer (NetBIOS Name) from 999.209.116.123 
+(UDP Port 1028).<br>
+<br>
+Time: 10/30/2002 11:10:02 AM (The attacker&#39;s IP address has been altered to protect 
+the innocent or the guilty, as the case may be.)<br>
+<br>
+Want to see how intensely crackers and worms are scanning the Internet for potential 
+NetBIOS targets? A really great and free IDS for Windows that is also a firewall 
+is Zone Alarm. You can download it for free from
+<a href="http://www.zonelabs.com">http://www.zonelabs.com</a> . You can set it to 
+pop up a warning on your screen whenever someone or some worm attacks your computer. 
+You will almost certainly get a NetBIOS attack the first day you use your IDS.<br>
+<br>
+Do you need to worry when a NetBIOS attack hits? Only if you have enabled NetBIOS 
+and Shares on your computer. Unfortunately, in order to explore other computers 
+using NetBIOS, you increase the danger to your own computer from attack by NetBIOS. 
+But, hey, to paraphrase a famous carpenter from Galilee, he who lives by the NetBIOS 
+gets hacked by the NetBIOS.<br>
+<br>
+********************<br>
+<i>Newbie note</i>: NetBEUI (NetBIOS Extended User Interface) is an out-of-date, 
+crummy, not terribly secure way for Windows computers to communicate with each other 
+in a peer-to-peer mode. NetBIOS stands for network basic input/output system.<br>
+<br>
+<i>Newbie note</i>: Shares are when you make it so other computers can access files 
+and directories on your computer. If you set up your computer to use NetBIOS, in 
+Win XP using the NTFS (new technology file system) you can share files and directories 
+by bringing up My Computer. Click on a directory - which in XP is called a &quot;folder&quot;. 
+In the left-hand column a task will appear called &quot;Share this folder&quot;. By clicking 
+this you can set who can access this folder, how many people at a time can access 
+it, and what they can do with the folder.<br>
+********************<br>
+<br>
+There are a number of network exploration commands that only NetBIOS uses. We will 
+show how to use nbtstat and several versions of the net command.<br>
+<br>
+<b>How to Install NetBIOS<br>
+</b><br>
+You might have to make changes on your system in order to use these commands. Here&#39;s 
+how to enable NetBIOS for Windows XP. (If you are stuck with Windows 95, 98, SE 
+or ME, see the end of this Guide for how to enable NetBIOS.) Click:<br>
+<br>
+Control Panel -&gt; Network Connections <br>
+<br>
+There are two types of network connections that may appear here: &quot;Dial-up&quot; and &quot;LAN 
+or High-Speed Internet&quot;.&nbsp; <br>
+<br>
+**************<br>
+<i>Newbie note</i>: A dial-up connection uses a modem to reach the Internet. LAN 
+stands for local area network. It&#39;s what you have if two or more computers are linked 
+to each other with a cable instead of modems. Most schools and businesses have LANs, 
+as well as homes with Internet connection sharing. A DSL or cable modem connection 
+will also typically show up as a LAN connection. <br>
+**************<br>
+<br>
+To configure your connections for hacking, double click on the connection you plan 
+to use. That brings up a box that has a button labeled &quot;Properties&quot;. Clicking it 
+brings up a box that says &quot;This connection uses the following items:&quot;<br>
+<br>
+You need to have both TCP/IP and NWLink NetBIOS showing. If NWLink NetBIOS is missing, 
+here&#39;s how to add it. Click Install -&gt; Protocol -&gt; Add NWlink/IPX/SPX/NetBIOS Compatible 
+Transport Protocol.<br>
+<br>
+**************<br>
+<i>Newbie note</i>: NWLink refers to Novell&#39;s Netware protocol for running a LAN.<br>
+**************<br>
+<br>
+<b>How to Use Nbtstat<br>
+</b><br>
+To get started, bring up the cmd.exe command. Click Start -&gt; Run and type cmd.exe 
+in the command line box. This brings up a black screen with white letters. Once 
+it is up, we will play with the nbtstat command. To get help for this command, just 
+type:<br>
+<br>
+C:\&gt;nbtstat help<br>
+<br>
+One way to use the nbtstat command is to try to get information from another computer 
+using either its domain name (for example test.target.com), its numerical Internet 
+address (for example, happyhacker.org&#39;s numerical address is 206.61.52.30), or its 
+NetBIOS name (if you are on the same LAN).<br>
+<br>
+C:\&gt;nbtstat -a 10.0.0.2&nbsp; <br>
+<br>
+Local Area Connection:<br>
+Node IpAddress: [10.0.0.1] Scope Id: []<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NetBIOS Remote Machine 
+Name Table<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Status<br>
+&nbsp;&nbsp;&nbsp; ---------------------------------------------<br>
+&nbsp;&nbsp;&nbsp; OLDGUY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;00&gt;&nbsp; 
+UNIQUE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Registered<br>
+&nbsp;&nbsp;&nbsp; OLDGUY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;20&gt;&nbsp; 
+UNIQUE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Registered<br>
+&nbsp;&nbsp;&nbsp; WARGAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;00&gt;&nbsp; 
+GROUP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Registered<br>
+&nbsp;&nbsp;&nbsp; INet~Services&nbsp; &lt;1C&gt;&nbsp; GROUP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Registered<br>
+&nbsp;&nbsp;&nbsp; IS~OLDGUY......&lt;00&gt;&nbsp; UNIQUE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Registered<br>
+&nbsp;&nbsp;&nbsp; OLDGUY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;03&gt;&nbsp; 
+UNIQUE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Registered<br>
+&nbsp;&nbsp;&nbsp; WARGAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;1E&gt;&nbsp; 
+GROUP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Registered<br>
+&nbsp;&nbsp;&nbsp; ADMINISTRATOR&nbsp; &lt;03&gt;&nbsp; UNIQUE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Registered<br>
+<br>
+&nbsp;&nbsp;&nbsp; MAC Address = 52-54-00-E4-6F-40<br>
+<br>
+What do these things tell us about this computer? Following is a table explaining 
+the codes you may see with an nbtstat command (taken from the MH Desk Reference, 
+written by the Rhino9 team).<br>
+<br>
+Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Usage <br>
+=========================================================<br>
+&lt;computername&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Workstation Service <br>
+&lt;computername&gt;&nbsp; 01&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Messenger Service <br>
+&lt;\\_MSBROWSE_&gt;&nbsp; 01&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+G&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Master Browser <br>
+&lt;compname&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 03&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Messenger Service<br>
+&lt;computername&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RAS Server Service<br>
+&lt;computername&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1F&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NetDDE Service<br>
+&lt;computername&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; File Server Service<br>
+&lt;computername&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RAS Client Service<br>
+&lt;computername&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Exchange Interchange <br>
+&lt;computername&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 23&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Exchange Store<br>
+&lt;computername&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 24&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Exchange Directory<br>
+&lt;computername&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Modem Sharing Server Service<br>
+&lt;computername&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Modem Sharing Client Service<br>
+&lt;computername&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 43&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SMS Client Remote Control<br>
+&lt;computername&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SMS Admin Remote Control Tool<br>
+&lt;computername&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SMS Client Remote Chat<br>
+&lt;computername&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 46&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SMS Client Remote Transfer<br>
+&lt;computername&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DEC Pathworks TCPIP Service<br>
+&lt;computername&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 52&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DEC Pathworks TCPIP Service<br>
+&lt;computername&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 87&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Exchange MTA<br>
+&lt;computername&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Exchange IMC<br>
+&lt;computername&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Network Monitor Agent<br>
+&lt;computername&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Network Monitor Apps<br>
+&lt;username&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 03&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Messenger Service<br>
+&lt;domain&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+G&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Domain Name<br>
+&lt;domain&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Domain Master Browser<br>
+&lt;domain&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+G&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Domain Controllers<br>
+&lt;domain&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Master Browser<br>
+&lt;domain&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+G&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Browser Service Elections<br>
+&lt;INet~Services&gt; 1C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+G&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Internet Information Server<br>
+&lt;IS~Computer_name&gt;00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Internet Information Server<br>
+<br>
+To keep this Guide from being ridiculously long, we&#39;ll just explain a few of the 
+things what we learned when we ran nbtstat -a against 10.0.0.2:<br>
+<br>
+* it uses NetBIOS<br>
+* its NetBIOS name is Oldguy<br>
+* one of the users is named Administrator<br>
+* it runs a web site with Internet Information Server, and maybe an&nbsp;&nbsp; 
+ftp - file transfer protocol -- server<br>
+* it is a member of the domain Wargame<br>
+* it is connected on a local area network and we accessed it through&nbsp;&nbsp; 
+an Ethernet network interface card (NIC) with a MAC Address of&nbsp;&nbsp; 52-54-00-E4-6F-40.
+<br>
+<br>
+When using nbtstat over the Internet, in most cases it will not find the correct 
+MAC address. However, sometimes you get lucky. That is part of the thrill of legal 
+hacker exploration. OK, OK, maybe getting a thrill out of a MAC address means I&#39;m 
+some kind of a freak. But if you are reading this, you probably are freaky enough 
+to be a hacker, too.<br>
+<br>
+**************<br>
+<i>Newbie note</i>: MAC stands for media access control. In theory every NIC ever 
+made has a unique MAC address, one that no other NIC has. In practice, however, 
+some manufacturers make NICs that allow you to change the MAC address. <br>
+**************<br>
+<br>
+**************<br>
+<i>Evil Genius tip</i>: sneak your computer onto a LAN and use it to find the MAC 
+address of a very interesting computer. Crash it, then give yours the same MAC, 
+NetBIOS name and Internet address as the very interesting computer. Then see what 
+you can do while faking being that computer. That&#39;s why I get a charge out of discovering 
+a MAC address, so stop laughing at me already.<br>
+**************<br>
+<br>
+**************<br>
+You can get fired, expelled, busted and catch cooties warning: Faking all that stuff 
+is something you would be better off doing only on your own test network, or with 
+written permission from the owner of the very interesting computer.<br>
+**************<br>
+<br>
+Now that we know some basic things about computer 10.0.0.2, also known as Oldguy, 
+we can do some simple things to learn more. We can connect to it with a web browser 
+to see what&#39;s on the web site, and with ftp to see if it allows anonymous users 
+to download or upload files. In the case of Oldguy, anyone can browse the web site. 
+However, when we try to connect to its ftp server with Netscape by giving the location
+<a href="ftp://10.0.0.2,">ftp://10.0.0.2,</a> it returns the message &quot;User Mozilla@ 
+cannot log in.<br>
+<br>
+**************<br>
+<i>Newbie note</i>: The people who programmed Netscape have always called it Mozilla, 
+after a famous old movie monster. As a joke they have stuck obscure mentions of 
+Mozilla into the operations of Netscape. Mozilla lovers recently spun off a pure 
+Mozilla browser project that has the web site <a href="http://www.mozilla.org.">
+http://www.mozilla.org.</a><br>
+**************<br>
+<br>
+<b>The Net View Command<br>
+</b><br>
+Now let&#39;s have some serious fun. Netscape (or any browser or ftp program) uses TCP/IP 
+to connect. What happens if we use NetBIOS instead to try to download files from 
+Oldguy&#39;s ftp server?<br>
+<br>
+Let&#39;s try some more NetBIOS commands:<br>
+<br>
+C:\&gt;net view \\10.0.0.2<br>
+System error 53 has occurred.<br>
+<br>
+The network path was not found.<br>
+<br>
+I got this message because my firewall blocked access to Oldguy, giving the message:<br>
+<br>
+The firewall has blocked Internet access to 10.0.0.2 (TCP Port 445) from your computer 
+[TCP Flags: S].<br>
+<br>
+There&#39;s a good reason for this. My firewall/IDS is trying to keep me from carelessly 
+making my computer a part of some stranger&#39;s LAN. Keep in mind that NetBIOS is a 
+two-way street. However, I want to run this command, so I shut down Zone Alarm and 
+give the command again:<br>
+<br>
+C:\&gt;net view \\10.0.0.2<br>
+Shared resources at \\10.0.0.2<br>
+<br>
+Share name&nbsp; Type&nbsp; Used as&nbsp; Comment<br>
+<br>
+--------------------------------------------------------<br>
+ftproot&nbsp;&nbsp;&nbsp;&nbsp; Disk<br>
+InetPub&nbsp;&nbsp;&nbsp;&nbsp; Disk<br>
+wwwroot&nbsp;&nbsp;&nbsp;&nbsp; Disk<br>
+The command completed successfully.<br>
+<br>
+This is a list of shared directories. Oooh, look at that, the ftp server is shared. 
+Does this mean I can get in? When setting shares on a Windows NT server, the default 
+choice is to allow access to read, write and delete files to everyone. So sometimes 
+a sysadmin carelessly fails to restrict access to a share. <br>
+<br>
+What is really important is that we didn&#39;t need a user name or password to get this 
+potentially compromising information.<br>
+<br>
+Let&#39;s establish an anonymous connection to Oldguy, meaning we connect without giving 
+it a user name or password:<br>
+<br>
+C:\&gt;net use \\10.0.0.2\ipc$<br>
+Local name<br>
+Remote name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \\10.0.0.2\IPC$<br>
+Resource type&nbsp;&nbsp;&nbsp;&nbsp; IPC<br>
+Status&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OK<br>
+# Opens&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0<br>
+# Connections&nbsp;&nbsp;&nbsp;&nbsp; 1<br>
+The command completed successfully. <br>
+<br>
+We are connected! <br>
+<br>
+**********************<br>
+Newbie note: IPC (ipc$) stands for &quot;Inter Process Connector&quot;, used to set up connections 
+across a network between Windows computers using NetBIOS.<br>
+**********************<br>
+<br>
+<b>What to Do Once You Are Connected<br>
+</b><br>
+So far we haven&#39;t quite been breaking the law, although we have been getting pretty 
+rude if the owner of that target computer hasn&#39;t given us permission to explore. 
+What if we want to stop pushing our luck and decide to disconnect? Just give the 
+message:<br>
+<br>
+C:\&gt;net session \\10.0.0.2 /delete<br>
+<br>
+Of course you would substitute the name or number of the computer to which you are 
+connected for 10.0.0.2.<br>
+<br>
+What if you want to stay connected? Oldguy will let you stay connected even if you 
+do nothing more. By contrast, a login to a Unix/Linux type computer will normally 
+time out and disconnect you if you go too long without doing anything.<br>
+<br>
+You could try out the other net commands on Oldguy. Or you can go to the graphical 
+user interface (GUI) of XP. Click My Computer, then My Network Places and there 
+you&#39;ll find the victim, er, I mean, target computer. By clicking on it, I discover 
+that ftproot has been shared to - everyone! <br>
+<br>
+Let&#39;s say you were to get this far investigating some random computer you found 
+on the Internet. Let&#39;s say you had already determined that the ftp server isn&#39;t 
+open to the public. At this moment you would have a little angel sitting one shoulder 
+whispering &quot;You can be a hero. Email the owner of that computer to tell him or her 
+about that misconfigured ftproot.&quot; <br>
+<br>
+On the other shoulder a little devil is sneering, &quot;Show the luser no mercy. Information 
+should be free. Because I said so, that&#39;s why. Hot darn, are those spreadsheets 
+from the accounting department? You could make a lot of bucks selling those files 
+to a competitor, muhahaha! Besides, you&#39;re so ugly that future cellmate Spike won&#39;t 
+make you be his girlfriend.&quot;<br>
+<br>
+Some hackers might think that because ftproot is shared to the world that it is 
+OK to download stuff from it. However, if someone were to log in properly to that 
+ftp server, he or she would get the message &quot;Welcome to Oldguy on Carolyn Meinel&#39;s 
+LAN. Use is restricted to only those for whom Meinel has assigned a user name and 
+password.&quot; This warning logon banner is all a computer owner needs to legally establish 
+that no one is allowed to just break in. It won&#39;t impress a judge if a cracker says 
+&quot;The owner was so lame that her computer deserved to get broken into&quot; or &quot;I&#39;m so 
+lame that I forgot to try to use the ftp server the normal way.&quot;<br>
+<br>
+<b>More on the Net Commands<br>
+</b><br>
+Let&#39;s get back to the net command. There are many forms of this command. In XP you 
+can learn about them with the command:<br>
+<br>
+C:\&gt;net help<br>
+The syntax of this command is:<br>
+<br>
+NET HELP<br>
+command<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -or-<br>
+NET command /HELP<br>
+<br>
+&nbsp;&nbsp; Commands available are:<br>
+<br>
+&nbsp;&nbsp; NET ACCOUNTS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+NET HELP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+NET SHARE<br>
+&nbsp;&nbsp; NET COMPUTER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+NET HELPMSG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NET START<br>
+&nbsp;&nbsp; NET CONFIG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+NET LOCALGROUP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp; NET STATISTICS<br>
+&nbsp;&nbsp; NET CONFIG SERVER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NET NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+NET STOP<br>
+&nbsp;&nbsp; NET CONFIG WORKSTATION&nbsp;&nbsp; NET PAUSE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+NET TIME<br>
+&nbsp;&nbsp; NET CONTINUE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+NET PRINT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+NET USE<br>
+&nbsp;&nbsp; NET FILE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+NET SEND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+NET USER<br>
+&nbsp;&nbsp; NET GROUP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+NET SESSION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NET VIEW<br>
+<br>
+&nbsp;&nbsp; NET HELP SERVICES lists some of the services you can start.<br>
+&nbsp;&nbsp; NET HELP SYNTAX explains how to read NET HELP syntax lines.<br>
+&nbsp;&nbsp; NET HELP command | MORE displays Help one screen at a time.<br>
+<br>
+<b>How Crackers Log on as Administrator<br>
+</b><br>
+As we look around Oldguy further, we see that there&#39;s not much else an anonymous 
+user can do to it. We know that there is a user named Administrator. What can we 
+do if we can convince Oldguy that we are Administrator?<br>
+<br>
+******************<br>
+<i>Newbie note</i>: in Windows NT, 2000 and XP, the Administrator user has total 
+power over its computer, just as root has total power over a Unix/Linux type computer. 
+However, it is possible to change the name of Administrator so an attacker has to 
+guess which user has all the power.<br>
+******************<br>
+<br>
+Let&#39;s try to log in as Administrator by guessing the password. Give the command:<br>
+<br>
+C:\&gt;net use \\10.0.0.2\ipc$ * /user:Administrator<br>
+Type the password for \\10.0.0.2\ipc$:<br>
+System error 1219 has occurred.<br>
+<br>
+Multiple connections to a server or shared resource by the same user, using more 
+than one user name, are not allowed. Disconnect all previous connections to the 
+server or shared resource and try again.<br>
+<br>
+This means that someone else is currently logged onto this server who has Administrator 
+rights. Furthermore, this person is probably watching me on an IDS and thinking 
+up terrible things to do to me. Eeep! Actually this is all going on inside my hacker 
+lab - but you get the idea of what it could be like when trying to invade a computer 
+without permission.<br>
+<br>
+I discover that whether I guess the password correctly or not, I always get the 
+same error message. This is a good safety feature. On the other hand, one of the 
+users is named Administrator. This is a bad thing for the defender. When you first 
+set up a Windows NT or 2000 server, there is always a user called Administrator, 
+and he or she has total power over that computer. If you know the all-powerful user 
+is named Administrator, you can try guessing the password whenever no one is logged 
+on with Administrator powers.<br>
+<br>
+Computer criminals don&#39;t waste time guessing by hand. They use a program such as 
+NAT or Legion to get passwords. These programs are why smart NT administrators rename 
+their Administrator accounts and choose hard passwords.&nbsp; Also, this kind of 
+persistent attack will be detected by an intrusion detection system, making it easy 
+to catch criminals at work.<br>
+<br>
+********************<br>
+You can get expelled warning: What if you are a student and you want to save your 
+school from malicious code kiddies who steal tests and change grades? It is important 
+to get permission *in writing* before you test the school&#39;s network. Even then, 
+you still must be careful to be a model student. If you act up, cut classes - you 
+know what I mean - the first time a cracker messes up the network, who do you think 
+they will suspect? Yes, it&#39;s unfair, and yes, that is the way the world works.<br>
+********************<br>
+<br>
+<b>How to Scan for Computers that Use NetBIOS<br>
+</b><br>
+How do you find Windows computers that are running NetBIOS? Your tool of choice 
+is a port scanner. Any computer that is running something on port 139 is likely 
+(but not certain) to be using NetBIOS. Most crackers use nmap to port scan. This 
+tool runs on Unix/Linux type computers. You can get it at
+<a href="http://www.insecurity.org">http://www.insecurity.org</a> . There is also 
+a Windows version of nmap, but it isn&#39;t very good. A better choice for Windows is 
+Whats Up from <a href="http://www.ipswitch.com">http://www.ipswitch.com</a> . You 
+can get a one month free trial of it.<br>
+<br>
+Here&#39;s an example of an nmap scan of Oldguy:<br>
+<br>
+test-box:/home/cmeinel # nmap -sTU 10.0.0.2<br>
+<br>
+Starting nmap V. 3.00 ( www.insecure.org/nmap/ )<br>
+Interesting ports on&nbsp; (10.0.0.2):<br>
+(The 3060 ports scanned but not shown below are in state: closed)<br>
+Port&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; State&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Service<br>
+21/tcp&nbsp;&nbsp;&nbsp;&nbsp; open&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ftp<br>
+70/tcp&nbsp;&nbsp;&nbsp;&nbsp; open&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gopher<br>
+80/tcp&nbsp;&nbsp;&nbsp;&nbsp; open&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; http<br>
+135/tcp&nbsp;&nbsp;&nbsp; open&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; loc-srv<br>
+135/udp&nbsp;&nbsp;&nbsp; open&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; loc-srv<br>
+137/udp&nbsp;&nbsp;&nbsp; open&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; netbios-ns<br>
+138/udp&nbsp;&nbsp;&nbsp; open&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; netbios-dgm<br>
+139/tcp&nbsp;&nbsp;&nbsp; open&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; netbios-ssn<br>
+500/udp&nbsp;&nbsp;&nbsp; open&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; isakmp<br>
+<br>
+Nmap run completed -- 1 IP address (1 host up) scanned in 8 seconds<br>
+<br>
+As you can see from this scan, three ports are identified with NetBIOS. This tells 
+us that we could set nmap to scan a large number of Internet addresses, only looking 
+for port 139 on each. To learn how to set up nmap to run this way, in your Unix 
+or Linux shell give the command &quot;man nmap&quot;.<br>
+<br>
+For more on what crackers do once they break into a computer using NetBIOS (like 
+installing back doors), see
+<a href="http://happyhacker.org/gtmhh/vol3no10.shtml">http://happyhacker.org/gtmhh/vol3no10.shtml</a> 
+.<br>
+<br>
+********************<br>
+You can get punched in the nose warning: If you use a port scanner against networks 
+that haven&#39;t given you permission to scan, you will be waving a red flag that says 
+&quot;Whaddaya wanna bet I&#39;m a computer criminal?&quot; You can&#39;t get arrested for merely 
+port scanning, but people who don&#39;t like being scanned might get you kicked off 
+your Internet service provider. <br>
+<br>
+You can get really, big time, punched in the nose warning: If you visit the same 
+computer or LAN really often to see what&#39;s new and to try different things, even 
+if you don&#39;t break the law you&#39;d better be doing it with the permission of the owner. 
+Otherwise you may make enemies who might crash or destroy your operating system. 
+And that is only what they may do when feeling mellow. After a night of hard drinking 
+- well, you don&#39;t want to find out.<br>
+********************<br>
+<br>
+<b>How to Play NetBIOS Wargames<br>
+</b><br>
+What if you want to challenge your friends to a hacker wargame using NetBIOS? The 
+first thing to do is *don&#39;t* email me asking me to break in for you. Sheesh. Seriously, 
+I get emails from people claiming to have permission from their girlfriend/boyfriend 
+and begging me to help them break in. You can read their hilarious pleas for help 
+at <a href="http://happyhacker.org/sucks/">http://happyhacker.org/sucks/</a> .<br>
+<br>
+The way to run a hacker wargame over the Internet is first, get permission from 
+your Internet provider so they don&#39;t kick you off for hacking. They probably run 
+an IDS that scans users for suspicious activity. They probably hate malicious hackers. 
+Enough said.<br>
+<br>
+Second, you and your friends are likely to be at a different Internet address every 
+time you log on. Your safest way to play over the Internet is for each player to 
+get an Internet address that is the same every time he or she logs on: a &quot;static&quot; 
+address. This way you won&#39;t accidentally break into someone else&#39;s computer.<br>
+<br>
+You have to arrange with your Internet provider to get a static address. Normally 
+only a local provider can do this for you. A big advantage of using a local provider 
+is you can make friends with the people who work there - and they are probably hackers.<br>
+<br>
+If you live in an apartment building or dormitory with other hackers, you can play 
+break-in games without using the Internet. Set up a LAN where you can play together. 
+For example, you can string Ethernet cable from window to window. To learn how to 
+set up a Windows Ethernet LAN, see
+<a href="http://happyhacker.org/gtmhh/winlan.shtml">http://happyhacker.org/gtmhh/winlan.shtml</a> 
+.<br>
+<br>
+Or you could set up a wireless LAN. With wireless you never know who might come 
+cruising with a laptop down the street by your home or business and break in. That 
+can make a wargame lots more fun. For help on how to break into wireless LANs (it&#39;s 
+pathetically easy and with care can be borderline legal), see
+<a href="http://www.wardriving.com">http://www.wardriving.com</a> .<br>
+<br>
+**************<br>
+<i>Evil genius tip</i>: Attack using a Win NT server with the Microsoft Resource 
+Kit installed. Heh, heh. With it you can give the command:<br>
+<br>
+C:\&gt;Local Administrators \\&lt;targetbox.com&gt;<br>
+<br>
+This should show all user accounts with administrator rights on targetbox.com.<br>
+<br>
+C:\&gt;Global Administrators \\&lt;targetbox.com &gt;<br>
+<br>
+This should show all user accounts with Domain administrative rights.<br>
+<br>
+These are exceptionally worth compromising, because with one Domain administrative 
+password you will be able to control many resources among NT servers, workstations, 
+and Win 95/98 computers. <br>
+<br>
+I&#39;ve tried to install the Resource Kit on XP Professional, but it wasn&#39;t compatible.
+<br>
+<br>
+Another option is to install hacker tools such as Red Button and DumpACL, which 
+extract information on user names, hashes, and which services are running on a given 
+machine. <br>
+**************<br>
+<br>
+Help for users of Windows 95, 98, SE or ME<br>
+<br>
+To enable NetBIOS, click<br>
+<br>
+Control Panel -&gt; Network -&gt; Protocols<br>
+<br>
+If you see both NetBEUI and TCP/IP, you are already using NetBIOS. If not, add NetBEUI.<br>
+<br>
+To bring up the command screen, click Start -&gt; Run and type in command.com.</tt></p>
+<p align="center"><a href="../../index.html">Home</a> -
+<a href="index.html">Computers</a> -
+<a href="Hacking%20with%20Windows%20XP.htm">Hacking with Windows XP</a></p>
+
+</body>
+
+</html>

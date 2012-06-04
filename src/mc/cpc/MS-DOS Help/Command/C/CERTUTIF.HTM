@@ -1,0 +1,606 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CERTUTIL certificates</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCA.HTM#certutilcertificates">Commands Ca-Cg</a>
+    <h1>CERTUTIL certificates</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Certutil tasks for managing certificates.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CERTUTIL
+    [<a href="#SwitchVerify">-verify</a>]
+    [<a href="#SwitchHelp">/?</a>]</p>
+
+    <p>To validate that the certificate was issued by a specific CA:
+    <br>CERTUTIL
+    <a href="#SwitchVerify">-verify</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchEnterprise">-enterprise</a>]
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchSilent">-silent</a>]
+    [<a href="#SwitchSplit">-split</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterFileCertificate">certificate_file</a>
+    [<a href="#ParameterFileSignature">signature_file</a>]</p>
+
+    <p>To verify the validity of a certificate:
+    <br>CERTUTIL
+    <a href="#SwitchIsValid">-isvalid</a>
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    {<a href="#ParameterSerialNumber">serial_number</a>
+    | <a href="#ParameterCertificateHash">certificate_hash</a>}</p>
+
+    <p>To install the CA certificate:
+    <br>CERTUTIL
+    <a href="#SwitchInstallCert">-installcert</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    [<a href="#ParameterFileCertificate2">certificate_file2</a>]</p>
+
+    <p>To request a renewal CA certificate:
+    <br>CERTUTIL
+    <a href="#SwitchRenewCert">-renewcert</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    [<a href="#ParameterReuseKeys">reusekeys</a>]
+    <a href="#ParameterFileRequest">request_file</a></p>
+
+    <p>To delete keys from the HKEY_LOCAL_MACHINE root store:
+    <br>CERTUTIL
+    <a href="#SwitchDelKey">-delkey</a>
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchSilent">-silent</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterKeyContainerName">key_container_name</a>
+    [<a href="#ParameterCspName">csp_name</a>]</p>
+
+    <p>To add Netscape-compatible Web-based revocation check extensions to every issued certificate:
+    <br>CERTUTIL
+    <a href="#SwitchSetReg">-setreg</a>
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterPolicyRevocationType">policy\revocation_type</a>
+    {<a href="#ParameterPlus"> + </a>
+    | <a href="#ParameterMinus"> - </a>}
+    REVEXT_ASPENABLE</p>
+
+    <p>To retrieve the CA signing certificate and save it to a file:
+    <br>CERTUTIL
+    <a href="#SwitchCaCert">-ca.cert</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchSplit">-split</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    <a href="#ParameterFileCertificateOutput">certificate_output_file</a>
+    [<a href="#ParameterIndex">index</a>]</p>
+
+    <p>To retrieve the CA signing certificate and chain and save it to a PKCS #7 file:
+    <br>CERTUTIL
+    <a href="#SwitchCaChain">-ca.chain</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchSplit">-split</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    <a href="#ParameterFileCertificateChainOutput">certificate_chain_output_file</a>
+    [<a href="#ParameterIndex">index</a>]</p>
+
+    <p>To import a certificate into the server database:
+    <br>CERTUTIL
+    <a href="#SwitchImportCert">-importcert</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    <a href="#ParameterFileCertificate">certificate_file</a></p>
+
+    <p>To display the certificates in the Local Machine certificate store:
+    <br>CERTUTIL
+    <a href="#SwitchStore">-store</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchEnterprise">-enterprise</a>]
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchSilent">-silent</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchDc">-dc dc_name</a>]
+    <a href="#ParameterCertificateStoreName">certificate_store_name</a>
+    [<a href="#ParameterCertificateId">certificate_id</a>
+    [<a href="#ParameterOutputFile">output_file</a>]]</p>
+
+    <p>To add a certificate or CRL to a local trusted root CA store:
+    <br>CERTUTIL
+    <a href="#SwitchAddStore">-addstore</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchEnterprise">-enterprise</a>]
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchDc">-dc dc_name</a>]
+    root
+    <a href="#ParameterInputFile">input_file</a></p>
+
+    <p>To view/delete certificate stores:
+    <br>CERTUTIL
+    [{<a href="#SwitchViewStore">-viewstore</a>
+    | <a href="#SwitchViewDelStore">-viewdelstore</a>}]
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchEnterprise">-enterprise</a>]
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchDc">-dc dc_name</a>]
+    <a href="#ParameterCertificateType">certificate_type</a>
+    [<a href="#ParameterCertificateIndex">certificate_index</a>]</p>
+
+    <p>To verify all certificates in a store:
+    <br>CERTUTIL
+    <a href="#SwitchVerifyStore">-verifystore</a>
+    [<a href="#SwitchEnterprise">-enterprise</a>]
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchSplit">-split</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchDc">-dc dc_name</a>]
+    <a href="#ParameterCertificateStoreName">certificate_store_name</a>
+    [<a href="#ParameterCertificateId">certificate_id</a></p>
+
+    <p>To delete a certificate from the HKEY_LOCAL_MACHINE root store:
+    <br>CERTUTIL
+    <a href="#SwitchDelStore">-delstore</a>
+    [<a href="#SwitchEnterprise">-enterprise</a>]
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchDc">-dc dc_name</a>]
+    root
+    [<a href="#ParameterCertificateIndex">certificate_index</a>]</p>
+
+    <p>To delete a certificate from the HKEY_CURRENT_USER root store:
+    <br>CERTUTIL
+    <a href="#SwitchDelStore">-delstore</a>
+    [<a href="#SwitchEnterprise">-enterprise</a>]
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchDc">-dc dc_name</a>]
+    root
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#ParameterCertificateIndex">certificate_index</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterFileCertificateChainOutput"></a> certificate_chain_output_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Writes the CA signing certificate to the PKCS #7
+      file.</dd>
+
+      <dt><a name="ParameterFileCertificate"></a> certificate_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the certificate.</dd>
+      <dd>Must contain a single certificate, not a PKCS #7
+      certification chain.</dd>
+
+      <dt><a name="ParameterFileCertificate2"></a> certificate_file2
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the CA signature certificate that
+      contains the public key used to verify digital signatures.</dd>
+      <dd>A PKCS #7 certification chain is the preferred
+      content. However, an X.509 v3 certificate is accepted
+      if all of the certificates that will be used to form
+      the chain are already installed on the local computer.</dd>
+
+      <dt><a name="ParameterCertificateHash"></a> certificate_hash
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the certificate.</dd>
+
+      <dt><a name="ParameterCertificateId"></a> certificate_id
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies a certificate or certificate revocation
+      list (CRL).</dd>
+      <dd>Can be a serial number, a Secure Hash Algorithm
+      (SHA-1) certificate, CRL, certificate trust list (CTL),
+      or public key hash, a numeric certificate index, a
+      numeric CRL index, a numeric CTL index, a certificate
+      subject common name or a CRL issuer common name. Many
+      of these might result in multiple matches.</dd>
+
+      <dt><a name="ParameterCertificateIndex"></a> certificate_index
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies a certificate or certificate revocation list
+      (CRL) match token.</dd>
+      <dd>To determine the certificate hash value, which is
+      the value following Cert Hash(sha1): in the certificate,
+      do one of:
+      <ol>
+      <li>Dump a certificate store that contains the old
+      certificate by: CERTUTIL <a href="#SwitchStore">-store</a>
+      [<a href="#SwitchUser">-user</a>] root</li>
+      <li>Save the old certificate to a file and dump the
+      file: CERTUTIL <a href="#ParameterOutputFile">file.cer</a></li>
+      </ol>
+      </dd>
+
+      <dt><a name="ParameterCertificateStoreName"></a> certificate_store_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies one of:
+      <ul>
+      <li><b>ca</b> Specifies certificates in the Intermediate Certification Authorities store</li>
+      <li><b>my</b> Specifies certificates issued to the current user</li>
+      <li><b>root</b> Specifies certificates in the Trusted Root Certification Authorities store</li>
+      <li><b>spc</b> Specifies software publisher certificates</li>
+      <li><b>user_created_store</b> Specifies the name of a user-created certificate store</li>
+      </ul>
+      </dd>
+
+      <dt><a name="ParameterCertificateType"></a> certificate_type
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies one of:
+      <ul>
+      <li><b>ca</b> Displays certificates in the Intermediate Certification Authorities store</li>
+      <li><b>my</b> Displays certificates issued to the local computer</li>
+      <li><b>root</b> Displays certificates in the Trusted Root Certification Authorities store</li>
+      <li><b>spc</b> Displays software publisher certificates</li>
+      </ul>
+      </dd>
+
+      <dt><a name="ParameterFileCertificateOutput"></a> certificate_output_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the CA file to which you want to write.</dd>
+
+      <dt><a name="ParameterCspName"></a> csp_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the cryptographic service provider
+      (CSP).</dd>
+
+      <dt><a name="ParameterIndex"></a> index
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the CA certificate that you want to
+      retrieve. The default is the most current CA.</dd>
+
+      <dt><a name="ParameterInputFile"></a> input_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the file name of the certificate or
+      certificate revocation list (CRL).</dd>
+
+      <dt><a name="ParameterKeyContainerName"></a> key_container_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the container name of the key.</dd>
+
+      <dt><a name="ParameterPlus"></a> +</dt>
+      <dt><a name="ParameterMinus"></a> -
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets (+) or resets (-) the flag.</dd>
+
+      <dt><a name="ParameterOutputFile"></a> output_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the file to which you want to write the
+      displayed certificate information.</dd>
+
+      <dt><a name="ParameterPolicyRevocationType"></a> policy\revocation_type
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the policy module and the certificate
+      revocation configuration.</dd>
+
+      <dt><a name="ParameterFileRequest"></a> request_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the file to which you want to save the
+      renewal request.</dd>
+
+      <dt><a name="ParameterReuseKeys"></a> reusekeys
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies to reuse the existing keys.</dd>
+
+      <dt><a name="ParameterSerialNumber"></a> serial_number
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the certificate hash of the certificate.</dd>
+      <dd>Must be in hexadecimal format with an even number
+      of digits. A single zero (0) can be prefaced to a value
+      with an odd number of digits. A leading 0x is not allowed.</dd>
+
+      <dt><a name="ParameterFileSignature"></a> signature_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the CA signature certificate that
+      contains the public key used to verify digital signatures.</dd>
+      <dd>Must contain a single certificate, not a PKCS #7
+      certification chain.</dd>
+      <dd>If you do not specify, the certification chain for
+      <a href="#ParameterFileCertificate">certificate_file</a>
+      is constructed by using certificates installed on the
+      computer, and all certificates in the chain are verified
+      and checked to see if they have been revoked.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchAddStore"></a> -addstore
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Adds a certificate to a certificate store.</dd>
+
+      <dt><a name="SwitchCaCert"></a> -ca.cert
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Retrieves the CA signing certificate.</dd>
+      <dd>The public key contained in this certificate is
+      used to verify digital signatures on certificates
+      issued by the CA.</dd>
+
+      <dt><a name="SwitchCaChain"></a> -ca.chain
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Retrieves the CA signing certificate and chain.</dd>
+
+      <dt><a name="SwitchConfig"></a> -config machine\user
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Processes the operation by using the CA specified
+      in the machine/user configuration string.</dd>
+      <dd>You must specify the machine or user in -config.
+      Otherwise, the Select Certificate Authority dialog box
+      appears and displays a list of all CAs that are available.</dd>
+      <dd>If you use "-config -", the operation is processed
+      using the default CA.
+
+      <dt><a name="SwitchDc"></a> -dc dc_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Targets a specific domain controller.</dd>
+
+      <dt><a name="SwitchDelKey"></a> -delkey
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Deletes a private key from the host computer.</dd>
+      <dd>Deletes a User or Machine private key.
+      After it is deleted, any of the following might apply:
+      <ol>
+      <li>If it was not previously backed up or archived,
+      the deleted key will be irretreivable.</li>
+      <li>If the deleted key was used for a certificate
+      server signing key, the CA will be disabled and will
+      not be able to issue new CRLs, which will effectively
+      invalidate all of the certificates issued by the CA
+      when the existing CRLs expire. You can replace other
+      signing keys by re-enrolling for a new key and
+      certificate.</li>
+      <li>If the deleted key was used for encrypting e-mail,
+      previously received e-mail might be unreadable, unless
+      you can recover it from a key management system like
+      Key Management Service (KMS).</li>
+      <li>If the deleted key was used for encrypting files,
+      an administrator with the appropriate credentials to
+      create a Key Recovery Agent account might need to
+      intervene and decrypt each file individually for the
+      affected user.</li>
+      <li>Use <a href="#SwitchUser">-user</a> to delete keys
+      from the HKEY_CURRENT_USER root store.</li>
+      </ol>
+      </dd>
+
+      <dt><a name="SwitchDelStore"></a> -delstore
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Deletes a certificate from the specified store.</dd>
+      <dd>Valid only for deleting certificates and CRLs.
+      You must use <a href="#SwitchDelKey">-delkey</a>
+      to delete keys.</dd>
+
+      <dt><a name="SwitchEnterprise"></a> -enterprise
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Uses the local computer's enterprise registry
+      certificate store.</dd>
+
+      <dt><a name="SwitchF"></a> -f
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Overwrites existing files or keys.</dd>
+
+      <dt><a name="SwitchGmt"></a> -gmt
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays time as Greenwich mean time.</dd>
+
+      <dt><a name="SwitchImportCert"></a> -importcert
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Imports a certificate file into the database.</dd>
+      <dd>You can use this option to make a certificate
+      revocable if it is inadvertently lost from the
+      database, which could be due to restoring a database
+      from an incomplete backup of the database. Note that
+      the server must have issued the certificate.</dd>
+
+      <dt><a name="SwitchInstallCert"></a> -installcert
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Installs a CA certificate.</dd>
+      <dd>Also completes subordinate CA certificate
+      installation for a subordinate CA that generated a
+      request, but has not yet received and installed its
+      CA certificate.</dd>
+      <dd>Also allows installation of a requested renewal
+      CA certificate.</dd>
+
+      <dt><a name="SwitchIsValid"></a> -isvalid
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Determines whether the certificate is valid.</dd>
+
+      <dt><a name="SwitchRenewCert"></a> -renewcert
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Renews the CA certificate.</dd>
+      <dd>If an online parent CA does not exist or if it
+      does not immediately issue a renewal CA certificate,
+      use the <a href="#SwitchInstallCert">-installcert</a>
+      command to complete the renewal certificate
+      installation when the certificate is available.</dd>
+
+      <dt><a name="SwitchSeconds"></a> -seconds
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays time with seconds and milliseconds.</dd>
+
+      <dt><a name="SwitchSetReg"></a> -setreg
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets or edits the registry key value.</dd>
+
+      <dt><a name="SwitchSilent"></a> -silent
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Uses a silent flag to acquire CryptContext.</dd>
+
+      <dt><a name="SwitchSplit"></a> -split
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Splits the embedded Abstract Syntax Notation One
+      (ASN.1) elements, and saves them to files.</dd>
+
+      <dt><a name="SwitchStore"></a> -store
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the certificates in the specified
+      certificate store.</dd>
+
+      <dt><a name="SwitchUser"></a> -user
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Uses the HKEY_CURRENT_USER keys or certificate
+      store.</dd>
+      <dd>Use to display certificate stores for the current
+      user instead of the local computer.</dd>
+
+      <dt><a name="SwitchV"></a> -v
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies verbose output.</dd>
+
+      <dt><a name="SwitchVerify"></a> -verify
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Verifies the certificate chain.</dd>
+      <dd>Also verifies the revocation status of the
+      <a href="#ParameterFileCertificate">certificate_file</a>
+      certificate.
+      If <a href="#ParameterFileCertificate">certificate_file</a>
+      does not contain information on how to check revocation
+      or if the necessary URLs or CRLs are not available,
+      an error occurs.</dd>
+
+      <dt><a name="SwitchVerifyStore"></a> -verifystore
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Verifies the certificate in a store.</dd>
+      <dd>Verifies the associated private keys (that is, if
+      they exist), and verifies each certificate by building
+      a chain from the installed CA and root certificates
+      and verifies all certificates in the chain to make
+      sure they are still valid and have not been revoked.</dd>
+
+      <dt><a name="SwitchViewDelStore"></a> -viewdelstore
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Deletes a certificate from the certificate store.</dd>
+      <dd>If you do not close the user interface and you use
+      -viewdelstore, you delete the selected certificate from
+      the certificate store.</dd>
+
+      <dt><a name="SwitchViewStore"></a> -viewstore
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Views a certificate in the certificate store.</dd>
+      <dd>By default opens the HKLM "CA" store. You can
+      override this default to display any user or
+      enterprise store by specifying <a href="#SwitchUser">-user</a>
+      or <a href="#SwitchEnterprise">-enterprise</a>.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="CERTUTIB.HTM">CERTUTIL backup/restore</a>
+    <br><a href="CERTUTIC.HTM">CERTUTIL configure</a>
+    <br><a href="CERTUTIE.HTM">CERTUTIL decode/encode</a>
+    <br><a href="CERTUTIL.HTM">CERTUTIL CRLs</a>
+    <br><a href="CERTUTIM.HTM">CERTUTIL manage</a>
+    <br><a href="CERTUTIR.HTM">CERTUTIL archival/recovery</a>
+    <br><a href="CERTUTIT.HTM">CERTUTIL troubleshooting</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>The user interface does not support saving
+    certificates to files. You can run the following to
+    display all certificates, select the one you want, and
+    then save it to a file:
+<pre>
+    CERTUTIL <a
+href="#SwitchViewStore">-viewstore</a> <a
+href="#SwitchEnterprise">-enterprise</a> <a
+href="#ParameterCertificateType">NTAuth</a> *.file.cer
+</pre>
+    <p>The local NTAuth store is the result of the last
+    Group Policy download from the Active Directory NTAuth
+    store. It is the store used by smart card logon, so
+    viewing this store can be useful when troubleshooting
+    smart card logon failures.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

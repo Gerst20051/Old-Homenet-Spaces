@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CERTREQ SUBMIT</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCA.HTM#certreqsubmit">Commands Ca-Cg</a>
+    <h1>CERTREQ SUBMIT</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>To submit a request to a certification authority (CA).</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CERTREQ
+    [<a href="#SwitchSubmit">-submit</a>]
+    [<a href="#SwitchHelp">/?</a>]</p>
+
+    <p>CERTREQ
+    [<a href="#SwitchSubmit">-submit</a>]
+    [<a href="#SwitchAttrib">-attrib attribute_string</a>]
+    [<a href="#SwitchBinary">-binary</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    [<a href="#SwitchCrl">-crl</a>]
+    [<a href="#SwitchRpc">-rpc</a>]
+    [<a href="#ParameterFileIn">input_file</a>
+    [<a href="#ParameterFileOut">output_file</a>
+    [<a href="#ParameterFileChainOut">chain_output_file</a>
+    [<a href="#ParameterFileResponseOut">response_output_file</a>]]]]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterFileChainOut"></a> chain_output_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the binary or base64-encoded PKCS #7
+      file to which you want to send output.</dd>
+
+      <dt><a name="ParameterFileIn"></a> input_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the base64-encoded or binary input file
+      that you want to use. The file can be a PKCS #10
+      certificate request, PKCS #7 certificate renewal
+      request, KEYGEN tag format certificate request, or a
+      Certificate Management protocol using Cryptographic
+      Message Syntax (CMS) request
+      (this protocol is also known as CMC).</dd>
+
+      <dt><a name="ParameterFileOut"></a> output_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the binary or base64-encoded X.509 v3
+      file to which you want to send output.</dd>
+
+      <dt><a name="ParameterFileResponseOut"></a> response_output_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the binary or base64-encoded Full
+      Response file to which you want to send output.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display cluster group syntax. Default.</dd>
+
+      <dt><a name="SwitchAttrib"></a> -attrib attribute_string
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the Name and Value string pairs,
+      separated by a colon.
+      Separate Name and Value string pairs with \n
+      (ie. Name1: Value1\n Name2: Value2).</dd>
+
+      <dt><a name="SwitchBinary"></a> -binary
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Formats output files as binary instead of
+      base64-encoded.</dd>
+
+      <dt><a name="SwitchConfig"></a> -config machine\user
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Processes the operation by using the certification
+      authority specified in machine\name.</dd>
+      <dd>You must specify the machine or user. Otherwise,
+      the Select Certificate Authority dialog box appears and
+      displays a list of all CAs that are available.</dd>
+      <dd>If you use "-config -", the operation is processed
+      using the default CA.</dd>
+
+      <dt><a name="SwitchCrl"></a> -crl
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Includes certificate revocation lists (CRLs) in
+      the output to the base64-encoded PKCS #7 file
+      specified by
+      <a href="#ParameterFileChainOut">chain_output_file</a>
+      or to the base64-encoded file specified by
+      <a href="#ParameterFileResponseOut">response_output_file</a>.
+      </dd>
+
+      <dt><a name="SwitchRpc"></a> -rpc
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Instructs Certificate Services to use a remote
+      procedure call (RPC) server connection instead of
+      Distributed COM.</dd>
+
+      <dt><a name="SwitchSubmit"></a> -submit
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Submits a request to a certificate authority.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="CERTREQA.HTM">CERTREQ ACCEPT</a>
+    <br><a href="CERTREQN.HTM">CERTREQ NEW</a>
+    <br><a href="CERTREQP.HTM">CERTREQ POLICY</a>
+    <br><a href="CERTREQR.HTM">CERTREQ RETRIEVE</a>
+    <br><a href="CERTREQS.HTM">CERTREQ SIGN</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

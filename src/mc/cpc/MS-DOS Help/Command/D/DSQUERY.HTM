@@ -1,0 +1,565 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DSQUERY</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDS.HTM#dsquery">Commands Ds-Dz</a>
+    <h1>DSQUERY</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Queries Active Directory according to specified criteria.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>DSQUERY
+    { <a href="#ParameterSplat">*</a>
+    | <a href="#ParameterComputer">computer</a>
+    | <a href="#ParameterContact">contact</a>
+    | <a href="#ParameterGroup">group</a>
+    | <a href="#ParameterOu">ou</a>
+    | <a href="#ParameterPartition">partition</a>
+    | <a href="#ParameterQuota">quota</a>
+    | <a href="#ParameterServer">server</a>
+    | <a href="#ParameterSite">site</a>
+    | <a href="#ParameterSubNet">subnet</a>
+    | <a href="#ParameterUser">user</a>}
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>DSQUERY
+    <a href="#ParameterSplat">*</a>
+    [<a href="#ParameterNode">{start_node_nd | domainroot | forestroot}</a>]
+    [<a href="#SwitchAttr">-attr {attribute_list | *}</a>]
+    [<a href="#SwitchAttrsOnly">-attrsonly</a>]
+    [<a href="#SwitchFilter">-filter ldap_filter</a>]
+    [<a href="#SwitchGc">-gc</a>]
+    [<a href="#SwitchL">-l</a>]
+    [<a href="#SwitchLimit">-limit number_of_objects</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [<a href="#SwitchR">-r</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchScope">-scope {base | onelevel | subtree}</a>]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSQUERY
+    <a href="#ParameterComputer">computer</a>
+    [<a href="#ParameterNode">{start_node_nd | domainroot | forestroot}</a>]
+    [<a href="#SwitchDesc">-desc description</a>]
+    [<a href="#SwitchDisabled">-disabled</a>]
+    [<a href="#SwitchGc">-gc</a>]
+    [<a href="#SwitchInactive">-inactive number_of_weeks</a>]
+    [<a href="#SwitchLimit">-limit number_of_objects</a>]
+    [<a href="#SwitchName">-name name</a>]
+    [<a href="#SwitchO">-o {dn | rdn | samid}</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [<a href="#SwitchR">-r</a>]
+    [<a href="#SwitchSamId">-samid sam_name</a>]
+    [<a href="#SwitchScope">-scope {base | onelevel | subtree}</a>]
+    [<a href="#SwitchStalePwd">-stalepwd number_of_days</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSQUERY
+    {<a href="#ParameterContact">contact</a>
+    | <a href="#ParameterOu">ou</a>}
+    [<a href="#ParameterNode">{start_node_nd | domainroot | forestroot}</a>]
+    [<a href="#SwitchDesc">-desc description</a>]
+    [<a href="#SwitchGc">-gc</a>]
+    [<a href="#SwitchLimit">-limit number_of_objects</a>]
+    [<a href="#SwitchName">-name name</a>]
+    [<a href="#SwitchO">-o {dn | rdn}</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [<a href="#SwitchR">-r</a>]
+    [<a href="#SwitchScope">-scope {base | onelevel | subtree}</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSQUERY
+    <a href="#ParameterGroup">group</a>
+    [<a href="#ParameterNode">{start_node_nd | domainroot | forestroot}</a>]
+    [<a href="#SwitchDesc">-desc description</a>]
+    [<a href="#SwitchGc">-gc</a>]
+    [<a href="#SwitchLimit">-limit number_of_objects</a>]
+    [<a href="#SwitchName">-name name</a>]
+    [<a href="#SwitchO">-o {dn | rdn | samid}</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [<a href="#SwitchR">-r</a>]
+    [<a href="#SwitchSamId">-samid sam_name</a>]
+    [<a href="#SwitchScope">-scope {base | onelevel | subtree}</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSQUERY
+    <a href="#ParameterPartition">partition</a>
+    [<a href="#SwitchGc">-gc</a>]
+    [<a href="#SwitchLimit">-limit number_of_objects</a>]
+    [<a href="#SwitchO">-o {dn | rdn}</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [<a href="#SwitchPart">-part part_cn</a>]
+    [<a href="#SwitchR">-r</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSQUERY
+    <a href="#ParameterQuota">quota</a>
+    [<a href="#ParameterNode">{start_node_nd | domainroot}</a>]
+    [<a href="#SwitchAcct">-acct name</a>]
+    [<a href="#SwitchDesc">-desc description</a>]
+    [<a href="#SwitchGc">-gc</a>]
+    [<a href="#SwitchLimit">-limit number_of_objects</a>]
+    [<a href="#SwitchO">-o {dn | rdn}</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [<a href="#SwitchQLimit">-qlimit value</a>]
+    [<a href="#SwitchR">-r</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSQUERY
+    <a href="#ParameterServer">server</a>
+    [<a href="#SwitchDesc">-desc description</a>]
+    [<a href="#SwitchDomain">-domain domain_name</a>]
+    [<a href="#SwitchForest">-forest</a>]
+    [<a href="#SwitchGc">-gc</a>]
+    [<a href="#SwitchHasFsmo">-hasfsmo {infr| name | pdc | rid | schema}</a>]
+    [<a href="#SwitchIsGc">-isgc</a>]
+    [<a href="#SwitchLimit">-limit number_of_objects</a>]
+    [<a href="#SwitchName">-name name</a>]
+    [<a href="#SwitchO">-o {dn | rdn}</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [<a href="#SwitchR">-r</a>]
+    [<a href="#SwitchSite">-site site_name</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSQUERY
+    <a href="#ParameterSite">site</a>
+    [<a href="#SwitchDesc">-desc description</a>]
+    [<a href="#SwitchGc">-gc</a>]
+    [<a href="#SwitchLimit">-limit number_of_objects</a>]
+    [<a href="#SwitchName">-name name</a>]
+    [<a href="#SwitchO">-o {dn | rdn}</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [<a href="#SwitchR">-r</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSQUERY
+    <a href="#ParameterSubNet">subnet</a>
+    [<a href="#SwitchDesc">-desc description</a>]
+    [<a href="#SwitchGc">-gc</a>]
+    [<a href="#SwitchLimit">-limit number_of_objects</a>]
+    [<a href="#SwitchLoc">-loc location</a>]
+    [<a href="#SwitchName">-name name</a>]
+    [<a href="#SwitchO">-o {dn | rdn}</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [<a href="#SwitchR">-r</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchU">-u user_name</a>]</p>
+
+    <p>DSQUERY
+    <a href="#ParameterUser">user</a>
+    [<a href="#ParameterNode">{start_node_nd | domainroot | forestroot}</a>]
+    [<a href="#SwitchDesc">-desc description</a>]
+    [<a href="#SwitchDisabled">-disabled</a>]
+    [<a href="#SwitchGc">-gc</a>]
+    [<a href="#SwitchInactive">-inactive number_of_weeks</a>]
+    [<a href="#SwitchLimit">-limit number_of_objects</a>]
+    [<a href="#SwitchName">-name name</a>]
+    [<a href="#SwitchO">-o {dn | rdn | samid | upn}</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [<a href="#SwitchR">-r</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchSamId">-samid sam_name</a>]
+    [<a href="#SwitchScope">-scope {base | onelevel | subtree}</a>]
+    [<a href="#SwitchStalePwd">-stalepwd number_of_days</a>]
+    [<a href="#SwitchUpn">-upn upn</a>]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterSplat"></a> *
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Finds any objects in the directory according to
+      criteria using an LDAP query.</dd>
+
+      <dt><a name="ParameterComputer"></a> computer
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Finds computers in the directory that match
+      specified search criteria.</dd>
+
+      <dt><a name="ParameterContact"></a> contact
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Finds contacts in the directory that match the
+      specified search criteria.</dd>
+
+      <dt><a name="ParameterGroup"></a> group
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Finds groups in the directory that match the
+      specified search criteria.</dd>
+
+      <dt><a name="ParameterNode"></a> start_node_nd | domainroot | forestroot
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the node where the search will start:
+        <ul>
+          <li><b>domainroot</b> domain root, default</li>
+          <li><b>forestroot</b> forest root, search done using the global catalog</li>
+          <li><b>start_node_dn</b> a node's distinguished name</li>
+        </ul>
+      </dd>
+
+      <dt><a name="ParameterOu"></a> ou
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Finds organizational units in the directory that
+      match the specified search criteria.</dd>
+
+      <dt><a name="ParameterPartition"></a> partition
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Finds partition objects in the directory that
+      match the specified search criteria.</dd>
+
+      <dt><a name="ParameterQuota"></a> quota
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Finds quota specifications in the directory that
+      match the specified search criteria.</dd>
+
+      <dt><a name="ParameterServer"></a> server
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Finds domain controllers according to specified
+      search criteria.</dd>
+
+      <dt><a name="ParameterSite"></a> site
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Finds sites in the directory matching specified
+      search criteria.</dd>
+
+      <dt><a name="ParameterSubNet"></a> subnet
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a> ONLY)</dt>
+      <dd>Finds subnets in the directory matching specified
+      search criteria.</dd>
+
+      <dt><a name="ParameterUser"></a> user
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Finds users in the directory that match the
+      specified search criteria.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchAcct"></a> -acct name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies to find the quota specifications
+      assigned to the security principal security principal
+      (user, group, computer, or InetOrgPerson) as
+      represented by name:
+      <ul>
+      <li><b>Distinguished Name</b> (DN) of the security principal</li>
+      <li><b>Domain\SAMAccountName</b> of the security principal</li>
+      </ul>
+      </dd>
+
+      <dt><a name="SwitchAttr"></a> -attr {attribute_list | *}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that the semicolon separated LDAP
+      display names included in attribute_list are the only
+      attributes for each entry in the result set that
+      should be displayed. If *, then all attributes present
+      on the object in the result set are displayed in the
+      default output format - list format, regardless of
+      whether <a href="#SwitchL">-l</a> is specified.
+      Default attribute_list is a distinguished name.</dd>
+
+      <dt><a name="SwitchAttrsOnly"></a> -attrsonly
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that only the attribute types present on
+      the entries in the result set, and not their values,
+      should be displayed. The default is to display both
+      the attribute type and the value.</dd>
+
+      <dt><a name="SwitchD"></a> -d domain
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Connects the computer to a specified domain. By
+      default, the computer is connected to the domain
+      controller in the logon domain.</dd>
+
+      <dt><a name="SwitchDesc"></a> -desc description
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Searches for
+      computers/contacts/groups/organizational
+      units/server objects/sites/subnets/users
+      whose description attribute matches description.</dd>
+
+      <dt><a name="SwitchDisabled"></a> -disabled
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Searches for all computers/users whose accounts
+      are disabled.</dd>
+
+      <dt><a name="SwitchDomain"></a> -domain domain_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Searches for all domain controllers (server
+      objects) that are part of the domain whose DNS name
+      is given by domain_name. Note that this is not
+      necessary if all domain controllers in the current
+      domain are to be displayed, since that is the search
+      criterion when no other criterion is specified.</dd>
+
+      <dt><a name="SwitchFilter"></a> -filter ldap_filter
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies an explicit search filter ldap_Filter
+      specified in the LDAP search filter format to be used
+      for this search. Default is (objectClass=*).</dd>
+
+      <dt><a name="SwitchForest"></a> -forest
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that the search use the Active Directory
+      global catalog.</dd>
+
+      <dt><a name="SwitchGc"></a> -gc
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that the search use the Active Directory
+      global catalog.</dd>
+
+      <dt><a name="SwitchHasFsmo"></a> -hasfsmo {infr| name | pdc | rid | schema}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Searches for the domain controller (server object)
+      that holds the requested operations master role:
+        <ul>
+          <li><b>infr</b> requests the infrastructure master of the forest if no domain specified with <a href="#SwitchDomain">-domain</a>, or use current domain</li>
+          <li><b>name</b> requests the domain naming master of the forest</li>
+          <li><b>pdc</b> requests the primary domain controller (PDC) role owner of the domain given by the <a href="#SwitchDomain">-domain</a> (or the current domain is used)</li>
+          <li><b>rid</b> requests the relative ID master (RID master) of the domain given by the <a href="#SwitchDomain">-domain</a> (or the current domain is used)</li>
+          <li><b>schema</b> requests the schema master of the forest</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchInactive"></a> -inactive number_of_weeks
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Searches for all computers/users that have been
+      inactive (stale) for the specified number_of_weeks.</dd>
+
+      <dt><a name="SwitchIsGc"></a> -isgc
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Searches for all domain controllers (server
+      objects) in the scope specified by any of:
+      <a href="#SwitchForest">-forest</a>,
+      <a href="#SwitchDomain">-domain</a>, or
+      <a href="#SwitchSite">-site</a> that are global
+      catalog servers. If none of the above scope parameters
+      are specified, then find all global catalogs in the
+      current domain.</dd>
+
+      <dt><a name="SwitchL"></a> -l
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays entries in a list format. By default,
+      entries are displayed in a table format.</dd>
+
+      <dt><a name="SwitchLimit"></a> -limit number_of_objects
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the number of objects that match the
+      given criteria to be returned. If the value of
+      number_of_objects is 0, all matching objects are
+      returned. If omitted, by default the first 100 results
+      are displayed.</dd>
+
+      <dt><a name="SwitchLoc"></a> -loc location
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Searches for subnets whose location attribute
+      matches location.</dd>
+
+      <dt><a name="SwitchName"></a> -name name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Searches for
+      computers/contacts/groups/organizational
+      units/server objects/sites/subnets/users
+      whose name (CN) attributes matches name.</dd>
+
+      <dt><a name="SwitchO"></a> -o {dn | rdn | samid}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the format in which the list of entries
+      found by the search will be displayed:
+        <ul>
+          <li><b>dn</b> distinguished name of each entry, default</li>
+          <li><b>rdn</b> relative distinguished name of each entry</li>
+          <li><b>samid</b> SAM account name of each entry <a href="#ParameterComputer">computer</a> <a href="#ParameterGroup">group</a> <a href="#ParameterServer">server</a> <a href="#ParameterUser">user</a></li>
+          <li><b>upn</b> user principal name of each entry <a href="#ParameterUser">user</a></li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchP"></a> -p {password | *}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies to use either a password or a * to log
+      on to a remote server.
+      If *, then prompted for password.</dd>
+
+      <dt><a name="SwitchPart"></a> -part part_cn
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Finds partition objects whose common name (CN)
+      matches the filter given by part_cn.</dd>
+
+      <dt><a name="SwitchQ"></a> -q
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Suppresses all output to standard output
+      (quiet mode).</dd>
+
+      <dt><a name="SwitchQLimit"></a> -qlimit value
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies to find quota specifications whose limit
+      matches value.</dd>
+
+      <dt><a name="SwitchR"></a> -r
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that the search use recursion or follow
+      referrals during search. By default, the search will
+      not follow referrals during search.</dd>
+
+      <dt><a name="SwitchS"></a> -s server
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Connects the computer to a specified server.</dd>
+
+      <dt><a name="SwitchSamId"></a> -samid sam_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Searches for computers/groups/users whose SAM
+      account name matches sam_name.</dd>
+
+      <dt><a name="SwitchScope"></a> -scope {base | onelevel | subtree}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the scope of the search:
+        <ul>
+          <li><b>base</b> single object represented by start node</li>
+          <li><b>onelevel</b> immediate children of start node only</li>
+          <li><b>subtree</b> subtree rooted at start node, default</li>
+        </ul>
+      If <a href="#ParameterNode">forestroot</a>
+      is specified as StartNode, <b>subtree</b> must be used.</dd>
+
+      <dt><a name="SwitchSite"></a> -site site_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Searches for all domain controllers (server
+      objects) that are part of site site_name.</dd>
+
+      <dt><a name="SwitchStalePwd"></a> -stalepwd number_of_days
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Searches for all computers/users that have not
+      changed their password for the specified number_of_days.</dd>
+
+      <dt><a name="SwitchU"></a> -u user_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the user name with which user will log
+      on to a remote server. By default, the logged on user
+      name is used. You can specify a user name using one
+      of the formats:
+<pre>
+      user name
+      domain\user name
+      user principal name (UPN)
+</pre>
+      </dd>
+
+      <dt><a name="SwitchUc"></a> -uc | -uci | -uco
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies that output or input data is
+      formatted in Unicode:
+        <ul>
+          <li><b>-uc</b> input from or output to a pipe (|)</li>
+          <li><b>-uco</b> output to a pipe (|) or a file</li>
+          <li><b>-uci</b> input from a pipe (|) or a file</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchUpn"></a> -upn upn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Searches for users whose UPN attribute matches
+      UPN.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>SU</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#s">Commands N-Z</a>
+    &gt; <a href="../INDEXS.HTM#su">Commands S</a>
+    <h1>SU</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Switch User.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>SU
+    <a href="#ParameterUser">user</a>
+    [<a href="#ParameterCmdline">"cmdline</a>]
+    [<a href="#ParameterDomain">domain</a>]
+    [[<a href="#ParameterWinsta">Winsta\</a>]<a
+    href="#ParameterDesktop">Desktop</a>]
+    [<a href="#SwitchCb">-cb</a>]
+    [<a href="#SwitchDn">-dn</a>]
+    [<a href="#SwitchG">-g</a>]
+    [<a href="#SwitchL">-l</a>]
+    [<a href="#SwitchW">-w</a>]
+    [<a href="#SwitchE">-e</a>]
+    [<a href="#SwitchB">-b</a>]
+    [<a href="#SwitchI">-i</a>]
+    [<a href="#SwitchS">-s</a>]
+    [<a href="#SwitchN">-n</a>]
+    [<a href="#SwitchV">-v</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterCmdline"></a> "cmdline"
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>The command to run, default
+      <a href="../../ENV/MSDOS/COMSPEC.HTM">%COMSPEC%</a>.</dd>
+
+      <dt><a name="ParameterDomain"></a> domain
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>The domain for the user account ('.' = local m/c).</dd>
+
+      <dt><a name="ParameterWinsta"></a> Winsta\</dt>
+      <dt><a name="ParameterDesktop"></a> Desktop
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>The profile to load, default current.</dd>
+
+      <dt><a name="ParameterUser"></a> user
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>?</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchB"></a> -b
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Batch logon.</dd>
+
+      <dt><a name="SwitchCb"></a> -cb
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Console bypass.</dd>
+
+      <dt><a name="SwitchDn"></a> -dn
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Do not switch to new desktop.</dd>
+
+      <dt><a name="SwitchE"></a> -e
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Inherit parent environment.</dd>
+
+      <dt><a name="SwitchG"></a> -g
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>GUI option.</dd>
+
+      <dt><a name="SwitchI"></a> -i
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Interactive logon.</dd>
+
+      <dt><a name="SwitchL"></a> -l
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Load the .Default user registry hive.</dd>
+
+      <dt><a name="SwitchN"></a> -n
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Network logon.</dd>
+
+      <dt><a name="SwitchS"></a> -s
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Service logon.</dd>
+
+      <dt><a name="SwitchV"></a> -v
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Verbose.</dd>
+
+      <dt><a name="SwitchW"></a> -w
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Use current registry hive.</dd>
+   </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../A/AT.HTM">AT</a> - Schedule a command to run at a later time.
+    <br><a href="../R/RUNAS.HTM">RUNAS</a>
+    <a href="../R/RUNAS.HTM#SwitchUser">/USER:CMD</a>
+    <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+    <br>in the GUI hold Shift, and right-click on an executable.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>su - Run a command with substitute user and group id.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>All LogOn Types require specific User Rights to be granted:
+    <ul>
+    <li>SeNetworkLogonRight</li>
+    <li>SeServiceLogonRight</li>
+    <li>SeInteractiveLogonRight</li>
+    <li>SeBatchLogonRight</li>
+    </ul>
+    <p>Bugs: see Q265401</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>RAMDRIVE.SYS</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#r">Commands N-Z</a>
+    &gt; <a href="../INDEXR.HTM#ramdrivesys">Configuration R</a>
+    <h1>RAMDRIVE.SYS</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Uses part of your computer's random-access memory (RAM) to simulate a
+    hard disk drive. This device driver must be loaded by a
+    <a href="../D/DEVICE.HTM">DEVICE</a> or
+    <a href="../D/DEVICEHI.HTM">DEVICEHIGH</a> command in your CONFIG.SYS
+    file.</p>
+
+    <p>RAM drives are much faster than hard disk drives because your computer
+    can read information faster from memory than from a hard disk. A RAM drive
+    appears to be a normal hard disk drive; you can use it just as you would
+    any hard disk drive. The most important difference between a real disk
+    drive and a RAM drive is that because it exists only in memory,
+    information on a RAM drive is lost when you turn off or restart your
+    computer. You can set up as many RAM drives as you want, up to the amount
+    of memory your computer has. To do this, add one RAMDRIVE.SYS line to your
+    CONFIG.SYS file for each additional RAM drive you want.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p><a href="../D/DEVICE.HTM">DEVICE</a>=<a
+    href="#ParameterDrivePath">[drive:][\path\]</a>RAMDRIVE.SYS
+    [<a href="#ParameterDisksize">Disk_size</a>
+    <a href="#ParameterSectorsize">Sector_size</a>
+    [<a href="#ParameterNumentries">Num_entries</a>]]]
+    [<a href="#SwitchA">/A</a>
+    | <a href="#SwitchE">/E</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDisksize"></a> Disk_size
+      (<a href="../../Version/MSDOS/300.HTM">v3.0</a>)</dt>
+      <dd>Specifies how many kilobytes of memory you want to
+      use for the RAM drive. If you don't specify an amount,
+      RAMDrive will create a 64K RAM drive. You can specify
+      a value from 4 to 32767. However, you cannot specify
+      more memory than your system has available.</dd>
+
+      <dt><a name="ParameterDrivePath"></a> [drive:][\path\]
+      (<a href="../../Version/MSDOS/300.HTM">v3.0</a>)</dt>
+      <dd>Specifies the location of the RAMDRIVE.SYS file.</dd>
+
+      <dt><a name="ParameterNumentries"></a> Num_entries
+      (<a href="../../Version/MSDOS/300.HTM">v3.0</a>)</dt>
+      <dd>Limits the number of files and directories you can
+      create in the RAM drive's root directory. The limit
+      can be from 2 to 1024 entries; the limit you specify
+      is rounded up to the nearest sector size boundary. If
+      you do not specify a limit, you can create up to 64
+      entries in the RAM drive's root directory. (If you
+      include a value for Num_entries, you must also include
+      values for <a href="#ParameterDisksize">Disk_size</a>
+      and <a href="#ParameterSectorsize">Sector_size</a>.)</dd>
+      <dd>If there is not enough memory to create the RAM
+      drive as specified, RAMDrive will try to create it
+      with a limit of 16 directory entries. This may result
+      in a RAM drive with a different limit from the one you
+      specified.</dd>
+
+      <dt><a name="ParameterSectorsize"></a> Sector_size
+      (<a href="../../Version/MSDOS/300.HTM">v3.0</a>)</dt>
+      <dd>Specifies the disk sector size in bytes. The size
+      can be 128, 256, or 512 bytes. (If you include a
+      Sector_size value, you must also include a value for
+      <a href="#ParameterDisksize">Disk_size</a>.)</dd>
+      <dd>Generally, you should use the default sector size
+      of 512 bytes.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchA"></a> /A
+      (<a href="../../Version/MSDOS/300.HTM">v3.0</a>)</dt>
+      <dd>Creates the RAM drive in expanded memory.</dd>
+      <dd>For RAMDrive to use expanded memory, your system
+      must be configured so that it provides expanded
+      memory, and the <a href="../D/DEVICE.HTM">DEVICE</a>
+      command for the expanded-memory manager (such as
+      <a href="../E/EMM386EX.HTM">EMM386.EXE</a>, 386MAX,
+      CEMM, or QEMM) must appear in your CONFIG.SYS file
+      before <a href="../D/DEVICE.HTM">DEVICE</a> command
+      for RAMDRIVE.SYS.</dd>
+
+      <dt><a name="SwitchE"></a> /E
+      (<a href="../../Version/MSDOS/300.HTM">v3.0</a>)</dt>
+      <dd>Creates the RAM drive in extended memory.</dd>
+      <dd>For RAMDrive to use extended memory, your system
+      must be configured so that it provides extended
+      memory, and a <a href="../D/DEVICE.HTM">DEVICE</a>
+      command for the extended-memory manager
+      (<a href="../H/HIMEMSYS.HTM">HIMEM.SYS</a>) must
+      appear in your CONFIG.SYS file before the
+      <a href="../D/DEVICE.HTM">DEVICE</a> command for
+      RAMDRIVE.SYS. In general, it is best to create a RAM
+      drive in extended memory if your system has extended
+      memory.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Efficiency">Increasing the efficiency of a RAM drive</a></li>
+      <li><a href="#Conventional">Using conventional memory</a></li>
+      <li><a href="#Expanded">Using expanded memory</a></li>
+      <li><a href="#Extended">Using extended memory</a></li>
+    </ul>
+
+    <hr>
+    <a name="Conventional"></a> <b>Using conventional memory</b>
+    <p>Although specifying a memory type is optional, it is
+    strongly recommended. If you omit both the
+    <a href="#SwitchA">/A</a> and <a href="#SwitchE">/E</a>
+    switches, RAMDRIVE.SYS uses your system's conventional
+    memory. It is not a good idea to use conventional memory
+    for a RAM drive, because this reduces available work
+    space for programs. However, if you don't have extended
+    memory, expanded memory, or a hard disk drive, you might
+    want to use conventional memory for a RAM drive. A RAM
+    drive can increase the speed of a floppy disk system
+    significantly enough that it may be worth the loss of
+    some conventional memory.</p>
+
+    <hr>
+    <a name="Extended"></a> <b>Using extended memory</b>
+    <p>If your system has extended memory installed
+    (starting at the 1-megabyte boundary), you can use this
+    extended memory for one or more RAM drives. For
+    RAMDRIVE.SYS to use extended memory, you must first
+    install <a href="../H/HIMEMSYS.HTM">HIMEM.SYS</a> or
+    another extended-memory manager that conforms to the
+    Lotus/Intel/Microsoft/AST eXtended Memory Specification
+    (XMS). In your CONFIG.SYS file, the
+    <a href="../D/DEVICE.HTM">DEVICE</a> command that
+    installs the XMS extended-memory manager must precede
+    the commands that install the RAM drive.</p>
+
+    <hr>
+    <a name="Expanded"></a> <b>Using expanded memory</b>
+    <p>For RAMDRIVE.SYS to use expanded memory, you must
+    configure your system so that it provides expanded
+    memory. In your CONFIG.SYS file, the
+    <a href="../D/DEVICE.HTM">DEVICE</a> command that
+    installs the expanded-memory manager
+    (<a href="../E/EMM386EX.HTM">EMM386.EXE</a>) must
+    precede the <a href="../D/DEVICE.HTM">DEVICE</a> command
+    that installs RAMDRIVE.SYS. The expanded-memory manager
+    must conform to the Lotus/Intel/Microsoft Expanded
+    Memory Specification (LIM EMS).</p>
+
+    <hr>
+    <a name="Efficiency"></a> <b>Increasing the efficiency of a RAM drive</b>
+    <p>For the best results with a RAM drive, you can define
+    a <a href="../../ENV/MSDOS/TEMP.HTM">%TEMP%</a>
+    environment variable and set it to a directory on the
+    RAM drive. If you use Windows, be sure the RAM drive is
+    at least 2 MB in size; otherwise, there might not be
+    enough space to create temporary files for printing.</p>
+
+    <hr>
+    <a name="Compressing"></a> <b>Compressing a RAMDrive</b>
+    <p>To compress a RAMDrive, use the
+    <a href="../D/DBLSPACE.HTM">DRVSPACE</a>
+    <a href="../D/DBLSPACE.HTM#SwitchCreate">/CREATE</a>
+    command. Although it is possible to compress a RAMDrive
+    by using the <a href="../D/DBLSPACE.HTM">DRVSPACE</a>
+    <a href="../D/DBLSPACE.HTM#SwitchCompress">/COMPRESS</a>
+    command, it is not recommended. Due to the inherent
+    volatility of a RAMDrive, DriveSpace's automatic
+    recovery mechanisms cannot work on a RAMDrive.</p>
+
+    <p>If you compress your RAMDrive, make sure the
+    <a href="../D/DEVICE.HTM">DEVICE</a> command for
+    RAMDRIVE.SYS appears in your CONFIG.SYS file before the
+    <a href="../D/DEVICE.HTM">DEVICE</a> command for
+    <a href="../D/DRVSPACE.HTM">DRVSPACE.SYS</a> Otherwise,
+    the compressed RAMDrive will not be automatically
+    mounted when your computer starts.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To create a RAM drive in extended memory and allocate
+    64K (the default amount) of extended memory to
+    RAMDRIVE.SYS, add to your CONFIG.SYS file:
+<pre>
+    <a href="../D/DEVICE.HTM">DEVICE</a>=<a
+href="#ParameterDrivePath">C:\DOS\</a>RAMDRIVE.SYS <a
+href="#SwitchE">/E</a>
+</pre>
+
+    <p>This command loads RAMDRIVE.SYS from the C:\DOS
+    directory.</p>
+
+    <hr>
+    <p>Suppose you want to install RAMDRIVE.SYS in expanded
+    memory and allocate 4 MB (4096K) of expanded memory to
+    the RAM drive. To do this and to specify that
+    RAMDRIVE.SYS is located in the DOS directory on drive C,
+    add to your CONFIG.SYS file:
+<pre>
+    <a href="../D/DEVICE.HTM">DEVICE</a>=<a
+href="#ParameterDrivePath">C:\DOS\</a>RAMDRIVE.SYS <a
+href="#ParameterDisksize">4096</a> <a
+href="#SwitchA">/A</a>
+</pre>
+
+    <hr>
+    <p>Now suppose you want to allocate 2048K of extended
+    memory to RAMDRIVE.SYS and create a RAM drive that has
+    512-byte sectors and a limit of 1024 entries in its root
+    directory. To do this and to specify that RAMDRIVE.SYS
+    is located in the DEVICES directory on drive D, add to
+    your CONFIG.SYS file:
+<pre>
+    <a href="../D/DEVICE.HTM">DEVICE</a>=<a
+href="#ParameterDrivePath">D:\DEVICES\</a>RAMDRIVE.SYS <a
+href="#ParameterDisksize">2048</a> <a
+href="#ParameterSectorsize">512</a> <a
+href="#ParameterNumentries">1024</a> <a
+href="#SwitchE">/E</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

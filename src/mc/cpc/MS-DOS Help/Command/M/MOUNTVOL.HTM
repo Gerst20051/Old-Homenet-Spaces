@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>MOUNTVOL</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#m">Commands A-M</a>
+    &gt; <a href="../INDEXM.HTM#mountvol">Commands M</a>
+    <h1>MOUNTVOL</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Create, delete or list a volume mount point.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>MOUNTVOL
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>MOUNTVOL
+    [<a href="#ParameterDrive">drive:</a>]<a
+    href="#ParameterPath">path</a>
+    [<a href="#SwitchVolname">Volname</a>]</p>
+
+    <p>MOUNTVOL
+    [<a href="#ParameterDrive">drive:</a>]<a
+    href="#ParameterPath">path</a>
+    [<a href="#SwitchD">/D</a>]</p>
+
+    <p>MOUNTVOL
+    <a href="#SwitchE">/E</a></p>
+
+    <p>MOUNTVOL
+    [<a href="#ParameterDrive">drive:</a>]<a
+    href="#ParameterPath">path</a>
+    [<a href="#SwitchL">/L</a>]</p>
+
+    <p>MOUNTVOL
+    <a href="#SwitchN">/N</a></p>
+
+    <p>MOUNTVOL
+    [<a href="#ParameterDrive">drive:</a>]<a
+    href="#ParameterPath">path</a>
+    [<a href="#SwitchP">/P</a>]</p>
+
+    <p>MOUNTVOL
+    <a href="#SwitchR">/R</a></p>
+
+    <p>MOUNTVOL
+    [<a href="#ParameterDrive">drive:</a>]
+    [<a href="#SwitchS">/S</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Drive to mount.</dd>
+
+      <dt><a name="ParameterPath"></a> path
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Path to mount.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchD"></a> /D
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Remove the volume mount point from the specified folder.</dd>
+
+      <dt><a name="SwitchE"></a> /E
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Re-enables automatic mounting of new basic volumes.</dd>
+
+      <dt><a name="SwitchL"></a> /L
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>List the mounted volume name for the specified folder.</dd>
+
+      <dt><a name="SwitchN"></a> /N
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Disables automatic mounting of new basic volumes.
+      New volumes are not mounted automatically when added
+      to the system.</dd>
+
+      <dt><a name="SwitchP"></a> /P
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Removes the volume mount point from the specified
+      directory, dismounts the basic volume, and takes the
+      basic volume offline, making it unmountable. If other
+      processes are using the volume, closes any open handles
+      before dismounting the volume. Volumes dismounted
+      using /p are listed in the volumes list as
+      NOT MOUNTED UNTIL A VOLUME MOUNT POINT IS CREATED.
+      If the volume has more than one mount point, use
+      <a href="#SwitchD">/D</a> to remove the additional
+      mount points before using /p. You can make the basic
+      volume mountable again by assigning a volume mount
+      point.</dd>
+
+      <dt><a name="SwitchR"></a> /R
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Removes volume mount point directories and
+      registry settings for volumes that are no longer in
+      the system. Prevents volumes that were previously in
+      the system from being automatically mounted and given
+      their former volume mount point(s) when added back to
+      the system.</dd>
+
+      <dt><a name="SwitchS"></a> /S
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Itanium-based computers only.
+      Mounts the EFI System Partition on the specified drive.</dd>
+
+      <dt><a name="SwitchVolname"></a> Volname
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>The volume name that is the target of the mount point.
+      The volume name form \\?\Volume{GUID}\, where {GUID}
+      is a globally unique identifier (GUID).</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>WINDISK - NT Disk Administrator.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>mount - Mount a file system.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

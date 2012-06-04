@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>VSAFE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#v">Commands N-Z</a>
+    &gt; <a href="../INDEXV.HTM#vsafe">Commands V</a>
+    <h1>VSAFE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Continuously monitors your computer for viruses and displays a
+    warning when it finds one. VSAFE is a memory-resident program that
+    uses 22K of memory.</p>
+    <p>Do not use the VSAFE command when Windows is running.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>VSAFE
+    [<a href="#SwitchOption">/option</a>[+ | -] ...]
+    [<a href="#SwitchNE">/NE</a>]
+    [<a href="#SwitchNX">/NX</a>]
+    [<a href="#SwitchA">/Ax</a>
+    | <a href="#SwitchC">/Cx</a>]
+    [<a href="#SwitchN">/N</a>]
+    [<a href="#SwitchD">/D</a>]
+    [<a href="#SwitchU">/U</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchA"></a> /Ax
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Sets the hot key as ALT plus the key specified by x.</dd>
+
+      <dt><a name="SwitchC"></a> /Cx
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Sets the hot key as CTRL plus the key specified by x.</dd>
+
+      <dt><a name="SwitchD"></a> /D
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Turns off checksumming.</dd>
+
+      <dt><a name="SwitchN"></a> /N
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Allows VSAFE to monitor for possible viruses on network
+      drives.</dd>
+
+      <dt><a name="SwitchNE"></a> /NE
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Prevents VSafe from loading into expanded memory.</dd>
+
+      <dt><a name="SwitchNX"></a> /NX
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Prevents VSafe from loading into extended memory.</dd>
+
+      <dt><a name="SwitchOption"></a> /option
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Specifies how VSAFE monitors for viruses. Use a plus or minus
+        sign (+ or -) after the number to turn an option on or off. This
+        list describes the options you can choose:
+        <ul>
+          <li><b>1</b> Warns of formatting that could completely erase the hard disk. The default setting is "on."</li>
+          <li><b>2</b> Warns of an attempt by a program to stay in memory. The default setting is "off."</li>
+          <li><b>3</b> Prevents programs from writing to disk. The default setting is "off." </li>
+          <li><b>4</b> Checks executable files that the operating system opens.  The default setting is "on."</li>
+          <li><b>5</b> Checks all disks for boot sector viruses. The default setting is "on."</li>
+          <li><b>6</b> Warns of attempts to write to the boot sector or partition table of the hard disk. The default setting is "on."</li>
+          <li><b>7</b> Warns of attempts to write to the boot sector of a floppy disk. The default setting is "off."</li>
+          <li><b>8</b> Warns of attempts to modify executable files. The default setting is "off."</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchU"></a> /U
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Removes VSAFE from memory.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Windows">Using VSAFE with Microsoft Windows</a></li>
+    </ul>
+
+    <hr>
+    <a name="Windows"></a> <b>Using VSAFE with Microsoft Windows</b>
+    <p>Before installing Windows, turn off VSAFE. If VSAFE is running,
+    you may not be able complete the Windows installation. If you use
+    VSAFE with Windows, run the MWAVTSR memory-resident program by
+    adding the command to your WIN.INI file:</p>
+<pre>
+    load=mwavtsr.exe
+</pre>
+
+    <p>MWAVTSR enables VSAFE messages to be displayed in
+    Windows.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To specify that VSAFE not check for formatting that could erase
+    all data on the hard disk, that VSAFE warn of attempts to write to
+    the boot sector of a floppy disk, and that ALT+T be assigned as the
+    hot key to display the VSAFE screen, type:</p>
+<pre>
+    VSAFE <a
+href="#SwitchOption">/1-</a> <a
+href="#SwitchOption">/7+</a> <a
+href="#SwitchA">/At</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External Resident</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

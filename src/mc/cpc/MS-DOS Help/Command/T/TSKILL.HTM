@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>TSKILL</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#t">Commands N-Z</a>
+    &gt; <a href="../INDEXT.HTM#tskill">Commands T</a>
+    <h1>TSKILL</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Ends a process.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>TSKILL
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>TSKILL
+    <a href="#ParameterProcessID">process_id</a>
+    | <a href="#ParameterProcessName">process_name</a>
+    [<a href="#SwitchServer">/server:server_name</a>]
+    [<a href="#SwitchID">/id:session_id</a>
+    | <a href="#SwitchA">/a</a>]
+    [<a href="#SwitchV">/v</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterProcessID"></a> process_id
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>The ID of the process you want to end.</dd>
+
+      <dt><a name="ParameterProcessName"></a> process_name
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>The name of the process you want to end. You can use wildcards to
+      specify this parameter.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchA"></a> /a
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Ends the process running in all sessions.</dd>
+
+      <dt><a name="SwitchID"></a> /id:session_id
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Ends the process running in the specified session.</dd>
+
+      <dt><a name="SwitchServer"></a> /server:server_name
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Specifies the terminal server containing the process you want to end.
+      Defaults to the current terminal server.</dd>
+
+      <dt><a name="SwitchV"></a> /v
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Displays information about the actions being performed.</dd>
+    </p>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>You can use tskill to end only those processes belonging to you, unless
+    you are an administrator. Administrators have full access to all tskill
+    functions and can end processes running in other user sessions.</p>
+
+    <p>When all processes running in a session end, the session also ends.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To end process 1234, type:</p>
+
+<pre>
+    TSKILL <a
+href="#ParameterProcessID">1234</a>
+</pre>
+
+    <p>To end process "explorer" running on session 3, type:</p>
+
+<pre>
+    TSKILL <a
+href="#ParameterProcessName">explorer</a> <a
+href="#SwitchID">/id:3</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/07/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

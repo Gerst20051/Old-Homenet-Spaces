@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>WAITFOR</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#w">Commands N-Z</a>
+    &gt; <a href="../INDEXW.HTM#waitfor">Commands W</a>
+    <h1>WAITFOR</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Synchronizes multiple computers across a network by using
+    signals.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>WAITFOR
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>WAITFOR
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [domain\]user</a>
+      [<a href="#SwitchP">/p [password]</a>]]]
+    <a href="#SwitchSi">/si</a>
+    <a href="#ParameterSignalName">signal_name</a></p>
+
+    <p>WAITFOR
+    [<a href="#SwitchT">/t timeout</a>]
+    <a href="#ParameterSignalName">signal_name</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterSignalName"></a> signal_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the signal to wait for or is sent.
+      signal_name is not case-sensitive.</dd>
+      <dd>Signal_name cannot exceed 225 characters and
+      cannot contain characters other than a-z, A-Z, 0-9,
+      and ASCII characters in the range of 128-255.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchP"></a> /p [password]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the password of the user account that
+      is specified in <a href="#SwitchU">/u</a>.</dd>
+
+      <dt><a name="SwitchS"></a> /s computer
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the name or IP address of a remote
+      computer (do not use backslashes).
+      The default is the local computer. Applies to all
+      files and folders specified in the command.</dd>
+      <dd>If used, the signal is sent only to the
+      specified computer.</dd>
+      <dd>If omitted, the signal is broadcast to all
+      computers within the same domain as the sending
+      computer.</dd>
+
+      <dt><a name="SwitchSi"></a> /si
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sends SignalName instead of waiting.</dd>
+
+      <dt><a name="SwitchT"></a> /t timeout
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the number of seconds to wait.
+      The default is indefinite.</dd>
+
+      <dt><a name="SwitchU"></a> /u [domain\]user
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Runs the script with the permissions of the
+      specified user account.
+      The default is system permissions.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Only one instance of WAITFOR can wait for a given
+    signal on a given computer. You can run multiple
+    instances on a single computer, but each must wait for
+    a different signal.</p>
+    <p>Computers can only receive signals if they are in the
+    same domain as the computer sending the signal.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

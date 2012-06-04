@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>BUFFERS</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#b">Commands A-M</a>
+    &gt; <a href="../INDEXB.HTM#buffers">Configuration B</a>
+    <h1>BUFFERS</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Allocates memory for a specified number of disk buffers
+    when your system starts. You can use this command only
+    in your CONFIG.SYS file.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>BUFFERS=<a
+    href="#ParameterN">n</a>[,<a
+    href="#ParameterM">m</a>]
+    [<a href="#SwitchX">/X</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterM"></a> m
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>)</dt>
+      <dd>Specifies the number of buffers in the secondary
+      buffer cache. The value of m must be in the range
+      0 through 8. Default is 2 (PC and XT), 3 (AT), 10 or
+      15 (512Kb RAM).</dd>
+
+      <dt><a name="ParameterN"></a> n
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>)</dt>
+      <dd>Specifies the number of disk buffers. The value of
+      n must be in the range 1 through 99. Default is 1.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchX"></a> /X
+      (<a href="../../Version/MSDOS/400.HTM">v4.0</a> through
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Allows up to 10,000 <a href="#ParameterN">n</a> buffers.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Default">Default Settings</a></li>
+      <li><a href="#MSDos">How MS-DOS uses buffers</a></li>
+      <li><a href="#DriveSpace">Using BUFFERS with DriveSpace</a></li>
+      <li><a href="#SmartDrv">Using BUFFERS with SMARTDRV.EXE</a></li>
+      <li><a href="#Secondary">Using the secondary buffer cache</a></li>
+    </ul>
+
+    <hr>
+    <a name="Default"></a> <b>Default Settings</b>
+    <p>The default setting for the number of disk buffers
+    depends on the configuration of your system, as shown
+    in the table:</p>
+
+<pre>
+        <u>Configuration              Buffers      Bytes (n)</u>
+        &lt;128K of RAM, 360K disk    2            none
+        &lt;128K of RAM, &gt;360K disk   3            none
+        128K to 255K of RAM        5            2672
+        256K to 511K of RAM        10           5328
+        512K to 640K of RAM        15           7984
+        <u>Configuration              Buffers      Bytes (n)</u>
+</pre>
+
+    <p>The default setting for the number of buffers in the
+    secondary cache (<a href="#ParameterM">m</a>) is 0
+    (no secondary cache buffers).</p>
+
+    <p>If you specify an invalid value for
+    <a href="#ParameterN">n</a> or <a href="#ParameterM">m</a>,
+    BUFFERS uses the default setting of no secondary cache buffers.</p>
+
+    <hr>
+    <a name="DriveSpace"></a> <b>Using BUFFERS with DriveSpace</b>
+    <p>If you are using SMARTDrive with DriveSpace and the operating system
+    is loaded into the HMA, set BUFFERS=<a
+    href="#ParameterN">10</a>. This ensures
+    that there will be enough room in the HMA for the operating sytem,
+    DriveSpace, and all your buffers. (If BUFFERS is set
+    to a value higher than 10, there might not be enough
+    room in the HMA for all your buffers, and the operating system will
+    place all the buffers into conventional memory.) If
+    you're using SMARTDrive, specifying more than 10
+    buffers will not speed up your system much, but will
+    use additional memory.</p>
+
+    <hr>
+    <a name="SmartDrv"></a> <b>Using BUFFERS with SMARTDRV.EXE</b>
+    <p>If you are using SMARTDRV.EXE, either use a smaller
+    value for BUFFERS, or do not specify a BUFFERS
+    command at all.</p>
+
+    <hr>
+    <a name="MSDos"></a> <b>How MS-DOS uses buffers</b>
+    <p>The operating system uses the memory reserved for each disk buffer
+    to hold data during read and write operations. To
+    achieve the best performance with programs such as
+    word processors, specify a value between 10 and 20
+    for n. If you plan to create many subdirectories, you
+    might want to increase the number of buffers to 20 or
+    30. Each buffer requires approximately 532 bytes of
+    memory. Therefore, the more buffers you have, the less
+    memory you have available for programs. (To find out
+    how much memory the operating system is using for disk buffers, use
+    <a href="../M/MEM.HTM">MEM</a>
+    <a href="../M/MEM.HTM#SwitchD">/D</a>
+    <a href="../M/MEM.HTM#SwitchP">/P</a>.)</p>
+
+    <p>If the operating system is loaded in the high memory area (HMA) and
+    there is enough room in the HMA to contain all the
+    buffers, the operating system also places the buffers in the HMA. If
+    you specify more than 48 buffers, or if you upgraded
+    from <a href="../../Version/MSDOS/622.HTM">MS-DOS 6.22</a>, are running DriveSpace, and specify
+    more than 10 buffers, there might not be enough room
+    in the HMA for all the buffers. In that case, the operating system
+    places all of the buffers into conventional memory.</p>
+
+    <hr>
+    <a name="Secondary"></a> <b>Using the secondary buffer cache</b>
+    <p>Using the cache can speed up certain disk operations
+    if you are using a computer with an 8086 processor.
+    If you are using a computer with a faster processor,
+    it is better to use
+    <a href="../S/SMARTDRV.HTM">SMARTDRV</a>
+    for a cache.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>Create 20 disk buffers, include in your CONFIG.SYS file:</p>
+
+<pre>
+    <a href="BUFFERS.HTM">buffers</a>=<a
+    href="#ParameterN">20</a>
+</pre>
+
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>Internal</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

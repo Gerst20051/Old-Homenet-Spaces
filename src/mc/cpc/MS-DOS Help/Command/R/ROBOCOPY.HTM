@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>ROBOCOPY</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#r">Commands N-Z</a>
+    &gt; <a href="../INDEXR.HTM#robocopy">Commands R</a>
+    <h1>ROBOCOPY</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Robust File and Folder Copy.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>ROBOCOPY
+    <a href="#ParameterSource">source_folder</a>
+    <a href="#ParameterDestination">destination_folder</a>
+    [<a href="#ParameterFilesToCopy">file(s)_to_copy</a>]
+    [[<a href="#SwitchE">/E</a>]
+    | [<a href="#SwitchS">/S</a>]]
+    [[<a href="#SwitchA">/A</a>]
+    | [<a href="#SwitchM">/M</a>]]
+    [<a href="#SwitchL">/L</a>]
+    [<a href="#SwitchAminus">/A-</a>:[R][A][S][H]]
+    [<a href="#SwitchAplus">/A+</a>:[R][A][S][H]]
+    [<a href="#SwitchEta">/ETA</a>]
+    [<a href="#SwitchIs">/IS</a>]
+    [<a href="#SwitchMove">/MOVE</a>]
+    [<a href="#SwitchPurge">/PURGE</a>]
+    [<a href="#SwitchR">/R</a>:n]
+    [<a href="#SwitchT">/T</a>:n]
+    [<a href="#SwitchV">/V</a>:n]
+    [<a href="#SwitchW">/W</a>:n]
+    [<a href="#SwitchX">/X</a>]
+    [<a href="#SwitchReg">/REG</a>]
+    [<a href="#SwitchXA">/XA</a>:[R][A][S][H]]
+    [<a href="#SwitchXC">/XC</a>
+    | <a href="#SwitchXN">/XN</a>
+    | <a href="#SwitchXO">/XO</a>]
+    [<a href="#SwitchXL">/XL</a>
+    | <a href="#SwitchXX">/XX</a>]
+    [<a href="#SwitchXF">/XF</a> file [file...]]
+    [<a href="#SwitchXD">/XD</a> dir [dir...]]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDestination"></a> destination_folder
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Destination folder.</dd>
+
+      <dt><a name="ParameterFilesToCopy"></a> file(s)_to_copy
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>A list of files or a wildcard.
+      If no source "file(s)_to_copy" are specified, default to *.*.</dd>
+
+      <dt><a name="ParameterSource"></a> source_folder
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Source folder.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchA"></a> /A
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Copy only files with the Archive attribute set.</dd>
+
+      <dt><a name="SwitchAminus"></a> /A-:[R][A][S][H]
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Set file Attributes on destination files - remove.</dd>
+
+      <dt><a name="SwitchAplus"></a> /A+:[R][A][S][H]
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Set file Attributes on destination files - add.</dd>
+
+      <dt><a name="SwitchE"></a> /E
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Copy Subfolders, including Empty Subfolders.</dd>
+
+      <dt><a name="SwitchEta"></a> /ETA
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Show Estimated Time of Arrival of copied files.</dd>
+
+      <dt><a name="SwitchIs"></a> /IS
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Include in the report files that did not need updating
+      (already the Same).</dd>
+
+      <dt><a name="SwitchL"></a> /L
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>List only - don't copy, timestamp or delete any files.</dd>
+
+      <dt><a name="SwitchM"></a> /M
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Like <a href="#SwitchA">/A</a>, but remove Archive
+      attribute from source files.</dd>
+
+      <dt><a name="SwitchMove"></a> /MOVE
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Move files and dirs (delete from source after copying).</dd>
+
+      <dt><a name="SwitchPurge"></a> /PURGE
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Delete destination files/folders that no longer exist
+      in source.</dd>
+
+      <dt><a name="SwitchR"></a> /R:n
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Number (n) of Retries on failed copies - default is 1 million.</dd>
+
+      <dt><a name="SwitchReg"></a> /REG
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Save <a href="#SwitchR">/R</a>:n and
+      <a href="#SwitchW">/W</a>:n in the Registry as default settings.</dd>
+
+      <dt><a name="SwitchS"></a> /S
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Copy Subfolders.</dd>
+
+      <dt><a name="SwitchT"></a> /T
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Timestamp all destination files, including skipped files.</dd>
+
+      <dt><a name="SwitchV"></a> /V
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Produce Verbose output, showing skipped files.</dd>
+
+      <dt><a name="SwitchW"></a> /W:n
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Wait time (n) between retries - default is 30 seconds.</dd>
+
+      <dt><a name="SwitchX"></a> /X
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Report all eXtra files, not just those selected &amp;
+      copied.</dd>
+
+      <dt><a name="SwitchXA"></a> /XA:[R][A][S][H]
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>eXclude files with any of the given Attributes.</dd>
+
+      <dt><a name="SwitchXC"></a> /XC
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>eXclude Changed files.</dd>
+
+      <dt><a name="SwitchXD"></a> /XD dir [dir...]
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>eXclude Directories matching given names/paths.</dd>
+
+      <dt><a name="SwitchXF"></a> /XF file [file...]
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>eXclude Files matching given names/paths/wildcards.</dd>
+
+      <dt><a name="SwitchXL"></a> /XL
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>eXclude Lonely files and dirs. A "lonely" file is
+      present in source but not destination excluding lonely
+      will prevent any new files being added to the destination.</dd>
+
+      <dt><a name="SwitchXN"></a> /XN
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>eXclude Newer files.</dd>
+
+      <dt><a name="SwitchXO"></a> /XO
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>eXclude Older files.</dd>
+
+      <dt><a name="SwitchXX"></a> /XX
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>eXclude eXtra files and dirs. An "extra" file is
+      present in destination but not source, excluding extras
+      will delete from destination.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../C/COPY.HTM">COPY</a> - Copy one or more files to another location.
+    <br><a href="../S/SCOPY.HTM">SCOPY</a> - Copy complete with NTFS Security Permissions.
+    <br><a href="../X/XCOPY.HTM">XCOPY</a> - Copy files and folders.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>remsync - Synchronize remote files.
+    <br>cp - Copy one or more files to another location.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>ROBOCOPY will accept UNC pathnames.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External Resource Kit</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd><a href="../../Version/MSWIN/NT400.HTM">NT4</a></dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

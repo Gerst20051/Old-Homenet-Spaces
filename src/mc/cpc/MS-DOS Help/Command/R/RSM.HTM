@@ -1,0 +1,734 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>RSM</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#r">Commands N-Z</a>
+    &gt; <a href="../INDEXR.HTM#rsm">Commands R</a>
+    <h1>RSM</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Manages media resources using Removable Storage.
+    You can run batch scripts for applications that do not
+    currently support the Removable Storage API.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>RSM
+    {<a href="#ParameterAllocate">ALLOCATE</a>
+    | <a href="#ParameterCreatePool">CREATEPOOL</a>
+    | <a href="#ParameterDeallocate">DEALLOCATE</a>
+    | <a href="#ParameterDeletePool">DELETEPOOL</a>
+    | <a href="#ParameterDismount">DISMOUNT</a>
+    | <a href="#ParameterEject">EJECT</a>
+    | <a href="#ParameterEjectAtapi">EJECTATAPI</a>
+    | <a href="#ParameterErase">ERASE</a>
+    | <a href="#ParameterFreemedia">FREEMEDIA</a>
+    | <a href="#ParameterInventory">INVENTORY</a>
+    | <a href="#ParameterMount">MOUNT</a>
+    | <a href="#ParameterRefresh">REFRESH</a>
+    | <a href="#ParameterRename">RENAME</a>
+    | <a href="#ParameterUi">UI</a>
+    | <a href="#ParameterView">VIEW</a>}
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>RSM
+    <a href="#ParameterAllocate">ALLOCATE</a>
+    <a href="#SwitchM">/Mmedia_pool_name</a>
+    <a href="#SwitchO">/Ovalue</a>
+    { <a href="#SwitchLf">/LFlogical_media_id</a>
+    | <a href="#SwitchLg">/LGlogical_media_id</a>
+    | <a href="#SwitchPf">/PFlogical_media_id</a>}
+    | <a href="#SwitchPg">/PGlogical_media_id</a>}
+    [<a href="#SwitchLn">/LNlogical_media_name</a>]
+    [<a href="#SwitchLd">/LDlogical_media_description</a>]
+    [<a href="#SwitchPn">/PNpartition_name</a>]
+    [<a href="#SwitchPd">/PDpartition_description</a>]
+    [<a href="#SwitchT">/Ttimeout</a>]
+    [<a href="#SwitchB">/B</a>]</p>
+
+    <p>RSM
+    <a href="#ParameterCreatePool">CREATEPOOL</a>
+    <a href="#SwitchM">/Mmedia_pool_name</a>
+    <a href="#SwitchA">/Avalue</a>
+    [<a href="#SwitchTf">/TFmedia_pool_type_id</a>
+    | <a href="#SwitchTg">/TGmedia_pool_type_id</a>]
+    [<a href="#SwitchD">/D</a>]
+    [<a href="#SwitchR">/R</a>]</p>
+
+    <p>RSM
+    <a href="#ParameterDeallocate">DEALLOCATE</a>
+    {<a href="#SwitchLf">/LFlogical_media_id</a>
+    | <a href="#SwitchLg">/LGlogical_media_id</a>
+    | <a href="#SwitchPf">/PFlogical_media_id</a>
+    | <a href="#SwitchPg">/PGlogical_media_id</a>}</p>
+
+    <p>RSM
+    <a href="#ParameterDeletePool">DELETEPOOL</a>
+    <a href="#SwitchM">/Mmedia_pool_name</a></p>
+
+    <p>RSM
+    <a href="#ParameterDismount">DISMOUNT</a>
+    {<a href="#SwitchLf">/LFlogical_media_id</a>
+    | <a href="#SwitchLg">/LGlogical_media_id</a>
+    | <a href="#SwitchPf">/PFlogical_media_id</a>
+    | <a href="#SwitchPg">/PGlogical_media_id</a>}</p>
+
+    <p>RSM
+    <a href="#ParameterDismount">DISMOUNT</a>
+    [<a href="#SwitchO">/O[deferred]</a>]</p>
+
+    <p>RSM
+    <a href="#ParameterEject">EJECT</a>
+    {<a href="#SwitchPf">/PFphysical_media_id</a>
+    | <a href="#SwitchPg">/PGphysical_media_id</a>
+    | {<a href="#SwitchSf">/SFslot_id</a>
+      | <a href="#SwitchSg">/SGslot_id</a>}
+      {<a href="#SwitchLf">/LFlibrary_id</a>
+      | <a href="#SwitchLg">/LGlibrary_id</a>}}
+    | {<a href="#SwitchDf">/DFdrive_id</a>
+      | <a href="#SwitchDg">/DGdrive_id</a>}
+      {<a href="#SwitchLf">/LFlibrary_id</a>
+      | <a href="#SwitchLg">/LGlibrary_id</a>}}</p>
+
+    <p>RSM
+    <a href="#ParameterEject">EJECT</a>
+    [<a href="#SwitchO">/Ovalue</a>]</p>
+
+    <p>RSM
+    <a href="#ParameterEject">EJECT</a>
+    [<a href="#SwitchA">/Avalue</a>]</p>
+
+    <p>RSM
+    <a href="#ParameterEject">EJECT</a>
+    [<a href="#SwitchB">/B</a>]</p>
+
+    <p>RSM
+    <a href="#ParameterEjectAtapi">EJECTATAPI</a>
+    <a href="#SwitchN">/Natapi_changer_number</a></p>
+
+    <p>RSM
+    <a href="#ParameterErase">ERASE</a>
+    {<a href="#SwitchPf">/PFpartition_id</a>
+    | <a href="#SwitchPg">/PGpartition_id</a>}
+    [<a href="#SwitchB">/B</a>]
+    [<a href="#SwitchR">/Rvalue</a>]
+    [<a href="#SwitchT">/Ttimeout</a>]</p>
+
+    <p>RSM
+    <a href="#ParameterFreemedia">FREEMEDIA</a>
+    {<a href="#SwitchLf">/LFlogical_media_id</a>
+    | <a href="#SwitchLg">/LGlogical_media_id</a>
+    | <a href="#SwitchPf">/PFpartition_id</a>
+    | <a href="#SwitchPg">/PGpartition_id</a>
+    | {<a href="#SwitchSf">/SFslot_id</a>
+      | <a href="#SwitchSg">/SGslot_id</a>}
+      {<a href="#SwitchDf">/DFdrive_id</a>
+      | <a href="#SwitchDg">/DGdrive_id</a>}}</p>
+
+    <p>RSM
+    <a href="#ParameterInventory">INVENTORY</a>
+    {<a href="#SwitchLf">/LFlibrary_id</a>
+    | <a href="#SwitchLg">/LGlibrary_id</a>}}
+    <a href="#SwitchA">/Avalue</a></p>
+
+    <p>RSM
+    <a href="#ParameterMount">MOUNT</a>
+    {<a href="#SwitchLf">/LFlogical_media_id</a>
+    | <a href="#SwitchLg">/LGlogical_media_id</a>
+    | <a href="#SwitchPf">/PFpartition_id</a>
+    | <a href="#SwitchPg">/PGpartition_id</a>
+    | {<a href="#SwitchSf">/SFslot_id</a>
+      | <a href="#SwitchSg">/SGslot_id</a>}
+      {<a href="#SwitchCf">/CFchanger_id</a>
+      | <a href="#SwitchCg">/CGchanger_id</a>}}</p>
+
+    <p>RSM
+    <a href="#ParameterMount">MOUNT</a>
+    [<a href="#SwitchDf">/LFdrive_id</a>
+    | <a href="#SwitchDg">/LGdrive_id</a>]</p>
+
+    <p>RSM
+    <a href="#ParameterMount">MOUNT</a>
+    <a href="#SwitchO">/Ovalue</a></p>
+
+    <p>RSM
+    <a href="#ParameterMount">MOUNT</a>
+    <a href="#SwitchR">/Rvalue</a></p>
+
+    <p>RSM
+    <a href="#ParameterMount">MOUNT</a>
+    <a href="#SwitchT">/Ttimeout</a></p>
+
+    <p>RSM
+    <a href="#ParameterRefresh">REFRESH</a>
+    {<a href="#SwitchLf">/LFlibrary_id</a>
+     | <a href="#SwitchLg">/LGlibrary_id</a>}
+    | {<a href="#SwitchPf">/PFphysical_media_id</a>
+       | <a href="#SwitchPg">/PGphysical_media_id</a>}
+    | <a href="#SwitchTg">/TGmedia_type_id</a>}</p>
+
+    <p>RSM
+    <a href="#ParameterRename">RENAME</a>
+    <a href="#SwitchTg">/TGmedia_type_id</a>}
+    [<a href="#SwitchB">/B</a>]
+    [<a href="#SwitchD">/Dnew_description</a>]
+    [[<a href="#SwitchF">/Fobject_id</a>
+     | <a href="#SwitchG">/Gobject_id</a>]
+     <a href="#SwitchN">/Nnew_name</a>]</p>
+
+    <p>RSM
+    <a href="#ParameterUi">UI</a>
+    [<a href="#SwitchB">/B</a>]
+    [<a href="#SwitchD">/Ddestination</a>]
+    <a href="#SwitchO">/Ooperation</a>
+    <a href="#SwitchTg">/TGmedia_type_id</a>}
+    {<a href="#SwitchLf">/LFcontainer_id</a>
+     | <a href="#SwitchLg">/LGcontainer_id</a>}
+     {<a href="#SwitchCf">/CFcontainer_id</a>
+     | <a href="#SwitchCg">/CGcontainer_id</a>}}</p>
+
+    <p>RSM
+    <a href="#ParameterView">VIEW</a>
+    <a href="#SwitchT">/Tvalue</a></p>
+
+    <p>RSM
+    <a href="#ParameterView">VIEW</a>
+    [<a href="#SwitchCg">/CGcontainer_id</a>
+    | <a href="#SwitchGuidDisplay">/GUIDDISPLAY</a>
+    | <a href="#SwitchB">/B</a>
+    | <a href="#SwitchU">/Uui_type</a>
+    | <a href="#SwitchDesc">/DESC</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterAllocate"></a> ALLOCATE
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Allocate media from a media pool.</dd>
+
+      <dt><a name="ParameterCreatePool"></a> CREATEPOOL
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Create a media pool.</dd>
+
+      <dt><a name="ParameterDeallocate"></a> DEALLOCATE
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Deallocate media.</dd>
+
+      <dt><a name="ParameterDeletePool"></a> DELETEPOOL
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Delete a media pool.</dd>
+
+      <dt><a name="ParameterDismount"></a> DISMOUNT
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Dismount media from a drive.</dd>
+
+      <dt><a name="ParameterEject"></a> EJECT
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Eject media from a library.</dd>
+
+      <dt><a name="ParameterEjectAtapi"></a> EJECTATAPI
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Eject media from an ATAPI changer.</dd>
+
+      <dt><a name="ParameterErase"></a> ERASE
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Erase the contents of a tape.</dd>
+
+      <dt><a name="ParameterFreemedia"></a> FREEMEDIA
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>write a free media label on a piece of media and
+      return it to the Free media pool.</dd>
+
+      <dt><a name="ParameterInventory"></a> INVENTORY
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Inventory media in a specified automated library.</dd>
+
+      <dt><a name="ParameterMount"></a> MOUNT
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Mount media in the designated library.</dd>
+      <dd>The logical media to be mounted can be specified
+      using either the logical-media ID (LMID) or the
+      logical media name.</dd>
+
+      <dt><a name="ParameterRefresh"></a> REFRESH
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Refresh a library, physical media, or all devices
+      of a particular media type.</dd>
+      <dd>Causes a single poll of the target devices so that
+      the Removable Storage database contains the current
+      state of the device. Can be useful after media insert
+      or eject operations.</dd>
+
+      <dt><a name="ParameterRename"></a> RENAME
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Change the friendly name or description of an RSM
+      object.</dd>
+
+      <dt><a name="ParameterView"></a> VIEW
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display a list of media objects.</dd>
+
+      <dt><a name="ParameterUi"></a> UI
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Set the destination for UI messages.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchA"></a> /Avalue
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Permits the use of one of:
+        <ul>
+          <li><b>always</b> <a href="#ParameterCreatePool">CREATEPOOL</a>
+          Opens the existing media pool or creates a new media pool if not
+          found</li>
+          <li><b>default</b> <a href="#ParameterInventory">INVENTORY</a>
+          Performs an inventory using the default method specified in the
+          library's PROPERTIES dialog box</li>
+          <li><b>existing</b> <a href="#ParameterCreatePool">CREATEPOOL</a>
+          Opens the existing media pool or returns an error if the media pool
+          specified does not exist</li>
+          <li><b>fast</b> <a href="#ParameterInventory">INVENTORY</a> Performs
+          a bar code inventory, if the specified library has a bar code reader
+          installed. If the library has no bar code reader, Removable Storage
+          checks the storage slots and reads the on-media identifier on media
+          in slots that were previously empty</li>
+          <li><b>full</b> <a href="#ParameterInventory">INVENTORY</a> Performs
+          a full on-media inventory of the library.  Removable Storage mounts
+          each tape or disk in the library and reads the on-media
+          identifier</li>
+          <li><b>new</b> <a href="#ParameterCreatePool">CREATEPOOL</a> Creates
+          a new media pool or returns an error if the media pool specified
+          already exists</li>
+          <li><b>none</b> <a href="#ParameterInventory">INVENTORY</a> Performs
+          no inventory</li>
+          <li><b>queue</b> <a href="#ParameterEject">EJECT</a> Queues the media
+          for later ejection. This can be used for libraries with multi-slot
+          inject/eject (IE) ports</li>
+          <li><b>start</b> <a href="#ParameterEject">EJECT</a> The default,
+          starts the eject operation immediately.  The media is ejected until a
+          timeout occurs, or unless another eject command is issued with the <a
+          href="#SwitchA">/a</a> option and <b>STOP</b>.  Such eject commands
+          must also specify the eject operation GUID using the <a
+          href="#SwitchO">/o</a> option. The timeout parameter is specified in
+          the library object (for all eject operations) for the library.  To
+          set this timeout parameter, you must use the Removable Storage API.
+          Can also be used in conjunction with the <a href="#SwitchO">/o</a>
+          switch to display the GUID of a particular eject operation</li>
+          <li><b>stop</b> <a href="#ParameterEject">EJECT</a> Terminates the
+          eject operation prior to a timeout expiring. The particular eject
+          operation can be determined using the GUID displayed when START is
+          used with the <a href="#SwitchA">/a</a> switch and the <a
+          href="#SwitchO">/o</a> switch</li>
+          <li><b>stop</b> <a href="#ParameterInventory">INVENTORY</a> Stops the
+          current inventory for the specified library, if one is being
+          performed</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchB"></a> /B
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Only the GUID for the allocate/eject/view operation
+      is displayed. This aids in scripting where you want to
+      pass the output of one command to the next with
+      minimal parsing.</dd>
+      <dd><a href="#ParameterErase">ERASE</a>/RENAME:
+      hides the text on completion, for scripting purposes.</dd>
+      <dd><a href="#ParameterView">VIEW</a>:
+      Displays only the object GUID for scripting purposes.</dd>
+
+      <dt><a name="SwitchCf"></a> /CFchanger_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the changer that contains the media to
+      be mounted, using the friendly name.</dd>
+      <dt> /CFcontainer_id
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the computer object for which you are
+      redirecting messages of the type specified by
+      <a href="#SwitchT">/t</a>, using the object's friendly
+      name.</dd>
+
+      <dt><a name="SwitchCg"></a> /CGchanger_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>MOUNT: Specifies the changer that contains the media to
+      be mounted/viewed, using the GUID.</dd>
+      <dt> /CGcontainer_id
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>VIEW: Specifies the GUID for the object container.
+      The type of container depends on the object type
+      (parameter) specified with <a href="#SwitchT">/t</a>.
+      If the container_ID is not specified, all instances
+      of the applicable object type are displayed.</dd>
+      <dd>UI: Specifies the computer object for which you
+      are redirecting messages of the type specified by
+      <a href="#SwitchT">/t</a>, using the object's GUID.</dd>
+
+      <dt><a name="SwitchD"></a> /D
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Permits the media pool to automatically draw media
+      from the free media pool. If omitted, the media pool
+      will not be permitted to draw media from the free
+      media pool.</dd>
+      <dt> /Dnew_description
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>RENAME: Specified the new description for the RSM
+      object.</dd>
+      <dt> /Ddestination
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>UI: Specifies the computer to which you are
+      redirecting messages. If omitted, the local computer
+      is used.</dd>
+
+      <dt><a name="SwitchDesc"></a> /DESC
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the objects' description.</dd>
+
+      <dt><a name="SwitchDf"></a> /DFdrive_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the drive holding the media to
+      eject/freemedia/mount, using the friendly name.</dd>
+
+      <dt><a name="SwitchDg"></a> /DGdrive_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the drive holding the media to
+      eject/freemedia/mount, using the GUID.</dd>
+
+      <dt><a name="SwitchF"></a> /Fobject_id
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the object to be renamed,
+      using its friendly name.</dd>
+
+      <dt><a name="SwitchG"></a> /Gobject_id
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the object to be renamed,
+      using its GUID.</dd>
+
+      <dt><a name="SwitchGuidDisplay"></a> /GUIDDISPLAY
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays both the GUID and the friendly name for
+      objects.</dd>
+
+      <dt><a name="SwitchLd"></a> /LDlogical_media_description
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the media to be allocated, using the
+      logical media description.</dd>
+
+      <dt><a name="SwitchLf"></a> /LFlogical_media_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the media to be allocated/deallocated/mount,
+      using the friendly name.</dd>
+      <dd>Logical_media_id specifies the next side of
+      multi-sided media to allocate. This switch is
+      optional and must be used with the
+      <a href="#SwitchO">Onext</a>. After deallocating this
+      media, the logical media ID is invalid.</dd>
+      <dt> /LFlibrary_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the library containing the slot or
+      drive from which to eject/inventory/refresh the media,
+      using the friendly name.</dd>
+      <dt> /LFcontainer_id
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>UI: Specifies the library object for which you are
+      redirecting messages of the type specified by
+      <a href="#SwitchT">/t</a>, using the object's friendly
+      name.</dd>
+
+      <dt><a name="SwitchLg"></a> /LGlogical_media_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the media to be allocated/deallocated/mount,
+      using the GUID.</dd>
+      <dd>Logical_media_id specifies the next side of
+      multi-sided media to allocate. This switch is
+      optional and must be used with the
+      <a href="#SwitchO">Onext</a>. After deallocating this
+      media, the logical media ID is invalid.</dd>
+      <dt> /LGlibrary_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the library containing the slot or drive
+      from which to eject/inventory/refresh the media, using
+      the GUID.</dd>
+      <dt> /LFcontainer_id
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>UI: Specifies the library object for which you are
+      redirecting messages of the type specified by
+      <a href="#SwitchT">/t</a>, using the object's GUID.</dd>
+
+      <dt><a name="SwitchLn"></a> /LNlogical_media_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the media to be allocated, using the
+      logical media name.</dd>
+
+      <dt><a name="SwitchM"></a> /Mmedia_pool_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Media are allocated from the specified media pool.
+      This means that you will have allocated/created media
+      in that pool.</dd>
+
+      <dt><a name="SwitchN"></a> /Natapi_changer_number
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the changer number. Atapi_changer_number
+      is the number found at the end of the string for the
+      device name of the changer.</dd>
+      <dt> /Nnew_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>RENAME: Specifies the new name for the RSM object.</dd>
+
+      <dt><a name="SwitchO"></a> /Ovalue
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Permits the use of one of:
+        <ul>
+          <li><b>deferred</b> <a href="#ParameterDismount">DISMOUNT</a>
+          Dismounts with media kept in drive</li>
+          <li><b>drive</b> <a href="#ParameterMount">MOUNT</a> Specifies that a
+          particular drive is to be mounted.  Used in conjunction with the <a
+          href="#SwitchD">/d</a> switch</li>
+          <li><b>eject_operation_id</b> <a href="#ParameterEject">EJECT</a>
+          Used to specify the GUID for the particular eject operation</li>
+          <li><b>errunavail</b> <a href="#ParameterAllocate">ALLOCATE</a>
+          Prevents the submission of an operator request for new media if none
+          can be allocated with the specified constraints</li>
+          <li><b>errunavail</b> <a href="#ParameterMount">MOUNT</a> Generates
+          an error if either the media or the drive is unavailable</li>
+          <li><b>new</b> <a href="#ParameterAllocate">ALLOCATE</a> Allocates a
+          partition that cannot be shared with another application. This can be
+          used to reserve the second side of two-sided media</li>
+          <li><b>next</b> <a href="#ParameterAllocate">ALLOCATE</a> Allocates
+          the next side of media that was previously allocated using the new
+          parameter</li>
+          <li><b>offline</b> <a href="#ParameterMount">MOUNT</a> Generates an
+          error if the media is offline</li>
+          <li><b>read</b> <a href="#ParameterMount">MOUNT</a> Mounts the media
+          for read access</li>
+          <li><b>write</b> <a href="#ParameterMount">MOUNT</a> Mounts the media
+          for write access. Completed media will not be mounted</li>
+        </ul>
+      </dd>
+      <dt> /Ooperation
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies whether to add or remove items from the
+      list of destinations, using one of:
+        <ul>
+          <li><b>add</b> Adds a new destination (computer name) to the list</li>
+          <li><b>delete</b> Removes an existing destination from the list</li>
+          <li><b>deleteall</b> Clears the entire destination list. When the destination list is empty, UI messages of the type specified by the /t swtich will not appear on any computer</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchPd"></a> /PDpartition_description
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the media partition to be allocated,
+      using the partition description.</dd>
+
+      <dt><a name="SwitchPf"></a> /PFlogical_media_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the partition to be
+      allocated/deallocated, using the friendly name.</dd>
+      <dt> /PFpartition_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the media side to mount, using the
+      friendly name.</dd>
+      <dt> /PFphysical_media_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the physical media to eject/refresh,
+      using the friendly name.</dd>
+
+      <dt><a name="SwitchPg"></a> /PGlogical_media_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the partition to be
+      allocated/deallocated, using the GUID.</dd>
+      <dt> /PGpartition_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the media side to mount, using the
+      GUID.</dd>
+      <dt> /PGphysical_media_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the physical media to eject/refresh,
+      using the GUID.</dd>
+
+      <dt><a name="SwitchPn"></a> /PNpartition_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the partition to be allocated, using
+      the partition name.</dd>
+
+      <dt><a name="SwitchR"></a> /R
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Permits the media pool to automatically return
+      media to the free media pool. If omitted, the media
+      pool will not be permitted to return media to the free
+      media pool.</dd>
+      <dt> /Rvalue
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the mount order, or priority:
+        <ul>
+          <li><b>high</b></li>
+          <li><b>highest</b></li>
+          <li><b>low</b></li>
+          <li><b>lowest</b></li>
+          <li><b>normal</b>  (the default)</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchSf"></a> /SFslot_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the slot holding the media to eject/mount,
+      using the friendly name.</dd>
+
+      <dt><a name="SwitchSg"></a> /SGslot_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the slot holding the media to eject/mount,
+      using the GUID.</dd>
+
+      <dt><a name="SwitchT"></a> /Ttimeout
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the command timeout, in milliseconds.
+      The default timeout value is infinite.</dd>
+      <dt> /Tvalue
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays a list of media objects of the specified
+      type. When used without any parameter, displays a list
+      of all media pools in the Removable Storage system
+      (collection of libraries):
+        <ul>
+          <li><b>changer</b></li>
+          <li><b>computer</b> (RENAME)</li>
+          <li><b>drive_type</b></li>
+          <li><b>drive</b></li>
+          <li><b>iedoor</b></li>
+          <li><b>ieport</b></li>
+          <li><b>library</b></li>
+          <li><b>librequest</b></li>
+          <li><b>logical_media</b></li>
+          <li><b>media_pool</b></li>
+          <li><b>media_type</b></li>
+          <li><b>oprequest</b> (RENAME)</li>
+          <li><b>partition</b></li>
+          <li><b>physical_media</b></li>
+          <li><b>storageslot</b></li>
+          <li><b>ui_destination</b> (VIEW)</li>
+        </ul>
+      </dd>
+      <dt> /Ttimeout
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the command timeout, in milliseconds.
+      The default timeout value is infinite.</dd>
+      <dt> /Tui_type
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the type of message for which you are
+      setting the destination, using one of:
+        <ul>
+          <li><b>INFO</b> Informational messages</li>
+          <li><b>REQ</b> Messages that are "requesting" in nature</li>
+          <li><b>ERR</b> Error messages</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchTf"></a> /TFmedia_pool_type_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the type of media the media pool will
+      contain, using the friendly name. The default type is
+      a media pool that contains other media pools.</dd>
+
+      <dt><a name="SwitchTg"></a> /TGmedia_pool_type_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the type of media the media pool will
+      contain, using the GUID. The default type is a media
+      pool that contains other media pools.</dd>
+      <dt> /TGmedia_type_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the media type to be refreshed.
+      Only the GUID can be specified. Can be used to
+      refresh all removable media devices by specifying the
+      GUID for the removable media.</dd>
+
+      <dt><a name="SwitchU"></a> /Uui_type
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>When used with the
+      <a href="#SwitchT">/tui_destination</a> and
+      <a href="#SwitchCg">/cg</a> switches, displays the
+      destinations to which UI messages of the specified
+      type are directed. The type can be one of three:
+        <ul>
+          <li><b>info</b> Informational messages</li>
+          <li><b>req</b> Messages that are "requesting" in nature</li>
+          <li><b>err</b> Error messages</li>
+        </ul>
+      </dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+      <ul>
+        <li><b>536870913</b> Invalid arguments were specified. Frequently,
+        this is caused by a space after an argument switch</li>
+        <li><b>536870914</b> Duplicate argument switches were specified</li>
+        <li><b>536870915</b> No GUID matches the friendly name that was
+        specified. Check capitalization because friendly names are
+        case-sensitive</li>
+        <li><b>536870916</b> An insufficient number of argument switches were
+        specified. Check to see if a required switch is missing</li>
+        <li><b>536870917</b> An invalid GUID was specified. Use the VIEW
+        command to determine the correct GUID for an object</li>
+        <li><b>536870918</b> This is returned only by the EJECTATAPI command.
+        Verify that the ATAPI changer is functioning correctly</li>
+      </ul>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>FSUTIL QUOTA</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#f">Commands A-M</a>
+    &gt; <a href="../INDEXF.HTM#fsutilquota">Commands F</a>
+    <h1>FSUTIL QUOTA</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Manages disk quotas on NTFS volumes in order to
+    provide more precise control of network-based storage.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>FSUTIL QUOTA
+    <a href="#ParameterHelp">help</a></p>
+
+    <p>FSUTIL QUOTA
+    <a href="#ParameterDisable">disable</a>
+    <a href="#ParameterDriveLetter">drive:</a></p>
+
+    <p>FSUTIL QUOTA
+    <a href="#ParameterEnforce">enforce</a>
+    <a href="#ParameterDriveLetter">drive:</a></p>
+
+    <p>FSUTIL QUOTA
+    <a href="#ParameterModify">modify</a>
+    <a href="#ParameterDriveLetter">drive:</a>
+    <a href="#ParameterThreshold">threshold</a>
+    <a href="#ParameterLimit">limit</a>
+    [<a href="#ParameterUserName">user_name</a>]</p>
+
+    <p>FSUTIL QUOTA
+    <a href="#ParameterQuery">query</a>
+    <a href="#ParameterDriveLetter">drive:</a></p>
+
+    <p>FSUTIL QUOTA
+    <a href="#ParameterTrack">track</a>
+    <a href="#ParameterDriveLetter">drive:</a></p>
+
+    <p>FSUTIL QUOTA
+    <a href="#ParameterViolations">violations</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDisable"></a> disable
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Disables quota tracking and enforcement on the
+      specified volume.</dd>
+
+      <dt><a name="ParameterDriveLetter"></a> drive:
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the drive letter for the volume
+      (followed by a colon).</dd>
+
+      <dt><a name="ParameterEnforce"></a> enforce
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Enforces quota usage on the specified volume.</dd>
+
+      <dt><a name="ParameterHelp"></a> help
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="ParameterLimit"></a> limit
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>The maximum allowed disk usage.</dd>
+
+      <dt><a name="ParameterModify"></a> modify
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Modifies an existing disk quota or creates a new
+      quota.</dd>
+
+      <dt><a name="ParameterQuery"></a> query
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Lists existing disk quotas.</dd>
+
+      <dt><a name="ParameterThreshold"></a> threshold
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>The limit at which warnings are issued.</dd>
+
+      <dt><a name="ParameterTrack"></a> track
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Tracks disk usage on the specified volume.</dd>
+
+      <dt><a name="ParameterUserName"></a> user_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the domain or user name.</dd>
+
+      <dt><a name="ParameterViolations"></a> violations
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Searches the system and application logs and
+      displays a message to indicate that quota violations
+      have been detected, or that a user has reached their
+      quota threshold or quota limit.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="FSUTILBE.HTM">FSUTIL BEHAVIOR</a>
+    <br><a href="FSUTILDI.HTM">FSUTIL DIRTY</a>
+    <br><a href="FSUTILFI.HTM">FSUTIL FILE</a>
+    <br><a href="FSUTILFS.HTM">FSUTIL FSINFO</a>
+    <br><a href="FSUTILHA.HTM">FSUTIL HARDLINK</a>
+    <br><a href="FSUTILOB.HTM">FSUTIL OBJECTID</a>
+    <br><a href="FSUTILRE.HTM">FSUTIL REPARSEPOINT</a>
+    <br><a href="FSUTILSP.HTM">FSUTIL SPARSE</a>
+    <br><a href="FSUTILUS.HTM">FSUTIL USN</a>
+    <br><a href="FSUTILVO.HTM">FSUTIL VOLUME</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Disk quotas are implemented on a per-volume basis and
+    enable both hard and soft storage limits to be
+    implemented on a per-user basis.</p>
+
+    <p>You can use write scripts to set the quota limits
+    every time you add a new user or to automatically track
+    quota limits, compile them into a report, and
+    automatically send them to the system administrator in
+    e-mail.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,801 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>NTDSUTIL</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#n">Commands N-Z</a>
+    &gt; <a href="../INDEXN.HTM#ntdsutil">Commands N</a>
+    <h1>NTDSUTIL</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Provides management facilities for Active Directory.
+    Use to perform database maintenance of Active Directory, manage
+    and control single master operations, and remove metadata left
+    behind by domain controllers that were removed from the network
+    without being properly uninstalled. Intended for use by
+    experienced administrators.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <dl>
+      <dt>Authoritatively restore</dt>
+      <dd>Restores domain controllers to a specific point in
+      time and mark objects in Active Directory as being
+      authoritative with respect to their replication
+      partners. Type at
+      <a href="#ParameterAuthorityRestore">Authority restore:</a>
+      </dd>
+
+      <dt>Configurable settings</dt>
+      <dd>Aids in modifying the TTL of dynamic data stored in
+      Active Directory. Type at
+      <a href="#ParameterConfigurableSetting">Configurable setting:</a>
+      </dd>
+
+      <dt>Domain management</dt>
+      <dd>Allows administrators who are members of the
+      Enterprise Administrators group to prepare
+      cross-reference and server objects in the directory.
+      Type at
+      <a href="#ParameterDomainManagement">Domain management:</a>
+      </dd>
+
+      <dt>Files</dt>
+      <dd>Provides commands for managing the directory
+      service data and log files. The data file is called
+      Ntds.dit. Type at
+      <a href="#ParameterFiles">Files:</a>
+      </dd>
+
+      <dt>IPDeny List</dt>
+      <dd>Prevents the domain controller from accepting LDAP
+      queries from clients with specified IP addresses.
+      Type at
+      <a href="#ParameterIPDenyList">IPDeny List:</a>
+      </dd>
+
+      <dt>LDAP policies</dt>
+      <dd>Sets the LDAP administration limits for the
+      Default-Query Policy object.
+      Type at
+      <a href="#ParameterLDAPpolicies">LDAP policies:</a>
+      </dd>
+
+      <dt>Metadata cleanup</dt>
+      <dd>Cleans up metadata for retired domain controllers.
+      Type at
+      <a href="#ParameterMetadataCleanup">Metadata cleanup:</a>
+      </dd>
+
+      <dt>Roles</dt>
+      <dd>Transfers and seizes operations master roles.
+      Type at
+      <a href="#ParameterRoles">Roles:</a>
+      </dd>
+
+      <dt>Security account management</dt>
+      <dd>Manages security identifiers (SIDs).
+      Type at
+      <a href="#ParameterSecurityAccountManagement">Security account management:</a>
+      </dd>
+
+      <dt>Semantic database analysis</dt>
+      <dd>Analyzes data with respect to Active Directory
+      semantics. Type at
+      <a href="#ParameterSemanticDatabaseAnalysis">Semantic database analysis:</a>
+      </dd>
+
+      <dt>Set DSRM Password</dt>
+      <dd>Resets the directory services restore mode (DSRM)
+      password on a domain controller. Type at
+      <a href="#ParameterSetDSRMPassword">Set DSRM Password:</a>
+      </dd>
+    </dl>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterAuthorityRestore"></a> Authority restore</dt>
+      <dd>
+        <dl>
+          <dt>? or help
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Displays command help.</dd>
+
+          <dt>quit
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Takes you back to the previous menu or
+          exits the utility.</dd>
+
+          <dt>restore database
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Marks the entire Ntds.dit (both the domain and
+          configuration directory partitions held by the domain
+          controller) as authoritative. The schema cannot be
+          authoritatively restored.</dd>
+
+          <dt>restore database verinc %d
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Marks the entire Ntds.dit (both the domain and
+          configuration directory partitions held by the domain
+          controller) as authoritative and increments the version
+          number by %d. Use only to authoritatively restore over a
+          previous, incorrect, authoritative restore, such as an
+          authoritative restore from a backup that contains the
+          problem you want to restore.</dd>
+
+          <dt>restore subtree %s
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Marks subtree (and all children of subtree) as
+          being authoritative. The subtree is defined by using
+          the fully distinguished name of the object.</dd>
+
+          <dt>restore subtree %s verinc %d
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Marks subtree (and all children of subtree) as
+          being authoritative and increments the version number
+          by %d. The subtree is defined by using the fully
+          distinguished name of the object. Use only to
+          authoritatively restore over a previous, incorrect,
+          authoritative restore, such as an authoritative restore
+          from a backup that contains the problem you want to
+          restore.</dd>
+        </dl>
+      </dd>
+      <dt><a name="ParameterConfigurableSetting"></a> Configurable setting</dt>
+      <dd>
+        <dl>
+          <dt>? or help
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Displays command help.</dd>
+
+          <dt>cancel changes
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Cancels the changes made, but not yet committed.</dd>
+
+          <dt>connections
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Invokes the <b>server connections</b> submenu.</dd>
+
+          <dt>list
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Lists the names of the supported configurable
+          settings.</dd>
+
+          <dt>quit
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Takes you back to the previous menu or
+          exits the utility.</dd>
+
+          <dt>set %s1 to %s2
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Sets the configurable settings %s1 to the
+          value %s2.</dd>
+
+          <dt>show values
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Displays values of configurable settings.</dd>
+        </dl>
+      </dd>
+      <dt><a name="ParameterDomainManagement"></a> Domain management:</dt>
+      <dd>
+        <dl>
+          <dt>? or help
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Displays command help.</dd>
+
+          <dt>add nc replica %s1 [%s2]
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Adds the domain controller %s2 to the replica
+          set for the Non-Domain Naming Context %s1. If %s2
+          is not specified, the domain controller that you
+          are connected to is used as the default.</dd>
+
+          <dt>connections
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Invokes the <b>Connections</b> submenu.</dd>
+
+          <dt>create nc %s1 [%s2]
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Creates the Non-Domain Naming Context %s1, on
+          the Domain Context %s2. If %s2 is not specified,
+          then the currently connected domain controller is
+          used. To not specify an argument enter (NULL).</dd>
+
+          <dt>delete nc %s
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Removes the Non-Domain Naming Context %s.
+          Before removing an Non-Domain Naming Context all
+          the replicas must be removed and their removal
+          must replicate back to the domain naming
+          operations master.</dd>
+
+          <dt>list
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Lists all the naming contexts that exist in
+          the enterprise, the schema and configuration
+          naming contexts, as well as all domain naming
+          contexts.</dd>
+
+          <dt>list nc information %s
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Prints out the reference domain, and
+          replication delays for the Non-Domain Naming
+          Context.</dd>
+
+          <dt>list nc replicas %s
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Prints the list of domain controllers in the
+          replica set for the Non-Domain Naming Context %s.
+          Remember that this is the list of domain
+          controllers to eventually hold replicas of the
+          Non-Domain Naming Contexts, and that these
+          replicas may not necessarily be fully replicated
+          yet.</dd>
+
+          <dt>precreate %s1 %s2
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Creates a cross-reference object for the
+          domain %s1 allowing a server named %s2 to be
+          promoted as the domain controller for that domain.
+          The domain name must be specified by using a fully
+          distinguished name, and the server must be named
+          by using the fully qualified DNS name.</dd>
+
+          <dt>quit
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Takes you back to the previous menu or
+          exits the utility.</dd>
+
+          <dt>remove nc replica %s1 [%s2]
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Removes the domain controller %s2 from the
+          replica set for the Non-Domain Naming Context %s1.
+          If %s2 is not specified, the currently connected
+          to domain controller is used.</dd>
+
+          <dt>select operation target
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Invokes the <b>Select operation target</b>
+          submenu.</dd>
+
+          <dt>set nc reference domain %s1 %s2
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Sets the reference domain of the Non-Domain
+          Naming Context %s1 to %s2. The domain %s2 should
+          be specified in a domain's DNS name format.</dd>
+
+          <dt>set nc replicate notification delay %s %d1 %d2
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Sets the Non-Domain Naming Context %s's
+          notification delays to %d1 and %d2 for the delay
+          between notifying the first domain controller of
+          changes and the delay of notifying subsequent
+          domain controllers of changes respectively.</dd>
+        </dl>
+      </dd>
+      <dt><a name="ParameterFiles"></a> Files:</dt>
+      <dd>
+        <dl>
+          <dt>? or help
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Displays command help.</dd>
+
+          <dt>compact to %s
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>%s identifies an empty target directory.
+          Invokes Esentutl.exe to compact the existing
+          data file and writes the compacted file to the
+          specified directory. The directory can be remote,
+          that is, mapped by means of the net use command or
+          similar means. After compaction is complete,
+          archive the old data file, and move the newly
+          compacted file back to the original location of
+          the data file. ESENT supports online compaction,
+          but this compaction only rearranges pages within
+          the data file and does not release space back to
+          the file system. (The directory service invokes
+          online compaction regularly.)</dd>
+
+          <dt>header
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Writes the header of the Ntds.dit data file to
+          the screen. Can help support personnel analyze
+          database problems.</dd>
+
+          <dt>info
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Analyzes and reports the free space for the
+          disks that are installed in the system, reads the
+          registry, and then reports the sizes of the data
+          and log files. (The directory service maintains
+          the registry, which identifies the location of the
+          data files, log files, and directory service
+          working directory.)</dd>
+
+          <dt>integrity
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Invokes Esentutl.exe to perform an integrity
+          check on the data file, which can detect any kind
+          of low-level database corruption. It reads every
+          byte of your data file; thus it can take a long
+          time to process large databases.Note that you
+          should always run Recover before performing an
+          integrity check.</dd>
+
+          <dt>move DB to %s
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>%s identifies a target directory. Moves the
+          Ntds.dit data file to the new directory specified
+          by %s and updates the registry so that, upon
+          system restart, the directory service uses the new
+          location.</dd>
+
+          <dt>move logs to %s
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>%s identifies a target directory. Moves the
+          directory service log files to the new directory
+          specified by %s and updates the registry so that,
+          upon system restart, the directory service uses
+          the new location.</dd>
+
+          <dt>quit
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Takes you back to the previous menu or
+          exits the utility.</dd>
+
+          <dt>recover
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Invokes Esentutl.exe to perform a soft
+          recovery of the database. Soft recovery scans the
+          log files and ensures all committed transactions
+          therein are also reflected in the data file. The
+          Backup program truncates the log files appropriately.
+          Logs are used to ensure committed transactions are
+          not lost if your system fails or if you have
+          unexpected power loss. In essence, transaction
+          data is written first to a log file and then to
+          the data file. When you restart after failure, you
+          can rerun the log to reproduce the transactions
+          that were committed but hadn't made it to the data
+          file.</dd>
+
+          <dt>set path backup %s
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>%s identifies a target directory. Sets the
+          disk-to-disk backup target to the directory
+          specified by %s. The directory service can be
+          configured to perform an online disk-to-disk
+          backup at scheduled intervals.</dd>
+
+          <dt>set path db %s
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>%s identifies a target directory. Updates the
+          part of the registry that identifies the location
+          and file name of the data file. Use only to
+          rebuild a domain controller that has lost its data
+          file and that is not being restored by means of
+          normal restoration procedures.</dd>
+
+          <dt>set path logs %s
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>%s identifies a target directory. Updates the
+          part of the registry that identifies the location
+          of the log files. Use only if you are rebuilding a
+          domain controller that has lost its log files and
+          is not being restored by means of normal
+          restoration procedures.</dd>
+
+          <dt>set path working dir %s
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>%s identifies a target directory. Sets the
+          part of the registry that identifies the directory
+          service's working directory to the directory
+          specified by %s.</dd>
+        </dl>
+      </dd>
+      <dt><a name="ParameterIPDenyList"></a> IPDeny List:</dt>
+      <dd>
+        <dl>
+          <dt>? or help
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Displays command help.</dd>
+
+          <dt>add %s1 %s2
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Adds an entry to the IP Deny List. %s1 is
+          either the host component or network component of
+          an IP address. If a host component is specified,
+          %s2 is specified as NODE; whereas if the network
+          component is specified, %s2 is the subnet mask.
+          The entries that you specify by using the add
+          command are not applied until you commit them by
+          using <b>Commit</b>.</dd>
+
+          <dt>cancel
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Cancels any uncommitted additions or deletions.</dd>
+
+          <dt>commit
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Commits all additions or deletions to the LDAP
+          policy object.</dd>
+
+          <dt>connections
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Invokes the <b>server connections</b> submenu.</dd>
+
+          <dt>delete %d
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Deletes the specified entry with the index
+          number %d. Use to display entries with the
+          respective index number.</dd>
+
+          <dt>quit
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Takes you back to the previous menu or
+          exits the utility.</dd>
+
+          <dt>show
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Shows all IP addresses that are included in
+          the IP Deny List.</dd>
+
+          <dt>test %s
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Determines whether the IP address specified by
+          %s is allowed or denied access to the domain
+          controller.</dd>
+        </dl>
+      </dd>
+      <dt><a name="ParameterLDAPpolicies"></a> LDAP policies:</dt>
+      <dd>
+        <dl>
+          <dt>? or help
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Displays command help.</dd>
+
+          <dt>cancel changes
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Cancels any uncommitted modifications of the
+          LDAP administration limits to the default query
+          policy.</dd>
+
+          <dt>commit changes
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Commits all modifications of the LDAP
+          administration limits to the default query policy.</dd>
+
+          <dt>connections
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Invokes the <b>server connections</b> submenu.</dd>
+
+          <dt>list
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Lists all supported LDAP administration limits
+          for the domain controller.</dd>
+
+          <dt>quit
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Takes you back to the previous menu or
+          exits the utility.</dd>
+
+          <dt>set %s1 to %s2
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Sets the value of the LDAP administration
+          limit %s1 to the value %s2. Limits:
+          <ul>
+          <li><b>InitRecvTimeout</b> Initial receive
+          time-out (120 seconds)</li>
+          <li><b>MaxConnections</b> Maximum number of open
+          connections (5000)</li>
+          <li><b>MaxConnIdleTime</b> Maximum amount of time
+          a connection can be idle (900 seconds)</li>
+          <li><b>MaxActiveQueries</b> Maximum number of
+          queries that can be active at one time (20)</li>
+          <li><b>MaxNotificationPerConnection</b> Maximum
+          number of notifications that a client can request
+          for a given connection (5)</li>
+          <li><b>MaxPageSize</b> Maximum page size supported
+          for LDAP responses (1000 records)</li>
+          <li><b>MaxQueryDuration</b> Maximum length of time
+          the domain controller can execute a query
+          (120 seconds)</li>
+          <li><b>MaxTempTableSize</b> Maximum size of
+          temporary storage allocated to execute queries
+          (10,000 records)</li>
+          <li><b>MaxResultSetSize</b> Maximum size of the
+          LDAP Result Set (262144 bytes)</li>
+          <li><b>MaxPoolThreads</b> Maximum number of
+          threads created by the domain controller for query
+          execution (4 per processor)</li>
+          <li><b>MaxDatagramRecv</b> Maximum number of
+          datagrams that can be processed by the domain
+          controller simultaneously (1024)</li>
+          </ul>
+          </dd>
+
+          <dt>show values
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Shows the current and proposed values for the
+          LDAP administration limits.</dd>
+        </dl>
+      </dd>
+      <dt><a name="ParameterMetadataCleanup"></a> Metadata cleanup:</dt>
+      <dd>
+        <dl>
+          <dt>? or help
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Displays command help.</dd>
+
+          <dt>connections
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Invokes the <b>server connections</b> submenu.</dd>
+
+          <dt>quit
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Takes you back to the previous menu or
+          exits the utility.</dd>
+
+          <dt>remove selected domain
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Removes the metadata associated with the
+          domain selected in the
+          <b>Select operation target</b> submenu.</dd>
+
+          <dt>remove selected naming context
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Removes directory service objects for selected
+          Naming Context.</dd>
+
+          <dt>remove selected server
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Removes the metadata associated with the
+          domain selected in the
+          <b>Select operation target</b> submenu.</dd>
+
+          <dt>select operation target
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Invokes the <b>Select operation target</b>
+          submenu.</dd>
+        </dl>
+      </dd>
+      <dt><a name="ParameterRoles"></a> Roles:</dt>
+      <dd>
+        <dl>
+          <dt>? or help
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Displays command help.</dd>
+
+          <dt>connections
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Invokes the <b>server connections</b> submenu.</dd>
+
+          <dt>quit
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Takes you back to the previous menu or
+          exits the utility.</dd>
+
+          <dt>seize domain naming master
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Forces the domain controller to which you are
+          connected to claim ownership of the domain-naming
+          operations master role without regard to the data
+          associated with the role. Use only for recovery
+          purposes.</dd>
+
+          <dt>seize infrastructure master
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Forces the domain controller to which you are
+          connected to claim ownership of the infrastructure
+          operations master role without regard to the data
+          associated with the role. Use only for recovery
+          purposes.</dd>
+
+          <dt>seize PDC
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Forces the domain controller to which you are
+          connected to claim ownership of the PDC operations
+          master role without regard to the data associated
+          with the role. Use only for recovery purposes.</dd>
+
+          <dt>seize RID master
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Forces the domain controller to which you are
+          connected to claim ownership of the relative ID
+          master role without regard to the data associated
+          with the role. Use only for recovery purposes.</dd>
+
+          <dt>seize schema master
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Forces the domain controller to which you are
+          connected to claim ownership of the schema
+          operations master role without regard to the data
+          associated with the role. Use only for recovery
+          purposes.</dd>
+
+          <dt>select operation target
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Invokes the <b>Select operation target</b>
+          submenu.</dd>
+
+          <dt>transfer domain naming master
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Instructs the domain controller to which you
+          are connected to obtain the domain-naming role by
+          means of controlled transfer.</dd>
+
+          <dt>transfer infrastructure master
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Instructs the domain controller to which you
+          are connected to obtain the infrastructure
+          operations master role by means of controlled
+          transfer.</dd>
+
+          <dt>transfer PDC
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Instructs the domain controller to which you
+          are connected to obtain the PDC operations master
+          by means of controlled transfer.</dd>
+
+          <dt>transfer RID master
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Instructs the domain controller to which you
+          are connected to obtain the relative ID master
+          role by means of controlled transfer.</dd>
+
+          <dt>transfer schema master
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Instructs the domain controller to which you
+          are connected to obtain the schema operations
+          master role by means of controlled transfer.</dd>
+        </dl>
+      </dd>
+      <dt><a name="ParameterSecurityAccountManagement"></a> Security account management:</dt>
+      <dd>
+        <dl>
+          <dt>? or help
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Displays command help.</dd>
+
+          <dt>check duplicate SID
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Checks the domain for any objects that have
+          duplicate security identifiers.</dd>
+
+          <dt>cleanup duplicate SID
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Deletes all objects that have duplicate
+          security identifiers and logs these entries into
+          the log file.</dd>
+
+          <dt>connect to server %s
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Connects to server, NetBIOS name or DNS host
+          name.</dd>
+
+          <dt>log file %s
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Sets the log file to %s. If a log file is not
+          explicitly set, the log file defaults to Dupsid.log.</dd>
+
+          <dt>quit
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Takes you back to the previous menu or
+          exits the utility.</dd>
+        </dl>
+      </dd>
+      <dt><a name="ParameterSemanticDatabaseAnalysis"></a> Semantic database analysis:</dt>
+      <dd>
+        <dl>
+          <dt>? or help
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Displays command help.</dd>
+
+          <dt>get %d
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Retrieves record number %d from the Ntds.dit.</dd>
+
+          <dt>go
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Starts the semantic analysis of the Ntds.dit.
+          A report is generated and written to a file named
+          Dsdit.dmp.n, in the current directory, where n is
+          an integer incremented each time that you carry
+          out the command.</dd>
+
+          <dt>quit
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Takes you back to the previous menu or
+          exits the utility.</dd>
+
+          <dt>verbose %s
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Toggles verbose mode on or off.</dd>
+        </dl>
+      </dd>
+      <dt><a name="ParameterSetDSRMPassword"></a> Set DSRM Password:</dt>
+      <dd>
+        <dl>
+          <dt>? or help
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Displays command help.</dd>
+
+          <dt>quit
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Takes you back to the previous menu or
+          exits the utility.</dd>
+
+          <dt>Reset Password on server %s
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Prompts for a new DSRM password for a domain
+          controller. Use NULL as the domain controller name
+          to reset the DSRM password on the current server.
+          After entering this parameter, the <b>Please type
+          password for DS Restore Mode Administrator
+          Account:</b> prompt appears. Type the desired new
+          DSRM password at the prompt.</dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

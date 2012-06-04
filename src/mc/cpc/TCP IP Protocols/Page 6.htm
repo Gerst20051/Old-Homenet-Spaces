@@ -1,0 +1,870 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>TCP / IP Protocols</title>
+<meta name="Microsoft Theme" content="layers 0011">
+</head>
+
+<body background="../../../_themes/layers/laybkgnd.gif" bgcolor="#FFFFFF" text="#000000" link="#330099" vlink="#999999" alink="#660033"><!--mstheme--><font face="georgia,times new roman,times">
+
+<h1 align="center"><!--mstheme--><font face="georgia,Times New Roman,Times"><!--mstheme--><b><b><b><b>TCP/IP Protocols</b></b></b><!--mstheme--></font><!--mstheme--></b></h1>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<p><span class="title2">AH</span> </p>
+<p class="blacksmall">RFC1826
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1826.html" target="_blank">
+<font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc1826.html</font></a><br>
+This RFC has been replaced by
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc2402.html" target="_blank">
+<font size="1">RFC 2402</font></a><font size="1">.</font><br class="blacksmall">
+The information on this page will be updated to suit the new RFC in the near future.<br>
+RFC1827
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1827.htm" target="window2">
+<font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc1827.html</font></a>
+</p>
+<p class="blacktext">The IP Authentication Header seeks to provide security by adding<br>
+authentication information to an IP datagram. This authentication<br>
+information is calculated using all of the fields in the IP datagram<br>
+(including not only the IP Header but also other headers and the user<br>
+data) which do not change in transit. Fields or options which need<br>
+to change in transit (e.g., hop count, time to live, ident, fragment offset, or 
+routing pointer, such as audio and video. Sources of data can include both live 
+data feeds and stored clips. This protocol is intended to control multiple data 
+delivery sessions, provide a means for choosing delivery channels such as UDP, multicast 
+UDP and TCP, and provide a means for choosing delivery mechanisms bases upon RTP. 
+) are considered to be zero<br>
+for the calculation of the authentication data. This provides<br>
+significantly more security than is currently present in IPv4 and<br>
+might be sufficient for the needs of many users.<br>
+<br>
+When used with IPv6, the Authentication Header normally appears after the IPv6 Hop-by-Hop 
+Header and before the IPv6 Destination Options. When used with IPv4, the Authentication 
+Header normally follows the main IPv4 header.<br>
+The format of AH is shown in the following illustration: </p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="467" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr>
+    <td vAlign="top" width="109"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Next header</p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="137"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Length</p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="231"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Reserved</p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" colSpan="3"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Security parameters index </p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" colSpan="3"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Authentication data<br>
+    (variable number of 32-bit words) </p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" align="middle" width="109" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td vAlign="top" align="middle" width="137" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td vAlign="top" align="middle" width="231" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">2 bytes<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" align="middle" bgColor="white" colSpan="3"><!--mstheme--><font face="georgia,times new roman,times">
+    <span class="blackitalic">IP Authentication Header structure</span> <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title2">ESP<font size="5"> </font></span></p>
+<p class="blacksmall">RFC1826
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc2080.html"><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc1826.html</font></a><br>
+RFC1827
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1827.htm" target="window2">
+<font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc1827.htm</font></a><font size="1">l</font><br>
+This RFC has been replaced by
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc2406.html" target="_blank">
+<font size="1">RFC 2406</font></a><font size="1">.</font><br>
+The information on this page will be updated to suit the new RFC in the near future.</p>
+<p class="blacktext">The IP Encapsulating Security Payload (ESP) seeks to provide 
+confidentiality and integrity by encrypting data to be protected and placing the 
+encrypted data in the data portion of the IP ESP. Depending on the user&#39;s security 
+requirements, this mechanism may be used to encrypt either a transport-layer segment 
+(e.g., TCP, UDP, ICMP, IGMP) or an entire IP datagram. Encapsulating the protected 
+data is necessary to provide confidentiality for the entire original datagram.</p>
+<p class="blacktext">ESP may appear anywhere after the IP header and before the 
+final transport-layer protocol. The Internet Assigned Numbers Authority has assigned 
+Protocol Number 50 to ESP. The header immediately preceding an ESP header will always 
+contain the value 50 in its Next Header (IPv6) or Protocol (IPv4) field. ESP consists 
+of an unencrypted header followed by encrypted data. The encrypted data includes 
+both the protected ESP header fields and the protected user data, which is either 
+an entire IP datagram or an upper-layer protocol frame (e.g., TCP or UDP).</p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="2" width="400" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr>
+    <td class="blacktext" vAlign="top" colSpan="3"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Security association identifier (SPI)</p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" colSpan="3"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Opaque transform data<br>
+    (variable length) </p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" align="middle" bgColor="white" colSpan="3"><!--mstheme--><font face="georgia,times new roman,times">
+    32 bits<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" align="middle" bgColor="white" colSpan="3"><!--mstheme--><font face="georgia,times new roman,times">
+    <span class="blackitalic">IP ESP structure</span> <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">Security association identifier</span><span class="redsmall"><br>
+</span><span class="blacktext">The SPI is a 32-bit pseudo-random value identifying 
+the security association for this datagram. If no security association has been 
+established, the value of the SPI field is 0x00000000. An SPI is similar to the 
+SAID used in other security protocols. The name has been changed because the semantics 
+used here are not exactly the same as those used in other security protocols.</span></p>
+<p class="title2">&nbsp;</p>
+<p class="title2">TLS</p>
+<p><a href="ftp://ftp.rfc-editor.org/in-notes/rfc2246.txt">
+<span class="blacksmall">ftp://ftp.rfc-editor.org/in-notes/rfc2246.txt</span></a><br>
+<br>
+<span class="blacktext">The primary goal of the TLS (Transport Layer Security) Protocol 
+is to provide privacy and data integrity between two communicating applications. 
+The protocol is composed of two layers: the TLS Record Protocol and the TLS Handshake 
+Protocol. At the lowest level, layered on top of some reliable transport protocol 
+(e.g., TCP[TCP]), is the TLS Record Protocol. The TLS Record Protocol provides connection 
+security that has two basic properties:</span></p>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/layers/alaybul1.gif" width="12" height="12" hspace="15" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="georgia,times new roman,times"><span class="blacktext">Privacy - symmetric cryptography is used for data 
+  encryption (e.g., DES [DES], RC4 [RC4], etc.) The keys for this symmetric encryption 
+  are generated uniquely for each connection and are based on a secret negotiated 
+  by another protocol (such as the TLS Handshake Protocol). The Record Protocol 
+  can also be used without encryption.</span> <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/layers/alaybul1.gif" width="12" height="12" hspace="15" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="georgia,times new roman,times">Reliability - message transport includes a message integrity 
+  check using a keyed MAC. Secure hash functions (e.g., SHA, MD5, etc.) are used 
+  for MAC computations. The Record Protocol can operate without a MAC, but is generally 
+  only used in this mode while another protocol is using the Record Protocol as 
+  a transport for negotiating security parameters. <!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="blacktext">The TLS Record Protocol is used for encapsulation of 
+various higher level protocols. One such encapsulated protocol, the TLS Handshake 
+Protocol, allows the server and client to authenticate each other and to negotiate 
+an encryption algorithm and cryptographic keys before the application protocol transmits 
+or receives its first byte of data. The TLS Handshake Protocol provides connection 
+security that has three basic properties:</span></p>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/layers/alaybul1.gif" width="12" height="12" hspace="15" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="georgia,times new roman,times">The peer&#39;s identity can be authenticated using asymmetric, 
+  or public key, cryptography (e.g., RSA [RSA], DSS [DSS], etc.). This authentication 
+  can be made optional, but is generally required for at least one of the peers.
+  <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/layers/alaybul1.gif" width="12" height="12" hspace="15" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="georgia,times new roman,times">The negotiation of a shared secret is secure: the negotiated 
+  secret is unavailable to eavesdroppers, and for any authenticated connection the 
+  secret cannot be obtained, even by an attacker who can place himself in the middle 
+  of the connection. <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/layers/alaybul1.gif" width="12" height="12" hspace="15" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="georgia,times new roman,times">The negotiation is reliable: no attacker can modify the 
+  negotiation communication without being detected by the parties to the communication.
+  <!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext">One advantage of TLS is that it is application protocol independent.<br>
+Higher level protocols can layer on top of the TLS Protocol transparently. The TLS 
+standard, however, does not specify how protocols add security with TLS; the decisions 
+on how to initiate TLS handshaking and how to interpret the authentication certificates 
+exchanged are left up to the judgment of the designers and implementors of protocols 
+which run on top of TLS.</p>
+<p><span class="title4">Header</span><br>
+<span class="blackbold">Fragmentation</span></p>
+<blockquote>
+  <p><span class="blacktext">struct {<br>
+&nbsp;&nbsp;&nbsp; uint8 major, minor;<br>
+  } ProtocolVersion;</span></p>
+  <p class="blacktext">enum {<br>
+&nbsp;&nbsp; change_cipher_spec(20), alert(21), handshake(22),<br>
+&nbsp;&nbsp; application_data(23), (255)<br>
+  } ContentType;</p>
+  <p class="blacktext">struct {<br>
+&nbsp;&nbsp; ContentType type;<br>
+&nbsp;&nbsp; ProtocolVersion version;<br>
+&nbsp;&nbsp; uint16 length;<br>
+&nbsp;&nbsp; opaque fragment[TLSPlaintext.length];<br>
+  } TLSPlaintext;</p>
+</blockquote>
+<p class="blackbold">Record compression and decompression</p>
+<blockquote>
+  <p class="blacktext">struct {<br>
+&nbsp;&nbsp; ContentType type; /* same as TLSPlaintext.type */<br>
+&nbsp;&nbsp; ProtocolVersion version;/* same as TLSPlaintext.version */<br>
+&nbsp;&nbsp; uint16 length;<br>
+&nbsp;&nbsp; opaque fragment[TLSCompressed.length];<br>
+  } TLSCompressed;</p>
+</blockquote>
+<p class="blackbold">Record payload protection</p>
+<blockquote>
+  <p><span class="blacktext">struct {<br>
+&nbsp;&nbsp; ContentType type;<br>
+&nbsp;&nbsp; ProtocolVersion version;<br>
+&nbsp;&nbsp; uint16 length;<br>
+&nbsp;&nbsp; select (CipherSpec.cipher_type) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case stream: GenericStreamCipher;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case block: GenericBlockCipher;<br>
+&nbsp;&nbsp; } fragment;<br>
+  } TLSCiphertext;</span></p>
+  <p>&nbsp;</p>
+</blockquote>
+<p><span class="title2">BGP-4</span></p>
+<p><span class="blacksmall">RFC1654:
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1654.html"><u>
+<font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc1654.html</font><br>
+</u></a>This RFC has been replaced by
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1771.html" target="_blank">
+<font size="1">RFC 1771</font></a><font size="1">.</font><br>
+The information on this page will be updated to suit the new RFC in the near future.</span><br>
+<br>
+<span class="blacktext">The Border Gateway Protocol (BGP) is an inter-Autonomous 
+System routing protocol. The primary function of a BGP speaking system is to exchange 
+network reachability information with other BGP systems. BGP-4 provides a new set 
+of mechanisms for supporting classes interdomain routing.<br>
+(Compliant with IETF RFC1654.)</span></p>
+<p class="blacktext">The format of the header is shown in the following illustration:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="400" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <!--DWLayoutTable-->
+  <tr>
+    <td vAlign="top" width="52%" height="22"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Marker </p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="19%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Length </p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Type </p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <!--DWLayoutEmptyCell-->&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr bgColor="#ffffff">
+    <td vAlign="top" width="52%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>16 </p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="19%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>2 </p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" align="right" width="50"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>1 </p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="54"><!--mstheme--><font face="georgia,times new roman,times">bytes<!--mstheme--></font></td>
+  </tr>
+  <tr bgColor="#ffffff">
+    <td vAlign="top" colSpan="3"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <span class="blackitalic">BGP-4 header structure </span>
+    </div>
+    <!--mstheme--></font></td>
+    <td vAlign="top"><!--mstheme--><font face="georgia,times new roman,times">
+    <!--DWLayoutEmptyCell-->&nbsp;<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">Marker</span><span class="redsmall"><br>
+</span><span class="blacktext">A 16-byte message containing a value predictable 
+by the receiver of the message.</span></p>
+<p><span class="title4">Length</span><span class="redsmall"><br>
+</span><span class="blacktext">The length of the message including the header.</span></p>
+<p><span class="title4">Type</span><span class="redsmall"><br>
+</span><span class="blacktext">The message type. Possible messages are:<br>
+Open, Update, Notification, KeepAlive.</span></p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="480" border="0">
+  <tr>
+    <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">
+    <a onclick="MM_openBrWindow('ScreenCaptures/bgp4.gif','ScreenCaptures','scrollbars=yes,resizable=yes,width=700,height=600')" href="javascript:;">
+    <img src="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/BGP4%20Small.gif" border="0" width="480" height="339"></a><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="purple"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <a href="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/BGP4.gif">
+      Enlarge</a></div>
+    <!--mstheme--></font></td>
+    <td class="purple"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <a href="http://www.radcom.com/Technologies.aspx?BoneId=376&ObjId=-1&=&=&=&staticName1=1&staticName2=" target="_blank">
+      More Details</a></div>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title2">EGP</span></p>
+<p><span class="blacksmall">RFC904</span>
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc2060html"><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc904.html</font></a>
+</p>
+<p class="blacktext">The Exterior Gateway Protocol (EGP) exists in order to convey 
+net-reachability information between neighboring gateways, possibly in different 
+autonomous systems. The protocol includes mechanisms to acquire neighbors, monitor 
+neighbor reachability and exchange net-reachability information in the form of Update 
+messages. The protocol is based on periodic polling using Hello/I-Heard-You (I-H-U) 
+message exchanges to monitor neighbor reachability and Poll commands to solicit 
+Update responses.</p>
+<p class="blacktext">The format of the header is shown in the following illustration:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="467" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr>
+    <td vAlign="top" align="middle" width="25%"><!--mstheme--><font face="georgia,times new roman,times">EGP Version<!--mstheme--></font></td>
+    <td vAlign="top" align="middle" width="25%"><!--mstheme--><font face="georgia,times new roman,times">Type <!--mstheme--></font></td>
+    <td vAlign="top" align="middle" width="25%"><!--mstheme--><font face="georgia,times new roman,times">Code <!--mstheme--></font></td>
+    <td vAlign="top" align="middle" width="25%"><!--mstheme--><font face="georgia,times new roman,times">Status<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" align="middle" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">Checksum <!--mstheme--></font></td>
+    <td vAlign="top" align="middle" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">Autonomous System number<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" align="middle" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">&nbsp;Sequence number <!--mstheme--></font></td>
+    <td vAlign="top" bgColor="#ffffff" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" align="middle" width="25%" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td vAlign="top" align="middle" width="25%" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td vAlign="top" align="middle" width="25%" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td vAlign="top" align="middle" width="25%" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" align="middle" bgColor="white" colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">
+    <span class="blackitalic">EGP structure</span> <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">EGP version</span><span class="redsmall"><br>
+</span><span class="blacktext">The version number. This version is version 2.
+</span></p>
+<p><span class="title4">Type</span><span class="redsmall"><br>
+</span><span class="blacktext">Identifies the message type.</span></p>
+<p><span class="title4">Code</span><span class="redsmall"><br>
+</span><span class="blacktext">Identifies the message code. </span></p>
+<p><span class="title4">Status </span><span class="redsmall"><br>
+</span><span class="blacktext">Contains message-dependent status information.
+</span></p>
+<p><span class="title4">Checksum </span><span class="redsmall"><br>
+</span><span class="blacktext">The EGP checksum is the 16-bit one&#39;s complement of 
+the one&#39;s complement sum of the EGP message starting with the EGP version number 
+field. When computing the checksum the checksum field itself should be zero.</span></p>
+<p><span class="title4">Autonomous System Number </span><span class="redsmall">
+<br>
+</span><span class="blacktext">Assigned number identifying the particular autonomous 
+system.</span></p>
+<p><span class="title4">Sequence Number</span><span class="redsmall"><br>
+</span><span class="blacktext">Send state variable (commands) or receive state variable 
+(responses and indications). </span></p>
+<p>&nbsp;</p>
+<p><span class="title2">EIGRP</span></p>
+<p class="blacktext">EIGRP Enhanced Interior Gateway Routing Protocol (EIGRP) is 
+an enhanced version of IGRP. IGRP is Cisco&#39;s Interior Gateway Routing Protocol used 
+in TCP/IP and OSI internets. It is regarded as an interior gateway protocol (IGP) 
+but has also been used extensively as an exterior gateway protocol for inter-domain 
+routing. IGRP uses distance vector routing technology. The same distance vector 
+technology found in IGRP is also used in EIGRP, and the underlying distance information 
+remains unchanged. The convergence properties and the operating efficiency of this 
+protocol have improved significantly. <br>
+<br>
+The format of the EIGRP header is shown in the following illustration. </p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="2" width="75%" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr class="blacktext" bgColor="#ffffff">
+    <td><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="right">
+      8</div>
+    <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="right">
+      16</div>
+    <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="right">
+      32 bits</div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      Version</div>
+    <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      Opcode</div>
+    <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      Checksum</div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td colSpan="3"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      Flags</div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td colSpan="3"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      Sequence number</div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      Acknowledge number</div>
+    <!--mstheme--></font></td>
+    <td bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+&nbsp;</div>
+    <div align="center">
+&nbsp;</div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td colSpan="3"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      Autonomous system number</div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      Type</div>
+    <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      Length</div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr bgColor="#ffffff">
+    <td class="blackitalic" colSpan="3"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      EIGRP header structure</div>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">Version </span><br>
+The version of the protocol.<br>
+<span class="title4"><br>
+Opcode </span><br>
+1&nbsp;&nbsp;&nbsp; Update. <br>
+2&nbsp;&nbsp;&nbsp; Reserved. <br>
+3&nbsp;&nbsp;&nbsp; Query. <br>
+4&nbsp;&nbsp;&nbsp; Hello. <br>
+5&nbsp;&nbsp;&nbsp; IPX-SAP. <br>
+<br>
+<span class="title4">Type</span><br>
+1&nbsp;&nbsp;&nbsp; EIGRP Parameters. <br>
+2&nbsp;&nbsp;&nbsp; Reserved. <br>
+3&nbsp;&nbsp;&nbsp; Sequence. <br>
+4&nbsp;&nbsp;&nbsp; Software version. <br>
+5&nbsp;&nbsp;&nbsp; Next Multicast sequence. <br>
+<br>
+<span class="title4">Length</span> <br>
+Length of the frame. </p>
+<p>&nbsp;</p>
+<p><span class="title2">GRE </span></p>
+<p class="blacksmall">RFC 1701:
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1701.html"><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc1701.html</font></a><br>
+RFC 1702: <a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1702.html">
+<font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc1702.html</font></a>
+</p>
+<p class="blacktext">The Generic Routing Encapsulation (GRE) protocol provides a 
+mechanism for encapsulating arbitrary packets within an arbitrary transport protocol. 
+In the most general case, a system has a packet that needs to be encapsulated and 
+routed (the payload packet). The payload is first encapsulated in a GRE packet, 
+which possibly also includes a route. The resulting GRE packet is then encapsulated 
+in some other protocol and forwarded (the delivery protocol). </p>
+<p class="blacktext">GRE is also used with IP, using IP as the delivery protocol 
+or the payload protocol. The GRE header used in PPTP is enhanced slightly from that 
+specified in the current GRE protocol specification.</p>
+<p class="blacktext">The format of the header is shown in the following illustration:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="467" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr>
+    <td vAlign="top" align="middle" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">Flags<!--mstheme--></font></td>
+    <td vAlign="top" align="middle" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">Protocol type<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" align="middle" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">Checksum (optional)<!--mstheme--></font></td>
+    <td vAlign="top" align="middle" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">Offset (optional)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" align="middle" colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">Key (optional)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" align="middle" colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">Sequence number (optional)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" align="middle" colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">Routing (optional)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" align="middle" width="25%" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td vAlign="top" align="middle" width="25%" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td vAlign="top" align="middle" width="25%" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td vAlign="top" align="middle" width="25%" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" align="middle" bgColor="white" colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">
+    <span class="blackitalic">GRE header structure</span> <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">Flags</span><span class="redsmall"><br>
+</span><span class="blacktext">The GRE flags are encoded in the first two octets.<br>
+Bit 0 is the most significant bit, bit 12 is the least significant bit.<br>
+Flags are as follows:<br>
+Checksum present (bit 0). When set to 1, the Checksum field is present and contains 
+valid information.<br>
+Routing present (bit 1). When set to 1, the Offset and Routing fields are present 
+and contain valid information.<br>
+Key present (bit 2). When set to 1, the Key field is present in the GRE header.<br>
+Sequence number present (bit 3). When set to 1, the Sequence number field is present.<br>
+Strict Source Route (bit 4). It is recommended that this bit only be set to 1 if 
+all of the Routing Information consists of Strict Source Routes.<br>
+Recursion Control (bits 5-7). Contains a three bit unsigned integer which contains 
+the number of additional encapsulations which are permissible.<br>
+Version Number (bits 13-15). Contains the value 0. </span></p>
+<p><span class="title4">Protocol type</span><span class="redsmall"><br>
+</span><span class="blacktext">Contains the protocol type of the payload packet. 
+In general, the value will be the Ethernet protocol type field for the packet.
+</span></p>
+<p><span class="title4">Offset</span><span class="redsmall"><br>
+</span><span class="blacktext">Indicates the octet offset from the start of the 
+Routing field to the first octet of the active Source Route Entry to be examined.
+</span></p>
+<p><span class="title4">Checksum</span><span class="redsmall"><br>
+</span><span class="blacktext">Contains the IP (one’s complement) checksum of the 
+GRE header and the payload packet. </span></p>
+<p><span class="title4">Key</span><span class="redsmall"><br>
+</span><span class="blacktext">Contains a four octet number which was inserted by 
+the encapsulator. It may be used by the receiver to authenticate the source of the 
+packet. </span></p>
+<p><span class="title4">Sequence number</span><span class="redsmall"><br>
+</span><span class="blacktext">Contains an unsigned 32 bit integer which is inserted 
+by the encapsulator. It may be used by the receiver to establish the order in which 
+packets have been transmitted from the encapsulator to the receiver. </span></p>
+<p><span class="title4">Routing</span><span class="blacktext"><br>
+Contains data which may be used in routing this packet. </span></p>
+<p class="blacktext">The format of the enhanced GRE header is as follows:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="467" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr>
+    <td vAlign="top" align="middle" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">Flags<!--mstheme--></font></td>
+    <td vAlign="top" align="middle" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">Protocol type<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" align="middle" colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">Key (HW) payload length<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" align="middle" colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">Key (LW) call ID<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" align="middle" colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">Sequence number (optional)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" align="middle" colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">Acknowledgement number (optional)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" align="middle" width="25%" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td vAlign="top" align="middle" width="25%" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td vAlign="top" align="middle" width="25%" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td vAlign="top" align="middle" width="25%" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" align="middle" bgColor="white" colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">
+    <span class="blackitalic">Enhanced GRE header structure</span> <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">Flags</span><span class="redsmall"><br>
+</span><span class="blacktext">Flags are defined as follows:<br>
+C (bit 0). Checksum Present.<br>
+R (bit 1). Routing Present.<br>
+K (bit 2). Key Present.<br>
+S (bit 3). Sequence Number Present.<br>
+s (bit 4). Strict source route present.<br>
+Recur (bits 5-7). Recursion control.<br>
+A (bit 8). Acknowledgment sequence number present.<br>
+Flags (bits 9-12). Must be set to zero.<br>
+Ver (bits 13-15). Must contain 1 (enhanced GRE). </span></p>
+<p><span class="title4">Protocol type</span><span class="redsmall"><br>
+</span><span class="blacktext">Set to hex 880B. Key Use of the Key field is up to 
+the implementation.</span></p>
+<p><span class="title4">Sequence number</span><span class="redsmall"><br>
+</span><span class="blacktext">Contains the sequence number of the payload.
+</span></p>
+<p><span class="title4">Acknowledgment number</span><span class="redsmall"><br>
+</span><span class="blacktext">Contains the sequence number of the highest numbered 
+GRE packet received by the sending peer for this user session.<br>
+<br>
+&nbsp;</span></p>
+<p><span class="title2">HSRP</span></p>
+<p><span class="blacksmall">RFC2281</span>
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc2281.html"><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc2281.html</font></a>
+</p>
+<p class="blacktext">The Cisco Hot Standby Router Protocol (HSRP) provides a mechanism 
+which is designed to support non-disruptive failover of IP traffic in certain circumstances. 
+In particular, the protocol protects against the failure of the first hop router 
+when the source host cannot learn the IP address of the first hop router dynamically. 
+The protocol is designed for use over multi-access, multicast or broadcast capable 
+LANs (e.g., Ethernet). A large class of legacy host implementations that do not 
+support dynamic discovery are capable of configuring a default router. HSRP provides 
+failover services to those hosts.</p>
+<p class="blacktext">HSRP runs on top of UDP, and uses port number 1985. Packets 
+are sent to multicast address 224.0.0.2 with TTL 1. Routers use their actual IP 
+address as the source address for protocol packets, not the virtual IP address. 
+This is necessary so that the HSRP routers can identify each other. The format of 
+the data portion of the UDP datagram is:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="467" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr>
+    <td vAlign="top" width="98"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Version</p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="137"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Op code</p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="200"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>State</p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" align="middle" width="200"><!--mstheme--><font face="georgia,times new roman,times">Hellotime <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" align="middle" width="98"><!--mstheme--><font face="georgia,times new roman,times">&nbsp;Holdtime<!--mstheme--></font></td>
+    <td vAlign="top" align="middle" width="137"><!--mstheme--><font face="georgia,times new roman,times">&nbsp;Priority<!--mstheme--></font></td>
+    <td vAlign="top" align="middle" width="200"><!--mstheme--><font face="georgia,times new roman,times">&nbsp;Group<!--mstheme--></font></td>
+    <td vAlign="top" align="middle" width="200"><!--mstheme--><font face="georgia,times new roman,times">&nbsp;Reserved<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" colSpan="4"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Authentication data</p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" align="middle" colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">Authentication data&nbsp; <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" colSpan="4"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Virtual IP address</p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" align="middle" width="98" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td vAlign="top" align="middle" width="137" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td vAlign="top" align="middle" width="200" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td vAlign="top" align="middle" width="200" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" align="middle" bgColor="white" colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">
+    <span class="blackitalic">HSRP structure</span> <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">Version</span><span class="redsmall"><br>
+</span><span class="blacktext">HSRP version number, 0 for this version.</span></p>
+<p><span class="title4">Op code</span><span class="redsmall"><br>
+</span><span class="blacktext">Type of message contained in the packet. Possible 
+values are:<br>
+0 - Hello, sent to indicate that a router is running and is capable of becoming 
+the active or standby router.<br>
+1 - Coup, sent when a router wishes to become the active router.</span><br>
+<span class="blacktext">2 - Resign, sent when a router no longer wishes to be the 
+active router.</span></p>
+<p><span class="title4">State</span><span class="redsmall"><br>
+</span><span class="blacktext">Internally, each router in the standby group implements 
+a state machine. The State field describes the current state of the router sending 
+the message. Possible values are:<br>
+0&nbsp;&nbsp;&nbsp; Initial<br>
+1&nbsp;&nbsp;&nbsp; Learn<br>
+2&nbsp;&nbsp;&nbsp; Listen<br>
+4&nbsp;&nbsp;&nbsp; Speak<br>
+8&nbsp;&nbsp;&nbsp; Standby<br>
+16&nbsp;&nbsp; Active</span></p>
+<p><span class="title4">Hellotime</span><span class="redsmall"><br>
+</span><span class="blacktext">Approximate period between the Hello messages that 
+the router sends (for Hello messagesonly). The time is given in seconds. If the 
+Hellotime is not configured on a router, then it may be learned from the Hello message 
+from the active router. The Hellotime should only be learned if no Hellotime is 
+configured and the Hello message is authenticated. A router that sends a Hello message 
+must insert the Hellotime that it is using in the Hellotime field in the Hello message. 
+If the Hellotime is not learned from a Hello message from the active router and 
+it is not manually configured, a default value of 3 seconds is recommended.</span></p>
+<p><span class="title4">Holdtime</span><span class="redsmall"><br>
+</span><span class="blacktext">The amount of time, in seconds, that the current 
+Hello message should be considered valid. (For Hello messags only.)</span></p>
+<p><span class="title4">Priority</span><span class="redsmall"><br>
+</span><span class="blacktext">Used to elect the active and standby routers. When 
+comparing priorities of two different routers, the router with the numerically higher 
+priority wins. In the case of routers with equal priority the router with the higher 
+IP address wins.</span></p>
+<p><span class="title4">Group</span><span class="redsmall"><br>
+</span><span class="blacktext">Identifies the standby group. For Token Ring, values 
+between 0 and 2 inclusive are valid. For other media, values between 0 and 255 inclusive 
+are valid.</span></p>
+<p><span class="title4">Authentication data</span><span class="redsmall"><br>
+</span><span class="blacktext">(8 bytes) Clear-text 8 character reused password. 
+If no authentication data is configured, the recommended default value is 0x63 0x69 
+0x73 0x63 0x6F 0x00 0x00 0x00.<br>
+</span><br>
+<span class="title4">Virtual IP address</span><span class="redsmall"><br>
+</span><span class="blacktext">(4 bytes) Virtual IP address used by this group. 
+If the virtual IP address is not configured on a router, then it may be learned 
+from the Hello message from the active router. An address should only be learned 
+if no address was configured and the Hello message is authenticated.</span></p>
+<p>&nbsp;</p>
+<p><span class="title2">IGRP</span><br>
+<br>
+<span class="blacktext">The Interior Gateway Routing Protocol (IGRP) was developed 
+by the Cisco company. It is used to transfer routing information between routers.<br>
+IGRP is sent using IP datagrams with IP 9 (IGP). The packet begins with a header 
+which starts immediately after the IP header.</span></p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="75%" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr>
+    <td width="85%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">&nbsp;<!--mstheme--></font></td>
+    <td width="15%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div class="blacktext" align="center">
+      Octets</div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      Version
+    </div>
+    <!--mstheme--></font></td>
+    <td class="blacktext" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      1</div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      Opcode
+    </div>
+    <!--mstheme--></font></td>
+    <td class="blacktext" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      1</div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      Edition
+    </div>
+    <!--mstheme--></font></td>
+    <td class="blacktext" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      1</div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      ASystem
+    </div>
+    <!--mstheme--></font></td>
+    <td class="blacktext" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      1</div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      Ninterior
+    </div>
+    <!--mstheme--></font></td>
+    <td class="blacktext" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      1</div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      Nsystem
+    </div>
+    <!--mstheme--></font></td>
+    <td class="blacktext" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      1</div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      Nexterior
+    </div>
+    <!--mstheme--></font></td>
+    <td class="blacktext" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      1</div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      Checksum
+    </div>
+    <!--mstheme--></font></td>
+    <td class="blacktext" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      1</div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blackitalic" borderColor="#ffffff" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      IGRP header structure</div>
+    <!--mstheme--></font></td>
+    <td borderColor="#ffffff" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <font color="#ffffff">1</font></div>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">Version</span><br>
+<span class="blacktext">Protocol version number (currently 1).</span><br>
+<br>
+<span class="title4">Opcode</span><br>
+<span class="blacktext">Operation code indicating the message type:</span><br>
+1&nbsp;&nbsp; <span class="blacktext">Update.</span><br>
+<span class="blacktext">2&nbsp;&nbsp; Request.</span><br>
+<br>
+<span class="title4">Edition</span><br>
+<span class="blacktext">Serial number which is incremented whenever there is a change 
+in the routing table. The edition number allows gateways to avoid processing updates 
+containing information that they have already seen.<br>
+<br>
+</span><span class="title4">ASystem</span><span class="blacktext"><br>
+Autonomous system number. A gateway can participate in more than one autonomous 
+system where each system runs its own IGRP. For each autonomous system, there are 
+completely separate routing tables. This field allows the gateway to select which 
+set of routing tables to use.<br>
+Ninterior, Nsystem, Nexterior<br>
+Indicate the number of entries in each of these three sections of update messages. 
+The first entries (Ninterior) are taken to be interior, the next entries (Nsystem) 
+as being system, and the final entries (Nexterior) as exterior.<br>
+<br>
+</span><span class="title4">Checksum</span><span class="blacktext"><br>
+IP checksum which is computed using the same checksum algorithm as a UDP checksum. 
+The checksum is computed on the IGRP header and any routing information that follows 
+it. The checksum field is set to zero when computing the checksum. The checksum 
+does not include the IP header and there is no virtual header as in UDP and TCP.<br>
+An IGRP request asks the recipient to send its routing table. The request message 
+has only a header. Only the Version, Opcode and ASystem fields are used; all other 
+fields are zero.<br>
+An IGRP update message contains a header, immediately followed by routing entries. 
+As many routing entries as possible are included to fit into a 1500-byte datagram 
+(including the IP header). With current structure declarations, this allows up to 
+104 entries. If more entries are needed, several update messages are sent.</span></p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<p align="center"><a href="../../../index.html">Home</a> -
+<a href="../index.html">Computers</a> -
+<a href="../IP%20Sub-Netting.htm">IP Sub-Netting</a> -
+<a href="../ISDN%20Tutorial.htm">ISDN Tutorial</a> -
+<a href="../IP%20Addressing%20and%20Subnetting.htm">IP Addressing</a></p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<p align="center"><a href="Page%201.htm">Page 1</a> - <a href="Page%202.htm">Page 
+2</a> - <a href="Page%203.htm">Page 3</a> - <a href="Page%204.htm">Page 4</a> -
+<a href="Page%205.htm">Page 5</a> - <a href="Page%206.htm">Page 6</a> -
+<a href="Page%207.htm">Page 7</a> - <a href="Page%208.htm">Page 8</a> -
+<a href="Page%209.htm">Page 9</a> - <a href="Page%2010.htm">Page 10</a></p>
+
+<!--mstheme--></font></body>
+
+</html>

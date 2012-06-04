@@ -1,0 +1,1545 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DBLSPACE (DRVSPACE)</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDA.HTM#dblspace">Commands Da-Dr</a>
+    <h1>DBLSPACE (DRVSPACE)</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Compresses hard disk drives or floppy disks, and configures drives that
+    were compressed by using <a href="DBLSPACE.HTM">DoubleSpace</a>,
+    the integrated compression that was included with
+    <a href="../../Version/MSDOS/600.HTM">MS-DOS 6</a> and
+    <a href="../../Version/MSDOS/620.HTM">MS-DOS 6.2</a>.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p><b>Note:</b> The switches and parameters for the DBLSPACE
+    command are identical to those of the DRVSPACE command, just
+    type DRVSPACE instead of DBLSPACE when issuing the command.</p>
+
+    <p>Start DoubleSpace/DriveSpace program that provides an
+    easy-to-use, menu-oriented user interface for creating
+    and managing DoubleSpace/DriveSpace compressed drives:
+    <br>DBLSPACE</p>
+
+    <p>DBLSPACE
+    <a href="#SwitchAutomount">/AUTOMOUNT=char</a></p>
+
+    <p>DBLSPACE
+    <a href="#SwitchCompress">/COM[PRESS]</a>
+    <a href="#ParameterDrive">drive:</a>
+    [<a href="#SwitchNewdrive">/NEW[DRIVE]=drive2:</a>]
+    [<a href="#SwitchReserve">/RES[ERVE]=size</a>]
+    [<a href="#SwitchF">/F</a>]</p>
+
+    <p>DBLSPACE
+    <a href="#SwitchCreate">/CR[EATE]</a>
+    <a href="#ParameterDrive">drive:</a>
+    [<a href="#SwitchNewdrive">/N[EWDRIVE]=drive2:</a>]
+    [<a href="#SwitchReserve">/RE[SERVE]=size</a>
+    | <a href="#SwitchSize">/SI[ZE]=size</a>]</p>
+
+    <p>DBLSPACE
+    <a href="#SwitchDefragment">/DEF[RAGMENT]</a>
+    [<a href="#SwitchF">/F</a>]
+    [<a href="#ParameterDrive">drive:</a>]</p>
+
+    <p>DBLSPACE
+    <a href="#SwitchDelete">/DEL[ETE]</a>
+    <a href="#ParameterDrive">drive:</a></p>
+
+    <p>DBLSPACE
+    <a href="#SwitchDoubleguard">/DOUBLEGUARD=char</a></p>
+
+    <p>DBLSPACE
+    <a href="#SwitchFormat">/F[ORMAT]</a>
+    <a href="#ParameterDrive">drive:</a></p>
+
+    <p>DBLSPACE
+    <a href="#ParameterDrive">drive:</a>
+    <a href="#SwitchHost">/HOST=drive2:</a></p>
+
+    <p>DBLSPACE
+    [<a href="#SwitchInfo">/INFO</a>
+    | <a href="#ParameterDrive">drive:</a>]</p>
+
+    <p>DBLSPACE
+    <a href="#SwitchLastdrive">/LASTDRIVE=drive:</a></p>
+
+    <p>DBLSPACE
+    <a href="#SwitchInfo">/LI[ST]</a></p>
+
+    <p>DBLSPACE
+    <a href="#SwitchMaxfilefragments">/MAXFILEFRAGMENTS=n</a></p>
+
+    <p>DBLSPACE
+    <a href="#SwitchMaxremovabledrives">/MAXREMOVABLEDRIVES=n</a></p>
+
+    <p>DBLSPACE
+    <a href="#SwitchMount">/MO[UNT]=nnn</a>
+    <a href="#ParameterDrive">drive:</a>
+    [<a href="#SwitchNewdrive">/NEW[DRIVE]=drive2:</a>]</p>
+
+    <p>DBLSPACE
+    <a href="#SwitchRatio">/RA[TIO][=n.n]</a>
+    [<a href="#ParameterDrive">drive:</a>
+    | <a href="#SwitchAll">/ALL</a>]</p>
+
+    <p>DBLSPACE
+    <a href="#SwitchRomserver">/ROMSERVER=n</a></p>
+
+    <p>DBLSPACE
+    <a href="#SwitchSize">/SI[ZE][=size</a>]
+    | <a href="#SwitchReserve">/RES[ERVE]=size]</a>
+    <a href="#ParameterDrive">drive:</a></p>
+
+    <p>DBLSPACE
+    <a href="#SwitchSwitches">/SWITCHES=char</a></p>
+
+    <p>DBLSPACE
+    <a href="#SwitchUncompress">/UNCOMPRESS</a>
+    <a href="#ParameterDrive">drive:</a></p>
+
+    <p>DBLSPACE
+    <a href="#SwitchUnmount">/UNMOUNT</a>
+    [<a href="#ParameterDrive">drive:</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Specifies the drive you want to defragment. If
+      omitted, DoubleSpace defragments the current drive.</dd>
+      <dd>DoubleSpace will not allow you to delete/format
+      drive C.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchAll"></a> /ALL
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Specifies that you want to change the ratio of all
+      currently mounted compressed drives.</dd>
+
+      <dt><a name="SwitchAutomount"></a> /AUTOMOUNT=char
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Modifes the AUTOMOUNT setting in the <a href="#DBLSPACEINI">DBLSPACE.INI</a>
+      file. The AUTOMOUNT setting enables or disables the
+      automatic mounting of removable drives, including
+      floppy disk drives. By default, DoubleSpace
+      automatically mounts all removable drives.</dd>
+      <dd><b>Note:</b> For this switch to take effect, you
+      must restart your computer.</dd>
+      <dd>The values for /AUTOMOUNT=char are:
+        <ul>
+          <li><b>0</b> Prevents DoubleSpace from automatically
+          mounting removable drives. Use this value to save
+          memory.</li>
+          <li><b>1</b> Directs DoubleSpace to automatically mount
+          all removable drives. This is the default setting.</li>
+          <li><b>A..Z</b> Directs DoubleSpace to automatically
+          mount specified removable drives.</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchCompress"></a> /COM[PRESS]
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Compresses the files on an existing hard disk
+      drive, floppy disk, or other removable media.
+      Compressing an existing drive
+      (<a href="#ParameterDrive">drive:</a>) makes more
+      space available on that drive.</dd>
+      <dd><b>Note:</b> DoubleSpace cannot compress a drive
+      that's completely full. To compress your startup hard
+      disk drive, the drive must contain at least 1.2 MB of
+      free space. Other hard disk drives and floppy disks
+      must contain at least 1.1 MB of free space.
+      (DoubleSpace cannot compress 360K floppy disks.)</dd>
+      <dd>You can use DoubleSpace to increase the storage
+      capacity of floppy disks in addition to hard disks.
+      After compressing a floppy disk, you can use it to
+      store data or to transfer data from one computer to
+      another.</dd>
+      <dd>Compressing a floppy disk is similar to compressing
+      an existing hard disk drive. You can compress a floppy
+      disk that is completely empty or one that contains a
+      few files. (Make sure the floppy disk is formatted and
+      has at least 1.1 MB of free space. DoubleSpace cannot
+      compress a floppy disk that is full. DoubleSpace also
+      cannot compress 360K floppy disks.)</dd>
+      <dd>In general, you use a compressed floppy disk just
+      as you would a normal floppy disk. The main difference
+      is that, to use a compressed floppy disk to transfer
+      data from one computer to another, both computers must
+      be running DoubleSpace.</dd>
+      <dd>By default, DoubleSpace automatically mounts a
+      compressed floppy disk when you try to use that disk.
+      However, if you disable DoubleSpace's <a href="#SwitchAutomount">Automount</a> feature
+      in order to save memory, you must mount each
+      compressed floppy disk yourself, before you can use it.</dd>
+      <dd>If you have turned off
+      <a href="#SwitchAutomount">Automount</a>, when you first
+      compress a floppy disk, DoubleSpace mounts it for you.
+      However, if you change floppy disks or restart your
+      computer, you will have to remount the floppy disk
+      before you can use it again.</dd>
+      <dd>To mount a floppy disk, use the
+      <a href="#SwitchMount">/MOUNT</a> option.</dd>
+      <dd>To enable or disable DoubleSpace's <a href="#SwitchAutomount">Automount</a>
+      feature, use the <a href="#SwitchAutomount">/AUTOMOUNT</a>
+      option.</dd>
+
+      <dt><a name="SwitchCreate"></a> /CR[EATE]
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Creates a new compressed drive
+      (<a href="#ParameterDrive">drive:</a>) by using
+      free space on an existing uncompressed drive. The new
+      compressed drive will provide more storage capacity
+      than the amount of space it uses.</dd>
+
+      <dt><a name="SwitchDefragment"></a> /DEF[RAGMENT]
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Defragments the selected compressed drive.
+      Defragmenting a compressed drive consolidates the free
+      space on it. If you are planning to reduce the size of
+      a compressed drive, you should first use the
+      Defragment command to consolidate the drive's free
+      space. You can then make the drive smaller than you
+      could if you did not first defragment it.</dd>
+      <dd>The <a href="DEFRAG.HTM">DEFRAG</a> command
+      optimizes disk performance by reorganizing the files
+      on a drive. You can use <a href="DEFRAG.HTM">DEFRAG</a>
+      to optimize uncompressed drives. Although you can run
+      <a href="DEFRAG.HTM">DEFRAG</a> on a compressed
+      drive, doing so will probably not improve your
+      system's speed.</dd>
+      <dd>Unlike the <a href="DEFRAG.HTM">DEFRAG</a>
+      command, the /DEFRAGMENT switch does not speed up your
+      system. /DEFRAGMENT simply consolidates a compressed
+      drive's free space so that all the free space is at
+      the end of the compressed volume file. This provides
+      the fullest utilization of your disk space, and also
+      enables you to reduce the size of the compressed drive
+      more than you otherwise could.</dd>
+      <dd>To defragment a compressed drive as much as
+      possible, use both the <a href="DEFRAG.HTM">DEFRAG</a>
+      command and the /DEFRAGMENT switch:
+        <ol>
+          <li>Defragment the drive by using the
+          <a href="DEFRAG.HTM">DEFRAG</a> command.</li>
+          <li>Defragment it again by using the DBLSPACE
+          <a href="#SwitchDefragment">/DEFRAGMENT</a>
+          <a href="#SwitchF">/F</a> command.</li>
+          <li>Defragment it a third time by using the
+          DBLSPACE <a href="#SwitchDefragment">/DEFRAGMENT</a>
+          command without the <a href="#SwitchF">/F</a>
+          switch.</li>
+        </ol>
+      </dd>
+
+      <dt><a name="SwitchDelete"></a> /DEL[ETE]
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Deletes the selected compressed drive
+      (<a href="#ParameterDrive">drive:</a>) and erases the
+      associated compressed volume file.</dd>
+      <dd><b>CAUTION:</b> Deleting a compressed drive erases
+      the entire drive and all the files it contains.</dd>
+      <dd>If you accidentally delete a compressed drive, you
+      might be able to restore it by using Microsoft
+      <a href="../U/UNDELETE.HTM">Undelete</a>. When
+      DoubleSpace deletes a compressed drive, it actually
+      deletes a file on your uncompressed drive. This file
+      is called the &quot;compressed volume file&quot;. A
+      compressed volume file has a filename in the form
+      DBLSPACE.nnn (ie. DBLSPACE.000).</dd>
+      <dd>First, restore the deleted compressed volume file
+      by using <a href="../U/UNDELETE.HTM">Undelete</a>.
+      Once you have restored the file, remount it by using
+      the DBLSPACE <a href="#SwitchMount">/MOUNT</a>
+      command. If DoubleSpace cannot remount the compressed
+      volume file, run <a href="../S/SCANDISK.HTM">ScanDisk</a>
+      on that compressed volume file.</dd>
+
+      <dt><a name="SwitchDoubleguard"></a> /DOUBLEGUARD=0|1
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Modifes the DOUBLEGUARD setting in the <a href="#DBLSPACEINI">DBLSPACE.INI</a>
+      file. The DOUBLEGUARD setting enables or disables
+      DoubleGuard(tm) safety checking. When DoubleGuard is
+      enabled, DoubleSpace will constantly check its memory
+      for damage by some other program. If it detects any
+      memory damage, DoubleSpace will halt your computer to
+      minimize damage to your data. By default, DoubleGuard
+      is enabled.</dd>
+      <dd><b>Note:</b> For this switch to take effect, you
+      must restart your computer.</dd>
+      <dd>The values for /DOUBLEGUARD=char are:
+        <ul>
+          <li><b>0</b> Prevents DoubleSpace from checking its
+          memory for damage by other programs. Using this
+          switch might speed up your system, but could
+          result in loss of data if a program violates the
+          memory DoubleSpace is using.</li>
+          <li><b>1</b> Directs DoubleSpace to check its
+          memory for damage by other programs. This is the
+          default setting.</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchF"></a> /F
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Prevents DoubleSpace from displaying the final
+      screen when compression is complete. This screen
+      includes compression statistics. If you specify the
+      /F switch, DoubleSpace returns to the command prompt
+      when compression is complete.</dd>
+      <dd>Enables the specified drive to be defragmented
+      more fully.</dd>
+
+      <dt><a name="SwitchFormat"></a> /F[ORMAT]
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Formats the selected compressed drive.</dd>
+      <dd><b>CAUTION:</b> Formatting a compressed drive
+      deletes all the files it contains. You cannot unformat
+      a drive that has been formatted by using /FORMAT.</dd>
+
+      <dt><a name="SwitchHost"></a> /HOST=drive:
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Changes the drive letter of the host drive for the
+      specfied compressed drive by modifying the
+      corresponding ActivateDrive setting in the
+      <a href="#DBLSPACEINI">DBLSPACE.INI</a> file. You cannot use this switch to
+      change the letter of a compressed drive's host drive
+      if you used free space to create that compressed
+      drive.</dd>
+      <dd><b>Note:</b> For this switch to take effect, you
+      must restart your computer.</dd>
+
+      <dt><a name="SwitchInfo"></a> /INFO
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Displays information about the selected drive's
+      (<a href="#ParameterDrive">drive:</a>) free and used
+      space, the name of its compressed volume file, and its
+      actual and estimated compression ratios.</dd>
+
+      <dt><a name="SwitchLastdrive"></a> /LASTDRIVE=drive:
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Modifes the LASTDRIVE setting in the <a href="#DBLSPACEINI">DBLSPACE.INI</a>
+      file. The LASTDRIVE setting specifies the highest
+      drive letter available to DoubleSpace. (If another
+      program uses one of the drive letters specified for
+      DoubleSpace, the highest drive letter available to
+      DoubleSpace will be higher than that specified by
+      LASTDRIVE.)</dd>
+      <dd><b>Note:</b> For this switch to take effect, you
+      must restart your computer.</dd>
+
+      <dt><a name="SwitchList"></a> /LI[ST]
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Lists and briefly describes all your computer's
+      compressed and uncompressed drives (except network
+      drives and CD-ROM drives), and specfies whether
+      DoubleSpace's <a href="#SwitchAutomount">Automount</a>
+      and <a href="#SwitchDoubleguard">DoubleGuard</a> features
+      are enabled or disabled.</dd>
+
+      <dt><a name="SwitchMaxfilefragments"></a> /MAXFILEFRAGMENTS=n
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd> Modifies the MAXFILEFRAGMENTS setting in the
+      <a href="#DBLSPACEINI">DBLSPACE.INI</a> file. The MAXFILEFRAGMENTS setting sets
+      the limit for the amount of fragmentation allowed for
+      all mounted compressed volume files.</dd>
+      <dd><b>Note:</b> For this switch to take effect, you
+      must restart your computer.</dd>
+      <dd>The maximum number of fragments (n) in which the
+      compressed volume files may be stored on the host
+      drive. For each fragment, 6 bytes of memory are
+      allocated.</dd>
+
+      <dt><a name="SwitchMaxremovabledrives"></a> /MAXREMOVABLEDRIVES=n
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Modifes the MAXREMOVABLEDRIVES setting in the
+      DBLSPACE.INI file. The MAXREMOVABLEDRIVES setting
+      specifies how many additional drives DoubleSpace should
+      allocate memory for when your computer starts. This
+      determines how many additional compressed drives you
+      can create, compress, or mount without restarting your
+      computer.</dd>
+      <dd><b>Note:</b> For this switch to take effect, you
+      must restart your computer.</dd>
+      <dd>The number of additional drives (n) for which
+      DoubleSpace should allocate memory when your computer
+      starts. DoubleSpace allocates 96 bytes of memory for
+      each additional drive.</dd>
+
+      <dt><a name="SwitchMount"></a> /MO[UNT]=nnn
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Establishes a connection between a compressed
+      volume file (CVF) and a drive letter so that you can
+      use the files the CVF contains. DoubleSpace usually
+      mounts CVFs automatically. You need to mount a CVF
+      only if you previously unmounted it, or if the CVF is
+      located on a floppy disk and <a href="#SwitchAutomount">Automount</a> is disabled.</dd>
+      <dd>Directs DoubleSpace to mount the compressed volume
+      file with the filename extension specified by the nnn
+      parameter. If nnn omitted, DoubleSpace attempts to
+      mount the compressed volume file named DBLSPACE.000.</dd>
+
+      <dt><a name="SwitchNewdrive"></a> /N[EWDRIVE]=drive2:
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dt> /NEW[DRIVE]=drive2:
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Specifies the drive letter for the uncompressed
+      (host) drive. After DoubleSpace creates/compresses an existing
+      drive, your system will include both the existing
+      drive (now created/compressed) and a new uncompressed drive.
+      if omitted, DoubleSpace assigns the next available
+      drive letter to the new drive.</dd>
+      <dd>Specifies the drive letter to assign to the new
+      mount drive. If omitted, DoubleSpace assigns the new
+      drive the next available drive letter.</dd>
+
+      <dt><a name="SwitchRatio"></a> /RA[TIO][=n.n]
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Changes the estimated compression ratio of the
+      selected drive. DoubleSpace uses this ratio to estimate
+      how much free space the drive contains. You might want
+      to change the estimated compression ratio if you plan
+      to store new files with a compression ratio that
+      differs greatly from the current ratio.</dd>
+      <dd>To change the ratio to a specific number, specify
+      the ratio you want. You can specify a ratio from 1.0
+      to 16.0. If you don't specify a ratio, DoubleSpace sets
+      the drive's estimated compression ratio to the average
+      actual compression ratio for all the files currently
+      on the drive.</dd>
+
+      <dt><a name="SwitchReserve"></a> /RE[SERVE]=size
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dt> /RES[ERVE]=size
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Specifies how many megabytes of free space to leave
+      uncompressed. To make the compressed drive as large as
+      possible, specify a size of 0.
+      Because some files, such as the Windows
+      swap file, do not work properly when stored on a
+      compressed drive, it's a good idea to reserve some
+      uncompressed space. The uncompressed space will be
+      located on the new uncompressed drive. (If the drive
+      you are compressing contains a Windows permanent swap
+      file, DoubleSpace moves the file to the new
+      uncompressed drive.)</dd>
+      <dd>If omitted, DoubleSpace reserves 2 MB of free space.</dd>
+
+      <dt><a name="SwitchRomserver"></a> /ROMSERVER=n
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Modifes the ROMSERVER setting in the <a href="#DBLSPACEINI">DBLSPACE.INI</a>
+      file. The ROMSERVER setting enables or disables the
+      check for a ROM BIOS Microsoft Real-time Compresson
+      Interface (MRCI) server. By default, the ROM MRCI
+      check is disabled.</dd>
+      <dd><b>CAUTION:</b> Do not enable the MRCI check
+      unless you are certain that you have hardware that
+      uses the MRCI. The MRCI check can interfere with a
+      ROM BIOS that does not have the MRCI.</dd>
+      <dd><b>Note:</b> For this switch to take effect, you
+      must restart your computer.</dd>
+      <dd>The values for /ROMSERVER=n are:
+        <ul>
+          <li><b>0</b>Disables the check for the ROM BIOS
+          MRCI server.</li>
+          <li><b>1</b>Enables the check for the ROM BIOS
+          MRCI server.</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchSize"></a> /SI[ZE][=size]
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Specifies the total size, in megabytes, of the
+      compressed volume file. (This is the amount of space
+      on the uncompressed/host drive that you want to allocate to
+      the compressed drive.)</dd>
+      <dd>Enlarges or reduces the size of a compressed drive.
+      You might want to enlarge a compressed drive if its
+      host drive contains plenty of free space. You might
+      want to reduce the size of a compressed drive if you
+      need more free space on the host drive.</dd>
+      <dd>If you omit BOTH /SIZE and
+      <a href="#SwitchReserve">/RESERVE</a> switches,
+      DoubleSpace makes the drive as small as possible.</dd>
+
+      <dt><a name="SwitchSwitches"></a> /SWITCHES=char
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Modifes the SWITCHES setting in the <a href="#DBLSPACEINI">DBLSPACE.INI</a>
+      file. The SWITCHES setting controls the way the
+      CTRL+F5 and CTRL+F8 keys work. (Used to bypass
+      DoubleSpace when your computer starts.)</dd>
+      <dd>If your <a href="#DBLSPACEINI">DBLSPACE.INI</a> file does not contain a
+      /SWITCHES setting, you can use CTRL+F5 or CTRL+F8 to
+      keep from loading DoubleSpace when your computer starts.</dd>
+      <dd><b>Note:</b> For this switch to take effect, you
+      must restart your computer.</dd>
+      <dd>To remove any /SWITCHES settings in your
+      <a href="#DBLSPACEINI">DBLSPACE.INI</a> file, you must edit the file directly.</dd>
+      <dd>The values for /SWITCHES char are:
+        <dl>
+          <dt>[/]F</dt>
+          <dd>Reduces the amount of time you have to press
+          CTRL+F8 or CTRL+F5 when your computer starts. Use this
+          setting to speed up processing of your startup files.
+          (Although you do not use the "/" character when
+          specifying the F parameter, the setting in the
+          <a href="#DBLSPACEINI">DBLSPACE.INI</a> file is SWITCHES=/F.)</dd>
+
+          <dt>[/]N</dt>
+          <dd>Prevents you from using CTRL+F8 or CTRL+F5 to
+          bypass DoubleSpace when your computer starts.
+          (Although you do not use the "/" character when
+          specifying the N parameter, the setting in the
+          <a href="#DBLSPACEINI">DBLSPACE.INI</a> file is SWITCHES=/N.)</dd>
+          <dd>If you choose this setting and press CTRL+F8,
+          the operating system will still allow you to
+          selectively choose commands in your CONFIG.SYS and
+          AUTOEXEC.BAT files. If you choose this setting and
+          press CTRL+F5, the operating system will still bypass
+          your AUTOEXEC.BAT and CONFIG.SYS files.</dd>
+        </dl>
+      </dd>
+
+      <dt><a name="SwitchUncompress"></a> /UNCOMPRESS
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Uncompresses a drive
+      (<a href="#ParameterDrive">drive:</a>) that was compressed
+      by using DoubleSpace. When you uncompress the last
+      mounted drive, the /UNCOMPRESS switch also removes
+      DBLSPACE.BIN from memory. (DBLSPACE.BIN is the portion
+      that provides access to compressed drives. It uses
+      about 50K of memory.)</dd>
+      <dd>Before uncompressing your drive, you should back
+      up the files it contains. To back up your files, use
+      <a href="../B/BACKUP.HTM">Microsoft Backup for MS-DOS</a> or
+      <a href="../M/MSBACKUP.HTM">Microsoft Backup for Windows</a>.
+      <dd>When you uncompress a drive, DoubleSpace either
+      changes that drive's letter or the letter of its host
+      drive (depending on how the compressed drive was
+      originally created.) DoubleSpace shows how the drive
+      letters will change when it uncompresses the drive.</dd>
+      <dd>Some programs have settings that include explicit
+      pathnames and drive letters. If a program's settings
+      specify a drive that is no longer valid after
+      uncompressing, the program will probably display an
+      error message or be unable to find one of its
+      components or data files. In that case, you need to
+      correct the drive letter specified by that setting.</dd>
+      <dd>You can uncompress a drive only if the data it
+      contains will fit on the host drive. If you use the
+      DBLSPACE /UNCOMPRESS command, and DoubleSpace indicates
+      your drive will not have enough free disk space,
+      delete unnecessary files or move them to another
+      drive.</dd>
+      <dd>If the root directories of the compressed and host
+      drives contain files or directories with identical
+      names, DoubleSpace cannot uncompress the compressed
+      drive. If this happens, DoubleSpace displays an error
+      message, and creates a DBLSPACE.LOG file that lists
+      the files involved. Use the <a href="../T/TYPE.HTM">TYPE</a>
+      command to view the contents of the DBLSPACE.LOG file.
+      Then, remove or rename one copy of each file, and then
+      try uncompressing the drive again.</dd>
+      <dd>When you uncompress the last mounted compressed
+      drive, DoubleSpace first uncompresses the drive, and
+      then removes DBLSPACE.BIN from memory. (DBLSPACE.BIN
+      is the portion of the operating system that provides
+      access to compressed drives. It uses about 50K of
+      memory.) If there are any unmounted compressed drives
+      left on your computer, you will not be able to mount
+      them until you reinstall DoubleSpace. (To reinstall
+      DoubleSpace, type DBLSPACE at the command prompt.)</dd>
+
+      <dt><a name="SwitchUnmount"></a> /UNMOUNT
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Breaks the connection between the selected drive's
+      compressed volume file and its drive letter.
+      Unmounting a drive makes it temporarily unavailable.</dd>
+      <dd>You cannot unmount drive C.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../S/SWITCHES.HTM">SWITCHES</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#CopyUncompressed">Can I copy a file from a compressed drive to an uncompressed drive?</a></li>
+      <li><a href="#StartupFloppy">Creating a startup floppy disk</a></li>
+      <li><a href="#CompressRAMDrive">Compressing a RAMDrive</a></li>
+      <li><a href="#ConvertToDrive">Converting from DoubleSpace to DriveSpace</a></li>
+      <li><a href="#Recompress">Do I need to recompress the drive after add more (uncompressed) files to it?</a></li>
+      <li><a href="#DriveDoubleSpace">DriveSpace and DoubleSpace</a></li>
+      <li><a href="#BinSys">DBLSPACE.BIN and DBLSPACE.SYS</a></li>
+      <li><a href="#DBLSPACEINI">DBLSPACE.INI File</a></li>
+      <li><a href="#FixingProblems">Fixing problems with drives compressed using DoubleSpace</a></li>
+      <li><a href="#How">How does DoubleSpace "squeeze" a file?</a></li>
+      <li><a href="#DriveLetters">How DoubleSpace assigns drive letters</a></li>
+      <li><a href="#HowBackup">How should I back up my files if I'm using DoubleSpace?</a></li>
+      <li><a href="#OutOfMemory">I installed DoubleSpace and now I'm running out of memory. What can I do?</a></li>
+      <li><a href="#Maintain">If I'm using DoubleSpace, what should I do to maintain my system?</a></li>
+      <li><a href="#SMARTDrive">Is it all right to run SMARTDrive if I'm using DoubleSpace?</a></li>
+      <li><a href="#KeepingDoubleSpace">Keeping DoubleSpace files after conversion</a></li>
+      <li><a href="#HMALoad">Loading DBLSPACE.BIN into the HMA</a></li>
+      <li><a href="#AdditionalDrive">Now that I've installed DoubleSpace, why do I have an additional drive?</a></li>
+      <li><a href="#NoSwitches">Running the DBLSPACE command without switches or parameters</a></li>
+      <li><a href="#StartingWithout">Starting your computer without loading DBLSPACE.BIN</a></li>
+      <li><a href="#Floppy">Using DoubleSpace drives and floppy disks with DriveSpace</a></li>
+      <li><a href="#What">What does DoubleSpace do?</a></li>
+      <li><a href="#Setup">What happens during DoubleSpace Setup?</a></li>
+      <li><a href="#When">When should I use DoubleSpace?</a></li>
+      <li><a href="#Why">Why does DoubleSpace compress some files more than others?</a></li>
+      <li><a href="#Slow">Will DoubleSpace slow down my system?</a></li>
+    </ul>
+
+    <hr>
+    <a name="What"></a> <b>What does DoubleSpace do?</b>
+    <p>DoubleSpace is a disk-compression program. It stores
+    more files in less space by storing those files more
+    efficiently. Most files are stored fairly inefficiently
+    -- somewhat like a sponge that has a lot of air holes in
+    it. When you squeeze a sponge, it becomes temporarily
+    smaller; but when you let go of it, the sponge returns
+    to its original shape and size. When you compress a
+    drive, DoubleSpace "squeezes" the files on that drive
+    until they are as small as possible -- just like
+    squeezing a sponge. A file stored on a compressed drive
+    stays "squeezed" until you use it. When the file is
+    loaded into memory, DoubleSpace uncompresses the file so
+    that it returns to its original size, just as a sponge
+    does when you let go of it. When you're finished using
+    the file, DoubleSpace "squeezes" it again and stores it
+    back on the compressed drive.</p>
+
+    <hr>
+    <a name="When"></a> <b>When should I use DoubleSpace?</b>
+    <p>You should use DoubleSpace if you are running low on
+    disk space and don't want to invest in a larger hard
+    disk drive. DoubleSpace can dramatically increase your
+    available disk space. However, because DoubleSpace uses
+    at least 33K of memory, it makes sense not to install
+    DoubleSpace unless you need it.</p>
+
+    <hr>
+    <a name="How"></a> <b>How does DoubleSpace "squeeze" a file?</b>
+    <p>Most files contain a lot of repeated data. When
+    DoubleSpace finds repeated data in a file, it retains the
+    first occurrence of that data, and replaces any other
+    occurrences of that data with a cross-reference to the
+    first occurrence. The cross-reference takes less space
+    than the original data.</p>
+
+    <hr>
+    <a name="Why"></a> <b>Why does DoubleSpace compress some files more than others?</b>
+    <p>Some files contain more repeated data than others.
+    (Program files are usually compiled so that they are
+    stored as efficiently as possible; program files are
+    typically not as compressible as some other types of
+    files. Bitmap files and text files typically compress
+    well, since most such files contain a lot of repeated
+    data. Files that were already compressed by using a
+    standalone compression program (ARJ, RAR, ZIP) usually
+    do not compress any further; although you can store such
+    files on a compressed drive, there is little advantage
+    to doing so.</p>
+
+    <hr>
+    <a name="Slow"></a> <b>Will DoubleSpace slow down my system?</b>
+    <p>If you have a computer with a fast CPU and a fast
+    hard disk, you probably won't notice much difference in
+    system speed after installing DoubleSpace. If you have a
+    fast CPU and a slow hard disk, DoubleSpace might actually
+    improve your system's speed. If your computer has a slow
+    CPU, you may notice a reduction in speed after
+    compressing your drive.</p>
+
+    <hr>
+    <a name="Setup"></a> <b>What happens during DoubleSpace Setup?</b>
+    <p>DoubleSpace Setup configures your computer to run
+    DoubleSpace and compresses the drive of your choice.
+    DoubleSpace Setup first runs <a href="../S/SCANDISK.HTM">ScanDisk</a>
+    to check your hard disk for logical and physical errors.
+    If necessary, it runs the Microsoft
+    <a href="DEFRAG.HTM">Defragmenter</a> to defragment
+    the files on your disk. Finally, it compresses the files
+    on your drive. For more information about running
+    DoubleSpace Setup, see "Freeing Space by Using DoubleSpace"
+    in the MS-DOS User's Guide or the MS-DOS User's Guide
+    Addendum.</p>
+
+    <hr>
+    <a name="AdditionalDrive"></a> <b>Now that I've installed DoubleSpace, why do I have an additional drive?</b>
+    <p>When DoubleSpace Setup is complete, you will have an
+    additional drive.</p>
+
+    <p>If you chose to create a new compressed drive, the
+    additional drive is the compressed drive you just
+    created.</p>
+
+    <p>If you compressed an existing drive the additional
+    drive is an uncompressed drive. It is used to store
+    files that must remain uncompressed (such as the Windows
+    swap file). The additional drive also contains important
+    system files such as:
+    <ul>
+      <li>IO.SYS</li>
+      <li>MSDOS.SYS</li>
+      <li>DBLSPACE.BIN</li>
+      <li><a href="#DBLSPACEINI">DBLSPACE.INI</a></li>
+      <li>DBLSPACE.000</li>
+    </ul>
+
+    <p><b>CAUTION:</b> Do not delete or otherwise tamper
+    with the hidden files on the new drive. If you do, you
+    might lose your compressed drive and all the files it
+    contains.</p>
+
+    <p>For more information about DoubleSpace Setup, see the
+    "Understanding Disk Compression" section of "Freeing
+    Space by Using DoubleSpace" in the MS-DOS User's Guide or
+    the MS-DOS User's Guide Addendum,</p>
+
+    <hr>
+    <a name="CopyUncompressed"></a> <b>Can I copy a file from a compressed drive to an uncompressed drive?</b>
+    <p>Yes. You can copy files between compressed drives and
+    uncompressed drives just as you would between two
+    uncompressed drives. A file is actually compressed only
+    when it is stored on a compressed drive. When you copy a
+    file from your compressed drive, DoubleSpace reads the
+    file into memory and uncompresses it. The file is then
+    copied to the uncompressed drive in its uncompressed
+    state.</p>
+
+    <hr>
+    <a name="Recompress"></a> <b>Do I need to recompress the drive after add more (uncompressed) files to it?</b>
+    <p>No. Whenever you copy a file to a DoubleSpace drive,
+    DoubleSpace saves the file in compressed form. It doesn't
+    matter whether the file was on the drive when you
+    compressed the drive.</p>
+
+    <hr>
+    <a name="Maintain"></a> <b>If I'm using DoubleSpace, what should I do to maintain my system?</b>
+    <p>In general, maintaining a computer that's running
+    DoubleSpace is just like maintaining an uncompressed
+    system. To ensure the safety of your data and the
+    stability of your system, do the following frequently
+    (ie. once a week):
+    <ul>
+      <li>Back up your data files regularly. You can back up
+      your files by using either
+      <a href="../B/BACKUP.HTM">Backup for MS-DOS</a> or
+      <a href="../M/MSBACKUP.HTM">Backup for Windows</a>.<br>
+      For more information, see the following section. Also,
+      see the chapter "Managing Your System" in the MS-DOS
+      User's Guide.</li>
+      <li>Check your hard disk regularly for logical and
+      physical errors. To check and repair a drive, use the
+      <a href="../S/SCANDISK.HTM">ScanDisk</a> program.</li>
+      <li>Check your computer's memory and hard disk for
+      viruses. Viruses can damage data, and can even prevent
+      your computer from starting or running properly. To
+      check for viruses, use <a href="../M/MSAV.HTM">Anti-Virus</a>.
+      Be sure to check all your drives -- compressed and
+      uncompressed drives. For more information, see the
+      chapter "Managing Your System" in the MS-DOS User's Guide.</li>
+      <li>Defragment your hard disk drive periodically.
+      (Since defragmentation can take a long time, you might
+      want to do it at the end of the day.) For more
+      information, see the chapter "Managing Your System" in
+      the MS-DOS User's Guide.</li>
+      <li>Set up <a href="../U/UNDELETE.HTM">Undelete</a> so
+      that you can restore any files that you accidentally
+      delete. For information about setting up
+      <a href="../U/UNDELETE.HTM">Undelete</a>, see the
+      chapter "Managing Your System" in the MS-DOS User's
+      Guide.</li>
+    </ul>
+
+    <hr>
+    <a name="HowBackup"></a> <b>How should I back up my files if I'm using DoubleSpace?</b>
+    <p>You should back up and restore the files on a
+    compressed drive just as you would the files on an
+    uncompressed drive. (For information about using
+    Microsoft Backup, see the chapter "Managing Your System"
+    in the MS-DOS User's Guide.)</p>
+
+    <p>When backing up the files on the host drive (the
+    uncompressed drive that contains the compressed volume
+    file (CVF) for your compressed drive), you typically do
+    not need to back up any files that have names in the
+    form DBLSPACE.nnn (ie. DBLSPACE.000). The DBLSPACE.nnn
+    file essentially contains your compressed drive.
+    Although it is possible to back up the DBLSPACE.nnn file,
+    doing so is redundant if you have also backed up the
+    files on that compressed drive. In general, it's best to
+    back up the files on your compressed drive directly,
+    rather than by backing up the associated CVF (the
+    DBLSPACE.nnn file). This is because backing up only the
+    CVF does not allow you to restore individual files or
+    directories later. When you restore the backup copy of a
+    DBLSPACE.nnn file, it replaces the entire compressed
+    drive with the backup copy. This means that you will
+    lose all changes to all files on that drive that were
+    made since the backup copy was created.</p>
+
+    <hr>
+    <a name="OutOfMemory"></a> <b>I installed DoubleSpace and now I'm running out of memory. What can I do?</b>
+    <p>If you have an 80386 or higher computer, run
+    <a href="../M/MEMMAKER.HTM">MemMaker</a> after
+    installing DoubleSpace. <a href="../M/MEMMAKER.HTM">MemMaker</a>
+    can move portions of DoubleSpace out of conventional
+    memory, which makes more memory available for running
+    programs. Also, make sure the
+    <a href="../B/BUFFERS.HTM">BUFFERS</a> command in your
+    CONFIG.SYS file is set to no more than 10 buffers.</p>
+
+    <p>If you have an 80286 or higher computer with at least
+    1 MB of memory, make sure your CONFIG.SYS file contains
+    a <a href="DOS.HTM">DOS</a>=HIGH command, a
+    <a href="DEVICE.HTM">DEVICE</a> command for
+    <a href="../H/HIMEMSYS.HTM">HIMEM.SYS</a> and a
+    <a href="DEVICE.HTM">DEVICE</a> command for
+    DBLSPACE.SYS. (MS-DOS Setup and DoubleSpace Setup
+    normally add these commands to your CONFIG.SYS file.)
+    With these commands, the operating system and parts of
+    DoubleSpace can load into the high memory area.</p>
+
+    <hr>
+    <a name="SMARTDrive"></a> <b>Is it all right to run SMARTDrive if I'm using DoubleSpace?</b>
+    <p><a href="../S/SMARTDRV.HTM">SMARTDrive</a> and
+    DoubleSpace are designed to work together. If Setup
+    determines that your computer has enough memory to run
+    <a href="../S/SMARTDRV.HTM">SMARTDrive</a>, it
+    automatically installs
+    <a href="../S/SMARTDRV.HTM">SMARTDrive</a> by adding a
+    SMARTDRV command to your AUTOEXEC.BAT file.  In
+    particular, you should run
+    <a href="../S/SMARTDRV.HTM">SMARTDrive</a> if you are
+    running DoubleSpace and you use Windows; in that case,
+    using <a href="../S/SMARTDRV.HTM">SMARTDrive</a> can
+    significantly speed up your computer.</p>
+
+    <p><a href="../S/SMARTDRV.HTM">SMARTDrive</a> is
+    designed to speed up your system and safeguard your data.
+    By default, Setup configures
+    <a href="../S/SMARTDRV.HTM">SMARTDrive</a> so that
+    write-caching is disabled. (If
+    <a href="../S/SMARTDRV.HTM">SMARTDrive</a> was originally
+    configured to allow write-caching, Setup will not change
+    your configuration.) Write-caching provides much faster
+    performance than read-only caching, but is not as
+    conservative.</p>
+
+    <hr>
+    <a name="DriveDoubleSpace"></a> <b>DriveSpace and DoubleSpace</b>
+    <p><b>Note:</b>
+    <a href="../../Version/MSDOS/622.HTM">MS-DOS 6.22</a>
+    does not include DoubleSpace compression. Instead,
+    <a href="../../Version/MSDOS/622.HTM">MS-DOS 6.22</a>
+    includes DriveSpace compression, which appears similar to
+    DoubleSpace but which stores compressed information in a different
+    format.</p>
+
+    <p>If you currently use DoubleSpace, you can continue to do so with
+    <a href="../../Version/MSDOS/622.HTM">MS-DOS 6.22</a>.</p>
+
+    <p>If you currently use DoubleSpace and want to use DriveSpace
+    instead, you can convert your system to DriveSpace.
+    See <a href="#ConvertToDrive">Converting from DoubleSpace to DriveSpace</a>.</p>
+
+    <p>If you do not currently use DoubleSpace and want to compress
+    your drives, use DriveSpace. To do this, type DRVSPACE at the
+    command prompt. See "Freeing Disk Space by Using DriveSpace"
+    in your Microsoft MS-DOS User's Guide or Microsoft MS-DOS User's Guide
+    Addendum.</p>
+
+    <hr>
+    <a name="StartupFloppy"></a> <b>Creating a startup floppy disk</b>
+    <p>To create a startup floppy disk if you are running DoubleSpace,
+    use either the <a href="../S/SYS.HTM">SYS</a> command or the
+    <a href="../F/FORMAT.HTM">FORMAT</a>
+    <a href="../F/FORMAT.HTM#SwitchS">/S</a> command. Each of these
+    commands creates a floppy disk that should in most cases be able
+    to start your computer. However, to make sure, you should also
+    copy the DBLSPACE.BIN file from the directory that contains your
+    files to the root directory of the startup floppy disk.</p>
+
+    <hr>
+    <a name="HMALoad"></a> <b>Loading DBLSPACE.BIN into the HMA</b>
+    <p>If you are running DoubleSpace and you upgraded to
+    <a href="../../Version/MSDOS/622.HTM">MS-DOS 6.22</a> from
+    <a href="../../Version/MSDOS/620.HTM">MS-DOS 6.2</a>, you
+    can load a portion of DBLSPACE.BIN into the High Memory Area
+    (HMA). You must have an 80286 or higher computer with at least
+    1 MB of memory and your CONFIG.SYS file must contain a
+    <a href="DOS.HTM">DOS</a>=HIGH command, a
+    <a href="DEVICE.HTM">DEVICE</a> command for
+    <a href="../H/HIMEMSYS.HTM">HIMEM.SYS</a>, and a
+    <a href="DEVICE.HTM">DEVICE</a> command for DBLSPACE.SYS.
+    (MS-DOS Setup and DoubleSpace Setup normally add these commands
+    to your CONFIG.SYS file.)</p>
+
+    <p>If you upgraded from
+    <a href="../../Version/MSDOS/600.HTM">MS-DOS 6.0</a>,
+    DBLSPACE.BIN cannot be loaded into the HMA; in this case, you
+    can save about 14K of memory by converting to DriveSpace,
+    which can load into the HMA.</p>
+
+    <hr>
+    <a name="ConvertToDrive"></a> <b>Converting from DoubleSpace to DriveSpace</b>
+    <p>If you are running DoubleSpace, you can convert your DoubleSpace
+    drives to DriveSpace format. (If you purchased the U.S. version of
+    the <a href="../../Version/MSDOS/622.HTM">MS-DOS 6.22</a> Upgrade,
+    you can obtain conversion by sending in the enclosed coupon; if you
+    purchased the <a href="../../Version/MSDOS/622.HTM">MS-DOS 6.22</a>
+    Step-Up or non-U.S. version of
+    <a href="../../Version/MSDOS/622.HTM">MS-DOS 6.22</a>, your version
+    of <a href="../../Version/MSDOS/622.HTM">MS-DOS 6.22</a> already
+    includes conversion.)</p>
+
+    <p><b>Note:</b> Before converting, it's a good idea to back up the
+    data on each DoubleSpace drive.</p>
+
+    <p>To convert your DoubleSpace drives, type DBLSPACE at the command
+    prompt. DriveSpace starts. To convert your drives, follow the
+    instructions on your screen. DriveSpace converts all mounted
+    DoubleSpace drives to DriveSpace format, and also converts your
+    system to run DriveSpace instead of DoubleSpace.</p>
+
+    <p><b>Note:</b> The conversion process can take a long time,
+    especially if your DoubleSpace drives contain a lot of data.
+    You might want to plan to carry out the conversion process overnight.</p>
+
+    <p>For more information about converting to DriveSpace,
+    see the README.TXT file.</p>
+
+    <hr>
+    <a name="KeepingDoubleSpace"></a> <b>Keeping DoubleSpace files after conversion</b>
+    <p>After conversion, do not delete any of your DoubleSpace
+    program files, especially the DBLSPACE.BIN file and the
+    DBLSPACE.MR1 file.
+    These files are required in the following situations:
+    <ul>
+      <li>DriveSpace requires these files in order to
+      convert any DoubleSpace volume files
+      (compressed floppy disks) that were not mounted during
+      the initial conversion process.</li>
+      <li><a href="../S/SCANDISK.HTM">ScanDisk</a> requires
+      these files to check and repair any unconverted
+      DoubleSpace volume files.</li>
+      <li><a href="../../Version/MSDOS/622.HTM">MS-DOS 6.22</a>
+      Backup for MS-DOS (<a href="../M/MSBACKUP.HTM">MSBACKUP</a>)
+      requires these files to restore compressed backups created
+      using the <a href="../../Version/MSDOS/600.HTM">MS-DOS 6</a>
+      <a href="../../Version/MSDOS/620.HTM">MS-DOS 6.2</a>
+      Backup programs. (Most older backups are compressed backups,
+      since those programs created compressed backups by default.)</li>
+    </ul>
+
+    <hr>
+    <a name="Floppy"></a> <b>Using DoubleSpace drives and floppy disks with DriveSpace</b>
+    <p>DriveSpace converts only DoubleSpace drives that were
+    currently mounted during the conversion process. As a
+    result, after the conversion is complete, you might still
+    have some unconverted DoubleSpace floppy disks or other
+    unmounted DoubleSpace volume files. DriveSpace can still
+    mount unconverted DoubleSpace drives for read-only access;
+    this means that you can read but not change the information
+    stored on that drive.</p>
+
+    <p>DriveSpace does not automatically mount DoubleSpace
+    floppy disks; to mount an unconverted DoubleSpace floppy
+    disk, you must mount it yourself by using the DBLSPACE
+    <a href="#SwitchMount">/MOUNT</a> command or by running
+    DriveSpace and choosing the Mount command from the Drive
+    menu.</p>
+
+    <p>For DriveSpace to mount any DoubleSpace drive for
+    full (read/write) access, you must first convert the
+    drive to DriveSpace format. Run DriveSpace, and then
+    choose Convert DoubleSpace from the Tools menu.</p>
+
+    <hr>
+    <a name="FixingProblems"></a> <b>Fixing problems with drives compressed using DriveSpace</b>
+    <p>To repair disk problems, use the
+    <a href="../S/SCANDISK.HTM">ScanDisk</a> program, a
+    full-featured disk analysis and repair utility.
+    <a href="../S/SCANDISK.HTM">ScanDisk</a> can check and
+    repair both compressed and uncompressed drives. It can
+    even check and repair unmounted DoubleSpace compressed
+    volume files.</p>
+
+    <hr>
+    <a name="NoSwitches"></a> <b>Running the DBLSPACE command without switches or parameters</b>
+    <p>The first time you run the DBLSPACE command, it starts
+    the DoubleSpace Setup program. DoubleSpace Setup compresses
+    your hard disk drive and loads DBLSPACE.BIN into memory.
+    DBLSPACE.BIN is the part of the operating system that
+    provides access to compressed drives.</p>
+
+    <p>Thereafter, when you run the DBLSPACE command without
+    specifying any switches or parameters, the DoubleSpace
+    program starts. This program lists your compressed drives
+    and provides menu commands for working with them. You can
+    perform all DoubleSpace tasks either from within the
+    DoubleSpace program or from the command line.</p>
+
+    <hr>
+    <a name="BinSys"></a> <b>DBLSPACE.BIN and DBLSPACE.SYS</b>
+    <p>DBLSPACE.BIN is the part of what provides access to
+    your compressed drives. When you start your computer,
+    the operating system loads DBLSPACE.BIN along with other
+    operating system functions, before carrying out the
+    commands in your CONFIG.SYS and AUTOEXEC.BAT files.
+    DBLSPACE.BIN initially loads in conventional memory,
+    since it loads before device drivers that provide access
+    to upper memory. Normally, if your hard drive has been
+    compressed using DoubleSpace, DBLSPACE.BIN is loaded even
+    if you press F5 or F8. For information about starting
+    your computer without loading DBLSPACE.BIN, see
+    <a href="#StartingWithout">Starting your computer without loading DBLSPACE.BIN</a>.</p>
+
+    <p>The DBLSPACE.SYS device driver does not provide access
+    to compressed drives; it simply determines the final
+    location of DBLSPACE.BIN in memory. When loaded with a
+    <a href="DEVICE.HTM">DEVICE</a> command, the
+    DBLSPACE.SYS device driver moves DBLSPACE.BIN from the
+    top to the bottom of conventional memory. When loaded
+    with a
+    <a href="DEVICEHI.HTM">DEVICEHIGH</a> command,
+    DBLSPACE.SYS moves DBLSPACE.BIN from conventional to
+    upper memory, if available. Whenever possible,
+    DBLSPACE.SYS moves a portion of DBLSPACE.BIN into the
+    HMA.</p>
+
+    <hr>
+    <a name="StartingWithout"></a> <b>Starting your computer without loading DBLSPACE.BIN</b>
+    <p>DBLSPACE.BIN is the part of the operating system that
+    provides access to DoubleSpace compressed drives. Normally,
+    if your hard drive has been compressed using DoubleSpace,
+    DBLSPACE.BIN is loaded even if you press F5 or F8.
+    There are two ways to disable this:
+    <ol>
+      <li>To start your computer without loading DBLSPACE.BIN,
+      and to bypass all the commands in your CONFIG.SYS and
+      AUTOEXEC.BAT files, press CTRL+F5.</li>
+      <li>To start your computer without loading DBLSPACE.BIN,
+      and to bypass individual commands in your CONFIG.SYS and
+      AUTOEXEC.BAT files, press CTRL+F8. The operating system
+      will then prompt you to carry out or bypass each
+      CONFIG.SYS and AUTOEXEC.BAT command. To carry out all
+      remaining startup commands, press ESC. To bypass all
+      remaining startup commands, press F5.</li>
+    </ol>
+    <b>Note:</b> If you bypass DBLSPACE.BIN, you will not be
+    able to gain access to your DoubleSpace compressed drives
+    until you restart your computer with DBLSPACE.BIN. (Your
+    compressed drives will remain on your hard disk as hidden
+    files with names such as DBLSPACE.000. Do not delete or
+    rename such files.)
+
+    <hr>
+    <a name="DriveLetters"></a> <b>How DoubleSpace assigns drive letters</b>
+    <p>When you install DoubleSpace, it creates a new drive
+    and assigns a drive letter to that drive. DoubleSpace
+    <b>skips the first four available drive letters</b> and
+    assigns the next available drive letter to the new drive.
+    These four drive letters are assigned to additional
+    drives.</p>
+
+    <p>When assigning letters to additional drives (when you
+    compress another drive), DoubleSpace works backwards from
+    the first drive letter it assigned.</p>
+
+    <p>DoubleSpace attempts to avoid drive-letter conflicts
+    with drives created by <a href="../F/FDISK.HTM">FDISK</a>,
+    <a href="../R/RAMDRIVE.HTM">RAMDrive</a>, networks, or
+    other installable device drivers that assign drive
+    letters. However, if a drive-letter conflict does occur,
+    DoubleSpace resolves the conflict by reassigning its drive
+    letters.</p>
+
+    <hr>
+    <a name="CompressRAMDrive"></a> <b>Compressing a RAMDrive</b>
+    <p>To compress a RAMDrive, use the DBLSPACE
+    <a href="#SwitchCreate">/CREATE</a> command. Although it
+    is possible to compress a RAMDrive by using the DBLSPACE
+    <a href="#SwitchCompress">/COMPRESS</a> command, it is
+    not recommended. Due to the inherent volatility of a
+    RAMDrive, DoubleSpace's automatic recovery mechanisms
+    cannot work on a RAMDrive.</p>
+
+    <p>If you compress your RAMDrive, make sure the
+    <a href="DEVICE.HTM">DEVICE</a> command for
+    RAMDRIVE.SYS appears in your CONFIG.SYS file <b>before</b>
+    the <a href="DEVICE.HTM">DEVICE</a>=DBLSPACE.SYS
+    command. Otherwise, the compressed RAMDrive will not be
+    automatically mounted when your computer starts.</p>
+
+    <hr>
+    <a name="DBLSPACEINI"></a> <b>DBLSPACE.INI File</b>
+    <p>The DBLSPACE.INI file is a text file with the System,
+    Read-Only, and Hidden attributes. DoubleSpace stores this
+    file in the root directory of your startup drive. The
+    DBLSPACE.INI file contains variables that DoubleSpace
+    uses when your computer starts.</p>
+
+    <p><b>Note:</b> Although it is possible to change these
+    variables yourself (by using the DBLSPACE command or by
+    editing the file directly), you should do so only if you
+    understand what they do and what the results might be.
+    Before changing the DBLSPACE.INI file, you should make a
+    backup copy of the file. For changes to the DBLSPACE.INI
+    settings to take effect, you must restart your computer.</p>
+
+    <p>The DBLSPACE.INI file can contain one or more of the
+    following variables:
+    <ul>
+      <li><b>AUTOMOUNT=0|1|A...Z</b> Enables or disables the
+      automatic mounting of removable drives, including
+      floppy disk drives. By default, DoubleSpace
+      automatically mounts all removable drives. To change
+      this setting, use the DBLSPACE
+      <a href="#SwitchAutomount">/AUTOMOUNT</a> command.</li>
+      <li><b>DOUBLEGUARD=0|1</b> The DOUBLEGUARD setting
+      enables or disables DoubleGuard(tm) safety checking.
+      When DoubleGuard is enabled, DoubleSpace will
+      constantly check its memory for damage by some other
+      program. By default, DoubleGuard is enabled. To change
+      this setting, use the DBLSPACE
+      <a href="#SwitchDoubleguard">/DOUBLEGUARD</a> command.</li>
+      <li><b>LASTDRIVE=drive</b> The LASTDRIVE setting
+      specifies the highest drive letter available for use
+      by DoubleSpace. To change this setting, use the DBLSPACE
+      <a href="#SwitchLastdrive">/LASTDRIVE</a> command.</li>
+      <li><b>MAXFILEFRAGMENTS=n</b> The MAXFILEFRAGMENTS
+      setting sets the limit for the amount of fragmentation
+      allowed for all mounted compressed volume files. To
+      change this setting, use the DBLSPACE
+      <a href="#SwitchMaxfilefragments">/MAXFILEFRAGMENTS</a>
+      command.</li>
+      <li><b>/MAXREMOVABLEDRIVES=n</b> The
+      MAXREMOVABLEDRIVES setting specifies how many
+      additional drives DoubleSpace should allocate memory
+      for when your computer starts. This determines how
+      many additional compressed drives you can create,
+      compress, or mount without restarting your computer.
+      To change this setting, use the DBLSPACE
+      <a href="#SwitchMaxremovabledrives">/MAXREMOVABLEDRIVES</a>
+      command.</li>
+      <li><b>ROMSERVER=0|1</b> Enables or disables the check
+      for a ROM BIOS Microsoft Real-time Compresson
+      Interface (MRCI) server. By default, the ROM MRCI
+      check is disabled. To change this setting, use the
+      DBLSPACE <a href="#SwitchRomserver">/ROMSERVER</a> command.</li>
+      <li><b>SWITCHES=/F|/N|/FN</b> Controls the way the
+      CTRL+F5 and CTRL+F8 keys work. (Normally, you can
+      press CTRL+F5 or CTRL+F8 to bypass DoubleSpace when
+      your computer starts.) To change this setting, use the
+      DBLSPACE <a href="#SwitchSwitches">/SWITCHES</a> command.
+      (To remove SWITCHES settings from your DBLSPACE.INI
+      file, you must edit the file directly.)</li>
+      <li><b>ActivateDrive=x,yn</b> This setting specifies
+      that DoubleSpace should mount a compressed volume file
+      when your computer starts. The DBLSPACE.INI file can
+      contain more than one ActivateDrive setting. Except
+      for the host drive letter, which you can change by
+      using the DBLSPACE <a href="#SwitchHost">/HOST</a>
+      command, do not change the ActivateDrive setting yourself.
+      The ActivateDrive setting requires the following parameters:
+      <ul>
+        <li><b>x</b> The drive letter to assign to the newly
+        mounted compressed drive.</li>
+        <li><b>y</b> The drive letter of the host drive. To
+        change the host drive letter, use the DBLSPACE
+        <a href="#SwitchHost">/HOST</a> command.</li>
+        <li><b>n</b> The number of the compressed volume
+        file (CVF). To determine the CVF number, examine its
+        filename extension. If the CVF filename is
+        DBLSPACE.000, set n to 0; if the CVF filename is
+        DBLSPACE.001, set n to 1, and so on.</li>
+      </ul>
+      </li>
+      <li><b>FIRSTDRIVE=x</b> Set by DoubleSpace each time it
+      modifies the DBLSPACE.INI file. DoubleSpace uses this
+      setting to control the overall assignment of drive
+      letters. Do not change this setting yourself.</li>
+    </ul>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>If you have floppy drives A and B, and a Bernoulli
+    removable drive D, to enable automatic mounting of all
+    these drives:
+<pre>
+    DBLSPACE <a href="#SwitchAutomount">/AUTOMOUNT=1</a>
+</pre>
+
+    <p><b>Note:</b> Before a floppy drive actually mounts,
+    you must insert the floppy disk in the drive, and then
+    begin using the floppy disk.</p>
+
+    <hr>
+    <p>If you just want to enable automatic mounting of
+    floppy drives A and B, use:
+<pre>
+    DBLSPACE <a href="#SwitchAutomount">/AUTOMOUNT=AB</a>
+</pre>
+
+    <hr>
+    <p>To uncompress drive E, type:
+<pre>
+    DBLSPACE <a
+href="#SwitchUncompress">/UNCOMPRESS</a> <a
+href="#ParameterDrive">e:</a>
+</pre>
+
+    <hr>
+    <p>To compress drive D:
+<pre>
+    DBLSPACE <a
+href="#SwitchCompress">/COMPRESS</a> <a
+href="#ParameterDrive">d:</a>
+</pre>
+
+    <p>Because this command does not specify how much space
+    to leave uncompressed, DoubleSpace leaves 2 MB of
+    uncompressed space (the default). Because the command
+    does not specify a drive letter for the uncompressed
+    drive, DoubleSpace assigns the next available drive
+    letter to the new uncompressed drive (the host drive).</p>
+
+    <hr>
+    <p>To direct DoubleSpace to compress drive E, assign the
+    drive letter F to the new uncompressed drive (the host
+    drive), and leave 4 MB of uncompressed space on drive F:
+<pre>
+    DBLSPACE <a
+href="#SwitchCompress">/COMPRESS</a> <a
+href="#ParameterDrive">e:</a> <a
+href="#SwitchNewdrive">/NEWDRIVE=F:</a> <a
+href="#SwitchReserve">/RESERVE=4</a>
+</pre>
+
+    <hr>
+    <p>To create a new compressed drive that uses all
+    available space on uncompressed drive E:
+<pre>
+    DBLSPACE <a
+href="#SwitchCreate">/CR</a> <a
+href="#ParameterDrive">e:</a> <a
+href="#SwitchReserve">/RE=0</a>
+</pre>
+
+    <hr>
+    <p>To create a new compressed drive by using 10 MB of
+    space on uncompressed drive E:
+<pre>
+    DBLSPACE <a
+href="#SwitchCreate">/CREATE</a> <a
+href="#ParameterDrive">e:</a> <a
+href="#SwitchSize">/SI=10</a>
+</pre>
+
+    <hr>
+    <p>To create a new compressed drive by using space on
+    uncompressed drive D, and to direct DoubleSpace to leave
+    2.75 MB of free space on drive D:
+<pre>
+    DBLSPACE <a
+href="#SwitchCreate">/CREATE</a> <a
+href="#ParameterDrive">d:</a> <a
+href="#SwitchReserve">/RESERVE=2.75</a>
+</pre>
+
+    <hr>
+    <p>To create a new compressed drive by using all but 2 MB
+    of the space on drive D:
+<pre>
+    DBLSPACE <a
+href="#SwitchCreate">/CREATE</a> <a
+href="#ParameterDrive">d:</a>
+</pre>
+
+    <p>Because the command includes neither the
+    <a href="#SwitchReserve">/RESERVE</a> nor
+    <a href="#SwitchSize">/SIZE</a> switches, DoubleSpace
+    uses the default value for the
+    <a href="#SwitchReserve">/RESERVE</a> switch and leaves
+    2 MB of space on drive D.</p>
+
+    <hr>
+    <p>To defragment compressed drive D:
+<pre>
+    DBLSPACE <a
+href="#SwitchDefragment">/DEFRAGMENT</a> <a
+href="#ParameterDrive">d:</a>
+</pre>
+
+    <hr>
+    <p>To defragment the current compressed drive:
+<pre>
+    DBLSPACE <a
+href="#SwitchDefragment">/DEFRAGMENT</a>
+</pre>
+
+    <hr>
+    <p>To defragment compressed drive C as much as possible:
+<pre>
+    <a href="DEFRAG.HTM">DEFRAG</a> <a
+href="DEFRAG.HTM#ParameterDrive">c:</a>
+    DBLSPACE <a
+href="#SwitchDefragment">/DEFRAGMENT</a> <a
+href="#SwitchF">/F</a> <a
+href="#ParameterDrive">c:</a>
+    DBLSPACE <a
+href="#SwitchDefragment">/DEFRAGMENT</a> <a
+href="#ParameterDrive">c:</a>
+</pre>
+
+    <hr>
+    <p>Direct DoubleSpace to delete compressed drive E:
+<pre>
+    DBLSPACE <a
+href="#SwitchDelete">/DELETE</a> <a
+href="#ParameterDrive">e:</a>
+</pre>
+
+    <p>DoubleSpace then deletes the compressed volume file
+    for drive E. This completely erases drive E and all the
+    files it contains.</p>
+
+    <hr>
+    <p>Direct DoubleSpace to format compressed drive E:
+<pre>
+    DBLSPACE <a
+href="#SwitchFormat">/FORMAT</a> <a
+href="#ParameterDrive">e:</a>
+</pre>
+
+    <p>DoubleSpace then formats compressed drive E, which
+    completely erases all the files on it.</p>
+
+    <hr>
+    <p>Display information about the current drive:
+<pre>
+    DBLSPACE <a
+href="#SwitchInfo">/INFO</a>
+</pre>
+
+    <hr>
+    <p>Display information about drive C:
+<pre>
+    DBLSPACE <a
+href="#SwitchInfo">/INFO</a> <a
+href="#ParameterDrive">c:</a>
+</pre>
+
+    <hr>
+    <p>Display information about drive E:
+<pre>
+    DBLSPACE <a
+href="#ParameterDrive">e:</a>
+</pre>
+
+    <hr>
+    <p>Display a list of your computer's drives
+    (except network drives and CD-ROM drives):
+<pre>
+    DBLSPACE <a
+href="#SwitchList">/LIST</a>
+</pre>
+
+    <p>DoubleSpace displays information similar to:
+<pre>
+<u>Drive  Type                        Total Free  Total Size  CVF Filename</u>
+  A    Removable-media drive       No disk in drive
+  B    Compressed floppy disk         1.27 MB     1.27 MB  H:DBLSPACE.000
+  C    Compressed hard drive         13.99 MB    96.49 MB  K:DBLSPACE.000
+  D    Local hard drive               2.38 MB    39.98 MB
+  E    Local hard drive              37.33 MB   201.94 MB
+  F    Available for DoubleSpace
+  G    Available for DoubleSpace
+  H    Floppy drive                   0.00 MB     0.70 MB
+  I    Available for DoubleSpace
+  J    Available for DoubleSpace
+  K    Local hard drive              12.52 MB    66.80 MB
+
+<a href="#SwitchDoubleguard">DoubleGuard</a> safety checking is enabled.
+<a href="#SwitchAutomount">Automounting</a> is enabled.
+</pre>
+
+    <hr>
+    <p>To mount a compressed floppy disk in drive A:
+<pre>
+    DBLSPACE <a
+href="#SwitchMount">/MOUNT</a> <a
+href="#ParameterDrive">a:</a>
+</pre>
+
+    <hr>
+    <p>To mount the compressed volume file DBLSPACE.001
+    located on uncompressed drive D:
+<pre>
+    DBLSPACE <a
+href="#SwitchMount">/MOUNT=001</a> <a
+href="#ParameterDrive">d:</a>
+</pre>
+
+    <hr>
+    <p>To change the estimated compression ratio of all your
+    compressed drives to match each drive's actual
+    compression ratio:
+<pre>
+    DBLSPACE <a
+href="#SwitchRatio">/RATIO</a> <a
+href="#SwitchAll">/ALL</a>
+</pre>
+
+    <hr>
+    <p>To change drive D's estimated compression ratio so
+    that it is 3.2 to 1:
+<pre>
+    DBLSPACE <a
+href="#SwitchRatio">/RATIO=3.2</a> <a
+href="#ParameterDrive">d:</a>
+</pre>
+
+    <hr>
+    <p>To change the estimated compression ratio of the
+    current drive to 6 to 1:
+<pre>
+    DBLSPACE <a
+href="#SwitchRatio">/RATIO=6</a>
+</pre>
+
+    <hr>
+    <p>To have DoubleSpace adjust the compression ratio for
+    all your drives each time your computer starts, add to
+    the end of your AUTOEXEC.BAT file:
+<pre>
+    DBLSPACE <a
+href="#SwitchRatio">/RATIO</a> <a
+href="#SwitchAll">/ALL</a>
+</pre>
+
+    <hr>
+    <p>To change the size of drive C so that its compressed
+    volume file uses 60.5 MB of space on drive D:
+<pre>
+    DBLSPACE <a
+href="#SwitchSize">/SIZE=60.5</a> <a
+href="#ParameterDrive">c:</a>
+</pre>
+
+    <hr>
+    <p>To change the size of drive E so that its host drive,
+    drive D, contains 20 MB of free uncompressed space:
+<pre>
+    DBLSPACE <a
+href="#SwitchSize">/SIZE</a> <a
+href="#SwitchReserve">/RESERVE=20</a> <a
+href="#ParameterDrive">e:</a>
+</pre>
+
+    <hr>
+    <p>To change the size of drive C so that it is as large
+    as possible:
+<pre>
+    DBLSPACE <a
+href="#SwitchSize">/SIZE</a> <a
+href="#SwitchReserve">/RESERVE=0</a> <a
+href="#ParameterDrive">c:</a>
+</pre>
+
+    <hr>
+    <p>To uncompress drive E:
+<pre>
+    DBLSPACE <a
+href="#SwitchUncompress">/UNCOMPRESS</a> <a
+href="#ParameterDrive">e:</a>
+</pre>
+
+    <hr>
+    <p>To unmount drive E:
+<pre>
+    DBLSPACE <a
+href="#SwitchUnmount">/UNMOUNT</a> <a
+href="#ParameterDrive">e:</a>
+</pre>
+
+    <hr>
+    <p>If your compressed drive letter is C, and your host
+    drive letter is H, you can change the host drive letter
+    to G:
+<pre>
+    DBLSPACE <a
+href="#ParameterDrive">c:</a> <a
+href="#SwitchHost">/HOST=g:</a>
+</pre>
+
+    <hr>You can also change the host drive letter to G:
+<pre>
+    DBLSPACE <a
+href="#ParameterDrive">h:</a> <a
+href="#SwitchHost">/HOST=g:</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

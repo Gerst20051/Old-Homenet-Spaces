@@ -1,0 +1,672 @@
+<html>
+
+<head>
+<title>Word Processing Crossword</title>
+<script language="javascript" type="text/javascript">
+
+//<![CDATA[
+
+<!--
+
+// BrowserCheck Object
+
+function BrowserCheck() {
+	var b = navigator.appName
+//HBS extension
+	this.mac = (navigator.appVersion.indexOf('Mac') != -1)
+	if (b=="Netscape") this.b = "ns"
+	else if (b=="Microsoft Internet Explorer") this.b = "ie"
+	else this.b = b
+	this.version = navigator.appVersion
+	this.v = parseInt(this.version)
+	this.ns = (this.b=="ns" && this.v>=4)
+	this.ns4 = (this.b=="ns" && this.v==4)
+	this.ns5 = (this.b=="ns" && this.v==5)
+	this.ie = (this.b=="ie" && this.v>=4)
+	this.ie4 = (this.version.indexOf('MSIE 4')>0)
+	this.ie5 = (this.version.indexOf('MSIE 5')>0)
+	this.min = (this.ns||this.ie)
+	this.CRAPBrowser = (this.ie && this.mac); //Cannot Resolve Addresses Properly
+}
+
+is = new BrowserCheck();
+
+var LocFolder = GetFolder(window.location.href);
+function GetFolder(LocPath){
+	LocPath = ReplaceStuff('\'','%27',LocPath);
+	var i = LocPath.lastIndexOf('/');
+	if (i<0){i=LocPath.lastIndexOf('\\')};
+	return LocPath.substring(0,i);
+}
+
+function CombineURLs(InURL){
+	var i = InURL.indexOf('../');
+	var s = LocFolder;
+	while (i >- 1){
+		s = GetFolder(s);
+		InURL = InURL.substring(3,InURL.length);
+		i = InURL.indexOf('../');
+	}
+	return s + '/' + InURL;
+}
+
+x = new Array();
+function ResolveURLs(InText,Attribute){
+	x.length=0;
+	var Temp = InText.toLowerCase();
+	var z;
+	var AttLen = Attribute.length + 2;
+	var y=Temp.lastIndexOf(Attribute + '="');
+	while (y>-1){
+		var sLoc = y+AttLen;
+		if (Temp.substring(sLoc,sLoc+5) != 'http:'){
+			x[x.length]=new Array();
+			x[x.length-1][0] = sLoc;
+			z = Temp.indexOf('"',sLoc);
+			x[x.length-1][1] = z;
+			x[x.length-1][2] = Temp.substring(sLoc,z);
+		}
+		Temp = Temp.substring(0,y);
+		y=Temp.lastIndexOf(Attribute + '="');
+	}
+	for (var j=0; j<x.length; j++){
+		InText = InText.substring(0,x[j][0]) + CombineURLs(x[j][2]) + InText.substring(x[j][1], InText.length);
+	}
+	return InText;
+}
+
+function ResolveAllURLs(Stuff){
+	Stuff = ResolveURLs(Stuff,'href');
+	Stuff = ResolveURLs(Stuff,'src');
+	Stuff = ResolveURLs(Stuff,'parent.location');
+	return Stuff;
+}
+
+if (is.ie){
+	var BoxSize = '1';
+}
+else{
+	var BoxSize = '2';
+}
+
+var CurrentBox = -1;
+var Feedback = '';
+var CluesAcross = 'Across:';
+var CluesDown = 'Down:';
+var Correct = 'Correct! Well done.';
+var Incorrect = 'Some of your answers are incorrect. Incorrect squares have been blanked out.'; 
+var GiveHint = 'A correct letter has been added.';
+var YourScoreIs = 'Your score is ';
+var Instructions = 'Complete the crossword, then click on "Check" to check your answer. If you are stuck, you can click on "Hint" to get a free letter. Click on a number in the grid to see the clue or clues for that number.';
+var BuiltGrid = '';
+var BuiltClues = '';
+var BuiltExercise = '';
+var Penalties = 0;
+var ExerciseSubtitle = 'Crossword';
+var ExerciseTitle = 'Word Processing Crossword';
+var FirstShow = true;
+var ReadingURL = '';
+
+var PreviousPage = history.length;
+var CurrBoxElement = null;
+
+
+
+
+
+
+
+var NavBar='';
+
+
+NavBar+='<tr><form name="NavButtons1"><td bgcolor="#000066" align="center">';
+NavBar+='<font face="Geneva,Arial" size="-1">';
+
+
+NavBar+='<input type="button" value="Index" onclick=\'parent.location="http://www.catawba.k12.nc.us/onlinequiz/"\'></input>';
+
+
+NavBar+='</font></td></form></tr>';
+if (is.CRAPBrowser){NavBar=ResolveAllURLs(NavBar);}
+
+
+var TitleCode = '<tr><td align="center" valign="middle" bgcolor="#ffffff">';
+TitleCode += '<font size="+1" face="Geneva,Arial" color="#000033">' + ExerciseTitle + '</font><br />';
+TitleCode += '<font size="-1" face="Geneva,Arial" color="#000033">' + ExerciseSubtitle + '<br />';
+
+TitleCode += '</font></td></tr>';
+
+var GridOpener = '<tr><td align="center" valign="middle" bgcolor="#bbbbee"><table border="1" cellpadding="0" cellspacing="0">';
+var GridRowOpener = '<tr>';
+var GridRowCloser = '</tr>';
+
+var BlankCell = '<td bgcolor="#000000" width="30" height="30">&nbsp;</td>';
+var LetterOnlyCell = '<td bgcolor="#FFFFFF" width="30" height="30" align="center" valign="middle"><b><font color="#000000">[Letter]</font></b></td>';
+var NumLetterCell = '<td bgcolor="#FFFFFF" width="30" height="30" align="center" valign="top" onclick="parent.ShowClue([ClueNum],[x],[y])" style="cursor: pointer; cursor: hand;"><sup><u>';
+
+if (! is.CRAPBrowser){
+	NumLetterCell += '<a href="javascript:parent.DoNothing()" onclick="parent.ShowClue([ClueNum],[x],[y])">[ClueNum]</a>';
+}
+else{
+	NumLetterCell += '[ClueNum]';
+}
+NumLetterCell += '</u></sup>&nbsp;<b><font color="#000000">[Letter]</font></b></td>';
+
+var GridCloser = '</table></td></tr>';
+
+var Buttons = '<tr><form name="Buttons[Num]" action=""><td align="center" valign="top" bgcolor="#bbbbee">';
+Buttons += '<font face="Geneva,Arial" color="#000000">';
+Buttons += '<input type="button" value="Check" onclick="parent.CheckAnswers()"></input>';
+Buttons += '</font></td></form></tr>';
+
+var Buttons1 = ReplaceStuff('[Num]', '1', Buttons);
+var Buttons2 = ReplaceStuff('[Num]', '2', Buttons);
+
+var GetAnswerOpener = '<form name="AnswerForm" action="" onSubmit="return false;">';
+var GetAnswer = ' <font size="3"><input type="text" name="[BoxName]" size="[AnsLength]" MAXLENGTH="[AnsLength]"></input>';
+GetAnswer += ' <input type="button" value="Enter" ';
+GetAnswer += 'onClick="parent.EnterAnswer(document.AnswerForm.[BoxName].value,[boolAcross],[AnsLength],[x],[y])"></input>';
+
+
+GetAnswer += '<input type="button" value="Hint" onclick="parent.ShowHint([boolAcross],[x],[y],\'[FrameName].document.AnswerForm.[BoxName]\')"></input>';
+
+
+GetAnswer += '</font>';
+
+var GetAnswerCloser = '</form>';
+
+function GoBack(){
+	var BackSkip = history.length - PreviousPage;
+	if (BackSkip > 0){
+		history.go((BackSkip+1)*-1);
+	}
+	else{
+		parent.history.back();
+	}
+}
+
+
+
+
+
+function BuildExercise(){
+	var OutString = '';
+	var Temp = '';
+	var GridStuff = GridOpener;	
+
+	for (var i=0; i<L.length; i++){
+		GridStuff += GridRowOpener;
+		for (var j=0; j<L[i].length; j++){
+//If the cell is blank, add a black cell
+			if (L[i][j] == ''){
+				GridStuff += BlankCell;
+			}
+//else there's a letter there
+			else{
+//If there's a clue number, add it
+				if (C[i][j] > 0){
+					Temp = NumLetterCell;
+					Temp = ReplaceStuff('[ClueNum]', C[i][j], Temp);
+//Add location info
+					Temp = ReplaceStuff('[x]', i, Temp);
+					Temp = ReplaceStuff('[y]', j, Temp);
+				}
+//Otherwise add a blank cell
+				else{
+					Temp = LetterOnlyCell;
+				}
+
+//If the cell is already answered, add the letter from the Guess array
+				if (G[i][j] != ''){
+					Temp = ReplaceStuff('[Letter]', G[i][j], Temp);
+				}
+//Otherwise, put in a non-breaking space
+				else{
+					Temp = ReplaceStuff('[Letter]', '&nbsp;', Temp);
+				}
+				GridStuff += Temp;
+			}
+		}
+		GridStuff += GridRowCloser;
+	}
+
+	GridStuff += GridCloser;
+
+//Put the final pieces together
+	OutString = GridStuff;
+	BuiltExercise = OutString;
+}
+
+function WriteFeedback(Feedback) {
+	if (is.CRAPBrowser){Feedback=ResolveAllURLs(Feedback);}
+//Build the output string
+	var OutString = '';
+	OutString += '<html>';
+	OutString += '<body  background="" bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#0000cc">';
+	OutString += '<center><table border="0" cellpadding="5" cellspacing="1" width="85%">';
+	OutString += NavBar;
+	if (Feedback.length>0){
+		OutString += '<tr><td bgcolor="#bbbbee" align="center">'; 
+		OutString += '<font face="Geneva,Arial" size="-1" color="#000000">';
+		OutString += Feedback;
+		OutString += '</font></td></tr>'
+	}
+	OutString += '</table></center></body></html>';
+//Write it to the frame
+	TopFrame.document.clear();
+	TopFrame.document.open();
+	TopFrame.document.write(OutString);
+	TopFrame.document.close();
+}
+
+function DisplayExercise(){
+//Build the output string
+	var OutString = '';
+	OutString += '<html>';
+	OutString += '<body  background="" bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#0000cc">';
+	OutString += '<center><table border="0" cellpadding="5" cellspacing="1" width="85%">';
+	OutString += TitleCode;
+	OutString += Buttons1; 
+	OutString += BuiltExercise;
+	OutString += Buttons2;
+	OutString += BuiltClues;
+	OutString += NavBar;
+	OutString += '</table></center></body></html>';
+
+	if (is.CRAPBrowser){OutString=ResolveAllURLs(OutString);}
+
+//Write it to the frame
+	BottomFrame.document.clear();
+	BottomFrame.document.open();
+	BottomFrame.document.write(OutString);
+	BottomFrame.document.close();
+}
+
+function BuildClue(ClueNum,x,y,Across){
+	var OutString = '';
+	if (Across == true){
+		if (ClueNum >= A.length){
+			return '';
+		}	
+		if (A[ClueNum] == null){
+			return '';
+		}
+		OutString = ClueNum + '. ' + A[ClueNum];
+		OutString += GetAnswer;
+		OutString = ReplaceStuff('[BoxName]', 'BA'+ClueNum, OutString);
+//Find out how long the answer is
+		AnsLength = 0;
+		i = x;
+		j = y;
+		while (j<L[i].length){
+			if (L[i][j] != ''){
+				AnsLength++;
+			}
+			else{
+				break;
+			}
+			j++;
+		}
+		OutString = ReplaceStuff('[AnsLength]', AnsLength, OutString);
+		OutString = ReplaceStuff('[boolAcross]', 'true', OutString);
+	}
+	else{
+		if (ClueNum >= D.length){
+			return '';
+		}	
+		if (D[ClueNum] == null){
+			return '';
+		}
+		OutString = ClueNum + '. ' + D[ClueNum];
+		OutString += GetAnswer;
+		OutString = ReplaceStuff('[BoxName]', 'BD'+ClueNum, OutString);
+//Find out how long the answer is
+		AnsLength = 0;
+		i = x;
+		j = y;
+		while (i<L.length){
+			if (L[i][j] != ''){
+				AnsLength++;
+			}
+			else{
+				break;
+			}
+			i++;
+		}
+		OutString = ReplaceStuff('[AnsLength]', AnsLength, OutString);
+		OutString = ReplaceStuff('[boolAcross]', 'false', OutString);
+	}
+	OutString = ReplaceStuff('[x]', x ,OutString);
+	OutString = ReplaceStuff('[y]', y, OutString);
+	OutString = ReplaceStuff('[FrameName]', 'BottomFrame', OutString);
+	OutString += '<br />';
+	return OutString;
+}
+
+
+
+function ShowClue(ClueNum,x,y){
+	var OutString = '';
+	var AnsLength = 0;
+	var i;
+	var j;
+	CurrBoxElement = ClueNum;
+	if (A[ClueNum] != null){
+		OutString = OutString + 'Across: ' + ClueNum + '. ' + A[ClueNum];
+		OutString += GetAnswer;
+		OutString = ReplaceStuff('[BoxName]', 'BA'+ClueNum, OutString);
+//Find out how long the answer is
+		AnsLength = 0;
+		i = x;
+		j = y;
+		while (j<L[i].length){
+			if (L[i][j] != ''){
+				AnsLength++;
+			}
+			else{
+				break;
+			}
+			j++;
+		}
+		OutString = ReplaceStuff('[AnsLength]', AnsLength, OutString);
+		OutString = ReplaceStuff('[boolAcross]', 'true', OutString);
+	}
+	if (D[ClueNum] != null){
+		if (OutString.length > 0){
+			OutString += '<br />';
+		}
+		OutString = OutString + 'Down: ' + ClueNum + '. ' + D[ClueNum];
+		OutString += GetAnswer;
+		OutString = ReplaceStuff('[BoxName]', 'BD'+ClueNum, OutString);
+//Find out how long the answer is
+		AnsLength = 0;
+		i = x;
+		j = y;
+		while (i<L.length){
+			if (L[i][j] != ''){
+				AnsLength++;
+			}
+			else{
+				break;
+			}
+			i++;
+		}
+		OutString = ReplaceStuff('[AnsLength]', AnsLength, OutString);
+		OutString = ReplaceStuff('[boolAcross]', 'false', OutString);
+	}
+	OutString = GetAnswerOpener + OutString + GetAnswerCloser;
+	OutString = ReplaceStuff('[x]', x ,OutString);
+	OutString = ReplaceStuff('[y]', y, OutString);
+	OutString = ReplaceStuff('[FrameName]', 'TopFrame', OutString);
+	WriteFeedback(OutString); 
+	if (eval('TopFrame.document.AnswerForm.BA' + ClueNum) != null){
+		eval('TopFrame.document.AnswerForm.BA' + ClueNum).focus();
+	}
+	else{
+		if (eval('TopFrame.document.AnswerForm.BD' + ClueNum) != null){
+			eval('TopFrame.document.AnswerForm.BD' + ClueNum).focus();
+		}
+	}
+}
+
+function EnterAnswer(Guess,Across,AnsLength,x,y){
+
+	Guess = Guess.toUpperCase();
+
+	var i=x;
+	var j=y;
+	var Letter = 0;
+	while (Letter < AnsLength){
+		if (Letter < Guess.length){
+			G[i][j] = Guess.charAt(Letter);
+		}
+		if (Across == true){
+			j++;
+		}
+		else{
+			i++;
+		}
+		Letter++;
+	}
+
+	BuildExercise();
+	DisplayExercise();
+}
+
+function ShowHint(Across,x,y,BoxName){
+	var i=x;
+	var j=y;
+	var OutString = '';
+	if (Across==true){
+		while (j<L[i].length){
+			if (L[i][j] != ''){
+				OutString += L[i][j];
+				if (G[i][j] != L[i][j]){
+					G[i][j] = L[i][j];
+					Penalties++;
+					break;
+				}
+			}
+			else{
+				break;
+			}
+		j++;
+		}
+	}
+	else{
+		while (i<L.length){
+			if (L[i][j] != ''){
+				OutString += L[i][j];
+				if (G[i][j] != L[i][j]){
+					G[i][j] = L[i][j];
+					Penalties++;
+					break;
+				}
+			}
+			else{
+				break;
+			}
+		i++;
+		}
+	}
+	if (eval(BoxName) != null){
+		eval(BoxName).value = OutString;
+	}
+}
+
+function ReplaceStuff(Token, Replacement, InString){
+	var i = InString.indexOf(Token);
+	var FirstBit = '';
+	var LastBit = '';
+	while (i>-1){
+		FirstBit = InString.substring(0, i);
+		LastBit = InString.substring(i + Token.length, InString.length);	
+		InString = FirstBit + Replacement + LastBit;
+		i = InString.indexOf(Token);
+	}
+	return InString;
+}
+
+L = new Array();
+L[0] = new Array('','','','','','','','','','','','','','P','','','','');
+L[1] = new Array('','','','','','','','','','','','','','R','','','','');
+L[2] = new Array('','','','','','','','','','','C','','','I','','','','');
+L[3] = new Array('','','','H','I','G','H','L','I','G','H','T','I','N','G','','','');
+L[4] = new Array('','','','A','','','','','','','A','','','T','','','','');
+L[5] = new Array('','','','R','','','','','','','R','','','','','','C','');
+L[6] = new Array('','','E','D','I','T','I','N','G','','A','','F','','P','','U','');
+L[7] = new Array('','','','C','','','','','','','C','L','I','P','A','R','T','');
+L[8] = new Array('','','B','O','L','D','','','','','T','','L','','S','','','');
+L[9] = new Array('','F','','P','','','','','','','E','','E','','T','E','X','T');
+L[10] = new Array('C','O','P','Y','','','','','','','R','','','','E','','','');
+L[11] = new Array('','N','','','L','','','C','U','R','S','O','R','','','','','');
+L[12] = new Array('I','T','A','L','I','C','S','','','','','','','','','','','');
+L[13] = new Array('','','','','N','','','','','','','','','','','','','');
+L[14] = new Array('','','S','P','E','L','L','C','H','E','C','K','','','','','','');
+L[15] = new Array('','','A','','S','','','','','','','','','','','','','');
+L[16] = new Array('','','V','','P','','','','','','','','','','','','','');
+L[17] = new Array('T','H','E','S','A','U','R','U','S','','','','','','','','','');
+L[18] = new Array('','','','','C','','','','','','','','','','','','','');
+L[19] = new Array('','','','','I','','','','','','','','','','','','','');
+L[20] = new Array('','','','U','N','D','E','R','L','I','N','E','','','','','','');
+L[21] = new Array('','','','','G','','','','','','','','','','','','','');
+
+
+C = new Array();
+C[0] = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0);
+C[1] = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+C[2] = new Array(0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0);
+C[3] = new Array(0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+C[4] = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+C[5] = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0);
+C[6] = new Array(0,0,5,0,0,0,0,0,0,0,0,0,6,0,7,0,0,0);
+C[7] = new Array(0,0,0,0,0,0,0,0,0,0,8,0,0,0,0,0,0,0);
+C[8] = new Array(0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+C[9] = new Array(0,10,0,0,0,0,0,0,0,0,0,0,0,0,11,0,0,0);
+C[10] = new Array(12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+C[11] = new Array(0,0,0,0,13,0,0,14,0,0,0,0,0,0,0,0,0,0);
+C[12] = new Array(15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+C[13] = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+C[14] = new Array(0,0,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+C[15] = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+C[16] = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+C[17] = new Array(17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+C[18] = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+C[19] = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+C[20] = new Array(0,0,0,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+C[21] = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+
+
+G = new Array();
+G[0] = new Array('','','','','','','','','','','','','','','','','','');
+G[1] = new Array('','','','','','','','','','','','','','','','','','');
+G[2] = new Array('','','','','','','','','','','','','','','','','','');
+G[3] = new Array('','','','','','','','','','','','','','','','','','');
+G[4] = new Array('','','','','','','','','','','','','','','','','','');
+G[5] = new Array('','','','','','','','','','','','','','','','','','');
+G[6] = new Array('','','','','','','','','','','','','','','','','','');
+G[7] = new Array('','','','','','','','','','','','','','','','','','');
+G[8] = new Array('','','','','','','','','','','','','','','','','','');
+G[9] = new Array('','','','','','','','','','','','','','','','','','');
+G[10] = new Array('','','','','','','','','','','','','','','','','','');
+G[11] = new Array('','','','','','','','','','','','','','','','','','');
+G[12] = new Array('','','','','','','','','','','','','','','','','','');
+G[13] = new Array('','','','','','','','','','','','','','','','','','');
+G[14] = new Array('','','','','','','','','','','','','','','','','','');
+G[15] = new Array('','','','','','','','','','','','','','','','','','');
+G[16] = new Array('','','','','','','','','','','','','','','','','','');
+G[17] = new Array('','','','','','','','','','','','','','','','','','');
+G[18] = new Array('','','','','','','','','','','','','','','','','','');
+G[19] = new Array('','','','','','','','','','','','','','','','','','');
+G[20] = new Array('','','','','','','','','','','','','','','','','','');
+G[21] = new Array('','','','','','','','','','','','','','','','','','');
+
+
+A = new Array();
+A[3]='The method of selecting a portion of the text by holding down the mouse button and draging over the text';
+A[5]='Changing or making corrections in a doucment';
+A[8]='A collection of picture files that can be inserted into a document';
+A[9]='Heavier typestyle used for emphasis and apperance';
+A[11]='The words that you type in';
+A[12]='To make a duplicate of a higlighted section of the document';
+A[14]='Blinking line that indicates your location in the doucment';
+A[15]='Typestyle that is evenly slanted towards the right';
+A[16]='Tool that is used to correct misspellings';
+A[17]='Tool that is used to find words that have a similar meaning';
+A[18]='A horizontal line that is used to emphasis a word';
+
+
+D = new Array();
+D[1]='To make a hard copy of a document';
+D[2]='The letters, numbers, symbols, or punctuation marks that appear in a document';
+D[3]='The printed copy';
+D[4]='To remove a highlighted section of a document';
+D[6]='A word processing document';
+D[7]='This function is usually used in conjunction with the cut or copy commands';
+D[10]='A specific design for a complete set of letters, numbers, and symbols';
+D[13]='The vertical distance between line of text';
+D[16]='To store a file on the computer or disk';
+
+
+function StartUp(){
+
+	BuildExercise();
+
+	WriteFeedback(Instructions);
+	DisplayExercise();
+
+
+
+
+
+}
+function CheckAnswers(){
+
+	var AllCorrect = true;
+	var TotLetters = 0;
+	var CorrectLetters = 0;
+
+//Check each letter
+	for (var i=0; i<L.length; i++){
+		for (var j=0; j<L[i].length; j++){
+			if (L[i][j] != ''){
+				TotLetters++;
+				if (G[i][j] != L[i][j]){
+					G[i][j] = '';
+					AllCorrect = false;
+				}
+				else{
+					CorrectLetters++;
+				}
+			}
+		}
+	}
+
+	var Score = Math.floor(((CorrectLetters-Penalties) * 100)/TotLetters);
+
+//Compile the output
+	var Output = '';
+
+	if (AllCorrect == true){
+		Output = Correct + '<br />';
+	}
+
+	Output += YourScoreIs + ' ' + Score + '%.<br />';
+	if (AllCorrect == false){
+		Output += '<br />' + Incorrect;
+		Penalties++;
+	}
+	BuildExercise();
+	WriteFeedback(Output);
+
+		
+
+
+	DisplayExercise();
+}
+
+
+
+function DoNothing(){}
+
+function Blank(){
+	return '<html><body>&copy;Half-Baked Software. Loading...</body></html>';
+}
+
+//-->
+
+//]]>
+
+</script>
+<meta name="Microsoft Theme" content="none, default">
+<meta name="Microsoft Border" content="none, default">
+</head>
+
+<frameset rows="30%,*" framespacing="0" border="0" onload="StartUp()">
+  <frame src="javascript:parent.Blank()" frameborder="0" name="TopFrame">
+  </frame>
+  <frame src="javascript:parent.Blank()" frameborder="0" name="BottomFrame">
+  </frame>
+</frameset>
+
+</html>

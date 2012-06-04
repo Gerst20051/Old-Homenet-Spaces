@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>WINDOWS New Technology (NT) v3.51</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../INDEX.HTM">Versions</a>
+    <h1>WINDOWS New Technology (NT) v3.51</h1>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    | <a href="#Added">Added</a>
+    | <a href="#Changed">Changed</a>
+    | <a href="#Removed">Removed</a>
+    | <a href="#Files">Files</a>
+    <ol>
+      <li>MINUMUM SYSTEM REQUIREMENTS
+        <ol>
+          <li>CPU: 386 or 486/25MHz</li>
+          <li>RAM: Workstation 12MB (Server 16MB)</li>
+          <li>CD-ROM, 1.44 MB or 1.2 MB floppy or active
+              network connection</li>
+          <li>VIDEO: VGA level video support</li>
+          <li>IDE, EIDE, SCSI or ESDI hard drive</li>
+          <li>HARD DRIVE SPACE: 90MB</li>
+        </ol>
+      </li>
+      <li>Windows NT 3.51 beta begins February 1995.</li>
+      <li>Released, May 30 1995.</li>
+      <li>Additional Device Drivers.</li>
+      <li>Last known Service Pack: SP-5 (October 1996).</li>
+      <li>Windows NT system commands not found in MS-DOS
+        <ol>
+          <li><a href="../../Command/A/ACLCONV.HTM">ACLCONV</a> Restores OS/2 HPFS386 ACLs to NTFS volumes.</li>
+          <li><a href="../../Command/A/AT.HTM">AT</a> Schedules commands and programs to run on a computer at a specified time and date.</li>
+          <li><a href="../../Command/C/CACLS.HTM">CACLS</a> Displays or modifies access control lists (ACLs) of files.</li>
+          <li><a href="../../Command/C/CONVERT.HTM">CONVERT</a> Converts file systems from FAT or HPFS to NTFS.</li>
+          <li><a href="../../Command/D/DISKPERF.HTM">DISKPERF</a> Starts, stops, and displays system disk performance counter use.</li>
+          <li><a href="../../Command/D/DOSONLY.HTM">DOSONLY</a> Prevents starting applications other than MS-DOS-based applications from the COMMAND.COM prompt.</li>
+          <li><a href="../../Command/E/ECHOCONF.HTM">ECHOCONF</a> Displays messages when reading the MS-DOS subsystem CONFIG.NT file.</li>
+          <li><a href="../../Command/E/ENDLOCAL.HTM">ENDLOCAL</a> Ends localization of environment variables.</li>
+          <li><a href="../../Command/F/FINDSTR.HTM">FINDSTR</a> Searches for text in files using regular expressions.</li>
+          <li><a href="../../Command/N/NTCMDPRO.HTM">NTCMDPROMPT</a> Runs the Windows NT command interpreter, CMD.EXE, rather than COMMAND.COM after running a TSR or after starting the command prompt from within an MS-DOS application.</li>
+          <li><a href="../../Command/P/POPD.HTM">POPD</a> Changes to the directory last set with the pushd command.</li>
+          <li><a href="../../Command/P/PUSHD.HTM">PUSHD</a> Saves the current directory for use by the popd command, and then changes to the specified directory.</li>
+          <li><a href="../../Command/S/SETLOCAL.HTM">SETLOCAL</a> Begins localization of environmental variables.</li>
+          <li><a href="../../Command/S/START.HTM">START</a> Runs a specified program or command in a secondary window and in its own memory space.</li>
+          <li><a href="../../Command/T/TITLE.HTM">TITLE</a> Sets the title of the command prompt window.</li>
+          <li><b>&amp;&amp;</b> Command following this symbol runs only if the command preceding the symbol succeeds.</li>
+          <li><b>||</b> Command following this symbol runs only if the command preceding the symbol fails.</li>
+          <li><b>&amp;</b> Separates multiple commands on the command line.</li>
+          <li><b>( )</b> Groups commands.</li>
+          <li><b>^</b> Escape character. Allows input of command symbols as text.</li>
+          <li><b>;</b> or <b>,</b> Separates parameters.</li>
+        </ol>
+      </li>
+      <li>Changes to MS-DOS Commands
+        <ol>
+          <li><a href="../../Command/C/CHCP.HTM">CHCP</a> Changes code pages for full-screen mode only.</li>
+          <li><a href="../../Command/C/CMD.HTM">CMD</a> CMD.EXE replaces COMMAND.COM.</li>
+          <li><a href="../../Command/D/DEL.HTM">DEL</a> New switches provide many more functions.</li>
+          <li><a href="../../Command/D/DIR.HTM">DIR</a> New switches provide many more functions.</li>
+          <li><a href="../../Command/D/DISKCOMP.HTM">DISKCOMP</a> Switches <a href="../../Command/D/DISKCOMP.HTM#Switch1">/1</a> and <a href="../../Command/D/DISKCOMP.HTM#Switch8">/8</a> are not supported.</li>
+          <li><a href="../../Command/D/DISKCOPY.HTM">DISKCOPY</a> Switch <a href="../../Command/D/DISKCOPY.HTM#Switch1">/1</a> is not supported.</li>
+          <li><a href="../../Command/D/DOSKEY.HTM">DOSKEY</a> Available for all character-based programs that accept buffered input. Several other enhancements improve doskey.</li>
+          <li><a href="../../Command/F/FORMAT.HTM">FORMAT</a> 20.8 MB floptical drive supported. Switches <a href="../../Command/F/FORMAT.HTM#SwitchB">/B</a>, <a href="../../Command/F/FORMAT.HTM#SwitchS">/S</a>, and <a href="../../Command/F/FORMAT.HTM#SwitchU">/U</a> are not supported.</li>
+          <li><a href="../../Command/K/KEYB.HTM">KEYB</a> KEYBOARD.SYS is no longer used.</li>
+          <li><a href="../../Command/L/LABEL.HTM">LABEL</a> The symbols ^ and &amp; can be used in a volume label.</li>
+          <li><a href="../../Command/M/MODECS.HTM">MODE</a> Extensive changes.</li>
+          <li><a href="../../Command/M/MORE.HTM">MORE</a> New switches provide many more functions.</li>
+          <li><a href="../../Command/P/PATH.HTM">PATH</a> The <a href="../../ENV/MSDOS/PATH.HTM">%PATH%</a> environment variable appends the current path to a new setting at the command prompt.</li>
+          <li><a href="../../Command/P/PRINT.HTM">PRINT</a> Switches <a href="../../Command/P/PRINT.HTM#SwitchB">/B:size</a>, <a href="../../Command/P/PRINT.HTM#SwitchC">/C</a>, <a href="../../Command/P/PRINT.HTM#SwitchM">/M:ticks2</a>, <a href="../../Command/P/PRINT.HTM#SwitchP">/P</a>, <a href="../../Command/P/PRINT.HTM#SwitchQ">/Q:qsize</a>, <a href="../../Command/P/PRINT.HTM#SwitchS">/S:ticks3</a>, <a href="../../Command/P/PRINT.HTM#SwitchT">/T</a>, and <a href="../../Command/P/PRINT.HTM#SwitchU">/U:ticks1</a> are not supported.</li>
+          <li><a href="../../Command/P/PROMPT.HTM">PROMPT</a> New character combinations enable you to add ampersands (<a href="../../Command/P/PROMPT.HTM#ParameterText">$a</a>), parentheses (<a href="../../Command/P/PROMPT.HTM#ParameterText">$c</a> and <a href="../../Command/P/PROMPT.HTM#ParameterText">$f</a>), and spaces (<a href="../../Command/P/PROMPT.HTM#ParameterText">$s</a>) to your prompt.</li>
+          <li><a href="../../Command/R/RECOVER.HTM">RECOVER</a> Recovers files only.</li>
+          <li><a href="../../Command/R/RMDIR.HTM">RMDIR</a> New <a href="../../Command/R/RMDIR.HTM#SwitchS">/S</a> switch deletes directories containing files and subdirectories.</li>
+          <li><a href="../../Command/S/SORT.HTM">SORT</a> Does not require <a href="../../ENV/MSDOS/TEMP.HTM">%TEMP%</a> environment variable. File size is unlimited.</li>
+          <li><a href="../../Command/X/XCOPY.HTM">XCOPY</a> New switches provide many more functions.</li>
+        </ol>
+      </li>
+      <li>Unavailable MS-DOS Commands
+        <ol>
+          <li><a href="../../Command/A/ASSIGN.HTM">ASSIGN</a> Not supported in Windows NT.</li>
+          <li><a href="../../Command/B/BUFFERS.HTM">BUFFERS</a> Not currently supported.</li>
+          <li><a href="../../Command/C/CHOICE.HTM">CHOICE</a> Not currently supported.</li>
+          <li><a href="../../Command/C/CTTY.HTM">CTTY</a> Not currently supported.</li>
+          <li><a href="../../Command/D/DBLSPACE.HTM">DBLSPACE</a> The Dblspace program is not supported.</li>
+          <li><a href="../../Command/D/DEFRAG.HTM">DEFRAG</a> Windows NT automatically optimizes disk use.</li>
+          <li><a href="../../Command/D/DELTREE.HTM">DELTREE</a> The <a href="../../Command/R/RMDIR.HTM">RMDIR</a> <a href="../../Command/R/RMDIR.HTM#SwitchS">/S</a> command deletes directories containing files and subdirectories.</li>
+          <li><a href="../../Command/D/DOSSHELL.HTM">DOSSHELL</a> Unnecessary with Windows NT.</li>
+          <li><a href="../../Command/D/DRIVPARM.HTM">DRIVEPARM</a> Not currently supported.</li>
+          <li><a href="../../Command/D/DBLSPACE.HTM">DRVSPACE</a> The Drvspace program is not currently supported.</li>
+          <li><a href="../../Command/E/EMM386.HTM">EMM386</a> Unnecessary with Windows NT.</li>
+          <li><a href="../../Command/F/FASTHELP.HTM">FASTHELP</a> This MS-DOS 6.0 command is the same as the Windows NT command help. Windows NT also provides an online Command Reference in the Windows NT Help icon in the Main program group.</li>
+          <li><a href="../../Command/F/FDISK.HTM">FDISK</a> Disk Administrator prepares hard disks for use with Windows NT.</li>
+          <li><a href="../../Command/I/INCLUDE.HTM">INCLUDE</a> Multi-configurations of the MS-DOS subsystem are not supported.</li>
+          <li><a href="../../Command/I/INTERLNK.HTM">INTERLNK</a> The Interlnk program is not supported.</li>
+          <li><a href="../../Command/I/INTERSVR.HTM">INTERSVR</a> The Intersvr program is not supported.</li>
+          <li><a href="../../Command/J/JOIN.HTM">JOIN</a> Increased partition size and an improved file system eliminate the need to join drives.</li>
+          <li><a href="../../Command/M/MEMMAKER.HTM">MEMMAKER</a> Windows NT automatically optimizes the MS-DOS subsystems memory use.</li>
+          <li><a href="../../Command/M/MENUCOLO.HTM">MENUCOLOR</a> Multi-configurations of the MS-DOS subsystem are not supported.</li>
+          <li><a href="../../Command/M/MENUDEFA.HTM">MENUDEFAULT</a> Multi-configurations of the MS-DOS subsystem are not supported.</li>
+          <li><a href="../../Command/M/MENUITEM.HTM">MENUITEM</a> Multi-configurations of the MS-DOS subsystem are not supported.</li>
+          <li><a href="../../Command/M/MIRROR.HTM">MIRROR</a> Not supported in Windows NT.</li>
+          <li><a href="../../Command/M/MSAV.HTM">MSAV</a> The Msav program is not supported.</li>
+          <li><a href="../../Command/M/MSBACKUP.HTM">MSBACKUP</a> Windows NT provides the Backup utility (in the Administrativce Tool group) for computers with tape drives, or the backup and xcopy commands for computers without tape drives.</li>
+          <li><a href="../../Command/M/MSCDEX.HTM">MSCDEX</a> It is unnecessary to configure the MS-DOS subsystem to use a CD-ROM drives. Windows NT provides access to CD-ROM drives for the MS-DOS subsystem.</li>
+          <li><a href="../../Command/M/MSD.HTM">MSD</a> Use the Windows NT Diagnostics program in the Administrative Tools group.</li>
+          <li><a href="../../Command/N/NUMLOCK.HTM">NUMLOCK</a> The numlock command is not currently supported.</li>
+          <li><a href="../../Command/P/POWER.HTM">POWER</a> The Power utility is not supported.</li>
+          <li><a href="../../Command/S/SCANDISK.HTM">SCANDISK</a> The Scandisk utility is not supported.</li>
+          <li><a href="../../Command/S/SMARTDRV.HTM">SMARTDRV</a> Windows NT automatically provides caching for the MS-DOS subsystem.</li>
+          <li><a href="../../Command/S/SUBMENU.HTM">SUBMENU</a> Multi-configurations of the MS-DOS subsystem are not supported.</li>
+          <li><a href="../../Command/S/SYS.HTM">SYS</a> Windows NT will not fit on a standard 1.2 MB or 1.44 MB floppy disk.</li>
+          <li><a href="../../Command/U/UNDELETE.HTM">UNDELETE</a> Not supported in Windows NT.</li>
+          <li><a href="../../Command/U/UNFORMAT.HTM">UNFORMAT</a> Not supported in Windows NT.</li>
+          <li><a href="../../Command/V/VSAFE.HTM">VSAFE</a> The Vsafe program is not supported.</li>
+        </ol>
+      </li>
+      <li>New or Changed Commands from LAN Manager version 2.2
+      <ol>
+        <li><a href="../../Command/A/AT.HTM">AT</a> In addition to local scheduling, you can remotely schedule events on a computer.</li>
+        <li><a href="../../Command/I/IPXROUTE.HTM">IPXROUTE</a> New command supports routing for the NWLink protocol on a token-ring network.</li>
+        <li><a href="../../Command/N/NETACCOU.HTM">NET ACCOUNTS</a> Server roles cannot be set. Windows NT security controls lockout.</li>
+        <li><a href="../../Command/N/NETCOMPU.HTM">NET COMPUTER</a> This new command allows you to add or delete computers from a domain database. This command is available only on computers running Windows NT Server.</li>
+        <li><a href="../../Command/N/NETCONFI.HTM">NET CONFIG</a> Peer functionality is inherent to Windows NT. Separate commands, such as net config peer are no longer required.</li>
+        <li><a href="../../Command/N/NETCONFS.HTM">NET CONFIG SERVER</a> Most network services are self-configuring. The switches <a href="../../Command/N/NETCONFS.HTM#SwitchAutoDisconnect">/AUTODISCONNECT:time</a>, <a href="../../Command/N/NETCONFS.HTM#SwitchSrvComment">/SRVCOMMENT:"text"</a>, and <a href="../../Command/N/NETCONFS.HTM#SwitchHidden">/HIDDEN:{YES | NO}</a> can be configured. The switch /srvhidden is now <a href="../../Command/N/NETCONFS.HTM#SwitchHidden">/HIDDEN:{YES | NO}</a>.</li>
+        <li><a href="../../Command/N/NETCONFW.HTM">NET CONFIG WORKSTATION</a> Most network services are self-configuring. The switches <a href="../../Command/N/NETCONFW.HTM#SwitchCharcount">/CHARCOUNT:bytes</a>, <a href="../../Command/N/NETCONFW.HTM#SwitchChartime">/CHARTIME:msec</a>, and <a href="../../Command/N/NETCONFW.HTM#SwitchCharwait">/CHARWAIT:sec</a> can be configured.</li>
+        <li><a href="../../Command/N/NETCONTI.HTM">NET CONTINUE</a> Use Print Manager to control printing. See <a href="../../Command/N/NETPAUSE.HTM">NET PAUSE</a> for the list of pausable services that can be continued.</li>
+        <li><a href="../../Command/N/NETGROUP.HTM">NET GROUP</a> Net group manages global groups and is only for computers that are members of a domain.</li>
+        <li><a href="../../Command/N/NETLOCAL.HTM">NET LOCALGROUP</a> This new command manages local groups.</li>
+        <li><a href="../../Command/N/NETPAUSE.HTM">NET PAUSE</a> You can pause these network services: file server for macintosh and remoteboot (Windows NT Server only), ftp server, lpdsvc, net logon, network dde, network dde dsdm, nt lm security support provider, remote access server, schedule, server, simple tcp/ip services, or workstation.Use Print Manager to manage printers.</li>
+        <li><a href="../../Command/N/NETPRINT.HTM">NET PRINT</a> Use Print Manager to manage printers.</li>
+        <li><a href="../../Command/N/NETSEND.HTM">NET SEND</a> Sending files is not supported. The /broadcast switch is not supported.</li>
+        <li><a href="../../Command/N/NETSHARE.HTM">NET SHARE</a> Remote administration is automatic. Use Print Manager to share printers. Comm queues are not supported in this release.</li>
+        <li><a href="../../Command/N/NETSTART.HTM">NET START</a> You can start these network services: alerter, client service for netware, clipbook server, computer browser, dhcp client, directory replicator, eventlog, ftp server, lpdsvc, messenger, net logon, network dde, network dde dsdm, network monitoring agent, nt lm security support provider, ole, remote access connection manager, remote access isnsap service, remote access server, remote procedure call (rpc) locator, remote procedure call (rpc) service, schedule, server, simple tcp/ip services, snmp, spooler, tcp/ip netbios helper, ups, and workstation. These services are available only on Windows NT Server: file server for macintosh, gateway service for netware, microsoft dhcp server, print server for macintosh, remoteboot, windows internet name service. Note that services can be configured to start automatically.
+        <ol>
+          <li><b>NET START ALERTER</b> Self-configuring.</li>
+          <li><b>NET START EVENTLOG</b> This new service logs any significant system, security, and application occurrences that require users to be notified.</li>
+          <li><b>NET START MESSENGER</b> Self-configuring.</li>
+          <li><b>NET START NET LOGON</b> Self-configuring.</li>
+          <li><b>NET START DIRECTORY REPLICATOR</b> Use Server Manager to configure the Replicator service.</li>
+          <li><b>NET START SERVER</b> Use Server Manager to configure the Server service.</li>
+          <li><b>NET START SNMP</b> New options permit logging.</li>
+          <li><b>NET START WORKSTATION</b> The Workstation is configured at setup and in various applications.</li>
+        </ol>
+        </li>
+        <li><a href="../../Command/N/NETSTATI.HTM">NET STATISTICS</a> Peer functionality is an inherent part of Windows NT and no longer requires separate commands. The statistics log cannot be cleared.</li>
+        <li><a href="../../Command/N/NETSTOP.HTM">NET STOP</a> You can stop all network services except eventlog. See <a href="../../Command/N/NETSTART.HTM">NET START</a> for a list of services that can be started and stopped.</li>
+        <li><a href="../../Command/N/NETUSE.HTM">NET USE</a> The <a href="../../Command/N/NETUSE.HTM#SwitchPersistent">/PERSISTENT</a> switch has only yes and no values. Comm queues are not supported in this release. You can use NetWare volumes.</li>
+        <li><a href="../../Command/N/NETUSER.HTM">NET USER</a> Switches /logonserver, /maxstorage, /operator, and /privilege are not supported.</li>
+        <li><a href="../../Command/N/NETVIEW.HTM">NET VIEW</a> New switch <a href="../../Command/N/NETVIEW.HTM#SwitchDomain">/DOMAIN</a> permits viewing of domains and viewing of computers in a specified domain. You can view servers on NetWare networks.</li>
+      </ol>
+      </li>
+      <li>Superseded or Obsolete Commands from LAN Manager
+      <ol>
+        <li><b>NET</b> Use the Windows NT administrative tools to administer the network.</li>
+        <li><b>NET ADMIN</b> Use the Windows NT administrative tools to administer the network.</li>
+        <li><b>NET ACCESS</b> Use File Manager to set permissions on files.</li>
+        <li><b>NET AUDIT</b> Use the Event Viewer to keep track of network resource use.</li>
+        <li><b>NET COMM</b> Communication-device queues are not currently supported.</li>
+        <li><b>NET CONFIG PEER</b> Not needed with Windows NT.</li>
+        <li><b>NET CONSOLE</b> Use Windows NT security features to prevent unwanted access.</li>
+        <li><b>NET COPY</b> Use File Manager or the system copy command to copy files.</li>
+        <li><b>NET DEVICE</b> Use Print Manager to display information about shared printers.</li>
+        <li><b>NET ERROR</b> Use the Event Viewer to keep track of network resource use.</li>
+        <li><b>NET FORWARD</b> You cannot forward network messages with Windows NT.</li>
+        <li><b>NET LOG</b> Message logging is not supported.</li>
+        <li><b>NET LOGOFF</b> Logging off is an inherent part of Windows NT.</li>
+        <li><b>NET LOGON</b> Logging on is an inherent part of Windows NT.</li>
+        <li><b>NET MOVE</b> Use File Manager or the system copy and delete commands to move files.</li>
+        <li><b>NET PASSWORD</b> Press CTRL+ALT+DEL to change your password.</li>
+        <li><b>NET RUN</b> Programs cannot be executed remotely in Windows NT.</li>
+        <li><b>NET SEPARATOR</b> Use Print Manager to control separator pages.</li>
+        <li><b>NET START NETPOPUP</b> Windows NT processes network messages automatically.</li>
+        <li><b>NET START NETRUN</b> This command is not supported in Windows NT.</li>
+        <li><b>NET START NVALERT</b> The Nvalert service is not currently supported.</li>
+        <li><b>NET START PEER</b> Peer functionality is an inherent part of Windows NT.</li>
+        <li><b>NET START TIMESOURCE</b> The functionality is included in the Server service.</li>
+        <li><b>NET STATUS</b> The information can be found using net config server and net share.</li>
+        <li><b>NET VERSION</b> Use Program Managers Help About menu item to determine the current version you are using.</li>
+        <li><b>NET WHO</b> Use Server Manager to view users logged on to a server.</li>
+      </ol>
+      </li>
+    </ol>
+    </ol>
+
+    <hr>
+    <a name="Added"></a> <b>Added</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Changed"></a> <b>Changed</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Removed"></a> <b>Removed</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Files"></a> <b>Files</b>
+    <p><a href="../../Filelist/MSWIN/NT351S.HTM">Server Filelist</a> (&gt; 950Kb file)</p>
+    <p><a href="../../Filelist/MSWIN/NT351W.HTM">Workstation Filelist</a> (&gt; 750Kb file)</p>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

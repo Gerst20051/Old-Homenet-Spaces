@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>MSCDEX</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#m">Commands A-M</a>
+    &gt; <a href="../INDEXM.HTM#mscdex">Commands M</a>
+    <h1>MSCDEX</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Provides access to CD-ROM drives. MSCDEX can be loaded from your
+    AUTOEXEC.BAT file or from the command prompt. (The device driver
+    that came with your CD-ROM drive must be loaded from your
+    CONFIG.SYS file. For more information, see Notes.)</p>
+    <p>The MSCDEX command should not be used after Windows has
+    started.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>MSCDEX
+    <a href="#SwitchD">/D</a>:driver
+    [<a href="#SwitchD">/D</a>:driver2...]
+    [<a href="#SwitchE">/E</a>]
+    [<a href="#SwitchK">/K</a>]
+    [<a href="#SwitchS">/S</a>]
+    [<a href="#SwitchV">/V</a>]
+    [<a href="#SwitchL">/L</a>:letter]
+    [<a href="#SwitchM">/M</a>:number]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchD"></a> /D:driver [/D:driver2...]
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>
+        Specifies the driver signature of the first CD-ROM device
+        driver. The driver1 parameter must match the parameter
+        specified by the /D switch on the CONFIG.SYS command that
+        starts the corresponding CD-ROM device driver.
+      </dd>
+      <dd>
+        The MSCDEX command must include at least one /D switch. To
+        install additional CD-ROM device drivers, specify an additional
+        /D switch for each device driver.
+      </dd>
+
+      <dt><a name="SwitchE"></a> /E
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies that the CD-ROM driver be allowed to use expanded
+      memory, if available, to store sector buffers.</dd>
+
+      <dt><a name="SwitchK"></a> /K
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies that the opreating system should recognize
+      CD-ROM volumes encoded in Kanji. By default, the operating
+      system does not recognize Kanji CD-ROM volumes.</dd>
+
+      <dt><a name="SwitchL"></a> /L:letter
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the drive letter to assign to the first CD-ROM
+      drive. If you have more than one CD-ROM drive, the operating
+      system assigns additional CD-ROM drives subsequent available
+      drive letters.</dd>
+
+      <dt><a name="SwitchM"></a> /M:number
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the number of sector buffers.</dd>
+
+      <dt><a name="SwitchS"></a> /S
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Enables sharing of CD-ROM drives on MS-NET or Windows for
+      Workgroups servers.</dd>
+
+      <dt><a name="SwitchV"></a> /V
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Directs MSCDEX to display memory statistics when it
+      starts.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Limit">Limit on number of logical drives</a></li>
+      <li><a href="#Newer">Newer drivers can be loaded once to handle multiple drives</a></li>
+      <li><a href="#Smartdrive">SMARTDrive and MSCDEX</a></li>
+      <li><a href="#Load">The CD-ROM device driver must be loaded</a></li>
+    </ul>
+
+    <hr>
+    <a name="Load"></a> <b>The CD-ROM device driver must be loaded</b>
+    <p>Your CONFIG.SYS file must include a <a href="../D/DEVICE.HTM">DEVICE</a> or <a href="../D/DEVICEHI.HTM">DEVICEHIGH</a> command
+    that loads the CD-ROM device driver that came with your CD-ROM
+    drive. The CD-ROM driver's command-line should include a
+    <a href="#SwitchD">/D</a>:drivername parameter. This
+    parameter assigns a driver name (also called a driver signature)
+    to the CD-ROM device driver.</p>
+    <p>The MSCDEX command must include a /D:drivername parameter that
+    matches the <a href="#SwitchD">/D</a>:drivername
+    parameter on the CD-ROM device driver's command-line. MSCDEX uses
+    the <a href="#SwitchD">/D</a>:drivername parameter to
+    identify the correct CD-ROM device driver. The driver name is
+    usually a name similar to MSCD000. Each CD-ROM device driver
+    currently in use must have a unique driver name.</p>
+
+    <hr>
+    <a name="Limit"></a> <b>Limit on number of logical drives</b>
+    <p>The number of logical drive letters available on your computer
+    can limit the number of CD-ROM drives you can have. The number of
+    logical drives is determined by the <a href="../L/LASTDRIV.HTM">LASTDRIVE</a> command in your
+    CONFIG.SYS file. By the time MSCDEX loads, some of the available
+    drive letters might be used by other programs, such as a network,
+    DriveSpace, or DoubleSpace.</p>
+
+    <hr>
+    <a name="Smartdrive"></a> <b>SMARTDrive and MSCDEX</b>
+    <p>If you use SMARTDrive, make sure the MSCDEX command appears
+    before the <a href="../S/SMARTDRV.HTM">SMARTDRV</a> command in your
+    AUTOEXEC.BAT file. SMARTDrive can significantly speed up your CD-ROM
+    drive by read-caching it. By default, when SMARTDrive loads, it
+    checks for the presence of MSCDEX; if MSCDEX is present, CD-ROM
+    caching is enabled. For more information, see the
+    <a href="../S/SMARTDRV.HTM">SMARTDRV</a> command.</p>
+
+    <hr>
+    <a name="Newer"></a> <b>Newer drivers can be loaded once to handle multiple drives</b>
+    <p>Newer CD-ROM drivers, such as the OAKCDROM.SYS on the
+    <a href="../../Version/MSWIN/98.HTM">Windows 98</a> boot
+    floppy and Mitsumi's IDE CD-ROM driver, only need one instance loaded in
+    CONFIG.SYS to handle more than one drive, even if they're made by different
+    companies. Many newer IDE/ATAPI CD-ROM drivers are able to handle more than
+    one drive, listing them all and which brands/models each can handle would
+    be too much work. I've yet to run into an IDE/ATAPI CD-ROM the Oak driver
+    <b>can't</b> work with.</p>
+
+    <p>Likewise, the MSCDEX.EXE line in AUTOEXEX.BAT may only need one
+    <a href="#SwitchD">/D</a> switch when using a device driver capable of
+    handling more than one drive.</p>
+
+    <p>Needing a device driver for each CD-ROM drive and a
+    <a href="#SwitchD">/D</a> switch for each was only required with the early
+    proprietary Panasonic, Sony and Mitsumi interfaces and the early IDE
+    drives. SCSI CD-ROMs may still require brand/model specific CONFIG.SYS
+    drivers for each drive, if more than one drive brand/model is
+    installed.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <ul>
+      <li><a href="#Single">Loading and enabling a single CD-ROM device driver</a></li>
+      <li><a href="#Multiple">Loading and enabling more than one CD-ROM device driver</a></li>
+    </ul>
+
+    <hr>
+    <a name="Single"></a> <b>Loading and enabling a single CD-ROM device driver</b>
+    <p>This example shows the relevant CONFIG.SYS and AUTOEXEC.BAT
+    commands for a computer with one CD-ROM drive.</p>
+    <p>The CONFIG.SYS file contains the <a href="../D/DEVICE.HTM">DEVICE</a> command:</p>
+<pre>
+    <a href="../D/DEVICE.HTM">DEVICE</a>=c:\devices\cdromdrv.sys /d:mscd000
+</pre>
+
+    <p>This command loads the device driver CDROMDRV.SYS, which came
+    with the CD-ROM drive. The AUTOEXEC.BAT file contains the
+    MSCDEX command:</p>
+<pre>
+    c:\dos\MSCDEX <a
+href="#SwitchD">/D</a>:mscd000 <a
+href="#SwitchE">/E</a> <a
+href="#SwitchL">/L</a>:g
+</pre>
+
+    <p>This command enables the device driver that has the driver
+    signature MSCD000. The <a href="#SwitchE">/E</a> switch
+    specifies that the driver be allowed to use expanded memory, if
+    available. The <a href="#SwitchL">/L</a>:G switch
+    assigns the drive letter G to the CD-ROM drive.</p>
+
+    <hr>
+    <a name="Multiple"></a> <b>Loading and enabling more than one CD-ROM device driver</b>
+    <p>This example shows the relevant CONFIG.SYS and AUTOEXEC.BAT
+    commands for a computer that has two CD-ROM drives from two
+    different manufacturers.</p>
+    <p>The CONFIG.SYS file contains the <a href="../D/DEVICE.HTM">DEVICE</a> commands:</p>
+<pre>
+    <a href="../D/DEVICE.HTM">DEVICE</a> = c:\aspi\aspicd.sys /d:mscd000
+    <a href="../D/DEVICE.HTM">DEVICE</a> = c:\cdrom\tslcdr.sys /d:mscd001
+</pre>
+
+    <p>Each command loads the device driver that came with that CD-ROM
+    drive. The AUTOEXEC.BAT file contains the MSCDEX
+    command:</p>
+<pre>
+    c:\dos\MSCDEX <a
+href="#SwitchD">/D</a>:mscd000 <a
+href="#SwitchD">/D</a>:mscd001 <a
+href="#SwitchL">/L</a>:j
+</pre>
+
+    <p>This command enables both device drivers. The first driver has
+    the driver signature MSCD000; the second has the driver signature
+    MSCD001. The <a href="#SwitchL">/L</a>:J switch
+    specifies that the first CD-ROM drive, MSCD000, will be drive J and
+    the second CD-ROM drive will be drive K.</p>
+
+    <p>Also see
+    <a href="#Newer">Newer drivers can be loaded once to handle multiple drives</a>.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/01/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

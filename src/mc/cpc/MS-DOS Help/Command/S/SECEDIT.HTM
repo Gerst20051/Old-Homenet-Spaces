@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>SECEDIT</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#s">Commands N-Z</a>
+    &gt; <a href="../INDEXS.HTM#secedit">Commands S</a>
+    <h1>SECEDIT</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Configures and analyzes system security by comparing
+    your current configuration to at least one template.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>SECEDIT
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>SECEDIT
+    {<a href="#SwitchAnalyze">/ANALYZE</a>
+    | <a href="#SwitchConfigure">/CONFIGURE</a>
+    | <a href="#SwitchExport">/EXPORT</a>
+    | <a href="#SwitchGenerateRollback">/GENERATEROLLBACK</a>
+    | <a href="#SwitchImport">/IMPORT</a>
+    | <a href="#SwitchValidate">/VALIDATE</a>}
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>SECEDIT
+    <a href="#SwitchAnalyze">/ANALYZE</a>
+    <a href="#SwitchDb">/DB file_name</a>
+    [<a href="#SwitchCfg">/CFG file_name</a>]
+    [<a href="#SwitchLog">/LOG file_name</a>]
+    [<a href="#SwitchOverwrite">/OVERWRITE</a>]
+    [<a href="#SwitchQuiet">/QUIET</a>]</p>
+
+    <p>SECEDIT
+    <a href="#SwitchConfigure">/CONFIGURE</a>
+    <a href="#SwitchDb">/DB file_name</a>
+    [<a href="#SwitchAreas">/AREAS area area2 ...</a>]
+    [<a href="#SwitchCfg">/CFG file_name</a>]
+    [<a href="#SwitchLog">/LOG file_name</a>]
+    [<a href="#SwitchOverwrite">/OVERWRITE</a>]
+    [<a href="#SwitchQuiet">/QUIET</a>]</p>
+
+    <p>SECEDIT
+    <a href="#SwitchExport">/EXPORT</a>
+    [<a href="#SwitchAreas">/AREAS area area2 ...</a>]
+    [<a href="#SwitchDb">/DB file_name</a>
+     [<a href="#SwitchCfg">/CFG file_name</a>]]
+    [<a href="#SwitchLog">/LOG file_name</a>]
+    [<a href="#SwitchMergedPolicy">/MERGEDPOLICY</a>]
+    [<a href="#SwitchQuiet">/QUIET</a>]</p>
+
+    <p>SECEDIT
+    <a href="#SwitchGenerateRollback">/GENERATEROLLBACK</a>
+    <a href="#SwitchCfg">/CFG file_name</a>
+    [<a href="#SwitchLog">/LOG file_name</a>]
+    [<a href="#SwitchQuiet">/QUIET</a>]
+    <a href="#SwitchRbk">/RBK file_name</a></p>
+
+    <p>SECEDIT
+    <a href="#SwitchImport">/IMPORT</a>
+    [<a href="#SwitchAreas">/AREAS area area2 ...</a>]
+    <a href="#SwitchDb">/DB file_name</a>
+    <a href="#SwitchCfg">/CFG file_name</a>
+    [<a href="#SwitchLog">/LOG file_name</a>]
+    [<a href="#SwitchOverwrite">/OVERWRITE</a>]
+    [<a href="#SwitchQuiet">/QUIET</a>]</p>
+
+    <p>SECEDIT
+    <a href="#SwitchValidate">/VALIDATE</a>
+    <a href="#ParameterFileName">file_name</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterFileName"></a> file_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the file name of the security template
+      you have created with Security Templates.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchAnalyze"></a> /ANALYZE
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Analyze system security.</dd>
+
+      <dt><a name="SwitchAreas"></a> /AREAS area1 area2 ...
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the security areas to be applied to the
+      system. If an area is not specified, all areas are
+      applied to the system. Each area should be separated
+      by a space:
+        <ul>
+          <li><b>FILESTORE</b> Security on local file storage</li>
+          <li><b>GROUP_MGMT</b> Restricted group settings for any groups
+          specified in the security template</li>
+          <li><b>REGKEYS</b> Security on local registry keys</li>
+          <li><b>SECURITYPOLICY</b> Local policy and domain policy for the
+          system, including account policies, audit policies, and so on</li>
+          <li><b>SERVICES</b> Security for all defined services</li>
+          <li><b>USER_RIGHTS</b> User logon rights and granting of
+          privileges</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchCfg"></a> /CFG file_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the path and file name for the security
+      template that will be imported into the database for
+      analysis. Only valid when used with
+      <a href="#SwitchDb">/db</a>. If omitted, the analysis
+      is performed against any configuration already stored
+      in the database.</dd>
+
+      <dt><a name="SwitchConfigure"></a> /CONFIGURE
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Configures system security by applying a stored
+      template.</dd>
+
+      <dt><a name="SwitchDb"></a> /DB file_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the path and file name of a database
+      that contains the stored configuration against which
+      the analysis will be performed. If file_name
+      specifies a new database, <a href="#SwitchCfg">/cfg</a>
+      file_name must also be specified.</dd>
+
+      <dt><a name="SwitchExport"></a> /EXPORT
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Exports a stored template from a security database
+      to a security template file.</dd>
+
+      <dt><a name="SwitchGenerateRollback"></a> /GENERATEROLLBACK
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Allows you to generate a rollback template with
+      respect to a configuration template. When applying a
+      configuration template to a computer you have the
+      option of creating rollback template which, when
+      applied, resets the security settings to the values
+      before the configuration template was applied.</dd>
+
+      <dt><a name="SwitchImport"></a> /IMPORT
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Allows you to import a security template into a
+      database so that the settings specified in the
+      template can be applied to a system or analyzed
+      against a system.</dd>
+
+      <dt><a name="SwitchLog"></a> /LOG file_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the path and file name of the log file
+      for the process. If omitted, the default log file is
+      used.</dd>
+
+      <dt><a name="SwitchMergedPolicy"></a> /MERGEDPOLICY
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Merges and exports domain and local policy
+      security settings.</dd>
+
+      <dt><a name="SwitchOverwrite"></a> /OVERWRITE
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies whether the security template in
+      <a href="#SwitchCfg">/cfg</a> should overwrite any
+      template or composite template that is stored in the
+      database instead of appending the results to the
+      stored template. Only valid when
+      <a href="#SwitchCfg">/cfg</a> is used. If omitted,
+      the <a href="#SwitchCfg">/cfg</a> template is appended
+      to the stored template.</dd>
+
+      <dt><a name="SwitchQuiet"></a> /QUIET
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Suppresses screen and log output. You can still view
+      analysis results by using Security Configuration and
+      Analysis.</dd>
+
+      <dt><a name="SwitchRbk"></a> /RBK file_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the file name of the security template
+      that will be created as the rollback template.</dd>
+
+      <dt><a name="SwitchValidate"></a> /VALIDATE
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Validates the syntax of a security template to be
+      imported into a database for analysis or application
+      to a system.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="SECEDIT.HTM">SECEDIT</a>
+    /refreshpolicy has been replaced with
+    <a href="../G/GPUPDATE.HTM">gpupdate</a>.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

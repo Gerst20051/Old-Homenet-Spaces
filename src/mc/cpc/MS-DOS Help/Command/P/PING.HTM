@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>PING</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#p">Commands N-Z</a>
+    &gt; <a href="../INDEXP.HTM#ping">Commands P</a>
+    <h1>PING</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Test a network connection - if successful, ping returns the ip address.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>PING
+    [<a href="#Switch4">-4</a>]
+    [<a href="#Switch6">-6</a>]
+    [<a href="#SwitchA">-a</a>]
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchI">-i TTL</a>]
+    [<a href="#SwitchJ">-j host_list</a>
+    | <a href="#SwitchK">-k host_list</a>]
+    [<a href="#SwitchL">-l size</a>]
+    [<a href="#SwitchN">-n count</a>]
+    [<a href="#SwitchP">-p precendence</a>]
+    [<a href="#SwitchRupper">-R</a>]
+    [<a href="#SwitchR">-r count</a>]
+    [<a href="#SwitchSupper">-S source_address</a>]
+    [<a href="#SwitchS">-s count</a>]
+    [<a href="#SwitchT">-t</a>]
+    [<a href="#SwitchV">-v TOS</a>]
+    [<a href="#SwitchW">-w timeout</a>]
+    <a href="#ParameterDestinationHost">destination_host</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDestinationHost"></a> destination_host
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>The name of the remote host.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="Switch4"></a> -4
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies to use IPv4. Not required
+      to identify the target host with an IPv4 address. It
+      is only required to identify the target host by name.</dd>
+
+      <dt><a name="Switch6"></a> -6
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies to use IPv6. Not required
+      to identify the target host with an IPv6 address. It
+      is only required to identify the target host by name.</dd>
+
+      <dt><a name="SwitchA"></a> -a
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Resolve addresses to hostnames.</dd>
+
+      <dt><a name="SwitchF"></a> -f
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Set Don't Fragment flag in packet.</dd>
+
+      <dt><a name="SwitchI"></a> -i TTL
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Time To Live.</dd>
+
+      <dt><a name="SwitchJ"></a> -j host_list
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Loose source route along host_list.</dd>
+
+      <dt><a name="SwitchK"></a> -k host_list
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Strict source route along host_list.</dd>
+
+      <dt><a name="SwitchL"></a> -l size
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Send buffer size.</dd>
+
+      <dt><a name="SwitchN"></a> -n count
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Number of echo requests to send.</dd>
+
+      <dt><a name="SwitchP"></a> -p precendence
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> ONLY)</dt>
+      <dd>Set Precedence field to value specified.</dd>
+
+      <dt><a name="SwitchR"></a> -r count
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Record route for count hops.</dd>
+
+      <dt><a name="SwitchRupper"></a> -R
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies that the round-trip path is traced
+      (available on IPv6 only).</dd>
+
+      <dt><a name="SwitchS"></a> -s
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> ONLY)</dt>
+      <dd>Suppresses display.</dd>
+
+      <dt> -s count
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Timestamp for count hops.</dd>
+
+      <dt><a name="SwitchSupper"></a> -S source_address
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the source address to use
+      (available on IPv6 only).</dd>
+
+      <dt><a name="SwitchT"></a> -t
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Ping the destination host until interrupted.</dd>
+
+      <dt><a name="SwitchV"></a> -v TOS
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Type Of Service.</dd>
+
+      <dt><a name="SwitchW"></a> -w timeout
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Timeout in milliseconds to wait for each reply.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../T/TRACERT.HTM">TRACERT</a> - Trace route to a remote host.
+    <br><a href="../I/IPCONFIG.HTM">IPCONFIG</a> - IP Configuration.
+    <br><a href="PATHPING.HTM">PATHPING</a> - Route Tracing tool <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>ping - ?
+    <br>trace - Find the IP address of a remote host.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+<pre>
+    PING <a
+href="#SwitchN">-n</a> 1 <a
+href="#SwitchW">-w</a> 7500 <a
+href="#ParameterDestinationHost">Server_06</a>
+
+    PING <a
+href="#SwitchW">-w</a> 7500 <a
+href="#ParameterDestinationHost">MyHost</a> |find "TTL=" || ECHO MyHost found
+
+    PING <a
+href="#SwitchN">-n</a> 5 <a
+href="#SwitchW">-w</a> 7500 <a
+href="#ParameterDestinationHost">www.microsoft.com</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <ul>
+    <li><b>0</b> successful ping</li>
+    </ul>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

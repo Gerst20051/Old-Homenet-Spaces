@@ -1,0 +1,170 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Change Color onMouseOver</title>
+</head>
+
+<body>
+
+<script language="JavaScript">
+<!--
+function bcolor(bcol,d_name)
+{
+if (document.all)
+{
+ var thestyle= eval ('document.all.'+d_name+'.style');
+ thestyle.backgroundColor=bcol;}}
+//-->
+</script>
+<div align="center">
+  <center>
+  <table width="200" border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="#111111">
+    <tr>
+      <td style="width: 100%; background-color: lightblue" onMouseover="this.style.backgroundColor='yellow';" onMouseout="this.style.backgroundColor='lightblue';">
+      <p align="center">Watch me get scared! </p>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<p><b><span class="heading">CSS with Internet Explorer</span></b> </p>
+<p>To get started, let&#39;s look at the way to do this in Internet Explorer. Basically, 
+we just need to have a table and define a style sheet for the cell we want to change. 
+Then we can change it using some properties that allow us access to the CSS attributes 
+of the cell: </p>
+<pre>&lt;TABLE width=&quot;200&quot; border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+&lt;TR&gt;
+&lt;TD style=&quot;width:100%; background-color:lightblue&quot;
+ onMouseover=&quot;this.style.backgroundColor=&#39;yellow&#39;;&quot;
+ onMouseout=&quot;this.style.backgroundColor=&#39;lightblue&#39;;&quot;&gt;
+Watch me get scared!
+&lt;/TD&gt;
+&lt;/TR&gt;
+&lt;/TABLE&gt;
+</pre>
+<p>Internet Explorer makes this easy by allowing the style attribute to work in 
+a &lt;TD&gt; tag, as well as allowing the tag to use the onMouseover and onMouseout event 
+handlers. Let&#39;s take a look at the what we added to the &lt;TD&gt; tag:<br>
+<b><br>
+style=&quot;width:100%; background-color:lightblue&quot;</b><br>
+</p>
+<p>This is the style we will use for the cell. We used the width of 100% to make 
+sure the style included the entire width of the cell. The background color is set 
+to light blue here.<br>
+<b><br>
+onMouseover=&quot;this.style.backgroundColor=&#39;yellow&#39;;&quot;</b><br>
+</p>
+<p>This is where the color of the cell is changed. We access the properties of the 
+cell by using &quot;this&quot;, meaning &quot;this object&quot;. We then use the &quot;style&quot; to access the 
+style sheet for that object. Now, we use a trick in Internet Explorer that allows 
+us access to the specific style sheet property we are after. </p>
+<p>In IE, you can take the name of a style property (in our case, background-color) 
+and remove the dash. Then capitalize the letter that came after the dash. which 
+here gives us:<br>
+<b><br>
+backgroundColor</b><br>
+</p>
+<p>You can do this for just about any CSS property in IE, we may cover that in more 
+detail in a separate section soon. After we have this, we just give the property 
+a new color, and we chose yellow.<b><br>
+<br>
+onMouseout=&quot;this.style.backgroundColor=&#39;lightblue&#39;;&quot;</b><br>
+</p>
+<p>This works just like the onMouseover event, but it changes the color back to 
+light blue. </p>
+<p><b><span class="heading">How About Netscape?</span></b> </p>
+<p>Now the tricky part, can we get this to work with Netscape? Well, Netscape 4 
+doesn&#39;t do well with the background properties, and doesn&#39;t let the trick that works 
+for IE access the property. Also, it won&#39;t allow the onMouseover or onMouseout events 
+in a &lt;TD&gt; tag. So, to get this in NS4, we have to use the Netscape Layers, which 
+will allow us to do many of the same things. </p>
+<p>The &lt;LAYER&gt; tag will allow the background color to be set and this tag allows 
+the mouse events in NS. The problem with this is that it likes to be positioned 
+with absolute positioning. The way around that problem is to surround the &lt;LAYER&gt; 
+tags with &lt;ILAYER&gt; tags. ILAYER stands for an &quot;Inline Layer&quot;, meaning it will show 
+up where it is placed, and doesn&#39;t need to be positioned with the top and left properties.
+</p>
+<p>Now, let&#39;s look at the cross-browser code. We&#39;ll have some more explanation afterward:
+</p>
+<pre>&lt;TABLE width=&quot;200&quot; border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+&lt;TR&gt;
+&lt;TD style=&quot;width:100%; background-color:lightblue&quot;
+ onMouseover=&quot;this.style.backgroundColor=&#39;yellow&#39;;&quot;
+ onMouseout=&quot;this.style.backgroundColor=&#39;lightblue&#39;;&quot;&gt;
+&lt;ILAYER&gt;
+&lt;LAYER ID=&quot;la2&quot; bgColor=&quot;lightblue&quot; width=&quot;100%&quot;
+ onMouseover=&quot;this.bgColor=&#39;yellow&#39;;&quot;
+ onMouseout=&quot;this.bgColor=&#39;lightblue&#39;;&quot;&gt;
+This is cool.
+&lt;/LAYER&gt;
+&lt;/ILAYER&gt;
+&lt;/TD&gt;
+&lt;/TR&gt;
+&lt;/TABLE&gt;
+</pre>
+<p>Notice how we just tossed the Layer tags inside the TD tags. The Layer tags are 
+just ignored by IE, so these just allow NS to do it&#39;s work. Since NS ignores the 
+mouse events in the TD tag, it just picks them up in the LAYER tag. Also notice 
+how the LAYER tag takes on the attributes separately. We set the width to 100% like 
+we did the table in IE. Also, we set the background color to light blue. Notice 
+that here the background color is set and changed with the bgColor property, which 
+is a bit different than the method in IE. Also, we don&#39;t need to access the style, 
+just &quot;this.bgColor&quot;. </p>
+<p><b><span class="heading">More than one Cell?</span></b> </p>
+<p>We can write a little script to shorten the inline code a bit and allow it to 
+work over multiple cells and even use different colors. However, we could only get 
+it to work with IE (anyone with some code for NS send it along). Here is the script:
+</p>
+<pre>&lt;SCRIPT language=&quot;JavaScript&quot;&gt;
+&lt;!--
+function bcolor(bcol,d_name)
+{
+if (document.all)
+{
+ var thestyle= eval (&#39;document.all.&#39;+d_name+&#39;.style&#39;);
+ thestyle.backgroundColor=bcol;
+ }
+}
+//--&gt;
+&lt;/SCRIPT&gt;
+</pre>
+<p>The script takes two parameters. One is the color to change to, the second is 
+the ID name of the TD tag. Be sure to give all the TD tags a different ID and to 
+call the script with the right ID for each TD tag. Here is a sample where we change 
+on cell to yellow and another to red. This will show how to call the function:
+</p>
+<pre>&lt;TABLE width=&quot;200&quot; border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+&lt;TR&gt;
+&lt;TD ID=&quot;td1&quot; style=&quot;width:50%; background-color:lightblue&quot;
+ onMouseover=&quot;bcolor(&#39;yellow&#39;,&#39;td1&#39;);&quot;
+ onMouseout=&quot;bcolor(&#39;lightblue&#39;,&#39;td1&#39;);&quot;&gt;
+This goes to Yellow
+&lt;/TD&gt;
+&lt;TD ID=&quot;td2&quot; style=&quot;width:50%; background-color:lightblue&quot;
+ onMouseover=&quot;bcolor(&#39;red&#39;,&#39;td2&#39;);&quot;
+ onMouseout=&quot;bcolor(&#39;lightblue&#39;,&#39;td2&#39;);&quot;&gt;
+This goes to Red
+&lt;/TD&gt;
+&lt;/TR&gt;
+&lt;/TABLE&gt;
+</pre>
+<p>If you have IE, try it out below. One turns to yellow, the other to red: </p>
+<table cellSpacing="0" cellPadding="0" width="200" border="1">
+  <tr>
+    <td id="td1" onmouseover="bcolor('yellow','td1');" style="width: 50%; background-color: lightblue" onmouseout="bcolor('lightblue','td1');" align="center">
+    This goes to Yellow</td>
+    <td id="td2" onmouseover="bcolor('red','td2');" style="width: 50%; background-color: lightblue" onmouseout="bcolor('lightblue','td2');" align="center">
+    This goes to Red</td>
+  </tr>
+</table>
+<p>In this way, you could have all sorts of color changing cells. However, it is 
+probably best used to have a set of cells that all do the same thing, while another 
+set does another. </p>
+<p>Well, that is all for now, have fun with your backgrounds! </p>
+
+</body>
+
+</html>

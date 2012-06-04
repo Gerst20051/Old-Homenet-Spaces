@@ -1,0 +1,462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>IF</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#i">Commands A-M</a>
+    &gt; <a href="../INDEX.HTM#if">Batch I</a>
+    <h1>IF</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Performs conditional processing in batch programs. If the
+    condition specified by an IF command is true, it carries out
+    the command that follows the condition. If the condition is false,
+    it ignores the command. You can use this command only in batch
+    programs.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>IF
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>Error Check Syntax:</p>
+    <p>IF
+    [<a href="#ParameterNot">NOT</a>]
+    <a href="#ParameterErrorlevel">ERRORLEVEL</a> nnn
+    <a href="#ParameterCommand">command</a></p>
+    <p>IF
+    [<a href="#ParameterNot">NOT</a>]
+    <a href="#ParameterDefined">DEFINED</a> variable
+    <a href="#ParameterCommand">command</a></p>
+    <p>IF
+    <a href="#ParameterCmdextversion">CMDEXTVERSION</a> nnn
+    <a href="#ParameterCommand">command</a></p>
+
+    <p>String syntax:</p>
+    <p>IF
+    [<a href="#SwitchI">/I</a>]
+    [<a href="#ParameterNot">NOT</a>]
+    <a href="#ParameterCompare">string1==string2</a>
+    <a href="#ParameterCommand">command</a></p>
+    <p>IF
+    [<a href="#SwitchI">/I</a>]
+    <a href="#ParameterItem">item1</a>
+    <a href="#ParameterCompareOp">compare-op</a>
+    <a href="#ParameterItem">item2</a>
+    <a href="#ParameterCommand">command</a></p>
+    <p>IF
+    [<a href="#SwitchI">/I</a>]
+    <a href="#ParameterItem">item1</a>
+    <a href="#ParameterCompareOp">compare-op</a>
+    <a href="#ParameterItem">item2</a>
+    (<a href="#ParameterCommand">command</a>)
+    <a href="#ParameterElse">ELSE</a>
+    (<a href="#ParameterCommand">command</a>)</p>
+
+    <p>File syntax:</p>
+    <p>IF
+    [<a href="#ParameterNot">NOT</a>]
+    <a href="#ParameterExist">EXIST</a> filename
+    <a href="#ParameterCommand">command</a></p>
+    <p>IF
+    [<a href="#ParameterNot">NOT</a>]
+    <a href="#ParameterExist">EXIST</a> filename
+    (<a href="#ParameterCommand">command</a>)
+    <a href="#ParameterElse">ELSE</a>
+    (<a href="#ParameterCommand">command</a>)</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterCmdextversion"></a> CMDEXTVERSION
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>If Command Extensions are disabled CMDEXTVERSION will return
+      FALSE otherwise it will return "1".</dd>
+      <dd>If command extensions are significantly enhanced in a future
+      version of Windows then CMDEXTVERSION will be incremented.</dd>
+
+      <dt><a name="ParameterCommand"></a> command
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the command that should be carried out if the
+      preceding condition is met.</dd>
+
+      <dt><a name="ParameterCompare"></a> string1==string2
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies a true condition only if string1 and string2 are
+      the same. These values can be literal strings or batch variables
+      (%1, for example). Literal strings do not need quotation
+      marks or brackets.</dd>
+
+      <dt><a name="ParameterCompareOp"></a> compare-op
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>may be one of:
+        <ul>
+          <li><b>EQU</b> equal</li>
+          <li><b>NEQ</b> not equal</li>
+          <li><b>LSS</b> less than &lt;</li>
+          <li><b>LEQ</b> less than or equal &lt;=</li>
+          <li><b>GTR</b> greater than &gt;</li>
+          <li><b>GEQ</b> greater than or equal &gt;=</li>
+        </ul>
+      This 3 digit syntax is necessary because the &lt; and &gt;
+      are recognised as redirection symbols.</dd>
+      <dd>Any test made will always be a "string" comparison, so
+      when comparing numbers note that "026" &gt; "26".</dd>
+
+      <dt><a name="ParameterDefined"></a> DEFINED
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Will return true if the variable contains any value
+      (even if the value is just a space).</dd>
+
+      <dt><a name="ParameterElse"></a> ELSE
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Specifies what to carry out if the condition is false.</dd>
+
+      <dt><a name="ParameterErrorlevel"></a> ERRORLEVEL nnn
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies a true condition only if the previous program run
+      by COMMAND.COM returned an exit code equal to or greater than
+      number.</dd>
+      <dd>ERRORLEVEL statements must listed in DECREASING order. The
+      operating system will consider the IF statement true if the
+      ERRORLEVEL is greater than or equal to the values specified,
+      see the <a href="../C/CHOICE.HTM">CHOICE</a> examples.</dd>
+      <dd>Normal completion of a command will return ERRORLEVEL=0.</dd>
+
+      <dt><a name="ParameterExist"></a> EXIST filename
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies a true condition if filename exists (this is not
+      case sensitive).</dd>
+
+      <dt><a name="ParameterItem"></a> ITEM
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>May be a text string or an environment variable, a variable
+      may be modified using either Substring syntax or Search syntax.</dd>
+
+      <dt><a name="ParameterNot"></a> NOT
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies to carry out the command only if the condition
+      is false.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchI"></a> /I
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Do a case Insensitive string comparison.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../S/SET.HTM">SET</a> - Display, or Edit environment variables.
+    <br><a href="../E/ECHO.HTM">ECHO</a> - Display message on screen.
+    <br>IFMEMBER - NT Workgroup member (Resource kit).
+    <br><a href="../S/SC.HTM">SC</a> - Is a Service running
+    (Resource kit).
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>case - Conditionally perform a command.
+    <br>eval - Evaluate several COMMANDS/arguments.
+    <br>if - Conditionally perform a command.
+    <br>m4 - Macro processor.
+    <br>until - Execute commands (until error).
+    <br>while - Execute commands.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Parenthesis:</p>
+    <p>The use of parenthesis is only required if the command is run
+    over several lines:</p>
+<pre>
+    IF <a href="#ParameterExist">EXIST</a> filename (
+    <a href="../D/DEL.HTM">DEL</a> filename
+    ) <a href="#ParameterElse">ELSE</a> (
+    <a href="../E/ECHO.HTM">echo</a> <a
+href="../E/ECHO.HTM#ParameterMessage">The file was not found.</a>
+    )
+</pre>
+
+    <p>When piping commands, the expression is evaluated from left to
+    right, so:</p>
+    <p>IF... | ... is equivalent to (IF ... ) | ...</p>
+    <p>you can use the explicit syntax IF (... | ...)</p>
+
+    <p>Testing ERRORLEVEL correctly:</p>
+    <p>It is possible to create a string variable called
+    <a href="../../ENV/MSWIN/ERRORLEV.HTM">%ERRORLEVEL%</a>
+    if present such a variable will prevent the real ERRORLEVEL from
+    being tested successfully.</p>
+    <p>Both ECHO %errorlevel% and IF %errorlevel% will respond to a
+    string variable
+    <a href="../../ENV/MSWIN/ERRORLEV.HTM">%ERRORLEVEL%</a>
+    in preference to a real ERRORLEVEL.</p>
+    <p>To test for this problem use
+    <a href="../S/SET.HTM">SET</a> errorlevel, or IF DEFINED
+    ERRORLEVEL.</p>
+
+    <p>If you want to deliberately raise an ERRORLEVEL in a batch script
+    use the command "<a href="../C/COLOR.HTM">COLOR</a> 00".</p>
+
+    <p>If Command Extensions are disabled IF will only support direct
+    comparisons: IF ==, IF EXISTS, IF ERRORLEVEL.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>This example tests for the existence of a directory.
+    The IF command cannot be used to test directly for a directory, but
+    the null (NUL) device does exist in every directory on the hard
+    drive. Therefore, you can test for the null device to determine
+    whether a directory exists on the hard drive.</p>
+<pre>
+    IF <a
+href="#ParameterExist">EXIST</a> C:\MYDIR\NUL <a
+href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">PROCESS</a>
+</pre>
+
+    <p>Joachim Proske says you CAN test directly for a directory
+    (at least under <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>:</p>
+<pre>
+    IF <a
+href="#ParameterNot">NOT</a> <a
+href="#ParameterExist">EXIST</a> D:\TEMP\TESTING <a
+href="..\M\MKDIR.HTM">MD</a> D:\TEMP\TESTING).
+</pre>
+
+    <p>Joachim Proske also says you CAN test UNC directories too
+    (at least under <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>:</p>
+<pre>
+    IF <a
+href="#ParameterNot">NOT</a> <a
+href="#ParameterExist">EXIST</a> \\DEFRMFS2\TEST\LOG\TESTING <a
+href="..\M\MKDIR.HTM">MD</a> \\DEFRMFS2\TEST\LOG\TESTING).
+</pre>
+
+    <hr>
+    <p>This example displays the message 'Can't find data
+    file' if the operating system cannot find the file PRODUCT.DAT:</p>
+<pre>
+    IF <a
+href="#ParameterNot">NOT</a> <a
+href="#ParameterExist">EXIST</a> PRODUCT.DAT <a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">Can't find data file</a>
+</pre>
+
+    <hr>
+    <p>Using a variable in <a href="#ParameterExist">EXIST</a>
+    and <a href="../G/GOTO.HTM">GOTO</a> syntax:</p>
+<pre>
+    IF <a
+href="#ParameterNot">NOT</a> <a
+href="#ParameterExist">EXIST</a> %FILE% <a
+href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">NOSUCH</a>
+</pre>
+
+    <hr>
+    <p><b>Errorlevel</b> When a program stops, it returns an exit code
+    to the operating system. For example, a value of 0 is typically used
+    to indicate that a program was successfully executed. The ERRORLEVEL
+    parameter lets you use exit codes as conditions.</p>
+    <p>This example displays an error message if an error
+    occurs during formatting of the disk in drive A. If no error
+    occurs, the error message is skipped.</p>
+<pre>
+    <a href="../A/ATSIGN.HTM">@</a><a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterOff">OFF</a>
+     <a href="../F/FORMAT.HTM">FORMAT</a> <a
+href="../F/FORMAT.HTM#ParameterDrive">A:</a> <a
+href="../F/FORMAT.HTM#SwitchS">/S</a>
+     IF <a
+href="#ParameterNot">NOT</a> <a
+href="#ParameterErrorlevel">ERRORLEVEL</a> 1 <a
+href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">ERR</a>
+      <a href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">An error occurred during formatting.</a>
+      <a href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">END</a>
+    :<a href="../L/LABEL.HTM#ParameterLabel">ERR</a>
+      <a href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">Successfully formatted the disk in drive A.</a>
+    :<a href="../L/LABEL.HTM#ParameterLabel">END</a>
+</pre>
+
+    <p>For another example of how the
+    <a href="#ParameterErrorlevel">ERRORLEVEL</a> parameter is
+    used, see the <a href="../C/CHOICE.HTM">CHOICE</a>
+    examples.</p>
+
+<pre>
+    IF <a
+href="#ParameterExist">EXIST</a> C:\install.log (<a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">Installation complete</a>) <a
+
+href="#ParameterElse">ELSE</a> <a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">The Installation failed</a>)
+
+    IF <a
+href="#ParameterDefined">DEFINED</a> v_department <a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">Got the department variable</a>
+
+    IF <a
+href="#ParameterDefined">DEFINED</a> v_commission <a
+href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#SwitchA">/A</a> <a
+href="../S/SET.HTM#ParameterVariable">v_salary</a>=<a
+href="../S/SET.HTM#ParameterString">%v_salary% + %v_commission%</a>
+
+    IF <a
+href="#ParameterCmdextversion">CMDEXTVERSION</a> 1 <a
+href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">:start_process</a>
+
+    IF <a
+href="#ParameterErrorlevel">ERRORLEVEL</a> <a
+href="#ParameterCompareOp">EQU</a> 0 <a
+href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">:okay</a>
+
+    :: Capture a specific errorlevel like this
+    <a
+href="../F/FOR_0.HTM">FOR</a> <a
+href="../F/FOR_0.HTM#ParameterVariable">%%G</a> IN <a
+href="../F/FOR_0.HTM#ParameterSet">(0 1 2 3 4 5 6 7 8 9)</a> DO IF <a
+href="#ParameterErrorlevel">ERRORLEVEL</a>==%%G <a
+href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">v_err</a>=<a
+href="../S/SET.HTM#ParameterString">%%G</a>
+    IF <a
+href="#ParameterCompare">[%v_err%]==[2]</a> <a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">Errorlevel is 2</a>
+
+    :: Wildcards are not supported by IF but you can spoof the same thing using SET:
+    :: This won't Work
+    IF <a
+href="#ParameterCompare">%COMPUTERNAME%==ABZ*</a> <a
+href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">:s_matched</a>
+
+    :: This will work
+    <a
+href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">v_part_name</a>=<a
+href="../S/SET.HTM#ParameterString">%COMPUTERNAME:~0,3%</a>
+    IF <a
+href="#ParameterNot">NOT</a> <a
+href="#ParameterCompare">%v_part_name%==ABZ</a> <a
+href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">:s_matched</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>Internal</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>PRNMNGR</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#p">Commands N-Z</a>
+    &gt; <a href="../INDEXP.HTM#prnmngr">Commands P</a>
+    <h1>PRNMNGR</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Adds, deletes, and lists printers or printer
+    connections, in addition to setting and displaying the
+    default printer.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CSCRIPT PRNMNGR[.VBS]
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>CSCRIPT PRNMNGR[.VBS]
+    <a href="#SwitchA">-a</a>
+    <a href="#SwitchM">-m driver_name</a>
+    <a href="#SwitchP">-p printer_name</a>
+    <a href="#SwitchR">-r port_name</a>
+    [<a href="#SwitchS">-s [remote_computer]</a>]
+    [<a href="#SwitchU">-u user_name -w password</a>]</p>
+
+    <p>CSCRIPT PRNMNGR[.VBS]
+    <a href="#SwitchAc">-ac</a>
+    <a href="#SwitchP">-p printer_name</a></p>
+
+    <p>CSCRIPT PRNMNGR[.VBS]
+    <a href="#SwitchD">-d</a>
+    <a href="#SwitchP">-p printer_name</a>
+    [<a href="#SwitchS">-s [remote_computer]</a>]
+    [<a href="#SwitchU">-u user_name -w password</a>]</p>
+
+    <p>CSCRIPT PRNMNGR[.VBS]
+    <a href="#SwitchX">-x</a>
+    [<a href="#SwitchS">-s [remote_computer]</a>]
+    [<a href="#SwitchU">-u user_name -w password</a>]</p>
+
+    <p>CSCRIPT PRNMNGR[.VBS]
+    <a href="#SwitchG">-g</a></p>
+
+    <p>CSCRIPT PRNMNGR[.VBS]
+    <a href="#SwitchT">-t</a>
+    <a href="#SwitchP">-p printer_name</a></p>
+
+    <p>CSCRIPT PRNMNGR[.VBS]
+    <a href="#SwitchL">-l</a>
+    [<a href="#SwitchS">-s [remote_computer]</a>]
+    [<a href="#SwitchU">-u user_name -w password</a>]</p>
+
+    <p>Displays command-line help:</p>
+    <p>CSCRIPT PRNMNGR[.VBS]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchA"></a> -a
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that you want to add a local printer.</dd>
+
+      <dt><a name="SwitchAc"></a> -ac
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that you want to add a printer connection.</dd>
+
+      <dt><a name="SwitchD"></a> -d
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that you want to delete a printer.</dd>
+
+      <dt><a name="SwitchG"></a> -g
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that you want to display the default
+      printer.</dd>
+
+      <dt><a name="SwitchL"></a> -l
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that you want to list all the printers
+      for a computer.</dd>
+
+      <dt><a name="SwitchM"></a> -m driver_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies, by name, the driver for the local
+      printer you want to add. Drivers are often named for
+      the model of printer they support.</dd>
+
+      <dt><a name="SwitchP"></a> -p printer_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies, by name, the local printer that you
+      want to add/default/delete (a connection).</dd>
+
+      <dt><a name="SwitchR"></a> -r port_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the port to which the printer is
+      connected. If this is a parallel or a serial port,
+      use the ID of the port (for example, LPT1 or COM1).
+      If this is a TCP/IP port, use the port name that was
+      specified when the port was added.</dd>
+
+      <dt><a name="SwitchS"></a> -s [remote_computer]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies, by name, the remote computer to which
+      you want to add/list a local printer. If you do not
+      specify a computer, the printer is added/deleted to
+      the local computer.</dd>
+
+      <dt><a name="SwitchT"></a> -t
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that you want to set the default
+      printer.</dd>
+
+      <dt><a name="SwitchU"></a> -u user_name -w password
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies an account with permissions to connect
+      by using Windows Management Instrumentation (WMI)
+      services to the computer to which you want to
+      add/delete/list a local printer. All members of the
+      Administrators group for that computer have these
+      permissions, but the permissions can also be granted
+      to other users.  If you do not specify an account,
+      you must be logged on under an account with these
+      permissions for the command to work.</dd>
+
+      <dt><a name="SwitchX"></a> -x
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that you want to delete all printers
+      from a computer.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,658 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DSMOD</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDS.HTM#dsmod">Commands Ds-Dz</a>
+    <h1>DSMOD</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Adds specific types of objects to the directory.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>DSMOD
+    {<a href="#ParameterComputer">computer</a>
+    | <a href="#ParameterContact">contact</a>
+    | <a href="#ParameterGroup">group</a>
+    | <a href="#ParameterOu">ou</a>
+    | <a href="#ParameterPartition">partition</a>
+    | <a href="#ParameterQuota">quota</a>
+    | <a href="#ParameterServer">server</a>
+    | <a href="#ParameterUser">user</a>}
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>DSMOD
+    <a href="#ParameterComputer">computer</a>
+    <a href="#ParameterComputerDN">computer_dn ...</a>
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchDesc">-desc description</a>]
+    [<a href="#SwitchDisabled">-disabled {yes | no}</a>]
+    [<a href="#SwitchLoc">-loc location</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [<a href="#SwitchReset">-reset</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSMOD
+    <a href="#ParameterContact">contact</a>
+    <a href="#ParameterContactDN">contact_dn ...</a>
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchCompany">-company company_name</a>]
+    [<a href="#SwitchDept">-dept department</a>]
+    [<a href="#SwitchDesc">-desc description</a>]
+    [<a href="#SwitchDisplay">-display display_name</a>]
+    [<a href="#SwitchEmail">-email email</a>]
+    [<a href="#SwitchFax">-fax fax_number</a>]
+    [<a href="#SwitchFn">-fn first_name</a>]
+    [<a href="#SwitchHomeTel">-hometel home_phone_number</a>]
+    [<a href="#SwitchIpTel">-iptel ip_phone_number</a>]
+    [<a href="#SwitchLn">-ln last_name</a>]
+    [<a href="#SwitchMi">-mi middle_initial</a>]
+    [<a href="#SwitchMobile">-mobile cell_phone_number</a>]
+    [<a href="#SwitchOffice">-office office</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchPager">-pager pager_number</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [<a href="#SwitchTel">-tel phone_number</a>]
+    [<a href="#SwitchTitle">-title title</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSMOD
+    <a href="#ParameterGroup">group</a>
+    <a href="#ParameterGroupDN">group_dn ...</a>
+    [{<a href="#SwitchAddMbr">-addmbr</a>
+     | <a href="#SwitchChMbr">-chmbr</a>
+     | <a href="#SwitchRmMbr">-rmmbr</a>}
+       <a href="#ParameterMemberDN">member_dn ...</a>]
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchDesc">-desc description</a>]
+    [<a href="#SwitchSamId">-samid sam_name</a>]
+    [<a href="#SwitchScope">-scope {g | l | u}</a>]
+    [<a href="#SwitchSecGrp">-secgrp {yes | no}</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSMOD
+    <a href="#ParameterOu">ou</a>
+    <a href="#ParameterOrganizationalUnitDN">organizational_unit_dn ...</a>
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchDesc">-desc description</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSMOD
+    <a href="#ParameterPartition">partition</a>
+    <a href="#ParameterPartitionDN">partition_dn ...</a>
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [<a href="#SwitchQDefault">-qdefault value</a>]
+    <a href="#SwitchQTmbstnWt">-qtmbstnwt percent</a>
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSMOD
+    <a href="#ParameterQuota">quota</a>
+    <a href="#ParameterQuotaDN">quota_dn ...</a>
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchDesc">-desc description</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [<a href="#SwitchQLimit">-qlimit value</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSMOD
+    <a href="#ParameterServer">server</a>
+    <a href="#ParameterServerDN">server_dn ...</a>
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchDesc">-desc description</a>]
+    [<a href="#SwitchIsGC">-isgc {yes | no}</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <p>DSMOD
+    <a href="#ParameterUser">user</a>
+    <a href="#ParameterUserDN">user_dn ...</a>
+    [<a href="#SwitchAcctExpires">-acctexpires number_of_days</a>]
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchCanChPwd">-canchpwd {yes | no}</a>]
+    [<a href="#SwitchCompany">-company company_name</a>]
+    [<a href="#SwitchDept">-dept department</a>]
+    [<a href="#SwitchDesc">-desc description</a>]
+    [<a href="#SwitchDisabled">-disabled {yes | no}</a>]
+    [<a href="#SwitchDisplay">-display display_name</a>]
+    [<a href="#SwitchEmail">-email email</a>]
+    [<a href="#SwitchEmpId">-empid employee_id</a>]
+    [<a href="#SwitchFax">-fax fax_number</a>]
+    [<a href="#SwitchFn">-fn first_name</a>]
+    [<a href="#SwitchHmDir">-hmdir home_directory</a>]
+    [<a href="#SwitchHmDrv">-hmdrv home_drive_letter</a>]
+    [<a href="#SwitchHomeTel">-hometel home_phone_number</a>]
+    [<a href="#SwitchIpTel">-iptel ip_phone_number</a>]
+    [<a href="#SwitchLn">-ln last_name</a>]
+    [<a href="#SwitchLoscr">-loscr script_path</a>]
+    [<a href="#SwitchMgr">-mgr manager</a>]
+    [<a href="#SwitchMi">-mi middle_initial</a>]
+    [<a href="#SwitchMobile">-mobile cell_phone_number</a>]
+    [<a href="#SwitchMustChPwd">-mustchpwd {yes | no}</a>]
+    [<a href="#SwitchOffice">-office office</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchPager">-pager pager_number</a>]
+    [<a href="#SwitchProfile">-profile profile_path</a>]
+    [<a href="#SwitchPwd">-pwd {Password | *}</a>]
+    [<a href="#SwitchPwdNeverExpires">-pwdneverexpires {yes | no}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [<a href="#SwitchReversiblePwd">-reversiblepwd {yes | no}</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchTel">-tel phone_number</a>]
+    [<a href="#SwitchTitle">-title title</a>]
+    [<a href="#SwitchUpn">-upn upn</a>]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]
+    [<a href="#SwitchWebPg">-webpg web_page</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterComputer"></a> computer
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Modifies attributes of one or more existing
+      computers in the directory.</dd>
+
+      <dt><a name="ParameterComputerDN"></a> computer_dn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the distinguished names of one or more
+      computers to modify. If omitted, obtained through
+      standard input (stdin) to support piping of output
+      from another command.</dd>
+
+      <dt><a name="ParameterContact"></a> contact
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Modifies attributes of one or more existing
+      contacts in the directory.</dd>
+
+      <dt><a name="ParameterContactDN"></a> contact_dn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the distinguished names of the contacts
+      that you want to modify. If omitted, obtained through
+      standard input (stdin) to support piping of output
+      from another command.</dd>
+
+      <dt><a name="ParameterGroup"></a> group
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Modifies attributes of one or more existing groups
+      in the directory.</dd>
+
+      <dt><a name="ParameterGroupDN"></a> group_dn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the distinguished names of the groups
+      you want to modify. If omitted, obtained through
+      standard input (stdin) to support piping of output
+      from another command. If group_dn ... and
+      <a href="#ParameterMemberDN">member_dn ...</a>
+      are used together then only one parameter can be taken
+      from standard input, requiring that the other be
+      specified on the command-line. </dd>
+
+      <dt><a name="ParameterMemberDN"></a> member_dn ...
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the distinguished names of the members
+      you want to modify. If omitted, obtained through
+      standard input (stdin) to support piping of output
+      from another command to input of this command. If
+      <a href="#ParameterGroupDN">group_dn ...</a> and
+      member_dn ... are used together then only one can be
+      taken from standard input, requiring that the other be
+      specified on the command-line.</dd>
+
+      <dt><a name="ParameterOu"></a> ou
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Modifies attributes of one or more existing
+      organizational units in the directory.</dd>
+
+      <dt><a name="ParameterOrganizationalUnitDN"></a> organizational_unit_dn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the distinguished names of the
+      organizational units you want to modify. If omitted,
+      obtained through standard input (stdin) to support
+      piping of output from another command.</dd>
+
+      <dt><a name="ParameterPartition"></a> partition
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Modifies attributes of one or more existing
+      partitions in the directory.</dd>
+
+      <dt><a name="ParameterPartitionDN"></a> partition_dn ...
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the distinguished names of one or more
+      directory partitions to modify. If omitted, obtained
+      through standard input (STDIN) to support piping of
+      output from another command to input of this command.</dd>
+
+      <dt><a name="ParameterQuota"></a> quota
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Modifies attributes of one or more existing quota
+      specifications in the directory.</dd>
+
+      <dt><a name="ParameterQuotaDN"></a> quota_dn ...
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the distinguished names of one or more
+      quota specifications to modify. If omitted, obtained
+      through standard input (stdin) to support piping of
+      output from another command to input of this command.</dd>
+
+      <dt><a name="ParameterServer"></a> server
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Modifies properties of a domain controller.</dd>
+
+      <dt><a name="ParameterServerDN"></a> server_dn ...
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the distinguished names of one or more
+      servers that you want to modify. If omitted, obtained
+      through standard input (stdin) to support piping of
+      output from another command.</dd>
+
+      <dt><a name="ParameterUser"></a> user
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Modifies attributes of one or more existing users
+      in the directory.</dd>
+
+      <dt><a name="ParameterUserDN"></a> user_dn ...
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the distinguished names of the users you
+      want to modify. If values are omitted, they are
+      obtained through standard input (stdin) to support
+      piping of output from another command to input of this
+      command.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchAcctExpires"></a> -acctexpires number_of_days
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the number of days from today that the
+      user accounts will expire. A value of 0 sets
+      expiration at the end of today. A positive value sets
+      expiration in the future. A negative value sets
+      expiration in the past. The value of NEVER sets the
+      account to never expire.</dd>
+
+      <dt><a name="SwitchAddMbr"></a> -addmbr
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that members specified by one or more
+      <a href="#ParameterMemberDN">member_dn ...</a> to
+      be added to the group specified by
+      <a href="#ParameterGroupDN">group_dn</a>.</dd>
+
+      <dt><a name="SwitchC"></a> -c
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Reports errors, but continues with the next object
+      in the argument list when multiple target objects are
+      specified (continuous operation mode). If omitted, the
+      command exits on the first error.</dd>
+
+      <dt><a name="SwitchCanChPwd"></a> -canchpwd {yes | no}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies if users can change their passwords at
+      all (yes) or not (no). The value of must be yes if the
+      value of the
+      <a href="#SwitchMustChPwd">-mustchpwd</a> is yes.</dd>
+
+      <dt><a name="SwitchChMbr"></a> -chmbr
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that members specified by one or more
+      <a href="#ParameterMemberDN">member_dn ...</a> to
+      be replaced in the group specified by
+      <a href="#ParameterGroupDN">group_dn</a>.</dd>
+
+      <dt><a name="SwitchCompany"></a> -company company
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the company information of the
+      contact/user objects you want to modify.</dd>
+
+      <dt><a name="SwitchD"></a> -d domain
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Connects the computer to a specified domain. By
+      default, the computer is connected to the domain
+      controller in the logon domain.</dd>
+
+      <dt><a name="SwitchDept"></a> -dept department
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the departments of the contact/user
+      objects you want to modify.</dd>
+
+      <dt><a name="SwitchDesc"></a> -desc description
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the descriptions of the
+      computer/contact/group/organizational unit/server/user
+      objects you want to modify.</dd>
+
+      <dt><a name="SwitchDisabled"></a> -disabled {yes | no}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies if the computer/user account is disabled
+      for logon (yes) or not (no).</dd>
+
+      <dt><a name="SwitchDisplay"></a> -display display_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the display names of the contact/user
+      objects you want to modify.</dd>
+
+      <dt><a name="SwitchEmail"></a> -email email
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the e-mail addresses of the contact/user
+      objects you want to modify.</dd>
+
+      <dt><a name="SwitchEmpId"></a> -empid employee_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the employee IDs of the user objects you
+      want to modify.</dd>
+
+      <dt><a name="SwitchFax"></a> -fax fax_number
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the fax numbers of the contact/user
+      objects you want to modify.</dd>
+
+      <dt><a name="SwitchFn"></a> -fn first_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the first names of the contact/user
+      objects you want to modify.</dd>
+
+      <dt><a name="SwitchHmDir"></a> -hmdir home_directory
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the home directory locations of the user
+      objects you want to modify. If home_directory is given
+      as a universal naming convention (UNC) path, then you
+      must specify a mapped drive to this path must using
+      <a href="#SwitchHmDrv">-hmdrv</a>.</dd>
+
+      <dt><a name="SwitchHmDrv"></a> -hmdrv home_drive_letter
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the home directory drive letters of the
+      user objects you want to modify.</dd>
+
+      <dt><a name="SwitchHomeTel"></a> -hometel home_phone_number
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the home telephone numbers of the
+      contact/user objects you want to modify.</dd>
+
+      <dt><a name="SwitchIpTel"></a> -iptel ip_phone_number
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the IP phone numbers of the contact/user
+      objects you want to modify.</dd>
+
+      <dt><a name="SwitchIsGC"></a> -isgc {yes | no}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Sets this server as a global catalog (yes) or
+      disables it (no).</dd>
+
+      <dt><a name="SwitchLn"></a> -ln last_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the last names of the contact/user
+      objects you want to modify.</dd>
+
+      <dt><a name="SwitchLoc"></a> -loc location
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the location of the computer object you
+      want to modify.</dd>
+
+      <dt><a name="SwitchLoscr"></a> -loscr script_path
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the logon script paths of the user
+      objects you want to modify.</dd>
+
+      <dt><a name="SwitchMgr"></a> -mgr manager_dn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the distinguished names of the managers
+      of the user objects you want to modify.</dd>
+      <dd>The manager can only be specified using the
+      distinguished name format.</dd>
+
+      <dt><a name="SwitchMi"></a> -mi middle_initial
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>pecifies the middle initial of the contact/user
+      objects you want to modify.</dd>
+
+      <dt><a name="SwitchMobile"></a> -mobile cell_phone_number
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the cell numbers of the contact/user
+      objects you want to modify.</dd>
+
+      <dt><a name="SwitchMustChPwd"></a> -mustchpwd {yes | no}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies if users must change their passwords at
+      the time of next logon (yes) or not (no).</dd>
+
+      <dt><a name="SwitchOffice"></a> -office office
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the office locations of the contact/user
+      objects you want to modify.</dd>
+
+      <dt><a name="SwitchP"></a> -p {password | *}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies to use either a password or a * to log
+      on to a remote server.
+      If *, then prompted for password.</dd>
+
+      <dt><a name="SwitchPager"></a> -pager pager_number
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the pager numbers of the contact/user
+      objects you want to modify.</dd>
+
+      <dt><a name="SwitchProfile"></a> -profile profile_path
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the profile paths of the user objects
+      you want to modify.</dd>
+
+      <dt><a name="SwitchPwd"></a> -pwd {password | *}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Resets password or a * user password.
+      If *, then prompts for password.</dd>
+
+      <dt><a name="SwitchPwdNeverExpires"></a> -pwdneverexpires {yes | no}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies if user accounts never expires (yes) or
+      not (no).</dd>
+
+      <dt><a name="SwitchQ"></a> -q
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Suppresses all output to standard output
+      (quiet mode).</dd>
+
+      <dt><a name="SwitchQDefault"></a> -qdefault value
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies that the default quota for the directory
+      partition be set to value. The default quota will
+      apply to any security principal (user, group, computer
+      or inetOrgPerson) who owns an object in the directory
+      partition, if no quota specification exists that
+      covers the security principal.
+      -1 is an unlimited quota.</dd>
+
+      <dt><a name="SwitchQLimit"></a> -qlimit value
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the number of objects within the
+      directory partition that can be owned by the security
+      principal to which the quota object is assigned.
+      -1 is unlimited quota.</dd>
+
+      <dt><a name="SwitchQTmbstnWt"></a> -qtmbstnwt percent
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the percentage by which tombstone object
+      count should be reduced when calculating quota usage.
+      The percentage is specified by percent and must be
+      between 0 and 100.</dd>
+      <dd>If a user were assigned a quota of 100, the user
+      could own a maximum of 100 normal objects or 400
+      tombstone objects in Active Directory.</dd>
+
+      <dt><a name="SwitchReset"></a> -reset
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Resets computer accounts.</dd>
+
+      <dt><a name="SwitchReversiblePwd"></a> -reversiblepwd {yes | no}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies if user passwords should be stored using
+      reversible encryption (yes) or not (no).</dd>
+
+      <dt><a name="SwitchRmMbr"></a> -rmmbr
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that members specified by one or more
+      <a href="#ParameterMemberDN">member_dn ...</a> to
+      be removed from the group specified by
+      <a href="#ParameterGroupDN">group_dn</a>.</dd>
+
+      <dt><a name="SwitchS"></a> -s server
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Connects the computer to a specified server.</dd>
+
+      <dt><a name="SwitchSamId"></a> -samid sam_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that the SAM account names of the groups
+      you want to modify.</dd>
+
+      <dt><a name="SwitchScope"></a> -scope {g | l | u}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Sets the scope of the groups to global, local, or
+      universal. If the domain is in mixed-mode, then the
+      universal scope is not supported. It is not possible
+      to convert a domain local group to global group or
+      vice-versa.</dd>
+
+      <dt><a name="SwitchSecGrp"></a> -secgrp {yes | no}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Sets the group types to security group (yes) or
+      distribution group (no).</dd>
+
+      <dt><a name="SwitchTel"></a> -tel phone_number
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the telephone numbers of the
+      contact/user objects you want to modify.</dd>
+
+      <dt><a name="SwitchTitle"></a> -title title
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the titles of the contact/user objects
+      you want to modify.</dd>
+
+      <dt><a name="SwitchU"></a> -u user_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the user name with which user will log
+      on to a remote server. By default, the logged on user
+      name is used. You can specify a user name using one
+      of the formats:
+<pre>
+      user name
+      domain\user name
+      user principal name (UPN)
+</pre>
+      </dd>
+
+      <dt><a name="SwitchUc"></a> -uc | -uci | -uco
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies that output or input data is
+      formatted in Unicode:
+        <ul>
+          <li><b>-uc</b> input from or output to a pipe (|)</li>
+          <li><b>-uco</b> output to a pipe (|) or a file</li>
+          <li><b>-uci</b> input from a pipe (|) or a file</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchUpn"></a> -upn upn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the user principal names of the user
+      objects you want to modify.</dd>
+
+      <dt><a name="SwitchWebPg"></a> -wegpg web_page
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the Beb page URLs of the user objects
+      you want to modify.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

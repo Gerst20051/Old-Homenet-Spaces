@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>TAKEOWN</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#t">Commands N-Z</a>
+    &gt; <a href="../INDEXT.HTM#takeown">Commands T</a>
+    <h1>TAKEOWN</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Allows an administrator to recover access to a file that
+    previously was denied by making the administrator the owner of
+    the file.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>TAKEOWN
+    [<a href="#SwitchA">/A</a>]
+    [<a href="#SwitchD">/D {Y | N}</a>]
+    <a href="#SwitchF">/F [share_name\]file_name</a>
+    [<a href="#SwitchR">/R</a>]
+    [<a href="#SwitchS">/S computer</a>
+     [<a href="#SwitchU">/U [domain\]user</a>
+      [<a href="#SwitchP">/P [password]</a>]]]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchA"></a> /A
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Gives ownership to the administrators group
+      instead of the current user.</dd>
+      <dd>If omitted, file ownership is given to the user
+      who is currently logged on to the computer.</dd>
+
+      <dt><a name="SwitchD"></a> /D {Y | N}
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Default prompt used when the current user does not
+      have permissions to view folders within a directory:
+      <ul>
+      <li><b>Y</b> to take ownership</li>
+      <li><b>N</b> to suppress the confirmation prompt</li>
+      </ul>
+      </dd>
+
+      <dt><a name="SwitchF"></a> /F [share_name\]file_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the file name or directory name pattern.
+      You can use the wildcard character "*" in specifying
+      the pattern.</dd>
+      <dd>Mixed patterns using the question mark (?) and the
+      wildcard character (*) is not supported.</dd>
+
+      <dt><a name="SwitchR"></a> /R
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Performs recursive operation on all files in the
+      specified directory and subdirectories.</dd>
+
+      <dt><a name="SwitchP"></a> /P password
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the password of the user account that is
+      specified in <a href="#SwitchU">/u</a>.</dd>
+
+      <dt><a name="SwitchS"></a> /S computer
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the name or IP address of a remote
+      computer (do not use backslashes).
+      The default is the local computer.</dd>
+
+      <dt><a name="SwitchU"></a> /U [domain\]user
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Runs the command with the account permissions of
+      the user specified by User or Domain\User. The default
+      is the permissions of the current logged on user on
+      the computer issuing the command.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>To perform this procedure, you must be a member of
+    the Administrators group on the local computer, or you
+    must have been delegated the appropriate authority. If
+    the computer is joined to a domain, members of the
+    Domain Admins group might be able to perform this
+    procedure. As a security best practice, consider using
+    <b>Run as</b> to perform this procedure.</p>
+    <p>If you install a Windows Server 2003 operating system
+    on a computer with another Windows Server 2003 operating
+    system already installed and then attempt to delete it,
+    you cannot delete the entire directory. One of the
+    hidden directories, named \Installer, contains some .msi
+    and .ico files that are locked, and you have to format
+    the drive to delete them. This is because the Windows
+    Server 2003 operating systems apply security attributes
+    to the file so that the only the System account of the
+    previous installation can access the files. Even an
+    administrator of this computer cannot reset these
+    permissions. You must run TAKEOWN to delete these
+    files.</p>
+    <p>After deleting the lock with TAKEOWN, you might have
+    to use Windows Explorer or <a href="../C/CACLS.HTM">CACLS</a>
+    to give you full permissions to the files and
+    directories before you can delete them.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

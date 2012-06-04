@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>PRNQCTL</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#p">Commands N-Z</a>
+    &gt; <a href="../INDEXP.HTM#prnqctl">Commands P</a>
+    <h1>PRNQCTL</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Prints a test page, pauses or resumes a printer,
+    and clears a printer queue.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CSCRIPT PRNQCTL[.VBS]
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>CSCRIPT PRNQCTL[.VBS]
+    <a href="#SwitchZ">-z</a>
+    <a href="#SwitchP">-p printer_name</a>
+    [<a href="#SwitchS">-s [remote_computer]</a>]
+    [<a href="#SwitchU">-u user_name -w password</a>]</p>
+
+    <p>CSCRIPT PRNQCTL[.VBS]
+    <a href="#SwitchM">-m</a>
+    <a href="#SwitchP">-p printer_name</a>
+    [<a href="#SwitchS">-s [remote_computer]</a>]
+    [<a href="#SwitchU">-u user_name -w password</a>]</p>
+
+    <p>CSCRIPT PRNQCTL[.VBS]
+    <a href="#SwitchE">-e</a>
+    <a href="#SwitchP">-p printer_name</a>
+    [<a href="#SwitchS">-s [remote_computer]</a>]
+    [<a href="#SwitchU">-u user_name -w password</a>]</p>
+
+    <p>CSCRIPT PRNQCTL[.VBS]
+    <a href="#SwitchX">-x</a>
+    <a href="#SwitchP">-p printer_name</a>
+    [<a href="#SwitchS">-s [remote_computer]</a>]
+    [<a href="#SwitchU">-u user_name -w password</a>]</p>
+
+    <p>Displays command-line help:</p>
+    <p>CSCRIPT PRNQCTL[.VBS]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchE"></a> -e
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that you want to print a test page.</dd>
+
+      <dt><a name="SwitchM"></a> -m
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that you want to resume printing.</dd>
+
+      <dt><a name="SwitchP"></a> -p printer_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies, by name, the printer you want to
+      cancel/pause/resume/test.</dd>
+
+      <dt><a name="SwitchS"></a> -s [remote_computer]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies, by name, the remote computer to which
+      the printer you want to cancel/pause/resume/test is
+      attached. If you do not specify a computer, the
+      printer attached to the local computer is paused.</dd>
+
+      <dt><a name="SwitchU"></a> -u user_name -w password
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies an account with permissions to connect
+      by using Windows Management Instrumentation (WMI)
+      services to the computer that hosts the printer on
+      which you want to cancel/pause/resume/test printing.
+      All members of the Administrators group for that
+      computer have these permissions, but the permissions
+      can also be granted to other users. If you do not
+      specify an account, you must be logged on under an
+      account with these permissions for the command to
+      work.</dd>
+
+      <dt><a name="SwitchX"></a> -x
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that you want to cancel all jobs
+      spooled to a printer.</dd>
+
+      <dt><a name="SwitchZ"></a> -z
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that you want to pause printing.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

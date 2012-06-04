@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>SHADOW</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#s">Commands N-Z</a>
+    &gt; <a href="../INDEXS.HTM#shadow">Commands S</a>
+    <h1>SHADOW</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Enables you to remotely control an active session of another user.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>SHADOW
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>SHADOW
+    <a href="#ParameterSessionID">session_id</a>
+    | <a href="#ParameterSessionName">session_name</a>
+    [<a href="#SwitchServer">/server:server_name</a>]
+    [<a href="#SwitchV">/v</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterSessionID"></a> session_id
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>The ID of the session you want to remotely control. Use
+      <a href="../Q/QUERYUSE.HTM">query user</a> to
+      display the list of sessions and their session IDs.</dd>
+
+      <dt><a name="ParameterSessionName"></a> session_name
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>The name of the session you want to remotely control.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchServer"></a> /server:server_name
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Specifies the terminal server containing the session you want to
+      remotely control. Defaults to the current terminal server.</dd>
+
+      <dt><a name="SwitchV"></a> /v
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Displays information about the actions being performed.</dd>
+    </p>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+
+    <p>You can either view or actively control the session. If you choose to
+    actively control a user's session, you will be able to input keyboard and
+    mouse actions to the session.</p>
+
+    <p>You can always remotely control your own sessions (except the current
+    session), but you must have Full Control access permission to remotely
+    control another session.</p>
+
+    <p>You can also initiate remote control using Terminal Services
+    Manager.</p>
+
+    <p>Before monitoring begins, the server warns the user that the session is
+    about to be remotely controlled, unless this warning is disabled. Your
+    session might appear to be frozen for a few seconds while it waits for a
+    response from the user. To configure remote control for users and sessions,
+    use Terminal Services Configuration or the Terminal Services extensions to
+    Local Users and Groups and Active Directory for Users and Computers.</p>
+
+    <p>Your session must be capable of supporting the video resolution used at
+    the session you are remotely controlling or the operation fails.</p>
+
+    <p>The console session can neither remotely control another session nor can
+    it be remotely controlled by another session.</p>
+
+    <p>When you want to end remote control (shadowing), press CTRL+* (using *
+    from the numeric keypad only), or whatever hot key you have defined. You
+    define the hot key in Terminal Services Manager.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To shadow session 99, type:</p>
+
+<pre>
+    SHADOW <a
+href="#ParameterSessionID">99</a>
+</pre>
+
+    <p>To shadow the session HELPD01, type:</p>
+
+<pre>
+    TSCON <a
+href="#ParameterSessionName">HELPD01</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/07/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

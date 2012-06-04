@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>MEMMAKER</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#m">Commands A-M</a>
+    &gt; <a href="../INDEXM.HTM#memmaker">Commands M</a>
+    <h1>MEMMAKER</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Starts the MemMaker program, which optimizes your computer's
+    memory by moving device drivers and memory-resident programs to
+    upper memory. To use MemMaker, your computer must have an 80386 or
+    80486 processor and extended memory. For more information about
+    running MemMaker, see the chapter 'Making More Memory Available' in
+    the DOS User's Guide.</p>
+    <p><b>CAUTION:</b> Do not use this command while Windows is
+    running.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>MEMMAKER
+    [<a href="#SwitchB">/B</a>]
+    [<a href="#SwitchBatch1">/BATCH</a>]
+    [<a href="#SwitchBatch2">/BATCH2</a>]
+    [<a href="#SwitchSession">/SESSION</a>]
+    [<a href="#SwitchSwap">/SWAP</a>:drive]
+    [<a href="#SwitchT">/T</a>]
+    [<a href="#SwitchUndo">/UNDO</a>]
+    [<a href="#SwitchW">/W</a>:n,m]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchB"></a> /B
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Displays MemMaker in black and white. Use this option if
+      MemMaker isn't displayed correctly on a monochrome monitor.</dd>
+
+      <dt><a name="SwitchBatch1"></a> /BATCH
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Runs MemMaker in batch (unattended) mode. In batch mode,
+      MemMaker takes the default action at all prompts. If an error
+      occurs, MemMaker restores your previous CONFIG.SYS, AUTOEXEC.BAT
+      and (if necessary) Windows SYSTEM.INI files. After MemMaker has
+      completed, you can review status messages by viewing the contents
+      of the MEMMAKER.STS file. (To view this file, use a text editor
+      such as <a href="../E/EDIT.HTM">DOS Editor</a>, or use the
+      <a href="../T/TYPE.HTM">TYPE</a> command.)</dd>
+
+      <dt><a name="SwitchBatch2"></a> /BATCH2
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Runs MemMaker in batch (unattended) mode and exits. In
+      batch mode, MemMaker takes the default action at all prompts.
+      If an error occurs, MemMaker restores your previous CONFIG.SYS,
+      AUTOEXEC.BAT and (if necessary) Windows SYSTEM.INI files. After
+      MemMaker has completed, you can review status messages by
+      viewing the contents of the MEMMAKER.STS file. (To view this
+      file, use a text editor such as
+      <a href="../E/EDIT.HTM">DOS Editor</a>, or use the
+      <a href="../T/TYPE.HTM">TYPE</a> command.)</dd>
+
+      <dt><a name="SwitchSession"></a> /SESSION
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Used exclusively by MemMaker during the optimization
+      process.</dd>
+
+      <dt><a name="SwitchSwap"></a> /SWAP:drive
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>
+        Specifies the letter of the drive that was originally your
+        startup disk drive. Specify the current drive letter after the
+        colon. This switch is necessary only if the drive letter of
+        your startup disk drive has changed since your computer
+        started. (The drive letter sometimes changes because of disk
+        swapping performed by some disk-compression programs.) If the
+        drive letter of your startup drive has changed and you do not
+        specify this switch, MemMaker will be unable to find your
+        system startup files.
+        <p>You do not need to use this switch if you are using Stacker
+        2.0, SuperStor, or Microsoft DoubleSpace.</p>
+      </dd>
+
+      <dt><a name="SwitchT"></a> /T
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Disables the detection of IBM Token-Ring networks. Use this
+      switch if your computer includes such a network and you are
+      having problems running MemMaker.</dd>
+
+      <dt><a name="SwitchUndo"></a> /UNDO
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Instructs MemMaker to undo its most recent changes. When
+      MemMaker optimizes your system's memory, it makes changes to your
+      CONFIG.SYS and AUTOEXEC.BAT files (and, if necessary, your
+      Windows SYSTEM.INI file). If your system doesn't work properly
+      after MemMaker completes, or if you are not satisfied with your
+      new memory configuration, you can return to your previous
+      configuration by starting MemMaker with the /UNDO switch.</dd>
+
+      <dt><a name="SwitchW"></a> /W:n,m
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Specifies how much upper-memory space to reserve for Windows
+      translation buffers. Windows needs two areas of upper memory for
+      its translation buffers. The n value specifies the size of the
+      first region; m specifies the size of the second region. By
+      default, MemMaker does not reserve upper memory for Windows; this
+      is equivalent to specifying /W:0,0.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about loading device drivers into upper memory,
+    see the <a href="../D/DEVICEHI.HTM">DEVICEHIGH</a> command.
+    <br>For information about loading programs into upper memory, see
+    the <a href="../L/LOADHIGH.HTM">LOADHIGH</a> command.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To run MemMaker in batch mode and to direct it not to reserve
+    any upper memory for Windows translation buffers, use:</p>
+<pre>
+    MEMMAKER <a
+href="#SwitchBatch1">/BATCH</a> <a
+href="#SwitchW">/W</a>:0,0
+</pre>
+
+    <p>To have MemMaker restore your previous system configuration, use:</p>
+<pre>
+    MEMMAKER <a
+href="#SwitchUndo">/UNDO</a>
+</pre>
+
+    <hr>
+    <p>Suppose you use a disk-compression program. Your startup disk is
+    drive C, but after the compression driver starts, drive C becomes
+    your main compressed drive. Your startup files are now on drive D.
+    Because of this drive-letter swapping, you would start MemMaker by
+    using:</p>
+<pre>
+    MEMMAKER <a
+href="#SwitchSwap">/SWAP</a>:D
+</pre>
+
+    <p>This command specifies that the current drive D was originally
+    the startup drive and contains your CONFIG.SYS and AUTOEXEC.BAT
+    files.</p>
+    <p><b>Note:</b> You do not need to use the
+    <a href="#SwitchSwap">/SWAP</a> switch if you are using
+    Microsoft DoubleSpace disk compression or the Stacker 2.0
+    disk-compression program.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

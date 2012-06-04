@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CMDKEY</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCH.HTM#cmdkey">Commands Ch-Cz</a>
+    <h1>CMDKEY</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Creates, lists and deletes stored user names and passwords
+    or credentials.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CMDKEY
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>CMDKEY
+    [<a href="#SwitchAdd">/ADD:</a><a
+     href="#ParameterTargetName">target_name</a>
+    | <a href="#SwitchGeneric">/GENERIC:</a><a
+     href="#ParameterTargetName">target_name</a>]
+    [<a href="#SwitchSmartCard">/SMARTCARD</a>]
+    [<a href="#SwitchUser">/USER:user_name</a>
+     [ <a href="#SwitchPass">/PASS[:pass_word]</a>]]
+    [<a href="#SwitchDelete">/DELETE{:</a><a
+     href="#ParameterTargetName">target_name</a>
+     | <a href="#SwitchRas">/RAS}</a>]
+    [<a href="#SwitchList">/LIST[:target_name]</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterTargetName"></a> /ADD:target_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>The computer or domain name that this entry will
+      be associated with.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display syntax.</dd>
+
+      <dt><a name="SwitchAdd"></a> /ADD
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Adds a user name and password to the list.</dd>
+
+      <dt><a name="SwitchDelete"></a> /DELETE{:target_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Deletes a user name and password from the list.
+      If target_name is specified, that entry will be deleted.</dd>
+
+      <dt><a name="SwitchGeneric"></a> /GENERIC
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Adds generic credentials to the list.</dd>
+
+      <dt><a name="SwitchList"></a> /LIST
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the list of stored user names and
+      credentials. If target_name is not specified, all
+      stored user names and credentials will be listed.</dd>
+
+      <dt><a name="SwitchPass"></a> /PASS:pass_word
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the password to store with this entry.
+      If pass_word is not supplied, you will be prompted.</dd>
+      <dd>Passwords will not be displayed once they are
+      stored.</dd>
+
+      <dt><a name="SwitchRas"></a> /RAS
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>The stored remote access entry will be deleted.</dd>
+
+      <dt><a name="SwitchSmartCard"></a> /SMARTCARD
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Retrieves the credential from a smart card.</dd>
+      <dd>If more than one smart card is found on the system,
+      will display information about all available smart
+      cards and then prompt the user to specify which one
+      to use.</dd>
+
+      <dt><a name="SwitchUser"></a> /USER:user_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the user or account name to store with
+      this entry. If user_name is not supplied, you will be
+      prompted.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

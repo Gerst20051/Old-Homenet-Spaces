@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>GRAPHICS</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#g">Commands A-M</a>
+    &gt; <a href="../INDEXG.HTM#graphics">Commands G</a>
+    <h1>GRAPHICS</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Loads a program into memory that allows the operating system
+    to print the information displayed on your screen. Use the
+    GRAPHICS command only if you are using a color or graphics
+    adapter.</p>
+    <p>The GRAPHICS command supports the CGA, EGA, and VGA graphics
+    display modes.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>GRAPHICS
+    [<a href="#ParameterType">type</a>]
+    [,[<a href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path</a>]<a
+    href="#ParameterFilename">filename</a>]
+    [<a href="#SwitchR">/R</a>]
+    [<a href="#SwitchB">/B</a>]
+    [<a href="#SwitchC">/C</a>]
+    [<a href="#SwitchF">/F</a>]
+    [<a href="#SwitchLCD">/LCD</a>]
+    [<a href="#SwitchP">/P=n</a>]
+    [<a href="#SwitchPrintboxSTD">/PRINTBOX:[STD</a>
+    | <a href="#SwitchPrintboxLCD">LCD]</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a name="ParameterPath"></a> path
+      <a name="ParameterFilename"></a> filename
+      <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the location and name of the printer profile that
+      contains information about all supported printers. If this
+      parameter is omitted, the operating system looks for a file
+      called GRAPHICS.PRO in the current directory and in the
+      directory that contains the GRAPHICS.COM file.</dd>
+
+      <dt><a name="ParameterType"></a> type
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>
+        Specifies the type of printer. The list shows each
+        valid value for this parameter and gives a brief description of
+        its meaning:
+        <ul>
+          <li><b>COLOR1</b> An IBM Personal Computer Color Printer with black ribbon</li>
+          <li><b>COLOR4</b> An IBM Personal Computer Color Printer with RGB (red, green, blue, and black) ribbon</li>
+          <li><b>COLOR8</b> An IBM Personal Computer Color Printer with CMY (cyan, magenta, yellow, and black) ribbon</li>
+          <li><b>DESKJET</b> A Hewlett-Packard DeskJet printer</li>
+          <li><b>GRAPHICS</b> An IBM Personal Graphics Printer, IBM Proprinter, or IBM Quietwriter printer</li>
+          <li><b>GRAPHICSWIDE</b> An IBM Personal Graphics Printer with an 11-inch-wide carriage <a href="../../Version/MSDOS/400.HTM">v4.0</a></li>
+          <li><b>HPDEFAULT</b> Any Hewlett-Packard PCL printer</li>
+          <li><b>LASERJET</b> A Hewlett-Packard LaserJet printer</li>
+          <li><b>LASERJETII</b> A Hewlett-Packard LaserJet II printer <a href="../../Version/MSDOS/500.HTM">v5.0</a></li>
+          <li><b>PAINTJET</b> A Hewlett-Packard PaintJet printer <a href="../../Version/MSDOS/500.HTM">v5.0</a></li>
+          <li><b>QUIETJET</b> A Hewlett-Packard QuietJet printer <a href="../../Version/MSDOS/500.HTM">v5.0</a></li>
+          <li><b>QUIETJETPLU[S]</b> A Hewlett-Packard QuietJet Plus printer <a href="../../Version/MSDOS/500.HTM">v5.0</a></li>
+          <li><b>RUGGEDWRITER</b> A Hewlett-Packard RuggedWriter printer <a href="../../Version/MSDOS/500.HTM">v5.0</a></li>
+          <li><b>RUGGEDWRITERWIDE</b> A Hewlett-Packard RuggedWriterwide printer <a href="../../Version/MSDOS/500.HTM">v5.0</a></li>
+          <li><b>THERMAL</b> An IBM PC-convertible Thermal Printer</li>
+          <li><b>THINKJET</b> A Hewlett-Packard ThinkJet printer <a href="../../Version/MSDOS/500.HTM">v5.0</a></li>
+        </ul>
+      </dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchB"></a> /B
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Prints the background in color. This switch is valid for
+      COLOR4 and COLOR8 printers.</dd>
+
+      <dt><a name="SwitchC"></a> /C
+      <a href="../../Version/MSDOS/200.HTM">v2.0</a> through
+      <a href="../../Version/MSDOS/600.HTM">v6.0</a>.</dt>
+      <dd>Prints the image so that it is centered on the paper working
+      with an image resolution of 640 x 200.</dd>
+
+      <dt><a name="SwitchF"></a> /F
+      <a href="../../Version/MSDOS/320.HTM">v3.20</a> through
+      <a href="../../Version/MSDOS/330.HTM">v3.30</a>.</dt>
+      <dd>Prints a 320 x 200 image by rotating it 90 degrees and
+      printing it sideways.</dd>
+
+      <dt><a name="SwitchLCD"></a> /LCD
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Prints an image by using the liquid crystal display (LCD)
+      aspect ratio instead of the CGA aspect ratio. The effect of this
+      switch is the same as that of /PRINTBOX:LCD.</dd>
+
+      <dt><a name="SwitchP"></a> /P=n
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>)</dt>
+      <dd>Sets the printer port used when Shift+PrtSc and (1, 2, or 3)
+      combination pressed. Defaults to 1.</dd>
+
+      <dt><a name="SwitchPrintboxSTD"></a> /PRINTBOX:STD |
+      (<a name="SwitchPrintboxLCD"></a> /PRINTBOX:LCD
+      <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Selects the print-box size. Check the first operand of the
+      PRINTBOX statement in your GRAPHICS.PRO file. If that operand is
+      STD, specify the /PRINTBOX:STD switch. If that operand is LCD,
+      specify the /PRINTBOX:LCD switch. You can abbreviate PRINTBOX as
+      PB.</dd>
+
+      <dt><a name="SwitchR"></a> /R
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Prints the image as it appears on the screen (white
+      characters on a black background) rather than reversed (black
+      characters on a white background). The latter occurs by
+      default.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about printing text files, see the
+    <a href="../P/PRINT.HTM">PRINT</a> command.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Memory">Effect on memory</a></li>
+      <li><a href="#Profile">Loading a new profile</a></li>
+      <li><a href="#Screen">Printing the contents of the screen</a></li>
+    </ul>
+
+    <hr>
+    <a name="Screen"></a> <b>Printing the contents of the screen</b>
+    <p>To print the contents of the screen, press the SHIFT+PRINT
+    SCREEN key combination. If the computer is in 320 x 148 x 200 color
+    graphics mode and if the printer type is color1 or graphics, the
+    GRAPHICS command prints the screen contents with as many as four
+    shades of gray. If the computer is in 640 x 148 x 200 color
+    graphics mode, GRAPHICS prints the screen contents sideways on the
+    paper (landscape orientation). You cannot use the SHIFT+PRINT
+    SCREEN key combination to print the contents of a screen to a
+    PostScript printer.</p>
+
+    <hr>
+    <a name="Memory"></a> <b>Effect on memory</b>
+    <p>The GRAPHICS command decreases the amount of available
+    conventional memory.</p>
+
+    <hr>
+    <a name="Profile"></a> <b>Loading a new profile</b>
+    <p>If you have already loaded a printer profile and you want to
+    load another one by using the GRAPHICS command, the new profile
+    must be smaller than the one already loaded.</p>
+    <p>To load a new profile that is larger than the one currently
+    loaded, you must restart your system and then use the GRAPHICS
+    command to load the new profile.</p>
+    <p>If you try to use only the GRAPHICS command to load a new
+    profile that is larger than the currently loaded profile, the
+    operating system displays the message:</p>
+<pre>
+    Unable to reload with profile supplied
+</pre>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To prepare to print a graphics screen on your printer, type:</p>
+<pre>
+    GRAPHICS
+</pre>
+    <p>After you display the information you want to print, press
+    SHIFT+PRINT SCREEN. The operating system scans the information
+    displayed on the screen and sends it to the printer.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External Resident</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

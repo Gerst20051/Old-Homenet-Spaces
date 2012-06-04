@@ -1,0 +1,493 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>UNDELETE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#u">Commands N-Z</a>
+    &gt; <a href="../INDEXU.HTM#undelete">Commands U</a>
+    <h1>UNDELETE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Restores files that were previously deleted by using the
+    <a href="../D/DEL.HTM">DEL</a> command.</p>
+    <p>UNDELETE offers three levels of protecting files against
+    accidental deletion-- <a href="#Sentry">Delete Sentry</a>, <a href="#Tracker">Delete Tracker</a>, and <a href="#Standard">Standard</a>.</p>
+    <p>For information about the Windows version of UNDELETE, see the
+    chapter "Managing Your System" in the DOS User's Guide, or see
+    Windows Undelete Help.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>UNDELETE
+    [[<a href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path</a>]<a
+    href="#ParameterFilename">filename</a>]
+    [<a href="#SwitchDT">/DT</a>
+    | <a href="#SwitchDS">/DS</a>
+    | <a href="#SwitchDOS">/DOS</a>]</p>
+
+    <p>UNDELETE
+    [<a href="#SwitchList">/LIST</a>
+    | <a href="#SwitchAll">/ALL</a>
+    | <a href="#SwitchPurge">/PURGE[drive]</a>
+    | <a href="#SwitchStatus">/STATUS</a>
+    | <a href="#SwitchLoad">/LOAD</a>
+    | <a href="#SwitchUnload">/U[NLOAD]</a>
+    | <a href="#SwitchS">/S[drive]</a>
+    | <a href="#SwitchT">/Tdrive[-entries]</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a name="ParameterPath"></a> path
+      <a name="ParameterFilename"></a> filename
+      <a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Specifies the location and name of the file or set of files
+      you want to recover. By default, UNDELETE restores all deleted
+      files in the current directory.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchAll"></a> /ALL
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Recovers deleted files without prompting for confirmation on
+      each file. UNDELETE uses the <a href="#Sentry">Delete Sentry</a> method, if it is
+      present. If <a href="#Sentry">Delete Sentry</a> is not, UNDELETE uses <a href="#Tracker">Delete Tracker</a>,
+      if present. Otherwise, UNDELETE recovers files from the DOS
+      directory, supplying a number sign (#) for the missing first
+      character in the filename. If a duplicate filename already
+      exists, this switch next tries each of the characters,
+      in the order listed, until the result is a unique filename:
+      #%&amp;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ.</dd>
+
+      <dt><a name="SwitchDOS"></a> /DOS
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Recovers only those files that are internally listed as
+      deleted by the operating system, prompting for confirmation
+      on each file. If a deletion-tracking file exists, this switch
+      causes UNDELETE to ignore it.</dd>
+
+      <dt><a name="SwitchDS"></a> /DS
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Recovers only those files listed in the SENTRY directory,
+      prompting for confirmation on each file.</dd>
+
+      <dt><a name="SwitchDT"></a> /DT
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Recovers only those files listed in the deletion-tracking
+      file, prompting for confirmation on each file.</dd>
+
+      <dt><a name="SwitchList"></a> /LIST
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Lists the deleted files that are available to be recovered,
+      but does not recover any files. The
+      [<a href="#ParameterDrive">drive:</a>][<a
+      href="#ParameterPath">path</a>]<a
+      href="#ParameterFilename">filename</a> parameter and the
+      <a href="#SwitchDT">/DT</a>, <a href="#SwitchDS">/DS</a>, and
+      <a href="#SwitchDOS">/DOS</a> switches control the listing
+      produced by this switch.</dd>
+
+      <dt><a name="SwitchLoad"></a> /LOAD
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Loads the Undelete memory-resident program into memory using
+      information defined in the UNDELETE.INI file. If the UNDELETE.INI
+      file does not exist, UNDELETE uses default values.</dd>
+
+      <dt><a name="SwitchPurge"></a> /PURGE[drive]
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Deletes the contents of the SENTRY directory. If no drive is
+      specified, UNDELETE searches the current drive for the
+      directory.</dd>
+
+      <dt><a name="SwitchS"></a> /S[drive]
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Enables the <a href="#Sentry">Delete Sentry</a> level of protection and loads the
+      memory-resident portion of the UNDELETE program. The program
+      records information used to recover deleted files on the
+      specified drive. If you do not specify a drive, using this switch
+      enables the <a href="#Sentry">Delete Sentry</a> level of protection on the current
+      drive. Specifying the /S switch loads the memory-resident program
+      into memory using the information defined in the UNDELETE.INI
+      file.</dd>
+
+      <dt><a name="SwitchStatus"></a> /STATUS
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Displays the type of delete protection in effect for each
+      drive.</dd>
+
+      <dt><a name="SwitchT"></a> /Tdrive[-entries]
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Enables the <a href="#Tracker">Delete Tracker</a> level of protection and loads the
+        memory-resident portion of the UNDELETE program. The program
+        records information used to recover deleted files. The required
+        drive parameter specifies the drive containing the disk for
+        which you want UNDELETE to save information about deleted
+        files. The optional entries parameter, which must be a value in
+        the range 1 through 999, specifies the maximum number of
+        entries in the deletion-tracking file (PCTRACKR.DEL). The
+        default value for entries depends upon the type of disk being
+        tracked.
+        <p>The list shows each disk size, its default number
+        of entries, and its corresponding file size:</p>
+<pre>
+        <u>Disk size  Entries  File size</u>
+        360K       25       5K
+        720K       50       9K
+        1.2 MB     75       14K
+        1.44 MB    75       14K
+        20 MB      101      18K
+
+        32 MB      202      36K
+        &gt;32 MB     303      55K
+        <u>Disk size  Entries  File size</u>
+</pre>
+        <p><b>CAUTION:</b> Do not use deletion tracking for any drive
+        that has been redirected by using the
+        <a href="../J/JOIN.HTM">JOIN</a> or
+        <a href="../S/SUBST.HTM">SUBST</a> command. If you intend to
+        use the <a href="../A/ASSIGN.HTM">ASSIGN</a> command, you
+        must do so before using UNDELETE to install deletion tracking.</p>
+      </dd>
+
+      <dt><a name="SwitchUnload"></a> /U[NLOAD]
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Unloads the memory-resident portion of the Undelete program
+      from memory, turning off the capability to restore deleted
+      files.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Change">Changing the method of file protection</a></li>
+      <li><a href="#Sentry">Delete Sentry</a></li>
+      <li><a href="#Tracker">Delete Tracker</a></li>
+      <li><a href="#Drives">Drives protected</a></li>
+      <li><a href="#Levels">Levels of protection</a></li>
+      <li><a href="#Method">Method used to recover files</a></li>
+      <li><a href="#Network">Network drives and delete protection</a></li>
+      <li><a href="#Standard">Standard</a></li>
+      <li><a href="#INI">The UNDELETE.INI file</a></li>
+      <li><a href="#Caution">You may not be able to retrieve a deleted file</a></li>
+    </ul>
+
+    <hr>
+    <a name="Caution"></a> <b>You may not be able to retrieve a deleted file</b>
+    <p><b>CAUTION:</b> Once you delete a file from your disk, you may
+    not be able retrieve it. Although the UNDELETE command can recover
+    deleted files, it can do so with certainty only if no other files
+    have been created or changed on the disk. If you accidentally
+    delete a file that you want to keep, stop what you are doing and
+    immediately use the UNDELETE command to retrieve the file.</p>
+
+    <hr>
+    <a name="Levels"></a> <b>Levels of protection</b>
+    <p>The operating system provides three levels of protection
+    against accidental file deletion:
+    <ol>
+      <li><a href="#Sentry">Delete Sentry</a></li>
+      <li><a href="#Tracker">Delete Tracker</a></li>
+      <li><a href="#Standard">Standard</a></li>
+    </ol>
+    <p><a href="#Sentry">Delete Sentry</a> provides the highest level of protection.
+    <a href="#Sentry">Delete Sentry</a> requires a small amount of memory and disk space. The next
+    level of protection is <a href="#Tracker">Delete Tracker</a>, which requires the same
+    amount of memory as <a href="#Sentry">Delete Sentry</a>, but minimal disk space. The
+    lowest level of protection, <a href="#Standard">Standard</a>, requires neither memory nor
+    disk space, but still allows you to recover deleted files, provided
+    that their location on the disk has not been taken by other
+    files.</p>
+    <p>For more details, see the notes that follow about each level of
+    protection.</p>
+
+    <hr>
+    <a name="Sentry"></a> <b>Delete Sentry</b>
+    <p>Delete Sentry provides the highest level of protection to ensure
+    that you can recover deleted files. This level of protection
+    creates a hidden directory named SENTRY. When you delete a file,
+    UNDELETE moves the file from its current location to the SENTRY
+    directory without changing the record of the file's location in the
+    file allocation table (FAT). If you undelete the file, the operating
+    system moves the file back to its original location.</p>
+    <p>The size of the SENTRY directory and its files is limited to
+    approximately 7 percent of your hard disk space. If you delete a
+    file and the directory and its files exceed this limit, UNDELETE
+    purges the oldest files until enough space has been freed to
+    accommodate the newly deleted file.</p>
+    <p>In addition to the disk space needed for the SENTRY directory,
+    Delete Sentry requires 13.5K of memory for the memory-resident
+    portion of the UNDELETE program.</p>
+
+    <hr>
+    <a name="Tracker"></a> <b>Delete Tracker</b>
+    <p>Delete Tracker provides an intermediate level of protection. It
+    uses a hidden file named PCTRACKER.DEL to record the location of
+    deleted files. When you delete a file, the operating system changes
+    the file allocation table (FAT) to indicate that the location of
+    the file is now available for another file. You can recover the
+    deleted file provided that another file has not been placed in that
+    location. If another file has been placed there, you may be able to
+    partially recover the deleted file.</p>
+    <p>Delete Tracker requires 13.5K of memory for the memory-resident
+    portion of the UNDELETE program and a minimal amount of disk space
+    for the PCTRACKER.DEL file.</p>
+
+    <hr>
+    <a name="Standard"></a> <b>Standard</b>
+    <p>The standard level of protection is automatically available when
+    you switch on your computer. Of the three levels of guarding
+    against accidental file deletion, it provides the lowest level of
+    protection. However, it does not require you to load a
+    memory-resident program. It also has the advantage of requiring
+    neither memory nor disk space.</p>
+    <p>Using this level of protection, you can recover a deleted file,
+    provided the operating system has not placed another file in the
+    deleted file's location. If a file has been placed there, you may
+    be unable to recover all or part of the deleted file.</p>
+
+    <hr>
+    <a name="Method"></a> <b>Method used to recover files</b>
+    <p>Use any one of:
+    <a href="#SwitchDOS">/DOS</a>, <a href="#SwitchDT">/DT</a>, or
+    <a href="#SwitchDS">/DS</a>. If you do not specify a switch,
+    UNDELETE uses <a href="#Sentry">Delete Sentry</a>, if it is available. If <a href="#Sentry">Delete Sentry</a>
+    is not available, UNDELETE uses the <a href="#Tracker">Delete Tracker</a> file, if
+    available. If a deletion-tracking file is not available, UNDELETE
+    attempts to recover files by using the operating system.</p>
+    <p><b>CAUTION:</b> UNDELETE cannot restore a directory that has
+    been removed, and it cannot retrieve a file if you have removed the
+    directory that contained the file. If the directory was an
+    immediate subdirectory of the root directory, you may be able to
+    retrieve the directory and its files if you first use the
+    <a href="UNFORMAT.HTM">UNFORMAT</a> command to restore the directory
+    and then use UNDELETE to retrieve the files. You must use caution
+    because you can lose data if you use
+    <a href="UNFORMAT.HTM">UNFORMAT</a> incorrectly. Usually, UNFORMAT
+    can restore only immediate subdirectories of the root directory.
+    However, when you use <a href="UNFORMAT.HTM">UNFORMAT</a> to
+    recover an accidentally formatted disk,
+    <a href="UNFORMAT.HTM">UNFORMAT</a> recovers all root-level files
+    and subdirectory names.</p>
+
+    <hr>
+    <a name="INI"></a> <b>The UNDELETE.INI file</b>
+    <p>UNDELETE uses the UNDELETE.INI file to define values when
+    UNDELETE is loaded into memory. If the file does not exist when you
+    load UNDELETE into memory, UNDELETE creates an UNDELETE.INI file
+    that contains the values:</p>
+    <ul>
+      <li>Use the <a href="#Sentry">Delete Sentry</a> method of file tracking on the current
+          drive.</li>
+      <li>Save all files except *.TMP, *.VM?, *.WOA, *.SWP, *.SPL,
+          *.RMG, *.IMG, *.THM, and *.DOV files.</li>
+      <li>Do not save files that have the archive bit set.</li>
+      <li>Purge files after 7 days.</li>
+      <li>Restrict the amount of disk space available for deleted files
+          to 20 percent of total disk space.</li>
+    </ul>
+    <p>The UNDELETE.INI file has five sections:</p>
+    <ul>
+    <li>[sentry.drives]</li>
+    <li>[sentry.files]</li>
+    <li>[mirror.drives]</li>
+    <li>[configuration]</li>
+    <li>[defaults]</li>
+    </ul>
+    <p>The [sentry.drives] section specifies the drives protected by
+    the <a href="#Sentry">Delete Sentry</a> method, if used.</p>
+    <p>The [sentry.files] section specifies the files protected from
+    deletion using either <a href="#Tracker">Delete Tracker</a> or <a href="#Sentry">Delete Sentry</a>. A hypen (-)
+    before a filename indicates that the file is not saved. The default
+    values defined in the [sentry.files] section are:</p>
+    <p>[sentry.files] *.* -*.TMP -*.VM? -*.WOA -*.SWP -*.SPL -*.RMG
+    -*.IMG -*.THM -*.DOV</p>
+    <p>The [mirror.drives] section specifies the drives protected by
+    the <a href="#Tracker">Delete Tracker</a> method, if used.</p>
+    <p>The [configuration] section defines the values:</p>
+    <ul>
+      <li>Whether files with the archive bit set are protected. If files
+        with the archive bit set are not protected (the default value),
+        the entry is:
+        <ul>
+          <li>archive=FALSE</li>
+          <li>A TRUE value saves files with the archive bit set.</li>
+        </ul>
+      </li>
+      <li>The number of days files are saved. This entry defines
+        the default value:
+        <ul>
+          <li>days=7</li>
+        </ul>
+      </li>
+      <li>The amount of total disk space reserved for deleted files. This
+        entry defines the default value:
+        <ul>
+          <li>percentage=20</li>
+        </ul>
+      </li>
+    </ul>
+    <p>The [defaults] section specifies the method of file tracking.
+    This defines the default <a href="#Sentry">Delete Sentry</a> method:</p>
+<pre>
+    [defaults]
+    d.sentry=TRUE
+    d.tracker=FALSE
+</pre>
+
+    <hr>
+    <a name="Change"></a> <b>Changing the method of file protection</b>
+    <p>You can use only one method of file protection at a time. If you
+    want to change the method, carry out the procedure:</p>
+    <p>Unload the memory-resident portion of the Undelete program by
+    typing:</p>
+<pre>
+    UNDELETE <a href="#SwitchUnload">/U</a>
+</pre>
+
+    <p>Enable the new level of protection and reload the
+    memory-resident portion of the Undelete program. For example, to
+    enable the <a href="#Sentry">Delete Sentry</a> level of protection on your current drive,
+    type:</p>
+<pre>
+    UNDELETE <a href="#SwitchS">/S</a>
+</pre>
+
+    <hr>
+    <a name="Drives"></a> <b>Drives protected</b>
+    <p>The Undelete program protects all drives specified in the
+    UNDELETE.INI file, regardless of the drives you specify when you
+    start the program. For example, suppose your UNDELETE.INI file
+    contains the entry:</p>
+<pre>
+    [sentry.drives]
+    C=
+    D=
+</pre>
+
+    <p>This command enables the <a href="#Sentry">Delete Sentry</a> level of protection
+    on both drives C and D:</p>
+<pre>
+    UNDELETE <a href="#SwitchS">/SC</a>
+</pre>
+
+    <p>To enable protection only on drive C, you would do:</p>
+    <ol>
+      <li>Using any text editor, open your UNDELETE.INI file.</li>
+      <li>Delete the line from the [sentry.drives] section of
+          the file:<br>
+          D=</li>
+      <li>Save changes you made to the file.</li>
+      <li>Exit your text editor.</li>
+      <li>Enable <a href="#Sentry">Delete Sentry</a> protection by typing:<br>
+          UNDELETE <a href="#SwitchS">/SC</a></li>
+    </ol>
+
+    <hr>
+    <a name="Network"></a> <b>Network drives and delete protection</b>
+    <p>To protect files on a network drive from accidental deletion,
+    you must enable the <a href="#Sentry">Delete Sentry</a> level of protection and have
+    read, write, create, and delete file access in the drive's root
+    directory.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>This command specifies that UNDELETE is to recover all
+    deleted files in the current directory one at a time, to prompt for
+    confirmation on each file, and to use the highest available level
+    of delete tracking:</p>
+<pre>
+    UNDELETE
+</pre>
+
+    <hr>
+    <p>This command specifies that UNDELETE is to recover all
+    deleted files with the .BAT extension in the root directory of
+    drive C, without prompting for confirmation on each file:</p>
+<pre>
+    UNDELETE <a
+href="#ParameterDrive">C:</a><a
+href="#ParameterPath">\</a><a
+href="#ParameterFilename">*.BAT</a> <a
+href="#SwitchAll">/ALL</a>
+</pre>
+
+    <hr>
+    <p>This command loads the memory-resident portion of the
+    UNDELETE program into memory, creates a hidden directory named
+    SENTRY, and specifies that UNDELETE move files you delete on drive
+    C to that directory:</p>
+<pre>
+    UNDELETE <a href="#SwitchS">/SC</a>
+</pre>
+
+    <hr>
+    <p>This command loads the memory-resident portion of the
+    UNDELETE program into memory and creates a PCTRACKER.DEL file to
+    track up to 400 deleted files on drive C:</p>
+<pre>
+    UNDELETE <a href="#SwitchT">/TC-400</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

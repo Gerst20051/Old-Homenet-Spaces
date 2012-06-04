@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>IISWEB</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#i">Commands A-M</a>
+    &gt; <a href="../INDEXI.HTM#iisweb">Commands I</a>
+    <h1>IISWEB</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Creates, deletes, and lists Web sites on servers running
+    Windows Server 2003 with Internet Information Services (IIS)
+    6.0. Also starts, stops, and pauses the Web sites.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>IISWEB[.VBS]
+    [<a href="#SwitchCreate">/create</a>
+    | <a href="#SwitchDelete">/delete</a>
+    | <a href="#SwitchPause">/pause</a>
+    | <a href="#SwitchQuery">/query</a>
+    | <a href="#SwitchStart">/start</a>
+    | <a href="#SwitchStop">/stop</a>]
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>IISWEB[.VBS]
+    <a href="#SwitchCreate">/create</a>
+    <a href="#ParameterPath">path</a>
+    <a href="#ParameterSiteName">site_name</a>
+    [<a href="#SwitchB">/b port</a>
+    [<a href="#SwitchD">/d host_header</a>
+    [<a href="#SwitchDontStart">/dontstart</a>
+    [<a href="#SwitchI">/i ip_address</a>
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <p>IISWEB[.VBS]
+    {<a href="#SwitchDelete">/delete</a>
+    | <a href="#SwitchPause">/pause</a>
+    | <a href="#SwitchStart">/start</a>
+    | <a href="#SwitchStop">/stop</a>}
+    <a href="#ParameterWebSite">web_site [web_site ...]</a>
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <p>IISWEB[.VBS]
+    <a href="#SwitchQuery">/query</a>
+    [<a href="#ParameterWebSite">web_site [web_site ...]</a>]
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterWebSite"></a> web_site [web_site ...]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the site name or metabase path of the
+      Web site.</dd>
+      <dd><a href="#SwitchQuery">/query</a> will display
+      all sites, if omitted.</dd>
+      <dd>Web sites must be uniquely identified. If more
+      than one Web site has the same descriptive name, you
+      must use the metabase path to identify the Web site.</dd>
+
+      <dt><a name="ParameterPath"></a> path
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the location of content files for the
+      Web site. Enter a path to a local directory. Any
+      directories in the path do not exist, are created.</dd>
+      <dd>The Path parameter must immediately precede the
+      <a href="#ParameterSiteName">site_name</a> parameter.
+      Otherwise, site information will not be interpreted
+      correctly.</dd>
+
+      <dt><a name="ParameterPropertyId"></a> property_id
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the value of the directory or root
+      isolation (required to set user isolation).</dd>
+
+      <dt><a name="ParameterSiteName"></a> site_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies a name for the Web site.</dd>
+
+      <dt><a name="ParameterUserId"></a> user_id
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the logon ID of the Active Directory
+      user.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchB"></a> /b port
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies a TCP port number for the Web site.
+      The default is 21.</dd>
+
+      <dt><a name="SwitchCreate"></a> /create
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Creates Web sites on local and remote servers.</dd>
+      <dd>When you create a new Web site, you specify only
+      the basic properties needed to create the site and
+      identify its contents. IISWEB uses the same default
+      properties that IIS uses when establishing new Web
+      sites, and adheres to the same rules for inheriting
+      properties. To configure the more advanced properties
+      of the site, use IIS Manager.</dd>
+
+      <dt><a name="SwitchD"></a> /d host_header
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the host header name for the Web site.
+      By default, the site does not have a host header name
+      and must be identified by its IP address or port
+      number.</dd>
+
+      <dt><a name="SwitchDelete"></a> /delete
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Deletes Web sites on local and remote servers.</dd>
+
+      <dt><a name="SwitchDontStart"></a> /dontstart
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Indicates that the Web site does not start
+      automatically as soon as it is created. By default,
+      IIS starts the Web site when the /create command
+      completes successfully.</dd>
+
+      <dt><a name="SwitchI"></a> /i ip_address
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies an IP address for the Web site.
+      The default is All Unassigned, which assigns to the
+      site all of the IP addresses on the computer that are
+      not assigned to other sites. Only one site on each
+      IIS server can be set to: All Unassigned.</dd>
+
+      <dt><a name="SwitchQuery"></a> /query
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the Web sites on local and remote
+      servers.</dd>
+
+      <dt><a name="SwitchP"></a> /p password
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the password of the user account that is
+      specified in <a href="#SwitchU">/u</a>. If omitted,
+      you will be prompted.</dd>
+
+      <dt><a name="SwitchPause"></a> /pause
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Pauses Web sites on local and remote servers.</dd>
+
+      <dt><a name="SwitchS"></a> /s computer
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Runs the script on the specified remote computer.
+      Type the computer name or IP address without
+      backslashes. Defaults to the local computer.</dd>
+
+      <dt><a name="SwitchStart"></a> /start
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Starts Web sites on local and remote servers.</dd>
+
+      <dt><a name="SwitchStop"></a> /stop
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Stops Web sites on local and remote servers.</dd>
+
+      <dt><a name="SwitchU"></a> /u [Domain\]User
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Runs the script with the permissions of the
+      specified user account. This account must be a member
+      of the Administrators group on the remote computer.
+      By default, the script runs with the permissions of
+      the current user of the local computer.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>To perform this procedure, you must be a member of
+    the Administrators group on the local computer, or you
+    must have been delegated the appropriate authority. If
+    the computer is joined to a domain, members of the
+    Domain Admins group might be able to perform this
+    procedure. As a security best practice, consider using
+    "Run as" to perform this procedure.</p>
+    <p>Does not verify the port number or IP address of an
+    Web site, and it does not verify that these bindings are
+    unique within the server. If you create a site with
+    invalid or conflicting bindings, the site will not start.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,692 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Mosaic Web Browser</title>
+</head>
+
+<body>
+
+<div class="container">
+  <h3>In the beginning there was NCSA Mosaic....</h3>
+  <h3>Version 0.1a</h3>
+  <p><i>Development began in June 1993 - Internal testing Only</i> </p>
+  <ul>
+    <li>Native support for accessing documents and data using World Wide Web, gopher, 
+    Anonymous FTP, and NNTP (Usenet News) protocols. Support for archie, finger, 
+    whois, and Veronica (as well as others) through gateways. </li>
+    <li>Full HTML display </li>
+    <li>Support for inlined GIF images in HTML hypertext documents </li>
+    <li>Internal sound support for Sun/NeXT/DEC .AU audio files </li>
+    <li>Support for GIF, JPEG, MPEG, QuickTime for Windows, Microsoft Video for 
+    Windows, Postcript and other documents via forking to appropriate viewers (user 
+    configurable) </li>
+    <li>Full hypertext support, including using inlined images as anchors </li>
+    <li>Optional toolbar with shortcut buttons </li>
+    <li>Optional status bar to display hyperlink destinations </li>
+    <li>Local History </li>
+    <li>Fully customizable font selection </li>
+    <li>Savable preferences, including window size and position </li>
+    <li>Minimal Hotlist </li>
+    <li>Scrolling for large documents </li>
+    <li>Status of loading/decoding shown in status bar </li>
+  </ul>
+  <h3>Version 0.2a</h3>
+  <ul>
+    <li>Fixed some memory leaks </li>
+    <li>Now works with Winsock 1.1 compliant DLLs </li>
+    <li>Local file support </li>
+    <li>User configurable hotlist </li>
+    <li>Ability to add current document to hotlist </li>
+  </ul>
+  <h3>Version 0.3a</h3>
+  <ul>
+    <li>Fixed bug which would cause a GPF upon exiting </li>
+    <li>Fixed a number of memory holes which would lead to GPF&#39;s and quickly running 
+    out of available resources. (although some probably still remain). </li>
+    <li>Binary Transfer Mode. </li>
+    <li>Support for Inlined X-Bitmaps </li>
+    <li>Configuration option to automatically load a home page. </li>
+    <li>User configurable menus </li>
+    <li>Internal support for AIFF audio files </li>
+    <li>Fixed bug which would cause a crash if an inlined image was missing </li>
+    <li>Fixed strange bug which resulted &#39;y with quotation mark&#39; characters </li>
+    <li>Added ability to perform remote search (still has a bug...see below)
+    </li>
+  </ul>
+  <h3>Version 0.4a</h3>
+  <ul>
+    <li>Null chunk bug has been fixed! You should no longer see Mosaic dropping 
+    parts of a document. </li>
+    <li>Problems with anchors on left edge of the window have been fixed. </li>
+    <li>GPF when choosing &quot;Add Current to Hotlist&quot; with no document loaded has been 
+    fixed. </li>
+    <li>Anchors in preformatted text now work correctly. </li>
+    <li>The new line break tag (&lt;BR&gt;) has been implemented. </li>
+    <li>Description lists display correctly. </li>
+    <li>Lists can now be nested to arbitrary depth. </li>
+    <li>The bold (&lt;B&gt;) and italics (&lt;I&gt;) tags now work. </li>
+    <li>We now try to load an image several times before we give up on it. This 
+    is actually a little annoying on documents that have missing images (such as 
+    some of the Vatican Exhibit docs), but I&#39;m working on fixing that. </li>
+    <li>Mosaic for Windows calls WSACleanup to clean up the sockets library. This 
+    may temporarily cause a problem for people using our library - Windows will 
+    give the message &quot;Application Error - Call to Undefined Dynalink&quot; when you try 
+    to exit. Don&#39;t worry about it. We&#39;ll get around to fixing it. </li>
+    <li>Lastly, the fix to the bug that was wiping out chunks of a document seems 
+    to have improved the GPF&#39;ing. However, it still crashes every once in a while, 
+    and it still seems to be a much more frequent occurence in the non-debugging 
+    version of the program. *sigh*. </li>
+  </ul>
+  <h3>Version 0.5a</h3>
+  <p><i>Released Sept. 16, 1993</i> </p>
+  <ul>
+    <li>Image cacheing within document - no more multiple loads of images when they 
+    are used multiple times in a document. </li>
+    <li><b>MUCH</b> faster scrolling, due to smarter drawing function. <i>This introduced 
+    an as-yet-unfixed redrawing bug while scrolling in a document that has inlined 
+    images.</i> </li>
+    <li>This seems to alleviated the problem with documents being visually mangled 
+    when loaded while not scrolled to the top. </li>
+    <li>Bug with removing spaces in Gopher, News, and FTP is fixed. </li>
+    <li>Internal anchors - i.e., hyperlinks to anchors within a document - work 
+    now, complete with scrolling to the correct location. </li>
+    <li>File Typing (i.e. HTML vs plaintext) is done more intelligently. </li>
+    <li>Home Page button and Menu option work now, loading whatever document is 
+    set up as &quot;URL0&quot; in WMOSAIC.INI. </li>
+    <li>Open Local capability - use standard file dialog to open files on local 
+    disk. </li>
+    <li>Drag and Drop local file capability </li>
+    <li>Drag and Drop file to annotation window </li>
+    <li>Image retry is smarter - knows when it failed to connect vs when server 
+    returned an error. </li>
+    <li>Find/Find Next (searching within a document) </li>
+    <li>The white strip that was showing up in the Fast and Error bitmaps when they 
+    were hyperlinks is gone. </li>
+    <li>Spaces are now stripped out at the beginning of list indices and paragraphs.
+    </li>
+  </ul>
+  <h3>Version 0.6b</h3>
+  <p><i>First beta release - September 28, 1993</i> </p>
+  <ul>
+    <li>Try out the brand-new &quot;Mail to Developers&quot; option under the Help menu!! 
+    This lets you send email to the developers straight from your PC. Be sure to 
+    set up your email address in WMOSAIC.INI. </li>
+    <li>The ISMAP image attribute is supported!! For a demo of this, take a look 
+    at the <a href="http://sunsite.unc.edu/expo/expo/expo_map.html">Expo</a>.
+    </li>
+    <li>History Window is now fixed - &quot;Back&quot; and &quot;Forward&quot; work correctly. </li>
+    <li>&quot;Display Inlined Images&quot; option is now complete - shut this off to not transfer 
+    inlined images (lots faster for people running over a slow net connection). 
+    Press the left mouse button to traverse a hyperlink, press the right mouse button 
+    to load an unloaded inline image. </li>
+    <li>The new horizontal rule tag (&lt;HR&gt;) has been implemented. </li>
+    <li>Local directory browsing works now. Try <a href="file:///c|/">this.</a>
+    </li>
+    <li>The messed-up MPEG and JPEG extensions are fixed, and configureable.
+    </li>
+    <li>Options for changing anchor color and <b>underlining anchors</b>. </li>
+    <li>Completely configureable MIME-style extension typing and presentation (See 
+    installation documentation for details.) </li>
+    <li>Drive specifiers have been added to local file URLs. </li>
+    <li>&quot;DELETE : command not found&quot; error after loading GIF, etc., is gone.
+    </li>
+    <li>Personal Annotations are much more robust now. </li>
+    <li>Scrolling via keys is now supported. </li>
+    <li>ISO characters should work now, if specified by the correct HTML, like so: 
+    &quot;Sein -- das ist der Paß für die Ewigkeit.&quot; (aus <b>Die Grössere Hoffnung</b> 
+    von Ilse Aichinger.) </li>
+  </ul>
+  <h3>Version 0.7b</h3>
+  <p><i>Released October 17,1993</i> </p>
+  <ul>
+    <li>A MAJOR memory drain is plugged... you can now use Mosaic for a LOOOOOONG 
+    time without running out of memory (hopefully!). </li>
+    <li>DOCUMENT caching is now supported! You can cache by number of documents 
+    (stable) or amount of memory (NOT stable). </li>
+    <li>The Search feature works again! </li>
+    <li>Windows Mosaic is now HTTP/1.0 compliant. </li>
+    <li>If HTTP accesses didn&#39;t work for you, but Gopher and FTP did, it should 
+    now. (This was the case running under Windows NT.) </li>
+    <li>Mail To Developers window now resizes correctly. </li>
+    <li>The SMTP/Mail host is now configureable. </li>
+    <li>The history is fixed - no more Assertion Failed messages from Back&amp;Forward 
+    buttons. </li>
+    <li>WinMosaic no longer attempts to MIME-type files transferred in binary mode.
+    </li>
+    <li>URLs which contain IP numbers no longer cause GPFs. </li>
+    <li>Documents without titles no longer have the last document&#39;s title in the 
+    title bar. </li>
+    <li>The background color can be set to white instead of grey. </li>
+    <li>The underlining/anchor bug seen on the Mosaic demo page is fixed. </li>
+    <li>The problem with menu items on Menu 8 being mapped to Menu 2 is fixed.
+    </li>
+    <li>Temporary file names are chosen more intelligently (attempts to use the 
+    source file&#39;s name.) </li>
+  </ul>
+  <p>&nbsp;</p>
+  <h3>Version 1.0</h3>
+  <p><i>Released Nov 11, 1993</i> </p>
+  <ul>
+    <li>The scrolling bug is fixed. You shouldn&#39;t see the screen mess up due to 
+    images or large text in the document anymore. </li>
+    <li>Network I/O is now (somewhat) <b>interruptable</b>. Click on the big Mosaic 
+    icon in the upper-right corner to kill a net transfer. </li>
+    <li>Also, quitting Mosaic forces a kill of any net transfers in progress. This 
+    means the &quot;Can&#39;t run two instances of the same program&quot; error message shouldn&#39;t 
+    appear anymore (although this feature is still a bit buggy.) </li>
+    <li>Images can now be alligned middle, top, or bottom, instead of just top. 
+    Considering that the default is bottom, and we only did top before, I was pretty 
+    surprised that no-one mentioned this anomaly throughout all our beta testing.
+    </li>
+    <li>News articles are now readable (i.e., not all on one line.) </li>
+    <li>URL redirection (a feature of HTTP 1.0) is now supported. </li>
+    <li>Home Page loading is fixed. </li>
+    <li>If you were having problems with the first document you tried never loading, 
+    but subsequent ones working fine, that&#39;s fixed. </li>
+    <li>Title and URL boxes are redrawn at the correct time now. </li>
+    <li>Back &amp; Forward Assertion Failed errors are gone. </li>
+    <li>Telnet executable (used for telnet:// URLs) is now configureable - see &quot;telnet=&quot; 
+    under the Viewers section of the INI file. </li>
+    <li>FTP error messages are now returned to the user. </li>
+    <li>FTP logins now use your email address when logging in (this fixes a connect 
+    problem the CERN LibWWW was creating. </li>
+    <li>You can log in to a NON-anonymous FTP via the following method: set the 
+    URL to be FILE://username@machine/pathname. For example, to log in as user &quot;jdoe&quot; 
+    to FTP site &quot;ftp.yoyodyne.com&quot;, in the &quot;/usr/jdoe&quot; directory, give the URL: 
+    &quot;file://jdoe@ftp.yoyodyne.com/usr/jdoe&quot; Mosaic will pop up a dialog box, asking 
+    to confirm the username and give your password. <b>Your password is maintained 
+    within Mosaic until you quit. Do <i>NOT</i> use this feature if you are security-paranoid.</b>
+    </li>
+    <li>Gopher and FTP now use pretty icons for files/directories/etc, and FTP shows 
+    the file sizes. </li>
+    <li>New set of Configured Menus, with all kinds of pointers. </li>
+    <li>Horizontal rules are prettier now. </li>
+  </ul>
+  <h3>Version 2.0alpha1</h3>
+  <p><i>Released Jan 31, 1994</i> </p>
+  <ul>
+    <li>HTML+ Forms are now supported! This is not quite finished, but definitely 
+    well into the useful stage. </li>
+    <dd>- Nasty problem with local file support fixed.
+    <li>There is now an environment variable for the location of the MOSAIC.INI 
+    file. To use this, put a line like the following in your AUTOEXEC.BAT:
+    <pre>                SET MOSAIC.INI=C:\MISC\MY_MOS.INI</pre>
+    </li>
+    <li>XBMs are now written as 1 bit bitmaps. This means Mosaic now works in 24-bit 
+    and 16-bit video modes. </li>
+    <li>Better error reporting (explanatory text instead of numbers.) </li>
+    <li>Cursor now behaves itself - hourglass cursor only appears during transfers 
+    when cursor is in window, and doesn&#39;t flash. </li>
+    <li>Horizontal rules no longer disappear. </li>
+    <li>URL/Title text overwriting boxes now fixed. </li>
+    <li>FTP is now much more stable. </li>
+    <li>Anchors in &quot;pre&quot; formatted text bug fixed. </li>
+    <li>Mosaic now supports a command-line parameter for URLs and local files (it 
+    discriminates between a pathname like C:\TMP\TEST.HTML and a URL like file:///C|/TMP/TEST.HTML.)
+    </li>
+    <li>Inlined images are now cached across documents - if an image is in a previous 
+    document, it won&#39;t be reloaded from the net. </li>
+    <li>Blank lines in &quot;pre&quot; formatted text now appear correctly. </li>
+    <li>Occasional blank white (! Not grey!) chunks fixed. </li>
+    <li>Changing font forces a redraw. </li>
+    <li>GDI Resource leaks plugged. </li>
+    <li>disappearing text blocks bug fixed. </li>
+    </dd>
+  </ul>
+  <h3>Version 2.0alpha2</h3>
+  <p><i>Released Feb 28, 1994</i> </p>
+  <ul>
+    <li>Redirect bug fixed </li>
+    <li>Spiffy new hotlist/menu user interface </li>
+    <li>Proxy gateway support </li>
+    <li>DNS cacheing </li>
+    <li>faster GIF decoding </li>
+    <li>URLs missing trailing slash (e.g. &quot;http://cs.indiana.edu&quot;) now have correct 
+    relative urls. </li>
+    <li>Several FORMs bugs fixed </li>
+    <li>Added linebreak after end of form </li>
+    <li>Fixed linebreak after checkboxes &amp; radio buttons </li>
+    <li>Added support for input type isindex (no autosubmit, though) </li>
+    <li>Text areas now submit correctly </li>
+    <li>Forced extra painting to fix drawing problems </li>
+    <li>Elements are now sent in the same order as Mosaic for X </li>
+    <li>Added input type &quot;hidden&quot; </li>
+    <li>Fixed forms associated memory leaks. </li>
+    <li>External telnet no longer returns &quot;-9999&quot; error </li>
+    <li>leading/trailing spaces in entered URLs are now ignored </li>
+    <li>GPFing on multiple reloads fixed </li>
+    <li>Background is erased before redrawing when right-clicking on an unloaded 
+    image </li>
+    <li>Window position saves correctly again </li>
+    <li>Fixed drawing of search window </li>
+    <li>Minor memory leak fixed in NCSA Icon </li>
+    <li>Minor memory leak in SGML parser fixed </li>
+    <li>Memory leak fixed in Document </li>
+    <li>A few more GDI leaks plugged </li>
+    <li>Doubled available user menus (to 20 menus, 40 items each) </li>
+  </ul>
+  <h3>Version 2.0alpha3</h3>
+  <p><i>Released April 6, 1994 </i></p>
+  <ul>
+    <li>Mosaic is now a 32-bit application. </li>
+    <li>You can run multiple instances of the program. </li>
+    <li>printing (still has problems with bold, long documents, and images) </li>
+    <li>Viewing and Saving of document source ( File, Document Source...) </li>
+    <li>Access authentication </li>
+    <li>GPF on forms reloading fixed </li>
+    <li>Case insensitive find implemented (option in the find box) </li>
+    <li>GPF with Find Dialog fixed </li>
+    <li>Vertical scrollbars no longer disappear in large files </li>
+    <li>horizontal scrollbars now appear for documents wider than the screen (Still 
+    have problems with the history window) </li>
+    <li>Improved internal audio support - allows playing of .au files on 8-bit cards. 
+    To use the internal audio support, remove the .au extension from the audio/basic 
+    definition in the [Suffixes] section of your mosaic.ini file. </li>
+    <li>Bug with deeply nested tags fixed </li>
+    <li>&quot;-i inifile&quot; command-line option for INI file location. </li>
+    <dd>ie. mosaic -i c:/directory/mosaic.ini.
+    <li>&lt; OPTION&gt; tags won&#39;t crash Mosaic anymore </li>
+    <li>fixed bug with downloading files via FTP </li>
+    <li>FTP slightly improved - now able to connect to ftp.microsoft.com, e.g.
+    </li>
+    <li>&lt; em &gt; and &lt; strong &gt; tags now supported </li>
+    <li>&lt; dir &gt; and &lt; menu &gt; tags are now more properly supported </li>
+    <li>Grey out back &amp; forward when no current doc </li>
+    <li>Screen repaint from another window on top is occasionally wrong </li>
+    <li>Screen repaints get &quot;lost&quot; if busy fixed for 3.1 but still a problem with 
+    NT </li>
+    <li>When search window disappears, focus switches to main window. </li>
+    <li>&quot;Add Current to Hotlist&quot; when current hl is QUICKLIST now works (unlimited 
+    size) </li>
+    <li>&quot;Add Current to Hotlist&quot; works for URL&#39;s without titles (gohper servers)
+    </li>
+    <li>Open URL Dialog now fits on a 640 x 480 screen </li>
+    <li>entity (&amp;) termination </li>
+    <li>Focus switches to Search window when it appears </li>
+    <li>better filename mungeing (Unix files will now be properly converted to reflect 
+    the last extension. ie. here.it.is.txt will become here.txt) </li>
+    </dd>
+  </ul>
+  <h3>Version 2.0alpha4</h3>
+  <p><i>Released April 14, 1994</i><br>
+  <b>Bugs Fixed:</b> </p>
+  <ul>
+    <li>News:URLs. </li>
+    <li>underline anchor. </li>
+    <li>resizing w/o a file. </li>
+    <li>Scrolling ISINDEX docs. </li>
+    <li>Updating problems of the NCSA icon. </li>
+    <li>The problem with view source on cached docs. </li>
+    <li>The lost slash bug (the Temp files under Win31.) </li>
+  </ul>
+  <h3>Version 2.0alpha5</h3>
+  <p><i>Released June 24, 1994</i><br>
+  <b>Bugs Fixed</b> </p>
+  <ul>
+    <li>There were two large memory leaks which occurred whenever an inline image 
+    was decoded and displayed. These leaks were approx. 1,000 bytes each. </li>
+    <li>The document view window was being drawn incorrectly whenever the user was 
+    at the bottom of a document, and Mosaic was re-sized. </li>
+    <li>XBM images are now properly read and do not result in an ERROR graphic.
+    </li>
+    <li>XBM images used to require a LARGE amount of time to decode. The code was 
+    re-written and now .xbm&#39;s decode approximately 100 times faster. </li>
+    <li>The Printing bugs; large files, images, bold text, .txt files. </li>
+    <li>Some minor problems with dialog boxes were fixed. </li>
+    <li>The CRASH caused by incorrect HTML, &lt; dt &gt; and &lt; dd &gt; tags without the &lt; 
+    dl &gt; tag, was corrected. Mosaic is a little more forgiving, but not much. ;^)
+    </li>
+    <li>The navigate back should now take you back to the last document viewed. 
+    Previously, Mosaic did not update the history when users accessed documents 
+    that were cached. </li>
+  </ul>
+  <p><b>Enhancements</b> </p>
+  <ul>
+    <li>It is now possible to enter a URL directly to the Document URL line. Select 
+    the Document URL line, enter the URL and press return to open the desired URL.
+    </li>
+    <li>The Vertical Scroll Bar is currently a permanent fixture on the document 
+    view window. This eliminates an extra screen redraw which would occur whenever 
+    the user went from a short document (less than one screenful) to a long document 
+    or vice versa. Ideally we&#39;d like the vertical scroll bar to be dynamic without 
+    the extra redraws, but this will improve things for now. </li>
+    <li>The buttons on the button bar are now in color. </li>
+    <li>The &quot;FIND&quot; button was redrawn with a more intuitive picture. It used to 
+    look like a thermometer and may have lead people to believe it was for the hotlist.
+    </li>
+  </ul>
+  <h3>Version 2.0alpha 6</h3>
+  <p><i>Released July 27, 1994</i><br>
+  <b>Bug Fixes</b> </p>
+  <ul>
+    <li>This latest release has focused on speed and memory issues. Our next release, 
+    alpha 7, will address many of the bugs which you have reported to us. The following 
+    bugs have been fixed in alpha 6: </li>
+    <li>The loading of local URLs should no longer produce DNS Lookup failures.
+    </li>
+    <li>The loading of local images and sound files no longer deletes the file.
+    </li>
+    <li>The loading of images now shows the transfer progress. </li>
+  </ul>
+  <p><b>Added Features</b> </p>
+  <ul>
+    <li>A face lift </li>
+    <li>Speed </li>
+    <li>Kiosk Mosaic </li>
+    <li>Additional Help </li>
+  </ul>
+  <h3>Version 2.0 alpha 7</h3>
+  <p><i>Released Sep 7, 1994</i><br>
+  <b>Bug Fixes</b> </p>
+  <ul>
+    <li>Local files are no longer deleted. </li>
+    <li>Local files are no longer duplicated. </li>
+    <li>file:// = ftp:// (Alpha 6 locked file:// for local files and ftp:// for 
+    remote files. However, due to the large number of existing files that were written 
+    using the old definition of file://, we had to revert back to file:// = ftp://. 
+    Thus, file:///c| MUST be used to access local files.) </li>
+    <li>Image alignment problem. Inline images align horizontally. </li>
+    <li>The -i option was fixed. (-i allows the user to use the mosaic.ini that 
+    is explicitly defined. ie. mosaic.exe -i c:\ncsa\mosaic.ini) </li>
+  </ul>
+  <p><b>Added Features</b> </p>
+  <ul>
+    <li>The save, save as function. Save and Save as will save the current document 
+    to your local disk. </li>
+    <li>Animated Icon Change. We&#39;ve changed the size of the icon to be relative 
+    to the amount of space that is available in the window. ie. If you use both 
+    the tool bar and the Show Current URL functions, you will have a full-size animated 
+    icon. If you choose not to use either of these functions, the icon will be reduced 
+    in size to fit in the available space. </li>
+    <li>Tool tips were added. Tool tips offers the user information about the current 
+    tool the mouse cursor is pointing at in the Tool bar. </li>
+    <li>The find icon on the Tool bar has changed from the list icon to a binocular 
+    icon. </li>
+    <li>We&#39;ve removed the &quot;URL&quot; title from the &quot;Show Current URL&quot; </li>
+  </ul>
+  <h3>Version 2.0 Alpha 8</h3>
+  <p><i>Released Dec 20, 1994</i><br>
+  <b>Features and Enhancements</b> </p>
+  <ul>
+    <li>Tables </li>
+    <li>Common Client Interface </li>
+    <li>Options, Preferences menu </li>
+    <li>Stand Alone Mode </li>
+    <li>Additional Tags:
+    <dl>
+      <dd>Underline - &lt;U&gt; &lt;/U&gt; </dd>
+      <dd>Strikeout - &lt;STRIKE&gt; &lt;/STRIKE&gt; OR &lt;S&gt; &lt;/S&gt; </dd>
+      <dd>Simple Superscript - &lt;SUP&gt; &lt;/SUP&gt; OR &lt;SUPER&gt; &lt;/SUPER&gt; </dd>
+      <dd>Simple Subscript - &lt;SUB&gt; &lt;/SUB&gt; </dd>
+    </dl>
+    </li>
+    <li>Mosaic supports inline Transparent Gifs. </li>
+    <li>The NCSA Mosaic logo has a new look. </li>
+    <li>Mosaic will use the Temp directory as defined in your autoexec.bat file.
+    </li>
+    <li>The way Mosaic displays data has improved significantly. </li>
+    <li>Mosaic is more forgiving about bad html. It shouldn&#39;t crash if it encounters 
+    bad html. </li>
+    <li>Forms: input controls of TYPE=Image are supported </li>
+  </ul>
+  <p><b>Bug Fixes</b> </p>
+  <ul>
+    <li>Anchor underline </li>
+    <li>All known printing bugs </li>
+    <li>Color palette problems </li>
+    <li>Forms:
+    <dl>
+      <dd>White space is handled properly </dd>
+      <dd>Mosaic will remember the fields on a form after you submit it. </dd>
+      <dd>SUBMIT and RESET function properly </dd>
+      <dd>CHECKBOX and RADIO controls function properly. </dd>
+      <dd>PLAINTEXT uses the preformatted style for display. </dd>
+      <dd>TEXTAREA controls function properly </dd>
+    </dl>
+    </li>
+  </ul>
+  <h3>Version 2.0 Alpha 9</h3>
+  <p><i>Released Jan 25, 1995</i><br>
+  <b>Features and Enhancements</b> </p>
+  <ul>
+    <li>Presentation Mode (ALT-P) </li>
+    <li>&quot;Cancel&quot; and &quot;Check&quot; buttons in the URL Bar </li>
+    <li>Right Mouse Button Menu Options </li>
+    <li>New HTML Tags: </li>
+    <li>HTML 2.0 Entities </li>
+    <li>mailto </li>
+    <li>A new CCI function call </li>
+    <li>Additional Options, Preferences: </li>
+    <li>Apply Now </li>
+    <li>Viewer Configuration </li>
+    <li>General, Delayed Image Loading </li>
+    <li>Services, Display FTP Messages </li>
+    <li>Improved Image Palette Management </li>
+  </ul>
+  <p><b>Bug Fixes</b> </p>
+  <ul>
+    <li>Mosaic is more lenient about the syntax of the menu item definitions in 
+    the &quot;mosaic.ini&quot; file. Bad syntax caused crashes on startup in Version 2Alpha8. 
+    :( </li>
+    <li>Mosaic will no longer crash if you try to print a document with inline images 
+    when the &quot;Display Inline Image&quot; option is turned off. </li>
+    <li>Mosaic won&#39;t choke on the Comment Tag, &quot;&lt;!-- Your comment --&gt; </li>
+    <li>Title Tags, &lt;TITLE&gt; &lt;/TITLE&gt; will recognize entities </li>
+    <li>Mosaic won&#39;t choke on CRs and LF between the quotes in the Image Tags, &lt;IMG 
+    SRC=&quot;...&quot;&gt; and Anchor Tags, &lt;A HREF=&quot; ... &quot;&gt;. </li>
+  </ul>
+  <h3>Version 2.0.0 Beta 1</h3>
+  <p><i>Released March 13, 1995</i><br>
+  <b>Features and Enhancements</b> </p>
+  <ul>
+    <li>Options, Preferences... All Mosaic configurable options are available from 
+    the following menus:
+    <dl>
+      <dd>General, Viewers, Services, Proxy, Tables, Anchors, Font Styles, Caching
+      </dd>
+    </dl>
+    </li>
+    <li>Hotlist Manager </li>
+    <li>Inline JPEG Image Support </li>
+    <li>&quot;New&quot; Right Mouse Button Menu Options </li>
+    <li>News Reader Improvements </li>
+    <li>Status Bar Improvements </li>
+    <li>Tool Bar Improvements </li>
+    <li>New Accelerator Keys </li>
+    <li>Command line mailto: </li>
+    <li>Copy and Paste from the Document view window </li>
+    <li>Scrolling and resizing the Mosaic window </li>
+    <li>Interupt for Windows NT </li>
+    <li>Enter Stand Alone Mode (-s) </li>
+    <li>Left and Right arrow keys </li>
+    <li>Mosaic&#39;s Splash Screen </li>
+    <li>+/- keys magnify all fonts on screen proportionally </li>
+    <li>Improved unknown file type handling </li>
+    <li>ALT information from IMG tags will be displayed. </li>
+    <li>Forms Enhancements
+    <dl>
+      <dd>Tab from one form field to another </dd>
+      <dd>Selecting Enter on the last form field will submit the form </dd>
+    </dl>
+    </li>
+    <li>Comment cards </li>
+  </ul>
+  <p><b>Bug Fixes</b> </p>
+  <ul>
+    <li>Resource and Memory Leaks </li>
+    <li>various Interrupt bugs </li>
+    <li>Menu Editor bugs (It got Nuked), it was replaced by a full featured, drag 
+    and drop Hotlist Manager. </li>
+    <li>Find now functional </li>
+    <li>file transfer invoked when clicking on ftp:// links </li>
+    <li>Ampersands in URLs not parsed as entities </li>
+    <li>And Many More... To many to remember or list....... We&#39;re starting with 
+    a clean slate. ;^) </li>
+  </ul>
+  <h3>Version 2.0.0 Beta 2</h3>
+  <p><i>Released March 23, 1995 </i><br>
+  <b>Features and Enhancements</b> </p>
+  <ul>
+    <li>Options, Preferences, Audio Menu </li>
+    <li>Options, Preferences, Services Menu Additions </li>
+    <li>Telnet configuration section </li>
+    <li>Append a sig file to a Newsgroup post or a Mail message. </li>
+    <li>Multiple mailto: supported </li>
+    <li>Multiple get supported for ftp transfers </li>
+    <li>Hotlist Manager Enhancement </li>
+    <li>&quot;Load to disk&quot; enhancement </li>
+  </ul>
+  <p><b>Bug Fixes</b> </p>
+  <ul>
+    <li>Memory and System Resource Improvements </li>
+    <li>Horizontal scroll bar not appearing </li>
+    <li>Winsock initialization problem fixed </li>
+    <li>news: post crashes </li>
+    <li>Removing focus from print preview caused a crash </li>
+    <li>copy/paste inserts blank lines where it finds &lt;P&gt; tags. </li>
+  </ul>
+  <h3>Version 2.0.0 Beta 3</h3>
+  <p><i>Released March 28, 1995</i><br>
+  <b>Bug Fixes</b> </p>
+  <ul>
+    <li>Memory usage Improvements </li>
+    <li>Fixes to Mailto: problems with some mail servers </li>
+    <li>Multiple Get now functions properly </li>
+    <li>256 character URL limit fixed. </li>
+  </ul>
+  <h3>Version 2.0.0 Beta 4</h3>
+  <p><i>Released April 6, 1995</i><br>
+  <b>Features and Enhancements</b> </p>
+  <ul>
+    <li>Global History </li>
+    <li>Cache Management Improvements </li>
+    <li>New HTML 3.0 Tag Attributes </li>
+    <li>URL list box </li>
+    <li>New CCI function </li>
+    <li>Improvements in memory allocation </li>
+  </ul>
+  <p><b>Bug Fixes</b> </p>
+  <ul>
+    <li>Fixed many bugs that were reported from B3, especially the crashes critters.
+    </li>
+    <li>Mosaic no longer hangs when a CCI app initializes </li>
+    <li>No more double cursors over the spinning globe </li>
+    <li>Drag &amp; Drop local files from the file manager works correctly. </li>
+    <li>Stand alone mode inline images display properly. </li>
+    <li>Cache Manager &quot;Fast Image Caching&quot; works with &quot;Check Modification Date From 
+    Server&quot;. </li>
+    <li>Various News bugs were addressed. </li>
+    <li>multiple redirection URLs are properly handled. </li>
+  </ul>
+  <h3>Version 2.0.0 Final Beta</h3>
+  <p><i>Released July 12, 1995</i><br>
+  <b>Features and Enhancements</b> </p>
+  <ul>
+    <li>Internal Image Support </li>
+    <li>Toolbar interface for NEWS </li>
+    <li>Help </li>
+    <li>New HTML support </li>
+    <li>New FTP Support </li>
+    <li>Hot Key Mapping </li>
+    <li>Sound Scheme Mapping </li>
+    <li>MD5 Authentication </li>
+    <li>Speed improvements </li>
+  </ul>
+  <p><b>Bug Fixes</b> </p>
+  <ul>
+    <li>Hotlist manager more stable and shouldn&#39;t crash. </li>
+    <li>Document source is displayed for cached and local files. </li>
+    <li>Text and images within the same cell of a table get formatted correctly.
+    </li>
+    <li>Printing has been improved. </li>
+    <li>Print not sizing properly (right margin truncating words) </li>
+    <li>Forms controls are sized according to the form control font. </li>
+    <li>Many other forms related bugs have been fixed </li>
+    <li>Palette problems in 256 color mode should be fixed. </li>
+    <li>URLs larger than 256 characters won&#39;t crash Mosaic. </li>
+    <li>Win 95 scroll crashing and scroll related problems </li>
+    <li>Find/Search won&#39;t crash </li>
+    <li>&lt;IMG SRC=&quot; &quot; &gt; &amp;&amp; &lt; IMG SRC= &gt; don&#39;t crash </li>
+    <li>&lt;Hn&gt;...&lt;/Hn&gt; tags inside a HEAD tag no longer cause all normal text to appear 
+    as &lt;Hn&gt; </li>
+    <li>Other &lt;HEAD&gt; related bugs fixed </li>
+    <li>Document source displays before the images are paginated. </li>
+    <li>Mosaic won&#39;t download files after you cancel an unrecognized MIME type.
+    </li>
+    <li>proxy server definitions: http://machine.name:portnumber/ == machine.name:portnumber
+    </li>
+    <li>Newsgroup updates w/o defined NNTP server won&#39;t hang Mosaic. </li>
+    <li>Tables: text wrapping within a cell won&#39;t take on the characteristics of 
+    the &lt;address&gt; font </li>
+    <li>Mosaic will find internal anchors in stand alone mode. </li>
+    <li>Mosaic will let Telnet apps take to foreground. </li>
+    <li>&lt;A HREF=&quot;&quot;&gt; and &lt;A HREF=&quot; &quot;&gt; are ignored. </li>
+    <li>mailto: from location bar works. ie. mailto:jdoe@your.com </li>
+    <li>Mosaic recognizes SMTP IP number addressing. </li>
+    <li>Incorrect password for FTP login allows you to retype the password. </li>
+    <li>many more dead bugs....... </li>
+  </ul>
+  <h3>Version 2.0.0 (Win3.1x &amp; Win95)</h3>
+  <p><i>Released October 11, 1995</i><br>
+  <b>Features and Enhancements</b> </p>
+  <ul>
+    <li>Collaborative Sessions </li>
+    <li>Advanced Hotlist Manager </li>
+    <li>AutoSurf </li>
+    <li>Network Timeout defined as a preference </li>
+    <li>Printing Preferences Sheet </li>
+    <li>Document Preferences Sheet </li>
+    <li>News Preferences Sheet </li>
+    <li>Directories Preferences Sheet </li>
+    <li>Window Preferences Sheet </li>
+    <li>Inline FTP messages </li>
+    <li>Optional Day, Date &amp; Time information displayed in status bar </li>
+    <li>Help menu changes with a convenient link to a Online Resources file.
+    </li>
+    <li>Additional News Toolbar functionality </li>
+    <li>New Command Line Options </li>
+    <li>Stop Button in Toolbar </li>
+    <li>Asynchronous non-blocking socket calls </li>
+    <li>New Right Mouse Button Features </li>
+    <li>Internal support for .wav audio files </li>
+    <li>New HTML support </li>
+    <li>New Hot Key Mappings </li>
+    <li>Multiple Cache directories </li>
+    <li>Referrer field sent to HTTPd </li>
+  </ul>
+  <p><b>Squashed Bugs</b> </p>
+  <ul>
+    <li>Numerous Forms Bugs </li>
+    <li>Internal .au support removed. Use a viewer like wplany. </li>
+    <li>Background color in 256 color mode looks much better. </li>
+    <li>Several Find related bugs. </li>
+    <li>Network related abort bugs addressed. </li>
+    <li>Socket problems are gone! </li>
+    <li>Printing greatly improved. </li>
+    <li>Printing Transparent Images works </li>
+    <li>FTP bugs fixed. </li>
+  </ul>
+  <h3>Version 2.1.0</h3>
+  <p><b>Features and Enhancements</b> </p>
+  <ul>
+    <li>Kodak Photo CD </li>
+    <li>Client Side Image Maps</li>
+  </ul>
+  <p><b>Fixed Bugs</b> </p>
+  <ul>
+    <li>16-bit winsock problems </li>
+    <li>OLE CCI GetLastLaunchedAnchor()</li>
+  </ul>
+  <h3>Version 2.1.1 (Win3.1x &amp; Win95)</h3>
+  <p><b>Fixed Bugs</b> </p>
+  <ul>
+    <li>Inline JPEG and Kodak PCD</li>
+  </ul>
+</div>
+
+</body>
+
+</html>

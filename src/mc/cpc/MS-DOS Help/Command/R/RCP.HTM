@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>RCP</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#r">Commands N-Z</a>
+    &gt; <a href="../INDEXR.HTM#rcp">Commands R</a>
+    <h1>RCP</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Copies files between a Windows NT computer and a system
+    running rshd, the remote shell daemon. The rcp command, a
+    connectivity command, can also be used for other transfer to
+    copy files between two computers running rshd when the
+    command is issued from a Windows NT computer. The rshd
+    daemon is available on UNIX computers, but not on Windows
+    NT, so the Windows NT computer can only participate as
+    the system from which the commands are issued. The remote
+    computer must also provide the rcp utility by running rshd.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>RCP
+    [<a href="#SwitchA">-a</a>
+    | <a href="#SwitchB">-b</a>]
+    [<a href="#SwitchH">-h</a>]
+    [<a href="#SwitchR">-r</a>]
+    <a href="#ParameterSource">source1 source2 ... sourceN</a>
+    <a href="#ParameterDestination">destination</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDestination"></a> destination
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dt><a name="ParameterSource"></a> source1 source2 ... sourceN
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Must be of the form [computer[.user]:]filename.
+      If the [computer[.user]:] portion is omitted, the computer
+      is assumed to be the local computer. If the [.user] portion
+      is omitted, the currently logged on Windows 2000 user name
+      is used. If a fully qualified computer name is used, which
+      contains the period (.) separators, then the [.user] must
+      be included. Otherwise, the last part of the computer name
+      will be interpreted as the user name. If multiple source
+      files are specified, the destination must be a directory.</dd>
+      <dd>If the file name does not begin with a forward slash (/)
+      for UNIX or a backward slash (\) for Windows 2000 systems,
+      it is assumed to be relative to the current working directory.
+      On Windows 2000, this is the directory from which the command
+      is issued. On the remote system, it is the logon directory
+      for the remote user. A period (.) means the current directory.
+      Use the escape characters (\ , ", or ') in remote paths to
+      use wildcard characters on the remote computer.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchA"></a> -a
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies ASCII transfer mode. This mode converts the
+      carriage return/line feed characters to carriage returns
+      on outgoing files and line feed characters to carriage
+      return/line feed characters for incoming files.
+      This is the default transfer mode.</dd>
+
+      <dt><a name="SwitchB"></a> -b
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies binary image transfer mode. No carriage
+      return/line feed conversion is performed.</dd>
+
+      <dt><a name="SwitchH"></a> -h
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Transfers source files marked with the hidden attribute
+      on the Windows computer. Without this option,
+      hidden files are not copied.</dd>
+
+      <dt><a name="SwitchR"></a> -r
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Recursively copies the contents of all subdirectories
+      of the source to the destination. Both the source and
+      destination must be directories, although using -r works
+      even if the source is not a directory. There just will be
+      no recursion.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

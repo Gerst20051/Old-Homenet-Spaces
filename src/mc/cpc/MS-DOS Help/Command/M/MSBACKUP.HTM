@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>MSBACKUP</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#m">Commands A-M</a>
+    &gt; <a href="../INDEXM.HTM#msbackup">Commands M</a>
+    <h1>MSBACKUP</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Runs Microsoft Backup for DOS, which backs up or restores one
+    or more files from one disk onto another.</p>
+    <p><b>Note:</b> DOS also includes Microsoft Backup for Windows.
+    Depending on the choices you made during DOS Setup, you might
+    have Backup for DOS, Backup for Windows, both, or neither. This
+    topic explains only Backup for DOS; for information about Backup
+    for Windows, see the DOS User's Guide.</p>
+    <p>You can back up all files on a disk or files that have changed
+    since your last backup, schedule backups so they are done
+    automatically on a regular basis, and restore files that you have
+    backed up.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>MSBACKUP
+    [<a href="#ParameterSetup">setup_file</a>]
+    [<a href="#SwitchT">/T</a>
+    [<a href="#SwitchD">D</a>
+    | <a href="#SwitchI">I</a>
+    | <a href="#SwitchF">F</a>]]
+    [<a href="#SwitchBW">/BW</a>
+    | <a href="#SwitchLCD">/LCD</a>
+    | [<a href="#SwitchMDA">/MDA</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterSetup"></a> setup_file
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Specifies the setup file that defines files to back up and
+      the type of backup you want to perform. MSBACKUP creates a setup
+      file when you save program settings and file selections. Setup
+      files must have an SET extension. If you do not specify a setup
+      file, MSBACKUP uses DEFAULT.SET.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchBW"></a> /BW
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Starts MSBACKUP using a black-and-white color scheme.</dd>
+
+      <dt><a name="SwitchLCD"></a> /LCD
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Starts MSBACKUP using a video mode compatible with laptop
+      displays.</dd>
+
+      <dt><a name="SwitchMDA"></a> /MDA
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a> ONLY)</dt>
+      <dd>Starts MSBACKUP using a monochrome display adapter.</dd>
+
+      <dt><a name="SwitchT"></a>
+      (<a name="SwitchD"></a>
+      <a name="SwitchI"></a>
+      <a name="SwitchF"></a> /T[D|I|F]
+      <a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> Backup type: Differential (all changed
+      files since last FULL backup), Incremental (all changed files
+      since last INCREMENTAL or FULL backup), or Full (all files)?</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Catalogs">Backup catalogs</a></li>
+      <li><a href="#Exchange">Exchanging backups with DOS 6, 6.2, or 6.21 systems</a></li>
+      <li><a href="#Memory">Insufficient memory</a></li>
+      <li><a href="#Start">Must start MSBACKUP from a hard disk</a></li>
+      <li><a href="#Restore">Restoring backups created by DOS 6 or 6.2 Backup programs</a></li>
+      <li><a href="#Backup">Restoring backups made by using the BACKUP.EXE program</a></li>
+      <li><a href="#MSDOSDATA">The MSDOSDATA environment variable</a></li>
+    </ul>
+
+    <hr>
+    <a name="Start"></a> <b>Must start MSBACKUP from a hard disk</b>
+    <p>MSBACKUP program files must be located on your hard disk. You
+    cannot start MSBACKUP from a floppy disk.</p>
+
+    <hr>
+    <a name="Catalogs"></a> <b>Backup catalogs</b>
+    <p>As part of the backup process, MSBACKUP creates a backup catalog
+    that contains information about the files you backed up. When you
+    need to restore one or more files, you can load the backup catalog
+    and easily select files from a backup set. The backup catalog
+    includes information about the:</p>
+    <ul>
+      <li>Backed-up disk's directory structure.</li>
+      <li>Names, sizes, and attributes of the directories and files
+          that were selected.</li>
+      <li>Total number of files.</li>
+      <li>Total size of the backup.</li>
+      <li>Name of the setup file that was used.</li>
+      <li>Date the backup was made.</li>
+    </ul>
+    <p>MSBACKUP gives each catalog file a unique name that helps you
+    identify a backup set. Each character in the catalog name contains
+    information about a particular backup set. For example, consider a
+    typical catalog name such as CD20823A.FUL. Reading left to right,
+    the character(s) in the filename mean:
+    <ul>
+      <li><b>C</b> The first drive backed up in this set.</li>
+      <li><b>D</b> The last drive backed up in this set. (If only one drive
+          was backed up, this letter will be the same as the first drive
+          that was backed up.)</li>
+      <li><b>2</b> The last digit of the year, as determined by the system
+          date. In the example, the year is 1992.</li>
+      <li><b>08</b> The month the backup set was created.</li>
+      <li><b>23</b> The day of the month the backup set was created.</li>
+      <li><b>A</b> The position in the sequence of this backup. If more than
+          one backup of the same drive(s) is performed on the same day and
+          the Keep Old Backup Catalogs option is set to On, MSBACKUP
+          assigns a letter from A to Z to indicate the order in which the
+          backups were performed (A is the first backup you created that
+          day, B is the second, C the third, and so on). If the Keep Old
+          Backup Catalogs option is set to Off, this alternates between A
+          and B.</li>
+      <li><b>FUL</b> The backup type--FUL indicates a full backup, INC
+          indicates an incremental backup, and DIF indicates a differential
+          backup.</li>
+    </ul>
+    <p>You can easily locate the catalog for a backup set by using the
+    information contained in the catalog filenames, even if you have
+    many catalog files in your directory.</p>
+    <p>Each time you perform a full backup using a specific setup file,
+    MSBACKUP creates a master catalog. The master catalog keeps track
+    of all the backup catalogs made during the backup cycle. When the
+    next full backup is performed and a new backup cycle begins, a new
+    master catalog is created.</p>
+    <p>The master catalog is used if you need to restore a complete
+    backup cycle. When you load the master catalog, the catalogs of all
+    the backups that were created during the backup cycle are
+    automatically merged. Then the latest version of each backed-up
+    file can be automatically restored (or you can choose to restore an
+    earlier version).</p>
+    <p>You can choose whether you want to keep all of the old catalogs
+    or only the current catalogs on your hard disk. The catalogs will
+    remain part of your backup sets.</p>
+    <p>When you back up files, MSBACKUP places one copy of the backup
+    catalog on your hard disk, and a second copy on the disk or network
+    drive that contains your backup set.</p>
+
+    <hr>
+    <a name="Restore"></a> <b>Restoring backups created by DOS 6 or 6.2 Backup programs</b>
+    <p><a href="../../Version/MSDOS/622.HTM">v6.22</a> Backup
+    uses a different backup compression format from
+    <a href="../../Version/MSDOS/600.HTM">v6.0</a> and
+    <a href="../../Version/MSDOS/620.HTM">v6.2</a>. Backup. The
+    <a href="../../Version/MSDOS/622.HTM">v6.22</a> Backup programs
+    use the DriveSpace compression format; earlier Versions of Backup
+    used the DoubleSpace compression format instead.</p>
+    <p>Because of this,
+    <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+    Backup for Windows cannot restore compressed backups created by
+    <a href="../../Version/MSDOS/600.HTM">v6.0</a> or
+    <a href="../../Version/MSDOS/620.HTM">v6.2</a> Backup.</p>
+    <p><a href="../../Version/MSDOS/622.HTM">v6.22</a> Backup
+    for DOS can restore earlier compressed backups only if one of
+    the conditions is true:</p>
+    <ul>
+      <li>DoubleSpace is installed (DBLSPACE.BIN is loaded in
+          memory).</li>
+      <li>The files DBLSPACE.BIN and DRVSPACE.MR1 are available. (For
+          more information on DRVSPACE.MR1, see DBLSPACE--Notes.)</li>
+    </ul>
+
+    <br>
+    Both the Windows and DOS Versions of
+    <a href="../../Version/MSDOS/622.HTM">v6.22</a> Backup can
+    successfully restore
+    <a href="../../Version/MSDOS/600.HTM">v6.0</a>,
+    <a href="../../Version/MSDOS/620.HTM">v6.2</a> and
+    <a href="../../Version/MSDOS/621.HTM">v6.21</a> backups made
+    without backup data compression. If you unchecked the Compress
+    Backup Data box in the Backup Options dialog before you backed
+    up, you should have no problems restoring your data using the
+    <a href="../../Version/MSDOS/622.HTM">v6.22</a> Backup
+    programs.
+    <p>If you try to restore an older compressed backup and Microsoft
+    Backup displays an error message, you need to use the
+    <a href="../../Version/MSDOS/600.HTM">v6.0</a> or
+    <a href="../../Version/MSDOS/620.HTM">v6.2</a> Versions of
+    Backup instead. If you do not currently have one of these
+    Versions of Backup on your computer, you will need to retrieve
+    the older version of Backup from your DOS 6x distribution
+    disks. For more information, see Section 5.5.</p>
+
+    <hr>
+    <a name="Backup"></a> <b>Restoring backups made by using the BACKUP.EXE program</b>
+    <p>Neither MSBACKUP.EXE nor MWBACKUP.EXE can restore backups made
+    by using the BACKUP.EXE program that came with
+    <a href="../../Version/MSDOS/500.HTM">v5.0</a> and earlier. For
+    information about restoring such backups, see the
+    <a href="../R/RESTORE.HTM">RESTORE</a> command.</p>
+
+    <hr>
+    <a name="Exchange"></a> <b>Exchanging backups with DOS 6, 6.2, or 6.21 systems</b>
+    <p>If you plan to use either MSBACKUP.EXE or MWBACKUP.EXE to
+    exchange backup files with other DOS 6.x systems, you should
+    disable backup compression before backing up. In the Backup dialog,
+    select the Options button, clear the Compress Backup Data check
+    box, and select OK.</p>
+
+    <hr>
+    <a name="Memory"></a> <b>Insufficient memory</b>
+    <p>If you receive a message stating that you have insufficient
+    memory, do:</p>
+    <ol>
+      <li>Make sure you have at lease 512K of memory on your
+          computer.</li>
+      <li>Quit MSBACKUP, remove all memory-resident programs from
+          memory, and try using MSBACKUP again.</li>
+      <li>Choose the Options button on the Backup screen to display the
+          Disk Backup Options dialog box. Turn off the Compress Backup Data
+          option and then choose OK.</li>
+    </ol>
+
+    <hr>
+    <a name="MSDOSDATA"></a> <b>The MSDOSDATA environment variable</b>
+    <p>Backup for DOS uses the
+    <a href="../../ENV/MSDOS/MSDOSDAT.HTM">%MSDOSDATA%</a>
+    environment variable to
+    determine the location of configuration information, backup sets,
+    and catalogs. Backup for DOS first searches for the MSDOSDATA
+    environment variable. If this environment variable is not defined,
+    the program searches the directory from which you started the
+    program. If the program does not find the file, the program creates
+    it using default values and places it in the directory.</p>
+    <p>The <a href="../../ENV/MSDOS/MSDOSDAT.HTM">%MSDOSDATA%</a>
+    environment variable is useful if you share the
+    Backup for DOS program files with others, but use your own
+    configuration. For example, suppose the program files are located
+    on drive P, a read-and-execute-only network server, and you want to
+    use your own configuration, backup sets, and catalogs. To specify
+    that Backup for DOS use the configuration information, backup
+    sets, and catalogs located in the BACKUP directory on your drive C,
+    add the line to your AUTOEXEC.BAT file:</p>
+<pre>
+    <a href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">msdosdata</a>=<a
+href="../S/SET.HTM#ParameterString">C:\BACKUP</a>
+</pre>
+
+    <p>To start Backup for DOS, type:</p>
+<pre>
+    p:\MSBACKUP
+</pre>
+
+    <p>Changes you make to the configuration of Backup for DOS are
+    saved in the BACKUP directory on drive C.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>Suppose you created a setup file named WEEKLY.SET that defines a
+    weekly full backup procedure on specified files. To use this setup
+    file, type:</p>
+<pre>
+    MSBACKUP <a
+href="#ParameterSetup">WEEKLY</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

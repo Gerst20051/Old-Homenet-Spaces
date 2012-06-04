@@ -1,0 +1,553 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>ANSI.SYS</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#a">Commands A-M</a>
+    &gt; <a href="../INDEXA.HTM#ansisys">Configuration A</a>
+    <h1>ANSI.SYS</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Defines functions that change display graphics, control
+    cursor movement, and reassign keys. The ANSI.SYS device
+    driver supports ANSI terminal emulation of escape
+    sequences to control your system's screen and keyboard.
+    An ANSI escape sequence is a sequence of ASCII
+    characters, the first two of which are the escape
+    character (1Bh) and the left-bracket character (5Bh).
+    The character or characters following the escape and
+    left-bracket characters specify an alphanumeric code
+    that controls a keyboard or display function. ANSI
+    escape sequences distinguish between uppercase and
+    lowercase letters; for example,&quot;A&quot; and
+    &quot;a&quot; have completely different meanings.</p>
+
+    <p>This device driver must be loaded by a
+    <a href="../D/DEVICE.HTM">DEVICE</a> or
+    <a href="../D/DEVICEHI.HTM">DEVICEHIGH</a> command
+    in your CONFIG.SYS file.</p>
+
+    <p><b>Note:</b>
+    In this topic bold letters in syntax and ANSI escape
+    sequences indicate text you must type exactly as it
+    appears.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p><a href="../D/DEVICE.HTM">DEVICE</a>=<a
+    href="#ParameterDrive">[drive:]</a><a
+    href="#ParameterPath">[\path\]</a>ANSI.SYS
+    [<a href="#SwitchK">[/K]</a>
+    | <a href="#SwitchX">[/X]</a>]
+    <a href="#SwitchR">[/R]</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a href="../../Version/MSDOS/400.HTM">v4.00</a>
+      <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Specifies the drive (if other than the current
+      drive) location of the ANSI.SYS file.</dd>
+
+      <dt><a name="ParameterPath"></a> \path\
+      (<a href="../../Version/MSDOS/400.HTM">v4.00</a>
+      <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Specifies the directory location of the ANSI.SYS
+      file.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchK"></a> /K
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4.0</a>)</dt>
+      <dd>Causes ANSI.SYS to treat a 101-key keyboard like
+      an 84-key keyboard. This is equivalent to the
+      command <a href="../S/SWITCHES.HTM#SwitchK">SWITCHES=/K</a>.
+      If you usually use the
+      <a href="../S/SWITCHES.HTM#SwitchKK">SWITCHES=/K</a> command,
+      you will need to use the /K switch with ANSI.SYS.</dd>
+
+      <dt><a name="SwitchR"></a> /R
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4.0</a>)</dt>
+      <dd>Adjusts line scrolling to improve readability when
+      ANSI.SYS is used with screen-reading programs
+      (which make computers more accessible to people
+      with disabilities).</dd>
+
+      <dt><a name="SwitchX"></a> /X
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4.0</a>)</dt>
+      <dd>Remaps extended keys independently on 101-key
+      keyboards.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#ESC">ANSI escape sequences for cursor movement, graphics, and keyboard settings</a></li>
+      <li><a href="#Ignore">Ignoring extended keys</a></li>
+      <li><a href="#Parms">Parameters used in ANSI escape sequences</a></li>
+      <li><a href="#Remap">Remapping extended keys</a></li>
+      <li><a href="#BothKX">Using both the /X switch and the /K switch</a></li>
+    </ul>
+
+    <hr>
+    <a name="Parms"></a> <b>Parameters used in ANSI escape sequences</b>
+    <dl>
+      <dt><a name="ParmsPn"></a> Pn</dt>
+      <dd>Numeric parameter. Specifies a decimal number.</dd>
+
+      <dt><a name="ParmsPs"></a> Ps</dt>
+      <dd>Selective parameter. Specifies a decimal number
+      that you use to select a function. You can specify
+      more than one function by separating the parameters
+      with semicolons.</dd>
+
+      <dt><a name="ParmsPL"></a> PL</dt>
+      <dd>Line parameter. Specifies a decimal number that
+      represents one of the lines on your display or on
+      another device.</dd>
+
+      <dt><a name="ParmsPc"></a> Pc</dt>
+      <dd>Column parameter. Specifies a decimal number that
+      represents one of the columns on your screen or on
+      another device.</dd>
+    </dl>
+
+    <hr>
+    <a name="ESC"></a> <b>ANSI escape sequences for cursor movement, graphics, and keyboard settings</b>
+    <p>In the list of ANSI escape sequences, the
+    abbreviation ESC represents the ASCII escape character
+    27 (1Bh), which appears at the beginning of each escape
+    sequence.</p>
+
+    <dl>
+      <dt><a name="ESCPLPcH"></a>
+      ESC[<a href="#ParmsPL">PL</a>;<a href="#ParmsPc">Pc</a>H</dt>
+      <dd>Cursor Position: Moves the cursor to the specified
+      position (coordinates). If you do not specify a
+      position, the cursor moves to the home position --
+      the upper-left corner of the screen (line 0, column
+      0). This escape sequence works the same way as the
+      <a href="#ESCPLPcf">Cursor Position</a>
+      escape sequence.</dd>
+
+      <dt><a name="ESCPLPcf"></a>
+      ESC[<a href="#ParmsPL">PL</a>;<a href="#ParmsPc">Pc</a>f</dt>
+      <dd>Cursor Position: Works the same way as the
+      preceding <a href="#ESCPLPcf">Cursor Position</a>
+      escape sequence.</dd>
+
+      <dt>ESC[<a href="#ParmsPn">Pn</a>A</dt>
+      <dd>Cursor Up: Moves the cursor up by the specified
+      number of lines without changing columns. If the
+      cursor is already on the top line, ANSI.SYS
+      ignores this sequence.</dd>
+
+      <dt>ESC[<a href="#ParmsPn">Pn</a>B</dt>
+      <dd>Cursor Down: Moves the cursor down by the specified
+      number of lines without changing columns. If the
+      cursor is already on the bottom line, ANSI.SYS
+      ignores this sequence.</dd>
+
+      <dt>ESC[<a href="#ParmsPn">Pn</a>C</dt>
+      <dd>Cursor Forward: Moves the cursor forward by the
+      specified number of columns without changing lines.
+      If the cursor is already in the rightmost column,
+      ANSI.SYS ignores this sequence.</dd>
+
+      <dt>ESC[<a href="#ParmsPn">Pn</a>D</dt>
+      <dd>Cursor Backward: Moves the cursor back by the
+      specified number of columns without changing lines.
+      If the cursor is already in the leftmost column,
+      ANSI.SYS ignores this sequence.</dd>
+
+      <dt><a name="ESCs"></a>ESC[s</dt>
+      <dd>Save Cursor Position: Saves the current cursor
+      position. You can move the cursor to the saved
+      cursor position by using the
+      <a href="#ESCu">Restore Cursor Position</a>
+      sequence.</dd>
+
+      <dt><a name="ESCu"></a>ESC[u</dt>
+      <dd>Restore Cursor Position: Returns the cursor to the
+      position stored by the
+      <a href="#ESCs">Save Cursor Position</a>
+      sequence.</dd>
+
+      <dt>ESC[2J</dt>
+      <dd>Erase Display: Clears the screen and moves the
+      cursor to the home position (line 0, column 0).</dd>
+
+      <dt>ESC[K</dt>
+      <dd>Erase Line: Clears all characters from the cursor
+      position to the end of the line (including the
+      character at the cursor position).</dd>
+
+      <dt>ESC[<a href="#ParmsPs">Ps</a>;...;<a href="#ParmsPs">Ps</a>m</dt>
+      <dd>Set Graphics Mode: Calls the graphics functions
+      specified by the values. These specified
+      functions remain active until the next occurrence
+      of this escape sequence. Graphics mode changes the
+      colors and attributes of text (such as bold and
+      underline) displayed on the screen.
+        <ul>
+          <li>Text attributes
+            <ul>
+              <li><b>0</b> All attributes off</li>
+              <li><b>1</b> Bold on</li>
+              <li><b>4</b> Underscore (on monochrome display adapter only)</li>
+              <li><b>5</b> Blink on</li>
+              <li><b>7</b> Reverse video on</li>
+              <li><b>8</b> Conceal on</li>
+            </ul>
+          </li>
+          <li>Foreground colors (meets ISO 6429 standard)
+            <ul>
+              <li><b>30</b> Black</li>
+              <li><b>31</b> Red</li>
+              <li><b>32</b> Green</li>
+              <li><b>33</b> Yellow</li>
+              <li><b>34</b> Blue</li>
+              <li><b>35</b> Magenta</li>
+              <li><b>36</b> Cyan</li>
+              <li><b>37</b> White</li>
+            </ul>
+          </li>
+          <li>Background colors (meets ISO 6429 standard)
+            <ul>
+              <li><b>40</b> Black</li>
+              <li><b>41</b> Red</li>
+              <li><b>42</b> Green</li>
+              <li><b>43</b> Yellow</li>
+              <li><b>44</b> Blue</li>
+              <li><b>45</b> Magenta</li>
+              <li><b>46</b> Cyan</li>
+              <li><b>47</b> White</li>
+            </ul>
+          </li>
+        </ul>
+      </dd>
+
+      <dt><a name="ESCPsh"></a>ESC[=<a href="#ParmsPs">ps</a>h</dt>
+      <dd>Set Mode: Changes the screen width or type to the
+      mode specified by one of:
+        <ul>
+          <li><b>0</b> 40 x 148 x 25 monochrome (text)</li>
+          <li><b>1</b> 40 x 148 x 25 color (text)</li>
+          <li><b>2</b> 80 x 148 x 25 monochrome (text)</li>
+          <li><b>3</b> 80 x 148 x 25 color (text)</li>
+          <li><b>4</b> 320 x 148 x 200 4-color (graphics)</li>
+          <li><b>5</b> 320 x 148 x 200 monochrome (graphics)</li>
+          <li><b>6</b> 640 x 148 x 200 monochrome (graphics)</li>
+          <li><b>7</b> Enables line wrapping</li>
+          <li><b>13</b> 320 x 148 x 200 color (graphics)</li>
+          <li><b>14</b> 640 x 148 x 200 color (16-color graphics)</li>
+          <li><b>15</b> 640 x 148 x 350 monochrome (2-color graphics)</li>
+          <li><b>16</b> 640 x 148 x 350 color (16-color graphics)</li>
+          <li><b>17</b> 640 x 148 x 480 monochrome (2-color graphics)</li>
+          <li><b>18</b> 640 x 148 x 480 color (16-color graphics)</li>
+          <li><b>19</b> 320 x 148 x 200 color (256-color graphics)</li>
+        </ul>
+      </dd>
+
+      <dt>ESC[=<a href="#ParmsPs">Ps</a>l</dt>
+      <dd>Reset Mode: Resets the mode by using the same
+      values that <a href="#ESCPsh">Set Mode</a>
+      uses, except for 7, which
+      disables line wrapping. The last character in
+      this escape sequence is a lowercase L.</dd>
+
+      <dt>ESC[code;string;...p</dt>
+      <dd>Set Keyboard Strings: Redefines a keyboard key to a
+      specified string. The parameters for this escape
+      sequence are defined as:
+        <ul>
+          <li>Code is one or more of the values listed in
+          the table. These values represent
+          keyboard keys and key combinations. When
+          using these values in a command, you must
+          type the semicolons shown in this table in
+          addition to the semicolons required by the
+          escape sequence. The codes in parentheses are
+          not available on some keyboards. ANSI.SYS
+          will not interpret the codes in parentheses
+          for those keyboards unless you specify the
+          <a href="#SwitchX">/X</a>
+          switch in the <a href="../D/DEVICE.HTM">DEVICE</a>
+          command for ANSI.SYS.</li>
+          <li>String is either the ASCII code for a single
+          character or a string contained in quotation
+          marks. For example, both 65 and &quot;A&quot;
+          can be used to represent an uppercase A.</li>
+        </ul>
+        <b>IMPORTANT:</b>
+        Some of the values in the table are not
+        valid for all computers. Check your computer's
+        documentation for values that are different.
+
+<pre>
+        <b>Key, Code,  SHIFT-code, CTRL-code, ALT-code</b>
+        F1,   0;59,  0;84,       0;94,     0;104
+        F2,   0;60,  0;85,       0;95,     0;105
+        F3,   0;61,  0;86,       0;96,     0;106
+        F4,   0;62,  0;87,       0;97,     0;107
+        F5,   0;63,  0;88,       0;98,     0;108
+
+        F6,   0;64,  0;89,       0;99,     0;109
+        F7,   0;65,  0;90,      0;100,     0;110
+        F8,   0;66,  0;91,      0;101,     0;111
+        F9,   0;67,  0;92,      0;102,     0;112
+        F10,  0;68,  0;93,      0;103,     0;113
+
+        F11, 0;133, 0;135,      0;137,     0;139
+        F12, 0;134, 0;136,      0;138,     0;140
+        <b>Key, Code,  SHIFT-code, CTRL-code, ALT-code</b>
+
+        <b>Key (num keypad), Code,   SHIFT-code, CTRL-code, ALT-code</b>
+        HOME,              0;71,       55,      0;119,      none
+        UP ARROW,          0;72,       56,    (0;141),      none
+        PAGE UP,           0;73,       57,      0;132,      none
+        LEFT ARROW,        0;75,       52,      0;115,      none
+        RIGHT ARROW,       0;77,       54,      0;116,      none
+
+        END,               0;79,       49,      0;117,      none
+        DOWN ARROW,        0;80,       50,    (0;145),      none
+        PAGE DOWN,         0;81,       51,      0;118,      none
+        INSERT,            0;82,       48,    (0;146),      none
+        DELETE,            0;83,       46,    (0;147),      none
+
+        ENTER,               13,     none,         10,   (0;166)
+        /,                   47,       47,    (0;142),    (0;74)
+        *,                   42,  (0;144),     (0;78),      none
+        -,                   45,       45,    (0;149),   (0;164)
+        +,                   43,       43,    (0;150),    (0;55)
+
+        5,                (0;76),      53,    (0;143),      none
+        <b>Key (num keypad), Code,   SHIFT-code, CTRL-code, ALT-code</b>
+
+        <b>Key,         Code,     SHIFT-code, CTRL-code, ALT-code</b>
+        HOME         (224;71), (224;71),   (224;119), (224;151)
+        UP ARROW     (224;72), (224;72),   (224;141), (224;152)
+        PAGE UP      (224;73), (224;73),   (224;132), (224;153)
+        LEFT ARROW   (224;75), (224;75),   (224;115), (224;155)
+        RIGHT ARROW  (224;77), (224;77),   (224;116), (224;157)
+
+        END          (224;79), (224;79),   (224;117), (224;159)
+        DOWN ARROW   (224;80), (224;80),   (224;145), (224;154)
+        PAGE DOWN    (224;81), (224;81),   (224;118), (224;161)
+        INSERT       (224;82), (224;82),   (224;146), (224;162)
+        DELETE       (224;83), (224;83),   (224;147), (224;163)
+
+        PRINT SCREEN     none,     none,       0;114,      none
+        PAUSE/BREAK      none,     none,         0;0,      none
+        BACKSPACE           8,        8,         127,       (0)
+        ENTER              13,     none,          10,       (0)
+        TAB                 9,     0;15,     (0;148),   (0;165)
+
+        NULL              0;3,     none,        none,      none
+        <b>Key,         Code,     SHIFT-code, CTRL-code, ALT-code</b>
+
+        <b>Key, Code, SHIFT-code, CTRL-code, ALT-code</b>
+        A,    97,   65,           1,        0;30
+        B,    98,   66,           2,        0;48
+        C,    99,   66,           3,        0;46
+        D,   100,   68,           4,        0;32
+        E,   101,   69,           5,        0;18
+
+        F,   102,   70,           6,        0;33
+        G,   103,   71,           7,        0;34
+        H,   104,   72,           8,        0;35
+        I,   105,   73,           9,        0;23
+        J,   106,   74,          10,        0;36
+
+        K,   107,   75,          11,        0;37
+        L,   108,   76,          12,        0;38
+        M,   109,   77,          13,        0;50
+        N,   110,   78,          14,        0;49
+        O,   111,   79,          15,        0;24
+
+        P,   112,   80,          16,        0;25
+        <b>Key, Code, SHIFT-code, CTRL-code, ALT-code</b>
+
+        <b>Key, Code, SHIFT-code, CTRL-code, ALT-code</b>
+        Q,   113,   81,          17,        0;16
+        R,   114,   82,          18,        0;19
+        S,   115,   83,          19,        0;31
+        T,   116,   84,          20,        0;20
+        U,   117,   85,          21,        0;22
+
+        V,   118,   86,          22,        0;47
+        W,   119,   87,          23,        0;17
+        X,   120,   88,          24,        0;45
+        Y,   121,   89,          25,        0;21
+        Z,   122,   90,          26,        0;44
+
+        1,    49,   33,        none,       0;120
+        2,    50,   64,           0,       0;121
+        3,    51,   35,        none,       0;122
+        4,    52,   36,        none,       0;123
+
+        5,    53,   37,        none,       0;124
+        6,    54,   94,          30,       0;125
+        <b>Key, Code, SHIFT-code, CTRL-code, ALT-code</b>
+
+        <b>Key, Code, SHIFT-code, CTRL-code, ALT-code</b>
+        7,    55,   38,        none,       0;126
+        8,    56,   42,        none,       0;126
+        9,    57,   40,        none,       0;127
+        0,    48,   41,        none,       0;129
+        -,    45,   95,          31,       0;130
+
+        =,    61,   43,        none,       0;131
+        [,    91,  123,          27,        0;26
+        ],    93,  125,          29,        0;27
+        \,    92,  124,          28,        0;43
+        ;,    59,   58,        none,        0;39
+
+        ',    39,   34,        none,        0;40
+        ,,    44,   60,        none,        0;51
+        .,    46,   62,        none,        0;52
+        /,    47,   63,        none,        0;53
+        `,    96,  126,        none,      (0;41)
+        <b>Key, Code, SHIFT-code, CTRL-code, ALT-code</b>
+</pre>
+      </dd>
+    </dl>
+
+    <hr>
+    <a name="Remap"></a> <b>Remapping extended keys</b>
+    <p>If you have a keyboard with 101 keys, you may want to
+    use the
+    <a href="#SwitchX">/X</a> switch to remap
+    certain extended keys. For example, there are two HOME
+    keys on keyboards with 101 keys: One on the numeric
+    keypad and the other in the block of cursor-control
+    keys. Unless you specify the
+    <a href="#SwitchX">/X</a> switch, the two
+    HOME keys are treated the same.</p>
+
+    <hr>
+    <a name="Ignore"></a> <b>Ignoring extended keys</b>
+    <p>If you have a program that does not correctly interpret
+    input from an enhanced keyboard, use the
+    <a href="#SwitchK">/K</a> switch with
+    ANSI.SYS. Your enhanced keyboard will then use
+    conventional keyboard functions.</p>
+
+    <hr>
+    <a name="BothKX"></a> <b>Using both the /X switch and the /K switch</b>
+    <p>You cannot specify ANSI.SYS with both the
+    <a href="#SwitchK">/K</a> switch and the
+    <a href="#SwitchX">/X</a> switch.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To exchange the backslash and question-mark keys by
+    using literal strings:</p>
+
+<pre>
+    ESC[&quot;\&quot;;&quot;?&quot;pESC[&quot;?&quot;;&quot;\&quot;p
+</pre>
+
+    <p>To exchange the backslash and question-mark keys by
+    using each key's ASCII value:</p>
+
+<pre>
+    ESC[92;63pESC[63;92p
+</pre>
+
+    <p>To restore the backslash and question-mark keys to
+    their original meanings:</p>
+
+<pre>
+    ESC[92;92pESC[63;63p
+</pre>
+
+    <hr>
+    <p>To specify that MS-DOS display a directory listing
+    when you press the F2 key:</p>
+
+<pre>
+    <a href="../P/PROMPT.HTM">PROMPT</a> $e[0;60;&quot;dir&quot;;13p
+</pre>
+
+    <hr>
+    <p>To specify a black screen background color and a
+    high-intensity screen foreground color:</p>
+
+<pre>
+    <a href="../P/PROMPT.HTM">PROMPT</a> $e[1;32;40m$p$g
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

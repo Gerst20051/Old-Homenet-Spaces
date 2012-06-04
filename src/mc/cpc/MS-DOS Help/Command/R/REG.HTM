@@ -1,0 +1,521 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>REG</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#r">Commands N-Z</a>
+    &gt; <a href="../INDEXR.HTM#reg">Commands R</a>
+    <h1>REG</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Read, Set or Delete registry keys and values.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>REG ADD
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>[\'<a
+    href="#ParameterValuename">ValueName</a>']=<a
+    href="#ParameterValue">Value</a>
+    [<a href="#ParameterDataType">DataType</a>]
+    [<a href="#ParameterMachine">\\Machine</a>]</p>
+
+    <p>REG COMPARE
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>
+    [<a href="#SwitchO">-o</a>[M][D]]
+    [<a href="#SwitchQ">-q</a>]
+    [<a href="#SwitchE">-e</a>]
+    [<a href="#ParameterMachine">\\Machine</a>]</p>
+
+    <p>REG COPY
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>[\'<a
+    href="#ParameterValuename">ValueName</a>']
+    [<a href="#ParameterMachine">\\Machine</a>]
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>[\'<a
+    href="#ParameterValuename">ValueName</a>']
+    [<a href="#ParameterMachine">\\Machine</a>]</p>
+
+    <p>REG DELETE
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>[\'<a
+    href="#ParameterValuename">ValueName</a>']
+    [<a href="#SwitchForce">/FORCE</a>]
+    [<a href="#ParameterMachine">\\Machine</a>]</p>
+
+    <p>REG DUMP
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>[\'<a
+    href="#ParameterValuename">ValueName</a>']
+    <a href="#ParameterFilename">FileName</a>
+    [<a href="#ParameterMachine">\\Machine</a>]</p>
+
+    <p>REG FIND
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>
+    [<a href="#ParameterDataType">DataType</a>]
+    <a href="#ParameterSearchStr">SearchStr</a>
+    [<a href="#ParameterReplaceStr">ReplaceStr</a>]
+    [<a href="#SwitchY">-y</a>]
+    [<a href="#SwitchZ">-z</a>[R]]
+    [<a href="#ParameterMachine">\\Machine</a>]</p>
+
+    <p>REG LOAD
+    <a href="#ParameterFilename">FileName</a>
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>
+    [<a href="#ParameterMachine">\\Machine</a>]</p>
+
+    <p>REG QUERY
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>[\'<a
+    href="#ParameterValuename">ValueName</a>']
+    ["<a href="#ParameterString">String</a>"]
+    [<a href="#SwitchS">/S</a>]
+    [<a href="#SwitchSize">/size</a>]
+    [<a href="#SwitchList">/list</a>]
+    [<a href="#ParameterMachine">\\Machine</a>]</p>
+
+    <p>REG RESTORE
+    <a href="#ParameterFilename">FileName</a>
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>
+    [<a href="#ParameterMachine">\\Machine</a>]</p>
+
+    <p>REG {SAVE | BACKUP}
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>[\'<a
+    href="#ParameterValuename">ValueName</a>']
+    <a href="#ParameterFilename">FileName</a>
+    [<a href="#ParameterMachine">\\Machine</a>]</p>
+
+    <p>REG UNLOAD
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>
+    [<a href="#ParameterMachine">\\Machine</a>]</p>
+
+    <p>REG UPDATE
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>[\'<a
+    href="#ParameterValuename">ValueName</a>']=<a
+    href="#ParameterValue">Value</a>
+    [<a href="#ParameterMachine">\\Machine</a>]</p>
+
+    <p><a href="../../Version/MSWIN/NTXP.HTM">NTXP</a> Syntax:</p>
+    <p>REG
+    {ADD
+    | COMPARE
+    | COPY
+    | DELETE
+    | EXPORT
+    | IMPORT
+    | LOAD
+    | QUERY
+    | RESTORE
+    | SAVE
+    | UNLOAD}
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>REG ADD
+    [<a href="#ParameterMachine">\\Machine</a>]
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>
+    [<a href="#SwitchD">/d value</a>]
+    [<a href="#SwitchF">/f</a>]
+    [<a href="#SwitchS">/s separator</a>]
+    [<a href="#SwitchT">/t data_type</a>]
+    [<a href="#SwitchV">/v entry_name</a>
+    | <a href="#SwitchVe">/ve</a>]</p>
+
+    <p>REG COMPARE
+    [<a href="#ParameterMachine">\\Machine</a>]
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>
+    [<a href="#ParameterMachine">\\Machine</a>]
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>
+    {[<a href="#SwitchOa">/oa</a>]
+    | [<a href="#SwitchOd">/od</a>]
+    | [<a href="#SwitchOn">/on</a>]
+    | [<a href="#SwitchOs">/os</a>]}
+    [<a href="#SwitchS">/s separator</a>]
+    [<a href="#SwitchV">/v entry_name</a>
+    | <a href="#SwitchVe">/ve</a>]</p>
+
+    <p>REG COPY
+    [<a href="#ParameterMachine">\\Machine</a>]
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>
+    [<a href="#ParameterMachine">\\Machine</a>]
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>
+    [<a href="#SwitchF">/f</a>]
+    [<a href="#SwitchS">/s</a>]</p>
+
+    <p>REG DELETE
+    [<a href="#ParameterMachine">\\Machine</a>]
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>
+    [<a href="#SwitchF">/f</a>]
+    [<a href="#SwitchV">/v entry_name</a>
+    | <a href="#SwitchVa">/va</a>
+    | <a href="#SwitchVe">/ve</a>]</p>
+
+    <p>REG EXPORT
+    [<a href="#ParameterMachine">\\Machine</a>]
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>
+    <a href="#ParameterFilename">FileName</a>
+    [<a href="#SwitchY">/y</a>]</p>
+
+    <p>REG IMPORT
+    <a href="#ParameterFilename">FileName</a></p>
+
+    <p>REG LOAD
+    [<a href="#ParameterMachine">\\Machine</a>]
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>
+    <a href="#ParameterFilename">FileName</a></p>
+
+    <p>REG QUERY
+    [<a href="#ParameterMachine">\\Machine</a>]
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>
+    [<a href="#SwitchC">/c</a>]
+    [<a href="#SwitchD">/d</a>
+    | <a href="#SwitchK">/k</a>]
+    [<a href="#SwitchE">/e</a>]
+    [<a href="#SwitchF">/f data</a>]
+    [<a href="#SwitchS">/s</a>]
+    [<a href="#SwitchSe">/se separator</a>]
+    [<a href="#SwitchT">/t type</a>]
+    [<a href="#SwitchV">/v entry_name</a>
+    | <a href="#SwitchVe">/ve</a>]
+    [<a href="#SwitchZ">/z</a>]</p>
+
+    <p>REG RESTORE
+    [<a href="#ParameterMachine">\\Machine</a>]
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>
+    <a href="#ParameterFilename">FileName</a></p>
+
+    <p>REG SAVE
+    [<a href="#ParameterMachine">\\Machine</a>]
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a>
+    <a href="#ParameterFilename">FileName</a>
+    [<a href="#SwitchY">/y</a>]</p>
+
+    <p>REG UNLOAD
+    [<a href="#ParameterMachine">\\Machine</a>]
+    [<a href="#ParameterRootkey">ROOTKEY</a>\]<a
+    href="#ParameterKey">Key</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDataType"></a> DataType
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>One of:
+      <ul>
+      <li><b>REG_SZ</b> default</li>
+      <li><b>REG_DWORD</b></li>
+      <li><b>REG_EXPAND_SZ</b></li>
+      <li><b>REG_MULTI_SZ</b></li>
+      </ul>
+      </dd>
+
+      <dt><a name="ParameterFilename"></a> FileName
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>The filename to save to or restore from
+      (without an extension).</dd>
+      <dd>NT: On remote machines the file is written to the
+      System32 directory.</dd>
+      <dd>Win95: On remote machines the file is written to
+      the Windows directory.</dd>
+      <dt>(<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>The filename to IMPORT/EXPORT from/to, must
+      have .REG extension.</dd>
+      <dd>Specifies the name and path of the file that will
+      be LOADed/RESTOREd. This file must have been created
+      with the REG SAVE operation using a .HIV extension.</dd>
+
+      <dt><a name="ParameterKey"></a> Key
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>The full name of a key under the selected
+      <a href="#ParameterRootkey">ROOTKEY</a>.</dd>
+
+      <dt><a name="ParameterMachine"></a> \\Machine
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Name of remote machine - omitting defaults to current machine.
+      Only HKLM and HKU are available on remote machines.</dd>
+
+      <dt><a name="ParameterReplaceStr"></a> ReplaceStr
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Value to replace.</dd>
+
+      <dt><a name="ParameterRootkey"></a> ROOTKEY\
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>one of:
+      <ul>
+      <li><b>HKLM</b> = hkey_Local_machine (default)</li>
+      <li><b>HKCR</b> = hkey_classes_root</li>
+      <li><b>HKCU</b> = hkey_current_user</li>
+      <li><b>HKU</b>  = hkey_users</li>
+      </ul>
+
+      <dt><a name="ParameterSearchStr"></a> SearchStr
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Value to search for.</dd>
+
+      <dt><a name="ParameterString"></a> String
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>String to search for.</dd>
+
+      <dt><a name="ParameterValue"></a> Value
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>?</dd>
+
+      <dt><a name="ParameterValuename"></a> \'ValueName'
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>The value, under the selected
+      <a href="#ParameterKey">Key</a>, to edit
+      (default is all keys and values).
+      Enclose ValueNames that contain the \ character in
+      single quotes.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchC"></a> /c
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies that the query is case sensitive.
+      By default, queries are not case sensitive.</dd>
+
+      <dt><a name="SwitchD"></a> /d value
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>REG ADD: Specifies the value for the new registry
+      entry.</dd>
+      <dt> /d
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>REG QUERY: Specifies to search in data only.</dd>
+
+      <dt><a name="SwitchE"></a> -e
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Sets the error level to the error code that was in effect
+      the last time the utility was run. By default, the error level
+      is set to the number of differences that were found.</dd>
+      <dt> /e
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>REG QUERY: Specifies to return only exact matches.
+      By default, all the matches are returned.</dd>
+
+      <dt><a name="SwitchF"></a> /f
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Adds/Copies/Deletes the subkey or entry without
+      asking for confirmation.</dd>
+      <dt> /f data
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>REG QUERY: Specifies the data or pattern for which
+      to search. Use double quotes if a string contains
+      spaces. If not specified, a wildcard ("*") is used as
+      the search pattern.</dd>
+
+      <dt><a name="SwitchForce"></a> /FORCE
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Force a deletion without asking "are you are sure".</dd>
+
+      <dt><a name="SwitchK"></a> /k
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies to search in key names only.</dd>
+
+      <dt><a name="SwitchList"></a> /list
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Search strings from RegistryPath.</dd>
+
+      <dt><a name="SwitchO"></a> -o[M][D]
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Omit screen output of:
+      <ul>
+      <li><b>M</b>  Matches</li>
+      <li><b>D</b>  Differences</li>
+      </ul>
+      </dd>
+
+      <dt><a name="SwitchOa"></a> /oa
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that all differences and matches are
+      displayed. By default, only the differences are
+      listed.</dd>
+
+      <dt><a name="SwitchOd"></a> /od
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that only differences are displayed.
+      This is the default behavior.</dd>
+
+      <dt><a name="SwitchOn"></a> /on
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that nothing is displayed. By default,
+      only the differences will be listed.</dd>
+
+      <dt><a name="SwitchOs"></a> /os
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that only matches are displayed. By
+      default, only the differences will be listed.</dd>
+
+      <dt><a name="SwitchQ"></a> -q
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Very quiet, just print the number of differences.</dd>
+
+      <dt><a name="SwitchS"></a> /S
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Query all subkeys.</dd>
+      <dt>(<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Copies all subkeys and entries under the specified
+      subkey.</dd>
+      <dt>/s separator
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the character used to separate multiple
+      instances of data. Used when REG_MULTI_SZ is
+      specified as the <a href="#SwitchT">data type</a> and
+      more than one entry needs to be listed. If not
+      specified, the default separator is \0.</dd>
+
+      <dt><a name="SwitchSe"></a> /se separator
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the single value separator for which to
+      search in value names of type REG_MULTI_SZ. If
+      Separator is not specified, "\0" is used.</dd>
+
+      <dt><a name="SwitchSize"></a> /size
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Query the size of RegistryPath.</dd>
+
+      <dt><a name="SwitchT"></a> -t data_type
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the data type for the value of the entry:
+        <ul>
+          <li><b>REG_BINARY</b></li>
+          <li><b>REG_DWORD</b></li>
+          <li><b>REG_DWORD_BIG_ENDIAN (REG ADD)</b></li>
+          <li><b>REG_DWORD_LITTLE_ENDIAN (REG ADD)</b></li>
+          <li><b>REG_EXPAND_SZ</b></li>
+          <li><b>REG_FULL_RESOURCE_DESCRIPTOR (REG ADD)</b></li>
+          <li><b>REG_LINK (REG ADD)</b></li>
+          <li><b>REG_MULTI_SZ</b></li>
+          <li><b>REG_NONE</b></li>
+          <li><b>REG_SZ</b></li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchV"></a> -v entry_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the name of the entry to be added/deleted
+      under the specified subkey.</dd>
+
+      <dt><a name="SwitchVa"></a> -va
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Deletes all entries under the specified subkey.
+      Subkeys under the specified subkey are not deleted.</dd>
+
+      <dt><a name="SwitchVe"></a> -ve
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that the entry that is added/deleted
+      to the registry has a null value.</dd>
+
+      <dt><a name="SwitchY"></a> -y
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Force case sensitivity for REG FIND
+      <a href="#ParameterSearchStr">SearchStr</a>.</dd>
+      <dd>Overwrites any existing file with the name
+      file_name without prompting for confirmation for
+      REG EXPORT and REG SAVE.</dd>
+
+      <dt><a name="SwitchZ"></a> -z
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Find non-Unicode-compliant entries or entries missing a
+      trailing null character (forces case sensitity).</dd>
+      <dt>
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>REG QUERY: Specifies to include the numeric
+      equivalent for the registry type in search results.</dd>
+      <dt>-zR
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Adjust entry to add Unicode compliancy or the missing
+      null char.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../S/SETX.HTM">SETX</a> - Set environment variables permanently.
+    <br><a href="REGEDIT.HTM">REGEDIT</a> - Load Registry settings from a .REG file.
+    <br>REGEDT32.EXE - Edit the registry including Security and
+    Auditing Options.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <ul>
+    <li><b>0</b> Successful</li>
+    <li><b>1</b> Failure</li>
+    <li><b>2</b> Successful comparison and differences found
+    (REG COMPARE only)</li>
+    </ul>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External Resource Kit</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

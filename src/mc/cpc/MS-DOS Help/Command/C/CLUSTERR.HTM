@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CLUSTER RESOURCE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCH.HTM#clusterresource">Commands Ch-Cz</a>
+    <h1>CLUSTER RESOURCE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>You can use cluster commands to administer server clusters from
+    the Windows command prompt. You can also call the program from
+    command scripts to automate many cluster administration tasks.
+    Cluster is provided on all Windows computers.</p>
+    <p>You can administer clusters from a node of the cluster, from
+    nodes of other clusters, or from other computers running Windows NT
+    4.0 with Service Pack 3 or later.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CLUSTER
+    RES[OURCE]
+    [<a href="#SwitchHelp">/?</a>
+    | <a href="#SwitchHelp">/HELP</a>]</p>
+
+    <p>CLUSTER
+    [<a href="#SwitchCluster">[/CLUSTER:]cluster_name]</a>
+    RES[OURCE]
+    <br>[<a href="#SwitchNode">/NODE:node_name</a>
+    <br>| <a href="#SwitchPrivProperties">/PRIV[PROPERTIES]</a>
+    <br>| <a href="#SwitchProperties">/PROP[ERTIES]</a>]</p>
+
+    <p>CLUSTER
+    [<a href="#SwitchCluster">[/CLUSTER:]cluster_name]</a>
+    RES[OURCE]
+    [<a href="#ParameterResourceName">resource_name</a>]
+    <br>[<a href="#SwitchCheckpoints">/CHECK[POINTS]</a>
+    <br>| <a href="#SwitchCryptoCheckpoints">/CRYPTOCHECK[POINTS]</a>
+    <br>| [<a href="#SwitchStatus">/STAT[US]</a>]]</p>
+
+    <p>CLUSTER
+    [<a href="#SwitchCluster">[/CLUSTER:]cluster_name]</a>
+    RES[OURCE]
+    <a href="#ParameterResourceName">resource_name</a>
+    <br>[<a href="#SwitchAddCheckpoints">/ADDCHECK[POINTS]:key[\subkey...[,key[\subkey... ...]]</a>
+    <br>| <a href="#SwitchAddCryptoCheckpoints">/ADDCRYPTOCHECK[POINTS]:key[\subkey...[,key[\subkey... ...]]</a>
+    <br>| <a href="#SwitchAddDependency">/ADDDEP[ENDENCY]:resource_name</a>
+    <br>| <a href="#SwitchAddOwner">/ADDOWNER:node_name</a>
+    <br>| <a href="#SwitchCreate">/CREATE</a> /GROUP:group_name /TYPE:resource_type
+      [<a href="#SwitchSeparate">/SEPARATE</a>]
+    <br>| <a href="#SwitchDelete">/DELETE</a>
+    <br>| <a href="#SwitchFail">/FAIL</a>
+    <br>| <a href="#SwitchListDependencies">/LISTDEP[ENDENCIES]</a>
+    <br>| <a href="#SwitchListOwners">/LISTOWNERS</a>
+    <br>| <a href="#SwitchMoveTo">/MOVE[TO]:group_name</a>
+    <br>| <a href="#SwitchOffline">/OFF[LINE]</a>
+      [<a href="#SwitchWait">/WAIT[:time_seconds]</a>]
+    <br>| <a href="#SwitchOnline">/ON[LINE]</a>
+      [<a href="#SwitchWait">/WAIT[:time_seconds]</a>]
+    <br>| <a href="#SwitchPrivProperties">/PRIV[PROPERTIES]</a>
+      [<a href="#ParameterPropertyList">property_list</a>]
+    <br>| <a href="#SwitchPrivProperties">/PRIV[PROPERTIES]</a>
+      [<a href="#ParameterPropertyList">:propname[,propname ...]</a>
+      [<a href="#SwitchUseDefault">/USEDEFAULT</a>]]
+    <br>| <a href="#SwitchProperties">/PROP[ERTIES]</a>
+      [<a href="#ParameterPropertyList">property_list</a>]
+    <br>| <a href="#SwitchProperties">/PROP[ERTIES]</a>
+      [<a href="#ParameterPropertyList">:propname[,propname ...]</a>
+      [<a href="#SwitchUseDefault">/USEDEFAULT</a>]]
+    <br>| <a href="#SwitchRemoveCheckpoints">/REMOVECHECK[POINTS]:key[\subkey...[,key[\subkey... ...]]</a>
+    <br>| <a href="#SwitchRemoveCryptoCheckpoints">/REMOVECRYPTOCHECK[POINTS]:key[\subkey...[,key[\subkey... ...]]</a>
+    <br>| <a href="#SwitchRemoveDependency">/REMOVEDEP[ENDENCY]:resource_name</a>
+    <br>| <a href="#SwitchRemoveOwner">/REMOVEOWNER:node_name</a>
+    <br>| <a href="#SwitchRename">/REN[AME]:resource_name</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterPropertyList"></a> name=value[,value ...][:format][name=value[,value ...][:format] ...]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dt> :name[,name ...] /userdefault
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>
+        <ul>
+          <li><b>Binary</b> Separated list of values from 0 to 255</li>
+          <li><b>DWord</b> Double word</li>
+          <li><b>Str[ing]</b> Double quotation marks are required around strings with spaces</li>
+          <li><b>ExpandStr[ing]</b> Expanded by Cluster</li>
+          <li><b>MultiStr[ing]</b> List of strings separated by commas</li>
+          <li><b>Security</b> Set access privileges.
+            <ul>
+              <li>Access types:
+                <ul>
+                  <li><b>grant</b></li>
+                  <li><b>deny</b></li>
+                  <li><b>set</b></li>
+                  <li><b>revoke</b> (Does not require Access mask)</li>
+                </ul>
+              </li>
+              <li>Access masks:
+                <ul>
+                  <li><b>R</b> read</li>
+                  <li><b>C</b> change</li>
+                  <li><b>F</b> full</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><b>ULarge</b> Unsigned 64-bit value</li>
+        </ul>
+      </dd>
+
+      <dt><a name="ParameterResourceName"></a> resource_name
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>?</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /HELP | /?
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Display cluster group syntax. Default.</dd>
+
+      <dt><a name="SwitchAddCheckpoints"></a> /ADDCHECK[POINTS]:key[\subkey...[,key[\subkey... ...]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Add a registry checkpoint for a resource.</dd>
+
+      <dt><a name="SwitchAddCryptoCheckpoints"></a> /ADDCRYPTOCHECK[POINTS]:key[\subkey...[,key[\subkey... ...]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Add a cryptographic key checkpoint for a resource.</dd>
+
+      <dt><a name="SwitchAddDependency"></a> /ADDDEP[ENDENCY]:resource_name
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Add a dependency for a resource.</dd>
+
+      <dt><a name="SwitchAddOwner"></a> /ADDOWNER:node_name
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Add a node name to the list of possible owners.</dd>
+
+      <dt><a name="SwitchCheckpoints"></a> /CHECK[POINTS]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>List registry checkpoints for a resource.
+      Checkpoints for all cluster resources are displayed
+      if you do not provide a resource name.</dd>
+
+      <dt><a name="SwitchCluster"></a> /CLUSTER
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>If you do not specify a cluster, attempts to connect to the
+      cluster running on the node that is running the command.</dd>
+      <dd>If the name of your cluster is also a cluster command or its
+      abbreviation, use /cluster: to explicitly specify the cluster
+      name.</dd>
+
+      <dt><a name="SwitchCreate"></a> /CREATE /GROUP:group_name /TYPE:resourcetype
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Create a new resource in a specified group.</dd>
+
+      <dt><a name="SwitchCryptoCheckpoints"></a> /CRYPTOCHECK[POINTS]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>List cryptographic key checkpoints for a resource.
+      If you do not provide a resource name,
+      checkpoints for all cluster resources are displayed.</dd>
+
+      <dt><a name="SwitchDelete"></a> /DELETE
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Delete a resource.</dd>
+
+      <dt><a name="SwitchFail"></a> /FAIL
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Initiate resource failure.</dd>
+
+      <dt><a name="SwitchListDependencies"></a> /LISTDEPENDENCIES
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>List the dependencies for a resource.</dd>
+
+      <dt><a name="SwitchListOwners"></a> /LISTOWNERS
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Display a list of possible owners.</dd>
+
+      <dt><a name="SwitchMoveTo"></a> /MOVE[TO]:group_name
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Move the resource to a different group.</dd>
+
+      <dt><a name="SwitchNode"></a> /NODE:node_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>?</dd>
+
+      <dt><a name="SwitchOffline"></a> /OFF[LINE]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Take the resource offline.</dd>
+
+      <dt><a name="SwitchOnline"></a> /ON[LINE]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Bring the resource online.</dd>
+
+      <dt><a name="SwitchPrivProperties"></a> /PRIV[PROPERTIES]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>View or set the resource private properties.</dd>
+      <dd>By default, there are no private properties for cluster
+      resource. Software vendors can add private properties to extend
+      cluster functionality.</dd>
+
+      <dt><a name="SwitchProperties"></a> /PROP[ERTIES]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>View or set the resource common properties.</dd>
+
+      <dt><a name="SwitchRemoveCheckpoints"></a> /REMOVECHECK[POINTS]:key[\subkey...[,key[\subkey... ...]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Remove a registry checkpoint for a resource.</dd>
+
+      <dt><a name="SwitchRemoveCryptoCheckpoints"></a> /REMOVECRYPTOCHECK[POINTS]:key[\subkey...[,key[\subkey... ...]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Remove a cryptographic key checkpoint for a resource.</dd>
+
+      <dt><a name="SwitchRemoveDependency"></a> /REMOVEDEP[ENDENCY]:resource_name
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Remove a dependency for a resource.</dd>
+
+      <dt><a name="SwitchRemoveOwner"></a> /REMOVEOWNER:node_name
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Remove a node name from the list of possible owners.</dd>
+
+      <dt><a name="SwitchRename"></a> /REN[AME]:resource_name
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Rename a resource.</dd>
+
+      <dt><a name="SwitchSeparate"></a> /SEPARATE
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>The resource should run in a separate Resource Monitor.</dd>
+
+      <dt><a name="SwitchStatus"></a> /STATUS
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Display the status of a cluster resource (Online, Offline, or
+      Failed). If you do not provide a resource name, the status of all
+      cluster resources is displayed.</dd>
+
+      <dt><a name="SwitchUseDefault"></a> /USEDEFAULT
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>To revert to the default value of a common property
+      or to delete a private property.</dd>
+
+      <dt><a name="SwitchWait"></a> /WAIT[:time_seconds]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>How long to wait before canceling the command if it does not
+      successfully complete. If a time-out is not specified, waits
+      indefinitely or until the group state changes.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="CLUSTER.HTM">Cluster</a>
+    <br><a href="CLUSTERG.HTM">Cluster Group</a>
+    <br><a href="CLUSTERI.HTM">Cluster Netinterface</a>
+    <br><a href="CLUSTERW.HTM">Cluster Network</a>
+    <br><a href="CLUSTERN.HTM">Cluster Node</a>
+    <br><a href="CLUSTERT.HTM">Cluster Resourcetype</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Common resource property names:
+      <ul>
+        <li><b>Name</b> Name of the cluster resource object</li>
+        <li><b>DebugPrefix</b> Specifies the appropriate debugger for the resource.  For more information, see the Microsoft Platform Software Development Kit</li>
+        <li><b>Description</b> Describes a resource</li>
+        <li><b>IsAlivePollInterval</b> Interval (in milliseconds) that the Cluster service polls a resource to determine if it is operational.  If a value is not specified, a default value is taken from the IsAlivePollInterval property for the specific resource type. IsAlivePollInterval cannot be zero</li>
+        <li><b>LooksAlivePollInterval</b> Recommended interval in milliseconds that the Cluster service polls a resource to determine if it appears operational. If a value is not specified, a default value is taken from the LooksAlivePollInterval property for the resource type</li>
+        <li><b>PendingTimeout</b> The amount of time that a Pending Online or Pending Offline resource has to resolve its status before the Cluster service puts the resource in Offline or Failed status. The default value is 3 minutes</li>
+        <li><b>PersistentState</b> Describes the last known persistent state of a resource. In order to save the resource's PersistentState property, the resource must be offline</li>
+        <li><b>RestartAction</b> Describes the action to perform if the resource fails. The choices are:
+          <ul>
+            <li>ClusterResourceDontRestart (0): Do not restart after a failure</li>
+            <li>ClusterResourceRestartNoNotify (1): If the resource exceeds its restart threshold within its restart period, the Cluster service does not attempt to failover the group to another node</li>
+            <li>ClusterResourceRestartNotify (2): If the resource exceeds its restart threshold within its restart period, the Cluster service attempts to failover the group to another node</li>
+          </ul>
+          If you do not enter a value, the default allows the resource to affect the group, which can cause the group to fail over to another system.</li>
+          <li><b>RestartPeriod</b> Specifies the amount of time allowed for the restart attempts to reach the RestartThreshold before the Cluster service fails over the group</li>
+          <li><b>RestartThreshold</b> Specifies how many times the Cluster service attempts to restart the resource in the RestartPeriod before failing over the group</li>
+          <li><b>SeparateMonitor</b> Indicates whether or not a resource shares a Resource Monitor.  Valid values are True (1) and False (0)</li>
+          <li><b>Type</b> Specifies the resource type</li>
+        </ul>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>EMM386</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#e">Commands A-M</a>
+    &gt; <a href="../INDEXE.HTM#emm386">Commands E</a>
+    <h1>EMM386</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Enables or disables EMM386 expanded-memory support on a computer
+    with an 80386 or higher processor. The EMM386 command also enables
+    or disables Weitek coprocessor support. Do not use this command
+    when Windows is running.</p>
+    <p>The EMM386 device driver, EMM386.EXE, provides expanded-memory
+    support and also provides access to the upper memory area. For
+    information about EMM386.EXE, see EMM386.EXE.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>EMM386
+    [<a href="#ParameterOn">ON</a>
+    | <a href="#ParameterOff">OFF</a>
+    | <a href="#ParameterAuto">AUTO</a>]
+    [W=<a href="#ParameterWOn">ON</a>
+    | <a href="#ParameterWOff">OFF</a>]</p>
+
+    <p>To display the current status of EMM386 expanded-memory support:</p>
+    <p>EMM386</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterOn"></a> ON
+      (<a name="ParameterOff"></a> | OFF
+      <a name="ParameterAuto"></a> | AUTO
+      <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Activates the EMM386 device driver (if set to ON), or
+      suspends the EMM386 device driver (if set to OFF), or places the
+      EMM386 device driver in auto mode (if set to AUTO). Auto mode
+      enables expanded-memory support only when a program calls for it.
+      The default value is ON.</dd>
+
+      <dt><a name="ParameterWOn"></a> W=ON
+      (<a name="ParameterWOff"></a> | OFF
+      <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Enables (if set to W=ON) or disables (if set to W=OFF) Weitek
+      coprocessor support. The default value is W=OFF.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Weitek">Enabling and disabling Weitek coprocessor support</a></li>
+      <li><a href="#Install">Installing the EMM386.EXE device driver</a></li>
+      <li><a href="#Reactivate">Reactivating EMM386 expanded-memory support</a></li>
+      <li><a href="#Suspend">Suspending EMM386 expanded-memory support</a></li>
+    </ul>
+
+    <hr>
+    <a name="Install"></a> <b>Installing the EMM386.EXE device driver</b>
+    <p>To use the EMM386 command, you must have an 80386 or higher
+    processor, and you must also install the EMM386.EXE device driver
+    by using the <a href="../D/DEVICE.HTM">DEVICE</a> command in your CONFIG.SYS file. If you try to
+    use the EMM386 command on a computer that does not have an 80386 or
+    higher processor, the operating system displays the
+    message:</p>
+<pre>
+    EMM386 driver not installed
+</pre>
+
+    <hr>
+    <a name="Reactivate"></a> <b>Reactivating EMM386 expanded-memory support</b>
+    <p>If EMM386 was loaded when the operating system started but is
+    not currently in use, the <a href="#ParameterOn">ON</a> parameter
+    reactivates expanded-memory support.</p>
+
+    <hr>
+    <a name="Suspend"></a> <b>Suspending EMM386 expanded-memory support</b>
+    <p>If EMM386 expanded-memory support is currently active, handle 0
+    is the only handle allocated, and EMM386 is not providing access to
+    the upper memory area. The
+    <a href="#ParameterOff">OFF</a> parameter suspends EMM386
+    expanded-memory support. When EMM386 expanded-memory support is
+    off, the EMM386.EXE device-driver header is changed so that
+    programs cannot use expanded memory. This enables you to run
+    non-VCPI-compliant programs such as
+    <a href="../../Version/MSWIN/300.HTM">Win3.0</a> in Standard
+    mode.</p>
+
+    <hr>
+    <a name="Weitek"></a> <b>Enabling and disabling Weitek coprocessor support</b>
+    <p>If the W=<a href="#ParameterWOn">ON</a> parameter is
+    specified and the <a href="#ParameterOff">OFF</a>
+    parameter (different from the
+    W=<a href="#ParameterWOff">OFF</a> parameter) is not, EMM386
+    enables Weitek coprocessor support. The high memory area (HMA) must
+    be available to enable Weitek coprocessor support. If you load
+    the operating system into the HMA by specifying
+    <a href="../D/DOS.HTM">DOS</a>=<a href="../D/DOS.HTM#ParameterHigh">HIGH</a>,
+    you may not be able to enable Weitek coprocessor support.</p>
+    <p>If you specify the W=<a href="#ParameterWOn">ON</a>
+    or W=<a href="#ParameterWOff">OFF</a> parameter and no
+    Weitek coprocessor is installed in your computer system, the
+    operating system displays the error message:</p>
+<pre>
+    Weitek Coprocessor not installed
+</pre>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

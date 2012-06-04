@@ -1,0 +1,2635 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>TCP / IP Protocols</title>
+<meta name="Microsoft Theme" content="layers 0011">
+</head>
+
+<body background="../../../_themes/layers/laybkgnd.gif" bgcolor="#FFFFFF" text="#000000" link="#330099" vlink="#999999" alink="#660033"><!--mstheme--><font face="georgia,times new roman,times">
+
+<h1 align="center"><!--mstheme--><font face="georgia,Times New Roman,Times"><!--mstheme--><b><b><b><b>TCP/IP Protocols</b></b></b><!--mstheme--></font><!--mstheme--></b></h1>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<p><span class="title2">RLOGIN</span></p>
+<p class="blacktext">Remote LOGIN (RLOGIN) allows UNIX users of one machine to connect 
+to other UNIX systems across an Internet and interact as if their terminals are 
+directly connected to the machines. This protocol offers essentially the same services 
+as TELNET. </p>
+<p>&nbsp;</p>
+<p><span class="title2">RTSP</span></p>
+<p><span class="blacksmall">RFC2326</span>
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc2326.html" target="_blank">
+<font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc2326.html</font></a>
+</p>
+<p class="blacktext">The Real-Time Streaming Protocol (RTSP) is an application level 
+protocols for control over the delivery of data with real-time properties. RTSP 
+provides an extensible framework to enable controlled, on-demand delivery of real-time 
+data, such as audio and video. Sources of data can include both live data feeds 
+and stored clips. This protocol is intended to control multiple data delivery sessions, 
+provide a means for choosing delivery channels such as UDP, multicast UDP and TCP, 
+and provide a means for choosing delivery mechanisms bases upon RTP. </p>
+<p class="blacktext">The streams controlled by RTSP may use RTP, but the operation 
+of RTSP does not depend on the transport mechanism used to carry continuous media. 
+The protocol is intentionally similar in syntax and operation to HTTP/1.1 so that 
+extension mechanisms to HTTP can in most cases also be added to RTSP. However, RTSP 
+differs in a number of important aspects from HTTP: </p>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/layers/alaybul1.gif" width="12" height="12" hspace="15" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="georgia,times new roman,times">RTSP introduces a number of new methods and has a different 
+  protocol identifier. <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/layers/alaybul1.gif" width="12" height="12" hspace="15" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="georgia,times new roman,times">An RTSP server needs to maintain state by default in almost 
+  all cases, as opposed to the stateless nature of HTTP. <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/layers/alaybul1.gif" width="12" height="12" hspace="15" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="georgia,times new roman,times">Both an RTSP server and client can issue requests. <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/layers/alaybul1.gif" width="12" height="12" hspace="15" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="georgia,times new roman,times">Data is carried out-of-band by a different protocol. (There 
+  is an exception to this.) <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/layers/alaybul1.gif" width="12" height="12" hspace="15" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="georgia,times new roman,times">RTSP is defined to use ISO 10646 (UTF-8) rather than ISO 
+  8859-1, consistent with current HTML internationalization efforts. <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/layers/alaybul1.gif" width="12" height="12" hspace="15" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="georgia,times new roman,times">The Request-URI always contains the absolute URI. Because 
+  of backward compatibility with a historical blunder, HTTP/1.1 carries only the 
+  absolute path in the request and puts the host name in a separate header field.
+  <!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext">This makes virtual hosting easier, where a single host with 
+one IP address hosts several document trees.</p>
+<p class="blacktext">&nbsp;</p>
+<p><span class="title2">SCTP</span></p>
+<p><span class="blacksmall">RFC2960</span>
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc2960.html" target="_blank">
+<font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc2960.html</font></a>
+</p>
+<p class="blacktext">The Stream Control Transmission Protocol (SCTP) is designed 
+to transport PSTN signalling messages over IP networks, but is capable of broader 
+applications. SCTP is an application-level datagram transfer protocol operating 
+on top of an unreliable datagram service such as UDP. It offers the following services:</p>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/layers/alaybul1.gif" width="12" height="12" hspace="15" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="georgia,times new roman,times">Acknowledged error-free non-duplicated transfer of user 
+  data. <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/layers/alaybul1.gif" width="12" height="12" hspace="15" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="georgia,times new roman,times">Application-level segmentation to conform to discovered 
+  MTU size. <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/layers/alaybul1.gif" width="12" height="12" hspace="15" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="georgia,times new roman,times">Sequenced delivery of user datagrams within multiple streams, 
+  with an option for order-of-arrival delivery of individual datagrams. <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/layers/alaybul1.gif" width="12" height="12" hspace="15" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="georgia,times new roman,times">Optional multiplexing of user datagrams into SCTP datagrams, 
+  subject to MTU size restrictions. <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/layers/alaybul1.gif" width="12" height="12" hspace="15" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="georgia,times new roman,times">Enhanced reliability through support of multi-homing at 
+  either or both ends of the association. <!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext">The design of SCTP includes appropriate congestion avoidance 
+behaviour and resistance to flooding and masquerade attacks. The SCTP datagram is 
+comprised of a common header and chunks. The chunks contain either control information 
+or user data.</p>
+<p class="blacktext">The following is the format of the SCTP header.</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="500" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr>
+    <td class="blacktext" align="middle"><!--mstheme--><font face="georgia,times new roman,times">2 bytes<!--mstheme--></font></td>
+    <td class="blacktext" align="middle"><!--mstheme--><font face="georgia,times new roman,times">2 bytes<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" align="middle"><!--mstheme--><font face="georgia,times new roman,times">Source Port Number<!--mstheme--></font></td>
+    <td class="blacktext" align="middle"><!--mstheme--><font face="georgia,times new roman,times">Destination Port Number<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" align="middle" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">Verification Tag<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" align="middle" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">Adler 32 Checksum<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">Source Port Number</span><br>
+This is the SCTP sender&#39;s port number. It can be used by the receiver, in combination 
+with the source IP Address, to identify the association to which this datagram belongs.</p>
+<p class="blacktext"><span class="title4">Destination Port Number</span><br>
+This is the SCTP port number to which this datagram is destined. The receiving host 
+will use this port number to de-multiplex the SCTP datagram to the correct receiving 
+endpoint/application.</p>
+<p class="blacktext"><span class="title4">Verification Tag</span><br>
+The receiver of this 32 bit datagram uses the Verification tag to identify the association. 
+On transmit, the value of this Verification tag must be set to the value of the 
+Initiate tag received from the peer endpoint during the association initialization.</p>
+<p class="blacktext">For datagrams carrying the INIT chunk, the transmitter sets 
+the Verification tag to all 0&#39;s. If the receiver receives a datagram with an all-zeros 
+Verification tag field, it checks the Chunk ID immediately following the common 
+header. If the chunk type is not INIT or SHUTDOWN ACK, the receiver drops the datagram. 
+For datagrams carrying the SHUTDOWN-ACK chunk, the transmitter sets the Verification 
+tag to the Initiate tag received from the peer endpoint during the association initialization, 
+if known. Otherwise the Verification tag is set to all 0&#39;s.</p>
+<p class="blacktext"><span class="title4">Adler 32 Checksum</span><br>
+This field contains an Adler-32 checksum on this SCTP datagram.</p>
+<p><span class="title3">Chunk Field Descriptions<br>
+<br>
+</span><span class="blacktext">The following is the field format for the chunks 
+transmitted in the SCTP datagram. Each chunk has a chunk ID field, a chunk specific 
+Flag field, a Length field and a Value field.</span></p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="500" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr>
+    <td class="blacktext" align="middle"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td class="blacktext" align="middle"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td class="blacktext" align="middle"><!--mstheme--><font face="georgia,times new roman,times">2 bytes<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" align="middle"><!--mstheme--><font face="georgia,times new roman,times">Chunk ID<!--mstheme--></font></td>
+    <td class="blacktext" align="middle"><!--mstheme--><font face="georgia,times new roman,times">Chunk Flags<!--mstheme--></font></td>
+    <td class="blacktext" align="middle"><!--mstheme--><font face="georgia,times new roman,times">Chunk Length<!--mstheme--></font></td>
+  </tr>
+  <tr height="40">
+    <td class="blacktext" vAlign="top" align="middle" colSpan="3" height="40"><!--mstheme--><font face="georgia,times new roman,times">Chunk 
+    Value (variable)<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">Chunk ID</span><br>
+The type of information contained in the chunk value field. The values of the chunk 
+ID are defined as follows:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="524" border="0">
+  <tr>
+    <td class="blackbold" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">ID ValueChunk Type<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">00000000<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Payload Data (DATA)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">00000001<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Initiation (INIT)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">00000010<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Initiation Acknowledgment (INIT ACK)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">00000011<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Selective Acknowledgment (SACK)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">00000100<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Heartbeat Request (HEARTBEAT)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">00000101<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Heartbeat Acknowledgment (HEARTBEAT ACK)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">00000110<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Abort (ABORT)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">00000111<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Shutdown (SHUTDOWN)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">00001000<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Shutdown Acknowledgment (SHUTDOWN ACK)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">00001001<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Operation Error (ERROR)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">00001010<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">State Cookie (COOKIE)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">00001011<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Cookie Acknowledgment (COOKIE ACK)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">00001100<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Reserved for Explicit Congestion Notification Echo (ECNE)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">00001101<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Reserved for Congestion Window Reduced (CWR)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">00001110 to11111101<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">reserved by IETF<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">11111110<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Vendor-specific Chunk Extensions<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td height="21"><!--mstheme--><font face="georgia,times new roman,times">11111111<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">IETF-defined Chunk Extensions<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">Chunk Flags</span><br>
+The type of chunk flag as defined in the chunk ID defines whether these bits will 
+be used. Their value is generally 0 unless otherwise specified.</p>
+<p class="blacktext"><span class="title4">Chunk Length</span><br>
+The size of the chunk in octets including the Chunk ID, Flags, Length and Value 
+fields.</p>
+<p class="blacktext"><span class="title4">Chunk Value</span><br>
+This field contains the actual information to be transferred in the chunk. This 
+is dependent on the chunk ID. </p>
+<p class="blacktext"><span class="title3">Chunk Types</span><br>
+<br>
+<span class="title4">Initiation (INIT)</span><br>
+This chunk is used to initiate a SCTP association between two endpoints. The INIT 
+chunk contains the following parameters. Unless otherwise noted, each parameter 
+is only be included once in the INIT chunk.</p>
+<!--mstheme--></font><table class="blacktext" height="0%" cellSpacing="0" cellPadding="0" width="349" border="0">
+  <tr class="blackbold">
+    <td><!--mstheme--><font face="georgia,times new roman,times">Fixed Parameters<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Status<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Initiate Tag<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Mandatory<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Receiver Window Credit<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Mandatory<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td height="7%"><!--mstheme--><font face="georgia,times new roman,times">Number of Outbound Streams<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Mandatory<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td height="7%"><!--mstheme--><font face="georgia,times new roman,times">Number of Inbound Streams<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Mandatory<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td height="7%"><!--mstheme--><font face="georgia,times new roman,times">Initial TSN<br>
+&nbsp;<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Mandatory<!--mstheme--></font></td>
+  </tr>
+  <tr class="blackbold" vAlign="bottom">
+    <td height="31"><!--mstheme--><font face="georgia,times new roman,times">Variable Parameters<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Status<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td height="7%"><!--mstheme--><font face="georgia,times new roman,times">IPv4 Address/Port<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Optional<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td height="7%"><!--mstheme--><font face="georgia,times new roman,times">IPv6 Address/Port<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Optional<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td height="7%"><!--mstheme--><font face="georgia,times new roman,times">Cookie Preservative<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Optional<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td height="7%"><!--mstheme--><font face="georgia,times new roman,times">Reserved For ECN Capable<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Optional<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td height="7%"><!--mstheme--><font face="georgia,times new roman,times">Host Name Address<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Optional<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Supported Address Types<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Optional<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td height="0%"><!--mstheme--><font face="georgia,times new roman,times">&nbsp;<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td height="9%"><!--mstheme--><font face="georgia,times new roman,times">&nbsp;<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">&nbsp;<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">Initiate Acknowledgement (INIT ACK)</span><font face="Arial"><span class="redsmall"><br>
+</span></font><span class="blacktext">The INIT ACK chunk is used to acknowledge 
+the initiation of a SCTP association. The parameter part of INIT ACK is formatted 
+similarly to the INIT chunk. It uses two extra variable parameters: The Responder 
+Cookie and the Unrecognized Parameter.</span></p>
+<p class="blacktext"><span class="title4">Selective Acknowledgement (SACK)</span><br>
+This chunk is sent to the remote endpoint to acknowledge received Data chunks and 
+to inform the remote endpoint of gaps in the received subsequences of Data chunks 
+as represented by their TSNs.</p>
+<p class="blacktext">The selective acknowledgement chunk contains the highest consecutive 
+TSN ACK and Rcv Window Credit (rwnd) parameters. By definition, the value of the 
+highest consecutive TSN ACK parameter is the last TSN received at the time the Selective 
+ACK is sent, before a break in the sequence of received TSNs occurs; the next TSN 
+value following this one has not yet been received at the reporting end. This parameter 
+therefore acknowledges receipt of all TSNs up to and including the value given.</p>
+<p class="blacktext">The Selective ACK also contains zero or more fragment reports. 
+Each fragment report acknowledges a sub-sequence of TSNs received following a break 
+in the sequence of received TSNs. By definition, all TSNs acknowledged by fragment 
+reports are higher than the value of the Highest Consecutive TSN ACK.</p>
+<p class="blacktext"><span class="title4">Heartbeat Request (HEARTBEAT)</span><br>
+An endpoint should send this chunk to its peer endpoint of the current association 
+to probe the reachability of a particular destination transport address defined 
+in the present association. The parameter fields contain the time values.</p>
+<p class="blacktext"><span class="title4">Heartbeat Acknowledgement (HEARTBEAT ACK)</span><br>
+An endpoint should send this chunk to its peer endpoint as a response to a Heartbeat 
+Request. The parameter field contains the time values.</p>
+<p class="blacktext"><span class="title4">Abort Association (ABORT)</span><br>
+The Abort Association chunk is sent to the peer of an association to terminate the 
+association. The Abort chunk may contain cause parameters to inform the receiver 
+the reason for the abort. Data chunks are not bundled with the abort, control chunks 
+may be bundled with an abort, but must be placed before the abort in the SCTP datagram 
+or they will be ignored.</p>
+<p class="blacktext"><span class="title4">SHUTDOWN</span><br>
+An endpoint in an association uses this chunk to initiate a graceful termination 
+of the association with its peer.</p>
+<p class="blacktext"><span class="title4">Shutdown Acknowledgement (SHUTDOWN ACK)</span><br>
+This chunk is used to acknowledge the receipt of the SHUTDOWN chunk at the completion 
+of the shutdown process. The SHUTDOWN ACK chunk has no parameters.</p>
+<p class="blacktext"><span class="title4">Operation Error (ERROR)</span><br>
+This chunk is sent to the other endpoint in the association to notify certain error 
+conditions. It contains one or more error causes.</p>
+<p class="blacktext"><span class="title4">State Cookie (COOKIE)</span><br>
+This chunk is used only during the initialization of an association. It is sent 
+by the initiator of an association to its peer to complete the initialization process. 
+This chunk precedes any Data chunk sent within the association, but may be bundled 
+with one or more Data chunks in the same datagram.</p>
+<p class="blacktext"><span class="title4">Cookie Acknowledgement (COOKIE ACK)</span><br>
+This chunk is used only during the initialization of an association. It is used 
+to acknowledge the receipt of a COOKIE chunk. This chunk precedes any Data chunk 
+sent within the association, but may be bundled with one or more Data chunks in 
+the same SCTP datagram.</p>
+<p class="blacktext"><span class="title4">Payload Data (DATA)</span><br>
+This contains the user data.</p>
+<p class="blacktext"><span class="title4">Vendor Specific Chunk Extensions</span><br>
+This chunk type is available to allow vendors to support their own extended data 
+formats not defined by the IETF. It must not affect the operation of SCTP. Endpoints 
+not equipped to interpret the vendor-specific chunk sent by a remote endpoint must 
+ignore it. Endpoints that do not receive desired vendor specific information should 
+make an attempt to operate without it, although they may do so (and report they 
+are doing so) in a degraded mode.</p>
+<p class="blacktext">&nbsp;</p>
+<p class="title2">SLP</p>
+<p><font size="1"><span class="blacksmall">RFC 2165 </span></font><br>
+<br>
+<span class="blacktext">The Service Location Protocol (SLP) provides a scalable 
+framework for the discovery and selection of network services. Using this protocol, 
+computers using the Internet no longer need so much static configuration for network 
+services for network-based applications. This is especially important as computers 
+become more portable and users less tolerant or able to fulfill the demands of network 
+system administration. <br>
+<br>
+Traditionally, users find services by using the name of a network host (a human 
+readable text string), which is an alias for a network address. The Service Location 
+Protocol eliminates the need for a user to know the name of a network host supporting 
+a service. Rather, the user names the service and supplies a set of attributes, 
+which describe the service. The Service Location Protocol allows the user to bind 
+this description to the network address of the service. <br>
+<br>
+Service Location provides a dynamic configuration mechanism for applications in 
+local area networks. It is not a global resolution system for the entire Internet; 
+rather it is intended to serve enterprise networks with shared services. Applications 
+are modeled as clients that need to find servers attached to the enterprise network 
+at a possibly distant location. For cases where there are many different clients 
+and/or services available, the protocol is adapted to make use of nearby Directory 
+Agents that offer a centralized repository for advertised services. The basic operation 
+in Service Location is that a client attempts to discover the location for a service. 
+In small installations, each service is configured to respond individually to each 
+client. In larger installations, service will register their services with one or 
+more directory agents and clients contact the directory agent to fulfill request 
+for service location information. This is intended to be similar to URL specifications 
+and make user of URL technology.<br>
+<br>
+The header is used in all the SLP messages </span></p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="75%" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr bgColor="#ffffff">
+    <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <span class="blacktext">2 bytes</span></div>
+    <!--mstheme--></font></td>
+    <td width="50%"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <span class="blacktext">2 bytes</span></div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <span class="blacktext">Version</span></div>
+    <!--mstheme--></font></td>
+    <td width="25%"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <span class="blacktext">Function</span></div>
+    <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <span class="blacktext">Length</span></div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <span class="blacktext">O M U A F rsvd</span></div>
+    <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <span class="blacktext">Dialect</span></div>
+    <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <span class="blacktext">Language Code</span></div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <span class="blacktext">Char encoding</span></div>
+    <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <span class="blacktext">XID</span></div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr bgColor="#ffffff">
+    <td colSpan="3"><!--mstheme--><font face="georgia,times new roman,times">
+    <div class="blackitalic" align="center">
+      SLP header structure</div>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">Version</span><span class="blacktext"><br>
+The current version is version 1</span></p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="100%" border="0">
+  <tr>
+    <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times"><span class="title4">Function</span><span class="title3"><br>
+    </span><span class="blacktext">The function field describes the operation of 
+    the Service location datagram. The following message types exist:</span><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="18%"><!--mstheme--><font face="georgia,times new roman,times"><span class="blacktext">Function</span><!--mstheme--></font></td>
+    <td width="82%"><!--mstheme--><font face="georgia,times new roman,times"><span class="blacktext">Message Type </span><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times"><span class="blacktext">1</span><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times"><span class="blacktext">Service Request</span><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times"><span class="blacktext">2 </span><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times"><span class="blacktext">Service Reply</span><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times"><span class="blacktext">3 </span><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times"><span class="blacktext">Service Registration</span><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times"><span class="blacktext">4 </span><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times"><span class="blacktext">Service Deregister</span><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times"><span class="blacktext">5 </span><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times"><span class="blacktext">Service Acknowledge</span><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times"><span class="blacktext">6 </span><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times"><span class="blacktext">Attribute Request</span><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times"><span class="blacktext">7 Attribute Reply</span><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times"><span class="blacktext">8 </span><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times"><span class="blacktext">DA Advertisement </span><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times"><span class="blacktext">9 </span><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times"><span class="blacktext">Service Type Request </span><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times"><span class="blacktext">10 </span><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times"><span class="blacktext">Service Type Reply</span><!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">Length</span><span class="blacktext"><br>
+Number of bytes in the message including the Service location header.<br>
+<br>
+</span><span class="title4">O </span><span class="blacktext"><br>
+The overflow bit.<br>
+<br>
+</span><span class="title4">M</span><span class="blacktext"><br>
+The monolingual bit.<br>
+</span><span class="title4"><br>
+U</span><span class="blacktext"><br>
+URL Authentication bit present.<br>
+<br>
+</span><span class="title4">A</span><span class="blacktext"><br>
+Attribute authentication bit present.<br>
+<br>
+</span><span class="title4">F</span><span class="blacktext"><br>
+The F bit is set. If the F bit is set in a Service Acknowledgement, the directory 
+agent has registered the service as a new entry.<br>
+<br>
+</span><span class="title4">Rsvd</span><span class="blacktext"><br>
+These bits are reserved and must have a value of 0.<br>
+<br>
+</span><span class="title4">Dialect</span><span class="blacktext"><br>
+To be use by future versions of the SLP. Must be set to zero.<br>
+<br>
+</span><span class="title4">Language Code</span><span class="blacktext"><br>
+The language encoded in this field indicates the language in which the remainder 
+of the message should be interpreted.<br>
+<br>
+</span><span class="title4">Character Encoding</span><span class="blacktext"><br>
+The characters making up strings within the remainder of this message may be encoded 
+in any standardized encoding <br>
+</span><span class="title4"><br>
+Transaction Identifier (XID)</span><span class="blacktext"><br>
+Allows matching replies to individual requests.</span></p>
+<p>&nbsp;</p>
+<p class="titleprot"><span class="title2">SMPP</span></p>
+<p class="blacktext">SMPP Developer’s Forum, SMPP Protocol Specification v3.4, 10/12/1999<br>
+<br>
+The Short Message Peer to Peer (SMPP) protocol is designed to provide a flexible 
+data communications interface for transfer of short message data between a Message 
+Center such as a Short Message Service Center (SMSC), GSM Unstructured Supplementary 
+Services Data (USSD) Server or other type of Message Center, and an SMS application 
+system such as a WAP Proxy Server, Email Gateway or other Messaging Gateway. <br>
+The SMPP PDU format is as follows: </p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="553" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr align="middle">
+    <td colSpan="5"><!--mstheme--><font face="georgia,times new roman,times">SMPP PDU<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">PDU Header (mandatory)<!--mstheme--></font></td>
+    <td width="113"><!--mstheme--><font face="georgia,times new roman,times">PDU Body (Optional)<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacksmall" align="middle">
+    <td width="96"><!--mstheme--><font face="georgia,times new roman,times">command<br>
+    length <!--mstheme--></font></td>
+    <td width="93"><!--mstheme--><font face="georgia,times new roman,times">command<br>
+    id <br>
+&nbsp;<!--mstheme--></font></td>
+    <td width="96"><!--mstheme--><font face="georgia,times new roman,times">command<br>
+    status <!--mstheme--></font></td>
+    <td width="98"><!--mstheme--><font face="georgia,times new roman,times">sequence <br>
+    number <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">PDU Body<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td><!--mstheme--><font face="georgia,times new roman,times">4 octets<!--mstheme--></font></td>
+    <td colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">Length=(Command Length valueb - 4) octects<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle" bgColor="#ffffff">
+    <td colSpan="5"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <span class="blackitalic">SMPP PDU format</span>
+    </div>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">Command length</span><br>
+Defines the total octet length of the SMPP PDU packet, including the length field. 
+The Command Length field is 4 octets long.</p>
+<p class="blacktext"><span class="title4">Command ID</span><br>
+Identifies the particular SMPP PDU, e.g., submit_sm, query_sm, etc. The Command 
+ID field is 4 octets long. The following is a list of possible Command ID values:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="0" width="75%" border="0">
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">
+    <p class="blacktext">0x80000000</p>
+    <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">generic_nack<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x00000001 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">bind_receiver<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x80000001 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">bind_receiver_resp<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x00000002 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">bind_transmitter<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x80000002 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">bind_transmitter_resp<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x00000003<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">query_sm<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x80000003<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">query_sm_resp<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x00000004<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">submit_sm<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x80000004 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">submit_sm_resp<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x00000005<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">deliver_sm<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x80000005<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">deliver_sm_resp<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x00000006 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">unbind<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x80000006 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">unbind_resp<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x00000007 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">replace_sm<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x80000007 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">replace_sm_resp<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x00000008<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">cancel_sm<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x80000008 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">cancel_sm_resp<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x00000009<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">bind_transceiver<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x80000009 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">bind_transceiver_resp<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0000000B <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">outbind<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x00000015 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">enquire_link<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x80000015 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">enquire_link_resp<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x00000021<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">submit_multi<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x80000021 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">submit_multi_resp<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x00000102<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">alert_notification<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x00000103<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">data_sm<!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x80000103 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">data_sm_resp<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">Command status</span><br>
+Indicates the success or failure of an SMPP request. It is relevant only in the 
+SMPP response PDU and it must contain a NULL value in an SMPP request PDU. The Command 
+Status field is 4 octets long.</p>
+<p class="blacktext"><span class="title4">Sequence number</span><br>
+Contains a sequence number which allows SMPP requests and responses to be associated 
+for correlation purposes. The use of sequence numbers for message correlation allows 
+SMPP PDUs to be exchanged asynchronously. The Sequence Number field is 4 octets 
+long.</p>
+<p class="blacktext"><span class="title4">Mandatory Parameters</span><br>
+Following the header is a set of mandatory parameters, corresponding to the SMPP 
+PDU defined in the Command ID field.</p>
+<p class="blacktext"><span class="title4">Optional Parameters</span><br>
+Optional parameters corresponding to the SMPP PDU defined in the Command ID field, 
+and included as required. Each optional parameter has the following structure:</p>
+<p class="blacktext"><span class="title4">Tag</span><br>
+A field (2 octets long) that uniquely identifies the particular optional parameter 
+in question. The following is a list of possible Tag values:</p>
+<!--mstheme--></font><table class="blacktext" height="743" cellSpacing="0" cellPadding="0" width="335" border="0">
+  <tr>
+    <td width="99"><!--mstheme--><font face="georgia,times new roman,times">0x0005 <!--mstheme--></font></td>
+    <td width="236"><!--mstheme--><font face="georgia,times new roman,times">dest_addr_subunit<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0006 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">dest_network_type<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0007<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">dest_bearer_type<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0008<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">dest_telematics_id<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x000D<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">source_addr_subunit<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x000E<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">source_network_type<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x000F <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">source_bearer_type<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0010 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">source_telematics_id<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0017<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">qos_time_to_live<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td height="20"><!--mstheme--><font face="georgia,times new roman,times">0x0019<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">payload_type<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td height="20"><!--mstheme--><font face="georgia,times new roman,times">0x001D <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">additional_status_info_text<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td height="17"><!--mstheme--><font face="georgia,times new roman,times">0x001E<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">receipted_message_id<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td height="19"><!--mstheme--><font face="georgia,times new roman,times">0x0030<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">ms_msg_wait_facilities<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0201<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">privacy_indicator<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0202<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">source_subaddress<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0203 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">dest_subaddress<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0204 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">user_message_reference<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0205 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">user_response_code<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x020A <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">source_port<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x020B<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">destination_port<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x020C <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">sar_msg_ref_num<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x020D <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">language_indicator<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x020E<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">sar_total_segments<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x020F<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">sar_segment_seqnum<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0210 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">SC_interface_version<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0302 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">callback_num_pres_ind<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0303 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">callback_num_atag<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0304 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">number_of_messages<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0381 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">callback_num<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0420 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">dpf_result<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">&nbsp;<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0421 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">set_dpf<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0422 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">ms_availability_status<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0423 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">network_error_code<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0424 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">message_payload<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0425 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">delivery_failure_reason<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0426 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">more_messages_to_send <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0427 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">message_state<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">0x0501 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">ussd_service_op<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td height="19"><!--mstheme--><font face="georgia,times new roman,times">0x1201 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">display_time<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td height="19"><!--mstheme--><font face="georgia,times new roman,times">0x1203 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">sms_signal<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td height="19"><!--mstheme--><font face="georgia,times new roman,times">0x1204 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">ms_validity<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td height="19"><!--mstheme--><font face="georgia,times new roman,times">0x130C <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">alert_on_message_delivery<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td height="19"><!--mstheme--><font face="georgia,times new roman,times">0x1380 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">its_reply_type<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td height="19"><!--mstheme--><font face="georgia,times new roman,times">0x1383 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">its_session_info<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">Length</span><br>
+Indicates the length (in octets) of the Value field. The Length field is 2 octets 
+long.</p>
+<p class="blacktext"><span class="title4">Value</span><br>
+The actual data of the optional parameter.</p>
+<p class="blacktext">&nbsp;</p>
+<p><span class="title2">SMTP</span></p>
+<p class="blacksmall">RFC821
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc821.html" target="window2">
+<u><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc821.html</font></u></a></p>
+<p class="blacktext">IETF RFC821 defines the Simple Mail Transfer Protocol (SMTP) 
+which is a mail service modeled on the FTP file transfer service. SMTP transfers 
+mail messages between systems and provides notification regarding incoming mail.
+</p>
+<p><span class="title3"><font face="Arial,Helvetica,sans-serif">Commands</font></span><font face="Arial,Helvetica,sans-serif"><span class="bluebolditalic"><br>
+<br>
+</span></font><span class="blacktext">SMTP commands are ASCII messages sent between 
+SMTP hosts. Possible commands are as follows:</span></p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="494" border="0">
+  <tr class="blackbold">
+    <td vAlign="top" width="159"><!--mstheme--><font face="georgia,times new roman,times">Command <!--mstheme--></font></td>
+    <td vAlign="top" width="327"><!--mstheme--><font face="georgia,times new roman,times">Description <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="159"><!--mstheme--><font face="georgia,times new roman,times">DATA <!--mstheme--></font></td>
+    <td vAlign="top" width="327"><!--mstheme--><font face="georgia,times new roman,times">Begins message composition. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="159"><!--mstheme--><font face="georgia,times new roman,times">EXPN &lt;string&gt; <!--mstheme--></font></td>
+    <td vAlign="top" width="327"><!--mstheme--><font face="georgia,times new roman,times">Returns names on the specified mail list. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="159"><!--mstheme--><font face="georgia,times new roman,times">HELO &lt;domain&gt; <!--mstheme--></font></td>
+    <td vAlign="top" width="327"><!--mstheme--><font face="georgia,times new roman,times">Returns identity of mail server. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="159"><!--mstheme--><font face="georgia,times new roman,times">HELP &lt;command&gt; <!--mstheme--></font></td>
+    <td vAlign="top" width="327"><!--mstheme--><font face="georgia,times new roman,times">Returns information on the specified command.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="159"><!--mstheme--><font face="georgia,times new roman,times">MAIL FROM &lt;host&gt; <!--mstheme--></font></td>
+    <td vAlign="top" width="327"><!--mstheme--><font face="georgia,times new roman,times">Initiates a mail session from host. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="159"><!--mstheme--><font face="georgia,times new roman,times">NOOP <!--mstheme--></font></td>
+    <td vAlign="top" width="327"><!--mstheme--><font face="georgia,times new roman,times">Causes no action, except acknowledgement from server.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="159"><!--mstheme--><font face="georgia,times new roman,times">QUIT <!--mstheme--></font></td>
+    <td vAlign="top" width="327"><!--mstheme--><font face="georgia,times new roman,times">Terminates the mail session. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="159"><!--mstheme--><font face="georgia,times new roman,times">RCPT TO &lt;user&gt; <!--mstheme--></font></td>
+    <td vAlign="top" width="327"><!--mstheme--><font face="georgia,times new roman,times">Designates who receives mail. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="159"><!--mstheme--><font face="georgia,times new roman,times">RSET <!--mstheme--></font></td>
+    <td vAlign="top" width="327"><!--mstheme--><font face="georgia,times new roman,times">Resets mail connection. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="159"><!--mstheme--><font face="georgia,times new roman,times">SAML FROM &lt;host&gt; <!--mstheme--></font></td>
+    <td vAlign="top" width="327"><!--mstheme--><font face="georgia,times new roman,times">Sends mail to user terminal and mailbox. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="159"><!--mstheme--><font face="georgia,times new roman,times">SEND FROM &lt;host&gt; <!--mstheme--></font></td>
+    <td vAlign="top" width="327"><!--mstheme--><font face="georgia,times new roman,times">Sends mail to user terminal. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="159"><!--mstheme--><font face="georgia,times new roman,times">SOML FROM &lt;host&gt; <!--mstheme--></font></td>
+    <td vAlign="top" width="327"><!--mstheme--><font face="georgia,times new roman,times">Sends mail to user terminal or mailbox. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="159"><!--mstheme--><font face="georgia,times new roman,times">TURN <!--mstheme--></font></td>
+    <td vAlign="top" width="327"><!--mstheme--><font face="georgia,times new roman,times">Switches role of receiver and sender. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="159"><!--mstheme--><font face="georgia,times new roman,times">VRFY &lt;user&gt; <!--mstheme--></font></td>
+    <td vAlign="top" width="327"><!--mstheme--><font face="georgia,times new roman,times">Verifies the identity of a user. <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title3">Messages<br>
+<br>
+</span><span class="blacktext">SMTP response messages consist of a response code 
+followed by explanatory text, as follows:</span></p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="469" border="0">
+  <tr class="blacktext">
+    <td class="blackbold" vAlign="top" width="105"><!--mstheme--><font face="georgia,times new roman,times">Response Code <!--mstheme--></font></td>
+    <td class="blackbold" vAlign="top" width="356"><!--mstheme--><font face="georgia,times new roman,times">Explanatory Text <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="105"><!--mstheme--><font face="georgia,times new roman,times">211 <!--mstheme--></font></td>
+    <td vAlign="top" width="356"><!--mstheme--><font face="georgia,times new roman,times">(Response to system status or help request).
+    <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="105"><!--mstheme--><font face="georgia,times new roman,times">214 <!--mstheme--></font></td>
+    <td vAlign="top" width="356"><!--mstheme--><font face="georgia,times new roman,times">(Response to help request). <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="105"><!--mstheme--><font face="georgia,times new roman,times">220 <!--mstheme--></font></td>
+    <td vAlign="top" width="356"><!--mstheme--><font face="georgia,times new roman,times">Mail service ready. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="105"><!--mstheme--><font face="georgia,times new roman,times">221 <!--mstheme--></font></td>
+    <td vAlign="top" width="356"><!--mstheme--><font face="georgia,times new roman,times">Mail service closing connection. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="105"><!--mstheme--><font face="georgia,times new roman,times">250 <!--mstheme--></font></td>
+    <td vAlign="top" width="356"><!--mstheme--><font face="georgia,times new roman,times">Mail transfer completed. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="105"><!--mstheme--><font face="georgia,times new roman,times">251 <!--mstheme--></font></td>
+    <td vAlign="top" width="356"><!--mstheme--><font face="georgia,times new roman,times">User not local, forward to &lt;path&gt;. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="105"><!--mstheme--><font face="georgia,times new roman,times">354 <!--mstheme--></font></td>
+    <td vAlign="top" width="356"><!--mstheme--><font face="georgia,times new roman,times">Start mail message, end with &lt;CRLF&gt;&lt;CRLF&gt;. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="105"><!--mstheme--><font face="georgia,times new roman,times">421 <!--mstheme--></font></td>
+    <td vAlign="top" width="356"><!--mstheme--><font face="georgia,times new roman,times">Mail service unavailable. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="105"><!--mstheme--><font face="georgia,times new roman,times">450 <!--mstheme--></font></td>
+    <td vAlign="top" width="356"><!--mstheme--><font face="georgia,times new roman,times">Mailbox unavailable. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="105"><!--mstheme--><font face="georgia,times new roman,times">451 <!--mstheme--></font></td>
+    <td vAlign="top" width="356"><!--mstheme--><font face="georgia,times new roman,times">Local error in processing command. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="105"><!--mstheme--><font face="georgia,times new roman,times">452 <!--mstheme--></font></td>
+    <td vAlign="top" width="356"><!--mstheme--><font face="georgia,times new roman,times">Insufficient system storage. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="105"><!--mstheme--><font face="georgia,times new roman,times">500 <!--mstheme--></font></td>
+    <td vAlign="top" width="356"><!--mstheme--><font face="georgia,times new roman,times">Unknown command. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="105"><!--mstheme--><font face="georgia,times new roman,times">501 <!--mstheme--></font></td>
+    <td vAlign="top" width="356"><!--mstheme--><font face="georgia,times new roman,times">Bad parameter. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="105"><!--mstheme--><font face="georgia,times new roman,times">502 <!--mstheme--></font></td>
+    <td vAlign="top" width="356"><!--mstheme--><font face="georgia,times new roman,times">Command not implemented. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="105"><!--mstheme--><font face="georgia,times new roman,times">503 <!--mstheme--></font></td>
+    <td vAlign="top" width="356"><!--mstheme--><font face="georgia,times new roman,times">Bad command sequence. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="105"><!--mstheme--><font face="georgia,times new roman,times">504 <!--mstheme--></font></td>
+    <td vAlign="top" width="356"><!--mstheme--><font face="georgia,times new roman,times">Parameter not implemented. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="105"><!--mstheme--><font face="georgia,times new roman,times">550 <!--mstheme--></font></td>
+    <td vAlign="top" width="356"><!--mstheme--><font face="georgia,times new roman,times">Mailbox not found. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="105"><!--mstheme--><font face="georgia,times new roman,times">551 <!--mstheme--></font></td>
+    <td vAlign="top" width="356"><!--mstheme--><font face="georgia,times new roman,times">User not local, try &lt;path&gt;. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="105"><!--mstheme--><font face="georgia,times new roman,times">552 <!--mstheme--></font></td>
+    <td vAlign="top" width="356"><!--mstheme--><font face="georgia,times new roman,times">Storage allocation exceeded. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="105"><!--mstheme--><font face="georgia,times new roman,times">553 <!--mstheme--></font></td>
+    <td vAlign="top" width="356"><!--mstheme--><font face="georgia,times new roman,times">Mailbox name not allowed. <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext">
+    <td vAlign="top" width="105"><!--mstheme--><font face="georgia,times new roman,times">554 <!--mstheme--></font></td>
+    <td vAlign="top" width="356"><!--mstheme--><font face="georgia,times new roman,times">Mail transaction failed. <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><br>
+&nbsp;</p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="480" border="0">
+  <tr>
+    <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">
+    <a onclick="MM_openBrWindow('ScreenCaptures/smtp.gif','ScreenCaptures','scrollbars=yes,resizable=yes,width=700,height=600')" href="javascript:;">
+    <img src="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/SMTP%20Small.gif" border="0" width="480" height="338"></a><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="purple"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <a href="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/SMTP.gif">
+      Enlarge</a></div>
+    <!--mstheme--></font></td>
+    <td class="purple"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <a href="http://www.radcom.com/Technologies.aspx?BoneId=376&ObjId=-1&=&=&=&staticName1=1&staticName2=" target="_blank">
+      More Details</a></div>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title2">SNMP</span></p>
+<p class="blacksmall">RFC1157
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1157.html" target="window2">
+<u><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc1157.html</font></u></a><font color="blue"><br>
+</font>SNMP Protocol Overview:
+<a href="http://service.baltnet.ru/info/CIE/Topics/108.htm" target="window2"><u>
+<font size="1">http://service.baltnet.ru/info/CIE/Topics/108.htm</font></u></a>
+</p>
+<p class="blacktext">IETF RFCs 1155, 1156, and 1157 define the Simple Network Management 
+Protocol (SNMP). The Internet community developed SNMP to allow diverse network 
+objects to participate in a global network management architecture. Network managing 
+systems can poll network entities implementing SNMP for information relevant to 
+a particular network management implementation. Network management systems learn 
+of problems by receiving traps or change notices from network devices implementing 
+SNMP. </p>
+<p class="blacktext"><span class="title3">SNMP Message Format</span><br>
+<br>
+SNMP is a session protocol which is encapsulated in UDP. The SNMP message format 
+is shown below:</p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="2" width="318" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr class="blacktext" align="middle">
+    <td width="100"><!--mstheme--><font face="georgia,times new roman,times">Version <!--mstheme--></font></td>
+    <td width="100"><!--mstheme--><font face="georgia,times new roman,times">Community <!--mstheme--></font></td>
+    <td width="100"><!--mstheme--><font face="georgia,times new roman,times">PDU <!--mstheme--></font></td>
+  </tr>
+  <tr class="blacktext" align="middle">
+    <td bgColor="#ffffff" colSpan="3"><!--mstheme--><font face="georgia,times new roman,times"><span class="blackitalic">SNMP message format</span>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">Version</span><span class="redsmall"><br>
+</span><span class="blacktext">SNMP version number. Both the manager and agent must 
+use the same version of SNMP. Messages containing different version numbers are 
+discarded without further processing.</span></p>
+<p><span class="title4">Community</span><span class="redsmall"><br>
+</span><span class="blacktext">Community name used for authenticating the manager 
+before allowing access to the agent.</span></p>
+<p><span class="title4">PDU</span><span class="redsmall"><br>
+</span><span class="blacktext">There are five different PDU types: GetRequest, GetNextRequest, 
+GetResponse, SetRequest, and Trap. A general description of each of these is given 
+in the next section.</span></p>
+<p><span class="title3">PDU Format</span><span class="bluebolditalic"><strong><br>
+<br>
+</strong></span><span class="blacktext">The format for GetRequest, GetNext Request, 
+GetResponse and SetRequest PDUs is shown here.</span></p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="400" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr align="middle">
+    <td vAlign="top" width="17%"><!--mstheme--><font face="georgia,times new roman,times">PDU type <!--mstheme--></font></td>
+    <td width="17%"><!--mstheme--><font face="georgia,times new roman,times">Request ID <!--mstheme--></font></td>
+    <td width="17%"><!--mstheme--><font face="georgia,times new roman,times">Error status <!--mstheme--></font></td>
+    <td width="17%"><!--mstheme--><font face="georgia,times new roman,times">Error index <!--mstheme--></font></td>
+    <td width="17%"><!--mstheme--><font face="georgia,times new roman,times">Object 1, value 1 <!--mstheme--></font></td>
+    <td width="17%"><!--mstheme--><font face="georgia,times new roman,times">Object 2, value 2 <!--mstheme--></font></td>
+    <td width="17%"><!--mstheme--><font face="georgia,times new roman,times">… <!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td vAlign="top" bgColor="#ffffff" colSpan="7"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <span class="blackitalic">SNMP PDU format </span>
+    </div>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">PDU type</span><span class="redsmall"><br>
+</span><span class="blacktext">Specifies the type of PDU:</span></p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="0" width="400" border="0">
+  <tr>
+    <td width="10%"><!--mstheme--><font face="georgia,times new roman,times">0<!--mstheme--></font></td>
+    <td width="90%"><!--mstheme--><font face="georgia,times new roman,times">GetRequest.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="10%"><!--mstheme--><font face="georgia,times new roman,times">1<!--mstheme--></font></td>
+    <td width="90%"><!--mstheme--><font face="georgia,times new roman,times">GetNextRequest.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="10%"><!--mstheme--><font face="georgia,times new roman,times">2 <!--mstheme--></font></td>
+    <td width="90%"><!--mstheme--><font face="georgia,times new roman,times">GetResponse.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="10%"><!--mstheme--><font face="georgia,times new roman,times">3<!--mstheme--></font></td>
+    <td width="90%"><!--mstheme--><font face="georgia,times new roman,times">SetRequest.<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">Request ID</span><span class="blacktext"><br>
+Integer field which correlates the manager’s request to the agent’s response.</span></p>
+<p><span class="title4">Error status</span><span class="redsmall"><br>
+</span><span class="blacktext">Enumerated integer type that indicates normal operation 
+or one of five error conditions. The possible values are:</span></p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="0" width="100%" border="0">
+  <tr>
+    <td width="6%"><!--mstheme--><font face="georgia,times new roman,times">0 <!--mstheme--></font></td>
+    <td width="94%"><!--mstheme--><font face="georgia,times new roman,times">noError: Proper manager/agent operation.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="6%"><!--mstheme--><font face="georgia,times new roman,times">1<!--mstheme--></font></td>
+    <td width="94%"><!--mstheme--><font face="georgia,times new roman,times">tooBig: Size of the required GetResponse PDU exceeds a local 
+    limitation<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" width="6%"><!--mstheme--><font face="georgia,times new roman,times">2 <!--mstheme--></font></td>
+    <td width="94%"><!--mstheme--><font face="georgia,times new roman,times">noSuchName: The requested object name does not match the names 
+    available in the relevant MIB View.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" width="6%"><!--mstheme--><font face="georgia,times new roman,times">3 <!--mstheme--></font></td>
+    <td width="94%"><!--mstheme--><font face="georgia,times new roman,times">badValue: A SetRequest contains an inconsistent type, length 
+    and value for the variable.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="6%"><!--mstheme--><font face="georgia,times new roman,times">4<!--mstheme--></font></td>
+    <td width="94%"><!--mstheme--><font face="georgia,times new roman,times">readOnly: Not defined in RFC1157.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="6%"><!--mstheme--><font face="georgia,times new roman,times">5 <!--mstheme--></font></td>
+    <td width="94%"><!--mstheme--><font face="georgia,times new roman,times">genErr: Other errors, which are not explicitly defined, have 
+    occurred.<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">Error index</span><span class="redsmall"><br>
+</span><span class="blacktext">Identifies the entry within the variable bindings 
+list that caused the error.</span></p>
+<p class="blacktext"><span class="title4">Object/value</span><br>
+Variable binding pair of a variable name with its value.</p>
+<p class="blacktext"><span class="title3">Trap PDU Format</span><br>
+<br>
+The format of the Trap PDU is shown below:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="400" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr>
+    <td vAlign="top" width="11%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>PDU type </p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="11%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Enterp </p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="11%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Agent </p>
+    </center><center>
+    <p>addr </p>
+    </center>
+    <p>&nbsp;</p>
+    <!--mstheme--></font></td>
+    <td vAlign="top" width="11%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Gen </p>
+    </center><center>
+    <p>trap </p>
+    </center>
+    <p>&nbsp;</p>
+    <!--mstheme--></font></td>
+    <td vAlign="top" width="11%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Spec </p>
+    </center><center>
+    <p>trap </p>
+    </center>
+    <p>&nbsp;</p>
+    <!--mstheme--></font></td>
+    <td vAlign="top" width="11%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Time </p>
+    </center><center>
+    <p>stamp </p>
+    </center>
+    <p>&nbsp;</p>
+    <!--mstheme--></font></td>
+    <td vAlign="top" width="11%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Obj 1, </p>
+    </center><center>
+    <p>Val 1 </p>
+    </center>
+    <p>&nbsp;</p>
+    <!--mstheme--></font></td>
+    <td vAlign="top" width="11%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>Obj 1, </p>
+    </center><center>
+    <p>Val 1 </p>
+    </center>
+    <p>&nbsp;</p>
+    <!--mstheme--></font></td>
+    <td vAlign="top" width="11%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p>… </p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" bgColor="#ffffff" colSpan="9"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <span class="blackitalic">SNMP trap PDU</span>
+    </div>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">PDU type</span><br>
+Specifies the type of PDU (4=Trap).</p>
+<p class="blacktext"><span class="title4">Enterprise</span><br>
+Identifies the management enterprise under whose registration authority the trap 
+was defined.</p>
+<p class="blacktext"><span class="title4">Agent address</span><br>
+IP address of the agent, used for further identification.</p>
+<p class="blacktext"><span class="title4">Generic trap type</span><br>
+Field describing the event being reported. The following seven values are defined:</p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="96%" border="0">
+  <tr>
+    <td class="blacktext" vAlign="top" width="10%"><!--mstheme--><font face="georgia,times new roman,times">0 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="90%"><!--mstheme--><font face="georgia,times new roman,times">coldStart: Sending protocol entity 
+    has reinitialized, indicating that the agent’s configuration or entity implementation 
+    may be altered.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="10%"><!--mstheme--><font face="georgia,times new roman,times">1<!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="90%"><!--mstheme--><font face="georgia,times new roman,times">warmStart: Sending protocol has 
+    reinitialized, but neither the agent’s configuration nor the protocol entity 
+    implementation has been altered.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="10%"><!--mstheme--><font face="georgia,times new roman,times">2<!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="90%"><!--mstheme--><font face="georgia,times new roman,times">linkDown: A communication link 
+    has failed. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="10%"><!--mstheme--><font face="georgia,times new roman,times">3<!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="90%"><!--mstheme--><font face="georgia,times new roman,times">linkUp: A communication link 
+    has come up.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="10%"><!--mstheme--><font face="georgia,times new roman,times">4<!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="90%"><!--mstheme--><font face="georgia,times new roman,times">authenticationFailure: The agent 
+    has received an improperly authenticated SNMP message from the manager, i.e., 
+    community name was incorrect.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="10%"><!--mstheme--><font face="georgia,times new roman,times">5<!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="90%"><!--mstheme--><font face="georgia,times new roman,times">egpNeighborLoss: An EGP peer 
+    neighbor is down.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="10%"><!--mstheme--><font face="georgia,times new roman,times">6<!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="90%"><!--mstheme--><font face="georgia,times new roman,times">enterpriseSpecific: A non-generic 
+    trap has occurred which is further identified by the Specific Trap Type and 
+    Enterprise fields.<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">Specific trap type</span><br>
+Used to identify a non-generic trap when the Generic Trap Type is enterpriseSpecific.</p>
+<p class="blacktext"><span class="title4">Timestamp</span><br>
+Value of the sysUpTime object, representing the amount of time elapsed between the 
+last (re-)initialization and the generation of that Trap.</p>
+<p class="blacktext"><span class="title4">Object/value</span><br>
+Variable binding pair of a variable name with its value.</p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="480" border="0">
+  <tr>
+    <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">
+    <a onclick="MM_openBrWindow('ScreenCaptures/snmp.gif','ScreenCaptures','scrollbars=yes,resizable=yes,width=700,height=600')" href="javascript:;">
+    <img src="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/SNMP%20Small.gif" border="0" width="480" height="338"></a><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="purple"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <a href="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/SNMP.gif">
+      Enlarge</a></div>
+    <!--mstheme--></font></td>
+    <td class="purple"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <a href="http://www.radcom.com/Technologies.aspx?BoneId=376&ObjId=-1&=&=&=&staticName1=1&staticName2=" target="_blank">
+      More Details</a></div>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title2">SOCKS V5</span></p>
+<p class="blacksmall">ftp://ftp.isi.edu/in-notes/rfc1928.txt</p>
+<p class="blacktext">This protocol provides a framework for client-server applications 
+in both the TCP and UDP domains to conveniently and securely use the services of 
+a network firewall. The protocol is conceptually a &quot;shim-layer&quot; between the application 
+layer and the transport layer, and as such does not provide network layer gateway 
+services, such as forwarding of ICMP messages. SOCKS Version 4 provides unsecured 
+firewall traversal for TCP-based client-server applications, including TELNET, FTP, 
+and protocols such as HTTP, WAIS and GOPHER. This version of SOCKS extends the SOCKS 
+Version 4 model to include UDP, and extends the framework to include provisions 
+for generalized strong authentication schemes. It also adapts the addressing scheme 
+to encompass domain-name and V6 IP addresses.</p>
+<p class="blacktext">The implementation of the SOCKS protocol typically involves 
+the recompilation or relinking of TCP-based client applications to use the appropriate 
+encapsulation routines in the SOCKS library.<br>
+<br>
+<span class="title3">Protocol Structure for TCP-based Clients</span><br>
+<br>
+Version identifier/method selection message:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="314" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr align="middle" bgColor="#ffffff">
+    <td><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">1-225 bytes<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td><!--mstheme--><font face="georgia,times new roman,times">Version<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">NMethods<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Methods<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">Version</span><br>
+The version is 05.</p>
+<p class="blacktext"><span class="title4">Nmethod</span><br>
+The NMETHODS field contains the number of method identifier octets that appear in 
+the METHODS field.</p>
+<p class="blacktext">The method selection message:</p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="2" width="39%" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr bgColor="#ffffff">
+    <td class="blacktext" align="middle" width="47%"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td class="blacktext" align="middle" width="53%"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" align="middle" width="47%"><!--mstheme--><font face="georgia,times new roman,times">Version<!--mstheme--></font></td>
+    <td class="blacktext" align="middle" width="53%"><!--mstheme--><font face="georgia,times new roman,times">Method<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">Methods</span><br>
+Possible values for methods are:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="0" width="288" border="0">
+  <tr>
+    <td width="55"><!--mstheme--><font face="georgia,times new roman,times">00&nbsp;&nbsp; <!--mstheme--></font></td>
+    <td width="223"><!--mstheme--><font face="georgia,times new roman,times">No authentication required<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">01&nbsp;&nbsp; <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">GSSAPI<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">02&nbsp; <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Username/Password<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">3 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">IANA assigned<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">4 to FE<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Reserved for private methods<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">FF<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">No acceptable methods<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="title3">Socks Request Message</p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="2" width="80%" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr>
+    <td class="blacktext" width="16%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td class="blacktext" width="16%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td class="blacktext" width="17%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">Value of 0<!--mstheme--></font></td>
+    <td class="blacktext" width="17%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td class="blacktext" width="17%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">Variable<!--mstheme--></font></td>
+    <td class="blacktext" width="17%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">2 bytes<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="16%"><!--mstheme--><font face="georgia,times new roman,times">Version<!--mstheme--></font></td>
+    <td class="blacktext" width="16%"><!--mstheme--><font face="georgia,times new roman,times">CMD<!--mstheme--></font></td>
+    <td class="blacktext" width="17%"><!--mstheme--><font face="georgia,times new roman,times">Rsv<!--mstheme--></font></td>
+    <td class="blacktext" width="17%"><!--mstheme--><font face="georgia,times new roman,times">ATYP<!--mstheme--></font></td>
+    <td class="blacktext" width="17%"><!--mstheme--><font face="georgia,times new roman,times">DST addr<!--mstheme--></font></td>
+    <td class="blacktext" width="17%"><!--mstheme--><font face="georgia,times new roman,times">DST Port<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">Version</span><br>
+The Protocol version is 5.</p>
+<p class="blacktext"><span class="title4">CMD</span><br>
+Possible values for the cmnd field are:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="0" width="241" border="0">
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">01&nbsp;&nbsp; <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">CONNECT1<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">02&nbsp; <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">BIND<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">03&nbsp; <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">UDP ASSOCIATE<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">Reserved</span><br>
+The value of this field is 0.</p>
+<p class="blacktext"><span class="title4">ATYP</span><br>
+Address type of the following address:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="0" width="232" border="0">
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">01&nbsp;&nbsp; <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">IP V4 address<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">03 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">DOMAINNAME<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">04 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">IP V6 address: X&#39;04&#39;<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">Destination Address</span><br>
+The destination address desired.</p>
+<p class="blacktext"><span class="title4">Destination Port</span><br>
+The desired destination port in network octet order.</p>
+<p class="title3">Socks Reply Message</p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="2" width="81%" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr bgColor="#ffffff">
+    <td class="blacktext" align="middle" width="16%"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td class="blacktext" align="middle" width="16%"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td class="blacktext" align="middle" width="17%"><!--mstheme--><font face="georgia,times new roman,times">Value of 0<!--mstheme--></font></td>
+    <td class="blacktext" align="middle" width="17%"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td class="blacktext" align="middle" width="17%"><!--mstheme--><font face="georgia,times new roman,times">Variable<!--mstheme--></font></td>
+    <td class="blacktext" align="middle" width="17%"><!--mstheme--><font face="georgia,times new roman,times">2 bytes<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" align="middle" width="16%"><!--mstheme--><font face="georgia,times new roman,times">Version<!--mstheme--></font></td>
+    <td class="blacktext" align="middle" width="16%"><!--mstheme--><font face="georgia,times new roman,times">REP<!--mstheme--></font></td>
+    <td class="blacktext" align="middle" width="17%"><!--mstheme--><font face="georgia,times new roman,times">RSV<!--mstheme--></font></td>
+    <td class="blacktext" align="middle" width="17%"><!--mstheme--><font face="georgia,times new roman,times">ATYP<!--mstheme--></font></td>
+    <td class="blacktext" align="middle" width="17%"><!--mstheme--><font face="georgia,times new roman,times">BND addr<!--mstheme--></font></td>
+    <td class="blacktext" align="middle" width="17%"><!--mstheme--><font face="georgia,times new roman,times">BND Port<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">Version</span><br>
+The protocol version is 5.</p>
+<p class="blacktext"><span class="title4">REP</span><br>
+The reply field.<br>
+Possible values for the reply field are:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="0" width="302" border="0">
+  <tr>
+    <td width="72"><!--mstheme--><font face="georgia,times new roman,times">00<!--mstheme--></font></td>
+    <td width="220"><!--mstheme--><font face="georgia,times new roman,times">Succeeded<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">01&nbsp;&nbsp; <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">&nbsp;&nbsp;&nbsp; General SOCKS server failure<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">02 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Connection not allowed by ruleset<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">03&nbsp; <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Network unreachable<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">04&nbsp; <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Host unreachable<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">05&nbsp;&nbsp; <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Connection refused<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">06<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">TTL expired<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">07 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Command not supported<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">08<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Address type not supported<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">09 to FF <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Unassigned<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">RSV</span><br>
+Reserved, the value of this field is 0.</p>
+<p class="blacktext"><span class="title4">ATYP</span><br>
+Address type of the following address:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="0" width="219" border="0">
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">01 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">IP V4 address<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">03&nbsp; <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">DOMAINNAME<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">04 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">IP V6 address: X&#39;04&#39;<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">BND Address</span><br>
+Server bound address.</p>
+<p class="blacktext"><span class="title4">BND Port</span><br>
+Server bound port in network octet order.</p>
+<p><span class="title3">Protocol Structure for UDP-based Clients<br>
+<br>
+</span><span class="blacktext">Each UDP datagram carries a UDP request header with 
+it:</span></p>
+<p class="title3">UDP Request Header</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="80%" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr>
+    <td class="blacktext" align="middle" width="16%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">2byte<!--mstheme--></font></td>
+    <td class="blacktext" align="middle" width="16%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td class="blacktext" align="middle" width="17%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">1 byte<!--mstheme--></font></td>
+    <td class="blacktext" align="middle" width="17%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">Variable<!--mstheme--></font></td>
+    <td class="blacktext" align="middle" width="17%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">2<!--mstheme--></font></td>
+    <td class="blacktext" align="middle" width="17%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">Variable<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" align="middle" width="16%"><!--mstheme--><font face="georgia,times new roman,times">RSV<!--mstheme--></font></td>
+    <td class="blacktext" align="middle" width="16%"><!--mstheme--><font face="georgia,times new roman,times">FRAG<!--mstheme--></font></td>
+    <td class="blacktext" align="middle" width="17%"><!--mstheme--><font face="georgia,times new roman,times">ATYP<!--mstheme--></font></td>
+    <td class="blacktext" align="middle" width="17%"><!--mstheme--><font face="georgia,times new roman,times">DST Addr<!--mstheme--></font></td>
+    <td class="blacktext" align="middle" width="17%"><!--mstheme--><font face="georgia,times new roman,times">DST Port<!--mstheme--></font></td>
+    <td class="blacktext" align="middle" width="17%"><!--mstheme--><font face="georgia,times new roman,times">Data<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">RSV</span><br>
+This field is reserved. Its value is 0000.</p>
+<p class="blacktext"><span class="title4">FRAG</span><br>
+This field contains the current fragment number, and indicates whether the datagram 
+is one of a number of fragments.</p>
+<p class="blacktext"><span class="title4">ATYP</span><br>
+Address type of the following address:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="0" width="269" border="0">
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">01 <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">IP V4 address<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">03&nbsp;&nbsp; <!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">DOMAINNAME<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="georgia,times new roman,times">04<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">IP V6 address: X&#39;04&#39;<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">DST addr</span><br>
+Desired destination address.</p>
+<p class="blacktext"><span class="title4">DST Port</span><br>
+Desired destination port.</p>
+<p class="blacktext"><span class="title4">Data</span><br>
+User data.</p>
+<p class="blacktext">&nbsp;</p>
+<p class="blacktext"><span class="title2">TACACS+</span></p>
+<p class="blacksmall">draft
+<a href="http://info.internet.isi.edu:80/in-drafts/files/draft-grant-tacacs-02.txt" target="window2">
+<u><font size="1">http://info.internet.isi.edu:80/in-drafts/files/draft-grant-tacacs-02.txt</font></u></a><u><br>
+</u>RFC1492
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1492.html" target="window2">
+<u><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc1492.html</font></u></a>
+</p>
+<p class="blacktext">TACACS+ is a protocol providing access control for routers, 
+network access servers and other networked computing devices via one or more centralized 
+servers. TACACS+ provides separate authentication, authorization and accounting 
+services.<br>
+(Compliant with IETF draft-grant-tacacs-00.txt 10-1996.)</p>
+<p class="blacktext">The format of the header is shown in the following illustration:</p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="2" width="400" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr>
+    <td vAlign="top" width="11%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div class="blacktext" align="right">
+      4
+    </div>
+    <!--mstheme--></font></td>
+    <td vAlign="top" width="12%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div class="blacktext" align="right">
+      8
+    </div>
+    <!--mstheme--></font></td>
+    <td vAlign="top" width="24%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div class="blacktext" align="right">
+      16
+    </div>
+    <!--mstheme--></font></td>
+    <td vAlign="top" width="24%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div class="blacktext" align="right">
+      24
+    </div>
+    <!--mstheme--></font></td>
+    <td vAlign="top" width="29%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div class="blacktext" align="right">
+      32 bits
+    </div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" width="11%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">Major </span></p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="12%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">Minor </span></p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="24%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">Packet type </span></p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="24%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">Sequence no. </span></p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="29%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">Flags </span></p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" colSpan="5"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">Session ID (4 bytes) </span></p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" colSpan="5"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">Length (4 bytes) </span></p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr bgColor="#ffffff">
+    <td vAlign="top" colSpan="5"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <span class="blackitalic">TACACS+ header structure</span>
+    </div>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">Major version</span><br>
+The major TACACS+ version number.</p>
+<p class="blacktext"><span class="title4">Minor version</span><br>
+The minor TACACS+ version number. This is intended to allow revisions to the TACACS+ 
+protocol while maintaining backwards compatibility.</p>
+<p class="blacktext"><span class="title4">Packet type</span><br>
+Possible values are:<br>
+TAC_PLUS_AUTHEN:= 0x01 (Authentication).<br>
+TAC_PLUS_AUTHOR:= 0x02 (Authorization).<br>
+TAC_PLUS_ACCT:= 0x03 (Accounting).</p>
+<p class="blacktext"><span class="title4">Sequence number</span><br>
+The sequence number of the current packet for the current session. The first TACACS+ 
+packet in a session must have the sequence number 1 and each subsequent packet will 
+increment the sequence number by one. Thus clients only send packets containing 
+odd sequence numbers, and TACACS+ daemons only send packets containing even sequence 
+numbers.</p>
+<p class="blacktext"><span class="title4">Flags</span><br>
+This field contains various flags in the form of bitmaps. The flag values signify 
+whether the packet is encrypted.</p>
+<p class="blacktext"><span class="title4">Session ID</span><br>
+The ID for this TACACS+ session.</p>
+<p class="blacktext"><span class="title4">Length</span><br>
+The total length of the TACACS+ packet body (not including the header).</p>
+<p class="blacktext">&nbsp;</p>
+<p class="blacktext"><span class="title2">TELNET</span></p>
+<p class="blacksmall">RFC854
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc854.html" target="window2">
+<u><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc854.html</font></u></a><u><br>
+</u>RFC855
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc855.html" target="window2">
+<u><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc855.html</font></u></a><u><br>
+</u>RFC857
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc857.html" target="window2">
+<u><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc857.html</font></u></a></p>
+<p class="blacktext">TELNET is the terminal emulation protocol of TCP/IP. Modern 
+TELNET is a versatile terminal emulation due to the many options that have evolved 
+over the past twenty years. Options give TELNET the ability to transfer binary data, 
+support byte macros, emulate graphics terminals, and convey information to support 
+centralized terminal management.</p>
+<p class="blacktext">TELNET uses the TCP transport protocol to achieve a virtual 
+connection between server and client. After connecting, TELNET server and client 
+enter a phase of option negotiation that determines the options that each side can 
+support for the connection. Each connected system can negotiate new options or renegotiate 
+old options at any time. In general, each end of the TELNET connection attempts 
+to implement all options that maximize performance for the systems involved.</p>
+<p class="blacktext">In a typical implementation, the TELNET client sends single 
+keystrokes, while the TELNET server can send one or more lines of characters in 
+response. Where the Echo option is in use, the TELNET server echoes all keystrokes 
+back to the TELNET client.</p>
+<p class="blacktext"><span class="title3">Dynamic Mode Negotiation</span></p>
+<p class="blacktext">During the connection, enhanced characteristics other than 
+those offered by the NVT may be negotiated either by the user or the application. 
+This task is accomplished by embedded commands in the data stream. TELNET command 
+codes are one or more octets in length and are preceded by an interpret as command 
+(IAC) character, which is an octet with each bit set equal to one (FF hex). The 
+following are the TELNET command codes:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="0" width="537" border="0">
+  <tr class="blackbold">
+    <td vAlign="top" width="100"><!--mstheme--><font face="georgia,times new roman,times">Commands <!--mstheme--></font></td>
+    <td vAlign="top" noWrap colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">Code No.<br>
+    Dec Hex <!--mstheme--></font></td>
+    <td vAlign="top" width="286"><!--mstheme--><font face="georgia,times new roman,times">Description <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="100"><!--mstheme--><font face="georgia,times new roman,times">data <!--mstheme--></font></td>
+    <td vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">&nbsp;<!--mstheme--></font></td>
+    <td vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">&nbsp;<!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="286"><!--mstheme--><font face="georgia,times new roman,times">All terminal input/output data.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="100"><!--mstheme--><font face="georgia,times new roman,times">End subNeg <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">240 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">FO <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="286"><!--mstheme--><font face="georgia,times new roman,times">End of option subnegotiation 
+    command. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="100"><!--mstheme--><font face="georgia,times new roman,times">No Operation <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">241 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">F1 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="286"><!--mstheme--><font face="georgia,times new roman,times">No operation command. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="100"><!--mstheme--><font face="georgia,times new roman,times">Data Mark <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">242 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">F2 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="286"><!--mstheme--><font face="georgia,times new roman,times">End of urgent data stream.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="100"><!--mstheme--><font face="georgia,times new roman,times">Break <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">243 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">F3 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="286"><!--mstheme--><font face="georgia,times new roman,times">Operator pressed the Break key 
+    or the Attention key. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="100"><!--mstheme--><font face="georgia,times new roman,times">Int process <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">244 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">F4 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="286"><!--mstheme--><font face="georgia,times new roman,times">Interrupt current process.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="100"><!--mstheme--><font face="georgia,times new roman,times">Abort output <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">245 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">F5 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="286"><!--mstheme--><font face="georgia,times new roman,times">Cancel output from current process.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="100"><!--mstheme--><font face="georgia,times new roman,times">You there? <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">246 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">F6 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="286"><!--mstheme--><font face="georgia,times new roman,times">Request acknowledgment. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="100"><!--mstheme--><font face="georgia,times new roman,times">Erase char <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">247 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">F7 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="286"><!--mstheme--><font face="georgia,times new roman,times">Request that operator erase the 
+    previous character. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="100"><!--mstheme--><font face="georgia,times new roman,times">Erase line <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">248 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">F8 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="286"><!--mstheme--><font face="georgia,times new roman,times">Request that operator erase the 
+    previous line. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="100"><!--mstheme--><font face="georgia,times new roman,times">Go ahead! <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">249 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">F9 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="286"><!--mstheme--><font face="georgia,times new roman,times">End of input for half-duplex 
+    connections. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="100"><!--mstheme--><font face="georgia,times new roman,times">SubNegotiate <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">250 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">FA <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="286"><!--mstheme--><font face="georgia,times new roman,times">Begin option subnegotiation.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="100"><!--mstheme--><font face="georgia,times new roman,times">Will Use <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">251 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">FB <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="286"><!--mstheme--><font face="georgia,times new roman,times">Agreement to use the specified 
+    option. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="100"><!--mstheme--><font face="georgia,times new roman,times">Won’t Use <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">252 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">FC <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="286"><!--mstheme--><font face="georgia,times new roman,times">Reject the proposed option.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="100"><!--mstheme--><font face="georgia,times new roman,times">Start use <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">253 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">FD <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="286"><!--mstheme--><font face="georgia,times new roman,times">Request to start using specified 
+    option. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="100"><!--mstheme--><font face="georgia,times new roman,times">Stop Use <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">254 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">FE <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="286"><!--mstheme--><font face="georgia,times new roman,times">Demand to stop using specified 
+    option. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="100"><!--mstheme--><font face="georgia,times new roman,times">IAC <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">255 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">FF <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="286"><!--mstheme--><font face="georgia,times new roman,times">Interpret as command. <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext">Each negotiable option has an ID, which immediately follows 
+the command for option negotiation, that is, IAC, command, option code. Following 
+is a list of TELNET option codes:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="0" width="509" border="0">
+  <tr class="blackbold">
+    <td vAlign="top" noWrap colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">Option ID<br>
+    Dec Hex <!--mstheme--></font></td>
+    <td vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Option Codes <!--mstheme--></font></td>
+    <td vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Description <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">0 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">0 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Binary Xmit <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Allows transmission of binary 
+    data. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">1 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">1 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Echo Data <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Causes server to echo back all 
+    keystrokes. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">2 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">2 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Reconnect <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Reconnects to another TELNET 
+    host. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">3 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">3 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Suppress GA <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Disables Go Ahead! command.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">4 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">4 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Message Sz <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Conveys approximate message size.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">5 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">5 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Opt Status <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Lists status of options. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">6 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">6 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Timing Mark <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Marks a data stream position 
+    for reference. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">7 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">7 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">R/C XmtEcho <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Allows remote control of terminal 
+    printers. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">8 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">8 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Line Width <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Sets output line width. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">9 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">9 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Page Length <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Sets page length in lines.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">10 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">A <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">CR Use <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Determines handling of carriage 
+    returns. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">11 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">B <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Horiz Tabs <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Sets horizontal tabs. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">12 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">C <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Hor Tab Use <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Determines handling of horizontal 
+    tabs. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">13 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">D <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">FF Use <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Determines handling of form feeds.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">14 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">E <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Vert Tabs <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Sets vertical tabs. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">15 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">F <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Ver Tab Use <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Determines handling of vertical 
+    tabs. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">16 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">10 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Lf Use <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Determines handling of line feeds.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">17 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">11 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Ext ASCII <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Defines extended ASCII characters.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">18 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">12 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Logout <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Allows for forced log-off.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">19 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">13 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Byte Macro <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Defines byte macros. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">20 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">14 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Data Term <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Allows subcommands for Data Entry 
+    to be sent. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">21 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">15 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">SUPDUP <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Allows use of SUPDUP display 
+    protocol. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">22 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">16 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">SUPDUP Outp <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Allows sending of SUPDUP output.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">23 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">17 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Send Locate <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Allows terminal location to be 
+    sent. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">24 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">18 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Term Type <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Allows exchange of terminal type 
+    information. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">25 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">19 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">End Record <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Allows use of the End of record 
+    code (0xEF). <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">26 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">1A <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">TACACS ID <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">User ID exchange used to avoid 
+    more than 1 log-in. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">27 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">1B <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Output Mark <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Allows banner markings to be 
+    sent on output. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">28 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">1C <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Term Loc# <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">A numeric ID used to identify 
+    terminals. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">29 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">1D <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">3270 Regime <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Allows emulation of 3270 family 
+    terminals. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">30 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">1E <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">X.3 PAD <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Allows use of X.3 protocol emulation.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">31 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">1F <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Window Size <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Conveys window size for emulation 
+    screen. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">32 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">20 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Term Speed <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Conveys baud rate information.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">33 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">21 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Remote Flow <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Provides flow control (XON, XOFF).
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">34 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">22 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Linemode <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Provides linemode bulk character 
+    transactions. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="33"><!--mstheme--><font face="georgia,times new roman,times">255 <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="32"><!--mstheme--><font face="georgia,times new roman,times">FF <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="99"><!--mstheme--><font face="georgia,times new roman,times">Extended options list <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="329"><!--mstheme--><font face="georgia,times new roman,times">Extended options list. <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><br>
+&nbsp;</p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="480" border="0">
+  <tr>
+    <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">
+    <a onclick="MM_openBrWindow('ScreenCaptures/telnet.gif','ScreenCaptures','scrollbars=yes,resizable=yes,width=700,height=600')" href="javascript:;">
+    <img src="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/Telnet%20Small.gif" border="0" width="480" height="338"></a><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="purple"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <a href="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/Telnet.gif">
+      Enlarge</a></div>
+    <!--mstheme--></font></td>
+    <td class="purple"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <a href="http://www.radcom.com/Technologies.aspx?BoneId=376&ObjId=-1&=&=&=&staticName1=1&staticName2=" target="_blank">
+      More Details</a></div>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title2">WCCP</span></p>
+<p class="blacktext">The Web Cache Coordination Protocol (WCCP) has 2 main functions. 
+The first is to allow a router enabled for transparent redirection to discover, 
+verify, and advertise connectivity to one or more web-caches.</p>
+<p class="blacktext">Transparent redirection is a technique used to deploy web-caching 
+without the need for reconfiguration of web-clients. It involves the interception 
+and redirection of HTTP traffic to one or more web-caches by a router or switch, 
+transparently to the web-client.</p>
+<p class="blacktext">The second function of WCCP is to allow one of the web-caches, 
+the designated web-cache, to dictate how the router distributes redirected traffic 
+across the web-cache farm. It is recommended that the web-cache with the lowest 
+IP address be elected as designated web-cache for a farm.</p>
+<p class="blacktext">Each WCCP protocol packet is carried in a UDP packet with a 
+destination port of 2048.</p>
+<p class="blacktext">&nbsp;Packets can be of the following types; HERE_I_AM, I_SEE_YOU, 
+ASSIGN_BUCKETS.</p>
+<p class="blacktext"><span class="title3">HERE I AM</span><br>
+<br>
+The format of the Here I am message isL</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="362" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr align="middle">
+    <td bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">3 bytes<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td><!--mstheme--><font face="georgia,times new roman,times">Type<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td><!--mstheme--><font face="georgia,times new roman,times">Protocol Version<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td><!--mstheme--><font face="georgia,times new roman,times">Hash revision<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td><!--mstheme--><font face="georgia,times new roman,times">Hash Information (1)<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td height="76"><!--mstheme--><font face="georgia,times new roman,times">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td><!--mstheme--><font face="georgia,times new roman,times">Hash Information (7)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td align="middle" height="18"><!--mstheme--><font face="georgia,times new roman,times">
+    <!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="0" align="left" border="0">
+      <tr>
+        <td><!--mstheme--><font face="georgia,times new roman,times">U<!--mstheme--></font></td>
+      </tr>
+    </table><!--mstheme--><font face="georgia,times new roman,times">
+    <p>Reserved</p>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td><!--mstheme--><font face="georgia,times new roman,times">Received Id.<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">Type</span><br>
+WCCP_HERE_I_AM</p>
+<p class="blacktext"><span class="title4">Protocol Version</span><br>
+This field has a value of 4.</p>
+<p class="blacktext"><span class="title4">Hash Revision</span><br>
+The value of this field is 0.</p>
+<p class="blacktext"><span class="title4">Hash Information</span><br>
+A 256-element bit-vector. A set bit indicates that the corresponding bucket in the 
+Redirection Hash Table is assigned to this web-cache.</p>
+<p class="blacktext"><span class="title4">U</span><br>
+The value of the U flag present in the last WCCP_I_SEE_YOU message received by this 
+cache. Set in first WCCP_HERE_I_AM to indicate that Hash Information is historical.</p>
+<p class="blacktext"><span class="title4">Received ID</span><br>
+The value of the Received ID present in the last WCCP_I_SEE_YOU received by this 
+web-cache.</p>
+<p class="blacktext"><span class="title3">I SEE YOU Message</span><br>
+<br>
+The format of the I SEE YOU message is:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="344" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr>
+    <td align="middle" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">3 bytes<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td align="middle"><!--mstheme--><font face="georgia,times new roman,times">Type<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td align="middle"><!--mstheme--><font face="georgia,times new roman,times">Protocol Version<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td align="middle"><!--mstheme--><font face="georgia,times new roman,times">Change number<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td align="middle"><!--mstheme--><font face="georgia,times new roman,times">Received Id.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td align="middle"><!--mstheme--><font face="georgia,times new roman,times">Number of WCs<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td align="middle" height="55"><!--mstheme--><font face="georgia,times new roman,times">Web-Cache List Entry(0)<br>
+&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td align="middle" height="55"><!--mstheme--><font face="georgia,times new roman,times">Web-Cache List Entry (n) v<br>
+&nbsp;<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">Type</span><br>
+WCCP_I_SEE_YOU</p>
+<p class="blacktext"><span class="title4">Protocol Version</span><br>
+4</p>
+<p class="blacktext"><span class="title4">Change Number</span><br>
+Incremented if a Web-Cache List Entry has been added, removed or its hash information 
+has been modified since the last WCCP_I_SEE_YOU sent by the router.</p>
+<p class="blacktext"><span class="title4">Received ID</span><br>
+Incremented each time the router generates a WCCP_I_SEE_YOU.</p>
+<p class="blacktext"><span class="title4">Number of WCs</span><br>
+Number of Web-Cache List Entry elements in the packet.</p>
+<p class="blacktext"><span class="title4">Web Cached List entry</span><br>
+The Web-Cache List Entry describes a Web-Cache by IP Address and lists the redirection 
+hash table entries assigned to it.</p>
+<p><span class="title3">WCCP ASSIGN BUCKET<br>
+<br>
+</span><span class="blacktext">The format of the WCCP ASSIGN BUCKET message is:
+</span></p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="396" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr align="middle" bgColor="#ffffff">
+    <td colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">3 bytes<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">Type<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">Received ID<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">Number of Web Caches<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">Web Cache 0 IP address<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td colSpan="4" height="55"><!--mstheme--><font face="georgia,times new roman,times">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">Web Cache n IP address<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td width="84"><!--mstheme--><font face="georgia,times new roman,times">Bucket 0<!--mstheme--></font></td>
+    <td width="92"><!--mstheme--><font face="georgia,times new roman,times">Bucket 1<!--mstheme--></font></td>
+    <td width="99"><!--mstheme--><font face="georgia,times new roman,times">Bucket 2<!--mstheme--></font></td>
+    <td width="103"><!--mstheme--><font face="georgia,times new roman,times">bucket 3<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr align="middle">
+    <td><!--mstheme--><font face="georgia,times new roman,times">Bucket 252<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Bucket 253<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">Bucket 254<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="georgia,times new roman,times">bucket 255<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p class="blacktext"><span class="title4">Type</span><br>
+WCCP_ASSIGN_BUCKET</p>
+<p class="blacktext"><span class="title4">Received ID</span><br>
+Value of Received ID in last WCCP_I_SEE_YOU received from router.</p>
+<p class="blacktext"><span class="title4">Number of Web Caches</span><br>
+Number of Web Caches to which redirect traffic can be sent.</p>
+<p class="blacktext"><span class="title4">Web Cache IP address 0-n</span><br>
+IP Addresses of Web-Caches to which redirect traffic can be sent. The position of 
+a Web-Cache&#39;s IP Address in this list is the Web-Cache&#39;s index number. The first 
+entry in the list has an index number of zero.</p>
+<p class="blacktext"><span class="title4">Buckets 0-255</span><br>
+These 256 buckets represent the redirection hash table. The value of each bucket 
+may be 0xFF (Unassigned) or a Web-Cache index number (0-31).</p>
+<p class="blacktext">&nbsp;</p>
+<p class="blacktext"><span class="title2">X-Window</span></p>
+<p class="blacksmall">RFC1013
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1013.html" target="window2">
+<u><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc1013.html</font></u></a></p>
+<p class="blacktext">The X-Window protocol provides a remote windowing interface 
+to distributed network applications. It is an application layer protocol which uses 
+TCP/IP or DECnet protocols for transport. </p>
+<p class="blacktext">The X-Window networking protocol is client-server based, where 
+the server is the control program running on the user workstation and the client 
+is an application running elsewhere on the network. An X-server control program 
+running on a workstation can simultaneously handle display windows for multiple 
+applications, with each application asynchronously updating its window with information 
+carried by the X-Window networking protocol. </p>
+<p class="blacktext">To provide user interaction with remote applications, the X-server 
+program running on the workstation generates events in response to user input such 
+as mouse movement or a keystroke. When multiple applications display, the system 
+sends mouse movements or click events to the application currently highlighted by 
+the mouse pointer. The current input focus selects which application receives keystroke 
+events. In certain cases, applications can also generate events directed at the 
+X-server control program.</p>
+<p><span class="title3">Request and Reply Frames<br>
+<br>
+</span><span class="blacktext">Request and reply frames can use the following commands:</span></p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="0" width="537" border="0">
+  <tr class="blackbold">
+    <td vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">Command <!--mstheme--></font></td>
+    <td vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Description <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">BackRGB <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Background colors listed in red, 
+    green and blue components. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">BackPM <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Pixel map used for the window 
+    background. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">BellPitch <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Bell pitch. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">BellVol <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Bell volume in percent. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">BM <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Bit mask assigned to a drawable 
+    item. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">BordPM <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Border pixel map. Pixel map used 
+    for the window border. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">b <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Border width of the drawable 
+    item. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">Click <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Key click volume in percent.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">Ord <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Click order. Drawable clip order, 
+    as &lt;Unsorted&gt;, &lt;Y-sorted&gt;, &lt;YX-sorted&gt; or &lt;YX-banded&gt;. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">CMap <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Color map. Code representing 
+    the colors in use for a drawable. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">CID <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Context ID. Identifier for a 
+    particular graphics context. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">Cur <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Cursor. Reference code identifying 
+    a specific cursor. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">d <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Depth. Current window depth.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">DD <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Destination drawable. Target 
+    item in a bitmap copy. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">D <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Drawable. Reference code used 
+    to identify a specific window or pixel map. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">Exp <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Exposures. Drawable currently 
+    exposed. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">Fam <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Protocol family in use, as Internet, 
+    DECnet, or CHAOSnet. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">Font <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Reference code used to specify 
+    a font. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">Font(a,d) <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Font ascent/descent. The vertical 
+    bounds of a font. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">ForeRGB <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Foreground colors listed in red, 
+    green, and blue components. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">Fmt <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Format of the current window.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">GC <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Graphics context. Reference code 
+    used to identify a particular graphical definition. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">h <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Height of the drawable item.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">Key <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Key code. Specific key code value.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">KeySym <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Code used to identify the family 
+    of key codes in use. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">MinOp <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">X-Windows minor operation code.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">MajOp <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">X-Windows major operation code.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">N <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Number of drawable items in the 
+    list. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">P <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Parent window. Window that produced 
+    the current window. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">PixMap <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Pixel map. Reference code used 
+    to identify a bitmap region. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">p <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Plane. Bit plane in use. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">PM <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Plane max. Bit plane mask assigned 
+    to a drawable item. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">Prop <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Property. Specified window property.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">SW <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Sibling window. Window produced 
+    from this window. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">SD <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Source drawable. Source item 
+    in a bitmap copy. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">T/O <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Screen saver time out. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">Typ <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Type of current window. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">w <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Width of drawable item. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">W <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Window. Reference code used to 
+    identify a particular window. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">X <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">X-coordinate for a drawable item.
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="80"><!--mstheme--><font face="georgia,times new roman,times">Y <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="449"><!--mstheme--><font face="georgia,times new roman,times">Y-coordinate for a drawable item.
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title3">Event Frames<br>
+<br>
+</span><span class="blacktext">Event frames can have the following commands:</span></p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="0" width="536" border="0">
+  <tr class="blackbold">
+    <td vAlign="top" width="69"><!--mstheme--><font face="georgia,times new roman,times">Command <!--mstheme--></font></td>
+    <td vAlign="top" width="459"><!--mstheme--><font face="georgia,times new roman,times">Description <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="69"><!--mstheme--><font face="georgia,times new roman,times">Btn <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="459"><!--mstheme--><font face="georgia,times new roman,times">Button number pressed. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="69"><!--mstheme--><font face="georgia,times new roman,times">C <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="459"><!--mstheme--><font face="georgia,times new roman,times">Child window associated with 
+    the event. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="69"><!--mstheme--><font face="georgia,times new roman,times">F <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="459"><!--mstheme--><font face="georgia,times new roman,times">Event flags. Set flags display 
+    in upper-case and inactive flags display in lower-case:<br>
+    f,F Input focus applies to the event.<br>
+    s,S Event is on the same screen.&nbsp; <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="69"><!--mstheme--><font face="georgia,times new roman,times">E(x,y) <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="459"><!--mstheme--><font face="georgia,times new roman,times">Event location. The X and Y coordinates 
+    of the event. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="69"><!--mstheme--><font face="georgia,times new roman,times">E <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="459"><!--mstheme--><font face="georgia,times new roman,times">Event window. Window where the 
+    event occurred. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="69"><!--mstheme--><font face="georgia,times new roman,times">Key <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="459"><!--mstheme--><font face="georgia,times new roman,times">Key number. Number associated 
+    with the pressed key. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="69"><!--mstheme--><font face="georgia,times new roman,times">O <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="459"><!--mstheme--><font face="georgia,times new roman,times">Owner of the window associated 
+    with the event. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="69"><!--mstheme--><font face="georgia,times new roman,times">R <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="459"><!--mstheme--><font face="georgia,times new roman,times">Root window associated with the 
+    event. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="69"><!--mstheme--><font face="georgia,times new roman,times">R(x,y) <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="459"><!--mstheme--><font face="georgia,times new roman,times">Root location. X and Y coordinates 
+    of the root position. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" width="69"><!--mstheme--><font face="georgia,times new roman,times">SN <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" width="459"><!--mstheme--><font face="georgia,times new roman,times">Sequence number used to serialize 
+    events. <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<p align="center"><a href="../../../index.html">Home</a> -
+<a href="../index.html">Computers</a> -
+<a href="../IP%20Sub-Netting.htm">IP Sub-Netting</a> -
+<a href="../ISDN%20Tutorial.htm">ISDN Tutorial</a> -
+<a href="../IP%20Addressing%20and%20Subnetting.htm">IP Addressing</a></p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<p align="center"><a href="Page%201.htm">Page 1</a> - <a href="Page%202.htm">Page 
+2</a> - <a href="Page%203.htm">Page 3</a> - <a href="Page%204.htm">Page 4</a> -
+<a href="Page%205.htm">Page 5</a> - <a href="Page%206.htm">Page 6</a> -
+<a href="Page%207.htm">Page 7</a> - <a href="Page%208.htm">Page 8</a> -
+<a href="Page%209.htm">Page 9</a> - <a href="Page%2010.htm">Page 10</a></p>
+
+<!--mstheme--></font></body>
+
+</html>

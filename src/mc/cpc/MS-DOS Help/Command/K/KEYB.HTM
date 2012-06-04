@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>KEYB</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#k">Commands A-M</a>
+    &gt; <a href="../INDEXK.HTM#keyb">Commands K</a>
+    <h1>KEYB</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Starts the KEYB program, which configures a keyboard for a
+    specific language.</p>
+    <p>Use KEYB to configure a keyboard for a language other than
+    United States English. For an introduction to the KEYB program, see
+    the chapter "Customizing for International Use" in the DOS
+    User's Guide.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>At the command prompt, use:</p>
+    <p>KEYB
+    [<a href="#ParameterXx">xx</a>[,[<a
+    href="#ParameterYyy">yyy</a>][,[<a
+    href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path</a>]<a
+    href="#ParameterFilename">filename</a>]]]
+    [<a href="#SwitchE">/E</a>]
+    [<a href="#SwitchId">/ID:nnn</a>]</p>
+
+    <p>In your CONFIG.SYS file, use:</p>
+    <p>INSTALL=[<a
+    href="#ParameterDosDrive">dos-drive:</a>]<a
+    href="#ParameterDosPath">dos-path</a>]KEYB.COM
+    [<a href="#ParameterXx">xx</a>[,[<a
+    href="#ParameterYyy">yyy</a>][,[<a
+    href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path</a>]<a
+    href="#ParameterFilename">filename</a>]]]
+    [<a href="#SwitchE">/E</a>]
+    [<a href="#SwitchId">/ID:nnn</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a name="ParameterPath"></a> path
+      <a name="ParameterFilename"></a>filename
+      <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the location and name of the keyboard definition
+      file. The default filename is KEYBOARD.SYS. If KEYBOARD.SYS is in
+      a directory included in the path, you do not have to specify
+      these parameters.
+      (<a href="../../Version/MSDOS/622.HTM">v6.22</a> includes
+      two keyboard definition files: KEYBOARD.SYS, the default file, and
+      KEYBRD2.SYS, which provides support for keyboards not included in
+      KEYBOARD.SYS. For information about using KEYBRD2.SYS, see the
+      COUNTRY file.)</dd>
+
+      <dt><a name="ParameterDosDrive"></a> dos-drive:
+      (<a name="ParameterDosPath"></a> dos-path
+      <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the location of the KEYB.COM file.</dd>
+
+      <dt><a name="ParameterXx"></a> xx
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the code for a keyboard layout. See the table at
+      the end of this topic for a list of valid values for this
+      parameter.</dd>
+
+      <dt><a name="ParameterYyy"></a> yyy
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the character set (code page). See the table at the
+      end of this topic for a list of valid values for this parameter.
+      If this value is not specified, KEYB uses the current character
+      set.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchE"></a> /E
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies that an enhanced keyboard is installed. Use this
+      switch if you are using an enhanced keyboard with an 8086
+      computer.</dd>
+
+      <dt><a name="SwitchId"></a> /ID:nnn
+      (<a href="../../Version/MSDOS/400.HTM">v4.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the keyboard in use. This switch is valid only for
+      countries that have more than one keyboard layout for the same
+      language (France, Italy, and the United Kingdom). See the
+      table for a list of valid values for nnn.</dd>
+
+    <dd><b>Values for xx, yyy, and nnn</b></dd>
+    <dd>The table shows the valid values for xx, yyy, and nnn
+    for each country or language supported by KEYBOARD.SYS:
+<pre>
+    XX         YYY         NNN
+    Keyboard   Character   Keyboard         Country or
+    <u>layout     set         identification   language</u>
+    <b>be</b>         <b>850</b>, <b>437</b>     <b>120</b>             Belgium
+    <b>br</b>         <b>850</b>, <b>437</b>                     Brazil
+    <b>cf</b>         <b>850</b>, <b>863</b>     <b>058</b>             Canadian-French
+    <b>cz</b>         <b>852</b>, <b>850</b>                     Czechoslovakia (Czech)
+    <b>sl</b>         <b>852</b>, <b>850</b>                     Czechoslovakia (Slovak)
+
+    <b>dk</b>         <b>850</b>, <b>865</b>     <b>159</b>             Denmark
+    <b>su</b>         <b>850</b>, <b>437</b>     <b>153</b>             Finland
+    <b>fr</b>         <b>850</b>, <b>437</b>     <b>120</b>, <b>189</b>        France
+    <b>gr</b>         <b>850</b>, <b>437</b>     <b>129</b>             Germany
+    <b>hu</b>         <b>852</b>, <b>850</b>                     Hungary
+
+    <b>it</b>         <b>850</b>, <b>437</b>     <b>141</b>, <b>142</b>        Italy
+    <b>la</b>         <b>850</b>, <b>437</b>     <b>171</b>             Latin America
+    <b>nl</b>         <b>850</b>, <b>437</b>     <b>143</b>             Netherlands
+    <b>no</b>         <b>850</b>, <b>865</b>     <b>155</b>             Norway
+    <b>pl</b>         <b>852</b>, <b>850</b>                     Poland
+
+    <b>po</b>         <b>850</b>, <b>860</b>     <b>163</b>             Portugal
+    <b>sp</b>         <b>850</b>, <b>437</b>     <b>172</b>             Spain
+    <b>sv</b>         <b>850</b>, <b>437</b>     <b>153</b>             Sweden
+    <b>sf</b>         <b>850</b>, <b>437</b>     <b>150</b>             Switzerland (French)
+    <b>sg</b>         <b>850</b>, <b>437</b>     <b>000</b>             Switzerland (German)
+
+    <b>uk</b>         <b>850</b>, <b>437</b>     <b>166</b>, <b>168</b>        United Kingdom
+    <b>us</b>         <b>850</b>, <b>437</b>     <b>103</b>             United States
+    <b>yu</b>         <b>852</b>, <b>850</b>                     Yugoslavia (Serbo-Croatian)
+    <u>XX         YYY         NNN</u>
+    Keyboard   Character   Keyboard         Country or
+    layout     set         identification   language
+</pre>
+
+    This list includes only keyboards supported by the KEYBOARD.SYS
+    file. For a list of keyboards supported by the KEYBRD2.SYS file,
+    see the COUNTRY file.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about using active and prepared character sets,
+    see the <a href="../C/CHCP.HTM">CHCP</a> command.
+    <br>Replaced the KEYBxx in
+    <a href="../../Version/MSDOS/320.HTM">v3.20</a>.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Display">Displaying the current keyboard layout and character set</a></li>
+      <li><a href="#Implement">Implementing Keyb</a></li>
+      <li><a href="#Character">Installing character sets</a></li>
+      <li><a href="#Switching">Switching between Keyb settings</a></li>
+    </ul>
+
+    <hr>
+    <a name="Character"></a> <b>Installing character sets</b>
+    <p>The character set you specify for
+    <a href="#ParameterYyy">yyy</a> must be installed on your system.
+    If it isn't, any characters not in the current character set will
+    not be usable.</p>
+    <p>For information about installing a character set, see the
+    chapter "Customizing for International Use" in the DOS User's
+    Guide.</p>
+
+    <hr>
+    <a name="Display"></a> <b>Displaying the current keyboard layout and character set</b>
+    <p>If you use the KEYB command with no parameters or switches,
+    the operating system lists the current keyboard layout (keyboard
+    code), the current keyboard's related character set (code page),
+    and the current character set (code page) used by your keyboard and
+    monitor. The information is displayed in the format:</p>
+<pre>
+    Current keyboard code: FR code page: 437
+    Current CON code page: 437
+</pre>
+
+    <hr>
+    <a name="Switching"></a> <b>Switching between Keyb settings</b>
+    <p>To switch from the current Keyb keyboard configuration to the
+    default keyboard configuration, press CTRL+ALT+F1. To return to the
+    memory-resident keyboard configuration, press CTRL+ALT+F2. To
+    switch to "typewriter mode," the standard for some countries, press
+    CTRL+ALT+F7.</p>
+
+    <hr>
+    <a name="Implement"></a> <b>Implementing Keyb</b>
+    <p>The list shows the three different ways that you can
+    start the Keyb program:</p>
+    <ul>
+      <li>Type KEYB at the command prompt.</li>
+      <li>Include an INSTALL command for KEYB.COM in your CONFIG.SYS file.</li>
+      <li>Include the appropriate KEYB command in your AUTOEXEC.BAT file.</li>
+    </ul>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To use a German keyboard if your KEYBOARD.SYS file is in the DOS
+    directory on drive C, you would type:</p>
+<pre>
+    KEYB <a
+href="#ParameterXx">gr</a>,,<a
+href="#ParameterDrive">C:</a><a
+href="#ParameterPath">\DOS\</a><a
+href="#ParameterFilename">KEYBOARD.SYS</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <ul>
+    <li><b>0</b> Keyboard definition file was loaded successfully</li>
+    <li><b>1</b> Invalid keyboard code, character set, or syntax was used</li>
+    <li><b>2</b> Keyboard definition file is bad or missing</li>
+    <li><b>4</b> An error occurred while communicating with the keyboard or monitor</li>
+    <li><b>5</b> The requested character set has not been prepared</li>
+    </ul>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

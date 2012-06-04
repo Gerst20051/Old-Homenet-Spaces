@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>RMTSHARE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#r">Commands N-Z</a>
+    &gt; <a href="../INDEXR.HTM#rmtshare">Commands R</a>
+    <h1>RMTSHARE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Share a folder or a printer on a remote or local server.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>RMTSHARE
+    <a href="#ParameterServer">\\server</a>[<a
+    href="#ParameterShare">sharename</a>][=[<a
+    href="#ParameterDrive">drive:</a><a
+    href="#ParameterPath">path</a>
+    | <a href="#ParameterPrinter">printername</a>
+    <a href="#SwitchPrinter">/PRINTER</a>]
+    [[<a href="#SwitchUsers">/USERS</a>:number]
+    | [<a href="#SwitchUnlimited">/UNLIMITED</a>]]
+    [<a href="#SwitchRemark">/REMARK</a>:"text"]
+    [<a href="#SwitchGrant">/GRANT</a> user:perm [...]]
+    [<a href="#SwitchRemove">/REMOVE</a> user]</p>
+
+    <p>RMTSHARE
+    <a href="#ParameterServer">\\server</a>[<a
+    href="#ParameterShare">sharename</a>]
+    <a href="#SwitchDelete">/DELETE</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Specifies the drive letter you assign to a shared
+      directory.</dd>
+
+      <dt><a name="ParameterPath"></a> path
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Specifies the name of the shared directory.</dd>
+
+      <dt><a name="ParameterPrinter"></a> printername
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>One or more printers (LPT1: through LPT9:)
+      shared by sharename.</dd>
+
+      <dt><a name="ParameterServer"></a> \\server
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Name of the computer controlling the shared
+      resource. If the server contains blank characters,
+      enclose the double backslash (\\) and the server
+      in quotation marks (" "). The server may be from
+      1 to 15 characters long.</dd>
+
+      <dt><a name="ParameterShare"></a> sharename
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>The network name of the shared resource.
+      Enclose paths that include spaces in double quotes.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchDelete"></a> /DELETE
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Breaks/Disconnects the specified connection to a shared
+      resource.</dd>
+
+      <dt><a name="SwitchGrant"></a> /GRANT user:perm [...]
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>You can include several /GRANTs in a single command-line.</dd>
+
+      <dt><a name="SwitchPrinter"></a> /PRINTER
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Share printer port.</dd>
+
+      <dt><a name="SwitchRemark"></a> /REMARK:"text"
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Adds a descriptive comment about the resource.
+      Enclose the text in quotation marks.</dd>
+
+      <dt><a name="SwitchRemove"></a> /REMOVE user
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Removes a user account from the user accounts database.</dd>
+
+      <dt><a name="SwitchUnlimited"></a> /UNLIMITED
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Specifies an unlimited number of users can
+      simultaneously access the shared resource.</dd>
+
+      <dt><a name="SwitchUsers"></a> /USERS:number
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Sets the maximum number of users who can
+      simultaneously access the shared resource.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../N/NETUSE.HTM">NET USE</a> - connect to a file share.
+    <br>share.vbs - File sharing utility
+    (<a href="../../Version/MSWIN/NT2K.HTM">Windows 2000</a> only).
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>mount - Mount a file system.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

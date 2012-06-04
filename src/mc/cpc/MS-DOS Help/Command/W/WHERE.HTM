@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>WHERE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#w">Commands N-Z</a>
+    &gt; <a href="../INDEXW.HTM#where">Commands W</a>
+    <h1>WHERE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Locates and displays all of the files that match the given
+    parameter. By default, the search is done in the current
+    directory and in the
+    <a href="../../ENV/MSDOS/PATH.HTM">%PATH%</a> environment
+    variable.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>WHERE
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>WHERE
+    [<a href="#SwitchF">/f</a>]
+    [<a href="#SwitchQ">/q</a>]
+    [<a href="#SwitchR">/r directory</a>]
+    [<a href="#SwitchT">/t</a>]
+    <a href="#ParameterPattern">pattern ...</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterPattern"></a> pattern ...
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the name of a directory, file,
+      or set of files to be found.
+      You can use wildcard (? *) characters.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchF"></a> /f
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the output file name in quotation marks.</dd>
+
+      <dt><a name="SwitchQ"></a> /q
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Returns either an exit code without displaying the
+      files:
+        <ul>
+          <li><b>0</b> success</li>
+          <li><b>1</b> failure</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchR"></a> /r directory
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Indicates a recursive search,
+      starting with the specified directory.</dd>
+
+      <dt><a name="SwitchT"></a> /t
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the size, time stamp,
+      and date stamp of the file.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>WHERE can run recursive searches, display file
+    information such as date or size and can accept
+    environment variables in place of paths on local
+    computers.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <ul>
+    <li><b>0</b> file found</li>
+    <li><b>1</b> file not found</li>
+    </ul>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

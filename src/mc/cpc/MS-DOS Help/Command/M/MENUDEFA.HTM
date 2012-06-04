@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>MENUDEFAULT</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#m">Commands A-M</a>
+    &gt; <a href="../INDEXM.HTM#menudefault">Configuration M</a>
+    <h1>MENUDEFAULT</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Specifies the default menu item on the startup menu and sets a timeout
+    value if desired. You can use this command only within a menu block in your
+    CONFIG.SYS file. If you do not use this command, the operating system sets
+    the default to item 1.</p>
+
+    <p>The startup menu is a list of choices that appears when you start your
+    computer. You define a startup menu by using special CONFIG.SYS commands.
+    Each item on the menu corresponds to a set of CONFIG.SYS commands called a
+    "configuration block." A startup menu makes it possible to start your
+    computer with a variety of configurations. For more information about
+    defining multiple configurations, see the chapter "Configuring Your System"
+    in the MS-DOS User's Guide.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>MENUDEFAULT=<a
+    href="#ParameterBlockname">blockname</a>[,<a
+    href="#ParameterTimeout">timeout</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterBlockname"></a> blockname
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Specifies the default menu item by its associated
+      configuration block. The block must be defined
+      elsewhere in the CONFIG.SYS file. When the operating
+      system displays the startup menu, the default menu
+      item is highlighted and its number appears after the
+      "Enter a choice" prompt.</dd>
+
+      <dt><a name="ParameterTimeout"></a> timeout
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Determines how many seconds the operating system
+      waits before starting the computer with the default
+      configuration. If you don't specify a timeout value,
+      the operating system does not continue until the ENTER
+      key is pressed. You can specify a timeout value from
+      0 to 90 seconds. A timeout of 0 forces automatic
+      selection of the default, effectively bypassing the
+      menu display.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>The MENUDEFAULT command is one of six special
+    CONFIG.SYS commands for defining startup menus and
+    multiple configurations. The other commands are as
+    follows:
+    <ul>
+      <li>The <a href="../I/INCLUDE.HTM">INCLUDE</a>
+      command, which includes the contents of one
+      configuration block in another. This command cannot be
+      included in a menu block.</li>
+      <li>The <a href="MENUCOLO.HTM">MENUCOLOR</a>
+      command, which defines the color of the menu's text
+      and screen background.</li>
+      <li>The <a href="MENUITEM.HTM">MENUITEM</a>
+      command, which defines an item on the menu.</li>
+      <li>The <a href="../N/NUMLOCK.HTM">NUMLOCK</a>
+      command, which specifies the state of the NUM LOCK key
+      when the startup menu appears. (Although
+      <a href="../N/NUMLOCK.HTM">NUMLOCK</a> can be used
+      anywhere in the CONFIG.SYS file, it is especially
+      useful when defining a startup menu.)</li>
+      <li>The <a href="../S/SUBMENU.HTM">SUBMENU</a>
+      command, which defines a submenu.</li>
+    </ul>
+    <p>For an overview of the procedure for defining
+    multiple configurations, see the topic "Commands for
+    Defining Multiple Configurations".</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Be sure to specify different values for x and y, or
+    the text will not be readable.</p>
+
+    <p>Color Values:
+    <ul>
+      <li><b>0</b> Black</li>
+      <li><b>1</b> Blue</li>
+      <li><b>2</b> Green</li>
+      <li><b>3</b> Cyan</li>
+      <li><b>4</b> Red</li>
+      <li><b>5</b> Magenta</li>
+      <li><b>6</b> Brown</li>
+      <li><b>7</b> White</li>
+      <li><b>8</b> Gray</li>
+      <li><b>9</b> Bright Blue</li>
+      <li><b>10</b> Bright Green</li>
+      <li><b>11</b> Bright Cyan</li>
+      <li><b>12</b> Bright Red</li>
+      <li><b>13</b> Bright Magenta</li>
+      <li><b>14</b> Yellow</li>
+      <li><b>15</b> Bright White</li>
+    </ul>
+    <p><b>Note:</b> On some displays,
+    colors 8 through 15 blink.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>This menu block defines three menu items, sets the
+    default item to "full_config," and sets the timeout to
+    30 seconds:
+<pre>
+    [menu]
+    <a href="MENUITEM.HTM">MENUITEM</a>=<a
+href="MENUITEM.HTM#ParameterBlockname">base_config</a>,<a
+href="MENUITEM.HTM#ParameterMenutext">Base configuration only</a>
+    <a href="MENUITEM.HTM">MENUITEM</a>=<a
+href="MENUITEM.HTM#ParameterBlockname">full_config</a>,<a
+href="MENUITEM.HTM#ParameterMenutext">Normal configuration</a>
+    <a href="MENUITEM.HTM">MENUITEM</a>=<a
+href="MENUITEM.HTM#ParameterBlockname">network</a>,<a
+href="MENUITEM.HTM#ParameterMenutext">Normal configuration with network</a>
+    MENUDEFAULT=<a
+href="#ParameterBlockname">full_config</a>,<a
+href="#ParameterTimeout">30</a>
+</pre>
+
+    <p>When the operating system starts and reads this menu
+    block, it displays the following menu:
+<pre>
+    MS-DOS Startup Menu
+    ===================
+
+       1. Base configuration only
+       2. Normal configuration
+       3. Normal configuration with network
+
+    Enter a choice: 2                       Time remaining: 30
+</pre>
+    <p>After displaying this menu, the operating system
+    waits 30 seconds; if no other item is selected, the
+    operating system then starts the computer using the
+    commands in the [full_config] configuration block.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

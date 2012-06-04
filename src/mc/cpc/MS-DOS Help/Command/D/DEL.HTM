@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DEL (ERASE)</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDA.HTM#del">Commands Da-Dr</a>
+    <h1>DEL (ERASE)</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Deletes the one or more files you specify.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>DEL
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>DEL
+    [<a href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path</a>]<a
+    href="#ParameterFilename">filename</a>
+    [<a href="#SwitchA">/A[[:]attributes]</a>]
+    [<a href="#SwitchF">/F</a>]
+    [<a href="#SwitchP">/P</a>]
+    [<a href="#SwitchQ">/Q</a>]
+    [<a href="#SwitchS">/S</a>]</p>
+
+    <p>or</p>
+    <p>ERASE
+    [<a href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path</a>]<a
+    href="#ParameterFilename">filename</a>
+    [<a href="#SwitchA">/A[[:]attributes]</a>]
+    [<a href="#SwitchF">/F</a>]
+    [<a href="#SwitchP">/P</a>]
+    [<a href="#SwitchQ">/Q</a>]
+    [<a href="#SwitchS">/S</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a href="../../Version/MSDOS/100.HTM">v1.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the drive location of the file or set of files you
+      want to delete.</dd>
+
+      <dt><a name="ParameterPath"></a> path
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the path location of the file or set of files you
+      want to delete.</dd>
+
+      <dt><a name="ParameterFilename"></a> filename
+      (<a href="../../Version/MSDOS/100.HTM">v1.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the name of the file or set of files you want to
+      delete.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchA"></a> /A[[:] attributes]
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>
+        Displays only the names of those directories and files with the
+        attributes you specify. If you omit this switch, DIR displays
+        the names of all files except hidden and system files. If you
+        use this switch without specifying attributes, DIR displays the
+        names of all files, including hidden and system files. The
+        list describes each of the values you can use for
+        attributes. The colon (:) is optional. Use any combination of
+        these values, and do not separate the values with spaces:
+        <ul>
+          <li><b>A</b> Files ready for archiving (backup)</li>
+          <li><b>-A</b> Files that have not changed since the last backup</li>
+          <li><b>H</b> Hidden file</li>
+          <li><b>-H</b> Files not hidden</li>
+          <li><b>R</b> Read-only files</li>
+          <li><b>-R</b> Files that are not read-only</li>
+          <li><b>S</b> Systems files</li>
+          <li><b>-S</b> Files other than system files</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchF"></a> /F
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Ignore read-only setting and delete anyway (FORCE).</dd>
+
+      <dt><a name="SwitchP"></a> /P
+      (<a href="../../Version/MSDOS/400.HTM">v4.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Prompts you for confirmation before deleting the specified
+      file.</dd>
+
+      <dt><a name="SwitchQ"></a> /Q
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Quiet mode, do not give a Yes/No Prompt before deleting.</dd>
+
+      <dt><a name="SwitchS"></a> /S
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Delete from all Subfolders
+      (<a href="DELTREE.HTM">DELTREE</a>).</dd>
+      <dd>Shows only the files that are deleted, not the ones it could
+      not find when Command Extensions are enabled.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about retrieving a deleted file, see the
+    <a href="../U/UNDELETE.HTM">UNDELETE</a> command.
+    <br>For information about removing a directory, see the
+    <a href="../R/RMDIR.HTM">RMDIR</a> command.
+    <br>For information about deleting a directory, its files, and all
+    subdirectories and files subordinate to it, see the
+    <a href="DELTREE.HTM">DELTREE</a> command.
+    <br>The resource kit utility rm.exe will sometimes delete files
+    where DEL fails</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Erase">DEL as abbreviation for ERASE</a></li>
+      <li><a href="#DeleteMore">Deleting more than one file at a time</a></li>
+      <li><a href="#UseSwitchP">Using the /P switch</a></li>
+    </ul>
+
+    <hr>
+    <a name="UseSwitchP"></a> <b>Using the /P switch</b>
+    <p>If you use the <a href="#SwitchP">/P</a> switch, DEL
+    displays the name of a file and prompts you with a message in the
+    format:</p>
+<pre>
+    filename, Delete (Y/N)?
+</pre>
+
+    <p>Press Y to confirm the deletion, N to cancel the deletion and
+    display the next filename (if you specified a group of files), or
+    CRTL+C to stop the DEL command.</p>
+
+    <hr>
+    <a name="DeleteMore"></a> <b>Deleting more than one file at a time</b>
+    <p>You can delete all the files in a directory by typing the DEL
+    command followed by [drive:]path. You can also use wildcards (* and
+    ?) to delete more than one file at a time. However, you should use
+    wildcards cautiously with the DEL command to avoid deleting files
+    unintentionally. Suppose you type:</p>
+<pre>
+    DEL <a
+href="#ParameterFilename">*.*</a>
+</pre>
+
+    <p>DEL displays the prompt:</p>
+<pre>
+    All files in directory will be deleted! Are you sure (Y/N)?
+</pre>
+
+    <p>Press Y and then ENTER to delete all files in the current
+    directory, or press N and then ENTER to cancel the deletion.</p>
+    <p>Before you use wildcards with the DEL command to delete a group
+    of files, you can use the same wildcards with the
+    <a href="DIR.HTM">DIR</a> command to see a list of the names of
+    all the files included in the group.</p>
+
+    <p><b>CAUTION:</b> Once you delete a file from your disk, you may
+    not be able to retrieve it. Although the
+    <a href="../U/UNDELETE.HTM">UNDELETE</a> command can retrieve deleted
+    files, it can do so with certainty only if no other files have been
+    created or changed on the disk. If you accidentally delete a file
+    that you want to keep, stop what you are doing and immediately use
+    the <a href="../U/UNDELETE.HTM">UNDELETE</a> command to retrieve
+    the file.</p>
+    <p>For more information on undeleting files, see the chapter
+    "Managing Your System" in the DOS User's Guide.</p>
+
+    <hr>
+    <a name="Erase"></a> <b>DEL as abbreviation for ERASE</b>
+    <p>DEL was allowed as an abbreviation since
+    <a href="../../Version/MSDOS/110.HTM">v1.1</a></p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To delete the CAT.TMP file from the TEST directory on drive C,
+    you can use either of:</p>
+<pre>
+    DEL <a
+href="#ParameterDrive">C:</a><a
+href="#ParameterPath">\TEST\</a><a
+href="#ParameterFilename">CAT.TMP</a>
+
+    ERASE <a
+href="#ParameterDrive">C:</a><a
+href="#ParameterPath">\TEST\</a><a
+href="#ParameterFilename">CAT.TMP</a>
+</pre>
+
+    <hr>
+    <p>To delete all the files in a directory named TEST on drive C,
+    you can use either of:</p>
+<pre>
+    DEL <a
+href="#ParameterDrive">C:</a><a
+href="#ParameterPath">\TEST</a>
+
+    DEL <a
+href="#ParameterDrive">C:</a><a
+href="#ParameterPath">\TEST\</a><a
+href="#ParameterFilename">*.*</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>Internal</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/100.HTM">v1.0</a>
+          <a href="../../Version/MSDOS/105.HTM">v1.05</a>
+          <a href="../../Version/MSDOS/110.HTM">v1.1</a>
+          <a href="../../Version/MSDOS/111.HTM">v1.11</a>
+          v1.24
+          v1.25
+          <a href="../../Version/MSDOS/185.HTM">v1.85</a>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>FOR</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#f">Commands A-M</a>
+    &gt; <a href="../INDEX.HTM#for">Batch F</a>
+    <h1>FOR</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Runs a specified command for each file in a set of files. You
+    can use this command in batch programs or at the command
+    prompt.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>FOR
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>To use FOR in a batch program:</p>
+    <p>FOR
+    <a href="#ParameterVariable">%%variable</a>
+    IN <a href="#ParameterSet">(set)</a>
+    DO <a href="#ParameterCommand">command</a>
+    [<a href="#ParameterCommandParameters">command-parameters</a>]</p>
+
+    <p>To use FOR from the command prompt:</p>
+    <p>FOR
+    <a href="#ParameterVariable">%variable</a>
+    IN (<a href="#ParameterSet">set</a>)
+    DO <a href="#ParameterCommand">command</a>
+    [<a href="#ParameterCommandParameters">command-parameters</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterCommand"></a> command
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the command that you want to carry out on each file
+      included in the specified set.</dd>
+
+      <dt><a name="ParameterCommandParameters"></a> command-parameters
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies any parameters or switches that you want to use
+      with the specified command (if the specified command uses any
+      parameters or switches).</dd>
+
+      <dt><a name="ParameterSet"></a> (set)
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies one or more files or text strings that you want to
+      process with the specified command. The parentheses are
+      required.</dd>
+
+      <dt><a name="ParameterVariable"></a> %variable or %%variable
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Represents a replaceable variable. The FOR command replaces
+      %%variable (or %variable) with each text string in the specified
+      set until the command (specified in the command parameter)
+      processes all the files. Use %%variable to carry out the FOR
+      command within a batch program. Use %variable to carry out FOR
+      from the command prompt. (Do NOT use %0 through %9 to avoid
+      confusion with the command-line arguments passed to the batch
+      file).</dd>
+      <dd>Variable names are case sensitive, so %i is different
+      from %I.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>See <a href="../L/LFNFOR.HTM">LFNFOR</a> to use FOR
+    with long filenames.
+    <br><a href="FOR_R.HTM">FOR</a> /R - Loop through files (recurse subfolders).
+    <br><a href="FOR_D.HTM">FOR</a> /D - Loop through several folders.
+    <br><a href="FOR_L.HTM">FOR</a> /L - Loop through a range of numbers.
+    <br><a href="FOR_F.HTM">FOR</a> /F - Loop through items in a text file.
+    <br><a href="FOR_F.HTM">FOR</a> /F - Loop through the output of a command.
+    <br><a href="FORFILES.HTM">FORFILES</a> - Batch process multiple files.
+    <br><a href="../G/GOTO.HTM">GOTO</a> - Direct a batch program to jump to a labelled line.
+    <br><a href="../I/IF.HTM">IF</a> - Conditionally perform a command.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>cut - Divide a file into several columns.
+    <br>for - Expand words, and execute commands.
+    <br>eval - Evaluate several COMMANDS/arguments.
+    <br>if - Conditionally perform a command.
+    <br>m4 - Macro processor.
+    <br>until - Execute commands (until error).
+    <br>while - Execute commands.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Space">Escaping embedded spaces in folder names</a></li>
+      <li><a href="#Nested">Nested FOR commands</a></li>
+      <li><a href="#Group">Specifying a group of files</a></li>
+      <li><a href="#Keywords">Using the IN and DO keywords</a></li>
+      <li><a href="#Variable">Using the replaceable variable</a></li>
+      <li><a href="#Slash">Using the slash character</a></li>
+      <li><a href="#References">Using (enhanced) variable references</a></li>
+    </ul>
+
+    <hr>
+    <a name="Space"></a> <b>Escaping embedded spaces in folder names</b>
+    <p>When a source folder has space(s), they need to be escaped with
+    ^. <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a></p>
+    <p>ie. to copy a single file:</p>
+<pre>
+    FOR <a
+href="#ParameterVariable">%%G</a> IN <a
+href="#ParameterSet">(c:\program^ files\MyFile.txt)</a> DO <a
+href="#ParameterCommand">copy %%G d:\backups\</a>
+</pre>
+
+    <hr>
+    <a name="Nested"></a> <b>Nested FOR commands</b>
+    <p>FOR commands can be nested FOR %%G... DO (FOR %%T... DO ...)
+    when nesting commands choose a different letter for each part. you can then
+    refer to both parameters in the final DO command.
+    <a href="../../Version/MSWIN/NT400.HTM">(NT4)</a></p>
+
+    <hr>
+    <a name="Keywords"></a> <b>Using the IN and DO keywords</b>
+    <p>IN and DO are not parameters, but they are required in the FOR
+    command. If you omit either of these keywords, the operating system
+    displays an error message.</p>
+
+    <hr>
+    <a name="Variable"></a> <b>Using the replaceable variable</b>
+    <p>To avoid confusion with the batch parameters %0 through %9, you
+    can use any character for variable except the numerals 0 through 9.
+    For simple batch programs, a single character such as %%f may be
+    all that is necessary.</p>
+    <p>You can use multiple values for variable in complex batch
+    programs to distinguish different replaceable variables. However,
+    you can only <a href="#Nested">nest</a> (add multiple FOR
+    commands on the same command-line) with
+    <a href="../../Version/MSWIN/NT400.HTM">NT4</a></p>
+    <p>In each iteration of a FOR loop, the IN ( ....) clause is
+    evaluated and %%G set to a different value.</p>
+    <p>If this results in a single value then %%G is set = to that
+    value and the command is performed.</p>
+    <p>If this results in a multiple values then extra parameters
+    are implicitly defined to hold each. These are automatically
+    assigned in alphabetical order %%H %%I %%J ...</p>
+    <p>For example:</p>
+<pre>
+    <a href="FOR_F.HTM">FOR</a> /F <a
+href="FOR_F.HTM#ParameterVariable">%%G</a> IN (<a
+href="FOR_F.HTM#ParameterSetText">"This is a long sentence"</a>) DO <a
+href="FOR_F.HTM#ParameterCommand">@echo</a> <a
+href="FOR_F.HTM#ParameterCommandParameters">%%G %%H %%J</a>
+</pre>
+
+    <p>will result in the output:</p>
+<pre>
+    This is long
+</pre>
+
+    <p>You can of course pick any letter of the alphabet other
+    than %%G.</p>
+    <p>%%G is a good choice because it does not conflict with any
+    of the pathname format letters (d,f,n,p,s,x) and provides the
+    longest run of alphabetic letters for use as implicit parameters.
+    G &gt; H &gt; I &gt; J &gt; K &gt; L &gt; M</p>
+    <p>The second best choice is %%T: T &gt; U &gt; V &gt; W</p>
+    <p>Environment variables within a FOR loop are expanded at the
+    beginning of the loop. So the snippet will not produce
+    the expected result:</p>
+<pre>
+    <a href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">count</a>=<a
+href="../S/SET.HTM#ParameterString">1</a> <a
+href="FOR_F.HTM">FOR</a> /F "<a
+href="FOR_F.HTM#ParameterTokens">tokens=*</a>" <a
+href="FOR_F.HTM#ParameterVariable">%%G</a> IN (<a
+href="FOR_F.HTM#ParameterSetCommand">'dir /b'</a>) DO (
+<a href="FOR_F.HTM#ParameterCommand">echo</a> <a
+href="FOR_F.HTM#ParameterCommandParameters">%count%:%%G</a>
+<a href="FOR_F.HTM#ParameterCommand">set</a> <a
+href="FOR_F.HTM#ParameterCommandParameters">/a count+=1</a>)
+</pre>
+
+    <p>To force the variable to get evaluated at the proper iteration,
+    use the new subroutine CALL mechanism to take the evaluation
+    outside of the loop:</p>
+<pre>
+    <a href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">count</a>=<a
+href="../S/SET.HTM#ParameterString">1</a> <a
+href="FOR_F.HTM">FOR</a> /F "<a
+href="FOR_F.HTM#ParameterTokens">tokens=*</a>" <a
+href="FOR_F.HTM#ParameterVariable">%%G</a> IN (<a
+href="FOR_F.HTM#ParameterSetCommand">'dir /b'</a>) DO (
+<a href="FOR_F.HTM#ParameterCommand">call</a> <a
+href="FOR_F.HTM#ParameterCommandParameters">:exec</a>
+<a href="FOR_F.HTM#ParameterCommand">set</a> <a
+href="FOR_F.HTM#ParameterCommandParameters">/a count+=1</a>
+<a href="FOR_F.HTM#ParameterCommand">echo</a> <a
+href="FOR_F.HTM#ParameterCommandParameters">%%count%%:%%a</a>)
+    <a href="../G/GOTO.HTM">GOTO</a> :<a
+href="../G/GOTO.HTM#ParameterLabel">eof</a>
+
+    :<a href="../L/LABEL.HTM#ParameterLabel">exec</a>
+    %*
+    <a href="../G/GOTO.HTM">GOTO</a> :<a
+href="../G/GOTO.HTM#ParameterLabel">eof</a>
+
+    :<a href="../L/LABEL.HTM#ParameterLabel">eof</a>
+</pre>
+
+    <hr>
+    <a name="Group"></a> <b>Specifying a group of files</b>
+    <p>The set parameter can represent a single group of files or
+    several groups of files. You can use wildcards (* and ?) to specify
+    a file set. The valid file sets:</p>
+    <p><a href="#ParameterSet">(*.doc)</a></p>
+    <p><a href="#ParameterSet">(*.doc *.txt *.me)</a></p>
+    <p><a href="#ParameterSet">(jan*.doc jan*.rpt feb*.doc feb*.rpt)</a></p>
+    <p><a href="#ParameterSet">(ar??1991.* ap??1991.*)</a></p>
+    <p>When you use the FOR command, the first value in set replaces
+    %%variable (or %variable) and the operating system carries out the
+    specified command in order to process this value; this continues
+    until the operating system has processed all the files (or groups
+    of files) that correspond to the value (or values) in set.</p>
+
+    <hr>
+    <a name="Slash"></a> <b>Using the slash character</b>
+    <p><b>UNDOCUMENTED</b> Beginning with
+    <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+    you can read ONLY the first set character, by using slash (/):</p>
+<pre>
+    FOR <a
+href="#ParameterVariable">%f</a> IN <a
+href="#ParameterSet">(/ABCD)</a> DO <a
+href="#ParameterCommand">echo %f</a>
+</pre>
+
+    <p>This will result in:</p>
+<pre>
+    A
+    BCD
+</pre>
+
+    <hr>
+    <a name="References"></a> <b>Using (enhanced) variable references</b>
+    <p>Exhancement of FOR variable names, beginning with
+    <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+    have been changed:</p>
+<pre>
+    <b>%~</b>          - expands removing any surrounding quotes ("), ie. %~I
+    <b>%~a</b>         - expands to file attributes, ie. %~aI
+    <b>%~d</b>         - expands to a drive letter only, ie. %~dI
+    <b>%~f</b>         - expands to a fully qualified path name, ie. %~fI
+    <b>%~n</b>         - expands to a file name only, ie. %~nI
+    <b>%~p</b>         - expands to a path only, ie. %~pI
+    <b>%~s</b>         - expanded path contains short names only, ie. %~sI
+    <b>%~t</b>         - expands to date/time of file, ie. %~tI
+    <b>%~x</b>         - expands to a file extension only, ie. %~xI
+    <b>%~z</b>         - expands to size of file, ie. %~zI
+    <b>%~$PATH:</b>    - expands to full qualified name of first file found
+                   by searching the %PATH% directories, ie. %~$PATH:I
+                  OR expands to the empty string
+                    (environment variable not defined or file not found)
+</pre>
+
+    <p>Combinations are allowed:</p>
+<pre>
+    <b>%~dpI</b>       - expands %I to a drive letter and path only
+    <b>%~nxI</b>       - expands %I to a file name and extension only
+    <b>%~dp$PATH:I</b> - searches the directories listed in the PATH
+                  environment variable for %I and expands to the
+                  drive letter and path of the first one found.
+    <b>%~ftzaI</b>     - expands %I to a DIR like output line
+</pre>
+
+    <p>The %~ syntax is terminated by a valid FOR variable name.
+    Picking upper case variable names like %I makes it more readable and
+    avoids confusion with the modifiers, which are not case sensitive.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>Suppose you want to use the TYPE command to display the contents
+    of all the files in the current directory that have the extension
+    .DOC or .TXT. To do this and to use the replaceable variable %f,
+    type:</p>
+<pre>
+    FOR <a
+href="#ParameterVariable">%f</a> IN <a
+href="#ParameterSet">(*.doc *.txt)</a> DO <a
+href="../T/TYPE.HTM">TYPE</a> <a
+href="#ParameterCommandParameters">%f</a>
+</pre>
+
+    <hr>
+    <p>In this example, each file that has the .DOC or .TXT extension
+    in the current directory is substituted for the %f variable until
+    the contents of every file are displayed. To use this command in a
+    batch file, you would replace every occurrence of %f with %%f.
+    Otherwise, the operating system ignores the variable and displays
+    an error message.</p>
+    <p>The operating system supports command switches, pipes, and
+    redirection that you may want to use with the specified command.
+    For example, to redirect the output of the previous example to
+    PRN (the default printer port), you would type:</p>
+<pre>
+    FOR <a
+href="#ParameterVariable">%f</a> IN <a
+href="#ParameterSet">(*.doc *.txt)</a> DO <a
+href="../T/TYPE.HTM">TYPE</a> <a
+href="#ParameterCommandParameters">%f</a> &gt; PRN:
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>Internal</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

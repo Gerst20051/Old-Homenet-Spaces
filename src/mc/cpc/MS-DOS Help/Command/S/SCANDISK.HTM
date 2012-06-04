@@ -1,0 +1,542 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>SCANDISK</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#s">Commands N-Z</a>
+    &gt; <a href="../INDEXS.HTM#scandisk">Commands S</a>
+    <h1>SCANDISK</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Starts Microsoft ScanDisk, a disk analysis and repair tool that
+    checks a drive for errors and corrects any problems that it finds.
+    For an introduction to using ScanDisk, see
+    <a href="#Intro">An Introduction to ScanDisk</a>.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>To check the current drive for disk errors:</p>
+    <p>SCANDISK</p>
+
+    <p>To check one or more drives for disk errors:</p>
+    <p>SCANDISK
+    [<a href="#ParameterDrive">drive:</a>
+    [<a href="#ParameterDrive">drive:</a> ...]
+    | <a href="#SwitchAll">/ALL</a>]
+    [<a href="#SwitchCheckonly">/CHECKONLY</a>
+    | <a href="#SwitchAutofix">/AUTOFIX</a>
+    [<a href="#SwitchNosave">/NOSAVE</a>]
+    | <a href="#SwitchCustom">/CUSTOM</a>]
+    [<a href="#SwitchSurface">/SURFACE</a>]
+    [<a href="#SwitchMono">/MONO</a>]
+    [<a href="#SwitchNosummary">/NOSUMMARY</a>]
+    [<a href="#SwitchClip">/CLIP</a>]
+    [<a href="#SwitchHelp">/HELP</a>]
+    [<a href="#SwitchMount">/MOUNT</a>]
+    [<a href="#SwitchNew">/NEW</a>]
+    [<a href="#SwitchNolost">/NOLOST</a>]
+    [<a href="#SwitchNoui">/NOUI</a>]
+    [<a href="#SwitchText">/TEXT</a>]
+    [<a href="#SwitchTime">/TIME</a>]</p>
+
+    <p>To check an unmounted compressed volume file for errors:</p>
+    <p>SCANDISK
+    <a href="#ParameterVolumename">volume-name</a>
+    [<a href="#SwitchCheckonly">/CHECKONLY</a>
+    | <a href="#SwitchAutofix">/AUTOFIX</a>
+    [<a href="#SwitchNosave">/NOSAVE</a>]
+    | <a href="#SwitchCustom">/CUSTOM</a>]
+    [<a href="#SwitchMono">/MONO</a>]
+    [<a href="#SwitchNosummary">/NOSUMMARY</a>]</p>
+
+    <p>To check a file or files for fragmentation:</p>
+    <p>SCANDISK
+    <a href="#SwitchFragment">/FRAGMENT</a>
+    [<a href="#ParameterDrive1">drive:</a>][<a
+    href="#ParameterPath">path</a>]<a
+    href="#ParameterFilename">filename</a></p>
+
+    <p>To undo repairs you made previously:</p>
+    <p>SCANDISK
+    <a href="#SwitchUndo">/UNDO</a>
+    [<a href="#ParameterUndodrive">undo-drive:</a>]
+    [<a href="#SwitchMono">/MONO</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a href="../../Version/MSDOS/620.HTM">v6.2</a>)</dt>
+      <dd>Specifies the drive or drives you want to check and
+      repair.</dd>
+
+      <dt><a name="ParameterDrive1"></a> [drive:]
+      (<a name="ParameterPath"></a> [path]
+      <a name="ParameterFilename"></a> filename
+      <a href="../../Version/MSDOS/620.HTM">v6.2</a>)</dt>
+      <dd>Specifies the file(s) you want to examine for fragmentation.
+      You can also specify wildcards for the filename.</dd>
+
+      <dt><a name="ParameterUndodrive"></a> undo-drive:
+      (<a href="../../Version/MSDOS/620.HTM">v6.2</a>)</dt>
+      <dd>Specifies the drive containing the Undo disk.</dd>
+
+      <dt><a name="ParameterVolumename"></a> volume-name
+      (<a href="../../Version/MSDOS/620.HTM">v6.2</a>)</dt>
+      <dd>Specifies the name of the unmounted compressed volume file
+      you want to check and repair. The volume-name parameter should
+      take the form [drive:\]DRVSPACE.nnn, in which drive specifies the
+      drive that contains the volume file and nnn specifies the
+      extension of the volume file. For example, H:\DRVSPACE.000.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchAll"></a> /ALL
+      (<a href="../../Version/MSDOS/620.HTM">v6.2</a>)</dt>
+      <dd>Checks and repairs all local drives.</dd>
+
+      <dt><a name="SwitchAutofix"></a> /AUTOFIX
+      (<a href="../../Version/MSDOS/620.HTM">v6.2</a>)</dt>
+      <dd>Fixes damage without prompting you first. By default, if you
+      start ScanDisk with the /AUTOFIX switch and ScanDisk finds lost
+      clusters on your drive, it saves the lost clusters as files in
+      the drive's root directory. To have ScanDisk delete lost clusters
+      rather than saving them, include the <a
+      href="#SwitchNosave">/NOSAVE</a> switch. (If you use the /AUTOFIX
+      switch and ScanDisk finds errors, it still prompts you for an
+      Undo disk; to prevent this, include the <a
+      href="#SwitchNosummary">/NOSUMMARY</a> switch.) You cannot use the
+      /AUTOFIX switch in conjunction with the <a
+      href="#SwitchCheckonly">/CHECKONLY</a> or <a
+      href="#SwitchCustom">/CUSTOM</a> switches.</dd>
+
+      <dt><a name="SwitchCheckonly"></a> /CHECKONLY
+      (<a href="../../Version/MSDOS/620.HTM">v6.2</a>)</dt>
+      <dd>Checks a drive for errors, but does not repair any damage.
+      You cannot use this switch with the <a
+      href="#SwitchAutofix">/AUTOFIX</a> or <a
+      href="#SwitchCustom">/CUSTOM</a> switches.</dd>
+
+      <dt><a name="SwitchClip"></a> /CLIP
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> Change long to short (8dot3)
+      filenames.</dd>
+
+      <dt><a name="SwitchCustom"></a> /CUSTOM
+      (<a href="../../Version/MSDOS/620.HTM">v6.2</a>)</dt>
+      <dd>Runs ScanDisk using the configuration settings in the
+      [Custom] section of the SCANDISK.INI file. This switch is
+      especially useful for running ScanDisk from a batch program. You
+      cannot use this switch in conjunction with the <a
+      href="#SwitchAutofix">/AUTOFIX</a> or <a
+      href="#SwitchCheckonly">/CHECKONLY</a> switches.</dd>
+
+      <dt><a name="SwitchFragment"></a> /FRAGMENT
+      (<a href="../../Version/MSDOS/620.HTM">v6.2</a>)</dt>
+      <dd>Checks a file (or files) for fragmentation. You must use this
+      switch without any other switch.</dd>
+
+      <dt><a name="SwitchHelp"></a> /HELP
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> Same as /?.</dd>
+
+      <dt><a name="SwitchMono"></a> /MONO
+      (<a href="../../Version/MSDOS/620.HTM">v6.2</a>)</dt>
+      <dd>Configures ScanDisk to use a monochrome display. Instead of
+      specifying this switch every time you run ScanDisk, you can
+      include the DISPLAY=MONO line in your SCANDISK.INI file.</dd>
+
+      <dt><a name="SwitchMount"></a> /MOUNT
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> Mounts <a href="../D/DBLSPACE.HTM">DRVSPACE</a> volume. (Same as
+      SCANDISK.INI Mount=Always).</dd>
+
+      <dt><a name="SwitchNew"></a> /NEW
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> unknown?</dd>
+
+      <dt><a name="SwitchNolost"></a> /NOLOST
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> Does not prompt for surface scan. No
+      check for lost clusters.</dd>
+
+      <dt><a name="SwitchNosave"></a> /NOSAVE
+      (<a href="../../Version/MSDOS/620.HTM">v6.2</a>)</dt>
+      <dd>Directs ScanDisk to delete any lost clusters it finds. Can be
+      used only in conjunction with the <a
+      href="#SwitchAutofix">/AUTOFIX</a> switch. (If you start ScanDisk
+      with the <a href="#SwitchAutofix">/AUTOFIX</a> switch and omit
+      the /NOSAVE switch, ScanDisk saves the contents of any lost
+      clusters as files in the root directory of the drive.)</dd>
+
+      <dt><a name="SwitchNosummary"></a> /NOSUMMARY
+      (<a href="../../Version/MSDOS/620.HTM">v6.2</a>)</dt>
+      <dd>Prevents ScanDisk from displaying a full-screen summary after
+      checking each drive. (This switch also prevents ScanDisk from
+      prompting you for an Undo disk if it finds errors.)</dd>
+
+      <dt><a name="SwitchNotext"></a> /TEXT
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>)</dt>
+
+      <dt><a name="SwitchNoui"></a> /NOUI
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>)</dt>
+      <dt><a name="SwitchText"></a> /TEXT
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> Uses DOS TEXT interface instead of
+      Windows graphical interface.</dd>
+
+      <dt><a name="SwitchSurface"></a> /SURFACE
+      (<a href="../../Version/MSDOS/620.HTM">v6.2</a>)</dt>
+      <dd>Automatically performs a surface scan after checking other
+        areas of a drive. During a surface scan of an uncompressed
+        drive, ScanDisk confirms that data can be reliably written and
+        read from the drive being scanned. During a surface scan of a
+        compressed drive, ScanDisk confirms that data can be
+        decompressed. You should periodically do surface scans of all
+        drives.</dd>
+      <dd>By default, when it has finished checking a drive's file
+        system, ScanDisk asks whether or not you want to perform a
+        surface scan. However, if you specify the /SURFACE switch,
+        ScanDisk proceeds with the surface scan without prompting you
+        first. When /SURFACE is used in conjunction with the <a
+        href="#SwitchCustom">/CUSTOM</a> switch, it overrides the
+        Surface setting in the [Custom] section of the SCANDISK.INI
+        file.</dd>
+      <dt><a name="SwitchTime"></a> /TIME
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd><b>UNDOCUMENTED.</b> Marks sectors that take longer than
+      usual to read during Surface scan. (Same as SCANDISK.INI
+      ScanTimeOut=On).</dd>
+      <dt><a name="SwitchUndo"></a> /UNDO
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>)</dt>
+      <dd>Undo repairs made previously.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Problems">Problems fixed by ScanDisk</a></li>
+      <li><a href="#INI">The SCANDISK.INI file</a></li>
+      <li><a href="#Types">Types of drives</a></li>
+      <li><a href="#Undo">Undoing the changes ScanDisk made</a></li>
+      <li><a href="#DoubleSpace">Using ScanDisk on DoubleSpace Drives</a></li>
+      <li><a href="#Running">Using ScanDisk when other programs are running</a></li>
+      <li><a href="#PCDOS61">Using ScanDisk with PC-DOS 6.1</a></li>
+    </ul>
+
+    <hr>
+    <a name="Problems"></a> <b>Problems fixed by ScanDisk</b>
+    <p>ScanDisk checks and fixes problems in:</p>
+    <ul>
+      <li>File allocation table (FAT)</li>
+      <li>File system structure (lost clusters, crosslinked files)</li>
+      <li>Directory tree structure</li>
+      <li>Physical surface of the drive (bad clusters)</li>
+    </ul>
+    <p>In addition, ScanDisk also checks and fixes
+    DriveSpace or DoubleSpace compressed drive:</p>
+    <ul>
+      <li>Volume header (MDBPB)</li>
+      <li>Volume file structure (MDFAT)</li>
+      <li>Compression structure</li>
+      <li>Volume signatures</li>
+      <li>DOS boot sector</li>
+    </ul>
+
+    <hr>
+    <a name="Types"></a> <b>Types of drives</b>
+    <p>ScanDisk can find and fix errors on:</p>
+    <ul>
+      <li>Hard drives</li>
+      <li>DriveSpace drives</li>
+      <li>DoubleSpace drives (if DoubleSpace is installed)</li>
+      <li>Floppy disk drives</li>
+      <li>RAM drives</li>
+      <li>Memory cards</li>
+    </ul>
+    <p>ScanDisk cannot find or fix errors on:</p>
+    <ul>
+      <li>CD-ROM drives</li>
+      <li>Network drives</li>
+      <li>Drives created by using the ASSIGN, SUBST, or JOIN
+      commands</li>
+      <li>Drives created by using INTERLNK</li>
+    </ul>
+
+    <hr>
+    <a name="Running"></a> <b>Using ScanDisk when other programs are running</b>
+    <p>Do not use ScanDisk to repair a drive when other programs are
+    running. ScanDisk is designed for use when files on a disk are in
+    an unchanging state. When you are using a file, the operating
+    system updates the file allocation table (FAT) and the directory
+    structure to reflect changes. Such updates are not always made
+    immediately. If you run ScanDisk when other programs are running,
+    files might still be open. ScanDisk interprets differences between
+    the directory structure and the file allocation tables as errors.
+    This can result in corruption or loss of data.</p>
+    <p>You cannot use ScanDisk to correct disk errors if you start it
+    from another program, or when Microsoft Windows or the operating
+    system Task Swapper are running. However, you can check your disk
+    without fixing errors by using the SCANDISK command with the
+    <a href="#SwitchCheckonly">/CHECKONLY</a> switch. If you
+    run it with Windows, ScanDisk might detect errors that do not
+    exist when Windows is not running.</p>
+
+    <hr>
+    <a name="PCDOS61"></a> <b>Using ScanDisk with PC-DOS 6.1</b>
+    <p>Do not run ScanDisk on any
+    <a href="../../Version/MSDOS/610.HTM">(PCDOS6.10)</a> compressed
+    drive. If you do, you will lose all data on that drive. ScanDisk
+    is compatible only with the operating system compressed drives
+    (DriveSpace drives and DoubleSpace drives) and is not designed
+    to run on PC-DOS compressed drives.</p>
+
+    <hr>
+    <a name="DoubleSpace"></a> <b>Using ScanDisk on DoubleSpace Drives</b>
+    <p>If DoubleSpace is installed (that is, if DBLSPACE.BIN is loaded
+    into memory), ScanDisk can check and repair DoubleSpace drives and
+    unmounted DoubleSpace compressed volume files. ScanDisk can also
+    check and repair DoubleSpace drives and volume files if the
+    DBLSPACE.BIN and DRVSPACE.MR1 files are available. Otherwise,
+    ScanDisk does not work on DoubleSpace drives or unmounted
+    DoubleSpace compressed volume files. For more information about the
+    DRVSPACE.MR1 file, see DBLSPACE--Notes. (For more information about
+    using DoubleSpace with
+    <a href="../../Version/MSDOS/622.HTM">v6.22</a>, see
+    DBLSPACE.)</p>
+
+    <hr>
+    <a name="INI"></a> <b>The SCANDISK.INI file</b>
+    <p>The SCANDISK.INI file is a text file located in the directory
+    that contains your operating system files. The settings in the
+    [Environment] section of the SCANDISK.INI file determine certain
+    aspects of ScanDisk's behavior, such as whether it is configured
+    for a monochrome or color display. The settings in the [Custom]
+    section determine the default behavior of ScanDisk when you
+    start it with the <a href="#SwitchCustom">/CUSTOM</a> switch.</p>
+    <p>For more information, read the comments in the SCANDISK.INI
+    file.</p>
+
+    <hr>
+    <a name="Undo"></a> <b>Undoing the changes ScanDisk made</b>
+    <p>If ScanDisk finds errors on your drive, the program gives you
+    the option of creating an Undo disk, which enables you to undo the
+    changes ScanDisk makes to your drive. The Undo disk contains
+    information that specifies which drive it applies to as well as
+    information on every change that ScanDisk made to that drive.</p>
+    <p><b>CAUTION:</b> Use the Undo disk to undo changes only if your
+    drive has not changed since that Undo disk was created. If you
+    changed any of the files on your drive since you created the Undo
+    disk, do not try to undo your changes. If you attempt to use the
+    Undo disk after you update a file or directory, or copy or delete a
+    file, you might damage your drive structure and lose data.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To check and fix the current drive, type:</p>
+<pre>
+    SCANDISK
+</pre>
+
+    <p>Suppose that DriveSpace is installed, but is unable to mount
+    your compressed drive because of problems with the drive. The
+    drive's compressed volume file is called DRVSPACE.000 and is
+    located in the root directory of drive C. To repair the volume
+    file, type:</p>
+<pre>
+    SCANDISK <a
+href="#ParameterDrive1">C:</a><a
+href="#ParameterPath">\</a><a
+href="#ParameterFilename">DRVSPACE.000</a>
+</pre>
+
+    <p>The DriveSpace volume file must be located in the root directory
+    of the drive.</p>
+
+    <hr>
+    <p>To check both drive C and drive E, type:</p>
+<pre>
+    SCANDISK <a
+href="#ParameterDrive">C:</a> <a
+href="#ParameterDrive">E:</a>
+</pre>
+
+    <p>To check all your drives, type:</p>
+<pre>
+    SCANDISK <a
+href="#SwitchAll">/ALL</a>
+</pre>
+
+    <p>This will check all your hard disk partitions, in addition to
+    all mounted DriveSpace drives (if DriveSpace is installed).</p>
+
+    <hr>
+    <p>Suppose you created an Undo disk, did not change the contents of
+    the checked drive since you created the Undo disk, and placed the
+    Undo disk in drive A. To undo the changes made by ScanDisk, type:</p>
+<pre>
+    SCANDISK <a
+href="#SwitchUndo">/UNDO</a> <a
+href="#ParameterUndodrive">A:</a>
+</pre>
+
+    <hr>
+    <a name="Introduction"></a> <b>Introduction</b>
+    <ul>
+      <li><a href="#Intro">An Introduction to ScanDisk</a></li>
+      <li><a href="#UndoIntro">Creating an Undo disk</a></li>
+      <li><a href="#Customizing">Customizing ScanDisk by using the SCANDISK.INI file</a></li>
+      <li><a href="#RunningIntro">Running ScanDisk</a></li>
+      <li><a href="#Compressed">ScanDisk and compressed drives</a></li>
+      <li><a href="#Starting">Starting ScanDisk</a></li>
+      <li><a href="#Info">Using the More Info dialogs</a></li>
+    </ul>
+
+    <hr>
+    <a name="Intro"></a> <b>An Introduction to ScanDisk</b>
+    <p>ScanDisk is a full-featured disk analysis and repair program. It
+    is designed to work on both uncompressed drives and compressed
+    drives.</p>
+
+    <hr>
+    <a name="Starting"></a> <b>Starting ScanDisk</b>
+    <p>To start ScanDisk, type:</p>
+<pre>
+    SCANDISK
+</pre>
+
+    <p>ScanDisk begins checking the current drive. If ScanDisk finds
+    any problems, it displays a dialog explaining the problem.</p>
+    <p>To check a specific drive, type the drive letter after the
+    ScanDisk command. For example, to check drive D, type:</p>
+<pre>
+    SCANDISK <a
+href="#ParameterDrive">D:</a>
+</pre>
+
+    <hr>
+    <a name="RunningIntro"></a> <b>Running ScanDisk</b>
+    <p>If ScanDisk doesn't find any problems with your drive, you don't
+    have to do much. Just let it run, and when it completes, choose the
+    Exit button at the bottom of the screen by typing X or by clicking
+    Exit with the mouse.</p>
+    <p>If ScanDisk finds a problem, it displays a Problem Found dialog
+    that briefly explains the problem and what will happen if you fix
+    it. Most Problem Found dialogs have a Fix It button, a Don't Fix It
+    button, and a More Info button. To have ScanDisk correct the
+    problem, choose the Fix It button.</p>
+
+    <hr>
+    <a name="Info"></a> <b>Using the More Info dialogs</b>
+    <p>Most ScanDisk screens and dialogs include a More Info button.
+    This displays another dialog with more information -- usually
+    additional technical details -- about the current screen. For some
+    types of problems, the More Info dialog lists the names of affected
+    files.</p>
+
+    <hr>
+    <a name="Compressed"></a> <b>ScanDisk and compressed drives</b>
+    <p>If you run ScanDisk on a mounted or unmounted compressed drive,
+    it offers to check the host (physical) drive first. In general, you
+    should allow it to do so, since an error on the host drive could
+    cause problems with the compressed drive.</p>
+    <p><b>Note:</b> To run ScanDisk on a DoubleSpace compressed drive,
+    DoubleSpace must either be installed (DBLSPACE.BIN loaded in
+    memory) or the files DBLSPACE.BIN and DRVSPACE.MR1 must be
+    available. For more information about using DoubleSpace with
+    <a href="../../Version/MSDOS/622.HTM">v6.22</a>, see DBLSPACE.
+    For more information about the DRVSPACE.MR1 file, see
+    DBLSPACE--Notes.</p>
+
+    <hr>
+    <a name="UndoIntro"></a> <b>Creating an Undo disk</b>
+    <p>If ScanDisk finds a problem and you choose Fix It, ScanDisk
+    offers to create an Undo floppy disk that you can later use to
+    restore your disk to its previous state. You can restore your
+    disk's previous state only if you haven't changed it since making
+    repairs. Creating an Undo disk is easy -- you just insert a blank,
+    formatted floppy disk in drive A or drive B, and then choose the
+    Drive A or Drive B button in the dialog ScanDisk displays.</p>
+
+    <hr>
+    <a name="Customizing"></a> <b>Customizing ScanDisk by using the SCANDISK.INI file</b>
+    <p>The SCANDISK.INI file contains settings that determine many
+    aspects of ScanDisk's behavior. Most of the settings determine how
+    ScanDisk will behave if you start it with the
+    <a href="#SwitchCustom">/CUSTOM</a> switch. You can also use
+    the settings in SCANDISK.INI to control other aspects of ScanDisk's
+    behavior; for example, to prevent ScanDisk from prompting you for
+    an Undo disk, just change the Undo setting in SCANDISK.INI to
+    "Never". For more information about SCANDISK.INI, see the comments
+    within the file.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <ul>
+    <li><b>0</b> ScanDisk did not detect any problems on the drive(s) it
+    checked</li>
+    <li><b>1</b> ScanDisk could not run because the command-line syntax was
+    incorrect</li>
+    <li><b>2</b> ScanDisk terminated unexpectedly due to an out-of-memory
+    error or an internal error</li>
+    <li><b>3</b> The user chose to exit before ScanDisk had finished</li>
+    <li><b>4</b> ScanDisk completed all logical checks on all drives,
+    but the user exited from one or more surface scans before the scans
+    were complete. (Not returned if the user chose to bypass the surface
+    scans completely)</li>
+    <li><b>254</b> ScanDisk found disk problems and corrected them all</li>
+    <li><b>255</b> ScanDisk found disk problems, but not all problems were corrected</li>
+    </ul>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CIPHER</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCH.HTM#cipher">Commands Ch-Cz</a>
+    <h1>CIPHER</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Displays or alters the encryption of directories [files] on
+    NTFS partitions.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CIPHER
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>CIPHER
+    [<a href="#SwitchE">/E</a>
+    | <a href="#SwitchD">/D</a>]
+    [<a href="#SwitchS">/S:dir</a>]
+    [<a href="#SwitchA">/A</a>]
+    [<a href="#SwitchI">/I</a>]
+    [<a href="#SwitchF">/F</a>]
+    [<a href="#SwitchQ">/Q</a>]
+    [<a href="#SwitchH">/H</a>]
+    [<a href="#SwitchK">/K</a>]
+    [<a href="#SwitchU">/U</a>
+    [<a href="#SwitchN">/N</a>]]
+    [<a href="#ParameterPathname">pathname</a> [...]]
+    | <a href="#SwitchR">/R</a>:pathname_noextension
+    | <a href="#SwitchW">/W</a>:pathname
+    | <a href="#SwitchX">/X</a>[:pathname] path_without_extension</p>
+
+    <p>Displays the encryption state of the current directory and any
+    files it contains:</p>
+    <p>CIPHER</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterPathname"></a> pathname
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Specifies a pattern, file or directory.</dd>
+      <dd>You may use multiple directory names and wildcards.
+      You must put spaces between multiple parameters.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchA"></a> /A
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Operation for files as well as directories. The encrypted file
+      could become decrypted when it is modified if the parent directory
+      is not encrypted. It is recommended that you encrypt the file and
+      the parent directory.</dd>
+
+      <dt><a name="SwitchD"></a> /D
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Decrypts the specified directories. Directories will be marked
+      so that files added afterward will not be encrypted.</dd>
+
+      <dt><a name="SwitchE"></a> /E
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Encrypts the specified directories. Directories will be marked
+      so that files added afterward will be encrypted.</dd>
+
+      <dt><a name="SwitchF"></a> /F
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Forces the encryption operation on all specified objects, even
+      those which are already encrypted. Already-encrypted objects
+      are skipped by default.</dd>
+
+      <dt><a name="SwitchH"></a> /H
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Displays files with the hidden or system attributes. These
+      files are omitted by default.</dd>
+
+      <dt><a name="SwitchI"></a> /I
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Continues performing the specified operation even after errors
+      have occurred. By default, CIPHER stops when an error is
+      encountered.</dd>
+
+      <dt><a name="SwitchK"></a> /K
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Create new file encryption key for the user running CIPHER.
+      If this option is chosen, all the other options will be ignored.</dd>
+
+      <dt><a name="SwitchN"></a> /N
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Prevents keys from being updated. Use this option to
+      find all of the encrypted files on the local drives. This
+      option only works with <a href="#SwitchU">/u</a>.</dd>
+
+      <dt><a name="SwitchQ"></a> /Q
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Reports only the most essential information.</dd>
+
+      <dt><a name="SwitchR"></a> /R:pathname_noextension
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Generates a new recovery agent certificate and private
+      key, and then writes them to files with the file name
+      specified in pathname_noextension. If you use this option,
+      cipher ignores all of the other options.</dd>
+
+      <dt><a name="SwitchS"></a> /S:dir
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Performs the specified operation on directories in the given
+      directory and all subdirectories.</dd>
+
+      <dt><a name="SwitchU"></a> /U
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Updates the user's file encryption key or recovery agent's
+      key to the current ones in all of the encrypted files on local
+      drives (that is, if the keys have been changed). This option
+      only works with <a href="#SwitchN">/n</a>.</dd>
+
+      <dt><a name="SwitchW"></a> /W:pathname
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Removes data on unused portions of a volume. PathName can
+      indicate any directory on the desired volume. If you use this
+      option, cipher ignores all of the other options.</dd>
+      <dd>Removes data from portions of the volume it can access
+      and have not been allocated to files or directories. It does
+      not lock the drive, so other programs can obtain space on the
+      drive, which cipher cannot erase. Because this option writes
+      to a large portion of the hard volume, it might take a long
+      time to complete and should only be used when necessary.</dd>
+
+      <dt><a name="SwitchX"></a> /X[:pathname] path_without_extension
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Identifies the certificates and private keys used
+      by EFS for the currently logged on user and backs them
+      up to a file. If PathName is provided, the certificate
+      used to encrypt the file specified are backed up.
+      Otherwise, the user's current EFS certificate and keys
+      will be backed up. The certificates and private keys
+      are written to a file name specified by
+      path_without_extension and are given the file name
+      extension .pfx. If you use this option, cipher ignores
+      all of the other options.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Encrypting or decrypting files: To prevent an encrypted file
+    from becoming decrypted when it is modified, it is recommended
+    that you encrypt both the file and the folder in which it resides.</p>
+
+    <p>Using read-only files and folders: Cipher cannot encrypt files
+    that are marked as read-only.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

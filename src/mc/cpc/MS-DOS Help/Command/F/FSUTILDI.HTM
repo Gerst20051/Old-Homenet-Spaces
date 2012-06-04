@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>FSUTIL DIRTY</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#f">Commands A-M</a>
+    &gt; <a href="../INDEXF.HTM#fsutildirty">Commands F</a>
+    <h1>FSUTIL DIRTY</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Queries to see whether a volume's dirty bit is set.
+    Sets a volume's dirty bit. When a volume's dirty bit is
+    set, autochk automatically checks the volume for errors
+    the next time the computer is restarted.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>FSUTIL DIRTY
+    <a href="#ParameterHelp">help</a></p>
+
+    <p>FSUTIL DIRTY
+    <a href="#ParameterQuery">query</a>
+    <a href="#ParameterDrive">drive</a></p>
+
+    <p>FSUTIL DIRTY
+    <a href="#ParameterSet">set</a>
+    <a href="#ParameterDrive">drive</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the drive letter (followed by a colon),
+      mount point, or volume name.</dd>
+
+      <dt><a name="ParameterHelp"></a> help
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="ParameterQuery"></a> query
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Queries the dirty bit.</dd>
+
+      <dt><a name="ParameterSet"></a> set
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Sets a volume's dirty bit.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="FSUTILBE.HTM">FSUTIL BEHAVIOR</a>
+    <br><a href="FSUTILFI.HTM">FSUTIL FILE</a>
+    <br><a href="FSUTILFS.HTM">FSUTIL FSINFO</a>
+    <br><a href="FSUTILHA.HTM">FSUTIL HARDLINK</a>
+    <br><a href="FSUTILOB.HTM">FSUTIL OBJECTID</a>
+    <br><a href="FSUTILQU.HTM">FSUTIL QUOTA</a>
+    <br><a href="FSUTILRE.HTM">FSUTIL REPARSEPOINT</a>
+    <br><a href="FSUTILSP.HTM">FSUTIL SPARSE</a>
+    <br><a href="FSUTILUS.HTM">FSUTIL USN</a>
+    <br><a href="FSUTILVO.HTM">FSUTIL VOLUME</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>If a volume's dirty bit is set, this indicates that
+    the file system may be in an inconsistent state. The
+    dirty bit can be set because the volume is online and
+    has outstanding changes, because changes were made to
+    the volume and the computer shutdown before the changes
+    were committed to disk, or because corruption was
+    detected on the volume. If the dirty bit is set when the
+    computer restarts, <a href="../C/CHKDSK.HTM">chkdsk</a>
+    runs to verify the consistency of the volume.</p>
+
+    <p>Every time Windows XP starts, Autochk is called
+    by the Kernel to scan all volumes to check if the volume
+    dirty bit is set. If the dirty bit is set, autochk
+    performs an immediate <a href="../C/CHKDSK.HTM">chkdsk</a>
+    <a href="../C/CHKDSK.HTM#SwitchF">/f</a> on that volume.
+    <a href="../C/CHKDSK.HTM">Chkdsk</a>
+    <a href="../C/CHKDSK.HTM#SwitchF">/f</a> verifies file
+    system integrity and attempts to fix any problems with
+    the volume.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

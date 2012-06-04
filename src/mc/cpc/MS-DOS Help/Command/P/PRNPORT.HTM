@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>PRNPORT</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#p">Commands N-Z</a>
+    &gt; <a href="../INDEXP.HTM#prnport">Commands P</a>
+    <h1>PRNPORT</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Creates, deletes, and lists standard TCP/IP printer
+    ports, in addition to displaying and changing port
+    configuration.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CSCRIPT PRNPORT[.VBS]
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>CSCRIPT PRNPORT[.VBS]
+    <a href="#SwitchA">-a</a>
+    <a href="#SwitchH">-h ip_address</a>
+    [<a href="#SwitchI">-i index_name</a>]
+    [<a href="#SwitchM">-m{e | d}</a>]
+    [<a href="#SwitchO">-o {raw -n port_number | lpr}</a>]
+    [<a href="#SwitchQ">-q queue_name</a>]
+    <a href="#SwitchR">-r port_name</a>
+    [<a href="#SwitchS">-s [remote_computer]</a>]
+    [<a href="#SwitchU">-u user_name -w password</a>]
+    [<a href="#SwitchY">-y community_name</a>]
+    [<a href="#Switch2">-2{e | d}</a>]</p>
+
+    <p>CSCRIPT PRNPORT[.VBS]
+    <a href="#SwitchD">-d</a>
+    <a href="#SwitchR">-r port_name</a>
+    [<a href="#SwitchS">-s [remote_computer]</a>]
+    [<a href="#SwitchU">-u user_name -w password</a>]</p>
+
+    <p>CSCRIPT PRNPORT[.VBS]
+    <a href="#SwitchL">-l</a>
+    [<a href="#SwitchS">-s [remote_computer]</a>]
+    [<a href="#SwitchU">-u user_name -w password</a>]</p>
+
+    <p>CSCRIPT PRNPORT[.VBS]
+    <a href="#SwitchG">-g</a>
+    <a href="#SwitchR">-r port_name</a>
+    [<a href="#SwitchS">-s [remote_computer]</a>]
+    [<a href="#SwitchU">-u user_name -w password</a>]</p>
+
+    <p>CSCRIPT PRNPORT[.VBS]
+    <a href="#SwitchT">-t</a>
+    <a href="#SwitchH">-h ip_address</a>
+    [<a href="#SwitchI">-i index_name</a>]
+    [<a href="#SwitchM">-m{e | d}</a>]
+    [<a href="#SwitchO">-o {raw -n port_number | lpr}</a>]
+    [<a href="#SwitchQ">-q queue_name</a>]
+    <a href="#SwitchR">-r port_name</a>
+    [<a href="#SwitchS">-s [remote_computer]</a>]
+    [<a href="#SwitchU">-u user_name -w password</a>]
+    [<a href="#SwitchY">-y community_name</a>]
+    [<a href="#Switch2">-2{e | d}</a>]</p>
+
+    <p>Displays command-line help:</p>
+    <p>CSCRIPT PRNPORT[.VBS]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="Switch2"></a> -2{e | d}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies whether double spools (also known as
+      respooling) are enabled for TCP LPR ports. Double
+      spools are necessary because TCP LPR must include an
+      accurate byte count in the control file that is sent
+      to the printer, but the protocol cannot get the count
+      from the local print provider. Therefore, when a file
+      is spooled to a TCP LPR print queue, it is also
+      spooled as a temporary file in the system32
+      directory. TCP LPR determines the size of the
+      temporary file and sends the size to the server
+      running LPD.
+        <ul>
+          <li><b>d</b> disables double spools</li>
+          <li><b>e</b> enables double spools</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchA"></a> -a
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that you want to create a standard
+      TCP/IP printer port.</dd>
+
+      <dt><a name="SwitchD"></a> -d
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that you want to delete a standard
+      TCP/IP printer port.</dd>
+
+      <dt><a name="SwitchG"></a> -g
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that you want to display the
+      configuration of a standard TCP/IP printer port.</dd>
+
+      <dt><a name="SwitchH"></a> -h ip_address
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the IP address you want to assign to
+      the port.</dd>
+
+      <dt><a name="SwitchI"></a> -i index_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the SNMP index, if SNMP is enabled.</dd>
+
+      <dt><a name="SwitchL"></a> -l
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that you want to list all standard
+      TCP/IP printer ports on a computer.</dd>
+
+      <dt><a name="SwitchM"></a> -m{e | d}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies whether SNMP is enabled.
+        <ul>
+          <li><b>d</b> disables SNMP</li>
+          <li><b>e</b> enables SNMP</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchO"></a> -o {raw -n port_number | lpr}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies which protocol the port uses: TCP raw
+      or TCP LPR. If you use TCP raw, specifies the port
+      number for a TCP raw printer port. By default, this
+      is port number 9100. Most printers use TCP raw. On
+      UNIX networks, printers often use TCP LPR.</dd>
+
+      <dt><a name="SwitchQ"></a> -q queue_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the queue name for a TCP raw port.</dd>
+
+      <dt><a name="SwitchR"></a> -r port_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the port to which the printer is
+      configured/connected/deleted.</dd>
+
+      <dt><a name="SwitchS"></a> -s [remote_computer]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies, by name, the remote computer to which
+      you want to add/configure/delete/list the port. If
+      you do not specify a computer, the port is added to
+      the local computer.</dd>
+
+      <dt><a name="SwitchT"></a> -t
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that you want to configure a standard
+      TCP/IP printer port.</dd>
+
+      <dt><a name="SwitchU"></a> -u user_name -w password
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies an account with permissions to connect
+      by using Windows Management Instrumentation (WMI)
+      services to the computer on which you want to
+      configure/create/delete/list a standard TCP/IP printer
+      port. All members of the
+      Administrators group for that computer have these
+      permissions, but the permissions can also be granted
+      to other users. If you do not specify an account,
+      you must be logged on under an account with these
+      permissions for the command to work.</dd>
+
+      <dt><a name="SwitchY"></a> -y community_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the SNMP community name, if SNMP is
+      enabled.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

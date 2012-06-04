@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>INTERSVR</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#i">Commands A-M</a>
+    &gt; <a href="../INDEXI.HTM#intersvr">Commands I</a>
+    <h1>INTERSVR</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Starts the Interlnk server.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>INTERSVR
+    [<a href="#ParameterDrive">drive:</a>[...]]
+    [<a href="#SwitchX">/X=drive:</a>[...]]
+    [<a href="#SwitchLPT">/LPT:</a>[n | address]]
+    [<a href="#SwitchCOM">/COM:</a>[n | address]]
+    [<a href="#SwitchBAUD">/BAUD:</a>rate]
+    [<a href="#SwitchB">/B</a>]
+    [<a href="#SwitchV">/V</a>]</p>
+
+    <p>To copy Interlnk files from one computer to another:</p>
+    <p>INTERSVR
+    <a href="#SwitchRCOPY">/RCOPY</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:[...]
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the letter(s) of the drive(s) that will be
+      redirected. By default, all drives are redirected.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchB"></a> /B
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Displays the Interlnk server screen in black and white. Use
+      this switch if you have problems reading your monochrome
+      monitor.</dd>
+
+      <dt><a name="SwitchBAUD"></a> /BAUD:rate
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>
+        Sets a maximum serial baud rate. Valid values for rate are:
+        <ul>
+          <li>9600</li>
+          <li>19200</li>
+          <li>38400</li>
+          <li>57600</li>
+          <li>115200 (default)</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchCOM"></a> /COM:[n | address]
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies a serial port to use. The n parameter specifies the
+      number of the serial port. The address parameter specifies the
+      address of the serial port. If you omit n or address, the
+      Interlnk server searches all serial ports and uses the first port
+      that it finds connected to the client. If you specify the /COM
+      switch and omit the <a href="#SwitchLPT">/LPT</a> switch, the
+      server searches only for serial ports. By default, all parallel
+      and serial ports are scanned.</dd>
+
+      <dt><a name="SwitchLPT"></a> /LPT:[n | address]
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies a parallel port to use. The n parameter specifies
+      the number of the parallel port. The address parameter specifies
+      the address of the parallel port. If you omit n or address, the
+      Interlnk server uses the first parallel port that it finds
+      connected to the client. If you specify the /LPT switch and omit
+      the <a href="#SwitchCOM">/COM</a> switch, the server searches
+      only for parallel ports. By default, all parallel and serial
+      ports are scanned.</dd>
+
+      <dt><a name="SwitchRCOPY"></a> /RCOPY
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Copies Interlnk files from one computer to another, provided
+      that the computers are connected with a 7-wire, null-modem serial
+      cable and that the <a href="../M/MODECS.HTM">MODE</a>
+      command is available on the computer where you are installing
+      Interlnk.</dd>
+
+      <dt><a name="SwitchV"></a> /V
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Prevents conflicts with a computer's timer. Use this switch
+      if you have a serial connection between computers and one of them
+      stops running when you use Interlnk to access a drive or printer
+      port.</dd>
+
+      <dt><a name="SwitchX"></a> /X=drive:
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the letter(s) of drive(s) that will not be
+      redirected. By default, all drives are redirected.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For more information about Interlnk, see
+    <a href="INTERLNK.HTM">INTERLNK</a> and INTERLNK.EXE.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Limitations">Limitations on using INTERSVR with other commands</a></li>
+      <li><a href="#Devices">Redirected devices</a></li>
+      <li><a href="#Remote">Remote copy procedure</a></li>
+      <li><a href="#Order">Specifying the order of drives</a></li>
+      <li><a href="#Mouse">Using a serial mouse with Microsoft Windows</a></li>
+      <li><a href="#Tasks">Using INTERSVR in a task-switching or multitasking environment</a></li>
+    </ul>
+
+    <hr>
+    <a name="Order"></a> <b>Specifying the order of drives</b>
+    <p>INTERSVR redirects drives in the order you specify. The first
+    server drive specified is redirected to the first available client
+    drive, the second server drive specified is redirected to the
+    second available client drive, and so forth.</p>
+
+    <hr>
+    <a name="Devices"></a> <b>Redirected devices</b>
+    <p>INTERSVR does not redirect network drives, CD-ROM drives, or any
+    other device that uses a redirection interface.</p>
+
+    <hr>
+    <a name="Remote"></a> <b>Remote copy procedure</b>
+    <p>To copy INTERSVR files from one computer to another by using the
+    <a href="#SwitchRCOPY">/RCOPY</a> switch, you must
+    connect the 7-wire, null-modem serial cable to the computers'
+    serial ports.</p>
+
+    <hr>
+    <a name="Mouse"></a> <b>Using a serial mouse with Microsoft Windows</b>
+    <p>If you are using a serial mouse with Microsoft Windows and you
+    start the INTERSVR server while Windows is running, you need to
+    specify either the <a href="#SwitchLPT">/LPT</a> switch
+    or a <a href="#SwitchCOM">/COM</a> switch that
+    designates a COM port other than the one the mouse is using. For
+    example, if the serial mouse uses COM1 and you are using a parallel
+    connection, specify the <a href="#SwitchLPT">/LPT</a>
+    switch to prevent INTERSVR from scanning all COM ports.</p>
+
+    <hr>
+    <a name="Tasks"></a> <b>Using INTERSVR in a task-switching or multitasking environment</b>
+    <p>If you start the INTERSVR server in a task-switching or
+    multitasking environment, task switching and key combinations that
+    switch you out of your current task are disabled. To restore these
+    functions, quit the server.</p>
+
+    <hr>
+    <a name="Limitations"></a> <b>Limitations on using INTERSVR with other commands</b>
+    <p>These commands do not work with the INTERSVR server:</p>
+    <ul>
+      <li><a href="../C/CHKDSK.HTM">CHKDSK</a></li>
+      <li><a href="../D/DEFRAG.HTM">DEFRAG</a></li>
+      <li><a href="../D/DISKCOMP.HTM">DISKCOMP</a></li>
+      <li><a href="../D/DISKCOPY.HTM">DISKCOPY</a></li>
+      <li><a href="../F/FDISK.HTM">FDISK</a></li>
+      <li><a href="../F/FORMAT.HTM">FORMAT</a></li>
+      <li><a href="../M/MIRROR.HTM">MIRROR</a></li>
+      <li><a href="../S/SYS.HTM">SYS</a></li>
+      <li><a href="../U/UNDELETE.HTM">UNDELETE</a></li>
+      <li><a href="../U/UNFORMAT.HTM">UNFORMAT</a></li>
+    </ul>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>Suppose you have two computers that each include drives A, B,
+    and C. To start the INTERSVR server and specify that server drive C
+    be redirected to client drive D, server drive A be redirected to
+    client drive E, and server drive B be redirected to client drive F,
+    type:</p>
+<pre>
+    INTERSVR <a
+href="#ParameterDrive">C:</a> <a
+href="#ParameterDrive">A:</a> <a
+href="#ParameterDrive">B:</a>
+</pre>
+
+    <p>To specify that all server drives except drive A be redirected
+    and that LPT2 be used to connect to the client, type:</p>
+<pre>
+    INTERSVR <a
+href="#SwitchX">/X=A:</a> <a
+href="#SwitchLPT">/LPT2</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

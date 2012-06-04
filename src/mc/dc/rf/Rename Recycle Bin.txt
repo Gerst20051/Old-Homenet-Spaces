@@ -1,0 +1,10 @@
+Other Microsoft Windows users
+Click Start / Run 
+Type regedit and press enter. 
+Open the HKEY_CLASSES_ROOT folder 
+Open the CLSID folder 
+Open the {645FF040-5081-101B-9F08-00AA002F954E} folder 
+Open the ShellFolder folder 
+Change the "Attributes" data value from "40 01 00 20" to "50 01 00 20". Once completed change the "CallForAttributes" dword value to "0x00000000" (double-click and change value data to 0). You must change both of these values to get the rename to appear. 
+After performing the above steps you will be able to rename the icon like any other icon. Right-click the Recycle Bin icon on the desktop and click Rename and rename it to whatever you wish.
+

@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>POWERCFG</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#p">Commands N-Z</a>
+    &gt; <a href="../INDEXP.HTM#powercfg">Commands P</a>
+    <h1>POWERCFG</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Enables an administrator to control the power settings on a
+    system.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>POWERCFG
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>POWERCFG
+    [<a href="#SwitchC">/c[reate] name</a>]
+    [<a href="#SwitchH">/h[ibernate] [ON | OFF]</a>]
+    [<a href="#SwitchL">/l[ist]</a>]
+    [[<a href="#SwitchChange">/change settings</a>
+      | <a href="#SwitchX">/x settings</a>]
+    | <a href="#SwitchD">/d[elete] name</a>
+    | [<a href="#SwitchE">/e[xport] name</a>
+       [<a href="#SwitchFile">/file file_name</a>]]
+    | [<a href="#SwitchI">/i[mport] name</a>
+       [<a href="#SwitchFile">/file file_name</a>]]
+    | <a href="#SwitchQ">/q[uery] [name]</a>
+    | <a href="#SwitchS">/s[etactive] name</a>
+      [<a href="#SwitchN">/n[umerical]</a>]]
+    [<a href="#SwitchG">/g[lobalpowerflag] [ON | OFF]</a>
+     <a href="#SwitchOption">/option:{batteryicon | multibattery | resumepassword | wakeonring | videodim}]</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchChange"></a> /change settings
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dt><a name="SwitchX"></a> /x settings
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Changes settings of the specified power scheme.
+      Settings:
+        <dl>
+          <dt><a name="SwitchXdisk-timeout-ac"></a> /disk-timeout-ac minutes
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Turns the hard disks off after the specified
+          number of minutes when the system is operating on
+          AC power. A value of 0 will disable the time-out.</dd>
+
+          <dt><a name="SwitchXdisk-timeout-dc"></a> /disk-timeout-dc minutes
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Turns the hard disks off after the specified
+          number of minutes when the system is operating on
+          DC (battery) power. A value of 0 will disable the
+          time-out.</dd>
+
+          <dt><a name="SwitchXhibernate-timeout-ac"></a> /hibernate-timeout-ac minutes
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Saves the contents of the computer's memory to
+          disk and turns off the computer after the
+          specified number of minutes when the system is
+          operating on AC power. A value of 0 will disable
+          the time-out.</dd>
+
+          <dt><a name="SwitchXhibernate-timeout-dc"></a> /hibernate-timeout-dc minutes
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Saves the contents of the computer's memory to
+          disk and turns off the computer after the
+          specified number of minutes when the system is
+          operating on DC (battery) power. A value of 0 will
+          disable the time-out.</dd>
+
+          <dt><a name="SwitchXmonitor-timeout-ac"></a> /monitor-timeout-ac minutes
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Turns the monitor off after the specified
+          number of minutes when the system is operating on
+          AC power. A value of 0 will disable the time-out.</dd>
+
+          <dt><a name="SwitchXmonitor-timeout-dc"></a> /monitor-timeout-dc minutes
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Turns the monitor off after the specified
+          number of minutes when the system is operating on
+          DC (battery) power. A value of 0 will disable the
+          time-out.</dd>
+
+          <dt><a name="SwitchXprocessor-throttle-ac"></a> /processor-throttle-ac value
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Selects the dynamic throttling policy to be
+          used, if your microprocessor supports processor
+          performance state controls, when the system is
+          operating on AC power.
+          Dynamic throttling policy values:
+          <ul>
+          <li><b>adaptive</b> Modifies the performance state
+          dynamically based on the demand the system puts on
+          the microprocessor</li>
+          <li><b>constant</b> Causes the microprocessor to
+          operate at the lowest performance state at all times</li>
+          <li><b>degrade</b> Causes the microprocessor to
+          operate at the lowest performance state, and
+          further reduces performance by applying stop clock
+          throttling as the system battery drains
+          <br><b>Note:</b> Typically used when the computer
+          is operating on battery power and is therefore
+          seldom used with
+          <a href="#SwitchXprocessor-throttle-ac">/processor-throttle-ac</a>.</li>
+          <li><b>none</b> Causes the microprocessor to
+          operate at the highest performance state at all times</li>
+          </ul>
+          </dd>
+
+          <dt><a name="SwitchXprocessor-throttle-dc"></a> /processor-throttle-dc value
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Selects the dynamic throttling policy to be
+          used, if your microprocessor supports processor
+          performance state controls, when the system is
+          operating on DC (battery) power.
+          Dynamic throttling policy values:
+          <ul>
+          <li><b>adaptive</b> Modifies the performance state
+          dynamically based on the demand the system puts on
+          the microprocessor</li>
+          <li><b>constant</b> Causes the microprocessor to
+          operate at the lowest performance state at all times</li>
+          <li><b>degrade</b> Causes the microprocessor to
+          operate at the lowest performance state, and
+          further reduces performance by applying stop clock
+          throttling as the system battery drains</li>
+          <li><b>none</b> Causes the microprocessor to
+          operate at the highest performance state at all times</li>
+          </ul>
+          </dd>
+
+          <dt><a name="SwitchXstandby-timeout-ac"></a> /standby-timeout-ac minutes
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Puts the computer in standby mode after the
+          specified number of minutes when the system is
+          operating on AC power. A value of 0 will disable
+          the time-out.</dd>
+
+          <dt><a name="SwitchXstandby-timeout-dc"></a> /standby-timeout-dc minutes
+          (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+          <dd>Puts the computer in standby mode after the
+          specified number of minutes when the system is
+          operating on DC (battery) power. A value of 0 will
+          disable the time-out.</dd>
+        </dl>
+      </dd>
+
+      <dt><a name="SwitchC"></a> /c[reate] name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Creates the specified power scheme. The new scheme
+      is created with the properties of the currently active
+      scheme.</dd>
+
+      <dt><a name="SwitchD"></a> /d[elete] name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Deletes the specified power scheme.</dd>
+
+      <dt><a name="SwitchE"></a> /e[xport] name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Exports the specified power scheme to a file.</dd>
+
+      <dt><a name="SwitchFile"></a> /file [file_name]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>If omitted, the default file_name is scheme.pow.</dd>
+      <dd>When used with <a href="#SwitchI">import</a>, if a
+      scheme with file_name already exists, it is replaced
+      with the new one.</dd>
+
+      <dt><a name="SwitchG"></a> /g[lobalpowerflag] [ON | OFF]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Turns the global power flag features on or off.</dd>
+
+      <dt><a name="SwitchH"></a> /h[ibernate] [ON | OFF]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Turns the hibernation feature on or off.</dd>
+
+      <dt><a name="SwitchI"></a> /i[mport] name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Imports the power scheme from the specified file.</dd>
+
+      <dt><a name="SwitchL"></a> /l[ist]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Lists the names of existing power schemes.</dd>
+
+      <dt><a name="SwitchN"></a> /n[umerical]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Requires you to specify the power scheme using its
+      numeric identifier, rather than its name.</dd>
+
+      <dt><a name="SwitchOption"></a> /option:batteryicon | multibattery | resumepassword | wakeonring | videodim
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd><a href="#SwitchG">/g[lobalpowerflag]</a>
+      feature name to turn on or off.
+      <ul>
+      <li><b>batteryicon</b> Enables or disables the battery
+      meter icon in the notification area. When this flag is
+      cleared, the battery meter icon is not displayed</li>
+      <li><b>multibattery</b> Enables or disables multiple
+      battery display in the system Power Meter</li>
+      <li><b>resumepassword</b> Enables or disables the
+      requirement that the user supply a password when the
+      system resumes from standby or hibernate</li>
+      <li><b>wakeonring</b> Enables or disables Wake on Ring
+      support</li>
+      <li><b>videodim</b> Enables or disables support for
+      dimming the video display when the system changes from
+      AC power to DC (battery) power</li>
+      </ul>
+      </dd>
+
+      <dt><a name="SwitchQ"></a> /q[uery] [name]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the configuration of the specified power
+      scheme. If name omitted, the configuration of the
+      currently active power scheme is displayed.</dd>
+
+      <dt><a name="SwitchS"></a> /s[etactive] name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Activates the specified power scheme.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

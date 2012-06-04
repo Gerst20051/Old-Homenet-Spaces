@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>INTERLNK</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#i">Commands A-M</a>
+    &gt; <a href="../INDEXI.HTM#interlnk">Commands I</a>
+    <h1>INTERLNK</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Connects two computers via parallel or serial ports and enables
+    the computers to share disks and printer ports. For example, you
+    could connect a laptop computer to a desktop computer and share
+    files. You must install the INTERLNK.EXE device driver before you
+    can use this command.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>INTERLNK
+    [<a href="#ParameterClient">client</a>[:]=
+    [<a href="#ParameterServer">server</a>][:]]</p>
+
+    <p>To display the current status:</p>
+    <p>INTERLNK</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterClient"></a> client[:]
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the letter of the drive on the Interlnk server that
+      will be redirected. The drive must be one listed in the This
+      Computer (Server) column of the Interlnk server screen. If no
+      drive letter is specified, the client drive will no longer be
+      redirected.</dd>
+
+      <dt><a name="ParameterServer"></a> server[:]
+      (<a href="../../Version/MSDOS/600.HTM">v6.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the letter of the drive on the Interlnk server that
+      will be redirected. The drive must be one listed in the This
+      Computer (Server) column of the Interlnk server screen. If no
+      drive letter is specified, the client drive will no longer be
+      redirected.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For more information about the Interlnk device driver, see
+    INTERLNK.EXE.
+    <br>For more information about Intersvr, see the
+    <a href="INTERSVR.HTM">INTERSVR</a> command.
+    <br>For more information about setting the number of available drive
+    letters, see the <a href="../L/LASTDRIV.HTM">LASTDRIVE</a> configuration option.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Assigning">Assigning drive letters</a></li>
+      <li><a href="#Cancel">Canceling redirection on a drive</a></li>
+      <li><a href="#Install">Installing the INTERLNK.EXE device driver</a></li>
+      <li><a href="#Parallel">Pin Connections for a Parallel Cable</a></li>
+      <li><a href="#Serial">Pin Connections for a Serial Cable</a></li>
+      <li><a href="#Starting">Starting INTERLNK without a server</a></li>
+    </ul>
+
+    <hr>
+    <a name="Install"></a> <b>Installing the INTERLNK.EXE device driver</b>
+    <p>You must use the <a href="../D/DEVICE.HTM">DEVICE</a> command to install the INTERLNK.EXE
+    device driver before you can use the INTERLNK command.</p>
+
+    <hr>
+    <a name="Cancel"></a> <b>Canceling redirection on a drive</b>
+    <p>To cancel redirection of a client drive to a server drive,
+    specify only the client drive and the equal sign (=).</p>
+
+    <hr>
+    <a name="Starting"></a> <b>Starting INTERLNK without a server</b>
+    <p>If you use INTERLNK to connect to a computer that is not running
+    <a href="INTERSVR.HTM">INTERSVR</a>, INTERLNK will show the
+    connection as three additional floppy disk drives. However, if you
+    try to show the contents of these drives, they will appear empty.
+    To show the contents of the redirected drives, the server must be
+    running <a href="INTERSVR.HTM">INTERSVR</a>.</p>
+
+    <hr>
+    <a name="Assigning"></a> <b>Assigning drive letters</b>
+    <p>When you connect two computers using INTERLNK, each additional
+    drive will be assigned the next available drive letter. Because the
+    <a href="../L/LASTDRIV.HTM">LASTDRIVE</a> setting in your CONFIG.SYS file determines how many drive
+    letters are available, make sure <a href="../L/LASTDRIV.HTM">LASTDRIVE</a> is set high enough to
+    accomodate the redirected drives.</p>
+
+    <hr>
+    <a name="Serial"></a> <b>Pin Connections for a Serial Cable</b>
+    <p>This section describes the wiring specifications for serial
+    Interlnk cables.</p>
+    <p>Make a serial cable with either a 9-pin or a 25-pin female
+    connector on both ends. Three wires are required for data
+    transmission: Ground-Ground, Transmit-Receive, and
+    Receive-Transmit. Seven wires are required if you want to use the
+    remote copy feature. Wire the cable:</p>
+<pre>
+   <u>9 pin</u>   <u>25 pin</u>              <u>25 pin</u>   <u>9 pin</u>
+   pin 5   pin 7    &lt;------&gt;   pin 7    pin 5 (Ground-Ground)
+   pin 3   pin 2    &lt;------&gt;   pin 3    pin 2 (Transmit-Receive)
+   pin 7   pin 4    &lt;------&gt;   pin 5    pin 8 (RTS - CTS)
+   pin 6   pin 6    &lt;------&gt;   pin 20   pin 4 (DSR - DTR)
+   pin 2   pin 3    &lt;------&gt;   pin 2    pin 3 (Receive-Transmit)
+   pin 8   pin 5    &lt;------&gt;   pin 4    pin 7 (CTS - RTS)
+   pin 4   pin 20   &lt;------&gt;   pin 6    pin 6 (DTR - DSR)
+   <u>9 pin</u>   <u>25 pin</u>              <u>25 pin</u>   <u>9 pin</u>
+</pre>
+
+    <hr>
+    <a name="Parallel"></a> <b>Pin Connections for a Parallel Cable</b>
+    <p>This section describes the wiring specifications for parallel
+    Interlnk cables.</p>
+    <p>Make a parallel cable with male DB-25 connectors at both ends.
+    Eleven wires are required for data transmission.</p>
+<pre>
+   <u>25 pin</u>          <u>25 pin</u>
+   pin 2   &lt;----&gt;  pin 15
+   pin 3   &lt;----&gt;  pin 13
+   pin 4   &lt;----&gt;  pin 12
+   pin 5   &lt;----&gt;  pin 10
+   pin 6   &lt;----&gt;  pin 11
+   pin 15  &lt;----&gt;  pin 2
+   pin 13  &lt;----&gt;  pin 3
+   pin 12  &lt;----&gt;  pin 4
+   pin 10  &lt;----&gt;  pin 5
+   pin 11  &lt;----&gt;  pin 6
+   pin 25  &lt;----&gt;  pin 25 (Ground-Ground)
+   <u>25 pin</u>          <u>25 pin</u>
+</pre>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>Suppose drive E exists on a server, and <a
+    href="INTERSVR.HTM">INTERSVR</a> is running. To redirect drive G
+    on the client to drive E on the server, type:</p>
+<pre>
+    INTERLNK <a
+href="#ParameterClient">G</a>=<a
+href="#ParameterServer">E</a>
+</pre>
+
+    <p>To cancel the redirection of client drive F, type:</p>
+<pre>
+    INTERLNK <a
+href="#ParameterClient">F</a>=
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

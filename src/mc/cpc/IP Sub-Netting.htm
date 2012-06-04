@@ -1,0 +1,915 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>IP Address Sub-Netting Tutorial</title>
+<meta name="Microsoft Theme" content="expeditn 0011">
+</head>
+
+<body background="../../_themes/expeditn/exptextb.jpg" bgcolor="#E0DAB8" text="#000000" link="#993300" vlink="#666600" alink="#CC3300"><!--mstheme--><font face="book antiqua,times new roman,times">
+
+<h1 align="center"><!--mstheme--><font face="Book Antiqua,Times New Roman,Times"><!--mstheme--><b><b><b><a name="Top">IP Address Sub-Netting Tutorial</a></b></b><!--mstheme--></font><!--mstheme--></b></h1>
+<!--msthemeseparator--><p align="center"><img src="../../_themes/expeditn/exphorsa.gif" width="600" height="10" alt="horizontal rule"></p>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="#Introduction">Introduction</a><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="#IP Addressing">IP Addressing</a><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="#Sub-Netting">Sub-Netting</a><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="#More Restrictive Sub-Net Masks">More Restrictive Subnet Masks</a><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="#An Example">An Example</a><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="#CIDR - Classless InterDomain Routing">CIDR</a><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="#Allowed Class B Subnet and Host IP addresses">Allowed Class A Subnets</a><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="#Allowed Class B Subnet and Host IP Addresses">Allowed Class B Subnets</a><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="#Allowed Class C Subnet and Host IP Addresses">Allowed Class C Subnets</a><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="#Logical Operations">Logical Operations</a><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="#References And Sources On The Internet">Internet Sources and References</a><!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table><!--mstheme--><font face="book antiqua,times new roman,times">
+<!--msthemeseparator--><p align="center"><img src="../../_themes/expeditn/exphorsa.gif" width="600" height="10" alt="horizontal rule"></p>
+<h3 align="center"><!--mstheme--><font face="Book Antiqua,Times New Roman,Times"><a name="Introduction">Introduction</a><!--mstheme--></font></h3>
+<p>This talk will cover the basics of IP addressing and sub-netting. <br>
+Topics covered will include: </p>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times">What is an IP Address? <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times">What are Classes? <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times">What is a Network Address? <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times">What are Subnet Masks and Subnet Addresses? <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times">How are Subnet Masks defined and used? <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times">How can all this be applied? <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times">What is CIDR? <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times">How can I get more information? <!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table><!--mstheme--><font face="book antiqua,times new roman,times">
+<!--msthemeseparator--><p align="center"><img src="../../_themes/expeditn/exphorsa.gif" width="600" height="10" alt="horizontal rule"></p>
+<h3 align="center"><!--mstheme--><font face="Book Antiqua,Times New Roman,Times"><a name="IP Addressing">IP Addressing</a><!--mstheme--></font></h3>
+<p>An IP (Internet Protocol) address is a unique identifier for a node or host connection 
+on an IP network. An IP address is a 32 bit binary number usually represented as 
+4 decimal values, each representing 8 bits, in the range 0 to 255 (known as octets) 
+separated by decimal points. This is known as &quot;dotted decimal&quot; notation. </p>
+<p>Example: 140.179.220.200 </p>
+<p>It is sometimes useful to view the values in their binary form. </p>
+<!--mstheme--></font><pre>140     .179     .220     .200
+10001100.10110011.11011100.11001000
+</pre><!--mstheme--><font face="book antiqua,times new roman,times">
+<p>Every IP address consists of two parts, one identifying the network and one identifying 
+the node. The Class of the address and the subnet mask determine which part belongs 
+to the network address and which part belongs to the node address. </p>
+<h2><!--mstheme--><font face="Book Antiqua,Times New Roman,Times">Address Classes<!--mstheme--></font></h2>
+<p>There are 5 different address classes. You can determine which class any IP address 
+is in by examining the first 4 bits of the IP address. </p>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><b>Class A</b> addresses begin with <b>0xxx</b>, or <b>1 to 126</b> decimal.
+  <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><b>Class B</b> addresses begin with <b>10xx</b>, or <b>128 to 191</b> decimal.
+  <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><b>Class C</b> addresses begin with <b>110x</b>, or <b>192 to 223</b> decimal.
+  <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><b>Class D</b> addresses begin with <b>1110</b>, or <b>224 to 239</b> decimal.
+  <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><b>Class E</b> addresses begin with <b>1111</b>, or <b>240 to 254</b> decimal.
+  <!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table><!--mstheme--><font face="book antiqua,times new roman,times">
+<p>Addresses beginning with <b>01111111</b>, or <b>127</b> decimal, are reserved 
+for loopback and for internal testing on a local machine; [You can test this: you 
+should always be able to ping <b>127.0.0.1</b>, which points to yourself] Class 
+D addresses are reserved for multicasting; Class E addresses are reserved for future 
+use. They should not be used for host addresses. </p>
+<p>Now we can see how the Class determines, by default, which part of the IP address 
+belongs to the network (<font color="#0000ff">N</font>, in <font color="#0000ff">
+blue</font>) and which part belongs to the node (<font color="#990000">n</font>, 
+in <font color="#990000">red</font>). </p>
+<p>&nbsp;</p>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times">Class A -- <font color="#0000ff">NNNNNNNN</font>.<font color="#990000">nnnnnnnn</font>.<font color="#990000">nnnnnnnn</font>.<font color="#990000">nnnnnnnn</font>
+  <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times">Class B -- <font color="#0000ff">NNNNNNNN</font>.<font color="#0000ff">NNNNNNNN</font>.<font color="#990000">nnnnnnnn</font>.<font color="#990000">nnnnnnnn</font>
+  <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times">Class C -- <font color="#0000ff">NNNNNNNN</font>.<font color="#0000ff">NNNNNNNN</font>.<font color="#0000ff">NNNNNNNN</font>.<font color="#990000">nnnnnnnn</font>
+  <!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table><!--mstheme--><font face="book antiqua,times new roman,times">
+<p>In the example, 140.179.220.200 is a Class B address so by default the Network 
+part of the address (also known as the <i>Network Address</i>) is defined by the 
+first two octets (140.179.x.x) and the node part is defined by the last 2 octets 
+(x.x.220.200). </p>
+<p>In order to specify the network address for a given IP address, the node section 
+is set to all &quot;0&quot;s. In our example, 140.179.0.0 specifies the network address for 
+140.179.220.200. When the node section is set to all &quot;1&quot;s, it specifies a broadcast 
+that is sent to all hosts on the network. 140.179.255.255 specifies the example 
+broadcast address. Note that this is true regardless of the length of the node section.
+</p>
+<h3><!--mstheme--><font face="Book Antiqua,Times New Roman,Times">Private Subnets<!--mstheme--></font></h3>
+<p>There are three IP network addresses reserved for private networks. The addresses 
+are <b>10.0.0.0, Subnet Mask 255.0.0.0</b>, <b>172.16.0.0, Subnet Mask 255.240.0.0</b>, 
+and <b>192.168.0.0, Subnet Mask 255.255.0.0. </b>These addresses are also notated
+<b>10.0.0.0/8</b>, <b>172.16.0.0/12</b>, and <b>192.168.0.0/16</b>; this notation 
+will be explained later in this tutorial. They can be used by anyone setting up 
+internal IP networks, such as a lab or home LAN behind a NAT or proxy server or 
+a router. It is always safe to use these because routers on the Internet by default 
+will never forward packets coming from these addresses. These addresses are defined 
+in <a href="IP%20Sub-Netting/rfc1918.htm">RFC 1918</a>.</p>
+<p align="center"><a href="#Top">
+<img border="0" src="../../i/sy/na/Top%203.gif" alt="Top" width="40" height="40"></a></p>
+<!--msthemeseparator--><p align="center"><img src="../../_themes/expeditn/exphorsa.gif" width="600" height="10" alt="horizontal rule"></p>
+<h3 align="center"><!--mstheme--><font face="Book Antiqua,Times New Roman,Times"><a name="Sub-Netting">Sub-Netting</a><!--mstheme--></font></h3>
+<p>Sub-Netting an IP Network can be done for a variety of reasons, including organization, 
+use of different physical media (such as Ethernet, FDDI, WAN, etc.), preservation 
+of address space, and security. The most common reason is to control network traffic. 
+In an Ethernet network, all nodes on a segment see all the packets transmitted by 
+all the other nodes on that segment. Performance can be adversely affected under 
+heavy traffic loads, due to collisions and the resulting retransmissions. A router 
+is used to connect IP networks to minimize the amount of traffic each segment must 
+receive. </p>
+<h3><!--mstheme--><font face="Book Antiqua,Times New Roman,Times">Subnet Masking<!--mstheme--></font></h3>
+<p>Applying a subnet mask to an IP address allows you to identify the network and 
+node parts of the address. The network bits are represented by the
+<font color="#0000ff">1</font>s in the mask, and the node bits are represented by 
+the <font color="#990000">0</font>s. Performing a bitwise
+<a href="#Logical Operations">logical AND</a> operation 
+between the IP address and the subnet mask results in the <i>Network Address</i> 
+or Number. <br>
+For example, using our test IP address and the default Class B subnet mask, we get:
+</p>
+<!--mstheme--></font><pre>10001100.10110011.11110000.11001000      140.179.240.200   Class B IP Address
+<font color="#0000ff">11111111</font>.<font color="#0000ff">11111111</font>.<font color="#990000">00000000</font>.<font color="#990000">00000000</font>      255.255.000.000   Default Class B Subnet Mask
+--------------------------------------------------------
+10001100.10110011.00000000.00000000      140.179.000.000   Network Address
+</pre><!--mstheme--><font face="book antiqua,times new roman,times">
+<p>Default subnet masks: </p>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><b>Class A</b> - <font color="#0000ff">255</font>.<font color="#990000">0</font>.<font color="#990000">0</font>.<font color="#990000">0</font> 
+  - <font color="#0000ff">11111111</font>.<font color="#990000">00000000</font>.<font color="#990000">00000000</font>.<font color="#990000">00000000</font>
+  <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><b>Class B</b> - <font color="#0000ff">255</font>.<font color="#0000ff">255</font>.<font color="#990000">0</font>.<font color="#990000">0</font> 
+  - <font color="#0000ff">11111111</font>.<font color="#0000ff">11111111</font>.<font color="#990000">00000000</font>.<font color="#990000">00000000</font>
+  <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><b>Class C</b> - <font color="#0000ff">255</font>.<font color="#0000ff">255</font>.<font color="#0000ff">255</font>.<font color="#990000">0</font> 
+  - <font color="#0000ff">11111111</font>.<font color="#0000ff">11111111</font>.<font color="#0000ff">11111111</font>.<font color="#990000">00000000</font><!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table><!--mstheme--><font face="book antiqua,times new roman,times">
+<p align="center"><a href="#Top">
+<img border="0" src="../../i/sy/na/Top%203.gif" alt="Top" width="40" height="40"></a></p>
+<!--msthemeseparator--><p align="center"><img src="../../_themes/expeditn/exphorsa.gif" width="600" height="10" alt="horizontal rule"></p>
+<h3 align="center"><!--mstheme--><font face="Book Antiqua,Times New Roman,Times"><a name="More Restrictive Sub-Net Masks">More Restrictive Sub-Net 
+Masks</a><!--mstheme--></font></h3>
+<p>Additional bits can be added to the default subnet mask for a given Class to 
+further subnet, or break down, a network. When a bitwise
+<a href="#Logical Operations">logical AND</a> operation 
+is performed between the subnet mask and IP address, the result defines the <i>Subnet 
+Address</i> (also called the <i>Network Address</i> or <i>Network Number</i>). There 
+are some restrictions on the subnet address. Node addresses of all &quot;0&quot;s and all 
+&quot;1&quot;s are reserved for specifying the local network (when a host does not know its 
+network address) and all hosts on the network (broadcast address), respectively. 
+This also applies to subnets. A subnet address cannot be all &quot;0&quot;s or all &quot;1&quot;s. This 
+also implies that a 1 bit subnet mask is not allowed. This restriction is required 
+because older standards enforced this restriction. Recent standards that allow use 
+of these subnets have superseded these standards, but many &quot;legacy&quot; devices do not 
+support the newer standards. If you are operating in a controlled environment, such 
+as a lab, you can safely use these restricted subnets. </p>
+<p>To calculate the number of subnets or nodes, use the formula (2<sup>n</sup>-2) 
+where n = number of bits in either field, and 2<sup>n</sup> represents 2 raised 
+to the nth power. Multiplying the number of subnets by the number of nodes available 
+per subnet gives you the total number of nodes available for your class and subnet 
+mask. Also, note that although subnet masks with non-contiguous mask bits are allowed, 
+they are not recommended. </p>
+<p>Example: </p>
+<!--mstheme--></font><pre>10001100.10110011.11011100.11001000      140.179.220.200   IP Address
+<font color="#0000ff">11111111</font>.<font color="#0000ff">11111111</font>.<font color="#0000ff"><b>111</b></font><font color="#990000">00000</font>.<font color="#990000">00000000</font>      <font color="#0000ff">255</font>.<font color="#0000ff">255</font>.<font color="#0000ff"><b>224</b></font>.<font color="#990000">000</font>   Subnet Mask
+--------------------------------------------------------
+10001100.10110011.11000000.00000000      140.179.192.000   Subnet Address
+10001100.10110011.11011111.11111111      140.179.223.255   Broadcast Address
+</pre><!--mstheme--><font face="book antiqua,times new roman,times">
+<p>In this example a <font color="#009900"><b>3 bit subnet mask</b></font> was used. 
+There are 6 (2<sup>3</sup>-2) subnets available with this size mask (remember that 
+subnets with all 0&#39;s and all 1&#39;s are not allowed). Each subnet has 8190 (2<sup>13</sup>-2) 
+nodes. Each subnet can have nodes assigned to any address between the Subnet address 
+and the Broadcast address. This gives a total of 49,140 nodes for the entire class 
+B address subnetted this way. Notice that this is less than the 65,534 nodes an 
+unsubnetted class B address would have. </p>
+<p>You can calculate the Subnet Address by performing a bitwise
+<a href="#Logical Operations">logical AND</a> operation 
+between the IP address and the subnet mask, then setting all the host bits to <b>
+0</b>s. Similarly, you can calculate the <i>Broadcast Address</i> for a subnet by 
+performing the same <a href="#Logical Operations">logical 
+AND</a> between the IP address and the subnet mask, then setting all the host bits 
+to <b>1</b>s. That is how these numbers are derived in the example above. </p>
+<p>Subnetting always reduces the number of possible nodes for a given network. There 
+are complete subnet tables available here for
+<a href="#Allowed Class A Subnet and Host IP Addresses">Class A</a>,
+<a href="#Allowed Class B Subnet and Host IP Addresses">Class B</a> and
+<a href="#Allowed Class C Subnet and Host IP Addresses">Class C</a>. These tables 
+list all the possible subnet masks for each class, along with calculations of the 
+number of networks, nodes and total hosts for each subnet.</p>
+<p align="center"><a href="#Top">
+<img border="0" src="../../i/sy/na/Top%203.gif" alt="Top" width="40" height="40"></a></p>
+<!--msthemeseparator--><p align="center"><img src="../../_themes/expeditn/exphorsa.gif" width="600" height="10" alt="horizontal rule"></p>
+<h3 align="center"><!--mstheme--><font face="Book Antiqua,Times New Roman,Times"><a name="An Example">An Example</a><!--mstheme--></font></h3>
+<p>Here is another, more detailed, example. Say you are assigned a Class C network 
+number of 200.133.175.0 (apologies to anyone who may actually own this domain address). 
+You want to utilize this network across multiple small groups within an organization. 
+You can do this by subnetting that network with a subnet address. </p>
+<p>We will break this network into 14 subnets of 14 nodes each. This will limit 
+us to 196 nodes on the network instead of the 254 we would have without subnetting, 
+but gives us the advantages of traffic isolation and security. To accomplish this, 
+we need to use a subnet mask 4 bits long. <br>
+Recall that the default Class C subnet mask is </p>
+<!--mstheme--></font><pre><font color="#0000ff">255</font>.<font color="#0000ff">255</font>.<font color="#0000ff">255</font>.<font color="#990000">0</font> (<font color="#0000ff">11111111</font>.<font color="#0000ff">11111111</font>.<font color="#0000ff">11111111</font>.<font color="#990000">00000000</font> binary)</pre><!--mstheme--><font face="book antiqua,times new roman,times">
+<p>Extending this by 4 bits yields a mask of </p>
+<!--mstheme--></font><pre>255.255.255.<b><font color="#0000ff">240</font></b> (<font color="#0000ff">11111111</font>.<font color="#0000ff">11111111</font>.<font color="#0000ff">11111111</font>.<font color="#0000ff"><b>1111</b></font><font color="#990000">0000</font> binary)</pre><!--mstheme--><font face="book antiqua,times new roman,times">
+<p>This gives us 16 possible network numbers, 2 of which cannot be used: </p>
+<p>&nbsp;</p>
+<div align="center">
+  <center>
+  <!--mstheme--></font><table cellSpacing="4" cellPadding="2" border="2" style="border-collapse: collapse" bordercolordark="#660000" bordercolorlight="#660000">
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>Subnet bits</b><!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>Network Number</b><!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>Node Addresses</b><!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>Broadcast Address</b><!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">0000<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.0<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">Reserved<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">None<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">0001<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.16<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">.17 thru .30<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.31<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">0010<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.32<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">.33 thru .46<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.47<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">0011<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.48<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">.49 thru .62<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.63<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">0100<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.64<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">.65 thru .78<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.79<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">0101<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.80<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">.81 thru .94<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.95<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">0110<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.96<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">.97 thru .110<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.111<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">0111<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.112<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">.113 thru .126<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.127<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">1000<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.128<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">.129 thru .142<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.143<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">1001<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.144<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">.145 thru .158<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.159<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">1010<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.160<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">.161 thru .174<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.175<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">1011<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.176<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">.177 thru .190<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.191<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">1100<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.192<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">.193 thru .206<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.207<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">1101<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.208<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">.209 thru .222<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.223<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">1110<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.224<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">.225 thru .238<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.239<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">1111<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">200.133.175.240<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">Reserved<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">None<!--mstheme--></font></td>
+    </tr>
+  </table><!--mstheme--><font face="book antiqua,times new roman,times">
+  </center>
+</div>
+<p align="center"><a href="#Top">
+<img border="0" src="../../i/sy/na/Top%203.gif" alt="Top" width="40" height="40"></a></p>
+<!--msthemeseparator--><p align="center"><img src="../../_themes/expeditn/exphorsa.gif" width="600" height="10" alt="horizontal rule"></p>
+<h3 align="center"><!--mstheme--><font face="Book Antiqua,Times New Roman,Times"><a name="CIDR - Classless InterDomain Routing">CIDR - Classless 
+InterDomain Routing</a><!--mstheme--></font></h3>
+<p>Now that you understand &quot;classful&quot; IP Subnetting principals, you can forget them 
+;). The reason is <b>CIDR</b> -- <b>C</b>lassless <b>I</b>nter<b>D</b>omain <b>R</b>outing. 
+CIDR was invented several years ago to keep the internet from running out of IP 
+addresses. The &quot;classful&quot; system of allocating IP addresses can be very wasteful; 
+anyone who could reasonably show a need for more that 254 host addresses was given 
+a Class B address block of 65533 host addresses. Even more wasteful were companies 
+and organizations that were allocated Class A address blocks, which contain over 
+16 Million host addresses! Only a tiny percentage of the allocated Class A and Class 
+B address space has ever been actually assigned to a host computer on the Internet.
+</p>
+<p>People realized that addresses could be conserved if the class system was eliminated. 
+By accurately allocating only the amount of address space that was actually needed, 
+the address space crisis could be avoided for many years. This was first proposed 
+in 1992 as a scheme called <b>Supernetting</b>. Under supernetting, the classful 
+subnet masks are extended so that a network address and subnet mask could, for example, 
+specify multiple Class C subnets with one address. For example, If I needed about 
+1000 addresses, I could supernet 4 Class C networks together: </p>
+<!--mstheme--></font><pre>192.60.128.0   (11000000.00111100.10000000.00000000)  Class C subnet address
+192.60.129.0   (11000000.00111100.10000001.00000000)  Class C subnet address
+192.60.130.0   (11000000.00111100.10000010.00000000)  Class C subnet address
+192.60.131.0   (11000000.00111100.10000011.00000000)  Class C subnet address
+--------------------------------------------------------
+192.60.128.0   (11000000.00111100.10000000.00000000)  Supernetted Subnet address
+255.255.252.0  (<font color="#0000ff">11111111</font>.<font color="#0000ff">11111111</font>.<font color="#0000ff">111111</font><font color="#990000">00</font>.<font color="#990000">00000000</font>)  Subnet Mask
+192.60.131.255 (11000000.00111100.10000011.11111111)  Broadcast address
+</pre><!--mstheme--><font face="book antiqua,times new roman,times">
+<p>In this example, the subnet 192.60.128.0 includes all the addresses from 192.60.128.0 
+to 192.60.131.255. As you can see in the binary representation of the subnet mask, 
+the Network portion of the address is 22 bits long, and the host portion is 10 bits 
+long. </p>
+<p>Under CIDR, the subnet mask notation is reduced to a simplified shorthand. Instead 
+of spelling out the bits of the subnet mask, it is simply listed as the number of 
+1s bits that start the mask. In the above example, instead of writing the address 
+and subnet mask as </p>
+<!--mstheme--></font><pre>192.60.128.0, Subnet Mask 255.255.252.0 
+</pre><!--mstheme--><font face="book antiqua,times new roman,times">
+<p>the network address would be written simply as: </p>
+<!--mstheme--></font><pre>192.60.128.0/22
+</pre><!--mstheme--><font face="book antiqua,times new roman,times">
+<p>which indicates starting address of the network, and number of 1s bits (22) in 
+the network portion of the address. If you look at the subnet mask in binary (<font color="#0000ff"><b>11111111</b></font>.<font color="#0000ff"><b>11111111</b></font>.<font color="#0000ff"><b>111111</b></font><font color="#990000">00</font>.<font color="#990000">00000000</font>), 
+you can easily see how this notation works. </p>
+<p>The use of a CIDR notated address is the same as for a Classful address. Classful 
+addresses can easily be written in CIDR notation (Class A = /8, Class B = /16, and 
+Class C = /24) </p>
+<p>It is currently almost impossible for an individual or company to be allocated 
+their own IP address blocks. You will simply be told to get them from your ISP. 
+The reason for this is the ever-growing size of the internet routing table. Just 
+10 years ago, there were less than 5000 network routes in the entire Internet. Today, 
+there are over 100,000. Using CIDR, the biggest ISPs are allocated large chunks 
+of address space (usually with a subnet mask of /19 or even smaller); the ISP&#39;s 
+customers (often other, smaller ISPs) are then allocated networks from the big ISP&#39;s 
+pool. That way, all the big ISP&#39;s customers (and their customers, and so on) are 
+accessible via 1 network route on the Internet. But I digress. </p>
+<p>It is expected that CIDR will keep the Internet happily in IP addresses for the 
+next few years at least. After that, IPv6, with 128 bit addresses, will be needed. 
+Under IPv6, even sloppy address allocation would comfortably allow a billion unique 
+IP addresses for every person on earth! The complete and gory details of CIDR are 
+documented in <a href="IP%20Sub-Netting/rfc1519.htm">RFC1519</a>, which 
+was released in September of 1993. </p>
+<p align="center"><a href="#Top">
+<img border="0" src="../../i/sy/na/Top%203.gif" alt="Top" width="40" height="40"></a></p>
+<!--msthemeseparator--><p align="center"><img src="../../_themes/expeditn/exphorsa.gif" width="600" height="10" alt="horizontal rule"></p>
+<h3 align="center"><!--mstheme--><font face="Book Antiqua,Times New Roman,Times"><a name="Allowed Class A Subnet and Host IP Addresses">Allowed 
+Class A Subnet and Host IP Addresses</a><!--mstheme--></font></h3>
+<div align="center">
+  <center>
+  <!--mstheme--></font><table cellSpacing="4" cellPadding="2" border="2" style="border-collapse: collapse" bordercolordark="#660000" bordercolorlight="#660000">
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times"><b># bits</b><!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>Subnet Mask</b><!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>CIDR</b><!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times"><b># Subnets</b><!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times"><b># Hosts</b><!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>Nets * Hosts</b><!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">2<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.192.0.0<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/10<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">2<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">4194302<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">8388604<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">3<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.224.0.0<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/11<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">6<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">2097150<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">12582900<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">4<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.240.0.0<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/12<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">14<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">1048574<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">14680036<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">5<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.248.0.0<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/13<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">30<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">524286<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">15728580<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">6<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.252.0.0<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/14<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">62<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">262142<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">16252804<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">7<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.254.0.0<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/15<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">126<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">131070<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">16514820<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">8<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.0.0<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/16<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">254<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">65534<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">16645636<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">9<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.128.0<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/17<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">510<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">32766<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">16710660<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">10<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.192.0<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/18<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">1022<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">16382<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">16742404<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">11<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.224.0<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/19<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">2046<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">8190<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">16756740<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">12<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.240.0<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/20<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">4094<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">4094<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">16760836<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">13<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.248.0<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/21<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">8190<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">2046<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">16756740<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">14<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.252.0<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/22<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">16382<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">1022<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">16742404<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">15<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.254.0<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/23<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">32766<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">510<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">16710660<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">16<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.255.0<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/24<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">65534<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">254<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">16645636<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">17<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.255.128<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/25<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">131070<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">126<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">16514820<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">18<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.255.192<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/26<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">262142<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">62<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">16252804<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">19<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.255.224<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/27<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">524286<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">30<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">15728580<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">20<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.255.240<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/28<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">1048574<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">14<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">14680036<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">21<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.255.248<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/29<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">2097150<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">6<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">12582900<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">22<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.255.252<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/30<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">4194302<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">2<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">8388604<!--mstheme--></font></td>
+    </tr>
+  </table><!--mstheme--><font face="book antiqua,times new roman,times">
+  </center>
+</div>
+<p align="center"><a href="#Top">
+<img border="0" src="../../i/sy/na/Top%203.gif" alt="Top" width="40" height="40"></a></p>
+<!--msthemeseparator--><p align="center"><img src="../../_themes/expeditn/exphorsa.gif" width="600" height="10" alt="horizontal rule"></p>
+<h3 align="center"><!--mstheme--><font face="Book Antiqua,Times New Roman,Times"><a name="Allowed Class B Subnet and Host IP Addresses">Allowed 
+Class A Subnet and Host IP Addresses</a><!--mstheme--></font></h3>
+<div align="center">
+  <center>
+  <!--mstheme--></font><table cellSpacing="4" cellPadding="2" border="2" style="border-collapse: collapse" bordercolordark="#660000" bordercolorlight="#660000">
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times"><b># bits</b><!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>Subnet Mask</b><!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>CIDR</b><!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times"><b># Subnets</b><!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times"><b># Hosts</b><!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>Nets * Hosts</b><!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">2<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.192.0<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/18<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">2<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">16382<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">32764<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">3<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.224.0<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/19<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">6<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">8190<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">49140<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">4<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.240.0<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/20<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">14<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">4094<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">57316<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">5<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.248.0<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/21<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">30<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">2046<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">61380<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">6<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.252.0<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/22<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">62<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">1022<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">63364<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">7<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.254.0<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/23<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">126<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">510<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">64260<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">8<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.255.0<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/24<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">254<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">254<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">64516<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">9<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.255.128<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/25<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">510<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">126<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">64260<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">10<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.255.192<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/26<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">1022<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">62<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">63364<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">11<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.255.224<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/27<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">2046<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">30<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">61380<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">12<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.255.240<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/28<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">4094<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">14<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">57316<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">13<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.255.248<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/29<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">8190<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">6<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">49140<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">14<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.255.252<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/30<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">16382<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">2<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">32764<!--mstheme--></font></td>
+    </tr>
+  </table><!--mstheme--><font face="book antiqua,times new roman,times">
+  </center>
+</div>
+<p align="center"><a href="#Top">
+<img border="0" src="../../i/sy/na/Top%203.gif" alt="Top" width="40" height="40"></a></p>
+<!--msthemeseparator--><p align="center"><img src="../../_themes/expeditn/exphorsa.gif" width="600" height="10" alt="horizontal rule"></p>
+<h3 align="center"><!--mstheme--><font face="Book Antiqua,Times New Roman,Times"><a name="Allowed Class C Subnet and Host IP Addresses">Allowed 
+Class C Subnet and Host IP Addresses</a><!--mstheme--></font></h3>
+<div align="center">
+  <center>
+  <!--mstheme--></font><table cellSpacing="4" cellPadding="2" border="2" style="border-collapse: collapse" bordercolordark="#660000" bordercolorlight="#660000">
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times"><b># bits</b><!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>Subnet Mask</b><!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>CIDR</b><!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times"><b># Subnets</b><!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times"><b># Hosts</b><!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>Nets * Hosts</b><!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">2<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.255.192<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/26<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">2<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">62<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">124<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">3<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.255.224<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/27<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">6<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">30<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">180<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">4<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.255.240<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/28<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">14<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">14<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">196<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">5<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.255.248<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/29<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">30<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">6<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">180<!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">6<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">255.255.255.252<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">/30<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">62<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">2<!--mstheme--></font></td>
+      <td><!--mstheme--><font face="book antiqua,times new roman,times">124<!--mstheme--></font></td>
+    </tr>
+  </table><!--mstheme--><font face="book antiqua,times new roman,times">
+  </center>
+</div>
+<p align="center"><a href="#Top">
+<img border="0" src="../../i/sy/na/Top%203.gif" alt="Top" width="40" height="40"></a></p>
+<!--msthemeseparator--><p align="center"><img src="../../_themes/expeditn/exphorsa.gif" width="600" height="10" alt="horizontal rule"></p>
+<h3 align="center"><!--mstheme--><font face="Book Antiqua,Times New Roman,Times"><a name="Logical Operations">Logical Operations</a><!--mstheme--></font></h3>
+<p>This page will provide a brief review and explanation of the common logical bitwise 
+operations AND, OR, XOR (Exclusive OR) and NOT. Logical operations are performed 
+between two data bits (except for NOT). Bits can be either &quot;1&quot; or &quot;0&quot;, and these 
+operations are essential to performing digital math operations. <br>
+In the &quot;truth tables&quot; below, the input bits are in <b>bold</b>, and the results 
+are plain. </p>
+<p>&nbsp;</p>
+<h2><!--mstheme--><font face="Book Antiqua,Times New Roman,Times">AND<!--mstheme--></font></h2>
+<p>The logical AND operation compares 2 bits and if they are both &quot;1&quot;, then the 
+result is &quot;1&quot;, otherwise, the result is &quot;0&quot;. </p>
+<p>&nbsp;</p>
+<!--mstheme--></font><table cellSpacing="3" cellPadding="1" border="1" bordercolordark="#660000" bordercolorlight="#660000">
+  <tr>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times">&nbsp;<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>0</b><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>1</b><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>0</b><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times">0<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times">0<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>1</b><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times">0<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times">1<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="book antiqua,times new roman,times">
+<p>&nbsp;</p>
+<h2><!--mstheme--><font face="Book Antiqua,Times New Roman,Times">OR<!--mstheme--></font></h2>
+<p>The logical OR operation compares 2 bits and if either or both bits are &quot;1&quot;, 
+then the result is &quot;1&quot;, otherwise, the result is &quot;0&quot;. </p>
+<p>&nbsp;</p>
+<!--mstheme--></font><table cellSpacing="3" cellPadding="1" border="1" bordercolordark="#660000" bordercolorlight="#660000">
+  <tr>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times">&nbsp;<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>0</b><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>1</b><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>0</b><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times">0<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times">1<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>1</b><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times">1<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times">1<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="book antiqua,times new roman,times">
+<p>&nbsp;</p>
+<h2><!--mstheme--><font face="Book Antiqua,Times New Roman,Times">XOR<!--mstheme--></font></h2>
+<p>The logical XOR (Exclusive OR) operation compares 2 bits and if exactly one of 
+them is &quot;1&quot; (i.e., if they are different values), then the result is &quot;1&quot;; otherwise 
+(if the bits are the same), the result is &quot;0&quot;. </p>
+<p>&nbsp;</p>
+<!--mstheme--></font><table cellSpacing="3" cellPadding="1" border="1" bordercolordark="#660000" bordercolorlight="#660000">
+  <tr>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times">&nbsp;<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>0</b><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>1</b><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>0</b><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times">0<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times">1<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>1</b><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times">1<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times">0<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="book antiqua,times new roman,times">
+<p>&nbsp;</p>
+<h2><!--mstheme--><font face="Book Antiqua,Times New Roman,Times">NOT<!--mstheme--></font></h2>
+<p>The logical NOT operation simply changes the value of a single bit. If it is 
+a &quot;1&quot;, the result is &quot;0&quot;; if it is a &quot;0&quot;, the result is &quot;1&quot;. Note that this operation 
+is different in that instead of comparing two bits, it is acting on a single bit.
+</p>
+<p>&nbsp;</p>
+<!--mstheme--></font><table cellSpacing="3" cellPadding="1" border="1" bordercolordark="#660000" bordercolorlight="#660000">
+  <tr>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>0</b><!--mstheme--></font></td>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times"><b>1</b><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times">1<!--mstheme--></font></td>
+    <td><!--mstheme--><font face="book antiqua,times new roman,times">0<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="book antiqua,times new roman,times"><!--msthemeseparator--><p align="center"><img src="../../_themes/expeditn/exphorsa.gif" width="600" height="10" alt="horizontal rule"></p>
+<h3 align="center"><!--mstheme--><font face="Book Antiqua,Times New Roman,Times"><a name="References And Sources On The Internet">References And 
+Sources On The Internet</a><!--mstheme--></font></h3>
+<p>&quot;<em><strong>Don&#39;t go through life with a catcher&#39;s mitt on both hands.<br>
+You need to be able to throw something back.</strong></em>&quot;</p>
+<p>Requests for Comments (RFCs): </p>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="http://www.faqs.org/rfcs/rfc-titles.html" target="_blank">Overall 
+  RFC Index</a> <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="http://www.faqs.org/rfcs/rfc1918.html" target="_blank">RFC 1918</a> 
+  - Address Allocation for Private Internets <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="http://www.faqs.org/rfcs/rfc1219.html" target="_blank">RFC 1219</a> 
+  - On the Assignment of Subnet Numbers <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="http://www.faqs.org/rfcs/rfc950.html" target="_blank">RFC 950</a> 
+  - Internet standard subnetting procedure <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="http://www.faqs.org/rfcs/rfc940.html" target="_blank">RFC 940</a> 
+  - Toward an Internet standard scheme for subnetting <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="http://www.faqs.org/rfcs/rfc932.html" target="_blank">RFC 932</a> 
+  - Subnetwork addressing scheme <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="http://www.faqs.org/rfcs/rfc917.html" target="_blank">RFC 917</a> 
+  - Internet subnets <!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table><!--mstheme--><font face="book antiqua,times new roman,times">
+<p>Newsgroups of interest: </p>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="news:comp.protocols.tcpip" target="_blank">comp.protocols.tcpip</a> 
+  (or on
+  <a href="http://groups.google.com/groups?newwindow=1&group=comp.protocols.tcp-ip" target="_blank">
+  Google</a>) <!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="news:comp.protocols.tcpip.domains" target="_blank">comp.protocols.tcpip.domains</a> 
+  (or on
+  <a href="http://groups.google.com/groups?newwindow=1&group=comp.protocols.tcp-ip.domains" target="_blank">
+  Google</a>) <!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table><!--mstheme--><font face="book antiqua,times new roman,times">
+<p>Other Stuff: </p>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="http://www.protocols.com/" target="_blank">Protocols.com</a><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="http://www.internic.net/" target="_blank">Internic</a><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times">
+  <a href="http://www.cs.indiana.edu/docproject/zen/zen-1.0_toc.html" target="_blank">
+  Zen and the Art of the Internet</a><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="http://www.matisse.net/files/glossary.html" target="_blank">Glossary 
+  of Internet Terms</a><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="http://www.findtutorials.com/" target="_blank">FindTutorials.com</a><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="http://www.firewall.cx/" target="_blank">Firewall.cx</a><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="http://www.showipaddress.com/" target="_blank">Show My IP Address</a><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="http://www.ip2location.com/">IP 2 Location</a><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times"><a href="http://www.ipaddressworld.com/">IP Address World</a><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/expeditn/expbul1a.gif" width="15" height="15" hspace="13" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="book antiqua,times new roman,times">
+  <a href="http://www.brouckie.be/cgi-bin/IPsubnetting/index.pl" target="_blank">
+  IP Address Analyzer</a>
+  <img src="../../i/sy/ne/New%201.gif" width="26" height="14"><!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table><!--mstheme--><font face="book antiqua,times new roman,times">
+<!--msthemeseparator--><p align="center"><img src="../../_themes/expeditn/exphorsa.gif" width="600" height="10" alt="horizontal rule"></p>
+<p align="center"><a href="../../index.html">Home</a> -
+<a href="index.html">Computers</a> -
+<a href="IP%20Addressing%20and%20Subnetting.htm">IP Addressing</a> - <a href="ISDN%20Tutorial.htm">
+ISDN Tutorial</a> - <a href="TCP%20IP%20Protocols/Page%201.htm">TCP / IP Protocols</a> 
+- <a href="http://www.ralphb.net/IPSubnet/index.html">Original Link</a></p>
+
+<!--mstheme--></font></body>
+
+</html>

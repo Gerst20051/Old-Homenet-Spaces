@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DIRUSE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDA.HTM#diruse">Commands Da-Dr</a>
+    <h1>DIRUSE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Display disk usage.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>DIRUSE
+    [<a href="#SwitchComma">/,</a>]
+    [<a href="#SwitchAsterisk">/*</a>]
+    [<a href="#SwitchA">/A</a>]
+    [<a href="#SwitchB">/B</a>
+    | <a href="#SwitchK">/K</a>
+    | <a href="#SwitchM">/M</a>]
+    [<a href="#SwitchC">/C</a>]
+    [<a href="#SwitchD">/D</a>]
+    [<a href="#SwitchL">/L</a>]
+    [<a href="#SwitchO">/O</a>]
+    [<a href="#SwitchQ">/Q:#</a>]
+    [<a href="#SwitchS">/S</a>]
+    [<a href="#SwitchV">/V</a>]
+    <a href="#ParameterPaths">paths</a>...</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterPaths"></a> paths...
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Folders to display usage of.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchComma"></a> /,
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Use thousand separator when displaying sizes.</dd>
+
+      <dt><a name="SwitchAsterisk"></a> /*
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Report on one level of subfolders
+      (top-level folders only).</dd>
+
+      <dt><a name="SwitchA"></a> /A
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>generate an alert if quota is exceeded
+      (requires the Alerter service)</dd>
+
+      <dt><a name="SwitchB"></a> /B
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Display in bytes (default).</dd>
+
+      <dt><a name="SwitchC"></a> /C
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Use Compressed size instead of apparent size.</dd>
+
+      <dt><a name="SwitchD"></a> /D
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Display only folders that exceed specified sizes.</dd>
+
+      <dt><a name="SwitchK"></a> /K
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Display in Kb.</dd>
+
+      <dt><a name="SwitchL"></a> /L
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Output overflows to logfile .\DIRUSE.LOG.</dd>
+
+      <dt><a name="SwitchM"></a> /M
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Display in Mb.</dd>
+
+      <dt><a name="SwitchO"></a> /O
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Don't check subfolders for quota overflow.</dd>
+
+      <dt><a name="SwitchQ"></a> /Q:#
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Quota limit, mark folders that exceed the size (#)
+      with a "!". Set
+      <a href="../../ENV/MSWIN/ERRORLEV.HTM">%ERRORLEVEL%</a>
+      to ONE if any folders are found that exceed the
+      specified size.</dd>
+
+      <dt><a name="SwitchS"></a> /S
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Include detail of every subfolder in the output.</dd>
+
+      <dt><a name="SwitchV"></a> /V
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Display progress report for every subfolder.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="DIR.HTM">DIR</a> - Display a list of files and folders.
+    <br>You can also list files with <a href="../X/XCOPY.HTM">XCOPY</a>
+    <a href="../X/XCOPY.HTM#SwitchL">/L</a>
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>quota - Display disk usage and limits.
+    <br>quotacheck - Scan a file system for disk usage.
+    <br>quotactl - Set disk quotas.
+    <br>ulimit - Limit user resources.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Switch">Switch symbols</a></li>
+    </ul>
+
+    <hr>
+    <a name="Switch"></a> <b>Switch symbols</b>
+    <p>The '-' symbol can be used in place of the '/' symbol.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+<pre>
+    DIRUSE <a
+href="#SwitchM">/M</a> <a
+href="#SwitchQ">/Q:1.5</a> <a
+href="#SwitchAsterisk">/*</a> <a
+href="#ParameterPaths">e:\users</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <ul>
+    <li><b>1</b> Any folders found that exceed specified <a href="#SwitchQ">quota size</a></li>
+    </ul>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External Resource Kit</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd><a href="../../Version/MSWIN/NT400.HTM">NT4</a></dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

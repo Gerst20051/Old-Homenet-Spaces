@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DEVICE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDA.HTM#device">Configuration Da-Dr</a>
+    <h1>DEVICE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Loads the device driver you specify into memory. You can use this
+    command only in your CONFIG.SYS file.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>DEVICE=<a
+    href="#ParameterDrivePath">[drive:][\path\]</a><a
+    href="#ParameterFilename">filename</a>
+    <a href="#ParameterParms">parameters</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrivePath"></a> [drive:][\path\]
+      (<a href="../../Version/MSDOS/300.HTM">v3.0</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the location of the device driver file.</dd>
+
+      <dt><a name="ParameterFilename"></a> filename
+      (<a href="../../Version/MSDOS/300.HTM">v3.0</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the name of the device driver file.</dd>
+
+      <dt><a name="ParameterParms"></a> parameters
+      (<a href="../../Version/MSDOS/300.HTM">v3.0</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies any command-line information required by
+      the device driver.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about loading device drivers into the
+    upper memory area, see the
+    <a href="DEVICEHI.HTM">DEVICEHIGH</a> command.
+    <br><a href="../A/ANSISYS.HTM">ANSI.SYS</a>
+    <br><a href="DISPLAYS.HTM">DISPLAY.SYS</a>
+    <br><a href="DRIVERSY.HTM">DRIVER.SYS</a>
+    <br><a href="DRVSPACE.HTM">DRVSPACE.SYS</a>
+    <br><a href="../E/EGASYS.HTM">EGA.SYS</a>
+    <br><a href="../E/EMM386EX.HTM">EMM386.EXE</a>
+    <br><a href="../H/HIMEMSYS.HTM">HIMEM.SYS</a>
+    <br><a href="../I/INTERLNK.HTM">INTERLNK.EXE</a>
+    <br><a href="../P/POWER.HTM">POWER.EXE</a>
+    <br><a href="../R/RAMDRIVE.HTM">RAMDRIVE.SYS</a>
+    <br><a href="../S/SETVER.HTM">SETVER.EXE</a>
+    <br><a href="../S/SMARTDRV.HTM">SMARTDRV.EXE</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#OtherProducts">Installing device drivers for other products</a></li>
+      <li><a href="#ThirdParty">Installing a third-party console driver</a></li>
+      <li><a href="#Using">Using standard device drivers</a></li>
+    </ul>
+
+    <hr>
+    <a name="Using"></a> <b>Using standard device drivers</b>
+    <p>The standard installable device drivers provided with
+    the operating system are:
+    <ul>
+      <li><a href="../A/ANSISYS.HTM">ANSI.SYS</a></li>
+      <li><a href="DISPLAYS.HTM">DISPLAY.SYS</a></li>
+      <li><a href="DRIVERSY.HTM">DRIVER.SYS</a></li>
+      <li><a href="DRVSPACE.HTM">DRVSPACE.SYS</a></li>
+      <li><a href="../E/EGASYS.HTM">EGA.SYS</a></li>
+      <li><a href="../E/EMM386EX.HTM">EMM386.EXE</a></li>
+      <li><a href="../H/HIMEMSYS.HTM">HIMEM.SYS</a></li>
+      <li><a href="../I/INTERLNK.HTM">INTERLNK.EXE</a></li>
+      <li><a href="../P/POWER.HTM">POWER.EXE</a></li>
+      <li><a href="../R/RAMDRIVE.HTM">RAMDRIVE.SYS</a></li>
+      <li><a href="../S/SETVER.HTM">SETVER.EXE</a></li>
+      <li><a href="../S/SMARTDRV.HTM">SMARTDRV.EXE</a></li>
+    </ul>
+
+    <p>The files COUNTRY.SYS and KEYBOARD.SYS are not device
+    drivers. They are data files for the
+    <a href="../C/COUNTRY.HTM">COUNTRY</a> and
+    <a href="../K/KEYB.HTM">KEYB</a>
+    commands, respectively. Do not try to load either of
+    these files with the DEVICE command. If you do, your
+    system halts, and you cannot restart the operating
+    system. For information about loading COUNTRY.SYS, see
+    the <a href="../C/COUNTRY.HTM">COUNTRY</a> command. For
+    information about loading KEYBOARD.SYS, see the
+    <a href="../K/KEYB.HTM">KEYB</a> command.</p>
+
+    <hr>
+    <a name="OtherProducts"></a> <b>Installing device drivers for other products</b>
+    <p>When you purchase a mouse, a scanner, or a similar
+    product, the manufacturer usually includes device-driver
+    software. To install a device driver, specify its
+    location and name on a DEVICE command line.</p>
+
+    <hr>
+    <a name="ThirdParty"></a> <b>Installing a third-party console driver</b>
+    <p>If you install both
+    <a href="DISPLAYS.HTM">DISPLAY.SYS</a> and a
+    third-party console driver, such as VT52.SYS, the
+    third-party device driver must be installed first.
+    Otherwise, the third-party device driver may disable
+    <a href="DISPLAYS.HTM">DISPLAY.SYS</a>.</p>
+
+    <hr>
+    <a name="Multiple"></a> <b>Installing multiple device drivers</b>
+    <p>Sometimes one installable device driver will require
+    that it be loaded before or after another in your
+    CONFIG.SYS file. <a href="../E/EMM386EX.HTM">EMM386.EXE</a>
+    requires <a href="../H/HIMEMSYS.HTM">HIMEM.SYS</a> to be
+    loaded first. If the device driver requires that another
+    device driver be loaded before it, make sure the
+    commands are listed in the correct order in your
+    CONFIG.SYS file.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>If you plan to use an ANSI escape sequence to control
+    the screen and keyboard, you should add the following
+    command to your CONFIG.SYS file (assuming the operating
+    system files are in the DOS directory on drive C):
+
+<pre>
+    DEVICE=<a
+    href="#ParameterDrivePath">C:\DOS\</a><a
+    href="#ParameterFilename">ANSI.SYS</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

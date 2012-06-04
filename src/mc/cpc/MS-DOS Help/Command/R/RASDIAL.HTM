@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>RASDIAL</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#r">Commands N-Z</a>
+    &gt; <a href="../INDEXR.HTM#rasdial">Commands R</a>
+    <h1>RASDIAL</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Automates the connection process for any Microsoft
+    client.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>RASDIAL
+    <a href="#ParameterConnectionname">connection_name</a>
+    [<a href="#ParameterUsername">user_name [{password | *}]</a>]
+    [<a href="#SwitchCallback">/callback:callback_number</a>]
+    [<a href="#SwitchDomain">/domain:domain</a>]
+    [<a href="#SwitchPhone">/phone:phone_number</a>]
+    [<a href="#SwitchPhonebook">/phonebook:phonebook_path</a>]
+    [<a href="#SwitchPrefixsuffix">/prefixsuffix</a>]</p>
+
+    <p>RASDIAL
+    [<a href="#ParameterConnectionname">connection_name</a>]
+    [<a href="#SwitchDisconnect">/d[isconnect]</a>]</p>
+
+    <p>Displays status of current connections:</p>
+    <p>RASDIAL</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterConnectionname"></a> connection_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Required when connecting to a phonebook (.pbk)
+      entry. Specifies an entry in the current .pbk file,
+      located in the systemroot\System32\Ras folder. If the
+      connection_name contains spaces or special characters,
+      use quotation marks around the text.</dd>
+      <dd>The Rasphone.pbk file is used unless the Personal
+      Phonebook option is selected. If the Personal Phonebook
+      option is selected, the file UserName.pbk is used. The
+      name is shown on the Rasphone title bar when Personal
+      Phonebook/p is selected. Numbers are appended if name
+      conflicts occur.</dd>
+
+      <dt><a name="ParameterUsername"></a> user_name [{password | *}]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies a user_name and password with which to
+      connect. If an asterisk is used, the user is prompted
+      for the password, but the characters typed do not
+      display.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchCallback"></a> /callback:callback_number
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Substitutes the specified callback number for the
+      entry's callback number in Rasphone.pbk.</dd>
+
+      <dt><a name="SwitchDisconnect"></a> /d[isconnect]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Required when disconnecting. Disconnects the
+      specified entry.</dd>
+
+      <dt><a name="SwitchDomain"></a> /domain:domain
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the domain in which the user account is
+      located. If unspecified, the last value of the Domain
+      field in the Connect To dialog box is used.</dd>
+
+      <dt><a name="SwitchPhone"></a> /phone:phone_number
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Substitutes the specified phone number for the
+      entry's phone number in Rasphone.pbk.</dd>
+
+      <dt><a name="SwitchPhonebook"></a> /phonebook:phonebook_path
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the path to the phonebook file. The
+      default is systemroot\System32\Ras\UserName.pbk. You
+      can specify a full path to the file.</dd>
+
+      <dt><a name="SwitchPrefixsuffix"></a> /prefixsuffix
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Applies the current TAPI location dialing
+      settings to the phone number. These settings are
+      configured in Telephony, which is located in Control
+      Panel. This option is turned off by default.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

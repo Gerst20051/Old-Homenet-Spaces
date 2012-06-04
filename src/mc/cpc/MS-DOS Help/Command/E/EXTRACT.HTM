@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>EXTRACT</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#e">Commands A-M</a>
+    &gt; <a href="../INDEXE.HTM#extract">Commands E</a>
+    <h1>EXTRACT</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>EXTRACTs a compressed file. You can use this command to retrieve
+    one or more files from the Cabinet storage from Microsoft. These
+    files are not usable unless you EXTRACT them.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>EXTRACT
+    [<a href="#SwitchY">/Y</a>]
+    [<a href="#SwitchA">/A</a>]
+    [<a href="#SwitchD">/D</a>
+    | <a href="#SwitchE">/E</a>]
+    [<a href="#SwitchL">/L</a> dir]
+    <a href="#ParameterCabinet">cabinet</a>
+    [<a href="#ParameterFilename">filename</a> ...]</p>
+
+    <p>EXTRACT
+    [<a href="#SwitchY">/Y</a>]
+    <a href="#ParameterSource">source</a>
+    [<a href="#ParameterNewname">newname</a>]</p>
+
+    <p>EXTRACT
+    [<a href="#SwitchY">/Y</a>]
+    <a href="#SwitchC">/C</a>
+    <a href="#ParameterSource">source</a>
+    <a href="#ParameterDestination">destination</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterCabinet"></a> cabinet
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Archive file of multiple file(s).</dd>
+
+      <dt><a name="ParameterDestination"></a> destination
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Destination of copy.</dd>
+
+      <dt><a name="ParameterFilename"></a> filename
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Name of file to extract from archive file. Wildcards or
+      multiple filenames (separated by blanks) may be used.</dd>
+
+      <dt><a name="ParameterNewname"></a> newname
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>New filename to give the extracted file.</dd>
+
+      <dt><a name="ParameterSource"></a> source
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Archive (cabinet) that contains only one (1) file. (AKA
+      Compressed file).</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchA"></a> /A
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Process ALL (multiple) archive(s) in chain, starting with
+      first mentioned.</dd>
+
+      <dt><a name="SwitchC"></a> /C
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Copy source file to destination. (ie. Copy from DMF
+      disks).</dd>
+
+      <dt><a name="SwitchD"></a> /D
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Display list of file(s) within archive.</dd>
+
+      <dt><a name="SwitchE"></a> /E
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Extract ALL file(s) from archive.</dd>
+
+      <dt><a name="SwitchL"></a> /L dir
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Directory location to place the extracted file(s) from
+      archive.</dd>
+
+      <dt><a name="SwitchY"></a> /Y
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Do NOT prompt before overwriting an existing file.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../A/ATTRIB.HTM">ATTRIB</a> - Display or
+    change file attributes.
+    <br><a href="../C/COPY.HTM">COPY</a> - Copy one or
+    more files to another location.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>gzip - Compress or decompress named file(s).</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <ul>
+    <li><b>0</b> No errors</li>
+    <li><b>1</b> The source archive/cabinet could not be opened/located</li>
+    </ul>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

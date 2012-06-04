@@ -1,0 +1,939 @@
+<html>
+
+<head>
+<title>Word Processing Editing Part 2</title>
+<script language="javascript" type="text/javascript">
+
+//<![CDATA[
+
+<!--
+
+// BrowserCheck Object
+
+function BrowserCheck() {
+	var b = navigator.appName
+//HBS extension
+	this.mac = (navigator.appVersion.indexOf('Mac') != -1)
+	if (b=="Netscape") this.b = "ns"
+	else if (b=="Microsoft Internet Explorer") this.b = "ie"
+	else this.b = b
+	this.version = navigator.appVersion
+	this.v = parseInt(this.version)
+	this.ns = (this.b=="ns" && this.v>=4)
+	this.ns4 = (this.b=="ns" && this.v==4)
+	this.ns5 = (this.b=="ns" && this.v==5)
+	this.ie = (this.b=="ie" && this.v>=4)
+	this.ie4 = (this.version.indexOf('MSIE 4')>0)
+	this.ie5 = (this.version.indexOf('MSIE 5')>0)
+	this.min = (this.ns||this.ie)
+	this.CRAPBrowser = (this.ie && this.mac); //Cannot Resolve Addresses Properly
+}
+
+is = new BrowserCheck();
+
+var LocFolder = GetFolder(window.location.href);
+function GetFolder(LocPath){
+	LocPath = ReplaceStuff('\'','%27',LocPath);
+	var i = LocPath.lastIndexOf('/');
+	if (i<0){i=LocPath.lastIndexOf('\\')};
+	return LocPath.substring(0,i);
+}
+
+function CombineURLs(InURL){
+	var i = InURL.indexOf('../');
+	var s = LocFolder;
+	while (i >- 1){
+		s = GetFolder(s);
+		InURL = InURL.substring(3,InURL.length);
+		i = InURL.indexOf('../');
+	}
+	return s + '/' + InURL;
+}
+
+x = new Array();
+function ResolveURLs(InText,Attribute){
+	x.length=0;
+	var Temp = InText.toLowerCase();
+	var z;
+	var AttLen = Attribute.length + 2;
+	var y=Temp.lastIndexOf(Attribute + '="');
+	while (y>-1){
+		var sLoc = y+AttLen;
+		if (Temp.substring(sLoc,sLoc+5) != 'http:'){
+			x[x.length]=new Array();
+			x[x.length-1][0] = sLoc;
+			z = Temp.indexOf('"',sLoc);
+			x[x.length-1][1] = z;
+			x[x.length-1][2] = Temp.substring(sLoc,z);
+		}
+		Temp = Temp.substring(0,y);
+		y=Temp.lastIndexOf(Attribute + '="');
+	}
+	for (var j=0; j<x.length; j++){
+		InText = InText.substring(0,x[j][0]) + CombineURLs(x[j][2]) + InText.substring(x[j][1], InText.length);
+	}
+	return InText;
+}
+
+function ResolveAllURLs(Stuff){
+	Stuff = ResolveURLs(Stuff,'href');
+	Stuff = ResolveURLs(Stuff,'src');
+	Stuff = ResolveURLs(Stuff,'parent.location');
+	return Stuff;
+}
+
+
+var ExBGColor = '#bbbbee';
+
+
+
+var PageBGColor = '#ffffff';
+
+
+
+var NavBarColor = '#000066';
+
+
+var TextColor = '#000000';
+var CurrQNum = 0;
+var ALetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var CorrectIndicator = ':-)';
+var IncorrectIndicator = 'X';
+var YourScoreIs = 'Your score is ';
+var Tries = 0;
+var CorrectChoices = 0;
+var ContinuousScoring = true;
+var CorrectFirstTime = 'Questions answered correctly first time: ';var ExerciseTitle = 'Word Processing Editing 2';
+var ExerciseSubtitle = 'Multiple-choice exercise';
+var Instructions = 'Choose the correct answer for each question.'; //'';
+var ShuffleQs = false;
+var ShuffleAs = false;
+var DefaultRight = 'Correct!';
+var DefaultWrong = 'Sorry! Try again.';
+var QsToShow = 15;
+var ShowOneByOne = true;
+var ReadingURL = '';
+var EraseFeedback = true;
+var Score = 0;
+
+var PreviousPage = history.length;
+
+
+
+
+
+
+
+var NavBar='';
+
+
+
+var TitleCode = '<tr><td align="center" valign="middle" bgcolor="#ffffff">';
+TitleCode += '<font size="+1" face="Geneva,Arial" color="#000033">' + ExerciseTitle + '</font><br />';
+TitleCode += '<font size="-1" face="Geneva,Arial" color="#000033">' + ExerciseSubtitle + '<br />';
+TitleCode += '</font></td></tr>';
+
+var QButtonsOpener = '<table border="0" width="85%" cellpadding="10">';
+QButtonsOpener += '<tr><td align="center" valign="middle"><form>';
+QButtonsOpener += '<font size="+1"><input type="button" value="&lt;=" onclick="parent.ChangeQ(-1)"></input>';
+var QButtonsCloser = '<input type="button" value="=&gt;" onclick="parent.ChangeQ(1)"></input>';
+QButtonsCloser += '</font></form></td></tr></table>';
+
+var TableOpener = '<form name="QForm">';
+TableOpener += '<table border="0" width="85%">';
+var QRow = '<tr><td valign="top" bgcolor="#bbbbee" align="right">';
+QRow += '<font size="+1" face="Geneva,Arial" color="#000000">[QNumber]</font></td>';
+QRow += '<td colspan="3" valign="top" bgcolor="#bbbbee"><font size="-1" face="Geneva,Arial" color="#000000">[Question]<br />&nbsp;';
+QRow += '</font></td></tr>';
+
+var ARow = '<tr><td></td><td valign="top" bgcolor="#bbbbee"><input type="text" value=" " size="3" name="FB_[QNum]_[ANum]"></input></td>';
+ARow += '<td valign="top" bgcolor="#bbbbee"><input type="button" value="[ALetter]" OnClick="parent.CheckAnswer([QNum],[ANum])"></input></td>';
+ARow += '<td width="100%" bgcolor="#bbbbee"><font size="-1" face="Geneva,Arial" color="#000000">[Ans]</font></td></tr>';
+
+var MARow = '<tr><td></td><td valign="top" bgcolor="#bbbbee" colspan="3"><input type="checkbox" name="A_[QNum]_[ANum]" value="[Correct]"></input>';
+MARow += '<font size="-1" face="Geneva,Arial" color="#000000">[Ans]</font></td></tr>';
+
+var CheckButton = '<tr><td></td><td valign="top" bgcolor="#bbbbee" ><input type="button" value="Check"';
+CheckButton += ' onclick="parent.CheckMulti([QNum])"></input></td></tr>';
+
+TableCloser = '</table></form>';
+
+function GoBack(){
+	var BackSkip = history.length - PreviousPage;
+	if (BackSkip > 0){
+		history.go((BackSkip+1)*-1);
+	}
+	else{
+		parent.history.back();
+	}
+}
+
+function ReduceItems(){
+	var ItemToDump=0;
+	var j=0;
+	while (I.length > QsToShow){
+		ItemToDump = Math.floor(I.length*Math.random());
+		for (j=ItemToDump; j<(I.length-1); j++){
+			I[j] = I[j+1];
+		}
+		I.length = I.length-1;
+	}
+}
+
+function Shuffle(InArray){
+	Temp = new Array();
+	var Len = InArray.length;
+
+	var j = Len;
+
+	for (var i=0; i<Len; i++){
+		Temp[i] = InArray[i];
+	}
+
+	for (i=0; i<Len; i++){
+		Num = Math.floor(j  *  Math.random());
+		InArray[i] = Temp[Num];
+
+		for (var k=Num; k < j; k++) {
+			Temp[k] = Temp[k+1];
+		}
+		j--;
+	}
+	return InArray;
+}
+
+function WriteFeedback(Feedback) {
+	if (is.CRAPBrowser){Feedback=ResolveAllURLs(Feedback);}
+//Build the output string
+	var OutString = '';
+	OutString += '<html>';
+	OutString += '<body  background="" bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#0000cc">';
+	OutString += '<center><table border="0" cellpadding="5" cellspacing="1" width="85%">';
+	OutString += NavBar;
+	if (Feedback.length>0){
+		OutString += '<tr><td bgcolor="#bbbbee" align="center">'; 
+		OutString += '<font face="Geneva,Arial" size="-1" color="#000000">';
+		OutString += Feedback;
+		OutString += '</font></td></tr>'
+	}
+	OutString += '</table></center></body></html>';
+//Write it to the frame
+	TopFrame.document.clear();
+	TopFrame.document.open();
+	TopFrame.document.write(OutString);
+	TopFrame.document.close();
+}
+
+function StartUp(){
+
+
+
+
+//Reduce array if required
+	if (QsToShow < I.length){
+		ReduceItems();
+	}
+
+//Shuffle stuff if required
+
+	if (ShuffleQs == true){
+		I = Shuffle(I);
+	}
+
+	if (ShuffleAs == true){
+		for (var i=0; i<I.length; i++){
+			I[i][1] = Shuffle(I[i][1]);
+		}
+	}
+
+//Create arrays
+	CreateStatusArrays();
+
+
+
+//Show the first question or all of them
+	if (ShowOneByOne == false){
+		ShowAllQs();
+	}
+	else{
+		ShowQuestion(CurrQNum);
+	}
+
+//Write the top frame
+	WriteFeedback(Instructions);
+}
+
+
+I = new Array();
+
+I[0] = new Array();
+I[0][0]='The wrod processing feature allowing fyou to view your document before it is printed is known as:';
+I[0][1] = new Array();
+I[0][1][0] = new Array();
+I[0][1][0][0]='Print preview.';
+I[0][1][0][1]=':-)';
+I[0][1][0][2] = 1;
+I[0][1][1] = new Array();
+I[0][1][1][0]='Hard copy.';
+I[0][1][1][1]='X';
+I[0][1][1][2] = 0;
+I[0][1][2] = new Array();
+I[0][1][2][0]='Page format.';
+I[0][1][2][1]='X';
+I[0][1][2][2] = 0;
+I[0][1][3] = new Array();
+I[0][1][3][0]='Print cancel.';
+I[0][1][3][1]='X';
+I[0][1][3][2] = 0;
+I[0][2] = 0;
+
+I[1] = new Array();
+I[1][0]='Which of the following features is NOT an editing feature?';
+I[1][1] = new Array();
+I[1][1][0] = new Array();
+I[1][1][0][0]='Cut';
+I[1][1][0][1]='X';
+I[1][1][0][2] = 0;
+I[1][1][1] = new Array();
+I[1][1][1][0]='Save';
+I[1][1][1][1]=':-)';
+I[1][1][1][2] = 1;
+I[1][1][2] = new Array();
+I[1][1][2][0]='Copy';
+I[1][1][2][1]='X';
+I[1][1][2][2] = 0;
+I[1][1][3] = new Array();
+I[1][1][3][0]='Paste';
+I[1][1][3][1]='X';
+I[1][1][3][2] = 0;
+I[1][2] = 0;
+
+I[2] = new Array();
+I[2][0]='The movement of text up, down, left, or right on a computer screen is known as:';
+I[2][1] = new Array();
+I[2][1][0] = new Array();
+I[2][1][0][0]='Sorting.';
+I[2][1][0][1]='X';
+I[2][1][0][2] = 0;
+I[2][1][1] = new Array();
+I[2][1][1][0]='Searching.';
+I[2][1][1][1]='X';
+I[2][1][1][2] = 0;
+I[2][1][2] = new Array();
+I[2][1][2][0]='Scrolling.';
+I[2][1][2][1]=':-)';
+I[2][1][2][2] = 1;
+I[2][1][3] = new Array();
+I[2][1][3][0]='Scavenging.';
+I[2][1][3][1]='X';
+I[2][1][3][2] = 0;
+I[2][2] = 0;
+
+I[3] = new Array();
+I[3][0]='Which of the following is an error that spell check would NOT identify?';
+I[3][1] = new Array();
+I[3][1][0] = new Array();
+I[3][1][0][0]='Neww York';
+I[3][1][0][1]='X';
+I[3][1][0][2] = 0;
+I[3][1][1] = new Array();
+I[3][1][1][0]='Tommorrow';
+I[3][1][1][1]='X';
+I[3][1][1][2] = 0;
+I[3][1][2] = new Array();
+I[3][1][2][0]='Using the word TWO for TOO';
+I[3][1][2][1]=':-)';
+I[3][1][2][2] = 1;
+I[3][1][3] = new Array();
+I[3][1][3][0]='Wendesday';
+I[3][1][3][1]='X';
+I[3][1][3][2] = 0;
+I[3][2] = 0;
+
+I[4] = new Array();
+I[4][0]='The purpose of a tab is to:';
+I[4][1] = new Array();
+I[4][1][0] = new Array();
+I[4][1][0][0]='Adjust the spacing between characters.';
+I[4][1][0][1]='X';
+I[4][1][0][2] = 0;
+I[4][1][1] = new Array();
+I[4][1][1][0]='Align text in columns and to indent lines of text.';
+I[4][1][1][1]=':-)';
+I[4][1][1][2] = 1;
+I[4][1][2] = new Array();
+I[4][1][2][0]='Align text at the left margin.';
+I[4][1][2][1]='X';
+I[4][1][2][2] = 0;
+I[4][1][3] = new Array();
+I[4][1][3][0]='Set the right margin.';
+I[4][1][3][1]='X';
+I[4][1][3][2] = 0;
+I[4][2] = 0;
+
+I[5] = new Array();
+I[5][0]='Whch of the following keys moves the cursor a predetermined number of spaces on a line?';
+I[5][1] = new Array();
+I[5][1][0] = new Array();
+I[5][1][0][0]='Page up';
+I[5][1][0][1]='X';
+I[5][1][0][2] = 0;
+I[5][1][1] = new Array();
+I[5][1][1][0]='Tab';
+I[5][1][1][1]=':-)';
+I[5][1][1][2] = 1;
+I[5][1][2] = new Array();
+I[5][1][2][0]='Space bar';
+I[5][1][2][1]='X';
+I[5][1][2][2] = 0;
+I[5][1][3] = new Array();
+I[5][1][3][0]='Shift';
+I[5][1][3][1]='X';
+I[5][1][3][2] = 0;
+I[5][2] = 0;
+
+I[6] = new Array();
+I[6][0]='A series of periods used to help lead the eye across a large amount of white space are called:';
+I[6][1] = new Array();
+I[6][1][0] = new Array();
+I[6][1][0][0]='Tabs.';
+I[6][1][0][1]='X';
+I[6][1][0][2] = 0;
+I[6][1][1] = new Array();
+I[6][1][1][0]='Footers.';
+I[6][1][1][1]='X';
+I[6][1][1][2] = 0;
+I[6][1][2] = new Array();
+I[6][1][2][0]='Leaders.';
+I[6][1][2][1]=':-)';
+I[6][1][2][2] = 1;
+I[6][1][3] = new Array();
+I[6][1][3][0]='Dot matrix.';
+I[6][1][3][1]='X';
+I[6][1][3][2] = 0;
+I[6][2] = 0;
+
+I[7] = new Array();
+I[7][0]='The CUT command differs from the COPY command because the highlighted text is:';
+I[7][1] = new Array();
+I[7][1][0] = new Array();
+I[7][1][0][0]='duplicated.';
+I[7][1][0][1]='X';
+I[7][1][0][2] = 0;
+I[7][1][1] = new Array();
+I[7][1][1][0]='erased from its old position.';
+I[7][1][1][1]=':-)';
+I[7][1][1][2] = 1;
+I[7][1][2] = new Array();
+I[7][1][2][0]='replaced with a synonym.';
+I[7][1][2][1]='X';
+I[7][1][2][2] = 0;
+I[7][1][3] = new Array();
+I[7][1][3][0]='formatted.';
+I[7][1][3][1]='X';
+I[7][1][3][2] = 0;
+I[7][2] = 0;
+
+I[8] = new Array();
+I[8][0]='CUT, COPY, and PASTE are known as what type of commands?';
+I[8][1] = new Array();
+I[8][1][0] = new Array();
+I[8][1][0][0]='Deleting';
+I[8][1][0][1]='X';
+I[8][1][0][2] = 0;
+I[8][1][1] = new Array();
+I[8][1][1][0]='Editing';
+I[8][1][1][1]=':-)';
+I[8][1][1][2] = 1;
+I[8][1][2] = new Array();
+I[8][1][2][0]='Formatting';
+I[8][1][2][1]='X';
+I[8][1][2][2] = 0;
+I[8][1][3] = new Array();
+I[8][1][3][0]='Saving';
+I[8][1][3][1]='X';
+I[8][1][3][2] = 0;
+I[8][2] = 0;
+
+I[9] = new Array();
+I[9][0]='To make a hard copy of a document, the user should:';
+I[9][1] = new Array();
+I[9][1][0] = new Array();
+I[9][1][0][0]='Format.';
+I[9][1][0][1]='X';
+I[9][1][0][2] = 0;
+I[9][1][1] = new Array();
+I[9][1][1][0]='Print.';
+I[9][1][1][1]=':-)';
+I[9][1][1][2] = 1;
+I[9][1][2] = new Array();
+I[9][1][2][0]='Save.';
+I[9][1][2][1]='X';
+I[9][1][2][2] = 0;
+I[9][1][3] = new Array();
+I[9][1][3][0]='Delete.';
+I[9][1][3][1]='X';
+I[9][1][3][2] = 0;
+I[9][2] = 0;
+
+I[10] = new Array();
+I[10][0]='The word processing feature that helps find words with similar meanings is known as:';
+I[10][1] = new Array();
+I[10][1][0] = new Array();
+I[10][1][0][0]='Spell Check.';
+I[10][1][0][1]='X';
+I[10][1][0][2] = 0;
+I[10][1][1] = new Array();
+I[10][1][1][0]='Header/Footer.';
+I[10][1][1][1]='X';
+I[10][1][1][2] = 0;
+I[10][1][2] = new Array();
+I[10][1][2][0]='Hanging indent.';
+I[10][1][2][1]='X';
+I[10][1][2][2] = 0;
+I[10][1][3] = new Array();
+I[10][1][3][0]='Thesaurus.';
+I[10][1][3][1]=':-)';
+I[10][1][3][2] = 1;
+I[10][2] = 0;
+
+I[11] = new Array();
+I[11][0]='The purpose of scroll bars is to:';
+I[11][1] = new Array();
+I[11][1][0] = new Array();
+I[11][1][0][0]='Display text that will not fit on the screen.';
+I[11][1][0][1]=':-)';
+I[11][1][0][2] = 1;
+I[11][1][1] = new Array();
+I[11][1][1][0]='Cut and paste text.';
+I[11][1][1][1]='X';
+I[11][1][1][2] = 0;
+I[11][1][2] = new Array();
+I[11][1][2][0]='Improve the appearance of a document.';
+I[11][1][2][1]='X';
+I[11][1][2][2] = 0;
+I[11][1][3] = new Array();
+I[11][1][3][0]='Hide text.';
+I[11][1][3][1]='X';
+I[11][1][3][2] = 0;
+I[11][2] = 0;
+
+I[12] = new Array();
+I[12][0]='The BEST way to proofread a document is to:';
+I[12][1] = new Array();
+I[12][1][0] = new Array();
+I[12][1][0][0]='Quickly scan the document.';
+I[12][1][0][1]='X';
+I[12][1][0][2] = 0;
+I[12][1][1] = new Array();
+I[12][1][1][0]='Give it to your teacher without proofreading.';
+I[12][1][1][1]='X';
+I[12][1][1][2] = 0;
+I[12][1][2] = new Array();
+I[12][1][2][0]='Take it home.';
+I[12][1][2][1]='X';
+I[12][1][2][2] = 0;
+I[12][1][3] = new Array();
+I[12][1][3][0]='Read the entire document word for word.';
+I[12][1][3][1]=':-)';
+I[12][1][3][2] = 1;
+I[12][2] = 0;
+
+I[13] = new Array();
+I[13][0]='The hanging indent format is MOST used in a:';
+I[13][1] = new Array();
+I[13][1][0] = new Array();
+I[13][1][0][0]='Title page.';
+I[13][1][0][1]='X';
+I[13][1][0][2] = 0;
+I[13][1][1] = new Array();
+I[13][1][1][0]='Bibliography.';
+I[13][1][1][1]=':-)';
+I[13][1][1][2] = 1;
+I[13][1][2] = new Array();
+I[13][1][2][0]='Header.';
+I[13][1][2][1]='X';
+I[13][1][2][2] = 0;
+I[13][1][3] = new Array();
+I[13][1][3][0]='Footer.';
+I[13][1][3][1]='X';
+I[13][1][3][2] = 0;
+I[13][2] = 0;
+
+I[14] = new Array();
+I[14][0]='A printed copy of a document is known as a:';
+I[14][1] = new Array();
+I[14][1][0] = new Array();
+I[14][1][0][0]='Soft copy.';
+I[14][1][0][1]='X';
+I[14][1][0][2] = 0;
+I[14][1][1] = new Array();
+I[14][1][1][0]='Print preview.';
+I[14][1][1][1]='X';
+I[14][1][1][2] = 0;
+I[14][1][2] = new Array();
+I[14][1][2][0]='Copy and paste.';
+I[14][1][2][1]='X';
+I[14][1][2][2] = 0;
+I[14][1][3] = new Array();
+I[14][1][3][0]='Hard copy.';
+I[14][1][3][1]=':-)';
+I[14][1][3][2] = 1;
+I[14][2] = 0;
+
+
+Status = new Array();
+
+
+function CreateStatusArrays(){
+	for (var x=0; x<I.length; x++){
+		Status[x] = new Array();
+		Status[x][0] = 0; // Question not done yet
+		Status[x][1] = new Array(); //for tracking whether answers chosen
+		for (var y=0; y<I[x][1].length; y++){
+			Status[x][1][y] = '0'; //Answers not chosen yet
+		}
+		Status[x][2] = 0; //Wrong tries at this question so far
+		Status[x][3] = 0; //For storing score out of one on this question
+	}
+}
+
+function ReplaceStuff(Token, Replacement, InString){
+	var i = InString.indexOf(Token);
+	var FirstBit = '';
+	var LastBit = '';
+	while (i>-1){
+		FirstBit = InString.substring(0, i);
+		LastBit = InString.substring(i + Token.length, InString.length);	
+		InString = FirstBit + Replacement + LastBit;
+		i = InString.indexOf(Token);
+	}
+	return InString;
+}
+
+function ChangeQ(ChangeBy){
+	var NewNum = CurrQNum + ChangeBy;
+	if ((NewNum >= 0)&&(NewNum<I.length)){
+		CurrQNum = NewNum;
+		ShowQuestion(CurrQNum);
+	}
+	var CurrScore = '';
+	if ((ContinuousScoring == true)&&(EraseFeedback == true)){
+		CurrScore = YourScoreIs + ' ' + Score + '%.';
+		WriteFeedback(CurrScore);
+	}
+}
+
+function BuildQuestion(QNum){
+	if (I[QNum][2] == 0){
+		var Temp = ReplaceStuff('[Question]', I[QNum][0], QRow);
+
+		var AnsRows = '';
+		for (var i=0; i<I[QNum][1].length; i++){
+			TempAns = ARow;
+			TempAns = ReplaceStuff('[ANum]', i, TempAns);
+			TempAns = ReplaceStuff('[ALetter]', ' ' + ALetters.charAt(i) + ' ', TempAns);
+			TempAns = ReplaceStuff('[Ans]', I[QNum][1][i][0], TempAns);
+			AnsRows += TempAns;
+		}
+		Temp += AnsRows;
+		Temp = ReplaceStuff('[QNumber]', QNum+1, Temp);
+		Temp = ReplaceStuff('[QNum]', QNum, Temp);
+	}
+	else{
+		var Temp = ReplaceStuff('[Question]', I[QNum][0], QRow);
+		var AnsRows = '';
+		for (var i=0; i<I[QNum][1].length; i++){
+			TempAns = MARow;
+			TempAns = ReplaceStuff('[ANum]', i, TempAns);
+			TempAns = ReplaceStuff('[Correct]', I[QNum][1][i][2], TempAns);
+			TempAns = ReplaceStuff('[Ans]', I[QNum][1][i][0], TempAns);
+			AnsRows += TempAns;
+		}
+		Temp += AnsRows;
+		Temp += CheckButton;
+		Temp = ReplaceStuff('[QNumber]', QNum+1, Temp);
+		Temp = ReplaceStuff('[QNum]', QNum, Temp);
+	}
+	return Temp;
+}
+
+function DisplayExercise(StuffToDisplay){
+//Build the output string
+	var OutString = '';
+	OutString += '<html>';
+	OutString += '<body  background="" bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#0000cc">';
+	OutString += '<center><table border="0" cellpadding="5" cellspacing="1" width="85%">';
+	OutString += TitleCode; 
+	OutString += '<tr><td bgcolor="#bbbbee" align="center">'; 
+	OutString += '<font face="Geneva,Arial" size="-1">';
+	OutString += StuffToDisplay;
+	OutString += '</font></td></tr>';
+	OutString += NavBar;
+	OutString += '</table></center></body></html>';
+
+	if (is.CRAPBrowser){OutString=ResolveAllURLs(OutString);}
+
+//Write it to the frame
+	BottomFrame.document.clear();
+	BottomFrame.document.open();
+	BottomFrame.document.write(OutString);
+	BottomFrame.document.close();
+}
+
+
+function ShowAllQs(){
+	var Output = '';
+	for (var i=0; i<I.length-1; i++){
+		Output = Output + BuildQuestion(i);
+		Output = Output + '<tr><td colspan="4"><hr></hr></td></tr>';
+	}
+	Output = Output + BuildQuestion(I.length-1);
+	Output = TableOpener + Output + TableCloser;
+	DisplayExercise(Output);
+}
+
+function ShowQuestion(QNum){
+//First, create the Q number readout at the top
+	var Readout = (QNum+1) + '/' + I.length;
+	while (Readout.length < 7){
+		Readout = ' ' + Readout + ' ';
+	}
+	Readout = QButtonsOpener + Readout + QButtonsCloser;
+
+	var Output = BuildQuestion(QNum);
+
+	Output = TableOpener + Output + TableCloser;
+
+	DisplayExercise(Readout + Output);
+
+//Mark the answers already done
+	for (i=0; i<Status[QNum][1].length; i++){
+		if (Status[QNum][1][i] == 'R'){
+			MarkAnswer(QNum,i,true)
+		}
+		if (Status[QNum][1][i] == 'W'){
+			MarkAnswer(QNum,i,false)
+		}
+		if (Status[QNum][1][i] == 'C'){
+			CheckCheckbox(QNum,i);
+		}
+	}
+//Eliminate feedback from previous question
+	if (EraseFeedback == true){
+		WriteFeedback('');
+	}
+}
+
+function CheckMulti(QNum){
+	var TotWrong = 0;
+	var Output = '';
+	var TotAns = I[QNum][1].length;
+	for (var i=TotAns-1; i>=0; i--){
+//Find any incorrect choices
+
+		var b = eval('BottomFrame.document.QForm.A_' + QNum + '_' + i);
+
+		if (b != null){
+//if it's wrong, count it
+			if (b.checked == true){
+				Status[QNum][1][i] = 'C';
+			}
+			else{
+				Status[QNum][1][i] = 'U';
+			}
+			if (((b.checked == true) && (b.value == "0"))||((b.checked == false)&&(b.value == "1"))){
+				TotWrong++;
+			}
+		}				
+	}
+
+	if (TotWrong == 0){
+		Output = DefaultRight;
+	}
+	else{
+		Output = DefaultWrong + '<br />' + (TotAns-TotWrong) + '/' + TotAns;
+	}
+
+//If you haven't tried the question before
+	if (Status[QNum][0] == 0){
+		if (TotWrong > 0){
+			Status[QNum][2]++;
+		}
+		if (TotWrong == 0){
+			Status[QNum][0] = 1;
+//Calculate the score for this question as a floating-point fraction of 1
+			Status[QNum][3] =  ((Status[QNum][1].length - Status[QNum][2]) - 1) / (Status[QNum][1].length - 1);
+//If less than zero, set to zero
+			if (Status[QNum][3] < 0){Status[QNum][3] = 0;}
+		}
+	}
+
+//Check whether the quiz is finished
+	var Finished = true;
+	for (var i=0; i<Status.length; i++){
+		if (Status[i][0] == 0){Finished = false;}
+	}
+
+//Calculate the score if needed
+		
+	if (Status[QNum][0] == 1){
+		if ((Finished==true)||(ContinuousScoring==true)){
+			var DoneQs = 0;
+			var TotalScore = 0;
+			for (var i=0; i<Status.length; i++){
+				if (Status[i][0] == 1){
+					DoneQs++;
+					TotalScore += Status[i][3];
+				}
+			}
+			Score = (Math.floor(100 * (TotalScore/DoneQs)));
+			Output = Output + '<br />' + YourScoreIs + ' ' + Score + '%.';
+		}
+
+		if (Finished == true){
+			EraseFeedback = false;
+			var CFT = 0;
+			for (i=0; i<I.length; i++){
+				if (Status[i][2] == 0){
+					CFT++;
+				}
+			}
+		Output += '<br />' + CorrectFirstTime + CFT + '/' + I.length;
+
+		}
+	}
+
+//Show the feedback
+	if (Output.length > 0){
+		WriteFeedback(Output);
+	}
+
+}
+
+function CheckAnswer(QNum, ANum){
+	var Output = I[QNum][1][ANum][1];
+
+	if (Output==''){
+		if (I[QNum][1][ANum][2] == 1){
+			Output = DefaultRight;
+		}
+		else{
+			Output = DefaultWrong;
+		}
+	}
+
+//If it's not been previously answered correctly
+	if (Status[QNum][0] == 0){
+//If it's a correct answer
+		if (I[QNum][1][ANum][2] == 1){
+			Status[QNum][0] = 1;//Mark the Q as done
+			Status[QNum][1][ANum] = 'R';
+			MarkAnswer(QNum, ANum, true);
+//Calculate the score for this question as a floating-point fraction of 1
+			var PossibleWrongs = 0;
+			for (var i=0; i<I[QNum][1].length; i++){
+				if (I[QNum][1][i][2] == 0){
+					PossibleWrongs++;
+				}
+			}
+
+			if (PossibleWrongs == 0){PossibleWrongs = 1;}
+
+			Status[QNum][3] = 1 - (Status[QNum][2]/PossibleWrongs);
+
+//If less than zero, set to zero
+			if (Status[QNum][3] < 0){Status[QNum][3] = 0;}
+		}
+		else{
+			if (Status[QNum][1][ANum] != 'W'){
+				Status[QNum][1][ANum] = 'W';
+				MarkAnswer(QNum, ANum, false);
+				Status[QNum][2]++; //increment wrong tries for this Q
+			}
+		}
+	}
+
+//Check whether the quiz is finished
+	var Finished = true;
+	for (var i=0; i<Status.length; i++){
+		if (Status[i][0] == 0){Finished = false;}
+	}
+
+//Calculate the score if needed
+		
+	if (Status[QNum][0] == 1){
+		if ((Finished==true)||(ContinuousScoring==true)){
+			var DoneQs = 0;
+			var TotalScore = 0;
+			for (var i=0; i<Status.length; i++){
+				if (Status[i][0] == 1){
+					DoneQs++;
+					TotalScore += Status[i][3];
+				}
+			}
+			Score = (Math.floor(100 * (TotalScore/DoneQs)));
+			Output = Output + '<br />' + YourScoreIs + ' ' + Score + '%.';
+		}
+
+		if (Finished == true){
+			EraseFeedback = false;
+			var CFT = 0;
+			for (i=0; i<I.length; i++){
+				if (Status[i][2] == 0){
+					CFT++;
+				}
+			}
+		Output += '<br />' + CorrectFirstTime + CFT + '/' + I.length;
+
+		}
+	}
+
+//Show the feedback
+	if (Output.length > 0){
+		WriteFeedback(Output);
+	}
+}
+
+function MarkAnswer(QNum, ANum, Right){
+	var Mark = CorrectIndicator;
+	if (Right == false){Mark = IncorrectIndicator;}
+
+	if (eval('BottomFrame.document.QForm.FB_' + QNum + '_' + ANum) != null){
+		eval('BottomFrame.document.QForm.FB_' + QNum + '_' + ANum).value = Mark;
+	}
+}
+
+function CheckCheckbox(QNum, ANum){
+	if (eval('BottomFrame.document.QForm.A_' + QNum + '_' + ANum) != null){
+		eval('BottomFrame.document.QForm.A_' + QNum + '_' + ANum).checked = true;
+	}
+}
+
+
+
+
+
+
+
+function Blank(){
+	return '<html><body>&copy;Half-Baked Software. Loading...</body></html>';
+}
+
+//-->
+
+//]]>
+
+</script>
+<meta name="Microsoft Theme" content="none, default">
+<meta name="Microsoft Border" content="none, default">
+</head>
+
+<frameset rows="25%,*" onload="StartUp()" framespacing="0" border="0">
+  <frame src="javascript:parent.Blank()" frameborder="0" name="TopFrame">
+  </frame>
+  <frame src="javascript:parent.Blank()" frameborder="0" name="BottomFrame">
+  </frame>
+</frameset>
+
+</html>

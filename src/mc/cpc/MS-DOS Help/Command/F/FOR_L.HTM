@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>FOR /L</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#f">Commands A-M</a>
+    &gt; <a href="../INDEX.HTM#forl">Batch F</a>
+    <h1>FOR /L</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Conditionally perform a command for a range of numbers.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>FOR /L
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>To use FOR in a batch program:</p>
+    <p>FOR /L
+    <a href="#ParameterVariable">%%variable</a>
+    IN (<a href="#ParameterSetStart">start</a>,<a
+    href="#ParameterSetStep">step</a>,<a
+    href="#ParameterSetEnd">end</a>)
+    DO <a href="#ParameterCommand">command</a>
+    [<a href="#ParameterCommandParameters">command-parameters</a>]</p>
+
+    <p>To use FOR from the command prompt:</p>
+    <p>FOR /L
+    <a href="#ParameterVariable">%variable</a>
+    IN (<a href="#ParameterSetStart">start</a>,<a
+    href="#ParameterSetStep">step</a>,<a
+    href="#ParameterSetEnd">end</a>)
+    DO <a href="#ParameterCommand">command</a>
+    [<a href="#ParameterCommandParameters">command-parameters</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterCommand"></a> command
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>The command to carry out, including any command-line
+      parameters.</dd>
+
+      <dt><a name="ParameterCommandParameters"></a> command-parameters
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Specifies any parameters or switches that you want to use
+      with the specified command (if the specified command uses any
+      parameters or switches).</dd>
+
+      <dt><a name="ParameterSetEnd"></a> end)
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>The last number.</dd>
+
+      <dt><a name="ParameterSetStart"></a> (start,
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>The first number.</dd>
+
+      <dt><a name="ParameterSetStep"></a> ,step,
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>The amount by which to increment the sequence.</dd>
+
+      <dt><a name="ParameterVariable"></a> %variable or %%variable
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Represents a replaceable variable. The FOR command replaces
+      %%variable (or %variable) with each text string in the specified
+      set until the command (specified in the command parameter)
+      processes all the folders. Use %%variable to carry out the FOR
+      command within a batch program. Use %variable to carry out FOR
+      from the command prompt. (Do NOT use %0 through %9 to avoid
+      confusion with the command-line arguments passed to the batch
+      file).</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="FOR_0.HTM">FOR</a> - Loop through a set of files in one folder.
+    <br><a href="FOR_R.HTM">FOR</a> /R - Loop through files (recurse subfolders).
+    <br><a href="FOR_D.HTM">FOR</a> /D - Loop through several folders.
+    <br><a href="FOR_F.HTM">FOR</a> /F - Loop through items in a text file.
+    <br><a href="FOR_F.HTM">FOR</a> /F - Loop through the output of a command.
+    <br><a href="FORFILES.HTM">FORFILES</a> - Batch process multiple files.
+    <br><a href="../G/GOTO.HTM">GOTO</a> - Direct a batch program to jump to a labelled line.
+    <br><a href="../I/IF.HTM">IF</a> - Conditionally perform a command.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>for - Expand words, and execute commands.
+    <br>case - Conditionally perform a command.
+    <br>eval - Evaluate several COMMANDS/arguments.
+    <br>if - Conditionally perform a command.
+    <br>gawk - Find and Replace text within file(s).
+    <br>m4 - Macro processor.
+    <br>until - Execute commands (until error).
+    <br>while - Execute commands.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+
+<pre>
+    FOR /L <a
+href="#ParameterVariable">%%G</a> IN (<a
+href="#ParameterSetStart">20</a>,<a
+href="#ParameterSetStep">-5</a>,<a
+href="#ParameterSetEnd">10</a>) DO <a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">%G</a>
+
+20
+15
+10
+</pre>
+
+<pre>
+    FOR /L <a
+href="#ParameterVariable">%%G</a> IN (<a
+href="#ParameterSetStart">1</a>,<a
+href="#ParameterSetStep">1</a>,<a
+href="#ParameterSetEnd">5</a>) DO <a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">%G</a>
+
+1
+2
+3
+4
+5
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>Internal</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

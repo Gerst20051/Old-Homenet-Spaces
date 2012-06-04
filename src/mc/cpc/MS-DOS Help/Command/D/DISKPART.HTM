@@ -1,0 +1,789 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DISKPART</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDA.HTM#diskpart">Commands Da-Dr</a>
+    <h1>DISKPART</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Text-mode command interpreter that enables you to
+    manage objects (disks, partitions, or volumes) by using
+    scripts or direct input from a command prompt.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>DISKPART
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>DISKPART
+    [<a href="#SwitchS">/s script_file</a>]</p>
+
+    <p>Commands to run at the DISKPART prompt:
+    <ul>
+    <li><a href="#ParameterActive">active</a></li>
+    <li><a href="#ParameterAdd">add</a>
+      <a href="#ParameterDisk">disk=n</a>
+      [<a href="#ParameterNoErr">noerr</a>]</li>
+    <li><a href="#ParameterAssign">assign</a>
+      [{<a href="#ParameterLetter">letter=d</a>
+      | <a href="#ParameterMount">mount=path</a>}]
+      [<a href="#ParameterNoErr">noerr</a>]</li>
+    <li><a href="#ParameterAutomount">automount</a>
+      [<a href="#ParameterDisableEnable">disable | enable</a>]
+      [<a href="#ParameterNoErr">noerr</a>]
+      [<a href="#ParameterScrub">scrub</a>]</li>
+    <li><a href="#ParameterBreak">break</a>
+      <a href="#ParameterDisk">disk=n</a>
+      [<a href="#ParameterNoErr">noerr</a>]
+      [<a href="#ParameterNoKeep">nokeep</a>]</li>
+    <li><a href="#ParameterClean">clean</a>
+      [<a href="#ParameterAll">all</a>]</li>
+    <li><a href="#ParameterConvertBasic">convert basic</a>
+      [<a href="#ParameterNoErr">noerr</a>]</li>
+    <li><a href="#ParameterConvertDynamic">convert dynamic</a>
+      [<a href="#ParameterNoErr">noerr</a>]</li>
+    <li><a href="#ParameterConvertGpt">convert gpt</a>
+      [<a href="#ParameterNoErr">noerr</a>]</li>
+    <li><a href="#ParameterConvertMbr">convert mbr</a>
+      [<a href="#ParameterNoErr">noerr</a>]</li>
+    <li><a href="#ParameterCreatePartitionEfi">create partition efi</a>
+      [<a href="#ParameterNoErr">noerr</a>]
+      [<a href="#ParameterOffset">offset=n</a>]
+      [<a href="#ParameterSize">size=n</a>]</li>
+    <li><a href="#ParameterCreatePartitionExtended">create partition extended</a>
+      [<a href="#ParameterNoErr">noerr</a>]
+      [<a href="#ParameterOffset">offset=n</a>]
+      [<a href="#ParameterSize">size=n</a>]</li>
+    <li><a href="#ParameterCreatePartitionLogical">create partition logical</a>
+      [<a href="#ParameterNoErr">noerr</a>]
+      [<a href="#ParameterOffset">offset=n</a>]
+      [<a href="#ParameterSize">size=n</a>]</li>
+    <li><a href="#ParameterCreatePartitionMsr">create partition msr</a>
+      [<a href="#ParameterNoErr">noerr</a>]
+      [<a href="#ParameterOffset">offset=n</a>]
+      [<a href="#ParameterSize">size=n</a>]</li>
+    <li><a href="#ParameterCreatePartitionPrimary">create partition primary</a>
+      [<a href="#ParameterId">ID={byte | GUID}</a>]
+      [<a href="#ParameterNoErr">noerr</a>]
+      [<a href="#ParameterOffset">offset=n</a>]
+      [<a href="#ParameterSize">size=n</a>]</li>
+    <li><a href="#ParameterCreateVolumeRaid">create volume raid</a>
+      [<a href="#ParameterDisks">disk=n[,n ...]</a>]
+      [<a href="#ParameterNoErr">noerr</a>]
+      [<a href="#ParameterSize">size=n</a>]</li>
+    <li><a href="#ParameterCreateVolumeSimple">create volume simple</a>
+      [<a href="#ParameterDisk">disk=n</a>]
+      [<a href="#ParameterNoErr">noerr</a>]
+      [<a href="#ParameterSize">size=n</a>]</li>
+    <li><a href="#ParameterCreateVolumeStripe">create volume stripe</a>
+      [<a href="#ParameterDisks">disk=n[,n ...]</a>]
+      [<a href="#ParameterNoErr">noerr</a>]
+      [<a href="#ParameterSize">size=n</a>]</li>
+    <li><a href="#ParameterDeleteDisk">delete disk</a>
+      [<a href="#ParameterNoErr">noerr</a>]
+      [<a href="#ParameterOverride">override</a>]</li>
+    <li><a href="#ParameterDeletePartition">delete partition</a>
+      [<a href="#ParameterNoErr">noerr</a>]
+      [<a href="#ParameterOverride">override</a>]</li>
+    <li><a href="#ParameterDeleteVolume">delete volume</a>
+      [<a href="#ParameterNoErr">noerr</a>]</li>
+    <li><a href="#ParameterDetailDisk">detail disk</a></li>
+    <li><a href="#ParameterDetailVolume">detail volume</a></li>
+    <li><a href="#ParameterExit">exit</a></li>
+    <li><a href="#ParameterExtend">extend</a>
+      [<a href="#ParameterDisk">disk=n</a>]
+      [<a href="#ParameterNoErr">noerr</a>]
+      [<a href="#ParameterSize">size=n</a>]</li>
+    <li><a href="#ParameterGptAttributes">gpt attributes=n</a></li>
+    <li><a href="#ParameterHelp">help</a></li>
+    <li><a href="#ParameterImport">import</a>
+      [<a href="#ParameterNoErr">noerr</a>]</li>
+    <li><a href="#ParameterListDisk">list disk</a></li>
+    <li><a href="#ParameterListPartition">list partition</a></li>
+    <li><a href="#ParameterListVolume">list volume</a></li>
+    <li><a href="#ParameterOnline">online</a>
+      [<a href="#ParameterNoErr">noerr</a>]</li>
+    <li><a href="#ParameterRem">rem</a></li>
+    <li><a href="#ParameterRemove">remove</a>
+      [{<a href="#ParameterLetter">letter=d</a>
+      | <a href="#ParameterMount">mount=path</a>
+        <a href="#ParameterAll">all</a>}]
+      [<a href="#ParameterDismount">dismount</a>]
+      [<a href="#ParameterNoErr">noerr</a>]</li>
+    <li><a href="#ParameterRepairDisk">repair disk=n</a>
+      [<a href="#ParameterNoErr">noerr</a>]</li>
+    <li><a href="#ParameterRescan">rescan</a></li>
+    <li><a href="#ParameterRetain">retain</a></li>
+    <li><a href="#ParameterSelectDisk">select disk</a>[=<a
+      href="#ParameterN">n</a>]</li>
+    <li><a href="#ParameterSelectPartition">select partition</a>=[{<a
+      href="#ParameterD">d</a>
+    | <a href="#ParameterN">n</a>}]</li>
+    <li><a href="#ParameterSelectVolume">select volume</a>=[{<a
+      href="#ParameterD">d</a>
+    | <a href="#ParameterN">n</a>}]</li>
+    </ul>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterAll"></a> all
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd><a href="#ParameterClean">Clean</a>:
+      Specifies that each and every sector on the disk
+      is zeroed, which completely deletes all data
+      contained on the disk.</dd>
+      <dd><a href="#ParameterRemove">Remove</a>:
+      Removes all current drive letters and mount points.</dd>
+
+      <dt><a name="ParameterActive"></a> active
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>On basic disks, marks the partition with focus as
+      active. This informs the basic input/output system
+      (BIOS) or Extensible Firmware Interface (EFI) that the
+      partition or volume is a valid system partition or
+      system volume.</dd>
+      <dd>Only partitions can be marked as active.</dd>
+      <dd><b>Important:</b> Verifies only that the partition
+      is capable of containing an operating system's startup
+      files. Does not check the contents of the partition.
+      If you mistakenly mark a partition as "active" and it
+      does not contain the operating system's startup files,
+      your computer might not start.</dd>
+
+      <dt><a name="ParameterAdd"></a> add
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Mirrors the simple volume with focus to the
+      specified disk.</dd>
+
+      <dt><a name="ParameterAssign"></a> assign
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Assigns a drive letter or mount point to the
+      volume with focus. If no drive letter or mount point
+      is specified, then the next available drive letter is
+      assigned. If the drive letter or mount point is
+      already in use, an error is generated.</dd>
+      <dd>By using the assign command, you can change the
+      drive letter associated with a removable drive.</dd>
+      <dd>You cannot assign drive letters to system volumes,
+      boot volumes, or volumes that contain the paging file.
+      In addition, you cannot assign a drive letter to an
+      Original Equipment Manufacturer (OEM) partition or any
+      GUID Partition Table (GPT) partition other than a
+      basic MSDATA partition.</dd>
+
+      <dt><a name="ParameterAutomount"></a> automount
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>When enabled (the default), Windows automatically
+      mounts the file system for a new basic volume when it
+      is added to the system and then assigns a drive letter
+      to the volume. In system area network configurations,
+      disabling automount prevents Windows from
+      automatically mounting or assigning drive letters to
+      any new basic volumes that are added to the system.</dd>
+
+      <dt><a name="ParameterBreak"></a> break
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Applies to dynamic disks only. Breaks the mirrored
+      volume with focus into two simple volumes. One simple
+      volume retains the drive letter and any mount points
+      of the mirrored volume, while the other simple volume
+      receives the focus so you can assign it a drive letter.</dd>
+      <dd>By default, the contents of both halves of the
+      mirror are retained. Each half becomes a simple
+      volume. By using the nokeep parameter, you retain only
+      one half of the mirror as a simple volume, while the
+      other half is deleted and converted to free space.
+      Neither volume receives the focus.</dd>
+
+      <dt><a name="ParameterClean"></a> clean
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Removes any and all partition or volume formatting
+      from the disk with focus. On master boot record (MBR)
+      disks, only the MBR partitioning information and
+      hidden sector information are overwritten. On GUID
+      Partition Table (GPT) disks, the GPT partitioning
+      information, including the Protective MBR, is
+      overwritten. There is no hidden sector information.</dd>
+
+      <dt><a name="ParameterConvertBasic"></a> convert basic
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Converts an empty dynamic disk into a basic disk.</dd>
+
+      <dt><a name="ParameterConvertDynamic"></a> convert dynamic
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Converts a basic disk into a dynamic disk.</dd>
+
+      <dt><a name="ParameterConvertGpt"></a> convert gpt
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>On Itanium-based computers, converts an empty
+      basic disk with the master boot record (MBR) partition
+      style into a basic disk with the GUID partition table
+      (GPT) partition style.</dd>
+      <dd><b>Important:</b> The disk must be empty to
+      convert it to a GPT disk. Back up your data and then
+      delete all partitions or volumes before converting the
+      disk.</dd>
+
+      <dt><a name="ParameterConvertMbr"></a> convert mbr
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>On Itanium-based computers, converts an empty
+      basic disk with the GUID Partition Table (GPT)
+      partition style to a basic disk with the master boot
+      record (MBR) partition style.</dd>
+      <dd><b>Important:</b> The disk must be empty to
+      convert it to an MBR disk. Back up your data and then
+      delete all partitions or volumes before converting the
+      disk.</dd>
+
+      <dt><a name="ParameterCreatePartitionEfi"></a>
+      (create partition efi
+      <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>On Itanium-based computers, creates an Extensible
+      Firmware Interface (EFI) system partition on a GUID
+      Partition Table (GPT) disk. After the partition has
+      been created, the focus is given to the new partition.</dd>
+
+      <dt><a name="ParameterCreatePartitionExtended"></a>
+      (create partition extended
+      <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Creates an extended partition on the current
+      drive. After the partition has been created, the focus
+      automatically shifts to the new partition. Only one
+      extended partition can be created per disk. This
+      command fails if you attempt to create an extended
+      partition within another extended partition. You must
+      create an extended partition before you can create
+      logical drives.</dd>
+
+      <dt><a name="ParameterCreatePartitionLogical"></a>
+      (create partition logical
+      <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Creates a logical drive in the extended partition.
+      After the partition has been created, the focus
+      automatically shifts to the new logical drive.</dd>
+      <dd>If you specify <a href="#ParameterSize">size=</a>,
+      it must be smaller than the extended partition.</dd>
+
+      <dt><a name="ParameterCreatePartitionMsr"></a>
+      (create partition msr
+      <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>On Itanium-based computers, creates a Microsoft
+      Reserved (MSR) partition on a GUID Partition Table
+      (GPT) disk.</dd>
+      <dd><b>Caution:</b> Be very careful when using the
+      create partition msr command. Because GPT disks
+      require a specific partition layout, creating
+      Microsoft reserved partitions could cause the disk to
+      become unreadable. On GPT disks that are used to start
+      Windows XP 64-Bit Edition, the EFI System partition is
+      the first partition on the disk, followed by the
+      Microsoft Reserved partition. GPT disks used only for
+      data storage do not have an EFI System partition; the
+      Microsoft Reserved partition is the first partition.</dd>
+      <dd>Windows XP 64-Bit Edition does not mount Microsoft
+      reserved partitions. You cannot store data on them and
+      you cannot delete them.</dd>
+
+      <dt><a name="ParameterCreatePartitionPrimary"></a>
+      (create partition primary
+      <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Creates a primary partition on the current basic
+      disk After you create the partition, the focus
+      automatically shifts to the new partition. The
+      partition does not receive a drive letter. You must
+      use <a href="#ParameterAssign">assign</a> to assign a
+      drive letter to the partition.</dd>
+
+      <dt><a name="ParameterCreateVolumeRaid"></a>
+      (create volume raid
+      <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Creates a RAID-5 volume on the specified dynamic
+      disks After you create the volume, the focus
+      automatically shifts to the new volume.</dd>
+
+      <dt><a name="ParameterCreateVolumeSimple"></a>
+      (create volume simple
+      <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Creates a simple volume After you create the
+      volume, the focus automatically shifts to the new
+      volume.</dd>
+
+      <dt><a name="ParameterCreateVolumeStripe"></a>
+      (create volume stripe
+      <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Creates a striped volume on the specified disks.
+      After you create the volume, the focus automatically
+      shifts to the new volume.</dd>
+
+      <dt><a name="ParameterD"></a> d
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>The drive letter or mount point path of the
+      partition/volume to receive the focus.</dd>
+
+      <dt><a name="ParameterDeleteDisk"></a> delete disk
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Deletes a missing dynamic disk from the disk list.</dd>
+
+      <dt><a name="ParameterDeletePartition"></a> delete partition
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>On a basic disk, deletes the partition with focus.
+      You cannot delete the system partition, boot partition,
+      or any partition that contains the active paging file
+      or crash dump (memory dump).</dd>
+      <dd><b>Caution:</b> Deleting a partition on a dynamic
+      disk can delete all offline dynamic volumes on the
+      disk, thus destroying any data and converting the disk
+      to a basic disk. To delete a dynamic volume, always use
+      <a href="#ParameterDeleteVolume">delete volume</a>
+      instead.</dd>
+      <dd>Partitions can be deleted from dynamic disks, but
+      they should not be created. Intended to allow
+      reclamation of the space on a corrupted offline
+      dynamic disk in an emergency situation where
+      <a href="#ParameterClean">clean</a> cannot be used.</dd>
+
+      <dt><a name="ParameterDeleteVolume"></a> delete volume
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Deletes the selected volume. You cannot delete the
+      system volume, boot volume, or any volume that
+      contains the active paging file or crash dump (memory
+      dump).</dd>
+
+      <dt><a name="ParameterDetailDisk"></a> detail disk
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the properties of the selected disk and
+      the volumes on that disk.</dd>
+
+      <dt><a name="ParameterDetailVolume"></a> detail volume
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the disks on which the current volume
+      resides.</dd>
+
+      <dt><a name="ParameterDisableEnable"></a> disable | enable
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Disables/enables Windows automatically mounting
+      new basic volumes that are added to the system and
+      assigning them drive letters.</dd>
+
+      <dt><a name="ParameterDisk"></a> disk=n
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the disk to contain the mirror You can
+      mirror only simple volumes. The specified disk must
+      have unallocated space at least as large as the size
+      of the simple volume you want to mirror.</dd>
+
+      <dt><a name="ParameterDisks"></a> disk=n[,n ...]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>The dynamic disks on which to create the volume.
+      An amount of space equal to
+      <a href="#ParameterSize">size=n</a> is allocated on
+      each disk.</dd>
+
+      <dt><a name="ParameterDismount"></a> dismount
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Dismounts the basic volume basic volume, when all
+      drive letters and mount points have been removed from
+      the volume, and takes the basic volume offline, making
+      it unmountable. If other processes are using the
+      volume, any open handles are closed
+      before dismounting the volume. You can make the volume
+      mountable by assigning it a driver letter or by
+      creating a mount point path to the volume.
+      Dismount will fail if used on a volume that has any
+      remaining drive letters or mount points.
+      Recommended scripting use:
+      <a href="#ParameterRemove">remove</a>
+      <a href="#ParameterAll">all</a>
+      <a href="#ParameterDismount">dismount</a>.</dd>
+
+
+      <dd>The dynamic disks on which to create the volume.
+      each disk.</dd>
+
+      <dt><a name="ParameterExit"></a> exit
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Exits the command interpreter.</dd>
+
+      <dt><a name="ParameterExtend"></a> extend
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Extends the volume with focus into next contiguous
+      unallocated space. For basic volumes, the unallocated
+      space must be on the same disk as, and must follow (be
+      of higher sector offset than) the partition with
+      focus. A dynamic simple or spanned volume can be
+      extended to any empty space on any dynamic disk Using
+      this command, you can extend an existing volume into
+      newly created space.</dd>
+      <dd>If the partition was previously formatted with the
+      NTFS file system, the file system is automatically
+      extended to occupy the larger partition. No data loss
+      occurs. If the partition was previously formatted with
+      any file system format other than NTFS, the command
+      fails with no change to the partition.</dd>
+      <dd>You cannot extend the current system or boot
+      partitions.</dd>
+
+      <dt><a name="ParameterGptAttributes"></a> gpt attributes=n
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>On basic GPT disks, assigns the GPT attribute(s)
+      to the partition with focus. GPT partition attributes
+      give additional information about the use of the
+      partition. Some attributes are specific to the
+      partition type GUID.</dd>
+      <dd><b>Important:</b> Changing the GPT attributes
+      might cause your basic data volumes to be unmountable
+      or fail to be assigned drive letters. Unless you are
+      an original equipment manufacturer (OEM) or an IT
+      professional experienced with GPT disks, do not change
+      GPT attributes.</dd>
+      <dd>The hexadecimal that pertains to the attribute
+      that you want to apply to the partition with focus.
+      The GPT attribute field is a 64-bit field that
+      contains two subfields. The higher field is
+      interpreted only in the context of the partition ID,
+      while the lower field is common to all partition IDs.</dd>
+      <dd>0x0000000000000001 marks the partition as required.
+      This indicates to all disk management utilities that
+      the partition should not be deleted. The EFI System
+      partition contains only those binaries necessary to
+      start the operating system. This makes it easy for
+      OEM- or operating system-specific binaries to be
+      placed in other partitions (all partitions have this
+      attribute).</dd>
+      <dd>0x8000000000000000 prevents the partition from
+      having a drive letter automatically assigned. By
+      default, each partition is assigned a new drive letter.
+      Setting this attribute ensures that when a disk is
+      moved to a new computer, a new drive letter will not be
+      automatically generated. Instead, the user can
+      manually assign drive letters (basic data partitions).</dd>
+      <dd><b>Note:</b> Other attributes can be added at any
+      time.</dd>
+
+      <dt><a name="ParameterHelp"></a> help
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays a list of the available commands.</dd>
+
+      <dt><a name="ParameterId"></a> ID={byte | GUID}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Intended for Original Equipment Manufacturer (OEM)
+      use only.</dd>
+      <dd><b>Caution:</b> Creating partitions with this
+      parameter might cause your computer to crash or be
+      unable to start up. Unless you are an OEM or an IT
+      professional experienced with GPT disks, do not create
+      partitions on GPT disks using the ID=byte | GUID
+      parameter. Instead, always use
+      <a href="#ParameterCreatePartitionEfi">create partition efi</a>
+      to create EFI System partitions, the
+      <a href="#ParameterCreatePartitionMsr">create partition msr</a>
+      to create Microsoft Reserved partitions, and the
+      <a href="#ParameterCreatePartitionPrimary">create partition primary</a>
+      (without the ID=byte | GUID parameter) to create
+      primary partitions on GPT disks.</dd>
+      <dd>For MBR disks, you can specify a partition type
+      byte, in hexadecimal form, for the partition. If no
+      partition type byte is specified on an MBR disk, the
+      <a href="#ParameterCreatePartitionPrimary">create partition primary</a>
+      creates a partition of type 0x6.</dd>
+      <dd>For GPT disks you can specify a partition type
+      GUID for the partition you want to create:
+      <ul>
+      <li>EFI System partition: c12a7328-f81f-11d2-ba4b-00a0c93ec93b</li>
+      <li>Microsoft reserved partition: e3c9e316-0b5c-4db8-817d-f92df00215ae</li>
+      <li>MSDATA partition: ebd0a0a2-b9e5-4433-87c0-68b6b72699c7</li>
+      <li>LDM Metadata partition on a dynamic disk: 5808c8aa-7e8f-42e0-85d2-e1e90434cfb3</li>
+      <li>LDM Data partition on a dynamic disk: af9b60a0-1431-4f62-bc68-3311714a69ad</li>
+      </ul>
+      If no partition type GUID is specified, the
+      <a href="#ParameterCreatePartitionPrimary">create partition primary</a>
+      creates an MSDATA partition.</dd>
+      <dd>Any partition type can be
+      specified with the ID={byte | GUID} parameter.
+      Does not check the partition GUID for
+      validity, nor does it perform any other checking of
+      the ID parameter.</dd>
+
+      <dt><a name="ParameterImport"></a> import
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Imports a foreign disk group into the local
+      computer's disk group. Imports every disk that is in
+      the same group as the disk that has focus.</dd>
+
+      <dt><a name="ParameterInactive"></a> inactive
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>On basic master boot record (MBR) disks, marks the
+      system partition system partition or boot partition
+      with focus as inactive. The computer starts from the
+      next option specified in the BIOS such as the CD-ROM
+      drive or a Pre-Boot eXecution Environment (PXE)-based
+      boot environment (such as Remote Installation Services
+      (RIS) Remote Installation Services (RIS) when you
+      restart the computer.</dd>
+      <dd><b>Caution:</b> Your computer might not start
+      without an active partition active partition. Do not
+      mark a system or boot partition as inactive unless you
+      are an experienced user with a thorough understanding
+      of the Windows (Server) family of operating systems.</dd>
+      <dd>If you are unable to start your computer after
+      marking the system or boot partition as inactive,
+      insert the Setup CD in the CD-ROM drive, restart the
+      computer, and then repair the partition using the
+      <b>Fixmbr</b> and <b>Fixboot</b> commands in the
+      Recovery Console.</dd>
+
+      <dt><a name="ParameterLetter"></a> letter=d
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>The drive letter you want to assign/remove
+      to/from the volume.</dd>
+
+      <dt><a name="ParameterListDisk"></a> list disk
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays a list of disks and information about
+      them, such as their size, amount of available free
+      space, whether the disk is a basic or dynamic disk,
+      and whether the disk uses the master boot record (MBR)
+      or GUID partition table (GPT) partition style. The
+      disk marked with an asterisk (*) has focus.</dd>
+
+      <dt><a name="ParameterListPartition"></a> list partition
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the partitions listed in the partition
+      table of the current disk. On dynamic disks, these
+      partitions may not correspond to the dynamic volumes
+      on the disk. This discrepancy occurs because dynamic
+      disks contain entries in the partition table for the
+      system volume or boot volume (if present on the disk)
+      and a partition that occupies the remainder of the
+      disk in order to reserve the space for use by dynamic
+      volumes.</dd>
+
+      <dt><a name="ParameterListVolume"></a> list volume
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays a list of basic and dynamic volumes on
+      all disks.</dd>
+
+      <dt><a name="ParameterMount"></a> mount=path
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>The mount point path you want to assign/remove
+      to/from the volume.</dd>
+
+      <dt><a name="ParameterN"></a> n
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>The disk number of the disk/partition/volume
+      to receive focus.</dd>
+
+      <dt><a name="ParameterNoErr"></a> noerr
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>For scripting only.
+      When an error is encountered, specifies continue to
+      process commands as if the error did not occur.
+      If omitted, an error causes exit with an error code.</dd>
+
+      <dt><a name="ParameterNoKeep"></a> nokeep
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that only one of the mirrored volumes
+      is retained; the other simple volume is deleted and
+      converted to free space. Neither the volume nor the
+      free space receive the focus.</dd>
+
+      <dt><a name="ParameterOffset"></a> offset=n
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Applies to master boot record (MBR) disks only.
+      The byte offset at which to create the partition
+      If no offset is given, the partition is placed in
+      the first disk extent that is large enough to hold
+      it. The offset is cylinder snapped. The offset is
+      rounded to the closest cylinder boundary.</dd>
+
+      <dt><a name="ParameterOnline"></a> online
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Brings an offline disk or volume with focus
+      online.</dd>
+
+      <dt><a name="ParameterOverride"></a> override
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Enables deletion of all simple volumes on
+      the disk. If the disk contains half of a mirrored
+      volume, the half of the mirror on the disk is deleted.
+      The <a href="#ParameterDeleteDisk">delete disk</a>
+      override command fails if the disk is a member of a
+      RAID-5 volume.</dd>
+      <dd>Enables deletion of any partition
+      regardless of type. Typically, only allowed
+      to delete known data partitions.</dd>
+
+      <dt><a name="ParameterRem"></a> rem
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Provides a way to add comments to a script.</dd>
+
+      <dt><a name="ParameterRemove"></a> remove
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Removes a drive letter or mount point from the
+      volume with focus. If <a href="#ParameterAll">all</a>
+      is used, all current drive letters and mount points
+      are removed. If no drive letter or mount point is
+      specified, then removes the first drive
+      letter or mount point it encounters.</dd>
+      <dd>Can be used to change the drive
+      letter associated with a removable drive. You cannot
+      remove the drive letters on system, boot, or paging
+      volumes. In addition, you cannot remove the drive
+      letter for an OEM partition, any GPT partition with an
+      unrecognized GUID, or any of the special, non-data,
+      GPT partitions such as the EFI system partition.</dd>
+
+      <dt><a name="ParameterRepairDisk"></a> repair disk=n
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Repairs the RAID-5 volume with focus by replacing
+      the failed RAID-5 member with the specified dynamic
+      disk. The specified dynamic disk must have free space
+      greater than or equal to the total size of the failed
+      RAID-5 member.</dd>
+
+      <dt><a name="ParameterRescan"></a> rescan
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Locates new disks that may have been added to the
+      computer.</dd>
+
+      <dt><a name="ParameterRetain"></a> retain
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Prepares an existing dynamic simple volume to be
+      used as a boot or system volume.</dd>
+      <dd>On an x86-based computer, creates a partition
+      entry in the master boot record (MBR) on the dynamic
+      simple volume with focus. To create an MBR partition,
+      the dynamic simple volume must start at a cylinder
+      aligned offset and be an integral number of cylinders
+      in size.</dd>
+      <dd>On an Itanium-based computer, creates a partition
+      entry in the GUID partition table (GPT) on the dynamic
+      simple volume with focus.</dd>
+      <dd><b>Note:</b> Intended for use only during
+      Unattended Setup or by Original Equipment
+      Manufacturers (OEMs).</dd>
+
+      <dt><a name="ParameterScrub"></a> scrub
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Removes volume mount point directories and
+      registry settings for volumes that are no longer in
+      the system. This prevents volumes that were previously
+      in the system from being automatically mounted and
+      given their former volume mount point(s) when they are
+      added back to the system.</dd>
+
+      <dt><a name="ParameterSelectDisk"></a> select disk
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Selects the specified disk and shifts the focus to
+      it. If no disk number is specified, lists the disk
+      that currently has the focus. You can view the numbers
+      for all disks on the computer by using
+      <a href="#ParameterListDisk">list disk</a>.</dd>
+
+      <dt><a name="ParameterSelectPartition"></a> select partition
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Selects the specified partition and gives it
+      focus. If no partition is specified, lists the current
+      partition with focus. You can view the numbers of all
+      partitions on the current disk by using
+      <a href="#ParameterListPartition">list partition</a>.</dd>
+
+      <dt><a name="ParameterSelectVolume"></a> select volume
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Selects the specified volume and shifts the focus
+      to it. If no volume is specified, lists the current
+      volume with focus. You can specify the volume by
+      number, drive letter, or mount point path. On a basic
+      disk, selecting a volume also gives the corresponding
+      partition focus. You can view the numbers of all
+      volumes on the computer by using
+      <a href="#ParameterListVolume">list volume</a>.</dd>
+
+      <dt><a name="ParameterSize"></a> size=n
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>The size of the partition in megabytes (MB). If
+      no size is given, then the partition continues until
+      there is no more free space in the current region.
+      The size is cylinder snapped. The size is rounded to
+      the closest cylinder boundary.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchS"></a> /s script_file
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Use DISKPART script.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <ul>
+    <li><b>0</b> No errors occurred</li>
+    <li><b>1</b> A fatal exception occurred. There may be a serious problem</li>
+    <li><b>2</b> The parameters specified were incorrect</li>
+    <li><b>3</b> Unable to open the specified script or output file</li>
+    <li><b>4</b> One of the services used returned a failure</li>
+    <li><b>5</b> A command syntax error occurred. The script failed because an object was improperly selected or was invalid for use with that command</li>
+    </ul>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

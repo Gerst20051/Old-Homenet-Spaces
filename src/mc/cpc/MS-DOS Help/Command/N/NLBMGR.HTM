@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>NLBMGR</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#n">Commands N-Z</a>
+    &gt; <a href="../INDEXN.HTM#nlbmgr">Commands N</a>
+    <h1>NLBMGR</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Network Load Balancing Manager can configure and manage
+    Network Load Balancing clusters and all cluster hosts from a
+    single computer, and can also replicate the cluster configuration
+    to other hosts.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>NLBMGR
+    [<a href="#SwitchHelp">/help</a>]</p>
+
+    <p>NLBMGR
+    [<a href="#SwitchAutoRefresh">/autorefresh [interval]</a>]
+    [<a href="#SwitchHostList">/hostlist file_name</a>]
+    [<a href="#SwitchNoPing">/noping</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchAutoRefresh"></a> /autorefresh [interval]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Causes refresh of host and cluster information
+      every interval seconds. If interval omitted, the
+      information is refreshed every 60 seconds.</dd>
+
+      <dt><a name="SwitchHelp"></a> /help
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display command help.</dd>
+
+      <dt><a name="SwitchHostList"></a> /hostlist file_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>After starting, the hosts specified in file_name
+      will be loaded.</dd>
+
+      <dt><a name="SwitchNoPing"></a> /noping
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Will not ping the hosts prior to trying to contact
+      them through Windows Management Instrumentation (WMI)
+      Use if you have disabled ICMP on all available network
+      adapters. You will experience a delay attempting to
+      contact a host that is not available.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,771 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>TCP / IP Protocols</title>
+<meta name="Microsoft Theme" content="layers 0011">
+</head>
+
+<body background="../../../_themes/layers/laybkgnd.gif" bgcolor="#FFFFFF" text="#000000" link="#330099" vlink="#999999" alink="#660033"><!--mstheme--><font face="georgia,times new roman,times">
+
+<h1 align="center"><!--mstheme--><font face="georgia,Times New Roman,Times"><!--mstheme--><b><b><b><b>TCP/IP Protocols</b></b></b><!--mstheme--></font><!--mstheme--></b></h1>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<p><span class="title2">IMPPpre/IMPPmes</span><br>
+<br>
+<a href="ftp://ftp.rfc-editor.org/in-notes/rfc2779.txt">
+<span class="blacksmall">ftp://ftp.rfc-editor.org/in-notes/rfc2779.txt</span></a><br>
+<a href="ftp://ftp.rfc-editor.org/in-notes/rfc2426.txt">
+<span class="blacksmall">ftp://ftp.rfc-editor.org/in-notes/rfc2426.txt</span></a>
+</p>
+<p><span class="blackbold">The Instant Messaging and Presence protocols. </span>
+<span class="blacktext"><br>
+Presence and Instant Messaging have recently emerged as a new medium of communications 
+over the Internet. Presence is a means for finding, retrieving, and subscribing 
+to changes in the presence information (e.g. &quot;online&quot; or &quot;offline&quot;) of other users. 
+Instant messaging is a means for sending small, simple messages that are delivered 
+immediately to online users.<br>
+<br>
+Applications of presence and instant messaging currently use independent, non-standard 
+and non-interoperable protocols developed by various vendors. The goal of the Instant 
+Messaging and Presence Protocol (IMPP) Working Group is to define a standard protocol 
+so that independently developed applications of instant messaging and/or presence 
+can interoperate across the Internet. These protocols define a minimal set of requirements 
+that IMPP must meet so various existing applications will work together.<br>
+<br>
+ASCII messages are Mime encoded.</span></p>
+<p>&nbsp;</p>
+<p><span class="title2">IMAP4</span></p>
+<p><span class="blacksmall">RFC2060</span>
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc2060.html" target="_blank">
+<font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc2060.html</font><br>
+</a><span class="blacksmall">RFC2061</span>
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc2061.html" target="_blank">
+<font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc2061.html</font></a>
+</p>
+<p class="blacktext">The Internet Message Access Protocol, Version 4rev1 (IMAP4) 
+allows a client to access and manipulate electronic mail messages on a server. IMAP4 
+permits manipulation of remote message folders, called mailboxes, in a way that 
+is functionally equivalent to local mailboxes. IMAP4 also provides the capability 
+for an offline client to resynchronize with the server.</p>
+<p class="blacktext">IMAP4 includes operations for creating, deleting, and renaming 
+mailboxes; checking for new messages; permanently removing messages; setting and 
+clearing flags; parsing; searching; and selective fetching of message attributes, 
+texts, and portions thereof. Messages in IMAP4 are accessed by the use of numbers. 
+These numbers are either message sequence numbers or unique identifiers.</p>
+<p class="blacktext">&nbsp;</p>
+<p><span class="title2">IPDC</span> </p>
+<p><span class="blacksmall">Internet Drafts:
+<a href="http://www.ietf.org/internet-drafts/draft-draft-taylor-ipdc-00.txt" target="window2">
+<font size="1">draft-draft-taylor-ipdc-00.txt</font></a>,<font size="1"> </font>
+</span>
+<a href="http://www.ietf.org/internet-drafts/draft-calhoun-diameter-07.txt" target="window2">
+<font size="1">draft-calhoun-diameter-07.txt</font></a><span class="blacksmall">
+</span></p>
+<p class="blacktext">IP Device Control (IPDC) is a family of protocols, components 
+of which can be used individually or together to perform connection control, media 
+control, and signalling transports. It fulfills a need for one or more protocols 
+to control gateway devices which sit at the boundary between the circuit- switched 
+telephone network and the internet and terminate circuit- switched trunks. Examples 
+of such devices include network access servers and voice-over-IP gateways. The need 
+for a control protocol separate from call signalling arises when the service control 
+logic needed to process calls lies partly or wholly outside the gateway devices. 
+IPDC was build on the base structure provided by the DIAMETER protocol which was 
+specifically written for authentication, authorization, and accounting applications.
+</p>
+<p class="blacktext">The format of the header is shown in the following illustration:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="467" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr>
+    <td class="blacktext" vAlign="top" align="middle" width="25%"><!--mstheme--><font face="georgia,times new roman,times">Radius PCC<br>
+    (1 byte)<!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" align="middle" width="18%"><!--mstheme--><font face="georgia,times new roman,times">PKT<br>
+    (5 bits) <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" align="middle" width="12%"><!--mstheme--><font face="georgia,times new roman,times">Ver<br>
+    (3 bits) <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" align="middle" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">Packet Length 
+    (2 bytes)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" align="middle" colSpan="5"><!--mstheme--><font face="georgia,times new roman,times">Identifier (4 
+    bytes)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" align="middle" colSpan="3"><!--mstheme--><font face="georgia,times new roman,times">&nbsp;Sequence 
+    number <!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">Next Received (Nr) (2 bytes)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" align="middle" colSpan="5"><!--mstheme--><font face="georgia,times new roman,times">Attributes<br>
+&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" align="middle" width="25%" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">
+    1 byte<!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" align="middle" bgColor="white" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">
+    1 byte<!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" align="middle" width="25%" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">
+    1 byte<!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" align="middle" width="25%" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">
+    1 byte<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" align="middle" bgColor="white" colSpan="5"><!--mstheme--><font face="georgia,times new roman,times">
+    <span class="blackitalic">IPDC structure</span> <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">Radius PCC</span><br>
+<span class="blacktext">Packet Compatibility Code (PCC) field is used for RADIUS 
+backward compatibility. In order to easily distinguish DIAMETER/IPDC messages from 
+RADIUS a special value has been reserved and allows an implementation to support 
+both protocols concurrently using the first octet in the header. The RADIUS PCC 
+field must be set to 254, DIAMETER/IPDC message. </p>
+<p>&nbsp;</p>
+</span>
+<p><span class="title4">PKT Flags</span><span class="blacktext"><br>
+Packet Flags are used to identify any options.</span></p>
+<p><span class="title4">Version</span><span class="blacktext"><br>
+Version number associated with the packet received. This field is set to 1 to indicate 
+IPDC version 1.</span></p>
+<p><span class="title4">Packet Length</span><span class="blacktext"><br>
+Indicates the length of the message including the header fields. </span></p>
+<p><span class="title4">Identifier</span><span class="blacktext"><br>
+Aids in matching requests and replies. </span></p>
+<p><span class="title4">Next Send</span><span class="blacktext"><br>
+This field is present when the Window-Present bit is set in the header flags. The 
+Next Send (Ns) is copied from the send sequence number state variable (Ss) at the 
+time the message is transmitted. </span></p>
+<p><span class="title4">Next Received</span><span class="blacktext"><br>
+This field is present when the Window-Present bit is set in the header flags. Nr 
+is copied from the receive sequence number state variable (Sr) and indicates the 
+sequence number (Ns) +1 of the highest (modulo 2^16) in-sequence message received.
+</span></p>
+<p><span class="title4">Attributes</span><span class="blacktext"><br>
+IPDC Attributes carry the specific commands and parameters which must be exchanged 
+between IPDC protocol endpoints to perform the tasks associated with Media Gateway 
+control.</span></p>
+<p>&nbsp;</p>
+<p><span class="title2">IRC</span> </p>
+<p><a href="ftp://ftp.rfc-editor.org/in-notes/rfc1459.txt" target="_blank">
+<span class="blacksmall">ftp://ftp.rfc-editor.org/in-notes/rfc1459.txt</span></a></p>
+<p class="blacktext">The IRC (Internet Relay Chat protocol) supports a worldwide 
+network of servers and clients, and is stringing to cope with growth. It is a text-based 
+protocol, with the simplest client being any socket program capable of connecting 
+to the server.<br>
+<br>
+The IRC protocol was developed on systems using the TCP/IP network protocol, although 
+there is no requirement that this remain the only sphere in which it operates. It 
+is a teleconferencing system, which (through the use of the client-server model) 
+is well-suited to running on many machines in a distributed fashion. A typical setup 
+involves a single process (the server) forming a central point for clients (or other 
+servers) to connect to, performing the required message delivery/multiplexing and 
+other functions.<br>
+<br>
+Servers and clients send each other messages which may or may not generate a reply. 
+If the message contains a valid command, the client should expect a reply as specified 
+but it is not advised to wait forever for the reply; client to server and server 
+to server communication is essentially asynchronous in nature.<br>
+Each IRC message may consist of up to three main parts: the prefix (optional), the 
+command, and the command parameters (of which there may be up to 15). The prefix, 
+command, and all parameters are separated by one (or more) ASCII space character(s) 
+(0x20).<br>
+Messages are as follows: <br>
+<br>
+<span class="title4">Server/Nick_Name</span><br>
+The Server/Nick_Name.<br>
+<br>
+<span class="title4">User</span><br>
+The user name.<br>
+<br>
+<span class="title4">Host</span><br>
+The host name.</p>
+<p>&nbsp; </p>
+<p class="title2">ISAKMP</p>
+<p><span class="blacksmall">RFC2408</span>
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc2408.html" target="window2">
+<font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc2408.html</font></a>
+</p>
+<p class="blacktext">The Internet Message Access Protocol, version 4rev1 (ISAKMP) 
+defines procedures and packet formats to establish, negotiate, modify and delete 
+Security Associations (SA). SAs contain all the information required for execution 
+of various network security services, such as the IP layer services (such as header 
+authentication and payload encapsulation), transport or application layer services, 
+or self-protection of negotiation traffic. ISAKMP defines payloads for exchanging 
+key generation and authentication data. These formats provide a consistent framework 
+for transferring key and authentication data which is independent of the key generation 
+technique, encryption algorithm and authentication mechanism. </p>
+<p class="blacktext">The format of the header is shown in the following illustration:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="467" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr>
+    <td vAlign="top" colSpan="5"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">Initiator cookie (8 bytes)<br>
+&nbsp;</span></p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" align="middle" colSpan="5"><!--mstheme--><font face="georgia,times new roman,times">Responder cookie 
+    (8 bytes)<br>
+&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" align="middle" width="98"><!--mstheme--><font face="georgia,times new roman,times">Next payload<br>
+    (1 byte)<!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" align="middle" width="12%"><!--mstheme--><font face="georgia,times new roman,times">MjVer<br>
+    (4 bits)<!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" align="middle" width="13%"><!--mstheme--><font face="georgia,times new roman,times">MnVer<br>
+    (4 bits)<!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" align="middle" width="150"><!--mstheme--><font face="georgia,times new roman,times">Exchange Type 
+    (1 byte)<!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" align="middle" width="200"><!--mstheme--><font face="georgia,times new roman,times">Flags<br>
+    (1 byte)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" colSpan="5"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">Message ID (4 bytes)</span></p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" align="middle" colSpan="5"><!--mstheme--><font face="georgia,times new roman,times">Length (4 bytes)
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" align="middle" width="98" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">
+    1 byte<!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" align="middle" bgColor="white" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">
+    1 byte<!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" align="middle" width="150" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">
+    1 byte<!--mstheme--></font></td>
+    <td class="blacktext" vAlign="top" align="middle" width="200" bgColor="white"><!--mstheme--><font face="georgia,times new roman,times">
+    1 byte<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" vAlign="top" align="middle" bgColor="white" colSpan="5"><!--mstheme--><font face="georgia,times new roman,times">
+    <span class="blackitalic">ISAKMP structure </span><!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">Initiator cookie</span><span class="blacktext"><br>
+Cookie of entity that initiated SA establishment, SA notification, or SA deletion.
+</span></p>
+<p><span class="title4">Responder cookie</span><span class="blacktext"><br>
+Cookie of entity is responding to an SA establishment, SA notification, or SA deletion.</span></p>
+<p><span class="title4">Next payload</span><span class="blacktext"><br>
+Indicates the type of the first payload in the message. Possible types are:</span></p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="0" width="57%" border="0">
+  <tr>
+    <td class="blacktext" width="82"><!--mstheme--><font face="georgia,times new roman,times">0 <!--mstheme--></font></td>
+    <td class="blacktext" width="182"><!--mstheme--><font face="georgia,times new roman,times">None<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="82"><!--mstheme--><font face="georgia,times new roman,times">1<!--mstheme--></font></td>
+    <td class="blacktext" width="182"><!--mstheme--><font face="georgia,times new roman,times">Security Association (SA)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="82"><!--mstheme--><font face="georgia,times new roman,times">2<!--mstheme--></font></td>
+    <td class="blacktext" width="182"><!--mstheme--><font face="georgia,times new roman,times">Proposal (P)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="82"><!--mstheme--><font face="georgia,times new roman,times">3<!--mstheme--></font></td>
+    <td class="blacktext" width="182"><!--mstheme--><font face="georgia,times new roman,times">Transform (T)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="82"><!--mstheme--><font face="georgia,times new roman,times">4<!--mstheme--></font></td>
+    <td class="blacktext" width="182"><!--mstheme--><font face="georgia,times new roman,times">Key Exchange (KE)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="82"><!--mstheme--><font face="georgia,times new roman,times">5<!--mstheme--></font></td>
+    <td class="blacktext" width="182"><!--mstheme--><font face="georgia,times new roman,times">Identification (ID)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="82"><!--mstheme--><font face="georgia,times new roman,times">6<!--mstheme--></font></td>
+    <td class="blacktext" width="182"><!--mstheme--><font face="georgia,times new roman,times">Certificate (CERT)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="82"><!--mstheme--><font face="georgia,times new roman,times">7<!--mstheme--></font></td>
+    <td class="blacktext" width="182"><!--mstheme--><font face="georgia,times new roman,times">Certificate Request (CR)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="82"><!--mstheme--><font face="georgia,times new roman,times">8<!--mstheme--></font></td>
+    <td class="blacktext" width="182"><!--mstheme--><font face="georgia,times new roman,times">Hash (HASH)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="82"><!--mstheme--><font face="georgia,times new roman,times">9<!--mstheme--></font></td>
+    <td class="blacktext" width="182"><!--mstheme--><font face="georgia,times new roman,times">Signature (SIG)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="82"><!--mstheme--><font face="georgia,times new roman,times">10<!--mstheme--></font></td>
+    <td class="blacktext" width="182"><!--mstheme--><font face="georgia,times new roman,times">Nonce (NONCE)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="82"><!--mstheme--><font face="georgia,times new roman,times">11<!--mstheme--></font></td>
+    <td class="blacktext" width="182"><!--mstheme--><font face="georgia,times new roman,times">Notification (N)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="82"><!--mstheme--><font face="georgia,times new roman,times">12<!--mstheme--></font></td>
+    <td class="blacktext" width="182"><!--mstheme--><font face="georgia,times new roman,times">Delete (D)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="82"><!--mstheme--><font face="georgia,times new roman,times">13<!--mstheme--></font></td>
+    <td class="blacktext" width="182"><!--mstheme--><font face="georgia,times new roman,times">Vendor ID (VID)<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="82"><!--mstheme--><font face="georgia,times new roman,times">14-127<!--mstheme--></font></td>
+    <td class="blacktext" width="182"><!--mstheme--><font face="georgia,times new roman,times">Reserved <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="82"><!--mstheme--><font face="georgia,times new roman,times">128-255<!--mstheme--></font></td>
+    <td class="blacktext" width="182"><!--mstheme--><font face="georgia,times new roman,times">Private use<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">MjVer</span><span class="blacktext"><br>
+Major Version indicates the major v ersion of the ISAKMP protocol in use. Implementations 
+based RFC2408 must set the Major Version to 1. Implementations based on previous 
+versions of ISAKMP Internet- Drafts must set the Major Version to 0. Implementations 
+should never accept packets with a major version number larger than its own.
+</span></p>
+<p><span class="title4">MnVer</span><span class="blacktext"><br>
+Minor Version - indicates the minor version of the ISAKMP protocol in use. Implementations 
+based RFC2408 must set the minor version to 0. Implementations based on previous 
+versions of ISAKMP Internet- Drafts must set the minor version to 1. Implementations 
+should never accept packets with a minor version number larger than its own.
+</span></p>
+<p><span class="title4">Exchange Type</span><span class="blacktext"><br>
+The type of exchange being used. This dictates the message and payload orderings 
+in the ISAKMP exchanges. Possible values are:</span></p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="0" width="50%" border="0">
+  <tr>
+    <td class="blacktext" width="76"><!--mstheme--><font face="georgia,times new roman,times">0<!--mstheme--></font></td>
+    <td class="blacktext" width="168"><!--mstheme--><font face="georgia,times new roman,times">None<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="76"><!--mstheme--><font face="georgia,times new roman,times">1<!--mstheme--></font></td>
+    <td class="blacktext" width="168"><!--mstheme--><font face="georgia,times new roman,times">Base<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="76"><!--mstheme--><font face="georgia,times new roman,times">2<!--mstheme--></font></td>
+    <td class="blacktext" width="168"><!--mstheme--><font face="georgia,times new roman,times">Identity Protection<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="76"><!--mstheme--><font face="georgia,times new roman,times">3<!--mstheme--></font></td>
+    <td class="blacktext" width="168"><!--mstheme--><font face="georgia,times new roman,times">Authentication Only<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="76"><!--mstheme--><font face="georgia,times new roman,times">4<!--mstheme--></font></td>
+    <td class="blacktext" width="168"><!--mstheme--><font face="georgia,times new roman,times">Aggressive<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="76"><!--mstheme--><font face="georgia,times new roman,times">5<!--mstheme--></font></td>
+    <td class="blacktext" width="168"><!--mstheme--><font face="georgia,times new roman,times">Informational<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="76"><!--mstheme--><font face="georgia,times new roman,times">6-31<!--mstheme--></font></td>
+    <td class="blacktext" width="168"><!--mstheme--><font face="georgia,times new roman,times">ISAKMP Future Use<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="76"><!--mstheme--><font face="georgia,times new roman,times">32-239<!--mstheme--></font></td>
+    <td class="blacktext" width="168"><!--mstheme--><font face="georgia,times new roman,times">DOI Specific Use<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="76"><!--mstheme--><font face="georgia,times new roman,times">240-255<!--mstheme--></font></td>
+    <td class="blacktext" width="168"><!--mstheme--><font face="georgia,times new roman,times">Private Use <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">Flags</span><span class="blacktext"><br>
+Specific options that are set for the ISAKMP exchange.<br>
+E(ncryption bit) (bit 0) - specifies that all payloads following the header are 
+encrypted using the encryption algorithm identified in the ISAKMP SA.<br>
+C(ommit bit) (bit 1) - signals key exchange synchronization. It is used to ensure 
+that encrypted material is not received prior to completion of the SA establishment.<br>
+A(uthentication Only Bit) (bit 2) - intended for use with the Informational Exchange 
+with a Notify payload and will allow the transmission of information with integrity 
+checking, but no encryption. All remaining bits are set to 0 before transmission.
+</span></p>
+<p><span class="title4">Message ID</span><span class="blacktext"><br>
+Unique Message Identifier used to identify protocol state during Phase 2 negotiations. 
+This value is randomly generated by the initiator of the Phase 2 negotiation. In 
+the event of simultaneous SA establishments (i.e., collisions), the value of this 
+field will likely be different because they are independently generated and, thus, 
+two security associations will progress toward establishment. However, it is unlikely 
+there will be absolute simultaneous establishments. During Phase 1 negotiations, 
+the value must be set to 0. </span></p>
+<p><span class="title4">Length</span><span class="blacktext"><br>
+Length of total message (header + payloads) in octets. Encryption can expand the 
+size of an ISAKMP message. </span></p>
+<p>&nbsp;</p>
+<p class="title2">ISP</p>
+<p><span class="blacksmall">10262_hsc104 06. </span><br>
+<br>
+<span class="blacktext">ISP is a transport mechanism for the applications running 
+on top of this version (version 3) of the protocol. ISP is divided into a Master 
+Protocol TRH and various sub protocols: CM, SDM, SCM, DAM, BRM and MGM. The information 
+set by the protocol will be used for routing of messages between two mated applications 
+residing in the two nodes, i.e. the AXD 301 and the AXE. The header structure is 
+as follows:</span></p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="400" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr bgColor="#ffffff">
+    <td width="30"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      8</div>
+    <!--mstheme--></font></td>
+    <td width="30"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      7</div>
+    <!--mstheme--></font></td>
+    <td width="30"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      6</div>
+    <!--mstheme--></font></td>
+    <td width="30"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      5</div>
+    <!--mstheme--></font></td>
+    <td width="30"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      4</div>
+    <!--mstheme--></font></td>
+    <td width="30"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      3</div>
+    <!--mstheme--></font></td>
+    <td width="30"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      2</div>
+    <!--mstheme--></font></td>
+    <td width="30"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      1</div>
+    <!--mstheme--></font></td>
+    <td width="30" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      Octect</div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" colSpan="8" rowSpan="2"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      Length</div>
+    <!--mstheme--></font></td>
+    <td bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      1</div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      2</div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td colSpan="8"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      Message ID</div>
+    <!--mstheme--></font></td>
+    <td bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      3</div>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">Protocol Decode</span><span class="blacktext"><br>
+Message ID<br>
+The master protocol message ID. This field splits to the appropriate message of 
+the TRH protocol. The following TRH messages are available:</span></p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="0" width="500" border="0">
+  <tr vAlign="top">
+    <td width="32"><!--mstheme--><font face="georgia,times new roman,times">1<br>
+    2<br>
+    3<br>
+    4<br>
+    5 <br>
+    6<br>
+    7<br>
+    8<br>
+    9<br>
+    10<br>
+    11<br>
+    12<br>
+    13<br>
+    14<br>
+    15<br>
+    16<br>
+    17<br>
+    18<br>
+    19 <!--mstheme--></font></td>
+    <td width="454"><!--mstheme--><font face="georgia,times new roman,times">HeartBeat <br>
+    HeartBeatAck <br>
+    PointAssocCon <br>
+    PointAssocConAck <br>
+    PointAssocDisc <br>
+    PointAssocDiscReq <br>
+    PointAssocInfo <br>
+    PointAssocInfoReq <br>
+    PrefLinkAck <br>
+    PrefLinkReq <br>
+    UserConnectAck <br>
+    UserConnectRej <br>
+    UserConnectReq <br>
+    UserDataTransport <br>
+    UserDisconnect <br>
+    UserDisconnectAck <br>
+    VersionSync <br>
+    VersionSyncAck <br>
+    UserDataTransportATOverload<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">Length</span><span class="blacktext"><br>
+The number of octets that the element has.<br>
+&nbsp;</span></p>
+<p><span class="title2">NTP</span></p>
+<p class="blacksmall">RFC1059
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1059.html" target="window2">
+<font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc1059.html</font></a><br>
+RFC1119
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1119.html" target="window2">
+<font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc1119.html</font></a><br>
+RFC1305
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1305.html" target="window2">
+<font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc1305.html</font></a></p>
+<p class="blacktext">The Network Time Protocol (NTP) is a time synchronization system 
+for computer clocks through the Internet network. It provides the mechanisms to 
+synchronize time and coordinate time distribution in a large, diverse internet operating 
+at rates from mundane to light wave. It uses a returnable time design in which a 
+distributed sub network of time servers, operating in a self-organizing, hierarchical 
+master-slave configuration, synchronize logical clocks within the sub network and 
+to national time standards via wire or radio. </p>
+<p class="blacktext">The format of the header is shown in the following illustration:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="2" width="400" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr>
+    <td vAlign="top" width="11%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">LI </span></p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="15%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">VN </span></p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="15%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">Mode </span></p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="18%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">Stratum </span></p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="15%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">Poll </span></p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="26%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">Precision </span></p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr bgColor="#ffffff">
+    <td vAlign="top" width="11%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">2 </span></p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="15%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">3 </span></p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="15%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">3 </span></p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="18%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">7 </span></p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="15%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">6 </span></p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="26%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">7 bits </span></p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr bgColor="#ffffff">
+    <td vAlign="top" colSpan="6"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <span class="blackitalic">NTP header structure</span>
+    </div>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">LI Leap Indicator</span><span class="blacktext"><br>
+A 2-bit code warning of impending leap-second to be inserted at the end of the last 
+day of the current month. Bits are coded as follows:</span></p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="0" width="400" border="0">
+  <tr>
+    <td class="blacktext" width="8%"><!--mstheme--><font face="georgia,times new roman,times">00<!--mstheme--></font></td>
+    <td class="blacktext" width="92%"><!--mstheme--><font face="georgia,times new roman,times">No warning.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="8%"><!--mstheme--><font face="georgia,times new roman,times">01<!--mstheme--></font></td>
+    <td class="blacktext" width="92%"><!--mstheme--><font face="georgia,times new roman,times">+1 second (following minute has 61 seconds).<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="8%"><!--mstheme--><font face="georgia,times new roman,times">10 <!--mstheme--></font></td>
+    <td class="blacktext" width="92%"><!--mstheme--><font face="georgia,times new roman,times">-1 second (following minute has 59 seconds).
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="8%"><!--mstheme--><font face="georgia,times new roman,times">11<!--mstheme--></font></td>
+    <td class="blacktext" width="92%"><!--mstheme--><font face="georgia,times new roman,times">Alarm condition (clock not synchronized).<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">VN</span><span class="blacktext"><br>
+Version number 3 bit code indicating the version number.</span></p>
+<p><span class="title4">Mode</span><span class="blacktext"><br>
+The mode: This field can contain the following values:</span></p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="0" width="75%" border="0">
+  <tr>
+    <td class="blacktext" width="8%"><!--mstheme--><font face="georgia,times new roman,times">0<!--mstheme--></font></td>
+    <td class="blacktext" width="92%"><!--mstheme--><font face="georgia,times new roman,times">Reserved.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="8%"><!--mstheme--><font face="georgia,times new roman,times">1<!--mstheme--></font></td>
+    <td class="blacktext" width="92%"><!--mstheme--><font face="georgia,times new roman,times">Symmetric active. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="8%"><!--mstheme--><font face="georgia,times new roman,times">3<!--mstheme--></font></td>
+    <td class="blacktext" width="92%"><!--mstheme--><font face="georgia,times new roman,times">Client. <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="8%"><!--mstheme--><font face="georgia,times new roman,times">4<!--mstheme--></font></td>
+    <td class="blacktext" width="92%"><!--mstheme--><font face="georgia,times new roman,times">Server.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="8%"><!--mstheme--><font face="georgia,times new roman,times">5<!--mstheme--></font></td>
+    <td class="blacktext" width="92%"><!--mstheme--><font face="georgia,times new roman,times">Broadcast.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="8%"><!--mstheme--><font face="georgia,times new roman,times">6<!--mstheme--></font></td>
+    <td class="blacktext" width="92%"><!--mstheme--><font face="georgia,times new roman,times">NTP control message.<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">Stratum</span><span class="blacktext"><br>
+An integer identifying the stratum level of the local clock. Values are defined 
+as follows:</span></p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="0" width="75%" border="0">
+  <tr>
+    <td class="blacktext" width="8%"><!--mstheme--><font face="georgia,times new roman,times">0<!--mstheme--></font></td>
+    <td class="blacktext" width="92%"><!--mstheme--><font face="georgia,times new roman,times">Unspecified.<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="8%"><!--mstheme--><font face="georgia,times new roman,times">1<!--mstheme--></font></td>
+    <td class="blacktext" width="92%"><!--mstheme--><font face="georgia,times new roman,times">Primary reference (e.g. radio clock).<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="blacktext" width="8%"><!--mstheme--><font face="georgia,times new roman,times">2...n<!--mstheme--></font></td>
+    <td class="blacktext" width="92%"><!--mstheme--><font face="georgia,times new roman,times">Secondary reference (via NTP).<!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">Poll</span><span class="blacktext"><br>
+Signed integer indicating the maximum interval between successive messages, in seconds 
+to the nearest power of 2.</span></p>
+<p><span class="title4">Precision</span><span class="blacktext"><br>
+Signed integer indicating the precision of the local clock, in seconds to the nearest 
+power of 2.</span></p>
+<p>&nbsp; </p>
+<p><span class="title2">POP3</span></p>
+<p class="blacksmall">RFC1939
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1939.html" target="window2">
+<font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc1939.html</font></a></p>
+<p class="blacktext">The Post Office Protocol version 3 (POP3) is intended to permit 
+a workstation to dynamically access a maildrop on a server host. It is usually used 
+to allow a workstation to retrieve mail that the server is holding for it. </p>
+<p class="blacktext">POP3 transmissions appear as data messages between stations. 
+The messages are either command or reply messages.</p>
+<p class="blacktext">&nbsp;</p>
+<p class="blacktext"><span class="title2">Radius</span></p>
+<p class="blacksmall">RFC2138
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc2138.html" target="window">
+<u><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc2138.html</font></u></a><u><br>
+</u>RFC2139
+<a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc2139.html" target="window2">
+<u><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc2139.html</font></u></a></p>
+<p class="blacktext">Radius is a protocol which manages dispersed serial line and 
+modem pools for large numbers of users.<br>
+(Compliant with IETF RFC2138 and RFC2139.)</p>
+<p class="blacktext">The format of the header is shown in the following illustration:</p>
+<!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="0" width="400" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+  <tr bgColor="#ffffff">
+    <td vAlign="top" width="24%"><!--mstheme--><font face="georgia,times new roman,times">
+    <div class="blacktext" align="right">
+      8
+    </div>
+    <!--mstheme--></font></td>
+    <td vAlign="top" width="24%"><!--mstheme--><font face="georgia,times new roman,times">
+    <div class="blacktext" align="right">
+      16
+    </div>
+    <!--mstheme--></font></td>
+    <td vAlign="top" width="52%"><!--mstheme--><font face="georgia,times new roman,times">
+    <div class="blacktext" align="right">
+      32 bits
+    </div>
+    <!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" width="24%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">Code </span></p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="24%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">Identifier </span></p>
+    </center><!--mstheme--></font></td>
+    <td vAlign="top" width="52%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext">Length </span></p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td vAlign="top" colSpan="3"><!--mstheme--><font face="georgia,times new roman,times"><center>
+    <p><span class="blacktext"><br>
+    Authenticator<br>
+    (16 bytes)<br>
+&nbsp;</span></p>
+    </center><!--mstheme--></font></td>
+  </tr>
+  <tr bgColor="#ffffff">
+    <td vAlign="top" colSpan="3"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <span class="blackitalic">Radius header structure </span>
+    </div>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<p><span class="title4">Code</span><span class="blacktext"><br>
+The message type.</span></p>
+<p><span class="title4">Identifier</span><span class="blacktext"><br>
+The identifier matches requests and replies.</span></p>
+<p><span class="title4">Length</span><span class="blacktext"><br>
+The message length including the header.</span></p>
+<p><span class="title4">Authenticator</span><span class="blacktext"><br>
+A field used to authenticate the reply from the radius server and in the password 
+hiding algorithm.</span></p>
+<!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="480" border="0">
+  <tr>
+    <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">
+    <a onclick="MM_openBrWindow('ScreenCaptures/radius.gif','ScreenCaptures','scrollbars=yes,resizable=yes,width=700,height=600')" href="javascript:;">
+    <img src="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/Radius%20Small.gif" border="0" width="480" height="338"></a><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td class="purple"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <a href="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/Radius.gif">
+      Enlarge</a></div>
+    <!--mstheme--></font></td>
+    <td class="purple"><!--mstheme--><font face="georgia,times new roman,times">
+    <div align="center">
+      <a href="http://www.radcom.com/Technologies.aspx?BoneId=376&ObjId=-1&=&=&=&staticName1=1&staticName2=" target="_blank">
+      More Details</a></div>
+    <!--mstheme--></font></td>
+  </tr>
+</table><!--mstheme--><font face="georgia,times new roman,times">
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<p align="center"><a href="../../../index.html">Home</a> -
+<a href="../index.html">Computers</a> -
+<a href="../IP%20Sub-Netting.htm">IP Sub-Netting</a> -
+<a href="../ISDN%20Tutorial.htm">ISDN Tutorial</a> -
+<a href="../IP%20Addressing%20and%20Subnetting.htm">IP Addressing</a></p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<p align="center"><a href="Page%201.htm">Page 1</a> - <a href="Page%202.htm">Page 
+2</a> - <a href="Page%203.htm">Page 3</a> - <a href="Page%204.htm">Page 4</a> -
+<a href="Page%205.htm">Page 5</a> - <a href="Page%206.htm">Page 6</a> -
+<a href="Page%207.htm">Page 7</a> - <a href="Page%208.htm">Page 8</a> -
+<a href="Page%209.htm">Page 9</a> - <a href="Page%2010.htm">Page 10</a></p>
+
+<!--mstheme--></font></body>
+
+</html>

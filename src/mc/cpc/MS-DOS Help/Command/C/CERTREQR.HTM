@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CERTREQ RETRIEVE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCA.HTM#certreqsubmit">Commands Ca-Cg</a>
+    <h1>CERTREQ RETRIEVE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>To retrieve a response to a previous request from a
+    certification authority (CA).</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CERTREQ
+    <a href="#SwitchRetrieve">-retrieve</a>
+    [<a href="#SwitchHelp">/?</a>]</p>
+
+    <p>CERTREQ
+    <a href="#SwitchRetrieve">-retrieve</a>
+    [<a href="#SwitchBinary">-binary</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    [<a href="#SwitchCrl">-crl</a>]
+    [<a href="#SwitchRpc">-rpc</a>]
+    <a href="#ParameterRequestId">request_id</a>
+    [<a href="#ParameterFileOut">output_file</a>
+    [<a href="#ParameterFileChainOut">chain_output_file</a>
+    [<a href="#ParameterFileResponseOut">response_output_file</a>]]]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterFileChainOut"></a> chain_output_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the binary or base64-encoded PKCS #7
+      file to which you want to send output.</dd>
+
+      <dt><a name="ParameterFileOut"></a> output_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the binary or base64-encoded X.509 v3
+      file to which you want to send output.</dd>
+
+      <dt><a name="ParameterRequestId"></a> request_id
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the request or certificate that you want
+      to retrieve.</dd>
+
+      <dt><a name="ParameterFileResponseOut"></a> response_output_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the binary or base64-encoded Full
+      Response file to which you want to send output.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display cluster group syntax. Default.</dd>
+
+      <dt><a name="SwitchBinary"></a> -binary
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Formats output files as binary instead of
+      base64-encoded.</dd>
+
+      <dt><a name="SwitchConfig"></a> -config machine\user
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Processes the operation by using the certification
+      authority specified in machine\name. Otherwise, default
+      CA processes the request</dd>
+      <dd>You must specify the machine or user. Otherwise,
+      the Select Certificate Authority dialog box appears and
+      displays a list of all CAs that are available.</dd>
+      <dd>If you use "-config -", the operation is processed
+      using the default CA.</dd>
+
+      <dt><a name="SwitchCrl"></a> -crl
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Includes certificate revocation lists (CRLs) in
+      the output to the base64-encoded PKCS #7 file
+      specified by
+      <a href="#ParameterFileChainOut">chain_output_file</a>
+      or to the base64-encoded file specified by
+      <a href="#ParameterFileResponseOut">response_output_file</a>.
+      </dd>
+
+      <dt><a name="SwitchRpc"></a> -rpc
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Instructs Certificate Services to use a remote
+      procedure call (RPC) server connection instead of
+      Distributed COM.</dd>
+
+      <dt><a name="SwitchRetrieve"></a> -retrieve
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Retrieves a response to a previous request from a
+      certificate authority.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="CERTREQA.HTM">CERTREQ ACCEPT</a>
+    <br><a href="CERTREQN.HTM">CERTREQ NEW</a>
+    <br><a href="CERTREQP.HTM">CERTREQ POLICY</a>
+    <br><a href="CERTREQS.HTM">CERTREQ SIGN</a>
+    <br><a href="CERTREQT.HTM">CERTREQ SUBMIT</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>You can use CERTREQ <a href="#SwitchRetrieve">-retrieve</a>
+    <a href="#ParameterRequestId">request_id</a> to retrieve the
+    certificate after the CA has actually issued it. You can also
+    use it to retrieve any certificate that has ever been issued by
+    the CA, including revoked or expired certificates, without regard
+    to whether the certificate's request was ever in the pending
+    state.</p>
+    <p>If you submit a request to the CA, the policy module of the
+    CA might leave the request in a pending state and return the
+    <a href="#ParameterRequestId">request_id</a> to the CERTREQ
+    caller for display. Eventually, the CA's administrator will
+    issue the certificate or deny the request.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

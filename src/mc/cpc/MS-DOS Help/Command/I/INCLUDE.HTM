@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>INCLUDE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#i">Commands A-M</a>
+    &gt; <a href="../INDEXI.HTM#include">Configuration I</a>
+    <h1>INCLUDE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Includes the contents of one configuration block within another.
+    You can use this command only in your CONFIG.SYS file.</p>
+
+    <p>The INCLUDE command is one of six special CONFIG.SYS commands used for
+    defining multiple configurations within a single CONFIG.SYS file. With
+    multiple configurations, you define a menu that appears when your computer
+    starts. Each menu item corresponds to a block of commands, or
+    "configuration block," in your CONFIG.SYS file. For more information about
+    multiple configurations and configuration blocks, see the chapter
+    "Configuring Your System" in the MS-DOS User's Guide.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>INCLUDE=<a
+    href="#ParameterBlockname">blockname</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterBlockname"></a> blockname
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>)</dt>
+      <dd>Specifies the name of the configuration block to
+      include.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>The INCLUDE command is one of six special CONFIG.SYS
+    commands for defining multiple configurations. The other
+    commands are for defining the startup menu:
+    <ul>
+      <li>The <a href="../M/MENUITEM.HTM">MENUITEM</a>
+      command, which defines an item on the menu.</li>
+      <li>The <a href="../M/MENUDEFA.HTM">MENUDEFAULT</a>
+      command, which specifies the default menu item.</li>
+      <li>The <a href="../M/MENUCOLO.HTM">MENUCOLOR</a>
+      command, which defines the color of the menu's text
+      and screen background.</li>
+      <li>The <a href="../S/SUBMENU.HTM">SUBMENU</a>
+      command, which defines a submenu.</li>
+      <li>The <a href="../N/NUMLOCK.HTM">NUMLOCK</a>
+      command, which specifies the state of the NUM LOCK key
+      when the startup menu appears. (Although
+      <a href="../N/NUMLOCK.HTM">NUMLOCK</a> can be used
+      anywhere in the CONFIG.SYS file, it is especially
+      useful when defining a startup menu.)</li>
+    </ul>
+    For an overview of the procedure for defining multiple
+    configurations, see the topic "Commands for Defining
+    Multiple Configurations".
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>This CONFIG.SYS file defines three configurations:
+<pre>
+    [menu]
+    <a href="../M/MENUITEM.HTM">MENUITEM</a>=<a
+href="../M/MENUITEM.HTM#ParameterBlockname">base_config</a>, <a
+href="../M/MENUITEM.HTM#ParameterMenutext">Base configuration only</a>
+    <a href="../M/MENUITEM.HTM">MENUITEM</a>=<a
+href="../M/MENUITEM.HTM#ParameterBlockname">full_config</a>, <a
+href="../M/MENUITEM.HTM#ParameterMenutext">Normal configuration</a>
+    <a href="../M/MENUITEM.HTM">MENUITEM</a>=<a
+href="../M/MENUITEM.HTM#ParameterBlockname">net_config</a>, <a
+href="../M/MENUITEM.HTM#ParameterMenutext">Normal configuration with network</a>
+
+    [base_config]
+    <a href="../D/DOS.HTM">DOS</a>=<a
+href="../D/DOS.HTM#ParameterHighLow">HIGH</a>
+    <a href="../D/DEVICE.HTM">DEVICE</a>=<a
+href="../H/HIMEMSYS.HTM#ParameterDrivePath">C:\DOS\</a><a
+href="../H/HIMEMSYS.HTM">HIMEMSYS</a>
+
+    [full_config]
+    include=<a href="#ParameterBlockname">base_config</a>
+    <a href="../D/DOS.HTM">DOS</a>=<a
+href="../D/DOS.HTM#ParameterUmb">UMB</a>
+    <a href="../D/DEVICE.HTM">DEVICE</a>=<a
+href="../E/EMM386EX.HTM#ParameterDrivePath">C:\DOS\</a><a
+href="../E/EMM386EX.HTM">EMM386.EXE</a> <a
+href="../E/EMM386EX.HTM#ParameterRam">RAM</a>
+    <a href="../D/DEVICEHI.HTM">DEVICEHIGH</a>=c:\dos\ramdrive.sys 512
+
+    [net_config]
+    include=<a href="#ParameterBlockname">full_config</a>
+    <a href="../D/DEVICEHI.HTM">DEVICEHIGH</a>=c:\net\network.sys
+
+    [common]
+</pre>
+
+    <p>This CONFIG.SYS file contains four configuration
+    blocks. The [base_config] block contains two typical
+    CONFIG.SYS commands. The [full_config] block includes
+    the commands in [base_config] plus the
+    <a href="../D/DOS.HTM">DOS</a>=<a
+    href="../D/DOS.HTM#ParameterUmb">UMB</a>
+    command, a <a href="../D/DEVICE.HTM">DEVICE</a> command,
+    and a <a href="../D/DEVICEHI.HTM">DEVICEHIGH</a> command.
+    The third configuration, [net_config], includes all the
+    commands in [full_config], which in turn includes those
+    in [base_config]. The [common] block appears at the end
+    of the CONFIG.SYS file. It is a good idea to end your
+    CONFIG.SYS file with a [common] block so that
+    installation programs can successfully append commands
+    to your CONFIG.SYS file.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DOSONLY</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDA.HTM#dosonly">Commands Da-Dr</a>
+    <h1>DOSONLY</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Prevents starting applications other than MS-DOS-based
+    applications from the
+    <a href="../C/COMMAND.HTM">COMMAND.COM</a> prompt.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>DOSONLY</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Normally, when you exit an MS-DOS-based application, Windows NT returns
+    to the Windows NT command interpreter,
+    <a href="../C/CMD.HTM">CMD.EXE</a>. However, by default, when you run a TSR
+    or temporarily suspend an MS-DOS-based application to return to the command
+    prompt, Windows NT runs
+    <a href="../C/COMMAND.HTM">COMMAND.COM</a>, the command interpreter for the
+    MS-DOS environment. This preserves the MS-DOS environment, allowing you to
+    use the TSR immediately.</p>
+    <p>Because starting and running other types of applications from the
+    <a href="../C/COMMAND.HTM">COMMAND.COM</a> prompt can disrupt a TSR or
+    suspended MS-DOS-based application, Windows NT provides the DOSONLY
+    command. The DOSONLY command allows only MS-DOS-based applications to be
+    started from the
+    <a href="../C/COMMAND.HTM">COMMAND.COM</a> prompt. You can include the
+    DOSONLY command in your CONFIG.NT file or the equivalent custom startup
+    file in an application PIF.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none.
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none.
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

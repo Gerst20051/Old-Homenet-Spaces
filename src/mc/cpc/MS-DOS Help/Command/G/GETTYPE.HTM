@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>GETTYPE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#g">Commands A-M</a>
+    &gt; <a href="../INDEX.HTM#gettype">Batch G</a>
+    <h1>GETTYPE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Sets the system environment variable
+    <a href="../../ENV/MSWIN/ERRORLEV.HTM">%ERRORLEVEL%</a>
+    to the value associated with the specified Windows
+    operating system.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>GETTYPE
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>GETTYPE
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p [password]</a>]]]
+    [<a href="#SwitchBuild">/build</a>
+    | <a href="#SwitchMajV">/majv</a>
+    | <a href="#SwitchMinV">/minv</a>
+    | <a href="#SwitchRole">/role</a>
+    | <a href="#SwitchSp">/sp</a>
+    | <a href="#SwitchType">/type</a>
+    | <a href="#SwitchVer">/ver</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchBuild"></a> /build
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Returns the build number of the operating system
+      that is installed.</dd>
+
+      <dt><a name="SwitchMajV"></a> /majv
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Returns only major version.
+        <ul>
+          <li><b>5000</b> Major version 5</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchMinV"></a> /minv
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Returns only minor version.
+        <ul>
+          <li><b>100</b> Minor version 1</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchP"></a> /p [password]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the password of the user account that is
+      specified in <a href="#SwitchU">/u</a>.</dd>
+
+      <dt><a name="SwitchRole"></a> /role
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Returns the role of the operating system.</dd>
+      <dd>Determined by querying the registry:
+        <ul>
+          <li><b>1</b> Domain controller</li>
+          <li><b>2</b> Member server</li>
+          <li><b>3</b> Workgroup</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchS"></a> /s computer
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the name or IP address of a remote computer
+      (do not use backslashes). The default is the local computer.</dd>
+
+      <dt><a name="SwitchSp"></a> /sp
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Returns the latest service pack installed.
+        <ul>
+          <li><b>0</b> NO service pack</li>
+          <li><b>1</b> Service pack 1</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchType"></a> /type
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Returns the type of operating system that is
+      installed.</dd>
+      <dd>Determined by querying the registry:
+        <ul>
+          <li><b>1</b> Windows XP Home Edition</li>
+          <li><b>2</b> Windows XP Professional</li>
+          <li><b>3</b> Windows Server 2003, Standard Edition</li>
+          <li><b>4</b> Windows Server 2003, Enterprise Edition</li>
+          <li><b>5</b> Windows Server 2003, Datacenter Edition</li>
+          <li><b>6</b> Windows Server 2003, Web Edition</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchU"></a> /u [Domain\]User
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Runs the command with the account permissions of the
+      user specified by User or Domain\User. The default is the
+      system permissions.</dd>
+
+      <dt><a name="SwitchVer"></a> /ver
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Returns version information.
+        <ul>
+          <li><b>5100</b> Major version 5, minor version 1</li>
+        </ul>
+      </dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <ul>
+      <li><a href="#SwitchMajV">/majv</a>
+        <ul>
+          <li><b>255</b> error</li>
+          <li><b>5000</b> Major version 5</li>
+        </ul>
+      </li>
+      <li><a href="#SwitchMinV">/minv</a>
+        <ul>
+          <li><b>100</b> Minor version 1</li>
+          <li><b>255</b> error</li>
+        </ul>
+      </li>
+      <li><a href="#SwitchRole">/role</a>
+        <ul>
+          <li><b>1</b> Domain controller</li>
+          <li><b>2</b> Member server</li>
+          <li><b>3</b> Workgroup</li>
+          <li><b>255</b> error</li>
+        </ul>
+      </li>
+      <li><a href="#SwitchSp">/sp</a>
+        <ul>
+          <li><b>0</b> NO service pack</li>
+          <li><b>1</b> Service pack 1</li>
+          <li><b>255</b> error</li>
+        </ul>
+      </li>
+      <li><a href="#SwitchType">/type</a>
+        <ul>
+          <li><b>1</b> Windows XP Home Edition</li>
+          <li><b>2</b> Windows XP Professional</li>
+          <li><b>3</b> Windows Server 2003, Standard Edition</li>
+          <li><b>4</b> Windows Server 2003, Enterprise Edition</li>
+          <li><b>5</b> Windows Server 2003, Datacenter Edition</li>
+          <li><b>6</b> Windows Server 2003, Web Edition</li>
+          <li><b>255</b> error</li>
+        </ul>
+      </li>
+      <li><a href="#SwitchVer">/ver</a>
+        <ul>
+          <li><b>255</b> error</li>
+          <li><b>5100</b> Major version 5, minor version 1</li>
+        </ul>
+      </li>
+    </ul>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>IPSECCMD DYNAMIC/STATIC MODE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#i">Commands A-M</a>
+    &gt; <a href="../INDEXI.HTM#ipseccmddynamic">Commands I</a>
+    <h1>IPSECCMD DYNAMIC/STATIC MODE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>You can use dynamic mode to add anonymous rules to
+    the existing IPSec policy by adding them to the IPSec
+    security policies database. The rules added will be
+    present even after the IPSEC Services service is
+    restarted. The benefit of using dynamic mode is that
+    the rules you add coexist with domain-based IPSec
+    policy. Dynamic mode is the default mode.</p>
+
+    <p>You can use static mode to create named policies and
+    named rules. You can also use static mode to modify
+    existing policies and rules, provided they were
+    originally created with Ipseccmd. The syntax for static
+    mode combines the syntax for dynamic mode with
+    parameters that enable it to work at a policy level.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>IPSECCMD
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>IPSECCMD
+    [<a href="#ParameterComputer">\\computer_name</a>]
+    <a href="#SwitchF">-f filterlist</a>
+    [<a href="#SwitchN">-n negotiation_policy_list</a>]
+    [<a href="#SwitchT">-t tunnel_address</a>]
+    [<a href="#SwitchA">-a authorized_method_list</a>]
+    [<a href="#Switch1s">-1s security_method_list</a>]
+    [<a href="#Switch1k">-1k mainmode_rekey_settings</a>]
+    [<a href="#Switch1p">-1p</a>]
+    [<a href="#Switch1f">-1f mm_filterlist</a>]
+    [<a href="#Switch1e">-1e softsa_expiration_time</a>]
+    [<a href="#SwitchSoft">-soft</a>]
+    [<a href="#SwitchConfirm">-confirm</a>]
+    [<a href="#SwitchDialup">-dialup</a>
+    | <a href="#SwitchLan">-lan</a>]
+    <a href="#SwitchW">-w type[:location]</a>
+    <a href="#SwitchP">-p policy[:interval]</a>
+    <a href="#SwitchR">-r rule</a>
+    [<a href="#SwitchX">-x</a>
+    | <a href="#SwitchY">-y</a>]
+    [<a href="#SwitchO">-o</a>]</p>
+
+    <p>Delete all dynamic policies:</p>
+    <p>IPSECCMD
+    <a href="#SwitchU">-u</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterComputer"></a> \\computer_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the computer name of a remote computer
+      to which you want to add a rule. The default is the
+      local computer.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="Switch1e"></a> -1e softsa_expiration_time
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the expiration time for soft SAs in
+      seconds.</dd>
+
+      <dt><a name="Switch1f"></a> -1f mm_filterlist
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies one or more filter specifications for
+      main mode SAs, separated by spaces.</dd>
+
+      <dt><a name="Switch1k"></a> -1k mainmode_rekey_settings
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies main mode SA rekey settings.</dd>
+
+      <dt><a name="Switch1p"></a> -1p
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Enables master key perfect forward secrecy.</dd>
+
+      <dt><a name="Switch1s"></a> -1s security_method_list
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies one or more key exchange security
+      methods, separated by spaces.</dd>
+
+      <dt><a name="SwitchA"></a> -a authorized_method_list
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies one or more authentication methods,
+      separated by spaces.</dd>
+
+      <dt><a name="SwitchConfirm"></a> -confirm
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that a confirmation prompt appears
+      before the rule or policy is added.</dd>
+
+      <dt><a name="SwitchDialup"></a> -dialup
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dt><a name="SwitchLan"></a> -lan
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies whether the rule applies only to remote
+      access or dial-up connections or whether the rule
+      applies only to local area network (LAN) connections.</dd>
+
+      <dt><a name="SwitchF"></a> -f filterlist
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies one or more filter specifications,
+      separated by spaces, for quick mode security
+      associations (SAs). Each filter specification defines
+      a set of network traffic affected by this rule.</dd>
+
+      <dt><a name="SwitchN"></a> -n negotiation_policy_list
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies one or more security methods, separated
+      by spaces, for securing traffic defined by the filter
+      list.</dd>
+
+      <dt><a name="SwitchO"></a> -o
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd><b>Static</b> Specifies that the rule or policy
+      should be deleted.</dd>
+
+      <dt><a name="SwitchP"></a> -p policy[:interval]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd><b>Static</b> Specifies the name of the policy and
+      how often, in minutes, the policy is checked for
+      changes. If policy contains any spaces, use quotation
+      marks around the text (ie. "po licy").</dd>
+
+      <dt><a name="SwitchR"></a> -r rule
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd><b>Static</b> Specifies the name of the rule. If
+      rule contains any spaces, use quotation marks around
+      the text (ie. "ru le").</dd>
+
+      <dt><a name="SwitchSoft"></a> -soft
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Enables soft SAs.</dd>
+
+      <dt><a name="SwitchT"></a> -t tunnel_address
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the tunnel endpoint for tunnel mode as
+      either an IP address or a DNS domain name.</dd>
+
+      <dt><a name="SwitchU"></a> -u
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that all dynamic rules are deleted.</dd>
+
+      <dt><a name="SwitchW"></a> -w type[:location]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd><b>Static</b> Specifies that the policies and
+      rules are written to the local registry, to the
+      registry of a remote computer, or to an Active
+      Directory domain.</dd>
+
+      <dt><a name="SwitchX"></a> -x
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dt><a name="SwitchY"></a> -y
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd><b>Static</b> Specifies whether the local registry
+      policy is assigned. -x specifies that the local
+      registry policy is assigned. -y specifies that the
+      local registry policy is unassigned.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="IPSECCMQ.HTM">IPSECCMD QUERY MODE</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Cannot be used to configure rules on computers
+    running <a href="../../Version/MSWIN/NT2K.HTM">Windows 2000</a>.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

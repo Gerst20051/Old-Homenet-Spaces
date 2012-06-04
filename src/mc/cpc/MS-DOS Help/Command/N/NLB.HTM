@@ -1,0 +1,515 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>NLB</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#n">Commands N-Z</a>
+    &gt; <a href="../INDEXN.HTM#nlb">Commands N</a>
+    <h1>NLB</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Control Network Load Balancing operations and modify parameter
+    settings.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>NLB
+    [<a href="#SwitchH">/h</a>]</p>
+
+    <p>NLB
+    <a href="#ParameterDisable">disable</a>
+    [{<a href="#ParameterAllGlobal">all global</a>
+     | <a href="#ParameterAllLocal">all local</a>
+     | <a href="#ParameterAll">all</a>
+     | <a href="#ParameterAllAll">all:all</a>
+     | <a href="#ParameterAllPort">all:port</a>
+     | <a href="#ParameterClusterHost">cluster[:host]</a>
+     | <a href="#ParameterVip">vip</a>
+     | <a href="#ParameterVipAll">vip:all</a>
+     | <a href="#ParameterVipPort">vip:port</a>}]
+    [<a href="#SwitchLocal">/local</a>]
+    [<a href="#SwitchPassW">/passw pass_word</a>]
+    [<a href="#SwitchPort">/port port</a>]</p>
+
+    <p>NLB
+    <a href="#ParameterDisplay">display</a>
+    [{<a href="#ParameterAllLocal">all local</a>
+     | <a href="#ParameterCluster">cluster</a>}]
+    [<a href="#SwitchLocal">/local</a>]
+    [<a href="#SwitchPassW">/passw pass_word</a>]
+    [<a href="#SwitchPort">/port port</a>]</p>
+
+    <p>NLB
+    <a href="#ParameterDrain">drain</a>
+    [{<a href="#ParameterAllGlobal">all global</a>
+     | <a href="#ParameterAllLocal">all local</a>
+     | <a href="#ParameterAll">all</a>
+     | <a href="#ParameterAllAll">all:all</a>
+     | <a href="#ParameterAllPort">all:port</a>
+     | <a href="#ParameterClusterHost">cluster[:host]</a>
+     | <a href="#ParameterVip">vip</a>
+     | <a href="#ParameterVipAll">vip:all</a>
+     | <a href="#ParameterVipPort">vip:port</a>}]
+    [<a href="#SwitchLocal">/local</a>]
+    [<a href="#SwitchPassW">/passw pass_word</a>]
+    [<a href="#SwitchPort">/port port</a>]</p>
+
+    <p>NLB
+    <a href="#ParameterDrainStop">drainstop</a>
+    [{<a href="#ParameterAllGlobal">all global</a>
+     | <a href="#ParameterAllLocal">all local</a>
+     | <a href="#ParameterClusterHost">cluster[:host]</a>}]
+    [<a href="#SwitchLocal">/local</a>]
+    [<a href="#SwitchPassW">/passw pass_word</a>]
+    [<a href="#SwitchPort">/port port</a>]</p>
+
+    <p>NLB
+    <a href="#ParameterEnable">enable</a>
+    [{<a href="#ParameterAllGlobal">all global</a>
+     | <a href="#ParameterAllLocal">all local</a>
+     | <a href="#ParameterAll">all</a>
+     | <a href="#ParameterAllAll">all:all</a>
+     | <a href="#ParameterAllPort">all:port</a>
+     | <a href="#ParameterClusterHost">cluster[:host]</a>
+     | <a href="#ParameterVip">vip</a>
+     | <a href="#ParameterVipAll">vip:all</a>
+     | <a href="#ParameterVipPort">vip:port</a>}]
+    [<a href="#SwitchLocal">/local</a>]
+    [<a href="#SwitchPassW">/passw pass_word</a>]
+    [<a href="#SwitchPort">/port port</a>]</p>
+
+    <p>NLB
+    <a href="#ParameterHelp">help</a></p>
+
+    <p>NLB
+    <a href="#ParameterIp2mac">ip2mac</a>
+    <a href="#ParameterCluster">cluster</a>
+    [<a href="#SwitchLocal">/local</a>]
+    [<a href="#SwitchPassW">/passw pass_word</a>]
+    [<a href="#SwitchPort">/port port</a>]</p>
+
+    <p>NLB
+    <a href="#ParameterParams">params</a>
+    [{<a href="#ParameterAllLocal">all local</a>
+     | <a href="#ParameterCluster">cluster</a>}]
+    [<a href="#SwitchLocal">/local</a>]
+    [<a href="#SwitchPassW">/passw pass_word</a>]
+    [<a href="#SwitchPort">/port port</a>]</p>
+
+    <p>NLB
+    <a href="#ParameterQuery">query</a>
+    [{<a href="#ParameterAllGlobal">all global</a>
+     | <a href="#ParameterAllLocal">all local</a>
+     | <a href="#ParameterClusterHost">cluster[:host]</a>}]
+    [<a href="#SwitchLocal">/local</a>]
+    [<a href="#SwitchPassW">/passw pass_word</a>]
+    [<a href="#SwitchPort">/port port</a>]</p>
+
+    <p>NLB
+    <a href="#ParameterQueryPort">queryport</a>
+    [{<a href="#ParameterAllGlobal">all global</a>
+     | <a href="#ParameterAllLocal">all local</a>
+     | <a href="#ParameterClusterHost">cluster[:host]</a>
+     | <a href="#ParameterVip">vip</a>
+     | <a href="#ParameterVipPort">vip:port</a>}]
+    [<a href="#SwitchLocal">/local</a>]
+    [<a href="#SwitchPassW">/passw pass_word</a>]
+    [<a href="#SwitchPort">/port port</a>]</p>
+
+    <p>NLB
+    <a href="#ParameterReload">reload</a>
+    [{<a href="#ParameterAllLocal">all local</a>
+     | <a href="#ParameterCluster">cluster</a>}]
+    [<a href="#SwitchLocal">/local</a>]
+    [<a href="#SwitchPassW">/passw pass_word</a>]
+    [<a href="#SwitchPort">/port port</a>]</p>
+
+    <p>NLB
+    <a href="#ParameterResume">resume</a>
+    [{<a href="#ParameterAllGlobal">all global</a>
+     | <a href="#ParameterAllLocal">all local</a>
+     | <a href="#ParameterClusterHost">cluster[:host]</a>}]
+    [<a href="#SwitchLocal">/local</a>]
+    [<a href="#SwitchPassW">/passw pass_word</a>]
+    [<a href="#SwitchPort">/port port</a>]</p>
+
+    <p>NLB
+    <a href="#ParameterStart">start</a>
+    [{<a href="#ParameterAllGlobal">all global</a>
+     | <a href="#ParameterAllLocal">all local</a>
+     | <a href="#ParameterClusterHost">cluster[:host]</a>}]
+    [<a href="#SwitchLocal">/local</a>]
+    [<a href="#SwitchPassW">/passw pass_word</a>]
+    [<a href="#SwitchPort">/port port</a>]</p>
+
+    <p>NLB
+    <a href="#ParameterStop">stop</a>
+    [{<a href="#ParameterAllGlobal">all global</a>
+     | <a href="#ParameterAllLocal">all local</a>
+     | <a href="#ParameterClusterHost">cluster[:host]</a>}]
+    [<a href="#SwitchLocal">/local</a>]
+    [<a href="#SwitchPassW">/passw pass_word</a>]
+    [<a href="#SwitchPort">/port port</a>]</p>
+
+    <p>NLB
+    <a href="#ParameterSuspend">suspend</a>
+    [{<a href="#ParameterAllGlobal">all global</a>
+     | <a href="#ParameterAllLocal">all local</a>
+     | <a href="#ParameterClusterHost">cluster[:host]</a>}]
+    [<a href="#SwitchLocal">/local</a>]
+    [<a href="#SwitchPassW">/passw pass_word</a>]
+    [<a href="#SwitchPort">/port port</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterAll"></a> all
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Apply to all ports by the affected port rule.</dd>
+
+      <dt><a name="ParameterAllAll"></a> all:all
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Apply to all ports covered by all the port rules.</dd>
+
+      <dt><a name="ParameterAllGlobal"></a> all global
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Address all global computers that are part of the
+      cluster.</dd>
+
+      <dt><a name="ParameterAllLocal"></a> all local
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Address all clusters on the local computer.</dd>
+
+      <dt><a name="ParameterAllPort"></a> all:port
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Apply to a specific port by the affected port
+      rule.</dd>
+
+      <dt><a name="ParameterCluster"></a> cluster
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Address a specific cluster.</dd>
+      <dd>Can be either the cluster's full Internet name or
+      the cluster's primary IP address.</dd>
+      <dd>You can omit when running directly on a cluster
+      host. Applies only to the local cluster host.</dd>
+      <dd>To address the cluster as a whole or a different
+      host within the cluster, you must also specify the
+      target cluster (or target cluster and specific host
+      together).</dd>
+
+      <dt><a name="ParameterClusterHost"></a> cluster[:host]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Address a specific cluster, or a specific cluster
+      on a specific host.</dd>
+      <dd>Can be either the cluster's full Internet name or
+      the cluster's primary IP address.</dd>
+      <dd>You can omit when running directly on a cluster
+      host. Applies only to the local cluster host.</dd>
+      <dd>To address the cluster as a whole or a different
+      host within the cluster, you must also specify the
+      target cluster (or target cluster and specific host
+      together).</dd>
+      <dd>Host specifies which host within the cluster to
+      which the action should be applied. If host is omitted,
+      the action applies to all hosts within the cluster.</dd>
+      <dd>You can specify host name using the internet host
+      name, the IP address, or the unique host priorities
+      assigned in the Network Load Balancing Properties
+      dialog box. You can use the special host priority
+      value 0 (zero) to refer to the default host within a
+      cluster.</dd>
+
+      <dt><a name="ParameterDisplay"></a> display
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays extensive information about your current
+      Network Load Balancing parameters, cluster state, and
+      past cluster activity. The last several event log
+      records produced by Network Load Balancing are shown,
+      including the binary data attached to those records.
+      Designed to assist in technical support and debugging.</dd>
+      <dd>The registry information retrieved shows what the
+      next state of Network Load Balancing would be if a
+      <a href="#ParameterReload">reload</a> or some other
+      operation that causes the driver to read the registry
+      were to be performed. The registry information might
+      or might not be the current state of Network Load
+      Balancing.</dd>
+
+      <dt><a name="ParameterDisable"></a> disable
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Disables and immediately blocks all traffic
+      handling for the rule whose port range contains the
+      specified port.  All active connections on the
+      specified hosts are blocked. To maintain active
+      connections, use
+      <a href="#ParameterDrain">drain</a> instead. Has no
+      effect if the specified hosts have not started
+      cluster operations.</dd>
+
+      <dt><a name="ParameterDrain"></a> drain
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Disables new traffic handling for the rule whose
+      port range contains the specified port. New
+      connections to the specified hosts are not allowed,
+      but all active connections are maintained. To disable
+      active connections, use
+      <a href="#ParameterDisable">disable</a> instead. Has
+      no effect if the specified hosts have not started
+      cluster operations.</dd>
+
+      <dt><a name="ParameterDrainStop"></a> drainstop
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Disables all new traffic handling on the
+      specified hosts. While draining, hosts continue to
+      service opened connections and stop their cluster
+      operations when there are no more active connections.
+      Draining mode can be terminated by explicitly stopping
+      cluster mode with <a href="#ParameterStop">stop</a> or
+      by restarting new traffic handling with
+      <a href="#ParameterStart">start</a>.</dd>
+
+      <dt><a name="ParameterEnable"></a> enable
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Enables traffic handling for the rule whose port
+      range contains the specified port. Has no effect if
+      the specified hosts have not started cluster
+      operations.</dd>
+
+      <dt><a name="ParameterHelp"></a> help
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the online Help.</dd>
+
+      <dt><a name="ParameterIp2mac"></a> ip2mac
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the media access control address
+      corresponding to the specified cluster name or IP
+      address. If multicast support is enabled, the
+      multicast media access control address is used by
+      Network Load Balancing for cluster operations.
+      Otherwise, the unicast media access control address is
+      used. Useful for creating a static ARP entry in the
+      router if necessary.</dd>
+
+      <dt><a name="ParameterParams"></a> params
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays information about your current Network
+      Load Balancing configuration. Similar to
+      <a href="#ParameterDisplay">display</a>, however,
+      instead of retrieving the information from the
+      registry, params queries directly from the kernel-mode
+      driver. The information displayed is therefore the
+      current state of Network Load Balancing. (The registry
+      information retrieved by
+      <a href="#ParameterDisplay">display</a> shows what the
+      next state of Network Load Balancing would be if a
+      <a href="#ParameterReload">reload</a> or some other
+      operation that causes the driver to read the registry
+      were to be performed. The registry information might
+      or might not be the current state of Network Load
+      Balancing.) In addition to the configuration
+      information, params displays state variables from the
+      kernel, including the current number of connections
+      being maintained by Network Load Balancing and the
+      number of dynamic allocations that have been necessary
+      for connection tracking.</dd>
+
+      <dt><a name="ParameterQuery"></a> query
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the current cluster state and the list of
+      host priorities for the current members of the cluster.
+      The possible states are:
+      <ul>
+      <li><b>Unknown</b> The responding host has not started cluster
+      operations and cannot determine the cluster's state.</li>
+      <li><b>Converging</b> The cluster is currently
+      attempting to converge to a consistent state.
+      Prolonged convergence usually indicates a problem with
+      cluster parameters. If this occurs, check the event
+      logs on the cluster hosts for Network Load Balancing
+      messages warning you about the source of the problem.</li>
+      <li><b>Draining</b> The cluster has converged, and the
+      responding host is draining active connections in
+      response to a drainstop command.</li>
+      <li><b>Converged as default</b> The cluster has
+      converged, and the responding host is the current
+      default (the highest priority host without a
+      <a href="#ParameterDrainStop">drainstop</a> in
+      progress). The default host handles network traffic
+      for all of the TCP/UDP ports not covered by the port
+      rules.</li>
+      <li><b>Converged</b> The cluster has converged, and
+      the responding host is not the default host.</li>
+      </ul>
+      </dd>
+
+      <dt><a name="ParameterQueryPort"></a> queryport
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays information about a given port rule.
+      The information returned includes:
+      <ul>
+      <li>Information regarding if the port rule was found
+      or an indication that the port rule was not found</li>
+      <li>The state of the port rule (Disabled, Draining, or
+      Enabled)</li>
+      <li>A count of packets accepted and dropped on that
+      port rule. These counters are reset each time the
+      cluster reconverges. If you add a host to the cluster,
+      you should see the counters reset on all hosts in the
+      cluster. These counters can be used as a very coarse
+      method of calculating load balance. Be aware that
+      these numbers are dependent on a variety of factors
+      and should only be used as a very rough estimate of
+      actual load weight.</li>
+      </ul>
+      </dd>
+
+      <dt><a name="ParameterReload"></a> reload
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Reloads the Network Load Balancing driver's
+      current parameters from the registry. Cluster
+      operations on the local host are automatically stopped
+      and restarted if necessary. If an error exists in the
+      parameters, the host will not join the cluster, and a
+      warning is displayed. If this should occur, open the
+      Network Load Balancing Properties dialog box to fix
+      the problem.</dd>
+
+      <dt><a name="ParameterResume"></a> resume
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Resumes cluster operations after a previous
+      <a href="#ParameterSuspend">suspend</a>. This does not
+      restart cluster operations, but enables use of
+      cluster-control commands, including remote control
+      commands.</dd>
+
+      <dt><a name="ParameterStart"></a> start
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Starts cluster operations on the specified hosts.
+      This enables all ports that might have been
+      previously disabled.</dd>
+
+      <dt><a name="ParameterStop"></a> stop
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Stops cluster operations on the specified hosts.</dd>
+
+      <dt><a name="ParameterSuspend"></a> suspend
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Suspends all cluster operations until
+      <a href="#ParameterResume">resume</a> is issued.
+      Suspend temporarily stops cluster operations if they
+      were previously started. Override any remote control
+      commands that might be issued. All subsequent
+      cluster-control commands except
+      <a href="#ParameterResume">resume</a> and
+      <a href="#ParameterQuery">query</a> are ignored.</dd>
+
+      <dt><a name="ParameterVip"></a> vip
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Address every virtual IP address (vip).</dd>
+
+      <dt><a name="ParameterVipAll"></a> vip:all
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>.</dd>
+      <dd>Address specific virtual IP address (vip) on all
+      ports.</dd>
+
+      <dt><a name="ParameterVipPort"></a> vip:port
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Address specific virtual IP address (vip) on a
+      specific port.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchH"></a> /h
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display command help.</dd>
+
+      <dt><a name="SwitchLocal"></a> /local
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Perform the operations only on the local computer.</dd>
+
+      <dt><a name="SwitchPassW"></a> /passw pass_word
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the remote control pass_word.</dd>
+
+      <dt><a name="SwitchPort"></a> /port port
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the cluster's remote control UDP port.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>Replaces wlbs.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Network Load Balancing hosts can be configured to
+    join the cluster automatically upon startup or to wait
+    for NLB <a href="#ParameterStart">start</a> by enabling
+    the initial host state option in the Network Load
+    Balancing Properties dialog box. You can use with NLB
+    <a href="#ParameterStop">stop</a> to change cluster
+    parameters for the local host without taking the entire
+    cluster offline.</p>
+    <p>You can modify the Network Load Balancing parameters
+    without disrupting the cluster's service to the clients.
+    To do this, take a host out of the cluster, update its
+    parameters, and then return it to the cluster. During
+    this process, other cluster hosts will detect
+    inconsistencies in the rules, and they will handle these
+    inconsistencies in a manner that minimizes disruption of
+    service to the clients.</p>
+    <p>You can use the NLB <a href="#ParameterDisable">disable</a>
+    and NLB <a href="#ParameterEnable">enable</a> to
+    customize your cluster responses to various failures.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

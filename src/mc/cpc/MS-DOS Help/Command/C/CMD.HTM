@@ -1,0 +1,509 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CMD</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCH.HTM#cmd">Commands Ch-Cz</a>
+    <h1>CMD</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Starts a new instance of the NT command interpreter.</p>
+    <p>A command interpreter is a program that lets you type commands.
+    Use the <a href="../E/EXIT.HTM">EXIT</a> command to stop
+    the new command interpreter and return control to the old one.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CMD
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>CMD
+    [<a href="#SwitchA">/A</a>
+    | <a href="#SwitchU">/U</a>]
+    [<a href="#SwitchD">/D</a>]
+    [<a href="#SwitchF">/F:ON</a>
+    | <a href="#SwitchF">/F:OFF</a>]
+    [<a href="#SwitchQ">/Q</a>]
+    [<a href="#SwitchT">/T:fg</a>]
+    [<a href="#SwitchV">/V:ON</a>
+     | <a href="#SwitchV">/V:OFF</a>]
+    [[<a href="#SwitchX">/X</a>
+     | <a href="#SwitchE">/E:ON</a>]
+     | [<a href="#SwitchE">/E:OFF</a>
+     | <a href="#SwitchY">/Y</a>]]
+    [[<a href="#SwitchS">/S</a>]
+     [<a href="#SwitchC">/C command</a>]
+     | [<a href="#SwitchK">/K command</a>]]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchA"></a> /A
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Output ANSI Characters.</dd>
+
+      <dt><a name="SwitchC"></a> /C command
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies that the command interpreter is to perform the
+      specified command and then exit. This switch must be the last
+      switch on the command-line.</dd>
+      <dd>/R same as /C.</dd>
+
+      <dt><a name="SwitchD"></a> /D
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Ignore registry AUTORUN commands (HKLM | HKCU
+      \Software\Microsoft\Command Processor\AutoRun).</dd>
+
+      <dt><a name="SwitchF"></a> /F: [ON | OFF]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Enable/disable auto-completion of pathnames entered at the
+      CMD prompt. /F:OFF is the default.</dd>
+      <dd>At the command prompt CTRL-D (^D) gives folder name completion
+      and CTRL-F (^F) gives file and folder name completion.</dd>
+      <dd>These CTRL keys build up a list of paths that match and
+      display the first matching path. Thereafter, repeated pressing
+      of the same control key will cycle through the list of
+      matching paths. Pressing SHIFT with the control KEY will move
+      through the list backwards.</dd>
+
+      <dt><a name="SwitchK"></a> /K command
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Runs the specified command, program, or batch program and then
+      displays the NT command prompt. This switch must be the
+      last switch on the command-line.</dd>
+
+      <dt><a name="SwitchQ"></a> /Q
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Turns echo off.</dd>
+
+      <dt><a name="SwitchS"></a> /S
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Strips quotes from command string.</dd>
+
+      <dt><a name="SwitchT"></a> /T:fg
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Sets the foreground/background colours. See
+      <a href="COLOR.HTM#ParameterForeground">COLOR</a>
+      for a list of colour codes.</dd>
+
+      <dt><a name="SwitchU"></a> /U
+      (<a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>)</dt>
+      <dd>Output UNICODE Characters.</dd>
+
+      <dt><a name="SwitchV"></a> /V: [ON | OFF]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Enable/disable delayed environment variable expansion.
+      (This allows a <a href="../F/FOR_0.HTM">FOR</a> loop to
+      specify !variable! instead of %variable% expanding the
+      variable at execution time instead of at input time).</dd>
+      <dd>Environment expansion preference can be set permanently
+      in the registry HKLM | HKCU
+      \Software\Microsoft\Command Processor\DelayedExpansion
+      Set to either 0x1 or 0x0</dd>
+
+      <dt><a name="SwitchX"></a> /X
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a> ONLY)</dt>
+      <dt><a name="SwitchY"></a> /Y
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a> ONLY)</dt>
+      <dt><a name="SwitchE"></a> /E: [ON | OFF]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Enable/disable extensions to CMD.EXE.</dd>
+      <dd>/X same as /E:ON.</dd>
+      <dd>/Y same as /E:OFF.</dd>
+      <dd>Command Extensions are enabled by default unless you are
+      running a 16-bit script (command.com or a .BAT file) in which
+      case they are not available at all.</dd>
+      <dd>Command extensions are controlled by setting a value in
+      the registry (HKCU
+      \Software\Microsoft\Command Processor\EnableExtensions)
+      0 = disable extensions, 1 = enable extensions</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../E/EXIT.HTM">EXIT</a> - Use this to close a CMD
+    shell and return.
+    <br><a href="CALL.HTM">CALL</a> - Call one batch program
+    from another
+    <br><a href="../S/START.HTM">START</a> - Start a separate window to run a
+    specified program or command
+    <br><a href="../D/DOSKEY.HTM">DOSKEY</a> Edit command-line, recall commands
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>builtin - Run a shell builtin
+    <br>bash - run the bash shell
+    <br>chroot - Run a command with a different root directory
+    <br>csh - run the C shell
+    <br>exec - Execute a command
+    <br>ksh - run the Korn shell
+    <br>sh - run the Bourne shell</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>CMD.exe is the NT equivalent of
+    <a href="COMMAND.HTM">Command.com</a> in previous
+    operating systems. The older 16-bit command processor
+    command.com is supplied to provide backward compatibility for
+    16-bit DOS applications.</p>
+    <p>To ensure that an NT batch file will not run if
+    accidentally copied to a Windows 95/98/ME machine you should
+    use the extension .CMD rather than .BAT.</p>
+    <p>The <a href="../../ENV/MSDOS/COMSPEC.HTM">%COMSPEC%</a> environment
+    variable will show if you are running CMD.EXE or command.com.</p>
+    <p>It is possible to run the Windows 2000 CMD.EXE under NT
+    4.0.</p>
+    <p>The environment Variable
+    <a href="../../ENV/MSWIN/CMDCMDLI.HTM">%CMDCMDLINE%</a> will expand into the
+    original command-line passed to CMD.EXE.</p>
+    <p>Under Windows NT, the command-line is limited to 256
+    characters.  The command processor was patched from NT 4
+    Service Pack 4 to prevent this limitation from causing a stack
+    overflow.</p>
+    <p>Multiple commands separated by the command separator
+    '&amp;&amp;' are accepted if surrounded by quotes.</p>
+    <p>This logic is used to process quote (") characters:</p>
+    <ol>
+    <li>If all of the conditions are met, then quote
+    characters on the command-line are preserved:
+    <ul>
+    <li>no <a href="#SwitchS">/S</a> switch</li>
+    <li>exactly two quote characters</li>
+    <li>no special characters between the two quote characters,
+    where special is one of: &amp;&lt;&gt;()@^|</li>
+    <li>there are one or more whitespace characters between the
+    the two quote characters</li>
+    <li>the string between the two quote characters is the name
+    of an executable file.</li>
+    </ul>
+    </li>
+    <li>Otherwise, old behavior is to see if the first character is
+        a quote character and if so, strip the leading character and
+        remove the last quote character on the command-line, preserving
+        any text after the last quote character.
+    </li>
+    </ol>
+    <p>The key combination ALT-ENTER will switch a CMD window to
+    full-screen mode. Press ALT-ENTER again to return to a normal
+    Window.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>Missing the <a href="COMMAND.HTM#SwitchY">/Y</a> option of
+    <a href="COMMAND.HTM">COMMAND.COM</a> to step through (debug)
+    a batch file line by line? Here is a replacement:</p>
+<pre>
+<a href="../A/ATSIGN.HTM">@</a><a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterOff">OFF</a>
+ :: 2004Jan31 Rick Lively - Create
+ :: 2004Feb03 Rick Lively - Add COMSPEC option
+ :: 2005Mar23 Steve Rogan - Rework for long file names, to handle directory changes,
+ ::			 delay envvar expansion, and handle multi-line source commands.
+ :: 2005Apr14 Steve Rogan - Fix a long file name problem, allow multiple invocations
+ ::			 using unique temp debug file names.
+
+ :: Check for correct syntax.
+ <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#ParameterCompare">"%~1" == ""</a> <a
+href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">:rlCmd30</a>
+
+ :: Check if we're already running.
+ <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#ParameterExist">EXIST</a> %TEMP%\"dbg_%~n1.bat" <a
+href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">:rlCmd10</a>
+
+ :: Hide some process variables and enable special env var processing.
+ <a href="../S/SETLOCAL.HTM">SETLOCAL</a> <a
+href="../S/SETLOCAL.HTM#ParameterEnableDelayedExpansion">ENABLEDELAYEDEXPANSION</a>
+
+ <a href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">rlDbgFile</a>=<a
+href="../S/SET.HTM#ParameterString">"dbg_%~n1.bat"</a>
+
+ :: Check for possible extensions, and build a sub-batch file.
+ <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#ParameterExist">EXIST</a> "%~1.bat" (
+  :: CALL %0 "%~1.bat"
+  <a href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">rlFileName</a>=<a
+href="../S/SET.HTM#ParameterString">%~pn1.bat</a>
+  <a href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">:BuildFile</a>
+ )
+ <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#ParameterExist">EXIST</a> "%~1.cmd" (
+  :: CALL %0 "%~1.cmd"
+  <a href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">rlFileName</a>=<a
+href="../S/SET.HTM#ParameterString">%~pn1.cmd</a>
+  <a href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">:BuildFile</a>
+ )
+ <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#ParameterExist">EXIST</a> "%~1" (
+  :: CALL %0 "%~1.cmd"
+  <a href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">rlFileName</a>=<a
+href="../S/SET.HTM#ParameterString">%~pnx1</a>
+  <a href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">:BuildFile</a>
+ )
+ <a href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">:rlCmd20</a>
+
+<a href="../L/LABEL.HTM#ParameterLabel">:BuildFile</a>
+ :: Create a sub-batch file that calls us back after each line where we have the opportunity to "rem"
+ :: out the next executable line, execute it, or goto the end.  Don't export remarks and blank lines.
+ <a href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">rlLineOpen</a>=<a
+href="../S/SET.HTM#ParameterString">0</a>
+ <a href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">rlCmd</a>=
+ <a href="../E/ECHO.HTM">ECHO</a> <a
+href="../A/ATSIGN.HTM">@</a><a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterOff">OFF</a>&gt;%TEMP%\%rlDbgFile%
+ <a href="../F/FOR_F.HTM">FOR /F</a> "<a
+href="../F/FOR_F.HTM#ParameterTokens">tokens=*</a> <a
+href="../F/FOR_F.HTM#ParameterUsebackq">usebackq</a>" <a
+href="../F/FOR_F.HTM#ParameterVariable">%%F</a> IN <a
+href="../F/FOR_F.HTM#ParameterSetCommand">("%rlFileName%")</a> DO (
+  <a href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">rlCmdLine</a>=<a
+href="../S/SET.HTM#ParameterString">%%F</a>
+  <a href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">rlCmdLine</a>=<a
+href="../S/SET.HTM#ParameterString">!rlCmdLine:"='!</a>
+  <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#SwitchI">/I</a> "<a
+href="../I/IF.HTM#ParameterItem">!rlCmdLine:~0,4!</a>" <a
+href="../I/IF.HTM#ParameterCompareOp">NEQ</a> "<a
+href="../I/IF.HTM#ParameterItem">REM</a> " <a
+href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#SwitchI">/I</a> "<a
+href="../I/IF.HTM#ParameterItem">!rlCmdLine:~0,2!</a>" <a
+href="../I/IF.HTM#ParameterCompareOp">NEQ</a> "<a
+href="../I/IF.HTM#ParameterItem">::</a>" <a
+href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#SwitchI">/I</a> "<a
+href="../I/IF.HTM#ParameterItem">!rlCmdLine!</a>" <a
+href="../I/IF.HTM#ParameterCompareOp">NEQ</a> "" (
+   <a href="CALL.HTM">CALL</a> <a
+href="CALL.HTM#ParameterLabel">:ExportPrefix</a> <a
+href="CALL.HTM#ParameterFilename">%0</a> "<a
+href="CALL.HTM#ParameterBatch">%~n1.bat</a>"
+   <a href="../E/ECHO.HTM">ECHO</a> %%F&gt;&gt;%TEMP%\%rlDbgFile%
+   <a href="CALL.HTM">CALL</a> <a
+href="CALL.HTM#ParameterLabel">:ExportSuffix</a>
+   )
+ )
+ <a href="../E/ENDLOCAL.HTM">ENDLOCAL</a>
+ :: Invoke our sub-batch file, then clean up afterwards.
+ CMD <a href="#SwitchC">/C %TEMP%\"dbg_%~n1.bat" %2 %3 %4 %5 %6 %7 %8 %9</a>
+ <a href="../D/DEL.HTM">ERASE</a> "<a
+href="../D/DEL.HTM#ParameterFilename">%TEMP%\dbg_%~n1.bat</a>"
+ <a href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">:rlCmd40</a>
+
+<a href="../L/LABEL.HTM#ParameterLabel">:ExportPrefix</a>
+ :: Check if this is a line continuation.  If not, output the prefix.
+ <a href="../I/IF.HTM">IF</a> "<a
+href="../I/IF.HTM#ParameterItem">%rlLineOpen%</a>" <a
+href="../I/IF.HTM#ParameterCompareOp">LSS</a> "<a
+href="../I/IF.HTM#ParameterItem">1</a>" (
+  <a href="../E/ECHO.HTM">ECHO</a> <a
+href="CALL.HTM">CALL</a> <a
+href="CALL.HTM#ParameterFilename">%1</a> <a
+href="CALL.HTM#ParameterBatch">%2 "%rlCmdLine%"</a>&gt;&gt;%TEMP%\%rlDbgFile%
+  <a href="../E/ECHO.HTM">ECHO</a> %%rlCmd%% <a
+href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">:rlCmdNext</a>&gt;&gt;%TEMP%\%rlDbgFile%
+ )
+ <a href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">:EOF</a>
+
+<a href="../L/LABEL.HTM#ParameterLabel">:ExportSuffix</a>
+ :: Check if this is the end of the continuation.  If so, clear the "open" flag.
+ <a href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">rlCmdLine</a>="<a
+href="../S/SET.HTM#ParameterString">%rlCmdLine: =%</a>"
+ <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#ParameterCompare">"%rlCmdLine:~1,1%" == ")"</a> <a
+href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#SwitchA">/A</a> <a
+href="../S/SET.HTM#ParameterVariable">rlLineOpen</a>=<a
+href="../S/SET.HTM#ParameterString">%rlLineOpen%-1</a>
+ :: Check if this line is continued.  If so, set the "open" flag.
+ <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#ParameterCompare">"%rlCmdLine:~-2,1%" == "("</a> <a
+href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#SwitchA">/A</a> <a
+href="../S/SET.HTM#ParameterVariable">rlLineOpen</a>=<a
+href="../S/SET.HTM#ParameterString">%rlLineOpen%+1</a>
+ :: Check if the line is "open". If not, output the suffix.
+ <a href="../I/IF.HTM">IF</a> "<a
+href="../I/IF.HTM#ParameterItem">%rlLineOpen%</a>" <a
+href="../I/IF.HTM#ParameterCompareOp">LSS</a> "<a
+href="../I/IF.HTM#ParameterItem">1</a>" <a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../L/LABEL.HTM#ParameterLabel">:rlCmdNext</a>&gt;&gt;%TEMP%\%rlDbgFile%
+ <a href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">:EOF</a>
+
+<a href="../L/LABEL.HTM#ParameterLabel">:rlCmd10</a>
+ :: This routine is called between every executable line in our sub-batch to give
+ :: us the chance to control execution of the next line.
+ <a href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">rlCmd</a>=<a
+href="../S/SET.HTM#ParameterString">y</a>
+ <a href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#SwitchP">/P</a> <a
+href="../S/SET.HTM#ParameterVariable">rlCmd</a>=<a
+href="../S/SET.HTM#ParameterString">(%time%)-^>"%~2" [Yncq]?</a>
+ <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#SwitchI">/I</a> "<a
+href="../I/IF.HTM#ParameterItem">%rlCmd%</a>" <a
+href="../I/IF.HTM#ParameterCompareOp">EQU</a> "<a
+href="../I/IF.HTM#ParameterItem">c</a>" (
+  <a href="../../ENV/MSDOS/COMSPEC.HTM">%COMSPEC%</a> <a
+href="#SwitchK">/K PROMPT=$T $P$_rlCmdY$G</a>
+  <a href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">:rlCmd10</a>
+ )
+
+ <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#SwitchI">/I</a> "<a
+href="../I/IF.HTM#ParameterItem">%rlCmd%</a>" <a
+href="../I/IF.HTM#ParameterCompareOp">NEQ</a> "<a
+href="../I/IF.HTM#ParameterItem">Y</a>" <a
+href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#SwitchI">/I</a> "<a
+href="../I/IF.HTM#ParameterItem">%rlCmd%</a>" <a
+href="../I/IF.HTM#ParameterCompareOp">NEQ</a> "<a
+href="../I/IF.HTM#ParameterItem">q</a>" <a
+href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#SwitchI">/I</a> "<a
+href="../I/IF.HTM#ParameterItem">%rlCmd%</a>" <a
+href="../I/IF.HTM#ParameterCompareOp">NEQ</a> "<a
+href="../I/IF.HTM#ParameterItem">n</a>" <a
+href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">:rlCmd10</a>
+ <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#SwitchI">/I</a> "<a
+href="../I/IF.HTM#ParameterItem">%rlCmd%</a>" <a
+href="../I/IF.HTM#ParameterCompareOp">EQU</a> "<a
+href="../I/IF.HTM#ParameterItem">n</a>" <a
+href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">rlCmd</a>=
+ <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#SwitchI">/I</a> "<a
+href="../I/IF.HTM#ParameterItem">%rlCmd%</a>" <a
+href="../I/IF.HTM#ParameterCompareOp">EQU</a> "<a
+href="../I/IF.HTM#ParameterItem">Y</a>" <a
+href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">rlCmd</a>=<a
+href="../S/SET.HTM#ParameterString">::</a>
+ <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#SwitchI">/I</a> "<a
+href="../I/IF.HTM#ParameterItem">%rlCmd%</a>" <a
+href="../I/IF.HTM#ParameterCompareOp">EQU</a> "<a
+href="../I/IF.HTM#ParameterItem">q</a>" <a
+href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">rlCmd</a>=<a
+href="../S/SET.HTM#ParameterString">GOTO :EOF</a>
+ <a href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">:EOF</a>
+
+<a href="../L/LABEL.HTM#ParameterLabel">:rlCmd20</a>
+ <a href="../E/ECHO.HTM">ECHO</a><a
+href="../E/ECHO.HTM#ParameterPeriod">.</a>
+ <a href="../E/ECHO.HTM">ECHO</a> file '%1' '%1.bat' '%1.cmd' NOT found
+
+<a href="../L/LABEL.HTM#ParameterLabel">:rlCmd30</a>
+ <a href="../E/ECHO.HTM">ECHO</a><a
+href="../E/ECHO.HTM#ParameterPeriod">.</a>
+ <a href="../E/ECHO.HTM">ECHO</a> To step through (2K or XP) NT batch file: Test
+ <a href="../E/ECHO.HTM">ECHO</a> prompts: [Yncq] Yes, No, Comspec, Quit
+ <a href="../E/ECHO.HTM">ECHO</a><a
+href="../E/ECHO.HTM#ParameterPeriod">.</a>
+ <a href="../E/ECHO.HTM">ECHO</a>    %0 Test
+ <a href="../E/ECHO.HTM">ECHO</a> OR %0 Test.bat
+ <a href="../E/ECHO.HTM">ECHO</a> OR %0 Test.cmd
+ <a href="../D/DEL.HTM">ERASE</a> "<a
+href="../D/DEL.HTM#ParameterFilename">%TEMP%\dbg_*.bat</a>"&gt;NUL
+
+<a href="../L/LABEL.HTM#ParameterLabel">:rlCmd40</a>
+ <a href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">rlCmd</a>=
+ <a href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">rlCmdLine</a>=
+ <a href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">rlFileName</a>=
+ <a href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">rlDbgFIle</a>=
+ <a href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">rlLineOpen</a>=
+ <a href="../G/GOTO.HTM">GOTO</a> <a
+href="../G/GOTO.HTM#ParameterLabel">:EOF</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

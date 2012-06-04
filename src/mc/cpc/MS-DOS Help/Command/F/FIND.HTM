@@ -1,0 +1,360 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>FIND</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#f">Commands A-M</a>
+    &gt; <a href="../INDEXF.HTM#find">Commands F</a>
+    <h1>FIND</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Searches for a specific string of text in a file or files.</p>
+    <p>After searching the specified files, FIND displays any lines of
+    text that contain the specified string.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>FIND
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>FIND
+    [[<a href="#SwitchC">/C</a>]
+    | [<a href="#SwitchN">/N</a>]]
+    [<a href="#SwitchI">/I</a>]
+    [<a href="#SwitchOff">/OFF[LINE]</a>]
+    [<a href="#SwitchV">/V</a>]
+    "<a href="#ParameterString">string</a>"
+    [[<a href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path</a>]<a
+    href="#ParameterFilename">filename</a> [...]]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a name="ParameterPath"></a> path
+      <a name="ParameterFilename"></a> filename [...]
+      <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the location and name of the file (or files)
+      in which to search for the specified string.</dd>
+
+      <dt><a name="ParameterString"></a> "string"
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the group of characters you want to search for. You
+      must enclose the text for string in quotation marks.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchC"></a> /C
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Displays only a count of the lines that contain the specified
+      string.</dd>
+
+      <dt><a name="SwitchI"></a> /I
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies that the search is not to be case-sensitive.</dd>
+
+      <dt><a name="SwitchN"></a> /N
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Precedes each line with the file's line number.</dd>
+
+      <dt><a name="SwitchOff"></a> /OFF[LINE]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a> ONLY)</dt>
+      <dd>Do not skip files with offline attribute set.</dd>
+
+      <dt><a name="SwitchV"></a> /V
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Displays all lines not containing the specified string.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="FC.HTM">FC</a> - Compare files.
+    <br><a href="FINDSTR.HTM">FINDSTR</a>
+    - Search for strings in files.
+    <br><a href="../M/MUNGE.HTM">MUNGE</a>
+    - Find and Replace text within file(s).
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>grep - Search file(s) for lines that match a given pattern.
+    <br>gawk - Find and Replace text within file(s).
+    <br>tr - Translate, squeeze, and/or delete characters.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#String">Specifying a string</a></li>
+      <li><a href="#Filter">Using FIND as a filter</a></li>
+      <li><a href="#CarriageReturn">Using FIND in files with carriage returns</a></li>
+      <li><a href="#SwitchCVN">Using the /V or /N switch with the /C switch</a></li>
+      <li><a href="#Wildcards">Using wildcards with FIND</a></li>
+    </ul>
+
+    <hr>
+    <a name="String"></a> <b>Specifying a string</b>
+    <p>Unless you specify the <a href="#SwitchI">/I</a>
+    switch, FIND searches for exactly what you specify for string. For
+    example, to the FIND command the characters "a" and "A" are
+    different. If you were to use the
+    <a href="#SwitchI">/I</a> switch, however, FIND would ignore
+    case and search for "a" and "A" as if they were the same character.</p>
+    <p>If the string you want to search for contains quotation marks,
+    you must use two quotation marks for each quotation mark contained
+    within the string.</p>
+
+    <hr>
+    <a name="Filter"></a> <b>Using FIND as a filter</b>
+    <p>If you omit a filename, FIND acts as a filter, taking input from
+    the operating system standard source (usually the keyboard, a pipe,
+    or a redirected file) and displaying any lines that contain the
+    string.</p>
+
+    <hr>
+    <a name="Wildcards"></a> <b>Using wildcards with FIND</b>
+    <p>You cannot use wildcards (* and ?) in filenames or extensions
+    that you specify with the FIND command. To search for a string in a
+    set of files you specify with wildcards, you can use the FIND
+    command in a <a href="FOR_0.HTM">FOR</a> command.</p>
+
+    <hr>
+    <a name="SwitchCVN"></a> <b>Using the /V or /N switch with the /C switch</b>
+    <p>If you specify the <a href="#SwitchC">/C</a> and
+    <a href="#SwitchV">/V</a> switches in the same command, FIND
+    displays a count of the lines that do not contain the specified
+    string. If you specify the <a href="#SwitchC">/C</a> and
+    <a href="#SwitchN">/N</a> switches in the same command,
+    FIND ignores the <a href="#SwitchN">/N</a> switch.</p>
+
+    <hr>
+    <a name="CarriageReturn"></a> <b>Using FIND in files with carriage returns</b>
+    <p>The FIND command does not recognize carriage returns. When you
+    use FIND to search for text in a file that includes carriage
+    returns, you must limit the search string to text that can be found
+    between carriage returns -- that is, a string that is not likely to
+    be interrupted by a carriage return. For example, FIND does not
+    report a match for the string "tax file" wherever a carriage return
+    occurs between the word "tax" and the word "file".</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To display all lines from the file PENCIL.AD that contain the
+    string "Pencil Sharpener", type:</p>
+<pre>
+    FIND "<a
+href="#ParameterString">Pencil Sharpener</a>" <a
+href="#ParameterFilename">PENCIL.AD</a>
+</pre>
+
+    <p>To find a string that contains text within quotation marks, you
+    must enclose the entire string in quotation marks and, in addition,
+    use two quotation marks for each quotation mark contained within
+    the string, as shown in the example:</p>
+<pre>
+    FIND "<a
+href="#ParameterString">The scientists labeled their paper ""for discussion only."" It is not a final report.</a>"" <a
+href="#ParameterFilename">REPORT.TXT</a>
+</pre>
+
+    <p>If you want to search for a set of files, you can use the FIND
+    command with the FOR command. Using this
+    method to search the current directory for files that have the
+    extension .BAT; in each file found, the command searches for the
+    string "PROMPT":</p>
+<pre>
+    for %f in (*.bat) do FIND "<a
+href="#ParameterString">PROMPT</a>" <a
+href="#ParameterFilename">%f</a>
+</pre>
+
+    <p>Suppose you want FIND to search your hard disk to find and
+    display the filenames on drive C that contain the string "CPU". To
+    do this, you can use the pipe (|) to direct the results of a DIR
+    command to FIND, as shown in:</p>
+<pre>
+    <a href="../D/DIR.HTM">DIR</a> <a
+href="../D/DIR.HTM#ParameterDrive">C:</a><a
+href="../D/DIR.HTM#ParameterPath">\</a> <a
+href="../D/DIR.HTM#SwitchS">/S</a> <a
+href="../D/DIR.HTM#SwitchB">/B</a> | FIND <a
+href="#ParameterString">CPU</a>"
+</pre>
+
+    <p>Before using a pipe for redirection, you should set the TEMP
+    environment variable in your AUTOEXEC.BAT file.</p>
+    <p>Since FIND searches are case-sensitive and since
+    <a href="../D/DIR.HTM">DIR</a> produces
+    uppercase output, you must either type the string "CPU" in
+    uppercase letters or use the <a href="#SwitchI">/I</a>
+    switch with FIND.</p>
+    <p><b>Excluding the FIND syntax</b></p>
+<pre>
+    FIND " <a
+href="#ParameterString">FIND don't found</a> ""<a
+href="#ParameterString">FIND</a>""" &lt; <a
+href="#ParameterFilename">FIND.fnd</a> | FIND <a
+href="#SwitchV">/V</a> ""<a
+href="#ParameterString">Find</a>""
+</pre>
+
+    <p>The above DOS syntax would search any file named "find.fnd" and
+    the first FIND command would search this file for:</p>
+<pre>
+    FIND don't found "FIND"
+</pre>
+
+    <p>This is commonly used, nothing special and it's descriped above.
+    But it's sometimes possible (with use of two percent marks (%)), to
+    get rid of the pipe ((|) along with the second FIND command).</p>
+<pre>
+    :: Find any Space character located before an asterisk, --- *--
+    <a href="../A/ATSIGN.HTM">@</a>FIND " <a
+href="#ParameterString">% %*</a>" &lt; <a
+href="#ParameterFilename">%0</a>
+    :: Find any Space character located after as asterisk,  --* ---
+    <a href="../A/ATSIGN.HTM">@</a>FIND " <a
+href="#ParameterString">*% %</a> " &lt; <a
+href="#ParameterFilename">%0</a>
+</pre>
+
+    <p>The FIND syntax itself, would be excluded from the output of %0.</p>
+
+    <p>You can use <a href="../I/IF.HTM#ParameterErrorlevel">ERRORLEVEL</a>
+    parameter of <a href="../I/IF.HTM">If</a> command-line in a batch
+    program to process exit codes returned by FIND:<br> <br>
+    </p>
+<pre>
+    <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#ParameterCompare">(%1)==()</a> <a
+href="../A/ATSIGN.HTM">@</a><a
+href="../E/ECHO.HTM">ECHO</a> <a
+href="../E/ECHO.HTM#ParameterMessage">Syntax: %0 filename</a>
+    <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#ParameterExist">EXIST</a> %1 <a
+href="../T/TYPE.HTM">TYPE</a> <a
+href="../T/TYPE.HTM#ParameterFilename">%1</a> | FIND <a
+href="#SwitchV">/V</a> "<a
+href="#ParameterString">http://</a>" &gt; Nul
+    <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#ParameterExist">EXIST</a> %1
+    <a href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#ParameterErrorlevel">ERRORLEVEL</a> 1 <a
+href="../I/IF.HTM">IF</a> <a
+href="../I/IF.HTM#ParameterNot">NOT</a> <a
+href="../I/IF.HTM#ParameterErrorlevel">ERRORLEVEL</a> 2 <a
+href="../E/EDIT.HTM">EDIT</a> <a
+href="../E/EDIT.HTM#ParameterFilename">%1</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <ul>
+    <li><b>0</b> The search was completed successfully and at least one match was found</li>
+    <li><b>1</b> The search was completed successfully, but no matches were found</li>
+    <li><b>2</b> The search was not completed successfully.
+    In this case, an error occurred, and FIND cannot report whether any matches were found</li>
+    </ul>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>EVENTQUERY</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#e">Commands A-M</a>
+    &gt; <a href="../INDEXE.HTM#eventquery">Commands E</a>
+    <h1>EVENTQUERY</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Lists the events and event properties from one or more event logs.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CSCRIPT EVENTQUERY.VBS
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>CSCRIPT EVENTQUERY.VBS
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]
+    [<a href="#SwitchFi">/fi filter_name</a>]
+    [<a href="#SwitchFo">/fo format</a>]
+    [<a href="#SwitchNh">/nh</a>]
+    [<a href="#SwitchR">/r event_range</a>]
+    [<a href="#SwitchV">/v</a>]
+    [<a href="#SwitchL">/l log [/l log ...]</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchFi"></a> /fi filter_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the types of events to include in or exclude
+      from the query. To find events with either value, Type and
+      ID can be used together in a single syntax statement by
+      using the or operator. The valid filter names,
+      operators, and values:
+<pre>
+      <u>Name      Operator                      Value</u>
+      <b>Datetime</b>  eq, ne, ge, le, gt, lt        mm/dd/yy(yyyy), hh:mm:ssAM(/PM)
+      <b>Type</b>      eq, ne, or                    {ERROR | INFORMATION | WARNING | SUCCESSAUDIT | FAILUREAUDIT}
+      <b>ID</b>        eq, ne, or, ge, le, gt, lt    Any valid positive integer.
+      <b>User</b>      eq, ne                        Any valid string.
+      <b>Computer</b>  eq, ne                        Any valid string.
+      <b>Source</b>    eq, ne                        Any valid string.
+      <b>Category</b>  eq, ne                        Any valid string
+</pre>
+      </dd>
+
+      <dt><a name="SwitchFo"></a> /fo format
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the format to use for the output. Valid values are:
+        <ul>
+          <li><b>TABLE</b></li>
+          <li><b>LIST</b></li>
+          <li><b>CSV</b></li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchL"></a> /l log [/l log ...]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the name of the event log where the event
+      will be created. The valid log names are:
+        <ul>
+          <li><b>APPLICATION</b></li>
+          <li><b>directory_log_name</b></li>
+          <li><b>"DNS server" (only if DNS service is running on <a href="#SwitchS">/s computer</a>)</b></li>
+          <li><b>SECURITY</b></li>
+          <li><b>SYSTEM</b></li>
+          <li><b>user_defined_log</b></li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchNh"></a> /nh
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Suppresses column headers in the output.
+      Valid only for <a href="#SwitchFo">table</a> and
+      <a href="#SwitchFo">csv</a> formats.</dd>
+
+      <dt><a name="SwitchP"></a> /p password
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the password of the user account that is
+      specified in <a href="#SwitchU">/u</a>.</dd>
+
+      <dt><a name="SwitchR"></a> /r event_range
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the range of events to list.
+        <ul>
+          <li><b>N</b> Lists N most recent events</li>
+          <li><b>-N</b> Lists N oldest events</li>
+          <li><b>N1-N2</b> Lists the events from N1 to N2</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchS"></a> /s computer
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the name or IP address of a remote computer
+      (do not use backslashes). The default is the local computer.</dd>
+
+      <dt><a name="SwitchU"></a> /u [Domain\]User
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Runs the command with the account permissions of the user
+      specified by User or Domain\User. The default is the permissions
+      of the current logged on user on the computer issuing the
+      command.</dd>
+
+      <dt><a name="SwitchV"></a> /v
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that verbose event information be displayed
+      in the output.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

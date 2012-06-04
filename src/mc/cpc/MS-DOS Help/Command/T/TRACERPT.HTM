@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>TRACERPT</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#t">Commands N-Z</a>
+    &gt; <a href="../INDEXT.HTM#tracerpt">Commands T</a>
+    <h1>TRACERPT</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Processes event trace logs or real-time data from
+    instrumented event trace providers and allows you to
+    generate trace analysis reports and CSV
+    (comma-delimited) files for the events generated.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>TRACERPT
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>TRACERPT
+    [<a href="#ParameterFileName">file_name</a>
+     [<a href="#ParameterFileName">file_name</a> ...]]
+    [<a href="#SwitchConfig">-config [file_name]</a>]
+    [<a href="#SwitchF">-f format</a>]
+    [<a href="#SwitchO">-o [file_name]</a>]
+    [<a href="#SwitchReport">-report [file_name]</a>]
+    [<a href="#SwitchRt">-rt session_name [session_name ...]</a>]
+    [<a href="#SwitchSummary">-summary [file_name]</a>]
+    [<a href="#SwitchY">-y</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterFileName"></a> file_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the name of the file for the event
+      trace session. You can specify multiple files.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchConfig"></a> -config [file_name]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the pathname of the settings file that
+      contains command-line parameters. Use this to enter
+      your command-line options into a file.</dd>
+      <dd>The contents of the setting file used should have
+      the format:
+<pre>
+      [command_option]
+      value
+</pre>
+      where command_option is a command-line option and
+      value specifies its value.
+<pre>
+      [o]
+      output.txt
+      [report]
+      report.txt
+      [summary]
+      summary.txt
+</pre>
+      </dd>
+
+      <dt><a name="SwitchF"></a> -f format
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the report format:
+        <ul>
+          <li><b>HTML</b></li>
+          <li><b>TXT</b> (default)</li>
+          <li><b>XML</b></li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchO"></a> -o [file_name]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the name of the CSV (comma-delimited)
+      file. If no files are specified, then the default is
+      dumpfile.csv (NOT summary.txt).</dd>
+
+      <dt><a name="SwitchReport"></a> -report [file_name]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the name of the output report file.
+      Default is workload.txt.</dd>
+      <dd>You must include a "Windows kernel trace" file,
+      and any other event trace file in your command-line.
+      You will receive an error message without this in
+      your command-line.</dd>
+
+      <dt><a name="SwitchRt"></a> -rt [session_name]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Gets data from the realtime data source.
+      To use this option, include the event trace session.</dd>
+
+      <dt><a name="SwitchSummary"></a> -summary [file_name]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies name of output summary file.
+      Default is summary.txt.</dd>
+
+      <dt><a name="SwitchY"></a> -y
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Answer yes to all questions without prompting.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

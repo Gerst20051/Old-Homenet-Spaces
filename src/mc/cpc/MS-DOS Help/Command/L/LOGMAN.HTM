@@ -1,0 +1,515 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>LOGMAN</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#l">Commands A-M</a>
+    &gt; <a href="../INDEXL.HTM#logman">Commands L</a>
+    <h1>LOGMAN</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Manages and schedules performance counter and event
+    trace log collections on local and remote systems.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>LOGMAN
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>LOGMAN
+    [<a href="#ParameterCreate">create</a> [COUNTER | TRACE] collection_name]
+    [<a href="#SwitchEts">-ets</a>]
+    [<a href="#SwitchY">-y</a>]
+    [<a href="#SwitchB">-b M/d/yyyy h:mm:ss[AM | PM]</a>]
+    [<a href="#SwitchE">-e M/d/yyyy h:mm:ss[AM | PM]</a>]
+    [<a href="#SwitchRf">-rf [[hh:]]mm:]ss</a>]
+    [<a href="#SwitchM">-m start stop</a>]
+    [<a href="#SwitchF">-f file_format</a>]
+    [<a href="#SwitchR">-[-]r</a>]
+    [<a href="#SwitchO">-o pathname | DSN!counter_log</a>]
+    [<a href="#SwitchA">-[-]a</a>]
+    [<a href="#SwitchV">-[-]v [nnnnn | mmddhhmm]</a>]
+    [<a href="#SwitchRc">-[-]rc [filename]</a>]
+    [<a href="#SwitchMax">-[-]max value</a>]
+    [<a href="#SwitchCnf">-[-]cnf [[[hh:]]mm:]ss]</a>]
+    <br>| <a href="#ParameterDelete">delete</a> collection_name
+    [<a href="#SwitchEts">-ets</a>]
+    <br>| <a href="#ParameterQuery">query</a> collection_name | PROVIDERS
+    [<a href="#SwitchEts">-ets</a>]
+    <br>| <a href="#ParameterStart">start</a> collection_name
+    <br>| <a href="#ParameterStop">stop</a> collection_name
+    <br>| <a href="#ParameterUpdate">update</a> collection_name
+    [<a href="#SwitchEts">-ets</a>]
+    [<a href="#SwitchY">-y</a>]
+    [<a href="#SwitchB">-b M/d/yyyy h:mm:ss[AM | PM]</a>]
+    [<a href="#SwitchE">-e M/d/yyyy h:mm:ss[AM | PM]</a>]
+    [<a href="#SwitchRf">-rf [[hh:]]mm:]ss</a>]
+    [<a href="#SwitchM">-m start stop</a>]
+    [<a href="#SwitchF">-f file_format</a>]
+    [<a href="#SwitchR">-[-]r</a>]
+    [<a href="#SwitchO">-o pathname | DSN!counter_log</a>]
+    [<a href="#SwitchA">-[-]a</a>]
+    [<a href="#SwitchV">-[-]v [nnnnn | mmddhhmm]</a>]
+    [<a href="#SwitchRc">-[-]rc [filename]</a>]
+    [<a href="#SwitchMax">-[-]max value</a>]
+    [<a href="#SwitchCnf">-[-]cnf [[[hh:]]mm:]ss]</a>]
+    ]
+    [<a href="#SwitchS">-s computer_name</a>]
+    [<a href="#SwitchConfig">-config filename</a>]
+    [<a href="#SwitchC">-c path [path ...]</a>
+    | <a href="#SwitchC">-cf filename</a>]
+    <a href="#SwitchCt">-ct {cycle | perf | system}</a>
+    [<a href="#SwitchSi">-si [[hh:]]mm:]ss</a>]
+    [<a href="#SwitchLn">-ln logger_name</a>
+     [<a href="#SwitchFd">-fd logger_name</a>]]
+    [<a href="#SwitchRt">-[-]rt</a>]
+    [<a href="#SwitchP">-p GUID | provider [(flags[,flags ...])] Level</a>
+    | <a href="#SwitchP">-pf filename</a>]
+    [<a href="#SwitchUl">-[-]ul</a>]
+    [<a href="#SwitchBs">-bs value</a>]
+    [<a href="#SwitchFt">-ft [[hh:]]mm:]ss</a>]
+    [<a href="#SwitchNb">-nb min max</a>]
+    [<a href="#SwitchU">-[-]u user password</a>]
+    [<a href="#SwitchMode">-mode trace_mode [trace_mode ...]</a>]
+    </p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterCreate"></a> create [COUNTER | TRACE] collection_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Creates collection queries for either counter or
+      trace collections. You can use command-line options
+      to specify settings.</dd>
+
+      <dt><a name="ParameterDelete"></a> delete collection_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Deletes the data collection query collection_name. If
+      the collection_name does not exist, you will receive an
+      error.</dd>
+
+      <dt><a name="ParameterQuery"></a> query collection_name | PROVIDERS
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>If no collection_name or providers are given, the
+      status of all existing collection queries are displayed.
+      Use collection_name to display the properties of a specific
+      collection. To display the properties on remote computers,
+      use <a href="#SwitchS">-s remote computer</a> in the command
+      line. Use providers as your keyword in place of collection_name
+      to display the registered providers installed on your local
+      system. To list registered providers installed on the remote
+      system, use <a href="#SwitchS">-s</a> in the command-line.</dd>
+
+      <dt><a name="ParameterStart"></a> start collection_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Starts the data collection query collection_name.
+      Use this option to change from scheduled collections to
+      manual ones. Use the <a href="#ParameterUpdate">update</a>
+      parameter in the command-line with
+      begin-time (<a href="#SwitchB">-b</a>),
+      end-time (<a href="#SwitchE">-e</a>), or
+      repeat-time (<a href="#SwitchRt">-rt</a>)
+      to reschedule collections.</dd>
+
+      <dt><a name="ParameterStop"></a> stop collection_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Stops the data collection query collection_name.
+      Use this option to change from scheduled collections to
+      manual ones. Use the <a href="#ParameterUpdate">update</a>
+      parameter in the command-line with
+      begin-time (<a href="#SwitchB">-b</a>),
+      end-time (<a href="#SwitchE">-e</a>), or
+      repeat-time (<a href="#SwitchRt">-rt</a>)
+      to reschedule collections.</dd>
+
+      <dt><a name="ParameterUpdate"></a> update collection_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Updates collection queries for counter and trace
+      collections. For counter collections, modifications to
+      the query will stop, and then restart the collections.
+      For trace collections, use the parameters in
+      the command-line to query without stopping the collection:
+      <a href="#SwitchP">-p provider [(flags[,flags ...])] Level</a>,
+      <a href="#SwitchMax">-max n</a>,
+      <a href="#SwitchO">-o PathName</a>,
+      <a href="#SwitchFt">-ft mm:ss</a>, or
+      <a href="#SwitchFd">-fd</a>.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchA"></a> -a
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Append the file.</dd>
+      <dt> --a
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Turns off the append option,
+      and reverts to the overwrite mode.</dd>
+
+      <dt><a name="SwitchB"></a> -b M/d/yyyy h:mm:ss[AM | PM]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies begin-time for collections in a 24-hour format.
+      You can also specify begin-time for collections in a 12-hour
+      format by adding AM or PM in the command-line. By default,
+      the current day and time is used unless otherwise specified.
+      Use the manual start option to start the collection
+      immediately.</dd>
+
+      <dt><a name="SwitchBs"></a> -bs value
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the buffer size in n kilobytes for trace data
+      collections.</dd>
+
+      <dt><a name="SwitchC"></a> -c path [path ...]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dt> -cf filename
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the performance counter path to log, or
+      specifies the pathname of the log file that lists these
+      counters. To list multiple counter paths, separate the
+      command-line by a space, or use the -cf option to list
+      counter paths in an input file, one per line.</dd>
+      <dd>The general format for counter paths is:
+      [\\Computer]\object[parent/instance#index]\counter] where:</dd>
+      <dd>The parent, instance, index, and counter components
+      of the format may contain either a valid name or a
+      wildcard character. The computer, parent, instance, and
+      index components are not necessary for all counters.</dd>
+      <dd>You determine the counter paths to use based on the
+      counter itself. For example, the LogicalDisk object has an
+      instance index, so you must provide the #index or a
+      wildcard. Therefore, you could use the format:
+      \LogicalDisk(*/*#*)\*</dd>
+      <dd>In comparison, the Process object does not require an
+      instance index. Therefore, you could use the format:
+      \Process(*)\ID Process</dd>
+      <dd>The list of the possible formats:
+<pre>
+      \\machine\object(parent/instance#index)\counter
+      \\machine\object(parent/instance)\counter
+      \\machine\object(instance#index)\counter
+      \\machine\object(instance)\counter
+      \\machine\object\counter
+      \object(parent/instance#index)\counter
+      \object(parent/instance)\counter
+      \object(instance#index)\counter
+      \object(instance)\counter
+      \object\counter
+</pre>
+
+      If a wildcard character is specified in the parent name,
+      all instances of the specified object that match the
+      specified instance and counter fields will be returned.</dd>
+      <dd>If a wildcard character is specified in the instance
+      name, all instances of the specified object and parent
+      object will be returned if all instance names
+      corresponding to the specified index match the wildcard
+      character.</dd>
+      <dd>If a wildcard character is specified in the counter
+      name, all counters of the specified object are returned.</dd>
+      <dd>Partial counter path string matches (for example,
+      pro*) are not supported.</dd>
+
+      <dt><a name="SwitchCnf"></a> -cnf [[[hh:]]mm:]ss]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Creates a new file when output files exceed a
+      maximum size, or when the time specified elapses.
+      You must include the <a href="#SwitchV">-v</a> option
+      when executing this command. By default, only one log
+      file is created during each collection.</dd>
+      <dt> --cnf
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Turns off the create-new-file option.</dd>
+
+      <dt><a name="SwitchConfig"></a> -config filename
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the pathname of the settings file that
+      contains command-line parameters.</dd>
+
+      <dt><a name="SwitchCt"></a> -ct {cycle | perf | system}
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the clock resolution used when the
+      timestamp for each event is logged:
+      <ul>
+      <li><b>system</b> to provide a timestamp resolution of 10 ms (default)</li>
+      <li><b>perf</b> for a resolution of 100 ns</li>
+      <li><b>cycle</b> normalized 100 ns (consumes fewer system resources)</li>
+      </ul>
+      </dd>
+      <dd>If you choose the <b>cycle</b> option but your hardware
+      platform does not support this clock type,
+      the operating system will change it to <b>perf</b>.</dd>
+
+      <dt><a name="SwitchE"></a> -e M/d/yyyy h:mm:ss[AM | PM]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies end-time for collections in a 24-hour format.
+      You can also specify end-time for collections in a 12-hour
+      format by adding AM or PM in the command-line. By default,
+      the current day and time is used unless otherwise specified.
+      Use the manual stop and then the repeat option to specify a
+      stop time before the actual current time, or you will
+      receive an error message.</dd>
+
+      <dt><a name="SwitchEts"></a> -ets
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Creates and starts an event trace session with the
+      options specified on the command-line.</dd>
+
+      <dt><a name="SwitchF"></a> -f file_format
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the file format used for collecting
+      performance counter and trace data. You can use:
+        <ul>
+          <li><b>bin</b> binary (default)</li>
+          <li><b>bincirc</b> circular binary</li>
+          <li><b>csv</b> comma separated</li>
+          <li><b>tsv</b> tab separated</li>
+          <li><b>SQL</b> SQL database</li>
+        </ul>
+      when collecting performance counters. You must use the
+      <a href="#SwitchO">-o</a> option in the command-line
+      with the DNS!counter_log option. For SQL database
+      formats, the Database System Name (DSN) must be
+      predefined, and privileges granted to write to the
+      database. The dataset counter_log is created in the
+      database, and is specified by the DSN.</dd>
+
+      <dt><a name="SwitchFd"></a> -fd logger_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Flushes all the active buffers of an existing event
+      trace session to a disk. Use this command in conjunction
+      with the <a href="#SwitchLn">-ln</a> option.</dd>
+
+      <dt><a name="SwitchFt"></a> -ft [[hh:]]mm:]ss
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the flush timer interval in minutes and
+      seconds for trace data collections.</dd>
+
+      <dt><a name="SwitchLn"></a> -ln logger_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies a user-defined name for the event trace
+      logging session. By default, the collection name is
+      used as the logger name.</dd>
+
+      <dt><a name="SwitchM"></a> -m start stop
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that collections start and stop manually
+      by using the start and stop parameters in the command-line.
+      You cannot use the -m start and <a href="#SwitchB">-b</a>,
+      or the -m stop and <a href="#SwitchE">-e</a>, or
+      <a href="#SwitchRf">-rf</a> together in your command-line
+      for the same query.</dd>
+
+      <dt><a name="SwitchMax"></a> -max value
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the maximum size of the collected log file
+      in megabytes. If the log file exceeds the maximum size,
+      the collection will stop. For a SQL database, the maximum
+      size is the number of records to be written.</dd>
+      <dt> --max
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Turns off the maximum size limit option.
+      This is the default option.</dd>
+
+      <dt><a name="SwitchMode"></a> -mode trace_mode [trace_mode ...]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies advanced options for trace sessions only
+      where trace_mode can be either:
+      <ul>
+      <li><b>Globalsequence</b> specifies that the event tracer
+      add a sequence number to every event it receives
+      irrespective of which trace session received the event.</li>
+      <li><b>Localsequence</b> specifies that the event tracer
+      add sequence numbers for events received at a specific
+      trace session. When the localsequence option is used,
+      duplicate sequence numbers can exist across all sessions
+      but will be unique within each trace session.</li>
+      <li><b>Pagedmemory</b> specifies that the event tracer
+      use paged memory rather than the default non-paged
+      memory pool for its internal buffer allocations.</li>
+      </ul>
+      </dd>
+
+      <dt><a name="SwitchNb"></a> -nb min max
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the minimum and maximum number of buffers
+      for trace data collection. Minimum default is the number
+      of processors on the system plus two.
+      Maximum default is at 25.</dd>
+
+      <dt><a name="SwitchO"></a> -o pathname | DSN!counter_log
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the pathname of the output file that collects
+      performance counter and trace data, or the location of the
+      SQL database and dataset. To specify SQL using the
+      DSN!counter_log format, use the <a href="#SwitchF">-f</a>
+      option in the command-line. By default, the collection log
+      file name is the collection query name suffixed by either
+      .blg for performance counters, or .etl for trace data.</dd>
+
+
+      <dt><a name="SwitchP"></a> -p GUID | provider [(flags[,flags ...])] Level
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dt> -pf filename
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the providers (trace data collectors) to use
+      for trace data collection. Use logman query providers to
+      find the pname (named providers) from the registered
+      provider list. Use the -pf option to list multiple providers.
+      The -pf option identifies the input file containing the
+      provider names. The provider names are enclosed by quotation
+      marks (""), or with GUIDs enclosed by braces, flag masks,
+      and integers (enable level). The flags are either in
+      hexadecimal (OXFFFF) or (flag, flag) format.</dd>
+
+      <dt><a name="SwitchR"></a> -r
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Repeats the collection every day at the time periods
+      specified by the <a href="#SwitchB">-b</a> and
+      <a href="#SwitchRf">-rf</a> options, or the
+      <a href="#SwitchB">-b</a> and <a href="#SwitchE">-e</a>
+      options. This command is only valid for begin-time and
+      end-times specified on the same day, month, and year.</dd>
+      <dt> --r
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Turns off the repeat option.</dd>
+
+      <dt><a name="SwitchRc"></a> -rc filename
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies to run this command after the file is
+      closed either at the end, or during the collection period.
+      Use the <a href="#SwitchRf">-rf</a> option in conjunction
+      with <a href="#SwitchCnf">-cnf</a> to close the files
+      during the collection periods. Using
+      <a href="#ParameterStop">stop</a> will not turn off
+      this command. Commands always run in the foreground.</dd>
+      <dt> --rc
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Turns off the run this command option.</dd>
+
+      <dt><a name="SwitchRf"></a> -rf [[hh:]]mm:]ss
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that collections run for a set period of
+      time.</dd>
+
+      <dt><a name="SwitchRt"></a> -rt
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that the event trace session run in
+      real-time mode, and not log to a file. By default, the
+      data logs to a file.</dd>
+      <dt> --rt
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Turns off the real-time logging option.</dd>
+
+      <dt><a name="SwitchS"></a> -s computer_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that commands will be performed on the
+      remote system.
+      By default, the local system is used for commands.</dd>
+
+      <dt><a name="SwitchSi"></a> -si [[hh:]]mm:]ss
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies sample intervals for performance counter
+      collection in hours, minutes, and seconds.
+      Default is 15-seconds.</dd>
+
+      <dt><a name="SwitchU"></a> -u user password
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the account name and password the collection
+      query uses on local or remote systems. To start collecting
+      data for collection queries, log Performance Logs and Alerts
+      to the remote system. You can use * as your password in the
+      command-line to produce a prompt for the password.</dd>
+      <dt> --u
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Resets the account name to the Performance Logs and
+      Alerts service account.</dd>
+
+      <dt><a name="SwitchUl"></a> -ul
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that the event trace session is run in
+      user mode. Only one provider can be enabled for the
+      event trace session.</dd>
+      <dt> --ul
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that the user mode is turned off,
+      and the event trace session is run in kernel mode.</dd>
+
+      <dt><a name="SwitchV"></a> -v [nnnnn | mmddhhmm]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Attaches the version control information to the
+      end of the output file and path name. Use numeric nnnnn
+      format, or date format mmddhhmm (month, day, 24-hour,
+      minute) for version control.</dd>
+      <dt> --v
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Turns off the version option.</dd>
+
+      <dt><a name="SwitchY"></a> -y
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Overwrites the settings for collection name, and
+      then applies new ones without querying the end user.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

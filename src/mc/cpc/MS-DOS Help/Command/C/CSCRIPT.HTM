@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CSCRIPT</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCH.HTM#cscript">Commands Ch-Cz</a>
+    <h1>CSCRIPT</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Command-line-based script host.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CSCRIPT
+    <a href="#SwitchHelp">//?</a></p>
+
+    <p>CSCRIPT
+    [<a href="#ParameterScriptName">script_name</a>]
+    [<a href="#SwitchB">//B</a>
+    | <a href="#SwitchI">//I</a>]
+    [<a href="#SwitchD">//D</a>]
+    [<a href="#SwitchE">//E:engine</a>]
+    [<a href="#SwitchH">//H:host</a>]
+    [<a href="#SwitchJob">//Job:xxxx</a>]
+    [<a href="#SwitchLogo">//Logo</a>
+    | <a href="#SwitchNoLogo">//Nologo</a>]
+    [<a href="#SwitchS">//S</a>]
+    [<a href="#SwitchT">//T:nnnnn</a>]
+    [<a href="#SwitchX">//X</a>]
+    [<a href="#ParameterScriptArguments">script_arguments</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterScriptArguments"></a> script_arguments
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Command-line switches that are passed to the script.
+      Script_arguments are always preceded by one slash (/).</dd>
+
+      <dt><a name="ParameterScriptName"></a> script_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Name of the script file, including the file name
+      extension and any necessary path information.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> //?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays available command parameters and provides
+      help for using them (the same as Cscript.exe with no
+      parameters and no script).</dd>
+
+      <dt><a name="SwitchB"></a> //B
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies batch mode, which does not display alerts,
+      scripting errors, or input prompts.</dd>
+
+      <dt><a name="SwitchD"></a> //D
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Turns on the debugger.</dd>
+
+      <dt><a name="SwitchE"></a> //E:engine
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the scripting language that is used to
+      run the script.</dd>
+
+      <dt><a name="SwitchH"></a> //H:host
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Registers the default script host for running scripts.
+      The default is Wscript.exe.
+        <ul>
+          <li><b>Cscript.exe</b></li>
+          <li><b>Wscript.exe</b></li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchI"></a> //I
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies interactive mode, which displays alerts,
+      scripting errors, and input prompts. This is the default
+      and the opposite of <a href="#SwitchB">//B</a>.</dd>
+
+      <dt><a name="SwitchJob"></a> //Job:xxxx
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Runs the job identified by xxxx in the
+      <a href="#ParameterScriptName">script_name</a>.</dd>
+
+      <dt><a name="SwitchLogo"></a> //Logo
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that the Windows Script Host banner is
+      displayed in the console window before the script runs.
+      This is the default and the opposite of
+      <a href="#SwitchNoLogo">//Nologo</a>.</dd>
+
+      <dt><a name="SwitchNoLogo"></a> //Nologo
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that the Windows Script Host banner is
+      not displayed before the script runs.</dd>
+
+      <dt><a name="SwitchS"></a> //S
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Saves the current command-prompt options for the
+      current user.</dd>
+
+      <dt><a name="SwitchT"></a> //T:nnnnn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the maximum time the script can run
+      (in seconds). You can specify up to 32,767 seconds.
+      The default is no time limit.</dd>
+      <dd>The time-out option prevents excessive execution
+      of scripts by setting a time limit. When execution time
+      exceeds the specified value, the script engine is
+      interrupted and stops the process.</dd>
+
+      <dt><a name="SwitchX"></a> //X
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Starts the script in the debugger.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

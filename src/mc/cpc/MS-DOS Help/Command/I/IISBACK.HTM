@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>IISBACK</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#i">Commands A-M</a>
+    &gt; <a href="../INDEXI.HTM#iisback">Commands I</a>
+    <h1>IISBACK</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Creates and manages backup copies of the Internet Information
+    Services (IIS) configuration (metabase and schema) of a remote or
+    local computer. Administrators can use this script tool to create
+    a backup copy of their IIS configuration, to restore an IIS
+    configuration from a backup copy, and to list and delete backup
+    copies.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>IISBACK[.VBS]
+    [<a href="#SwitchBackup">/backup</a>
+    | <a href="#SwitchDelete">/delete</a>
+    | <a href="#SwitchList">/list</a>
+      <a href="#SwitchRestore">/restore</a>]
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>IISBACK[.VBS]
+    <a href="#SwitchBackup">/backup</a>
+    [<a href="#SwitchB">/b backup_name</a>]
+    [<a href="#SwitchE">/e encryption_password</a>]
+    [<a href="#SwitchOverwrite">/overwrite</a>]
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]
+    [<a href="#SwitchV">/v value</a>]</p>
+
+    <p>IISBACK[.VBS]
+    <a href="#SwitchDelete">/delete</a>
+    <a href="#SwitchB">/b backup_name</a>
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]
+    <a href="#SwitchV">/v value</a></p>
+
+    <p>IISBACK[.VBS]
+    <a href="#SwitchList">/list</a>
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]</p>
+
+    <p>IISBACK[.VBS]
+    <a href="#SwitchRestore">/restore</a>
+    <a href="#SwitchB">/b backup_name</a>
+    [<a href="#SwitchE">/e encryption_password</a>]
+    [<a href="#SwitchS">/s computer</a>
+     [<a href="#SwitchU">/u [Domain\]User</a>
+      [<a href="#SwitchP">/p password</a>]]]
+    [<a href="#SwitchV">/v value</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchB"></a> /b backup_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the name of the backup copy.
+      SampleBackup is the default.</dd>
+
+      <dt><a name="SwitchBackup"></a> /backup
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Creates a backup copy of the Internet Information
+      Services (IIS) configuration (metabase and schema) of
+      a remote or local computer.</dd>
+
+      <dt><a name="SwitchDelete"></a> /delete
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Deletes a backup copy of the Internet Information
+      Services (IIS) configuration (metabase and schema)
+      from a remote or local computer.</dd>
+
+      <dt><a name="SwitchE"></a> /e encryption_password
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Encrypts the backup copy with the specified
+      password. You can use any string as the password.</dd>
+      <dd>Creates a secure backup by encrypting the session
+      key and secure properties with the specified password.
+      Administrators must provide the password to use the
+      backup in a <a href="#SwitchRestore">/restore</a> operation.</dd>
+      <dd>If you omit this parameter or omit the password
+      argument, then the backup is encrypted with a blank
+      password. As a result, only the secure properties are
+      encrypted and any Administrator can use the backup
+      copy to restore the metabase.</dd>
+
+      <dt><a name="SwitchList"></a> /list
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays backup copies of the Internet Information
+      Services (IIS) configuration (metabase and schema)
+      stored on a remote or local computer.</dd>
+      <dd>Only lists the backup copies stored in the default
+      location,
+      <a href="../../ENV/MSWIN/SYSTEMRO.HTM">%SYSTEMROOT%</a>\System32\inetsrv\MetaBack.
+      Backup copy files moved to a different directory will
+      not appear in the list.</dd>
+
+      <dt><a name="SwitchOverwrite"></a> /overwrite
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Replace an existing backup copy with the newly
+      created backup copy. If omitted, attempts to create a
+      backup copy with the same name and version number as
+      an existing backup copy fail.</dd>
+
+      <dt><a name="SwitchP"></a> /p password
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the password of the user account that is
+      specified in <a href="#SwitchU">/u</a>. If omitted,
+      you will be prompted.</dd>
+
+      <dt><a name="SwitchRestore"></a> /restore
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the name or IP address of a remote computer
+      (do not use backslashes). The default is the local computer.</dd>
+
+      <dt><a name="SwitchS"></a> /s computer
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Replaces the current Internet Information Services
+      (IIS) configuration (metabase and schema) settings on
+      a local or remote computer with the configuration
+      settings stored in a backup copy.</dd>
+      <dd>Restore is a complex operation that can take
+      several minutes to complete.
+      A brief delay is normal.</dd>
+      <dd>During the restore operation, Web pages, FTP
+      sites, and SMTP and NNTP services are temporarily
+      stopped. They are automatically restarted when the
+      operation completes.</dd>
+
+      <dt><a name="SwitchU"></a> /u [Domain\]User
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Runs the command with the account permissions of the
+      user specified by User or Domain\User. The default is the
+      permissions of the current logged on user on the computer
+      issuing the command.</dd>
+
+      <dt><a name="SwitchV"></a> /v value
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the version number of the backup copy:
+<pre>
+      <u>Value            Description</u> <a
+href="#SwitchBackup">/backup</a>
+      Integer          Version number of the backup copy
+      NEXT_VERSION     Highest version number plus 1 (default)
+      HIGHEST_VERSION  Reuses the highest version number
+                       Because this option replaces a backup copy,
+                       the <a
+href="#SwitchOverwrite">/overwrite</a> switch is required when
+                       using this value (valid only when previous
+                       versions of the file are stored on the
+                       computer. Otherwise, returns an error
+                       explaining that it cannot find a file to
+                       replace)
+      <u>Value            Description</u> <a
+href="#SwitchDelete">/delete</a> <a
+href="#SwitchRestore">/restore</a>
+      Integer          Version number of the backup copy
+      HIGHEST_VERSION  Highest version number backup copy (default)
+      <u>Value            Description</u>
+</pre>
+      </dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>To perform this procedure, you must be a member of
+    the Administrators group on the local computer, or you
+    must have been delegated the appropriate authority. If
+    the computer is joined to a domain, members of the
+    Domain Admins group might be able to perform this
+    procedure. As a security best practice, consider using
+    "Run as" to perform this procedure.</p>
+    <p>Backup copies store only the metabase configuration
+    and schema. They do not store and cannot be used to
+    restore Web site content.</p>
+    <p>Each backup operation creates two files, an .MDX file
+    to store the metabase and an .SCX file to store the
+    schema, where X is the version number of the backup
+    copy. Stores backup copy files in the
+    <a href="../../ENV/MSWIN/SYSTEMRO.HTM">%SYSTEMROOT%</a>\System32\inetsrv\MetaBack
+    directory.</p>
+    <p>Displays the date and time in Coordinated Universal
+    Time (UTC), not in the local time for the IIS server.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

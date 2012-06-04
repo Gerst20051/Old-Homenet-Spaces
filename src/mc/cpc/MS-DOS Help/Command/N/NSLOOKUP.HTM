@@ -1,0 +1,493 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>NSLOOKUP</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#n">Commands N-Z</a>
+    &gt; <a href="../INDEXN.HTM#nslookup">Commands N</a>
+    <h1>NSLOOKUP</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>This diagnostic tool displays information from Domain Name
+    System (DNS) name servers. Before using this tool, you should be
+    familiar with how DNS works. Available only if the TCP/IP protocol
+    has been installed.</p>
+    <p>If you need to look up only a single piece of data, use
+    noninteractive mode. For the first argument, type the name or IP
+    address of the computer to be looked up. For the second argument,
+    type the name or IP address of a DNS name server. If you omit the
+    second argument, the default DNS name server is used.</p>
+    <p>If you need to look up more than one piece of data, you can use
+    interactive mode. Type a hyphen (-) for the first argument and the
+    name or IP address of a DNS name server for the second argument.
+    Or, omit both arguments and the default DNS name server is
+    used.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>NSLOOKUP
+    [<a href="#SwitchHelp">-help</a>
+    | <a href="#SwitchHelp">-?</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchExit">-exit</a>
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchFinger">-finger</a>
+    [<a href="#SwitchFingerUsername">username</a>]
+    [[&gt; | &gt;&gt;] <a href="#SwitchFilename">filename</a>]
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchLs">-ls</a>
+    [<a href="#SwitchLsT">-t querytype</a>]
+    [<a href="#SwitchLsA">-a</a>]
+    [<a href="#SwitchLsD">-d</a>]
+    [<a href="#SwitchLsH">-h</a>]
+    [<a href="#SwitchLsS">-s</a>]
+    <a href="#SwitchLsDnsdomain">dnsdomain</a>
+    [[&gt; | &gt;&gt;] <a href="#SwitchFilename">filename</a>]
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchLserver">-lserver</a>
+    <a href="#SwitchLserverDnsdomain">dnsdomain</a>
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchRoot">-root</a>
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchServer">-server</a>
+    <a href="#SwitchLserverDnsdomain">dnsdomain</a>
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchSetall">-set all</a>
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchSetclass">-set cl[ass]=value</a>
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchSetdebug">-set [no]deb[ug]</a>
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchSetd2">-set [no]d2</a>
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchSetdefname">-set [no]def[name]</a>
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchSetdomain">-set do[main]=value</a>
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchSetignore">-set [no]ig[nore]</a>
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchSetport">-set po[rt]=value</a>
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchSetquerytype">-set q[uerytype]=value</a>
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchSetrecurse">-set [no]rec[urse]</a>
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchSetretry">-set ret[ry]=value</a>
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchSetroot">-set ro[ot]=value</a>
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchSetsearch">-set [no]sea[rch]</a>
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchSetsrchlist">-set srchl[ist]</a>
+    <a href="#SwitchSetsrchlistname">name/name/...</a>
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchSettimeout">-set ti[meout]=value</a>
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchSetquerytype">-set ty[pe]=value</a>
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchSetvc">-set [no]v[c]</a>
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <p>NSLOOKUP
+    <a href="#SwitchView">-view filename</a>]
+    [<a href="#ParameterComputer">computer_to_find</a> | - ]
+    [<a href="#ParameterServer">server</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterComputer"></a> computer_to_find
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Looks up information for computer_to_find using the current
+      default server or using server if specified. If computer_to_find
+      is an IP address and the query type is A or PTR, the name of the
+      computer is returned. If computer_to_find is a name and does not
+      have a trailing period, the default DNS domain name is appended
+      to the name. This behavior depends on the state of the set
+      options: <a href="#SwitchSetdomain">domains</a>,
+      <a href="#SwitchSetsrchlist">srchlist</a>,
+      <a href="#SwitchSetdefname">defname</a>, and
+      <a href="#SwitchSetsearch">search</a>. To look up a
+      computer not in the current DNS domain, append a period to the
+      name. If you type a hyphen (-) instead of computer_to_find, the
+      command prompt changes to interactive mode.</dd>
+
+      <dt><a name="ParameterServer"></a> server
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Specifies to use this server as the DNS name server. If
+      omitted, the default DNS name server is used.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> -help | -?
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Brief command summary.</dd>
+
+      <dt><a name="SwitchExit"></a> -exit
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Exit command.</dd>
+
+      <dt><a name="SwitchFilename"></a> filename
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Specifies a file name in which to save the output. You can
+      use the greater than (&gt;) and double greater than (&gt;&gt;)
+      characters to redirect the output in the usual manner.</dd>
+
+      <dt><a name="SwitchFinger"></a> -finger
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Connects with the finger server on the current computer. The
+      current computer is defined when a previous lookup for a computer
+      was successful and returned address information. See
+      <a href="#SwitchSetquerytype">set querytype=A</a> command.</dd>
+
+      <dt><a name="SwitchFingerUsername"></a> username
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Specifies the name of the user to look up.</dd>
+
+      <dt><a name="SwitchLs"></a> -ls
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Lists information for a DNS domain. The default output
+      contains computer names and their IP addresses. When output is
+      directed to a file, hash marks are printed for every 50 records
+      received from the server.</dd>
+
+      <dt><a name="SwitchLsA"></a> -a
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Lists aliases of computers in the DNS domain (-t CNAME).</dd>
+
+      <dt><a name="SwitchLsD"></a> -d
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Lists all records for the DNS domain (-t ANY).</dd>
+
+      <dt><a name="SwitchLsDnsdomain"></a> dnsdomain
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Specifies the DNS domain for which you want information.</dd>
+
+      <dt><a name="SwitchLserver"></a> -lserver
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Changes the default server to the specified DNS domain.
+      The lserver command uses the initial server to look up the
+      information about the specified DNS domain. This is in contrast
+      to the server command, which uses the current default
+      server.</dd>
+
+      <dt><a name="SwitchLserverDnsdomain"></a> dnsdomain
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Specifies the new DNS domain for the default server.</dd>
+
+      <dt><a name="SwitchLsH"></a> -h
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Lists CPU and operating system information for the DNS domain
+      (-t HINFO).</dd>
+
+      <dt><a name="SwitchLsS"></a> -s
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Lists well-known services of computers in the DNS domain
+      (-t WKS).</dd>
+
+      <dt><a name="SwitchLsT"></a> -t querytype
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Lists all records of the specified type. For a description of
+      querytype, see <a href="#SwitchSetquerytype">set querytype</a>.</dd>
+
+      <dt><a name="SwitchRoot"></a> -root
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Changes the default server to the server for the root of the
+      DNS domain name space. Currently, the computer ns.nic.ddn.mil is
+      used. This command is a synonym for
+      <a href="#SwitchLserver">lserver</a>
+      <a href="#SwitchLserverDnsdomain">ns.nic.ddn.mil</a>. You
+      can change the name of the root server with the
+      <a href="#SwitchSetroot">set root</a> command.</dd>
+
+      <dt><a name="SwitchServer"></a> -server
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Changes the default server to the specified DNS domain. The
+      server command uses the current default server to look up the
+      information about the specified DNS domain. This is in contrast
+      to the <a href="#SwitchLserver">lserver</a> command,
+      which uses the initial server.</dd>
+
+      <dt><a name="SwitchSetall"></a> -set all
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Prints the current values of the configuration settings. Also
+      prints information about the default server and computer
+      (host).</dd>
+
+      <dt><a name="SwitchSetclass"></a> -set cl[ass]=value
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Changes the query class. The class specifies the protocol group
+      of the information.
+        <ul>
+          <li><b>ANY</b> Specifies the any of the previously listed wildcards</li>
+          <li><b>CHAOS</b> Specifies the Chaos class</li>
+          <li><b>HESIOD</b> Specifies the MIT Athena Hesiod class</li>
+          <li><b>IN</b> Specifies the Internet class (default)</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchSetdebug"></a> -set [no]deb[ug]
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Turns debugging mode on or off (default). With debugging on,
+      more information is printed about the packet sent to the server
+      and the resulting answer.</dd>
+
+      <dt><a name="SwitchSetd2"></a> -set [no]d2
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Turns exhaustive debugging mode on or off (default).
+      All fields of every packet are printed.</dd>
+
+      <dt><a name="SwitchSetdefname"></a> -set [no]def[name]
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Appends the default DNS domain name to a single component
+      lookup request. A single component is a component that contains
+      no periods. Default defname.</dd>
+
+      <dt><a name="SwitchSetdomain"></a> -set do[main]=value
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Changes the default DNS domain to the name specified. The
+      default DNS domain name is appended to a lookup request depending
+      on the state of the
+      <a href="#SwitchSetdefname">defname</a> and
+      <a href="#SwitchSetsearch">search</a> options. The DNS domain
+      search list contains the parents of the default DNS domain if it
+      has at least two components in its name. Use the
+      <a href="#SwitchSetsrchlist">set srchlist</a>
+      command to specify a different list. Use the
+      <a href="#SwitchSetall">set all</a>
+      command to display the list.</dd>
+      <dd>Value specifies a new name for the default DNS domain
+      (default value from hostname).</dd>
+
+      <dt><a name="SwitchSetignore"></a> -set [no]ig[nore]
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Ignores packet truncation errors. Default noignore.</dd>
+
+      <dt><a name="SwitchSetport"></a> -set po[rt]=value
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Changes the default TCP/UDP DNS name server port to the value
+      specified (default 53).</dd>
+
+      <dt><a name="SwitchSetquerytype"></a> -set q[uerytype]=value
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dt> -set ty[pe]=value
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Changes the type of information query. More information about
+      types can be found in Request For Comment (RFC) 1035.
+      The set type command is a synonym for set querytype.
+        <ul>
+          <li><b>A</b> Computer's IP address (default)</li>
+          <li><b>ANY</b> All types of data</li>
+          <li><b>CNAME</b> Canonical name for an alias</li>
+          <li><b>GID</b> Group identifier of a group name</li>
+          <li><b>HINFO</b> Computer's CPU and operating system type</li>
+          <li><b>MB</b> Mailbox domain name</li>
+          <li><b>MG</b> Mail group member</li>
+          <li><b>MINFO</b> Mailbox or mail list information</li>
+          <li><b>MR</b> Mail rename domain name</li>
+          <li><b>MX</b> Mail exchanger</li>
+          <li><b>NS</b> DNS name server for the named zone</li>
+          <li><b>PTR</b> Computer name if the query is an IP address; otherwise, is the pointer to other information</li>
+          <li><b>SOA</b> DNS domain's start-of-authority record</li>
+          <li><b>TXT</b> Text information</li>
+          <li><b>UID</b> User identifier</li>
+          <li><b>UINFO</b> User information</li>
+          <li><b>WKS</b> Well-known service description</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchSetrecurse"></a> -set [no]rec[urse]
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Tells the DNS name server to query other servers if it does
+      not have the information. Default recurse.</dd>
+
+      <dt><a name="SwitchSetretry"></a> -set ret[ry]=value
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Sets the number of retries (default 4). When a reply to a
+      request is not received within a certain amount of time (changed
+      with <a href="#SwitchSettimeout">set timeout</a>),
+      the time-out period is doubled and the request is resent.
+      The retry value controls how many times a request is
+      resent before giving up.</dd>
+
+      <dt><a name="SwitchSetroot"></a> -set ro[ot]=value
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Changes the name of the root server (default ns.nic.ddn.mil).
+      This affects the <a href="#SwitchRoot">root</a> command.</dd>
+
+      <dt><a name="SwitchSetsearch"></a> -set [no]sea[rch]
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>If set and the lookup request contains at least one period
+      but does not end with a trailing period, append the DNS domain
+      names in the DNS domain search list to the request until an
+      answer is received. Default search.</dd>
+
+      <dt><a name="SwitchSetsrchlist"></a> -set srchl[ist]
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Changes the default DNS domain name and search list.
+      Overrides the default DNS domain name and search list of the
+      <a href="#SwitchSetdomain">set domain</a> command.
+      Use the <a href="#SwitchSetall">set all</a>
+      command to display the list.</dd>
+
+      <dt><a name="SwitchSetsrchlistname"></a> name/name/...
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Specifies new names for the default DNS domain and search
+      list. You can specify a maximum of six names separated by slashes
+      (/). Default value based on hostname.</dd>
+
+      <dt><a name="SwitchSettimeout"></a> -set ti[meout]=value
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Changes the initial number of seconds to wait for a reply to
+      a request (default 5). When a reply to a request is not received
+      within this time period, the time-out is doubled and the request
+      is resent. The number of retries is controlled with the set retry
+      option.</dd>
+
+      <dt><a name="SwitchSetvc"></a> -set [no]v[c]
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Indicates to always use a virtual circuit when sending
+      requests to the server. Default novc.</dd>
+
+      <dt><a name="SwitchView"></a> -view filename
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Sorts and lists the output of previous
+      <a href="#SwitchLs">ls</a>
+      command or commands (reads from filename).</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>Change the default query type to host (computer) information and
+    the initial time-out to 10 seconds:</p>
+<pre>
+    nslookup <a
+href="#SwitchSetquerytype">-querytype=hinfo</a> <a
+href="#SwitchSettimeout">-timeout=10</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>MIRROR</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#m">Commands A-M</a>
+    &gt; <a href="../INDEXM.HTM#mirror">Commands M</a>
+    <h1>MIRROR</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Used to store information about a disk's file allocation table,
+    boot record, and root directory (to be used later for file
+    recovery).</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>MIRROR
+    [<a href="#ParameterDrive">d:</a> [...]]
+    [<a href="#Switch1">/1</a>]
+    [<a href="#SwitchT">/T</a><a
+    href="#SwitchDrive">d</a>[<a
+    href="#SwitchEntries">entries</a>] [...]]</p>
+
+    <p>To save a copy of the partition table on a floppy diskette:</p>
+    <p>MIRROR
+    <a href="#SwitchPartN">/PARTN</a></p>
+
+    <p>To unload from memory:</p>
+    <p>MIRROR
+    <a href="#SwitchU">/U</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> d: [...]
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Specifies the drive to be mirrored. If omitted, the current
+      default drive is mirrored. More than one drive may be specified
+      and mirrored.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="Switch1"></a> /1
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Keep on one copy of recovery information (MIRROR.FIL). By
+      default, mirror keeps 2 copies.</dd>
+
+      <dt><a name="SwitchPartN"></a> /PARTN
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Saves copy of partition table to floppy diskette.</dd>
+
+      <dt><a name="SwitchT"></a> /t
+      (<a name="SwitchDrive"></a> d
+      <a name="SwitchEntries"></a> [entries] [...]
+      <a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>
+        Mirror becomes a Terminate-and-Stay-Resident (TSR) that uses
+        about 8K of RAM. This makes recovery with
+        <a href="../U/UNDELETE.HTM">UNDELETE</a> as assured as possible.
+        <p>Entries is how many deletions to track. The default number
+        varies from 25 (360K diskettes) through 300 (32M hard disk).
+        You may specify more than one /td entry on the
+        command-line.:</p>
+<pre>
+        <u>DISK SIZE   ENTRIES   MAXIMUM FILE SIZE</u>
+         360Kb       25        5Kb
+         720Kb       50        9Kb
+         1.2Mb       75       14Kb
+        1.44Mb       75       14Kb
+          20Mb      101       18Kb
+          32Mb      202       36Kb
+         &gt;32Mb      303       55Kb
+</pre>
+      </dd>
+
+      <dt><a name="SwitchU"></a> /U
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>)</dt>
+      <dd>Attempts to unloads assured tracking Mirror from memory.
+      Memory will only be freed if Mirror was the last TSR loaded.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#How">How does MIRROR save the information?</a></li>
+      <li><a href="#Network">When NOT to use MIRROR?</a></li>
+      <li><a href="#BAK">Where did MIRROR.BAK come from?</a></li>
+      <li><a href="#Why">Why use MIRROR?</a></li>
+    </ul>
+
+    <hr>
+    <a name="Why"></a> <b>Why use MIRROR?</b>
+    <p>The MIRROR command is used to save information that can be used
+    later for file recovery using the
+    <a href="../U/UNDELETE.HTM">UNDELETE</a> and
+    <a href="../U/UNFORMAT.HTM">UNFORMAT</a> commands. MIRROR creates a
+    duplicate or MIRROR of this important information in case the
+    original information becomes unreadable.</p>
+
+    <hr>
+    <a name="How"></a> <b>How does MIRROR save the information?</b>
+    <p>For each drive you specify, MIRROR creates a read-only file
+    named MIRROR.FIL on the disk"s root directory. The file contains
+    all the information that could be used later to recover deleted or
+    damaged files, or even to rebuild the file structure of the entire
+    disk.</p>
+
+    <hr>
+    <a name="Network"></a> <b>When NOT to use MIRROR?</b>
+    <p>When using the MIRROR command, do not specify a network drive or
+    a drive that has been previously specified using the
+    <a href="../J/JOIN.HTM">JOIN</a>,
+    <a href="../A/ASSIGN.HTM">ASSIGN</a>, or
+    <a href="../S/SUBST.HTM">SUBST</a> command.</p>
+
+    <hr>
+    <a name="BAK"></a> <b>Where did MIRROR.BAK come from?</b>
+    <p>If you do not use the <a href="#Switch1">/1</a>
+    option and MIRROR finds a file on the disk named MIRROR.FIL, that
+    file will be renamed MIRROR.BAK and a new file named MIRROR.FIL
+    will be created.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To save a file with disk-recovery information for drives C and
+    D, enter:</p>
+<pre>
+    MIRROR <a
+href="#ParameterDrive">C:</a><a
+href="#ParameterDrive">D:</a>
+</pre>
+
+    <p>This saves a copy of the FAT and root directory of the C and D
+    drives to a hidden file named c:\mirror.fil and d:\mirror.fil.
+    Unformat will be able to rebuild the disk to the state at the time
+    this command was executed.</p>
+
+    <hr>
+<pre>
+    MIRROR <a
+href="#ParameterDrive">C:</a><a
+href="#ParameterDrive">D:</a> <a
+href="#SwitchT">/T</a><a
+href="#SwitchDrive">c</a> <a
+href="#SwitchT">/T</a><a
+href="#SwitchDrive">d</a>
+</pre>
+
+    <p>This creates a mirror.fil recovery file in the root directories
+    of drives C and D. Also installs a TSR to monitor file deletions on
+    both drives. This example provides maximum protection at the cost
+    of some RAM and disk space used by the TSR. This syntax is often
+    used in an Autoexec.Bat file.</p>
+
+    <hr>
+<pre>
+    MIRROR <a
+href="#SwitchPartN">/PARTN</a>
+</pre>
+
+    <p>This saves a copy of the current default disk's partition table
+    to diskette. The resulting file can be used with an emergency disk
+    to recover using <a href="../U/UNFORMAT.HTM">UNFORMAT</a>
+    <a href="../U/UNFORMAT.HTM#SwitchPARTN">/PARTN</a></p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External Resident</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+      <dt>External Resident Resource Kit</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          none
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

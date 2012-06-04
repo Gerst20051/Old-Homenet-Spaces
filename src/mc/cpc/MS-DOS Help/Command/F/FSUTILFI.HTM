@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>FSUTIL FILE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#f">Commands A-M</a>
+    &gt; <a href="../INDEXF.HTM#fsutilfile">Commands F</a>
+    <h1>FSUTIL FILE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Finds a file by security identifier,
+    queries allocated ranges for a file,
+    sets a file's short name,
+    sets a file's valid data length,
+    sets zero data for a file, or
+    creates a new file.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>FSUTIL FILE
+    <a href="#ParameterHelp">help</a></p>
+
+    <p>FSUTIL FILE
+    <a href="#ParameterCreateNew">createnew</a>
+    <a href="#ParameterDrive">drive</a>
+    <a href="#ParameterCreateLength">length</a></p>
+
+    <p>FSUTIL FILE
+    <a href="#ParameterFindBySid">findbysid</a>
+    <a href="#ParameterUser">user</a>
+    <a href="#ParameterDrive">drive</a></p>
+
+    <p>FSUTIL FILE
+    <a href="#ParameterQueryAllocRanges">queryallocranges</a>
+    <a href="#ParameterOffset">offset=offset</a>
+    <a href="#ParameterLength">length=length</a>
+    <a href="#ParameterDrive">drive</a></p>
+
+    <p>FSUTIL FILE
+    <a href="#ParameterSetShortName">setshortname</a>
+    <a href="#ParameterDrive">drive</a>
+    <a href="#ParameterShortName">short_name</a></p>
+
+    <p>FSUTIL FILE
+    <a href="#ParameterSetValidData">setvaliddata</a>
+    <a href="#ParameterDrive">drive</a>
+    <a href="#ParameterDataLength">data_length</a></p>
+
+    <p>FSUTIL FILE
+    <a href="#ParameterSetZeroData">setzerodata</a>
+    <a href="#ParameterOffset">offset=offset</a>
+    <a href="#ParameterLength">length=length</a>
+    <a href="#ParameterDrive">drive</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterCreateLength"></a> length
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the file's valid data length.</dd>
+
+      <dt><a name="ParameterCreateNew"></a> createnew
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Creates a file of the specified name and size,
+      whose content consists of zeroes.</dd>
+
+      <dt><a name="ParameterDataLength"></a> data_length
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the length of the file in bytes.</dd>
+
+      <dt><a name="ParameterDrive"></a> drive
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the drive letter (followed by a colon),
+      mount point, or volume name.</dd>
+      <dt>(<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the full path to the file including the
+      file name and extension.</dd>
+      <dt><a name="ParameterFindBySid"></a> findbysid
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Finds files on NTFS volumes that belong to a
+      specified user. The user is identified by their SID
+      (security identifier).</dd>
+
+      <dt><a name="ParameterHelp"></a> help
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="ParameterLength"></a> length=length
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the length of the range, in bytes.</dd>
+
+      <dt><a name="ParameterOffset"></a> offset=offset
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the start of the range to set to zeroes.</dd>
+
+      <dt><a name="ParameterQueryAllocRanges"></a> queryallocranges
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Queries the allocated ranges for a file on an NTFS
+      volume. Useful for determining whether a file has
+      sparse regions.</dd>
+
+      <dt><a name="ParameterSetShortName"></a> setshortname
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Sets the short name (8.3 character-length file
+      name) for a file on an NTFS volume.</dd>
+
+      <dt><a name="ParameterSetValidData"></a> setvaliddata
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Set the valid data length for a file on an NTFS
+      volume.</dd>
+      <dd>In NTFS, there are two important concepts of file
+      length: the End of File (EOF) marker and the Valid
+      Data Length (VDL). The EOF indicates the actual length
+      of the file. The VDL identifies the length of valid
+      data on disk. Any reads between VDL and EOF
+      automatically return 0 in order to preserve the C2
+      object reuse requirement.</dd>
+      <dd>Only available for administrators because it
+      requires the Manage Volume privilege. This feature is
+      only required for advanced multimedia and system area
+      network (SAN) scenarios.</dd>
+
+      <dt><a name="ParameterSetZeroData"></a> setzerodata
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Sets a range (specified by
+      <a href="#ParameterOffset">offset</a> and
+      <a href="#ParameterLength">length</a>) of the file to
+      zeroes, which empties the file. If the file is a
+      sparse file, the underlying allocation units are
+      decommitted.</dd>
+
+      <dt><a name="ParameterShortName"></a> short_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the file's shortname.</dd>
+
+      <dt><a name="ParameterUser"></a> user
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the user's user name or logon name.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="FSUTILBE.HTM">FSUTIL BEHAVIOR</a>
+    <br><a href="FSUTILDI.HTM">FSUTIL DIRTY</a>
+    <br><a href="FSUTILFS.HTM">FSUTIL FSINFO</a>
+    <br><a href="FSUTILHA.HTM">FSUTIL HARDLINK</a>
+    <br><a href="FSUTILOB.HTM">FSUTIL OBJECTID</a>
+    <br><a href="FSUTILQU.HTM">FSUTIL QUOTA</a>
+    <br><a href="FSUTILRE.HTM">FSUTIL REPARSEPOINT</a>
+    <br><a href="FSUTILSP.HTM">FSUTIL SPARSE</a>
+    <br><a href="FSUTILUS.HTM">FSUTIL USN</a>
+    <br><a href="FSUTILVO.HTM">FSUTIL VOLUME</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>If a volume's dirty bit is set, this indicates that
+    the file system may be in an inconsistent state. The
+    dirty bit can be set because the volume is online and
+    has outstanding changes, because changes were made to
+    the volume and the computer shutdown before the changes
+    were committed to disk, or because corruption was
+    detected on the volume. If the dirty bit is set when the
+    computer restarts, <a href="../C/CHKDSK.HTM">chkdsk</a>
+    runs to verify the consistency of the volume.</p>
+
+    <p>Every time Windows XP starts, Autochk is called
+    by the Kernel to scan all volumes to check if the volume
+    dirty bit is set. If the dirty bit is set, autochk
+    performs an immediate <a href="../C/CHKDSK.HTM">chkdsk</a>
+    <a href="../C/CHKDSK.HTM#SwitchF">/f</a> on that volume.
+    <a href="../C/CHKDSK.HTM">Chkdsk</a>
+    <a href="../C/CHKDSK.HTM#SwitchF">/f</a> verifies file
+    system integrity and attempts to fix any problems with
+    the volume.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

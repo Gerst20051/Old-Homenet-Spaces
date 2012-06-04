@@ -1,0 +1,377 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Autostart Methods</title>
+</head>
+
+<body>
+
+<p align="center"><span class="header"><strong><font size="5">:: All Known and (so called) Unknown Autostart Methods 
+::</font></strong></span></p>
+<p class="stdtext">In the following pages you&#39;ll see that this article contains 
+most, (I guess it has all) autostart methods that Windows is using everytime you 
+reboot. The aim of this article is actually giving out the Autostart Methods so 
+that you can find out a bit by yourself how the trojans are working after you run 
+them and also for to let you find the unknown ones. Because as you all know after 
+running a scan on our system with a known Antivirus, we can detect most of the known 
+virii/trojans/bots/etc with them. But as i said before, the aim for this article 
+is to detect the unknown trojans by manually.<br>
+I guess that&#39;s enough, i&#39;m bored too ..here we go guys ..enjoy :)</p>
+<p><span class="stdtext">So whatever you do, do it at your own risk. I&#39;ve explained 
+everything in detail so everything is clear. If you do something wrong, that is 
+your problem.</span></p>
+<hr>
+<p><strong>Startup Methods</strong></p>
+<p><span class="regcode">%windir%\Start Menu\Programs\StartUp {English}<br>
+%windir%\All Users\Start Menu\Programs\StartUp {English}<br>
+%windir%\Menu Démarrer\Programmes\Démarrage {French}<br>
+%windir%\All Users\Menu Iniciar\Programas\Iniciar { Portuguese, Brasilian }</span><span class="stdtext"><br>
+<br>
+Any file in Start Up directory copied or linked, will start when Windows is booted. So 
+deleteing unknown/suspicious files from that location will be a good idea.</span>
+</p>
+<p class="stdtext">This Autostart Directory is saved in : </p>
+<p>[<span class="regcode">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell 
+Folders]<br>
+Startup=&quot;%windir%\Start menu\programs\startup&quot;</span></p>
+<p class="regcode">[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User 
+Shell Folders]<br>
+Startup=&quot;%windir%\Start menu\programs\startup&quot;</p>
+<p class="regcode">[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\explorer\User 
+Shell Folders]<br>
+&quot;Common Startup&quot;=&quot;%windir%\Start menu\programs\startup&quot;</p>
+<p class="regcode">[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\explorer\Shell 
+Folders]<br>
+&quot;Common Startup&quot;=&quot;%windir%\Start menu\programs\startup&quot;</p>
+<p class="stdtext">By setting it to anything other then C:\windows\start menu\programs\startup 
+will lead to execution of ALL and EVERY executable inside set directory.<br>
+Addendum : as of 10/03/2001 Subseven 2.2 now uses this method. <br>
+&nbsp;</p>
+<ul>
+  <li class="stdtext">The Shell=Explorer.exe line in %windir%\system.ini </li>
+</ul>
+<p class="stdtext">Another way to start a file is use the shell method. The file 
+name following explorer.exe will start whenever Windows starts. It can be anything 
+next to the shell=Explorer.exe so be sure that there is no other things by that.</p>
+<ul>
+  <li class="stdtext">The load= line in %windir%\win.ini Under the [windows] section.
+  </li>
+</ul>
+<p class="stdtext">That&#39;s a well known but also an unknown autostart method that 
+trojan authors using for years. You need to be sure that the &#39;load=&#39; line in &#39;%windir%\win.ini&#39; 
+(without the quotes) has no other file names next to it. Such as &#39;load= pic.exe&#39;, 
+if you see a file name next to the load= you&#39;d better delete it. File names can 
+be hidden by placing them to the far right of one of these lines. Some AOL password 
+capture parograms do that.</p>
+<ul>
+  <li class="stdtext">The run= line in %windir%\win.ini Under the [windows] section.
+  </li>
+</ul>
+<p class="stdtext">Well, that&#39;s same with &#39;load=&#39;. So if you see anthing in here 
+to, delete it.*</p>
+<p class="stdtext">* In some cases the file next to the &#39;load=&#39; and the &#39;run=&#39; lines, 
+could be placed there by any program that you use, or that could be a driver file 
+of your hardware, but that&#39;s rare.</p>
+<p class="stdtext">The following keys are the most common start up methods for Windows 
+OS&#39;s such as :</p>
+<ul>
+  <li class="stdtext">Microsoft Windows 98 / SE </li>
+  <li class="stdtext">Microsoft Windows 2000 Professional </li>
+  <li class="stdtext">Microsoft Windows 2000 Server </li>
+  <li class="stdtext">Microsoft Windows 2000 Advanced Server </li>
+  <li class="stdtext">Microsoft Windows Millennium Edition </li>
+  <li class="stdtext">Microsoft Windows XP </li>
+</ul>
+<p>&nbsp;</p>
+<p class="Normal">DISCLAIMER<br>
+Modifying the registry can cause serious problems that may require you to reinstall 
+your operating system. We cannot guarantee that problems resulting from modifications 
+to the registry can be solved. Use the information provided at your own risk.</p>
+<p><br>
+<span class="stdtext">As a detail, the file name you see in the Right Pane like, 
+&quot;whatever&quot;=&quot;C:\Windows\Zip.exe&quot;,<br>
+will run each time your windows reboots. That&#39;s an old trick too which trojan authors 
+used for years but it is still in use by most trojans around.So you need to be sure 
+that you know every string and what it is in the Right Panel. </span></p>
+<p><strong>What Is The Registry ?</strong></p>
+<p class="stdtext">The Registry is a hierarchical database within later versions 
+of Windows (95/98/NT4/NT5) where all the system settings are stored. It has replaced 
+all of the .ini files that were present in Windows 3.x. The data from system.ini, 
+win.ini, control.ini, are all contained within it now, along with hundreds of other 
+system settings. Additionally, all Windows specific programs are now to store their 
+initialization data within the Registry instead of in .ini files in your Windows 
+folder.<br>
+&nbsp;</p>
+<p class="stdtext"><strong>About The Registry Editor.. </strong></p>
+<p class="stdtext">The Registry cannot be viewed or edited with a normal editor 
+- you must use a program included with Windows called RegEdit (Registry Editor) 
+for Windows 95 &amp; 98 or RegEdit32 for Windows NT 4 &amp; 5. This program isn&#39;t listed 
+on your Start Menu and it is well hidden in your Windows directory. To run this 
+program, just click on Start, Run, and type regedit (for Win 9x) or regedit32 (for 
+Win NT) in the input field. This will start the Registry Editor. You can add this 
+to the Start Menu or to the desktop for easier editing.</p>
+<p class="stdtext"><strong>Registry Subtree</strong></p>
+<p class="stdtext"><br>
+<strong>MY COMPUTER</strong></p>
+<ul>
+  <li class="stdtext"><strong>HKEY_CLASSES_ROOT:</strong> Contains software settings 
+  about drag-and-drop operations, handles shortcut information, and other user interface 
+  information. There is a subkey here for every file association that has been defined.<br>
+&nbsp;</li>
+  <li><span class="stdtext"><strong>HKEY_CURRENT_USER:</strong> Contains information 
+  regarding the currently logged-on user. </span>
+  <ul>
+    <li class="stdtext">AppEvents: Settings for assigned sounds to play for system 
+    and applications sound events. </li>
+    <li class="stdtext">Control Panel: Control Panel settings, similar to those 
+    defined in System.ini, Win.ini and Control.ini in Windows 3.xx. </li>
+    <li class="stdtext">InstallLocationsMRU: Contains the paths for the Startup 
+    folder programs. </li>
+    <li class="stdtext">Keyboard layout: Specifies current keyboard layout. </li>
+    <li class="stdtext">Network: Network connection information. </li>
+    <li class="stdtext">RemoteAccess: Current log-on location information, if using 
+    Dial-Up Networking. </li>
+    <li class="stdtext">Software: Software configuration settings for the currently 
+    logged-on user.<strong><br>
+&nbsp;</strong></li>
+  </ul>
+  </li>
+  <li><span class="stdtext"><strong>HKEY_LOCAL_MACHINE:</strong> Contains information 
+  about the hardware and software settings that are generic to all users of this 
+  particular computer. </span>
+  <ul>
+    <li class="stdtext">Config: Configuration information/settings. </li>
+    <li class="stdtext">Enum: Hardware device information/settings. </li>
+    <li class="stdtext">Hardware: Serial communication port(s) information/settings.
+    </li>
+    <li class="stdtext">Network: Information about network(s) the user is currently 
+    logged on to. </li>
+    <li class="stdtext">Security: Network security settings. </li>
+    <li class="stdtext">Software: Software specific information/settings. </li>
+    <li class="stdtext">System: System startup and device driver information and 
+    operating system settings.<br>
+&nbsp;</li>
+  </ul>
+  </li>
+  <li><span class="stdtext"><strong>HKEY_USERS:</strong> Contains information about 
+  desktop and user settings for each user that logs on to the same Windows 95 system. 
+  Each user will have a subkey under this heading. If there is only one user, the 
+  subkey is &quot;.default&quot;.<br>
+&nbsp;</span></li>
+  <li class="stdtext"><strong>HKEY_CURRENT_CONFIG: </strong>Contains information 
+  about the current hardware configuration, pointing to HKEY_LOCAL_MACHINE.<br>
+&nbsp;</li>
+  <li class="stdtext"><strong>HKEY_DYN_DATA:</strong> Contains dynamic information 
+  about the plug-and-play devices installed on the system. The data here changes 
+  if devices are added or removed on-the-fly. </li>
+</ul>
+<p><span class="regcode">Hkey_Local_Machine\Software\Microsoft\Windows\CurrentVersion\Run</span><br>
+<span class="stdtext">&quot;Blah Blah&quot;=&quot;The_Location_Of_The_Trojan&quot;</span></p>
+<p><span class="regcode">Hkey_Local_Machine\Software\Microsoft\Windows\CurrentVersion\RunOnce</span><br>
+<span class="stdtext">&quot;Blah Blah&quot;=&quot;The_Location_Of_The_Trojan&quot;</span></p>
+<p><span class="regcode">Hkey_Local_Machine\Software\Microsoft\Windows\CurrentVersion\RunOnceEx</span><br>
+<span class="stdtext">&quot;Blah Blah&quot;=&quot;The_Location_Of_The_Trojan&quot;</span></p>
+<p><span class="regcode">Hkey_Local_Machine\Software\Microsoft\Windows\CurrentVersion\RunServices</span><br>
+<span class="stdtext">&quot;Blah Blah&quot;=&quot;The_Location_Of_The_Trojan&quot;</span></p>
+<p><span class="regcode">Hkey_Local_Machine\Software\Microsoft\Windows\CurrentVersion\RunServicesOnce</span><br>
+<span class="stdtext">&quot;Blah Blah&quot;=&quot;The_Location_Of_The_Trojan&quot;</span></p>
+<p><span class="regcode">Hkey_Local_Machine\Software\\Microsoft\Windows\CurrentVersion\RunOnceEx\000x 
+&quot;RunMyApp&quot;=&quot;||notepad.exe&quot;</span><br>
+<span class="stdtext">The format is: &quot;DllFileName|FunctionName|CommandLineArguements&quot; 
+-or- &quot;||command parameters&quot;</span><br>
+<br>
+<span class="regcode">Hkey_Current_User\Software\Microsoft\Windows\CurrentVersion\Run</span><br>
+<span class="stdtext">&quot;Blah Blah&quot;=&quot;The_Location_Of_The_Trojan&quot;</span></p>
+<p><span class="regcode">Hkey_Current_User\Software\Microsoft\Windows\CurrentVersion\RunOnce</span><br>
+<span class="stdtext">&quot;Blah Blah&quot;=&quot;The_Location_Of_The_Trojan&quot;</span><br>
+<br>
+<span class="regcode">Hkey_Current_User\Software\Microsoft\Windows\CurrentVersion\RunServies</span><br>
+<span class="stdtext">&quot;Blah Blah&quot;=&quot;The_Location_Of_The_Trojan&quot;</span></p>
+<p><span class="stdtext"><strong>Subkeys (Static VxDs)</strong> under </span>
+<span class="regcode">Hkey_Local_Machine\System\CurrentControlSet\Services\VxD\</span><br>
+&nbsp;</p>
+<p class="stdtext"><strong>The [386enh] section of %windir%\system.ini</strong> 
+(this includes the scrnsave.exe= line in system.ini which can be used to run things 
+on your system. </p>
+<p class="stdtext"><strong>The [boot] section of %windir%\system.ini</strong> (this 
+includes the scrnsave.exe= line in system.ini which can be used to run things on 
+your system </p>
+<p class="stdtext"><strong>The IOSUBSYS folder (drivers load automatically)</strong><br>
+That&#39;s easy huh ? That means anything in that folder will run in each time ur windows 
+reboots.</p>
+<p class="stdtext"><strong>The VMM32 folder (drivers that take precedence over those 
+built into vmm32.vxd)</strong></p>
+<p class="stdtext"><strong>config.sys</strong></p>
+<p class="stdtext"><strong>autoexec.bat<br>
+</strong>Starts everytime at Dos Level.</p>
+<p class="stdtext"><strong>winstart.bat</strong><br>
+Note behaves like an usual BAT file. Used for copying/deleting specific files. Autostarts 
+everytime you reboot. </p>
+<p class="stdtext"><strong>wininit.ini </strong><br>
+* Bonus item - files can be [runonce,] deleted or renamed from the wininit.ini file.</p>
+<p class="stdtext">&#39;Often Used by Setup-Programs when the file exists it is run 
+ONCE and then is deleted by windows <br>
+Example content of wininit.ini :</p>
+<p class="stdtext">[Rename]<br>
+NUL=%windir%picture.exe</p>
+<p class="stdtext">&#39;This example sends c:\windows\picture.exe to NUL, which means 
+that it is being deleted. This requires no interactivity with the user and runs 
+totaly stealth.</p>
+<p><br>
+<span class="regcode"><strong>[HKEY_CLASSES_ROOT\exefile\shell\open\command] @=&quot;\&quot;%1\&quot; 
+%*&quot;</strong><br>
+</span><span class="stdtext">The key should have a value of Value &quot;%1 %*&quot;.<br>
+Backdoor example:<br>
+</span><span class="regcode">[HKEY_CLASSES_ROOT\exefile\shell\open\command] @=&quot;\&quot;trojan.exe 
+%1\&quot; %*&quot;</span></p>
+<p class="stdtext">With such registry entries, the trojan.exe is executed each time 
+an *.exe is executed.</p>
+<p>&nbsp;</p>
+<p class="regcode">[<strong>HKEY_CLASSES_ROOT\comfile\shell\open\command] @=&quot;\&quot;%1\&quot; 
+%*&quot; </strong><br>
+<span class="stdtext">The key should have a value of Value &quot;%1 %*&quot;.<br>
+Backdoor example:<br>
+</span>[HKEY_CLASSES_ROOT\comfile\shell\open\command] @=&quot;\&quot;trojan.exe %1\&quot; %*<span class="stdtext">&quot;</span></p>
+<p class="stdtext">With such registry entries, the trojan.exe is executed each time 
+an *.com is executed.</p>
+<p><span class="regcode"><strong>[HKEY_CLASSES_ROOT\batfile\shell\open\command] 
+@=&quot;\&quot;%1\&quot; %*&quot;</strong></span><br>
+<span class="stdtext">The key should have a value of Value &quot;%1 %*&quot;.<br>
+Backdoor example:<br>
+</span><span class="regcode">[HKEY_CLASSES_ROOT\batfile\shell\open\command] @=&quot;\&quot;trojan.exe 
+%1\&quot; %*&quot;</span></p>
+<p class="stdtext">With such registry entries, the trojan.exe is executed each time 
+an *.bat is executed.</p>
+<p><span class="regcode"><strong>[HKEY_CLASSES_ROOT\htafile\Shell\Open\Command] 
+@=&quot;\&quot;%1\&quot; %*&quot;</strong></span><br>
+<span class="stdtext">The key should have a value of Value &quot;%1 %*&quot;.<br>
+Backdoor example:<br>
+</span><span class="regcode">[HKEY_CLASSES_ROOT\htafile\shell\open\command] @=&quot;\&quot;trojan.exe 
+%1\&quot; %*&quot;</span><span class="stdtext"><br>
+<br>
+With such registry entries, the trojan.exe is executed each time an *.hta is executed.</span><br>
+&nbsp;</p>
+<p><span class="regcode"><strong>[HKEY_CLASSES_ROOT\piffile\shell\open\command] 
+@=&quot;\&quot;%1\&quot; %*&quot;</strong> </span><br>
+<span class="stdtext">The key should have a value of Value &quot;%1 %*&quot;.<br>
+Backdoor example:<br>
+</span><span class="regcode">[HKEY_CLASSES_ROOT\piffile\shell\open\command] @=&quot;\&quot;trojan.exe 
+%1\&quot; %*&quot;</span></p>
+<p class="stdtext">With such registry entries, the trojan.exe is executed each time 
+an *.pif is executed.</p>
+<p><span class="regcode"><strong>[HKEY_LOCAL_MACHINE\Software\CLASSES\batfile\shell\open\command] 
+@=&quot;\&quot;%1\&quot; %*&quot;</strong></span><br>
+<span class="stdtext">The key should have a value of Value &quot;%1 %*&quot;.<br>
+Backdoor example:<br>
+</span><span class="regcode">[HKEY_LOCAL_MACHINE\Software\CLASSES\batfile\shell\open\command] 
+@=&quot;\&quot;trojan.exe %1\&quot; %*&quot;</span></p>
+<p class="stdtext">With such registry entries, the trojan.exe is executed each time 
+an *.bat is executed.</p>
+<p><span class="regcode"><strong>[HKEY_LOCAL_MACHINE\Software\CLASSES\comfile\shell\open\command] 
+@=&quot;\&quot;%1\&quot; %*&quot; </strong></span><br>
+<span class="stdtext">The key should have a value of Value &quot;%1 %*&quot;.<br>
+Backdoor example:<br>
+</span><span class="regcode">[HKEY_LOCAL_MACHINE\Software\CLASSES\comfile\shell\open\command] 
+@=&quot;\&quot;trojan.exe %1\&quot; %*&quot;</span></p>
+<p class="stdtext">With such registry entries, the trojan.exe is executed each time 
+an *.com is executed.</p>
+<p><span class="regcode"><strong>[HKEY_LOCAL_MACHINE\Software\CLASSES\exefile\shell\open\command] 
+@=&quot;\&quot;%1\&quot; %*&quot; </strong></span><br>
+<span class="stdtext">The key should have a value of Value &quot;%1 %*&quot;.<br>
+Backdoor example:<br>
+</span><span class="regcode">[HKEY_LOCAL_MACHINE\Software\CLASSES\exefile\shell\open\command] 
+@=&quot;\&quot;trojan.exe %1\&quot; %*&quot;</span></p>
+<p class="stdtext">With such registry entries, the trojan.exe is executed each time 
+an *.exe is executed.</p>
+<p><br>
+<span class="regcode"><strong>[HKEY_LOCAL_MACHINE\Software\CLASSES\htafile\Shell\Open\Command] 
+@=&quot;\&quot;%1\&quot; %*&quot;</strong></span><br>
+<span class="stdtext">The key should have a value of Value &quot;%1 %*&quot;.<br>
+Backdoor example:<br>
+</span><span class="regcode">[HKEY_LOCAL_MACHINE\Software\CLASSES\htafile\shell\open\command] 
+@=&quot;\&quot;trojan.exe %1\&quot; %*&quot;</span><span class="stdtext"><br>
+<br>
+With such registry entries, the trojan.exe is executed each time an *.hta is executed.</span></p>
+<p><span class="regcode"><strong>[HKEY_LOCAL_MACHINE\Software\CLASSES\piffile\shell\open\command] 
+@=&quot;\&quot;%1\&quot; %*&quot;</strong> </span><br>
+<span class="stdtext">The key should have a value of Value &quot;%1 %*&quot;.<br>
+Backdoor example:<br>
+</span><span class="regcode">[HKEY_CLASSES_ROOT\piffile\shell\open\command] @=&quot;\&quot;trojan.exe 
+%1\&quot; %*&quot;</span></p>
+<p class="stdtext">With such registry entries, the trojan.exe is executed each time 
+an *.pif is executed.</p>
+<p><strong><br>
+</strong><span class="regcode"><strong>[HKEY_CURRENT_USER\Software\Mirabilis\ICQ\Agent\Apps\test]</strong><br>
+&quot;Path&quot;=&quot;test.exe&quot;<br>
+&quot;Startup&quot;=&quot;c:\\test&quot;<br>
+&quot;Parameters&quot;=&quot;&quot;<br>
+&quot;Enable&quot;=&quot;Yes&quot;</span></p>
+<p><span class="regcode"><strong>[HKEY_CURRENT_USER\Software\Mirabilis\ICQ\Agent\Apps\</strong></span><br>
+<span class="stdtext">This key includes all the APPS which are executed IF ICQNET 
+Detects an Internet Connection.</span></p>
+<p><span class="regcode"><strong>[HKEY_CURRENT_USER\Software\Mirabilis\ICQ\Agent\Apps\</strong></span><br>
+<span class="stdtext">This key includes all the APPS which are executed IF ICQNET 
+Detects an Internet Connection. </span></p>
+<p><span class="stdtext"><strong>The following two are used by Sub7 2.2</strong></span><br>
+<span class="regcode">HKEY_LOCAL_MACHINE\Software\Microsoft\Active Setup\Installed 
+Components\KeyName stubPath=C:\PathToFile\Filename.exe </span><br>
+<span class="regcode">HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\Currentversion\explorer\User 
+shell folders</span><br>
+<span class="stdtext">This does start filename.exe BEFORE the shell and any other 
+Program normaly started over the Run Keys.</span></p>
+<p><span class="regcode"><strong>[HKEY_LOCAL_MACHINE\Software\CLASSES\ShellScrap] 
+@=&quot;Scrap object&quot; &quot;NeverShowExt&quot;=&quot;&quot; </strong></span><br>
+<span class="stdtext">The NeverShowExt key has the function to HIDE the real extension 
+of the file (here) SHS. This means if you rename a file as &quot;Girl.jpg.shs&quot; it displays 
+as &quot;Girl.jpg&quot; in all programs including Explorer.<br>
+Your registry should be full of NeverShowExt keys, simply delete the key to get 
+the real extension to show up.</span></p>
+<p><span class="stdtext"><strong>Explorer Autostarts : </strong><br>
+Windows 95,98,ME<br>
+Explorer.exe ist started through a system.ini entry, the entry itself contains no 
+path information so if c:\explorer.exe exist it will be started instead of %windir%\explorer.exe.</span></p>
+<p><span class="stdtext"><strong>Windows NT/2000</strong><br>
+The Windows Shell is the familiar desktop that&#39;s used for interacting with Windows. 
+During system startup, Windows NT 4.0 and Windows 2000 consult the &quot;Shell&quot; registry 
+entry, </span><span class="regcode">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows 
+NT\CurrentVersion\Winlogon\Shell</span><span class="stdtext">, to determine the 
+name of the executable that should be loaded as the Shell.<br>
+By default, this value specifies Explorer.exe. </span></p>
+<p><span class="stdtext">The problem has to do with the search order that occurs 
+when system startup is in process. Whenever a registry entry specifies the name 
+of a code module, but does it using a relative path, Windows initiates a search 
+process to find the code. The search order is as follows: <br>
+* Search the current directory. <br>
+* If the code isn&#39;t found, search the directories specified in </span>
+<span class="regcode">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session 
+Manager\Environment\Path</span>, <span class="stdtext">in the order in which they 
+are specified. The default settings for </span><span class="regcode">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session 
+Manager\Environment\Path</span> and <span class="regcode">HKEY_CURRENT_USER\Environment\Path</span>
+<span class="stdtext">are &quot;%SystemRoot%\System32;%SystemRoot %&quot; and null, respectively. 
+Because the current directory during system startup is %SystemDrive%\, the resulting 
+search path would be:<br>
+<br>
+1. %SystemDrive%\ (e.g., C:\) <br>
+2. %SystemRoot%\System32 (e.g., C:\WINNT\System32) <br>
+3. %SystemRoot% (e.g., C:\WINNT) <br>
+<br>
+The vulnerability results because the default permissions on %SystemDrive%\ allow 
+all interactive users to write to it. Thus, on a machine that boots from the C: 
+drive, if a malicious user placed a bogus Explorer.exe into C:\, the search order 
+would cause it, rather than the bona fide Explorer.exe, to be loaded and executed 
+each time a user on the machine logged on.</span></p>
+<p><span class="stdtext"><br>
+<strong>General : </strong><br>
+If a trojan installs itself as c:\explorer no run keys or other start-up entries 
+are needed. If c:\explorer.exe is a corrupted file the user will be locked out of 
+the system. Affects all windows version as of today.</span></p>
+
+<p align="center"><a href="../../index.html">Home</a> -
+<a href="index.html">Computers</a></p>
+
+</body>
+
+</html>

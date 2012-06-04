@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>LOADHIGH (LH)</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#l">Commands A-M</a>
+    &gt; <a href="../INDEXL.HTM#loadhigh">Commands L</a>
+    <h1>LOADHIGH (LH)</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Loads a program into the upper memory area. Loading a program
+    into the upper memory area leaves more room in conventional memory
+    for other programs. (For more information about optimizing memory,
+    see the chapter "Making More Memory Available" in the DOS User's
+    Guide.)</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>LOADHIGH
+    [<a href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path</a>]<a
+    href="#ParameterFilename">filename</a>
+    [<a href="#ParameterParameters">parameters</a>]</p>
+
+    <p>OR</p>
+    <p>LH
+    [<a href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path</a>]<a
+    href="#ParameterFilename">filename</a>
+    [<a href="#ParameterParameters">parameters</a>]</p>
+
+    <p>To specify the region(s) of memory into which to load the
+    program:</p>
+    <p>LOADHIGH
+    [<a href="#SwitchL">/L</a>:region1[,minsize1][;region2[,minsize2]...]
+    [<a href="#SwitchS">/S</a>]]
+    [<a href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path</a>]<a
+    href="#ParameterFilename">filename</a>
+    [<a href="#ParameterParameters">parameters</a>]</p>
+
+    <p>OR</p>
+    <p>LH
+    [<a href="#SwitchL">/L</a>:region1[,minsize1][;region2[,minsize2]...]
+    [<a href="#SwitchS">/S</a>]]
+    [<a href="#ParameterDrive">drive:</a>][<a
+    href="#ParameterPath">path</a>]<a
+    href="#ParameterFilename">filename</a>
+    [<a href="#ParameterParameters">parameters</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a name="ParameterPath"></a> path
+      <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the drive and directory of the program you want to
+      load.</dd>
+
+      <dt><a name="ParameterFilename"></a> filename
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the name of the program you want to load.</dd>
+
+      <dt><a name="ParameterParameters"></a> parameters
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies any command-line information required by the
+      program.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchL"></a>
+      (/L:region1[,minsize1][;region2[,minsize2]...]
+      <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies one or more regions of memory into which to load the
+      program. If /L is not used, The operating system loads the
+      program into the largest free upper-memory block (UMB) and
+      makes all other UMBs available for the program's use. You can
+      use the /L switch to load the program into a specific region
+      of memory or to specify which region(s) the program can use.</dd>
+      <dd>To load the program into the largest block in a specific
+      region of upper memory, specify the region number after the /L
+      switch. For example, to load the program into the largest free
+      block in region 4, you would type /L:4. (To list the free areas
+      of memory, type <a href="../M/MEM.HTM">MEM</a>
+      <a href="../M/MEM.HTM#SwitchF">/F</a> at the command prompt.)</dd>
+      <dd>When loaded with the /L switch, a program can use only the
+      specified memory region. Some programs use more than one area
+      of memory; for those programs, you can specify more than one
+      region. (To find out how a particular program uses memory, use
+      the <a href="../M/MEM.HTM">MEM</a>
+      <a href="../M/MEM.HTM#SwitchM">/M</a> command and specify the
+      program name as an argument.) To specify two or more regions,
+      separate the block numbers with a semicolon (;). For example,
+      to use blocks 2 and 3, you would type /L:2;3.</dd>
+      <dd>Normally, the operating system loads the program into a UMB in the
+      specified region only if that region contains a UMB larger than
+      the program's load size (usually equal to the size of the
+      executable program file). If the program requires more memory
+      while running than it does when loaded, you can use the minsize
+      parameter to ensure that the program will not be loaded into a
+      UMB that is too small for it. If you specify a value for
+      minsize, the operating sytem loads the program into that region
+      only if it contains a UMB that is larger than both the
+      program's load size and the minsize value.</dd>
+
+      <dt><a name="SwitchS"></a> /S
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Shrinks the UMB to its minimum size while the program is
+      loading. Using this switch makes the most efficient use of
+      memory. This switch is typically used only by the
+      <a href="../M/MEMMAKER.HTM">MEMMAKER</a>
+      program, which can analyze a program's memory use to determine
+      whether the /S switch can safely be used when loading that
+      program. This switch can be used only in conjunction with the
+      <a href="#SwitchL">/L</a> switch and affects only UMBs for
+      which a minimum size was specified.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about loading device drivers into upper memory,
+    see the <a href="../D/DEVICEHI.HTM">DEVICEHIGH</a> configuration command.
+    <br>For information about using the
+    <a href="../M/MEMMAKER.HTM">MEMMAKER</a>
+    program to move programs to the upper memory area, see the
+    <a href="../M/MEMMAKER.HTM">MEMMAKER</a> command.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#DOSUMB">DOS=UMB command required</a></li>
+      <li><a href="#How">How LOADHIGH works</a></li>
+      <li><a href="#Installed">Upper-memory-area manager must be installed</a></li>
+      <li><a href="#AUTOEXECBAT">Using LOADHIGH in your AUTOEXEC.BAT file</a></li>
+      <li><a href="#MemMaker">Using MemMaker to optimize the upper memory area automatically</a></li>
+    </ul>
+
+    <hr>
+    <a name="DOSUMB"></a> <b>DOS=UMB command required</b>
+    <p>To use the LOADHIGH command, you must include the
+    <a href="../D/DOS.HTM">DOS</a>=<a href="../D/DOS.HTM#ParameterUmb">UMB</a>
+    command in your CONFIG.SYS file. For more information about the
+    <a href="../D/DOS.HTM">DOS</a>=<a href="../D/DOS.HTM#ParameterUmb">UMB</a>
+    command, see the <a href="../D/DOS.HTM">DOS</a> configuration command.</p>
+
+    <hr>
+    <a name="MemMaker"></a> <b>Using MemMaker to optimize the upper memory area automatically</b>
+    <p>The <a href="../M/MEMMAKER.HTM">MEMMAKER</a> program, included
+    with the operating system, automatically optimizes your system's
+    memory. <a href="../M/MEMMAKER.HTM">MEMMAKER</a> surveys the
+    upper memory area, analyzes the memory use of your drivers and
+    programs, and determines which drivers and programs fit best into the
+    available UMBs. <a href="../M/MEMMAKER.HTM">MEMMAKER</a> then adds
+    the LOADHIGH command to selected lines in your AUTOEXEC.BAT file and
+    adds <a href="#SwitchL">/L</a> and <a href="#SwitchS">/S</a> switches
+    as necessary. For more information about using
+    <a href="../M/MEMMAKER.HTM">MEMMAKER</a> to optimize your computer's
+    memory, see the chapter "Making More Memory Available" in the DOS
+    User's Guide.</p>
+
+    <hr>
+    <a name="Installed"></a> <b>Upper-memory-area manager must be installed</b>
+    <p>Before you can load a program into the upper memory area, you
+    must install an upper-memory-area manager. The operating system provides
+    <a href="../E/EMM386EX.HTM">EMM386.EXE</a>, which manages the upper memory area for computers with
+    an 80386 or higher processor. To install <a href="../E/EMM386EX.HTM">EMM386.EXE</a>, you add a <a href="../D/DEVICE.HTM">DEVICE</a>
+    command to your CONFIG.SYS file. (The <a href="../D/DEVICE.HTM">DEVICE</a> command for the
+    <a href="../H/HIMEMSYS.HTM">HIMEM.SYS</a> extended-memory manager must precede the <a href="../D/DEVICE.HTM">DEVICE</a> command
+    for <a href="../E/EMM386EX.HTM">EMM386.EXE</a>.)</p>
+
+    <hr>
+    <a name="How"></a> <b>How LOADHIGH works</b>
+    <p>When you use the LOADHIGH command to load a program, the
+    operating system attempts to load it into the upper memory area.
+    If there is insufficient space in the upper memory area, the
+    operating system loads the program into conventional memory. To
+    determine which UMB(s) the program is using, use the
+    <a href="../M/MEM.HTM">MEM</a>
+    <a href="../M/MEM.HTM#SwitchM">/M</a> command and specify the
+    program name as an argument.</p>
+
+    <hr>
+    <a name="AUTOEXECBAT"></a> <b>Using LOADHIGH in your AUTOEXEC.BAT file</b>
+    <p>The most convenient way to use the LOADHIGH command is to
+    include it in your AUTOEXEC.BAT file. (If you use the
+    <a href="../M/MEMMAKER.HTM">MEMMAKER</a> program, it automatically
+    adds any necessary LOADHIGH commands to the AUTOEXEC.BAT file.)</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>This command loads the
+    <a href="../D/DOSKEY.HTM">DOSKEY</a> program into the upper memory area
+    and specifies that the operating system should load the driver into
+    region 1:</p>
+<pre>
+    LOADHIGH <a
+href="#SwitchL">/L:1</a> <a
+href="#ParameterDrive">C:</a><a
+href="#ParameterPath">\DOS\</a><a
+href="#ParameterFilename">DOSKEY</a>
+</pre>
+
+    <hr>
+    <p>This command loads the MYPROG.EXE program into region
+    1, and also gives it access to upper memory regions 3 and 4:</p>
+<pre>
+    LH <a
+href="#SwitchL">/L:1;3;4</a> <a
+href="#ParameterDrive">C:</a><a
+href="#ParameterPath">\PROGRAMS\</a><a
+href="#ParameterFilename">MYPROG.EXE</a>
+</pre>
+
+    <hr>
+    <p>This command loads the MYPROG program into conventional
+    memory (region 0) and also gives it access to upper memory region
+    1:</p>
+<pre>
+    LOADHIGH <a
+href="#SwitchL">/L:0;1</a> <a
+href="#ParameterDrive">C:</a><a
+href="#ParameterPath">\PROGRAMS\</a><a
+href="#ParameterFilename">MYPROG.EXE</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

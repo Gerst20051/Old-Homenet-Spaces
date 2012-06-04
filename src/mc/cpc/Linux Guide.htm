@@ -1,0 +1,821 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Linux Guide</title>
+<meta name="Microsoft Theme" content="willow 0011">
+</head>
+
+<body background="../../_themes/willow/willbk.jpg" bgcolor="#CCCC99" text="#000000" link="#993333" vlink="#336666" alink="#CC9900"><!--mstheme--><font face="Arial, Helvetica">
+
+<p><b><font size="+2" color="#000000">Linux Shortcuts and Commands:</font><font size="+2" color="#000000"></font></b>
+</p>
+<p><a href="http://linux-newbie.sunsite.dk/">Linux Newbie Administrator Guide</a>
+<br>
+by Stan and Peter Klimas </p>
+<p>This is a practical selection of the commands we use most often. Press <tt>
+&lt;Tab&gt;</tt> to see the listing of all available command (on your PATH). On my 
+small home system, it says there are 2595 executables on my PATH.&nbsp; Many of these 
+&quot;commands&quot; can be accessed from your favourite GUI front-end (probably KDE or 
+Gnome) by clicking on the right menu or button. They can all be run from the 
+command line.&nbsp; Programs that require GUI have to be run from a terminal opened 
+under a GUI. </p>
+<p><b>Legend:</b> <br>
+&lt;&gt; = single special or function key on the keyboard. For example &lt;Ctrl&gt; 
+indicates the &quot;control&quot; key. <br>
+<i>italic</i> = name of the file or variable you probably want to substitute 
+with your own. <br>
+<tt>fixed width</tt> = in-line Linux commands and filenames. </p>
+<p><b>Notes for the UNIX Clueless:</b> <br>
+1. LINUX IS CASE-SENSITIVE. For example: Netscape, NETSCAPE and nEtscape are 
+three different commands. Also my_filE, my_file, and my_FILE are three different 
+files. Your user login name and password are also case sensitive. (This goes 
+with the tradition of UNIX and the &quot;c&quot; programming language being case 
+sensitive.) <br>
+2. Filenames can be up to 256 characters long and can contain letters, numbers, 
+&quot;.&quot; (dot), &quot;_&quot; (underscore), &quot;-&quot; (dash), plus some other not recommended 
+characters. <br>
+3. Files with names starting with &quot;.&quot; are normally not shown by the <tt>ls</tt> 
+(list) or dir commands. Think of these files as &quot;hidden&quot;. Use <tt>ls -a</tt>&nbsp; 
+(list with the option &quot;all&quot;) to see these files. <br>
+4. &quot;/&quot; is an equivalent to DOS &quot;\&quot; (root directory, meaning the parent of all 
+other directories). <br>
+5. Under Linux, all directories appear under a single directory tree (there are 
+no DOS-style drive letters). <br>
+6. In a configuration file, a line starting with # is a comment. </p>
+<h2>7.1 Linux essential shortcuts and sanity commands</h2>
+<p><tt>&lt;Ctrl&gt;&lt;Alt&gt;&lt;F1&gt;</tt> <br>
+Switch to the first text terminal. Under Linux you can have several (6 in 
+standard setup) terminals opened at the same time. </p>
+<p><tt>&lt;Ctrl&gt;&lt;Alt&gt;&lt;Fn&gt; </tt>(n=1..6) <br>
+Switch to the nth text terminal. </p>
+<p><tt>tty</tt> <br>
+Print the name of the terminal in which you are typing this command. </p>
+<p><tt>&lt;Ctrl&gt;&lt;Alt&gt;&lt;F7&gt;</tt> <br>
+Switch to the first GUI terminal (if X-windows is running on this terminal). </p>
+<p>&nbsp;<tt>&lt;Ctrl&gt;&lt;Alt&gt;&lt;Fn&gt; </tt>(n=7..12) <br>
+Switch to the nth GUI terminal (if a GUI terminal is running on screen n-1). On 
+default, nothing is running on terminals <br>
+8 to 12, but you can run another server there. </p>
+<p>&nbsp;<tt>&lt;Tab&gt;</tt> <br>
+(In a text terminal) Autocomplete the command&nbsp; if there is only one option, or 
+else show all the available options. <br>
+THIS SHORTCUT IS GREAT! It even works at LILO prompt! </p>
+<p>&nbsp;<tt>&lt;ArrowUp&gt;</tt> <br>
+Scroll and edit the command history. Press &lt;Enter&gt; to execute. </p>
+<p>&nbsp;<tt>&lt;Shift&gt;&lt;PgUp&gt;</tt> <br>
+Scroll terminal output up. Work also at the login prompt, so you can scroll 
+through your bootup messages. </p>
+<p>&nbsp;<tt>&lt;Shift&gt;&lt;PgDown&gt;</tt> <br>
+Scroll terminal output down. </p>
+<p>&nbsp;<tt>&lt;Ctrl&gt;&lt;Alt&gt;&lt;+&gt;</tt> <br>
+(in X-windows) Change to the next X-server resolution (if you set up the 
+X-server to more than one resolution). For multiple resolutions on my standard 
+SVGA card/monitor, I have the following line in the file <tt>/etc/X11/XF86Config</tt> 
+(the first resolution starts on default, the largest determines the size of the 
+&quot;virtual screen&quot;): <br>
+<tt>Modes &quot;1024x768&quot; &quot;800x600&quot; &quot;640x480&quot; &quot;512x384&quot; &quot;480x300&quot; &quot;400x300&quot; 
+&quot;1152x864&quot;</tt> </p>
+<p><tt>&lt;Ctrl&gt;&lt;Alt&gt;&lt;-&gt;</tt> <br>
+(in X-windows) Change to the previous X-server resolution. </p>
+<p><tt>&lt;Ctrl&gt;&lt;Alt&gt;&lt;BkSpc&gt;</tt> <br>
+(in X-windows) Kill the current X-windows server. Use if the X-windows server 
+crushes and cannot be exited normally. </p>
+<p><tt>&lt;Ctrl&gt;&lt;Alt&gt;&lt;Del&gt;</tt> <br>
+Shut down the system and reboot. This is the normal shutdown command for a user 
+at the text-mode console. Don't just press the &quot;reset&quot; button for shutdown! </p>
+<p><tt>&lt;Ctrl&gt;c</tt> <br>
+Kill the current process (mostly in the text mode for small applications). </p>
+<p><tt>&lt;Ctrl&gt;d</tt> <br>
+Log out from the current terminal.&nbsp; See also the next command. </p>
+<p><tt>&lt;Ctrl&gt;d</tt> <br>
+Send [End-of-File] to the current process. Don't press it twice else you also 
+log out (see the previous command). </p>
+<p><tt>&lt;Ctrl&gt;s</tt> <br>
+Stop the transfer to the terminal. </p>
+<p><tt>&lt;Ctrl&gt;q</tt> <br>
+Resume the transfer to the terminal. Try if your terminal mysteriously stops 
+responding. </p>
+<p><tt>&lt;Ctrl&gt;z</tt> <br>
+Send the current process to the background. </p>
+<p><tt>exit</tt> <br>
+Logout. I can also use <tt>logout</tt> for the same effect.&nbsp; (If you have 
+started a second shell, e.g., using <tt>bash</tt> the second shell will be 
+exited and you will be back in the first shell, not logged out.) </p>
+<p><tt>reset</tt> <br>
+Restore a screwed-up terminal (a terminal showing funny characters) to default 
+setting. Use if you tried to &quot;cat&quot; a binary file. You may not be able to see the 
+command as you type it. </p>
+<p><tt>&lt;MiddleMouseButton&gt;</tt> <br>
+Paste the text which is currently highlighted somewhere else. This is the normal 
+&quot;copy-paste&quot; operation in Linux.&nbsp; (It doesn't work with Netscape and WordPerfect 
+which use the MS Windows-style &quot;copy-paste&quot;. It does work in the text terminal 
+if you enabled &quot;gpm&quot; service using &quot;setup&quot;.) Best used with a Linux-ready 
+3-button mouse (Logitech or similar) or else set &quot;3-mouse button emulation&quot;).
+</p>
+<p><tt>~</tt> <br>
+(tilde) My home directory (normally the directory <tt>/home/my_login_name</tt>). 
+For example, the command <tt>cd ~/<i>my_dir</i></tt> will change my working&nbsp; 
+directory to the subdirectory &quot;<i>my_dir</i>&quot; under my home directory.&nbsp; Typing 
+just &quot;cd&quot; alone is an equivalent of the command &quot;cd ~&quot;. </p>
+<p><tt>.</tt> <br>
+(dot) Current directory. For example, <tt>./my_program</tt> will attempt to 
+execute the file &quot;my_program&quot; located in your current working directory. </p>
+<p><tt>..</tt> <br>
+(two dots) Directory parent to the current one. For example, the command <tt>cd 
+..</tt> will change my current working directory one one level up. </p>
+<h2>7.2 Common Linux commands--system info</h2>
+<p><tt>pwd</tt> <br>
+Print working directory, i.e., display the name of my current directory on the 
+screen. </p>
+<p><tt>hostname</tt> <br>
+Print the name of the local host (the machine on which you are working). Use<tt> 
+netconf </tt>(as root) to change the name of the machine. </p>
+<p><tt>whoami</tt> <br>
+Print my login name. </p>
+<p><tt>id <i>username</i></tt> <br>
+Print user id (uid) and his/her group id (gid), effective id (if different than 
+the real id) and the supplementary groups. </p>
+<p><tt>date</tt> <br>
+Print or change the operating system date and time. E.g., I could change the 
+date and time to 2000-12-31 23:57 using this command: <br>
+<tt>date 123123572000</tt> <br>
+To set the hardware (BIOS) clock from the system (Linux) clock, use the command 
+(as root) <tt>setclock</tt> </p>
+<p><tt>time</tt> <br>
+Determine the amount of time that it takes for a process to complete + other 
+info. Don't confuse it with the <tt>date</tt> command. E.g. I can find out how 
+long it takes to display a directory content using: <br>
+<tt>time ls</tt> </p>
+<p><tt>who</tt> <br>
+Determine the users logged on the machine. </p>
+<p><tt>rwho -a</tt> <br>
+(=remote who) Determine all users logged on your network. The rwho service must 
+be enabled for this command to run. If it isn't, run setup as root to enable &quot;rwho&quot;.
+</p>
+<p><tt>finger <i>user_name</i></tt> <br>
+System info about a user. Try: <tt>finger root</tt> </p>
+<p><tt>last</tt> <br>
+Show listing of users last logged-in on your system. </p>
+<p><tt>history | more</tt> <br>
+Show the last (1000 or so) commands executed from the command line on the 
+current account. The &quot;| more&quot; causes the display to stop after each screenful.
+</p>
+<p><tt>uptime</tt> <br>
+Show the amount of time since the last reboot. </p>
+<p><tt>ps</tt> <br>
+(=print status) List the processes currently run by the current user. </p>
+<p><tt>ps axu | more</tt> <br>
+List all the processes currently running, even those without the controlling 
+terminal, together with the name of the user that owns each process. </p>
+<p><tt>top</tt> <br>
+Keep listing the currently running processes, sorted by cpu usage (top users 
+first). In KDE, you can get GUI-based Ktop from &quot;K&quot;menu under &quot;System&quot;-&quot;Task 
+Manager&quot; (or by executing &quot;ktop&quot; in an X-terminal). </p>
+<p><tt>uname -a</tt> <br>
+(= Unix name with option &quot;all&quot;) Info on your (local) server. I can also use <tt>
+guname</tt> (in X-window terminal) to display the info more nicely. </p>
+<p><tt>free</tt> <br>
+Memory info (in kilobytes). </p>
+<p><tt>df -h</tt> <br>
+(=disk free) Print disk info about all the filesystems (in human-readable form)
+</p>
+<p><tt>du / -bh | more</tt> <br>
+(=disk usage) Print detailed disk usage for each subdirectory starting at the 
+&quot;/&quot; (root) directory (in human legible form). </p>
+<p><tt>cat /proc/cpuinfo</tt> <br>
+Cpu info--it show the content of the file <tt>cpuinfo</tt>. Note that the files 
+in the <tt>/proc</tt> directory are not real files--they are hooks to look at 
+information available to the kernel. </p>
+<p><tt>cat /proc/interrupts</tt> <br>
+List the interrupts in use. </p>
+<p><tt>cat /proc/version</tt> <br>
+Linux version and other info </p>
+<p><tt>cat /proc/filesystems</tt> <br>
+Show the types of filesystems currently in use. </p>
+<p><tt>cat /etc/printcap</tt> <br>
+Show the setup of printers. </p>
+<p><tt>lsmod</tt> <br>
+(As root. Use <tt>/sbin/lsmod</tt> to execute this command when you are a 
+non-root user.) Show the kernel modules currently loaded. </p>
+<p><tt>set|more</tt> <br>
+Show the current user environment. </p>
+<p><tt>echo $PATH</tt> <br>
+Show the content of the environment variable &quot;PATH&quot;. This command can be used to 
+show other environment variables as well. Use &quot;set&quot; to see the full environment.
+</p>
+<p><tt>dmesg | less</tt> <br>
+Print kernel messages (the content of the so-called kernel ring buffer). Press 
+&quot;q&quot; to quit &quot;less&quot;. Use <tt>less /var/log/dmesg</tt>&nbsp; to see what &quot;dmesg&quot; dumped 
+into this file right after the last system bootup. <br>
+&nbsp; </p>
+<h2>7.3 Basic operations</h2>
+<p><tt><i>any_command </i>--help |more</tt> <br>
+Display a brief help on a command (works with most commands). &quot;--help&quot; works 
+similar to DOS &quot;/h&quot; switch. The &quot;more&quot; pipe is needed if the output is longer 
+than one screen. </p>
+<p><tt>man <i>topic</i></tt> <br>
+Display the contents of the system manual pages (help) on the topic. Try <tt>man 
+man</tt> first. Press &quot;q&quot; to quit the viewer. The command <tt>info <i>topic</i></tt> 
+works similar and may contain more up-to-date information. Manual pages can be 
+hard to read. Try <tt><i>any_command</i> --help</tt> for short, easy to digest 
+help on a command. If more info needed, have a look to the directory <tt>/usr/doc</tt>. 
+To display manual page from a specific section, I may use something like in this 
+example:&nbsp; <tt>man 3 exit</tt> (this displays an info on the command <tt>exit</tt> 
+from section 3 of the manual pages). </p>
+<p><tt>apropos <i>topic</i></tt> <br>
+Give me the list of the commands that have something to to do with my topic. </p>
+<p><tt>help command</tt> <br>
+Display brief info on a bash (shell) build-in command. </p>
+<p><tt>ls</tt> <br>
+List the content of the current directory. Under Linux, the command &quot;dir&quot; is an 
+alias to ls. Many users have &quot;ls&quot; to be an alias to &quot;ls --color&quot;. </p>
+<p><tt>ls -al |more</tt> <br>
+List the content of the current directory, all files (also those starting with a 
+dot), and in a long form. Pipe the output through the &quot;more&quot; command, so that 
+the display pauses after each screenful. </p>
+<p><tt>cd <i>directory</i></tt> <br>
+Change directory. Using &quot;cd&quot; without the directory name will take you to your 
+home directory. &quot;cd -&quot; will take you to your previous directory and is a 
+convenient way to toggle between two directories. &quot;cd ..&quot; will take you one 
+directory up. </p>
+<p><tt>cp <i>source destination</i></tt> <br>
+Copy files. E.g., <tt>cp /home/stan/existing_file_name .</tt>&nbsp; will copy a file 
+to my current working directory. Use the &quot;-r&quot; option (for recursive) to copy the 
+contents of whole directories, e.g. , <tt>cp -r my_existing/dir/ ~&nbsp;</tt> will 
+copy a subdirectory under my current working directory to my home directory. </p>
+<p><tt>mcopy <i>source destination</i></tt> <br>
+Copy a file from/to a DOS filesystem (no mounting necessary). E.g., <tt>mcopy 
+a:\autoexec.bat ~/junk </tt>. See <tt>man mtools</tt> for related commands: mdir, 
+mcd, mren, mmove, mdel, mmd, mrd, mformat .... </p>
+<p><tt>mv s<i>ource destination</i></tt> <br>
+Move or rename files. The same command is used for moving and renaming files and 
+directories. </p>
+<p><tt>ln <i>source destination</i></tt> <br>
+Create a hard link called <i>destination</i> to the file called <i>source</i>. 
+The link appears as a copy of the original files, but in reality only one copy 
+of the file is kept, just two (or more) directory entries point to it. Any 
+changes the file are automatically visible throughout. When one directory entry 
+is removed, the other(s) stay(s) intact. The limitation of the hard links are: 
+the files have to be on the same filesystem, hard links to directories or 
+special files are impossible. </p>
+<p><tt>ln -s <i>source destination</i></tt> <br>
+Create a symbolic (soft) link called &quot;destination&quot; to the file called &quot;source&quot;. 
+The symbolic link just specifies a path where to look for the file. In 
+contradistinction to hard links, the source and destination don't not have to 
+tbe on the same filesystem. In comparison to hard links, the drawback of 
+symbolic links are: if the original file is removed, the link is &quot;broken&quot;, 
+symbolic links can also create circular references (like circular references in 
+spreadsheets or databases, e.g., &quot;a&quot; points to &quot;b&quot; and &quot;b&quot; points back to &quot;a&quot;).
+</p>
+<p><tt>rm<i> files</i></tt> <br>
+Remove (delete) files. You must own the file in order to be able to remove it. 
+On many systems, you will be asked or confirmation of deleation, if you don't 
+want this, use the &quot;-f&quot; (=force) option, e.g., <tt>rm -f *</tt>&nbsp; will remove all 
+files in my current working directory, no questions asked. </p>
+<p><tt>mkdir <i>directory</i></tt> <br>
+Make a new directory. </p>
+<p><tt>rmdir <i>directory</i></tt> <br>
+Remove an empty directory. </p>
+<p><tt>rm -r <i>files</i></tt> <br>
+(recursive remove) Remove files, directories, and their subdirectories. Careful 
+with this command as root--you can easily remove all files on the system with 
+such a command executed on the top of your directory tree, and there is no 
+undelete in Linux (yet). But if you really wanted to do it (reconsider), here is 
+how (as root): <tt>rm -rf /*</tt> </p>
+<p><tt>cat <i>filename</i> | more</tt> <br>
+View the content of a text file called &quot;filename&quot;, one page a time. The &quot;|&quot; is 
+the &quot;pipe&quot; symbol (on many American keyboards it shares the key with &quot;\&quot;) The 
+pipe makes the output stop after each screenful. For long files, it is sometimes 
+convenient to use the commands head and tail that display just the beginning and 
+the end of the file. If you happened to use &quot;cat&quot; a binary file and your 
+terminal displays funny characters afterwards, you can restore it with the 
+command &quot;reset&quot;. </p>
+<p><tt>less <i>filename</i></tt> <br>
+Scroll through a content of a text file. Press q when done. &quot;Less&quot; is roughly 
+equivalent to &quot;more&quot; , the command you know from DOS, although very often &quot;less&quot; 
+is more convenient than &quot;more&quot;. </p>
+<p><tt>pico <i>filename</i></tt> <br>
+Edit a text file using the simple and standard text editor called <tt>pico</tt>.
+</p>
+<p><tt>pico -w <i>filename</i></tt> <br>
+Edit a text file, while disabling the long line wrap. Handy for editing 
+configuration files, e.g. <tt>/etc/fstab</tt>. </p>
+<p><tt>find / -name &quot;<i>filename</i>&quot;</tt> <br>
+Find the file called &quot;filename&quot; on your filesystem starting the search from the 
+root directory &quot;/&quot;. The &quot;filename&quot; may contain wildcards (*,?). </p>
+<p><tt>locate <i>filename</i></tt> <br>
+Find the file name of which contains the string &quot;filename&quot;. Easier and faster 
+than the previous command but depends on a database that normally rebuilds at 
+night. </p>
+<p><tt>./<i>program_name</i></tt> <br>
+Run an executable in the current directory, which is not on your PATH. </p>
+<p><tt>touch <i>filename</i></tt> <br>
+Change the date/time stamp of the file <i><tt>filename</tt></i> to the current 
+time. Create an empty file if the file does not exist. </p>
+<p><tt>xinit</tt> <br>
+Start a barebone X-windows server (without a windows manager). </p>
+<p><tt>startx</tt> <br>
+Start an X-windows server and the default windows manager. Works like typing 
+&quot;win&quot; under DOS with Win3.1 </p>
+<p><tt>startx -- :1</tt> <br>
+Start another X-windows session on the display 1 (the default is opened on 
+display 0). You can have several GUI terminals running concurrently. Switch 
+between them using &lt;Ctrl&gt;&lt;Alt&gt;&lt;F7&gt;, &lt;Ctrl&gt;&lt;Alt&gt;&lt;F8&gt;, etc. </p>
+<p><tt>xterm</tt> <br>
+(in X terminal) Run a simple X-windows terminal.&nbsp; Typing <tt>exit</tt> will 
+close it.&nbsp; There are other, more advanced &quot;virtual&quot; terminals for X-windows. I 
+like the popular ones: <tt>konsole</tt> and <tt>kvt</tt> (both come with kde) 
+and <tt>gnome-terminal</tt> (comes with gnome).&nbsp; If you need something really 
+fancy-looking, try <tt>Eterm</tt>. </p>
+<p><tt>xboing</tt> <br>
+(in X terminal). Very nice, old-fashioned game. Many small games/programs are 
+probably installed on your system. I also like <tt>xboard</tt> (chess). </p>
+<p><tt>shutdown -h now</tt> <br>
+(as root) Shut down the system to a halt. Mostly used for a remote shutdown. Use 
+&lt;Ctrl&gt;&lt;Alt&gt;&lt;Del&gt; for a shutdown at the console (which can be done by any user).
+</p>
+<p><tt>halt</tt> <br>
+<tt>reboot</tt> <br>
+(as root, two commands) Halt or reboot the machine. Used for remote shutdown, 
+simpler to type than the previous command. <br>
+&nbsp; </p>
+<h2>Network apps</h2>
+<p><tt>netscape</tt> <br>
+(in X terminal) Run netscape (requires a separate Netscape installation). The 
+current versions of Netscape (4.x) are known to be big and buggy. They 
+occasionally crash by vanishing (no other harm done). Also, when not connected 
+to the network , Netscape likes to refuse to do anything (looks like it 
+hanged)-it revives when you connect. </p>
+<p><tt>netscape -display <i>host</i>:0.0</tt> <br>
+(in X terminal) Run netscape on the current machine and direct the output to 
+machine named &quot;host&quot; display 0 screen 0. Your current machine must have a 
+permission to display on the machine &quot;host&quot; (typically given by executing the 
+command <tt>xhost <i>current_machine_name</i></tt> in the xterminal of the 
+machine host. Other X-windows program can be run remotely the same way. </p>
+<p><tt>lynx <i>file.html</i></tt> <br>
+View an html file or browse the net from the text mode. </p>
+<p><tt>pine</tt> <br>
+A good text-mode mail reader. Another good and standard one is <tt>elm</tt>. 
+Your Netscape mail will read the mail from your Internet account. <tt>pine</tt> 
+will let you read the &quot;local&quot; mail, e.g. the mail your son or a cron process 
+sends to you from a computer on your home network. The command <tt>mail</tt> 
+could also be used for reading/composing mail, but it would be inconvenient--it 
+is meant to be used in scripts for automation. </p>
+<p><tt>elm</tt> <br>
+A good tex-mode mail reader. See the previous command. </p>
+<p><tt>mutt</tt> <br>
+A really basic but extremally useful and fast mail reader. </p>
+<p><tt>mail</tt> <br>
+A basic operating system tool for e-mail. Look at the previous commands for a 
+better e-mail reader. <tt>mail</tt> is good if you wanted to send an e-mail from 
+a shell script. </p>
+<p><tt>licq</tt> <br>
+(in X term) An icq &quot;instant messaging&quot; client. Another good one is <tt>kxicq</tt>. 
+Older distributions don't have an icq client installed, you have to do download 
+one and install it. </p>
+<p><tt>talk <i>username1</i></tt> <br>
+Talk to another user currently logged on your machine (or use &quot;<tt>talk <i>
+username1</i>@<i>machinename</i></tt>&quot; to talk to a user on a different 
+computer) . To accept the invitation to the conversation, type the command &quot;<tt>talk
+<i>username2</i></tt>&quot;. If somebody is trying to talk to you and it disrupts 
+your work, your may use the command &quot;<tt>mesg n</tt>&quot; to refuse accepting 
+messages. You may want to use &quot;<tt>who</tt>&quot; or &quot;<tt>rwho</tt>&quot; to determine the 
+users who are currently logged-in. </p>
+<p><tt>mc</tt> <br>
+Launch the &quot;Midnight Commander&quot; file manager (looks like &quot;Norton Commander&quot; for 
+Linux). </p>
+<p><tt>telnet <i>server</i></tt> <br>
+Connect to another machine using the TELNET protocol. Use a remote machine name 
+or IP address. You will be prompted for your login name and password--you must 
+have an account on the remote machine to login. Telnet will connect you to 
+another machine and let you operate on it as if you were sitting at its keyboard 
+(almost). Telnet is not very secure--everything you type goes in open text, even 
+your password! </p>
+<p><tt>rlogin <i>server</i></tt> <br>
+(=remote login) Connect to another machine. The login name/password from your 
+current session is used; if it fails you are prompted for a password. </p>
+<p><tt>rsh <i>server</i></tt> <br>
+(=remote shell) Yet another way to connect to a remote machine. The login 
+name/password from your current session is used; if it fails you are prompted 
+for a password. </p>
+<p><tt>ftp <i>server</i></tt> <br>
+Ftp another machine. (There is also <tt>ncftp</tt> which adds extra features and
+<tt>gftp</tt> for GUI .) Ftp is good for copying files to/from a remote machine. 
+Try user &quot;anonymous&quot; if you don't have an account on the remote server. After 
+connection, use &quot;?&quot; to see the list of available ftp commands.&nbsp; The essential 
+ftp command are: <tt>ls</tt> (see the files on the remote system), <tt>ASCII</tt>,
+<tt>binary</tt> (set the file transfer mode to either text or binary, important 
+that you select the proper one ), <tt>get</tt> (copy a file from the remote 
+system to the local system), <tt>mget</tt> (get many files at once), <tt>put</tt> 
+(copy a file from the local system to the remote system), <tt>mput</tt> (put 
+many files at once), <tt>bye</tt> (disconnect). For automation in a script, you 
+may want to use <tt>ncftpput</tt> and <tt>ncftpget</tt>, for example: <br>
+<tt>ncftpput -u my_user_name -p my_password -a remote.host.domain remote_dir *local.html</tt>
+</p>
+<p><tt>minicom</tt> <br>
+Minicom program (looks like &quot;Procomm for Linux&quot;). </p>
+<h2>File (de)compression</h2>
+<p><tt>tar -zxvf <i>filename.tar.gz</i></tt> <br>
+(=tape archiver) Untar a tarred and compressed tarball (*.tar.gz or *.tgz) that 
+you downloaded from the Internet. </p>
+<p><tt>tar -xvf <i>filename.tar</i></tt> <br>
+Untar a tarred but uncompressed tarball (*.tar). </p>
+<p><tt>gunzip <i>filename.gz</i></tt> <br>
+Decompress a zipped file (*.gz&quot; or *.z). Use gzip (also <tt>zip</tt> or <tt>
+compress</tt>) if you wanted to compress files to this file format. </p>
+<p><tt>bunzip2 <i>filename.bz2</i></tt> <br>
+(=big unzip) Decompress a file (*.bz2) zipped with bzip2 compression utility. 
+Used for big files. </p>
+<p><tt>unzip <i>filename.zip</i></tt> <br>
+Decompress a file (*.zip) zipped with a compression utility compatible with 
+PKZIP for DOS. </p>
+<p><tt>unarj e <i>filename.arj</i></tt> <br>
+Extract the content of an *.arj archive. </p>
+<p><tt>uudecode -o <i>outputfile</i> <i>filename</i></tt> <br>
+Decode a file encoded with <tt>uuencode</tt>.&nbsp; uu-encoded files are typically 
+used for transfer of non-text files in e-mail (uuencode transforms any file into 
+an ASCII file). </p>
+<h2>7.4 Process control</h2>
+<p><tt><font size="+0">ps</font></tt> <br>
+<font size="+0">(=print status) Display the list of currently running processes 
+with their process IDs (PID) numbers. Use <tt>ps axu</tt> to see all processes 
+currently running on your system (also those of other users or without a 
+controlling terminal), each with the name of the owner. Use &quot;top&quot; to keep 
+listing the processes currently running.</font> </p>
+<p><tt>fg <i>PID</i></tt> <br>
+Bring a background or stopped process to the foreground. </p>
+<p><tt>bg <i>PID</i></tt> <br>
+Send the process to the background. Opposite to fg. The same can be accomplished 
+with &lt;Ctrl&gt;z.&nbsp; If you have stopped jobs, you have to type <tt>exit</tt> twice in 
+row to log out. </p>
+<p><tt><i>any_command</i>&amp;</tt> <br>
+Run any command in the background (the symbol &quot;&amp;&quot; means &quot;run the proceeding 
+command in the background&quot;). </p>
+<p><tt>batch <i>any_command</i></tt> <br>
+Run any command (usually one that is going to take more time) when the system 
+load is low. I can logout, and the process will keep running. </p>
+<p><tt>at 17:00</tt> <br>
+Execute a command at a specified time.&nbsp; You will be prompted for the command(s) 
+to run, until you press &lt;Ctrl&gt;d. </p>
+<p><tt>kill <i>PID</i></tt> <br>
+Force a process shutdown. First determine the PID of the process to kill using 
+ps. </p>
+<p><tt>killall <i>program_name</i></tt> <br>
+Kill program(s) by name. </p>
+<p><tt>xkill</tt> <br>
+(in an xwindow terminal) Kill a GUI-based program with mouse. (Point with your 
+mouse cursor at the window of the process you want to kill and click.) </p>
+<p><tt>lpc</tt> <br>
+(as root) Check and control the printer(s). Type &quot;?&quot; to see the list of 
+available commands. </p>
+<p><tt>lpq</tt> <br>
+Show the content of the printer queue. Under KDE (X-Windows), you may use 
+GUI-based &quot;Printer Queue&quot; available from &quot;K&quot;menu-Utilities. </p>
+<p><tt>lprm <i>job_number</i></tt> <br>
+Remove a printing job &quot;job_number&quot; from the queue. </p>
+<p><tt>nice <i>program_name</i></tt> <br>
+Run <i>program_name</i> adjusting its priority. Since the priority is not 
+specified in this example, it will be adjusted by 10 (the process will run 
+slower), from the default value (usually 0). The lower the number (of &quot;niceness&quot; 
+to other users on the system), the higher the priority. The priority value may 
+be in the range -20 to 19. Only root may specify negative values. Use &quot;top&quot; to 
+display the priorities of the running processes. </p>
+<p><tt>renice -1 <i>PID</i></tt> <br>
+(as root) Change the priority of a running process to -1. Normal users can only 
+adjust processes they own, and only up from the current value (make them run 
+slower). </p>
+<p><tt>&lt;Ctrl&gt;c</tt>, <tt>&lt;Ctrl&gt;z</tt>, <tt>&lt;Ctrl&gt;s</tt>, and <tt>&lt;Ctrl&gt;q</tt> 
+also belong to this chapter but they were described <a href="#shortcuts">
+previously</a>. In short they mean: stop the current command, send the current 
+command to the background, stop the data transfer, resume the data transfer. <br>
+&nbsp; </p>
+<h2>7.5 Basic administration commands</h2>
+<p><tt>printtool</tt> <br>
+(as root in X-terminal) Configuration tool for your printer(s). Settings go to 
+the file <tt>/etc/printcap</tt>. </p>
+<p><tt>setup</tt> <br>
+(as root) Configure mouse, soundcard, keyboard, X-windows, system services. 
+There are many distibution-specific configuration utilities, <tt>setup</tt> is 
+the default on RedHat. Mandrake 7.0 offers very nice <tt>DrakConf</tt> . </p>
+<p><tt>linuxconfig</tt> <br>
+(as root, either in text or graphical mode). You can access and change hundreds 
+of setting from it. Very powerful--don't change too many things at the same 
+time, and be careful with changing entries you don't understand. </p>
+<p><tt>xvidtune</tt> <br>
+(in X-terminal). Adjust the settings of the graphical display for all 
+resolutions so as to eliminate black bands, shift the display 
+right/left/up/down, etc. (First use the knobs on your monitor to fit your text 
+mode correctly on the screen.) To make the changes permanent, display the 
+frequencies on the screen and transfer them to the setup file <tt>
+/etc/X11/XF86Config</tt>. </p>
+<p><tt>alias ls=&quot;ls --color=tty&quot;</tt> <br>
+Create an alias for the command &quot;ls&quot; to enhance its format with color. In this 
+example, the alias is also called &quot;ls&quot; and the &quot;color&quot; option is only envoke 
+when the output is done to a terminal (not to files). Put the alias into the 
+file <tt>/etc/bashrc</tt> if you would like the alias to be always accessible to 
+all users on the system. Type &quot;<tt>alias</tt>&quot; alone to see the list of aliases 
+on your system. </p>
+<p><tt>adduser <i>user_name</i></tt> <br>
+Create a new account (you must be root). E.g.,&nbsp; <tt>adduser barbara&nbsp;</tt> Don't 
+forget to set up the password for the new user in the next step. The user home 
+directory is <tt>/home/<i>user_name</i>.</tt> </p>
+<p><tt>useradd <i>user_name</i></tt> <br>
+The same as the command &quot; <tt>adduser <i>user_name</i> &quot;</tt>. </p>
+<p><tt>userdel <i>user_name</i></tt> <br>
+Remove an account (you must be a root). The user's home directory and the 
+undelivered mail must be dealt with separately (manually because you have to 
+decide what to do with the files). </p>
+<p><tt>groupadd <i>group_name</i></tt> <br>
+Create a new group on your system. Non-essential but can be handy even on a home 
+machine with a small number of users. </p>
+<p><tt>passwd</tt> <br>
+Change the password on your current account. If you are root, you can change the 
+password for any user using:&nbsp; <tt>passwd <i>user_name</i></tt> </p>
+<p><i><tt>chmod perm filename</tt></i> <br>
+(=change mode) Change the file access permission for the files you own (unless 
+you are root in which case you can change any file). You can make a file 
+accessible in three modes: read (r), write (w), execute (x) to three classes of 
+users: owner (u), members of the same group as the owner (g), others on the 
+system (o). Check the current access permissions using: <br>
+<tt>ls -l <i>filename</i></tt> <br>
+If the file is accessible to all users in all modes it will show: <br>
+<tt>rwxrwxrwx</tt> <br>
+The first triplet shows the file permission for the owner of the file, the 
+second for his/her group, the third for others. A &quot;no&quot; permission is shown as 
+&quot;-&quot;. <br>
+E.g., this command will <b>add </b>the permission to read the file &quot;junk&quot; to all 
+(=user+group+others): <br>
+<tt>chmod a+r junk</tt> <br>
+This command will remove the permission to execute the file junk from others:
+<br>
+<tt>chmod o-x junk</tt> <br>
+Also try <a href="http://sunsite.auc.dk/share/page/FAQ2.htm#file_permissions">
+here</a> for more info. <br>
+You can set the default file permissions for the news files that you create 
+using the command <tt>umask</tt> (see <tt>man umask</tt>). </p>
+<p><tt>chown <i>new_ownername filename</i></tt> <br>
+<tt>chgrp <i>new_groupname filename</i></tt> <br>
+Change the file owner and group. You should use these two commands after you 
+copy a file for use by somebody else. </p>
+<p><tt>su</tt> <br>
+(=substitute user id) Assume the superuser (=root) identity (you will be 
+prompted for the password). Type &quot;exit&quot; to return you to your previous login. 
+Don't habitually work on your machine as root. The root account is for 
+administration and the su command is to ease your access to the administration 
+account when you require it. You can also use &quot;su&quot; to assume any other user 
+identity, e.g. <tt>su barbara</tt> will make me &quot;barbara&quot; (password required 
+unless I am a superuser). </p>
+<p><tt>kernelcfg</tt> <br>
+(as root in X terminal). GUI to to add/remove kernel modules. You can do the 
+same from the command line using the command &quot;<tt>insmod</tt>&quot;, but &quot;<tt>insmode</tt>&quot; 
+is less &quot;newbie-friendly&quot;. </p>
+<p><tt>lsmod</tt> <br>
+List currently loaded kernel modules. A module is like a device driver--it 
+provides operating system kernel support for a particular piece of hardware or 
+feature. </p>
+<p><tt>modprobe -l |more</tt> <br>
+List all the modules available for your kernel. The available modules are 
+determined by how your Linux kernel was compliled. Every possible module/feature 
+can be compiled on linux as either &quot;hard wired&quot; (fast, non-removable), &quot;module&quot; 
+(maybe slower, but loaded/removable on demand), or &quot;no&quot; (no support for this 
+feature at all). </p>
+<p><tt>insmod parport</tt> <br>
+<tt>insmod ppa</tt> <br>
+(as root) Insert modules into the kernel (a module is roughly an equivalent of a 
+DOS device driver). This example shows how to insert the modules for support of 
+the external parallel port zip drive (it appears to be a problem to get the 
+external zip drive to work&nbsp; in any other way under RH6.0 ). </p>
+<p><tt>rmmod <i>module_name</i></tt> <br>
+(as root, not essential). Remove the module <i>module_name</i> from the kernel.
+</p>
+<p><tt>setserial /dev/cua0 port 0x03f8 irq 4</tt> <br>
+(as root) Set a serial port to a non-standard setting. The example here shows 
+the standard setting for the first serial port (cua0 or ttyS0). The standard PC 
+settings for the second serial port (cua1or ttyS1) are: address of i/o port 
+0x02f8, irq 3. The third serial port (cua2 or ttyS2): 0x03e8, irq 4. The forth 
+serial port (cua3 or ttyS3): 0x02e8, irq 3. Add your setting to <tt>/etc/rc.d/rc.local</tt> 
+if you want it to be set at the boot time. See man setserial for good a 
+overview. </p>
+<p><tt>fdisk</tt> <br>
+(as root) Linux hard drive partitioning utility (DOS has a utility with the same 
+name). </p>
+<p><tt>cd /usr/src/linux-2.0.36</tt> <br>
+<tt>make xconfig</tt> <br>
+(as root in X terminal). Nice GUI front-end for configuration of the kernel 
+options in preparation for compilation of your customized kernel.&nbsp; (The 
+directory name contains the version of your Linux kernel so you may need to 
+modify the directory name if your Linux kernel version is different than 2.0.36 
+used in this example. You also need the &quot;Tk&quot; interpreter and the kernel source 
+code installed. ) The alternatives to &quot;make xconfig&quot; are: &quot;make config&quot;&nbsp; (runs a 
+scripts that asks you questions in the text mode) and &quot;make menuconfig&quot; (runs a 
+text-based menu-driven configuration utility). Try: <tt>less /usr/doc/HOWTO/Kernel-HOWTO</tt> 
+for more information. <br>
+After the configuration,&nbsp; you may choose to proceed with kernel compilation of 
+the new kernel by issuing the following commands: <br>
+<tt>make dep</tt> <br>
+<tt>make zImage</tt> <br>
+The last command will take some time to complete (maybe 0.5 h, depending on your 
+hardware). It produces the file &quot;zImage&quot;, which is your new Linux kernel. Next:
+<br>
+<tt>make modules</tt> <br>
+<tt>make modules_install</tt> <br>
+Read: /usr/doc/HOWTO/Kernel-HOWTO for information on how to install the new 
+kernel. You will probably also find it useful to read &quot;man depmode&quot;. 
+Configuration, compilation and installation of a new kernel is not difficult but 
+it CAN lead to problems if you don't know what you are doing. <br>
+Compilation of a kernel is a good way to test your hardware, because it involves 
+a massive amount of computing. If your hardware is &quot;flaky&quot;, you will most likely 
+receive the &quot;signal 11&quot; error (read the beatiful <tt>/usr/doc/FAQ/txt/GCC-SIG11-FAQ</tt>).
+<b>See <a href="http://sunsite.auc.dk/share/page/kernel_upgrade.htm">this</a> 
+for details on kernel upgrade.</b> </p>
+<p><tt>depmod -a</tt> <br>
+(as root) Build the module dependency table for the kernel. This can, for 
+example, be useful after installing and booting a new kernel. Use &quot;<tt>modprobe 
+-a</tt>&quot; to load the modules. </p>
+<p><tt>ldconfig</tt> <br>
+(as root) Re-create the bindings and the cache for the loader of dynamic 
+libraries (&quot;ld&quot;). You may want to run ldconfig after an installation of new 
+dynamically linked libraries on your system. (It is also re-run every time you 
+boot the computer, so if you reboot you don't have to run it manually.) </p>
+<p><tt>mknod /dev/fd0 b 2 0</tt> <br>
+(=make node, as root) Create a device file. This example shows how to create a 
+device file associated with your first floppy drive and could be useful if you 
+happened to accidentally erase it. The options are: b=block mode device 
+(c=character mode device, p=FIFO device, u=unbuffered character mode device). 
+The two integers specify the major and the minor device number. </p>
+<p><tt>fdformat /dev/fd0H1440</tt> <br>
+<tt>mkfs -c -t ext2</tt> <br>
+(=floppy disk format, two commands, as root) Perform a low-level formatting of a 
+floppy in the first floppy drive (/dev/fd0), high density (1440 kB). Then make a 
+Linux filesystem (-t ext2), checking/marking bad blocks (-c ). Making the files 
+system is an equivalent to the high-level format. </p>
+<p><tt>badblocks /dev/fd01440 1440</tt> <br>
+(as root) Check a high-density floppy for bad blocks and display the results on 
+the screen. The parameter &quot;1440&quot; specifies that 1440 blocks are to be checked. 
+This command does not modify the floppy. </p>
+<p><tt>fsck -t ext2 /dev/hda2</tt> <br>
+(=file system check, as root) Check and repair a filesystem. The example uses 
+the partition hda2, filesystem type ext2. </p>
+<p><tt>dd if=/dev/fd0H1440 of=floppy_image</tt> <br>
+<tt>dd if=floppy_image of=/dev/fd0H1440</tt> <br>
+(two commands, dd=&quot;data duplicator&quot;) Create an image of a floppy to the file 
+called &quot;floppy_image&quot; in the current directory. Then copy <tt>floppy_image</tt> 
+(file) to another floppy disk. Works like DOS &quot;DISKCOPY&quot;. <br>
+&nbsp; </p>
+<h2>Program installation</h2>
+<p><tt>rpm -ivh<i> filename.rpm</i></tt> <br>
+(=RedhatPackageManager, install, verbose, hashes displayed to show progress, as 
+root.) Install a content of RedHat rpm package(s) and print info on what 
+happened. Keep reading if you prefer a GUI installation. </p>
+<p><tt>rpm -qpi <i>filename.rpm</i></tt> <br>
+(=RedhatPackageManager, query, package, list.) Read the info on the content of a 
+yet uninstalled package <i>filename.rpm</i>. </p>
+<p><tt>rpm -qpl <i>filename.rpm</i></tt> <br>
+(=RedhatPackageManager, query, package, information.) List the files contained 
+in a yet uninstalled package <i>filename.rpm</i>. </p>
+<p><tt>rpm -qf <i>filename</i></tt> <br>
+(=RedhatPackageManager, query, file.) Find out the name of the *.rpm package to 
+which the file <i>filename</i> (on your hardrive) belongs. </p>
+<p><tt>rpm -e <i>packagename</i></tt> <br>
+(=RedhatPackageManager, erase=uninstall.) Uninstall a package <i>pagckagename</i>.
+<i>Packagname</i> is the same as the beginning of the *.rpm package file but 
+without the dash and version number. </p>
+<p><tt>kpackage</tt> <br>
+<tt>gnorpm</tt> <br>
+<tt>glint</tt> <br>
+(in X terminal, as root if you want to be able to install packages) GUI fronts 
+to the Red Hat Package Manager (rpm). &quot;glint&quot; comes with RH5.2, &quot;gnorpm&quot; with 
+RH6.0, &quot;kpackage&quot; comes with RH6.1 or must be installed separately but is the 
+best of the three. Use any of them to view which software packages are installed 
+on your system and the what not-yet-installed packages are available on your 
+RedHat CD, display the info about the packages, and install them if you want 
+(installation must be done as root). <br>
+&nbsp; </p>
+<h2>Accessing drives/partitions</h2>
+<p><tt>mount</tt> <br>
+See <a href="http://sunsite.auc.dk/share/page/FAQ.htm#Where_drives">here</a> for 
+details on mounting drives.&nbsp; Examples are shown in the next commands. </p>
+<p><tt>mount -t auto /dev/fd0 /mnt/floppy</tt> <br>
+(as root) Mount the floppy. The directory <tt>/mnt/floppy</tt> must exist, be 
+empty and NOT be your current directory. </p>
+<p><tt>mount -t auto /dev/cdrom /mnt/cdrom</tt> <br>
+(as root) Mount the CD. You may need to create/modify the <tt>/dev/cdrom</tt> 
+file depending where your CDROM is. The directory <tt>/mnt/cdrom</tt> must 
+exist, be empty and NOT be your current directory. </p>
+<p><tt>mount /mnt/floppy</tt> <br>
+(as user or root) Mount a floppy as user. The file <tt>/etc/fstab</tt> must be 
+set up to do this. The directory <tt>/mnt/floppy</tt> must not be your current 
+directory. </p>
+<p><tt>mount /mnt/cdrom</tt> <br>
+(as user or root) Mount a CD as user. The file <tt>/etc/fstab</tt> must be set 
+up to do this. The directory <tt>/mnt/cdrom</tt> must not be your current 
+directory. </p>
+<p><tt>umount /mnt/floppy</tt> <br>
+Unmount the floppy. The directory <tt>/mnt/floppy</tt> must not be your (or 
+anybody else's) current working directory. Depending on your setup, you might 
+not be able to unmount a drive that you didn't mount. <br>
+&nbsp; </p>
+<h2>7.6 Network administration tools</h2>
+<p><tt>netconf</tt> <br>
+(as root) A very good menu-driven setup of your network. </p>
+<p><tt>ping<i>machine_name</i></tt> <br>
+Check if you can contact another machine (give the machine's name or IP), press 
+&lt;Ctrl&gt;C when done (it keeps going). </p>
+<p><tt>route -n</tt> <br>
+Show the kernel routing table. </p>
+<p><tt>nslookup <i>host_to_find</i></tt> <br>
+Query your default domain name server (DNS) for an Internet name (or IP number)
+<i>host_to_find</i>. This way you can check if your DNS works. You can also find 
+out the name of the host of which you only know the IP number. </p>
+<p><tt>traceroute <i>host_to_trace</i></tt> <br>
+Have a look how you messages trave to <i><tt>host_to_trace</tt></i> (which is 
+either a host name or IP number). </p>
+<p><tt>ipfwadm -F -p m</tt> <br>
+(for RH5.2, seen next command for RH6.0) Set up the firewall IP forwarding 
+policy to masquerading. (Not very secure but simple.) Purpose: all computers 
+from your home network will appear to the outside world as one very busy machine 
+and, for example, you will be allowed to browse the Internet from all computers 
+at once. </p>
+<p><tt>echo 1 &gt; /proc/sys/net/ipv4/ip_forward</tt> <br>
+<tt>ipfwadm-wrapper -F -p deny</tt> <br>
+<tt>ipfwadm-wrapper -F -a m -S xxx.xxx.xxx.0/24 -D 0.0.0.0/0</tt> <br>
+(three commands, RH6.0). Does the same as the previous command. Substitute&nbsp; the 
+&quot;x&quot;s&nbsp; with digits of your class &quot;C&quot; IP address that you assigned to your home 
+network. See <a href="http://sunsite.auc.dk/share/page/FAQ.htm#masquerading">
+here</a> for more details. In RH6.1, masquarading seems broken to me--I think I 
+will install Mandrake Linux:). </p>
+<p><tt>ifconfig</tt> <br>
+(as root) Display info on the network interfaces <u>currently active</u> (ethernet, 
+ppp, etc). Your first ethernet should show up as eth0, second as eth1, etc, 
+first ppp over modem as ppp0, second as ppp1, etc. The &quot;lo&quot; is the &quot;loopback 
+only&quot; interface which should be always active. Use the options (see <tt>ifconfig 
+--help</tt>) to configure the interfaces. </p>
+<p><tt>ifup <i>interface_name</i></tt> <br>
+(<tt>/sbin/ifup</tt> to it run as a user) Startup a network interface. E.g.: <br>
+<tt>ifup eth0</tt> <br>
+<tt>ifup ppp0</tt> <br>
+Users can start up or shutdown the ppp interface only when the right permission 
+was checked during the ppp setup (using <tt>netconf</tt> ). To start a ppp 
+interface (dial-up connection), I normally use kppp available under kde menu 
+&quot;internet&quot;. </p>
+<p><tt>ifdown <i>interface_name</i></tt> <br>
+(<tt>/sbin/ifdown</tt> to run it as a user). Shut down the network interface. 
+E.g.: <tt>ifdown ppp0 </tt>Also, see the previous command. </p>
+<p><tt>netstat | more</tt> <br>
+Displays a lot (too much?) information on the status of your network. <br>
+&nbsp; </p>
+<h2>Music-related commands</h2>
+<p><tt>cdplay play 1</tt> <br>
+Play the first track from a audio CD. </p>
+<p><tt>eject</tt> <br>
+Get a free coffee&nbsp; cup holder :))).&nbsp;&nbsp; (Eject the CD ROM tray). </p>
+<p><tt>play <i>my_file.wav</i></tt> <br>
+Play a wave file. </p>
+<p><tt>mpg123 <i>my_file.mp3</i></tt> <br>
+Play an mp3 file. </p>
+<p><tt>mpg123 -w <i>my_file.wav my_file.mp3</i></tt> <br>
+Create a wave audio file from an mp3 audio file. </p>
+<p><tt>knapster</tt> <br>
+(in X terminal) Start the program to downolad mp3 files that other users of 
+napster have displayed for downloading. Really cool! </p>
+<p><tt>cdparanoia -B&nbsp; &quot;1-&quot;</tt> <br>
+(CD ripper)&nbsp; Read the contents of an audio CD and save it into wavefiles in the 
+current directories, one track per wavefile.&nbsp; The &quot;1-&quot; <br>
+means &quot;from track 1 to the last&quot;. -B forces putting each track into a separate 
+file. </p>
+<p><tt>playmidi <i>my_file.mid</i></tt> <br>
+Play a midi file.&nbsp; <tt>playmidi -r <i>my_file.mid</i></tt>&nbsp; will display text 
+mode effects on the screen. </p>
+<p><tt>sox</tt> <br>
+(argument not given here) Convert from almost any audio file format to another 
+(but not mp3s).&nbsp; See <tt>man sox</tt>. <br>
+&nbsp; </p>
+<h2>Graphics-related commands</h2>
+<p><tt>kghostview <i>my_file.ps</i></tt> <br>
+Display a postscript file on screen.&nbsp; I can also use the older-looking <tt>
+ghostview</tt> or <tt>gv</tt> for the same end effect. </p>
+<p><tt>ps2pdf my_file.ps my_file.pdf</tt> <br>
+Make a pdf (Adobe portable document format) file from a postscript file. </p>
+<p><tt>gimp</tt> <br>
+(in X terminal) A humble looking but very powerful image processor. Takes some 
+learning to use, but it is great for artists, there is almost nothing you can't 
+do with gimp. Use your mouse right button to get local menus, and learn how to 
+use layers. Save your file in the native gimp file format *.xcf (to preserve 
+layers) and only then flatten it and save as png (or whatever).&nbsp; There is a 
+large user manual /usr/ </p>
+<p><tt>gphoto</tt> <br>
+(in X terminal) Powerful photo editor. </p>
+<p><tt>giftopnm <i>my_file.giff</i> &gt; <i>my_file.pnm</i></tt> <br>
+<tt>pnmtopng <i>my_file.pnm</i> &gt; <i>my_file.png</i></tt> <br>
+Convert the propriatory giff graphics into a raw, portable pnm file. Then 
+convert the pnm into a png file, which is a newer and better standard for 
+Internet pictures&nbsp; (better technically plus there is no danger of being sued by 
+the owner of giff patents).</p>
+
+<!--mstheme--></font></body>
+
+</html>

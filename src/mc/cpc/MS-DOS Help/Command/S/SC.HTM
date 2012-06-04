@@ -1,0 +1,709 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>SC</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#s">Commands N-Z</a>
+    &gt; <a href="../INDEXS.HTM#sc">Commands S</a>
+    <h1>SC</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Service Control - Create, Create remotely, Start, Stop,
+    Query, Delete.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>SC
+    [<a href="#ParameterBoot">boot</a>
+    | <a href="#ParameterConfig">config</a>
+    | <a href="#ParameterContinue">continue</a>
+    | <a href="#ParameterControl">control</a>
+    | <a href="#ParameterCreate">create</a>
+    | <a href="#ParameterDelete">delete</a>
+    | <a href="#ParameterDescription">description</a>
+    | <a href="#ParameterEnumDepend">enumdepend</a>
+    | <a href="#ParameterFailure">failure</a>
+    | <a href="#ParameterGetDisplayName">getdisplayname</a>
+    | <a href="#ParameterGetKeyName">getkeyname</a>
+    | <a href="#ParameterInterrogate">interrogate</a>
+    | <a href="#ParameterLock">lock</a>
+    | <a href="#ParameterPause">pause</a>
+    | <a href="#ParameterQc">qc</a>
+    | <a href="#ParameterQdescription">qdescription</a>
+    | <a href="#ParameterQfailure">qfailure</a>
+    | <a href="#ParameterQuery">query</a>
+    | <a href="#ParameterQueryEx">queryex</a>
+    | <a href="#ParameterQueryLock">querylock</a>
+    | <a href="#ParameterSdSet">sdset</a>
+    | <a href="#ParameterSdShow">sdshow</a>
+    | <a href="#ParameterStart">start</a>
+    | <a href="#ParameterStop">stop</a>]
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>SC
+    [<a href="#ParameterServerName">\\server_name</a>]
+    <a href="#ParameterBoot">boot</a>
+    [<a href="#ParameterLastBoot">bad | OK</a>]</p>
+
+    <p>SC
+    [<a href="#ParameterServerName">\\server_name</a>]
+    {<a href="#ParameterConfig">config</a>
+    | <a href="#ParameterCreate">create</a>}
+    [<a href="#ParameterServiceName">service_name</a>]
+    [<a href="#ParameterBinPath">binpath= binary_path_name</a>]
+    [<a href="#ParameterDepend">depend= dependencies</a>]
+    [<a href="#ParameterDisplayName">displayname= display_name</a>]
+    [<a href="#ParameterError">error= {critical | ignore | normal | severe}</a>]
+    [<a href="#ParameterGroup">group= load_order_group</a>]
+    [<a href="#ParameterObj">obj= {account_name | object_name}</a>]
+    [<a href="#ParameterPassword">password= password</a>]
+    [<a href="#ParameterStart">start= {auto | boot | demand | disabled | system}</a>]
+    [<a href="#ParameterTag">tag= {yes | no}</a>]
+    [<a href="#ParameterType">type= {{own | share} [type= interact] | adapt | kernel | filesys | rec}</a>]</p>
+
+    <p>SC
+    [<a href="#ParameterServerName">\\server_name</a>]
+    {<a href="#ParameterContinue">continue</a>
+    | <a href="#ParameterDelete">delete</a>
+    | <a href="#ParameterInterrogate">interrogate</a>
+    | <a href="#ParameterPause">pause</a>
+    | <a href="#ParameterSdShow">sdshow</a>}
+    [<a href="#ParameterServiceName">service_name</a>]</p>
+
+    <p>SC
+    [<a href="#ParameterServerName">\\server_name</a>]
+    <a href="#ParameterControl">control</a>
+    [<a href="#ParameterServiceName">service_name</a>]
+    [<a href="#ParameterServiceControl">{netbindadd | netbinddisable | netbindenable | netbindremove | paramchange | user_defined}</a>]</p>
+
+    <p>SC
+    [<a href="#ParameterServerName">\\server_name</a>]
+    <a href="#ParameterDescription">description</a>
+    [<a href="#ParameterServiceName">service_name</a>]
+    [<a href="#ParameterServiceDescription">description</a>]</p>
+
+    <p>SC
+    [<a href="#ParameterServerName">\\server_name</a>]
+    {<a href="#ParameterEnumDepend">enumdepend</a>
+    | <a href="#ParameterGetDisplayName">getdisplayname</a>
+    | <a href="#ParameterGetKeyName">getkeyname</a>
+    | <a href="#ParameterQc">qc</a>
+    | <a href="#ParameterQdescription">qdescription</a>
+    | <a href="#ParameterQfailure">qfailure</a>}
+    [<a href="#ParameterServiceName">service_name</a>]
+    [<a href="#ParameterBufferSize">buffer_size</a>]</p>
+
+    <p>SC
+    [<a href="#ParameterServerName">\\server_name</a>]
+    <a href="#ParameterFailure">failure</a>
+    [<a href="#ParameterServiceName">service_name</a>]
+    [<a href="#ParameterActions">actions= failure_actions_and_delay_time</a>
+     [<a href="#ParameterReset">reset= error_free_period</a>]]
+    [<a href="#ParameterCommandLine">command= command_line</a>]
+    [<a href="#ParameterReboot">reboot= broadcast_message</a>]</p>
+
+    <p>SC
+    [<a href="#ParameterServerName">\\server_name</a>]
+    {<a href="#ParameterLock">lock</a>
+    | <a href="#ParameterQueryLock">querylock</a>}</p>
+
+    <p>SC
+    [<a href="#ParameterServerName">\\server_name</a>]
+    {<a href="#ParameterQuery">query</a>
+    | <a href="#ParameterQueryEx">queryex</a>}
+    [<a href="#ParameterServiceName">service_name</a>]
+    [<a href="#ParameterTypeAll">type= {all | driver | service}</a>]
+    [<a href="#ParameterType">type= {adapt | interact | kernel | filesys | own | rec | share}</a>]
+    [<a href="#ParameterState">state= {active | inactive | all}</a>]
+    [<a href="#ParameterBufferSize">bufsize= buffer_size</a>]
+    [<a href="#ParameterRi">ri= resume_index</a>]
+    [<a href="#ParameterGroup">group= group_name</a>]</p>
+
+    <p>SC
+    [<a href="#ParameterServerName">\\server_name</a>]
+    <a href="#ParameterSdSet">sdset</a>
+    <a href="#ParameterServiceName">service_name</a>
+    <a href="#ParameterServiceSecurityDescriptor">service_security_descriptor</a></p>
+
+    <p>SC
+    [<a href="#ParameterServerName">\\server_name</a>]
+    <a href="#ParameterStart">start</a>
+    <a href="#ParameterServiceName">service_name</a>
+    [<a href="#ParameterServiceArguments">service_arguments</a>]</p>
+
+    <p>SC
+    [<a href="#ParameterServerName">\\server_name</a>]
+    <a href="#ParameterStop">stop</a>
+    <a href="#ParameterServiceName">service_name</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterActions"></a> actions= failure_actions_and_delay_time
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the failure actions and their delay time
+      (in milliseconds) separated by the forward slash (/).
+      These actions are valid:
+        <ul>
+          <li><b>""</b> no action upon failure</li>
+          <li><b>run</b></li>
+          <li><b>restart</b></li>
+          <li><b>reboot</b></li>
+        </ul>
+      It is possible to specify three different actions,
+      which will be used the first, second, and third time
+      a service fails.</dd>
+
+      <dt><a name="ParameterBinPath"></a> binpath= binary_path_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies a path to the service binary file.</dd>
+
+      <dt><a name="ParameterBoot"></a> boot
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Indicates whether the last boot should be saved
+      as the last-known-good configuration.</dd>
+
+      <dt><a name="ParameterBufferSize"></a> buffer_size
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the size (in bytes) of the enumeration
+      buffer. The default is 1024 bytes.</dd>
+      <dt> bufsize= buffer_size
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the size (in bytes) of the enumeration
+      buffer. The default size is 1024 bytes. Increase the
+      size of the enumeration buffer when the display
+      resulting from a query exceeds 1024 bytes.</dd>
+
+      <dt><a name="ParameterCommandLine"></a> command= command_line
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the command-line to be run upon failure
+      of the service.</dd>
+      <dd>Not all services allow changes to their failure
+      options. Some run as part of a service set.</dd>
+      <dd>To run a batch file upon failure, specify cmd.exe
+      Drive:\FileName.bat, where Drive:\FileName.bat is the
+      fully qualified name of the batch file.</dd>
+      <dd>To run a VBS file upon failure, specify cscript
+      drive:\myscript.vbs, where drive:\myscript.vbs is the
+      fully qualified name of the script file.</dd>
+
+      <dt><a name="ParameterConfig"></a> config
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Permanently modifies the value of a service's
+      entries in the registry and in the Service Control
+      Manager's database.</dd>
+
+      <dt><a name="ParameterContinue"></a> continue
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Sends a CONTINUE control request to a service in
+      order to resume a paused service.</dd>
+
+      <dt><a name="ParameterControl"></a> control
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Sends a CONTROL B to a service.</dd>
+
+      <dt><a name="ParameterCreate"></a> create
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Creates a subkey and entries for the service in
+      the registry and in the Service Control Manager's
+      database.</dd>
+
+      <dt><a name="ParameterDelete"></a> delete
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Deletes a service subkey from the registry. If the
+      service is running or if another process has an open
+      handle to the service, then the service is marked for
+      deletion.</dd>
+
+      <dt><a name="ParameterDepend"></a> depend= dependencies
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the names of services or groups which
+      must start before this service. The names are
+      separated by forward slashes (/).</dd>
+
+      <dt><a name="ParameterDescription"></a> description
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Sets the description string for a service.</dd>
+
+      <dt><a name="ParameterDisplayName"></a> displayname= display_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies a friendly, meaningful name that can be
+      used in user-interface programs to identify the
+      service to users.</dd>
+
+      <dt><a name="ParameterEnumDepend"></a> enumdepend
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Lists the services that cannot run unless the
+      specified service is running.</dd>
+
+      <dt><a name="ParameterError"></a> error= {critical | ignore | normal | severe}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the severity of the error if the
+      service fails to start during boot:
+        <ul>
+          <li><b>critical</b> The error is logged (if possible).  The computer
+          attempts to restart with the last-known-good configuration. If the
+          last-known-good configuration fails, startup also fails, and the boot
+          process halts with a Stop error</li>
+          <li><b>ignore</b> The error is logged and startup continues. No
+          notification is given to the user beyond recording the error in the
+          Event Log</li>
+          <li><b>normal</b> The error is logged and a message box is displayed
+          informing the user that a service has failed to start. Startup will
+          continue. This is the default setting</li>
+          <li><b>severe</b> The error is logged (if possible).  The computer
+          attempts to restart with the last-known-good configuration. This
+          could result in the computer being able to restart, but the service
+          may still be unable to run</li>
+        </ul>
+      </dd>
+
+      <dt><a name="ParameterFailure"></a> failure
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies what action to take upon failure of the
+      service.</dd>
+
+      <dt><a name="ParameterGetDisplayName"></a> getdisplayname
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Gets the display name associated with a particular
+      service.</dd>
+
+      <dt><a name="ParameterGetKeyName"></a> getkeyname
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Gets the key name associated with a particular
+      service, using the display name as input.</dd>
+
+      <dt><a name="ParameterGroup"></a> group= load_order_group
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the name of the group of which this
+      service is a member. The list of groups is stored in
+      the registry in the
+      HKLM\System\CurrentControlSet\Control\ServiceGroupOrder
+      subkey. The default is null.</dd>
+      <dt> group= group_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the service group to enumerate.
+      The default is all groups.</dd>
+
+      <dt><a name="ParameterInterrogate"></a> interrogate
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Sends an INTERROGATE control request to a service.</dd>
+      <dd>Causes the service to update its status with the
+      Service Control Manager.</dd>
+
+      <dt><a name="ParameterLastBoot"></a> bad | OK
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies whether the last boot was bad or
+      whether it should be saved as the last-known-good
+      boot configuration.</dd>
+
+      <dt><a name="ParameterLock"></a> lock
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Locks the Service Control Manager's database.</dd>
+      <dd>Use to make sure service will not be started
+      after it has been stopped. Allows to take action
+      without interference.</dd>
+      <dd>Using the lock operation locks the Service Control
+      Manager's database and then allows the database to be
+      unlocked by typing <b>u</b>. You can also kill the
+      process from which you locked the database.</dd>
+
+      <dt><a name="ParameterObj"></a> obj= {account_name | object_name}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies a name of an account in which a service
+      will run, or specifies a name of the Windows driver
+      object in which the driver will run.
+      The default is LocalSystem.</dd>
+
+      <dt><a name="ParameterPassword"></a> password= password
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies a password. This is required if an
+      account other than the LocalSystem account is used.</dd>
+
+      <dt><a name="ParameterPause"></a> pause
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Sends a PAUSE control request to a service.</dd>
+      <dd>Pause a service before shutting it down.</dd>
+      <dd>Not all services can be paused.</dd>
+      <dd>Not all services perform the same when paused.
+      Some continue to service existing clients, but refuse
+      to accept new clients. Others cease to service
+      existing clients and also refuse to accept new ones.</dd>
+
+      <dt><a name="ParameterQc"></a> qc
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Queries the configuration information for a
+      service.</dd>
+      <dd>Administrators can determine the binary name of
+      any service and find out if it shares a process with
+      other services.</dd>
+      <dd>Can help match up services in the Services node of
+      Microsoft Management Console (MMC) with processes in
+      System Monitor. If the binary name is Services.exe,
+      then the service shares the Service Controller
+      process.</dd>
+      <dd>Services.exe starts all services. To conserve
+      system resources, several Win32 services developed for
+      Windows are written to share the <b>Services.exe</b> process.
+      These services are not listed as separate processes in
+      System Monitor or Task Manager. The same is true of
+      <b>Svchost.exe</b> which is a service host process that many
+      operating services share.</dd>
+      <dd>There might not be a process for every Win32
+      service because third-party Win32 services can also be
+      configured to share processes. Can be used to get
+      configuration information on these services. If a
+      service does not share its process with other
+      services, however, there will be a process for it in
+      System Monitor when the service is running.</dd>
+      <dd>Can be useful for developers of services because
+      it provides more detailed and accurate information
+      about services than <b>Services.exe</b>, which is
+      included with Windows. <b>Services.exe</b> can
+      determine whether a service is running, stopped, or
+      paused. Although these tools are adequate for a
+      debugged application that is running smoothly, the
+      information they provide about a service being
+      developed can be misleading.</dd>
+      <dd>Implements calls to all Windows service control
+      application programming interface (API) functions.
+      Set the parameters to these functions by specifying
+      them at the command-line.</dd>
+      <dd>You can query the service status and retrieve the
+      values stored in the status structure fields.
+      <b>Services.exe</b> cannot provide you with the
+      complete status of a service, shows the exact state of
+      the service, as well as the last checkpoint number and
+      wait hint. You can use the checkpoint as a debugging
+      tool because it indicates how far the initialization
+      progressed before the program stopped responding. Also
+      lets you specify the name of a remote computer so that
+      you can call the service API functions or view the
+      service status structures on a remote computer.</dd>
+
+      <dt><a name="ParameterQdescription"></a> qdescription
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the description string of a service.</dd>
+
+      <dt><a name="ParameterQfailure"></a> qfailure
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the actions that will be performed if
+      the specified service fails.</dd>
+
+      <dt><a name="ParameterQuery"></a> query
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Obtains and displays information about the
+      specified service, driver, type of service, or type
+      of driver.</dd>
+
+      <dt><a name="ParameterQueryEx"></a> queryex
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Obtains and displays extended information about
+      the specified service, driver, type of service, or
+      type of driver.</dd>
+
+      <dt><a name="ParameterQueryLock"></a> querylock
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Queries and displays the lock status for the
+      Service Control Manager's database.</dd>
+
+      <dt><a name="ParameterReboot"></a> reboot= broadcast_message
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the message to be broadcast upon failure
+      of the service.</dd>
+
+      <dt><a name="ParameterReset"></a> reset= error_free_period
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the length of the period (in seconds)
+      with no failures after which the failure count should
+      be reset to 0. Must be used in conjunction with
+      <a href="#ParameterActions">actions=</a>.</dd>
+
+      <dt><a name="ParameterRi"></a> ri= resume_index
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the index number at which to begin or
+      resume the enumeration. The default is 0. Use in
+      conjunction with the bufsize= parameter when more
+      information is returned by a query than the default
+      buffer can display.</dd>
+      <dd>When a query command exceeds the size of the
+      enumeration buffer, a message similar to:
+<pre>
+      Enum: more data, need 2311 bytes start resume at index 84
+</pre>
+      To display remaining query information, set bufsize=
+      to be the number of bytes and ri= to the specified
+      index. The remaining output would be displayed by
+      typing:
+<pre>
+      SC <a
+href="#ParameterQuery">query</a> <a
+href="#ParameterBufferSize">bufsize= 2311</a> <a
+href="#ParameterRi">ri= 84</a>
+</pre>
+      </dd>
+
+      <dt><a name="ParameterSdSet"></a> sdset
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Sets a service's security descriptor using
+      Service Descriptor Definition Language (SDDL).</dd>
+
+      <dt><a name="ParameterSdShow"></a> sdshow
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays a service's security descriptor using
+      SDDL.</dd>
+
+      <dt><a name="ParameterServerName"></a> \\server_name
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Specifies the name of the remote server on which
+      the service is located. The name must use the
+      Universal Naming Convention (UNC) format.</dd>
+
+      <dt><a name="ParameterServiceArguments"></a> service_arguments
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Specifies service arguments to pass to the
+      service to be started.</dd>
+
+      <dt><a name="ParameterServiceSecurityDescriptor"></a> service_security_descriptor
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the service descriptor in SDDL.</dd>
+
+      <dt><a name="ParameterServiceControl"></a> {netbindadd | netbinddisable | netbindenable | netbindremove | paramchange | user_defined}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies a control to send to a service.</dd>
+
+      <dt><a name="ParameterServiceDescription"></a> description
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies a description for the specified service.
+      If no string is specified, the description of the
+      service is not modified. There is no limit to the
+      number of characters that can be contained in the
+      service description.</dd>
+
+      <dt><a name="ParameterServiceName"></a> service_name
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>The KeyName of the service, this is often but not always
+      the same as the DisplayName shown in CPanel, Services.</dd>
+      <dd>Specifies the service name returned by the
+      <a href="#ParameterGetKeyName">getkeyname</a> operation.</dd>
+
+      <dt><a name="ParameterStart"></a> start
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Starts a service running.</dd>
+      <dt> start= {auto | boot | demand | disabled | system}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the service start type:
+        <ul>
+          <li><b>auto</b> A service that automatically starts each time the
+          computer is restarted and runs even if no one logs on to the
+          computer</li>
+          <li><b>boot</b> A device driver that is loaded by the boot
+          loader</li>
+          <li><b>demand</b> A service that must be manually started. This is
+          the default value if start= is not specified</li>
+          <li><b>disabled</b> A service that cannot be started. To start a
+          disabled service, change the start type to some other value</li>
+          <li><b>system</b> A device driver that is started during kernel
+          initialization</li>
+        </ul>
+      </dd>
+
+      <dt><a name="ParameterState"></a> state= {active | inactive | all}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the started state of the service for
+      which to enumerate:
+        <ul>
+          <li><b>active</b> Specifies all active services</li>
+          <li><b>all</b> Specifies all services</li>
+          <li><b>inactive</b> Specifies all paused or stopped services</li>
+        </ul>
+      </dd>
+
+      <dt><a name="ParameterStop"></a> stop
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Sends a STOP control request to a service.</dd>
+
+      <dt><a name="ParameterTag"></a> tag= {yes | no}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies whether or not to obtain a TagID from
+      the CreateService call. Tags are only used for
+      boot-start and system-start drivers.</dd>
+
+      <dt><a name="ParameterType"></a> type= {{own | share} [type= interact] | adapt | kernel | filesys | rec}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the service type:
+        <ul>
+          <li><b>adapt</b> Adapter driver (identifies hardware items such as keyboard, mouse, and disk drive)</li>
+          <li><b>filesys</b> File system driver</li>
+          <li><b>interact</b> The service can interact with the desktop, receiving input from users.  Interactive services must be run under the LocalSystem account. This type MUST be used in conjunction with <b>own</b> or <b>share</b></li>
+          <li><b>kernel</b> Driver</li>
+          <li><b>own</b> The service runs in its own process.  It does not share an executable file with other services. This is the default</li>
+          <li><b>rec</b> File system-recognized driver (identifies file systems used on the computer)</li>
+          <li><b>share</b> The service runs as a shared process.  It shares an executable file with other services</li>
+        </ul>
+      </dd>
+      <dt> type= {adapt | interact | kernel | filesys | own | rec | share}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the type of services or type of drivers
+      to enumerate:
+        <ul>
+          <li><b>adapt</b> ?</li>
+          <li><b>filesys</b> File system driver</li>
+          <li><b>interact</b> The service can interact with the desktop, receiving input from users. Interactive services must be run under the LocalSystem account</li>
+          <li><b>kernel</b> Driver</li>
+          <li><b>own</b> The service runs in its own process. It does not share an executable file with other services. This is the default</li>
+          <li><b>rec</b> ?</li>
+          <li><b>share</b> The service runs as a shared process. It shares an executable file with other services</li>
+        </ul>
+      </dd>
+
+      <dt><a name="ParameterTypeAll"></a> type= {all | driver | service}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the started state of the service for
+      which to enumerate:
+        <ul>
+          <li><b>active</b> Specifies all active services, default</li>
+          <li><b>all</b> Specifies all services</li>
+          <li><b>inactive</b> Specifies all paused or stopped services</li>
+        </ul>
+      </dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../D/DELSRV.HTM">DELSRV</a> - Delete NT service.
+    <br><a href="../N/NETHELP.HTM">NET HELP</a> - manage network resources.
+    <br><a href="../I/IF.HTM">IF</a> - Conditionally perform a command.
+    <br><a href="SCLIST.HTM">SCLIST</a> - Display NT Services.
+    <br><a href="START.HTM">START</a> /HIGH - Start a specified program or command.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>nice - Change job scheduling priority.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>The create and config commands have a several additional options
+    for full details just enter:</p>
+<pre>
+    SC <a href="#ParameterCreate">create</a>
+    SC <a href="#ParameterConfig">config</a>
+</pre>
+
+    <p>The SC command duplicates some aspects of the NET command
+    but adds the ability to create a service and can run a query to
+    see if a service is running, giving output something like this:</p>
+<pre>
+ SERVICE_NAME : messenger
+        TYPE               : 20  WIN32_SHARE_PROCESS
+        STATE              : 4  RUNNING
+                                (STOPPABLE,NOT_PAUSABLE,ACCEPTS_SHUTDOWN)
+        WIN32_EXIT_CODE    : 0  (0x0)
+        SERVICE_EXIT_CODE  : 0  (0x0)
+        CHECKPOINT         : 0x0
+        WAIT_HINT          : 0x0
+</pre>
+
+    <hr>
+    <p>You can pipe the output into FIND in order to retrieve specific
+    sections of the above output e.g.</p>
+<pre>
+    SC <a
+href="#ParameterQuery">query</a> <a
+href="#ParameterServiceName">messenger</a> | FIND "RUNNING"
+</pre>
+
+    <p>The FIND command will set the ERRORLEVEL:</p>
+    <ul>
+    <li>ERRORLEVEL 0 = Running</li>
+    <li>ERRORLEVEL 1 = Stopped or Paused</li>
+    </ul>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+<pre>
+    SC <a
+href="#ParameterGetKeyName">GetKeyName</a> <a
+href="#ParameterServiceName">"task scheduler"</a>
+
+    SC <a
+href="#ParameterGetDisplayName">GetDisplayName</a> <a
+href="#ParameterServiceName">schedule</a>
+
+    SC <a
+href="#ParameterStart">start</a> <a
+href="#ParameterServiceName">schedule</a>
+
+    SC <a
+href="#ParameterQuery">query</a> <a
+href="#ParameterServiceName">schedule</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External Resource Kit</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          </dd>
+        </dl>
+      </dd>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

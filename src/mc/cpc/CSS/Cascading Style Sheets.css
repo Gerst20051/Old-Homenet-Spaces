@@ -1,0 +1,27 @@
+p            {  }
+h1           {  color: #AE0000}
+h2           {  color: #000080}
+h3           {  color: #008000}
+h4           {  color: #1B1B1B}
+h5           {  }
+h6           {  }
+body         {  }
+a            {  }
+a:visited    {  }
+a:link       {  }
+a:active     {  }
+a:hover      {  font-weight: bold; font-style:italic}
+html         {  }
+hr           {  }
+html         {  }
+li           {  }
+ol           {  }
+ul           {  }
+table        {  background-color: #F5F5F5; padding-left:5; border:0px}
+td           {  }
+textarea     {  }
+th           {  }
+tr           {  }
+
+.css       {  color: #FF9933; font-size: 14pt}
+.example   {  color: yellow; font-size: 14pt}

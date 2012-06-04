@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>W32TM</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#w">Commands N-Z</a>
+    &gt; <a href="../INDEXW.HTM#w32tm">Commands W</a>
+    <h1>W32TM</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>A tool used to diagnose problems occuring with Windows Time.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>W32TM
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>W32TM
+    {<a href="#SwitchConfig">/CONFIG</a>
+     [<a href="#SwitchComputer">/COMPUTER:\\computer_name</a>]
+     [[<a href="#SwitchUpdate">/UPDATE</a>]
+      [<a href="#SwitchManualPeerList">/MANUALPEERLIST:list_of_computer_names</a>]]
+     [<a href="#SwitchSyncFromFlags">/SYNCFROMFLAGS:list_of_flags</a>]
+    | <a href="#SwitchMonitor">/MONITOR</a>
+    | <a href="#SwitchNtte">/NTTE</a>
+    | <a href="#SwitchNtpte">/NTPTE</a>
+    | <a href="#SwitchRegister">/REGISTER</a>
+    | <a href="#SwitchResync">/RESYNC</a>
+      [{<a href="#SwitchComputer">\\computer_name</a>]
+       [<a href="#SwitchNoWait">/NOWAIT</a>]
+      | <a href="#SwitchRediscover">/REDISCOVER</a>}]
+    | <a href="#SwitchTz">/TZ</a>
+    | <a href="#SwitchUnregister">/UNREGISTER</a>}</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchComputer"></a> /COMPUTER:\\computer_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dt> \\computer_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>If ommitted, default to local computer.</dd>
+
+      <dt><a name="SwitchConfig"></a> /CONFIG
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Adjusts time settings.</dd>
+
+      <dt><a name="SwitchManualPeerList"></a> /MANUALPEERLIST:list_of_computer_names
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Set time synchronization peers.</dd>
+
+      <dt><a name="SwitchMonitor"></a> /MONITOR
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Monitors the target computer or list of computers.</dd>
+
+      <dt><a name="SwitchNoWait"></a> /NOWAIT
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Do not wait for resynchronization. Forces
+      redetection of network resourced before
+      resynchronization.</dd>
+
+      <dt><a name="SwitchNtte"></a> /NTTE
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Converts an NT system time into a readable format.</dd>
+
+      <dt><a name="SwitchNtpte"></a> /NTPTE
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Converts an NTP time into a readable format.</dd>
+
+      <dt><a name="SwitchRediscover"></a> /REDISCOVER
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Do not use current time resources.</dd>
+
+      <dt><a name="SwitchRegister"></a> /REGISTER
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Register to run as a service and add default
+      configuration to the registry.</dd>
+
+      <dt><a name="SwitchResync"></a> /RESYNC
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Resynchronize the clock as soon as possible,
+      disregarding all accumulated error statistics.</dd>
+
+      <dt><a name="SwitchSyncFromFlags"></a> /SYNCFROMFLAGS:list_of_flags
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Set the source type used for synchronization, to:
+        <ul>
+          <li><b>MANUAL</b> use the manual peer list</li>
+          <li><b>DOMHIER</b> synchronize from a domain controller</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchTz"></a> /TZ
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display the current time zone settings.</dd>
+
+      <dt><a name="SwitchUnregister"></a> /UNREGISTER
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Unregister service and remove all configuration
+      information from the registry.</dd>
+
+      <dt><a name="SwitchUpdate"></a> /UPDATE
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Configuration changes are used by Windows Time
+      without the service being restarted.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

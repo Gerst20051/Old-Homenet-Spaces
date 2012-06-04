@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>NTBACKUP</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#n">Commands N-Z</a>
+    &gt; <a href="../INDEXN.HTM#ntbackup">Commands N</a>
+    <h1>NTBACKUP</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Backup drives / folders to tape.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>NTBACKUP
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>Erase the tape (Requires user confirmation):</p>
+    <p>NTBACKUP
+    <a href="#SwitchNopoll">/nopoll</a></p>
+
+    <p>Convert tape to single unit rather than part of a set (Requires user confirmation):</p>
+    <p>NTBACKUP
+    <a href="#SwitchMissingtape">/missingtape</a></p>
+
+    <p>NTBACKUP
+    <a href="#ParameterEject">EJECT</a>
+    <a href="#SwitchTape">/tape:{n}</a></p>
+
+    <p>NTBACKUP
+    <a href="#ParameterBackup">BACKUP</a>
+    <a href="#ParameterPath">path</a>
+    [<a href="#SwitchA">/a</a>]
+    [<a href="#SwitchT">/t {type}</a>]
+    [<a href="#SwitchL">/l "logfile"</a>]
+    [<a href="#SwitchTape">/tape:{n}</a>]
+    [<a href="#SwitchB">/b</a>]
+    [<a href="#SwitchD">/d "description text"</a>]
+    [<a href="#SwitchE">/e</a>]
+    [<a href="#SwitchHc">/hc:[on | off]</a>]
+    [<a href="#SwitchR">/r</a>]
+    [<a href="#SwitchV">/v</a>]</p>
+
+    <p>NTBACKUP
+    <a href="#ParameterBackup">BACKUP</a>
+    [<a href="#ParameterSystemState">SYSTEMSTATE</a>]
+    <a href="#ParameterBksFileName">"@bks_file_name"</a>
+    <a href="#SwitchJ">/J "job_name"</a>
+    [[<a href="#SwitchA">/A</a>]
+     [<a href="#SwitchN">/N "media_name"</a>]
+      <a href="#SwitchF">/F "file_name"</a>
+    | [<a href="#SwitchN">/N "media_name"</a>]
+      <a href="#SwitchP">/P "pool_name"</a>
+    | <a href="#SwitchA">/A</a>
+      <a href="#SwitchG">/G "guid_name"</a>
+    | <a href="#SwitchA">/A</a>
+      <a href="#SwitchT">/T "tape_name"</a>]
+    [<a href="#SwitchD">/D "set_description"</a>]
+    [<a href="#SwitchDS">/DS "server_name"</a>]
+    [<a href="#SwitchIS">/IS "server_name"</a>]
+    [<a href="#SwitchV">/V:[YES | NO]</a>]
+    [<a href="#SwitchR">/R:[YES | NO]</a>]
+    [<a href="#SwitchL">/L:[F | N | S]</a>]
+    [<a href="#SwitchM">/M "backup_type"</a>]
+    [<a href="#SwitchRS">/RS:[YES | NO]</a>]
+    [<a href="#SwitchHc">/HC:[ON | OFF]</a>]
+    [<a href="#SwitchSnap">/SNAP:[ON | OFF]</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterBackup"></a> BACKUP
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through
+       <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Make backup.</dd>
+
+      <dt><a name="ParameterBksFileName"></a> "@bks_file_name"
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the name of the backup selection file
+      (.bks file) to be used for this backup operation. The
+      at (@) character must precede the name of the backup
+      selection file. A backup selection file contains
+      information on the files and folders you have selected
+      for backup. You have to create the file using the
+      graphical user interface (GUI) version of Backup.</dd>
+
+      <dt><a name="ParameterEject"></a> EJECT
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a> ONLY)</dt>
+      <dd>?</dd>
+
+      <dt><a name="ParameterPath"></a> path
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a> ONLY)</dt>
+      <dd>One or more paths to be backed up.</dd>
+
+      <dt><a name="ParameterSystemState"></a> SYSTEMSTATE
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that you want to back up the System
+      State data. When you select this option, the backup
+      type will be forced to normal (copies all selected
+      files and clears the archive attribute on each file)
+      or copy (copies all selected files and does not clear
+      the archive attributes).</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchA"></a> /a
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Append rather than overwrite backup sets onto the tape
+      (required if more then one drive is to be backed up).</dd>
+      <dd>Robb Topolski says: Speaking from experience only, in
+      <a href="../../Version/MSWIN/NTXP.HTM">XP</a>, /A appends
+      to an existing file. Otherwise, the file is replaced.</dd>
+
+      <dt><a name="SwitchB"></a> /b
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through
+       <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Backup the local registry.</dd>
+
+      <dt><a name="SwitchD"></a> /d "description text"
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through
+       <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Description of the backup.
+      Specifies a label for each backup set.</dd>
+
+      <dt><a name="SwitchDS"></a> /DS "server_name"
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Backs up the directory service file for the
+      specified Microsoft Exchange Server.</dd>
+
+      <dt><a name="SwitchE"></a> /e
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through
+       <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Include only exceptions in the backup log.</dd>
+
+      <dt><a name="SwitchF"></a> /F "file_name"
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Logical disk path and file name.</dd>
+
+      <dt><a name="SwitchG"></a> /G "guid_name"
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Overwrites or appends to this tape.</dd>
+
+      <dt><a name="SwitchHc"></a> /hc:[on | off]
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Uses hardware compression, if available, on the
+      tape drive.</dd>
+
+      <dt><a name="SwitchIS"></a> /IS "server_name"
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Backs up the Information Store file for the
+      specified Microsoft Exchange Server.</dd>
+
+      <dt><a name="SwitchJ"></a> /J "job_name"
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the job name to be used in the log file.
+      The job_name usually describes the files and folders
+      you are backing up in the current backup job as well
+      as the date and time you backed up the files.</dd>
+
+      <dt><a name="SwitchL"></a> /l "logfile"
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through
+       <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>The filename for the backup log.</dd>
+      <dt> /L:[F | N | S]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the type of log file:
+        <ul>
+          <li><b>f</b> full</li>
+          <li><b>n</b> none (no log file is created)</li>
+          <li><b>s</b> summary</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchM"></a> /M "backup_type"
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the backup type. It must be one of:
+        <ul>
+          <li><b>copy</b> copies all selected files and does
+          not clear the archive attributes. Does not affect
+          other backup operations, useful between normal and
+          incremental backups.</li>
+          <li><b>daily</b> copies all selected files that
+          have been modified that day. The archive attribute
+          is not cleared.</li>
+          <li><b>differential</b> copies files created or
+          changed since the last normal or incremental. does
+          not clear the archive attribute. Restoration
+          requires the last normal AND differential.</li>
+          <li><b>incremental</b> copies files created or
+          changed since the last normal or incremental. The
+          archive attribute is cleared. Restoration requires
+          the last normal AND ALL incrementals made since
+          the last normal.</li>
+          <li><b>normal</b> copies all selected files and
+          clears the archive attribute on each file. You
+          only need the most recent copy to restore all the
+          files. Usually the first backup set created.</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchMissingtape"></a> /missingtape
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a> ONLY)</dt>
+      <dd>Convert tape to single unit rather than part of a set
+      (Requires user confirmation).</dd>
+
+      <dt><a name="SwitchN"></a> /N "media_name"
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the new tape name.</dd>
+
+      <dt><a name="SwitchNopoll"></a> /nopoll
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a> ONLY)</dt>
+      <dd>Erase the tape (Requires user confirmation).</dd>
+
+      <dt><a name="SwitchP"></a> /P "pool_name"
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the media pool from which you want to
+      use media. This is usually a subpool of the Backup
+      media pool, such as 4mm DDS.</dd>
+
+      <dt><a name="SwitchR"></a> /r
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through
+       <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dt> /R:[YES | NO]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Restricts access to this tape to the owner or
+      members of the Administrators group.</dd>
+
+      <dt><a name="SwitchRS"></a> /RS:[YES | NO]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Backs up the migrated data files located in Remote
+      Storage. Not required to back up the local Removable
+      Storage database (that contains the Remote Storage
+      placeholder files). When you backup the
+      <a href="../../ENV/MSWIN/SYSTEMRO.HTM">%SYSTEMROOT%</a>
+      folder, Backup automatically backs up the Removable
+      Storage database as well.</dd>
+
+      <dt><a name="SwitchSnap"></a> /SNAP:[ON | OFF]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies whether or not the backup is a volume
+      shadow copy (duplicates original volume).</dd>
+
+      <dt><a name="SwitchT"></a> /t {type}
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through
+       <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Backup type, can be one of:
+      <ul>
+      <li>normal</li>
+      <li>copy</li>
+      <li>incremental differential</li>
+      <li>daily</li>
+      </ul>
+      </dd>
+      <dt> /T "tape_name"
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Overwrites or appends to this tape.</dd>
+
+      <dt><a name="SwitchTape"></a> /tape:{n}
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a> ONLY)</dt>
+      <dd>The tape drive 'n' is a number from 0 to 9
+      (assigned during tape drive installation).</dd>
+
+      <dt><a name="SwitchV"></a> /v
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a> through
+       <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dt> /V:[YES | NO]
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Verify the operation.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../A/AT.HTM">AT</a> - Schedule a command to run at a later time.
+    <br><a href="../C/COPY.HTM">COPY</a> - Copy one or more files to another location.
+    <br><a href="../V/VERIFY.HTM">VERIFY</a> - Verify that files have been saved.
+    <br><a href="../X/XCOPY.HTM">XCOPY</a> - Copy files and folders.
+    <br><b>Equivalent Linux BASH command:</b>
+    <br>tar - Tape ARchiver.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>The GUI command 'Operations, Backup' allows Logging options
+    to be set:</p>
+    <ul>
+    <li><b>Full Detail</b>: Log all operations, including the names
+    of files and folders that are backed up.</li>
+    <li><b>Summary Only</b>: Log only major operations, such as
+    loading a tape, starting the backup, and failing to open a file.</li>
+    <li><b>Don't Log</b>: Nothing is logged.</li>
+    </ul>
+
+    <p>To restore a full backup from tape will require the NTBACKUP
+    program itself to be available, in other words you either need
+    to be able to boot NT or reinstall it from the original media.
+    There are no command-line options for running a restore - you
+    have to use the GUI.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2004/10/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

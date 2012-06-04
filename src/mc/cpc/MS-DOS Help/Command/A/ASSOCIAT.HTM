@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>ASSOCIATE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#a">Commands A-M</a>
+    &gt; <a href="../INDEXA.HTM#associate">Commands A</a>
+    <h1>ASSOCIATE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>One step file association.</p>
+    <p>This utility does the job of both <a href="ASSOC.HTM">ASSOC</a>
+    and <a href="../F/FTYPE.HTM">FTYPE</a>, in one step. ASSOCIATE
+    assigns an extension directly with an executable application. This
+    is done by automatically adding a new FileType to the system
+    registry.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>ASSOCIATE
+    <a href="#ParameterExtension">.ext</a>
+    <a href="#ParameterFilename">filename</a>
+    [<a href="#SwitchQ">/q</a>]
+    [<a href="#SwitchD">/d</a>]
+    [<a href="#SwitchF">/f</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterExtension"></a> .ext
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>The file extension. A file extension is the last few
+      characters in a FileName after the period. So a file called
+      JANUARY.HTML has the file extension .HTML.</dd>
+      <dd>The File extension is used by Windows NT to determine the
+      type of information stored in the file and therefore which
+      application(s) will be able to display the information in the
+      file. File extensions are not case sensitive and are not limited
+      to 3 characters.</dd>
+      <dd>More than one file extension may be associated with the same
+      File Type.</dd>
+      <dd>e.g. both the extension .JPG and the extension .JPEG may be
+      associated with the File Type "jpegfile"</dd>
+      <dd>At any one time a given file extension may only be associated
+      with one File Type.</dd>
+      <dd>e.g. If you change the extension .JPG so it is associated
+      with the File Type "txtfile" then it's normal association with
+      "jpegfile" will disappear. Removing the association to "txtfile"
+      does not restore the association to "jpegfile"</dd>
+      <dd>File Types can be displayed in the Windows Explorer GUI:
+      [View, Options, File Types] however the spelling is usually
+      different to that expected by the ASSOC command e.g. the File
+      Type "txtfile" is displayed in the GUI as "Text Document"and
+      "jpegfile" is displayed as "image/jpeg"</dd>
+
+      <dt><a name="ParameterFilename"></a> filename
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Executable program to associate .ext with.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchD"></a> /d
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Delete - Delete the association.</dd>
+      <dd>Note that /d will delete the File Association but will NOT
+      delete the File Type.</dd>
+      <dd>File types created by Associate.exe are always given a name
+      in the form xxxfile, where xxx is the file extension.</dd>
+
+      <dt><a name="SwitchF"></a> /f
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Force - Force overwrite or delete without questions.</dd>
+
+      <dt><a name="SwitchQ"></a> /q
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Quiet - Suppress interactive prompts.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../F/FTYPE.HTM">FTYPE</a> - Edit file types (used in
+    file extension associations)
+    <br><a href="ASSOC.HTM">ASSOC</a> - Change file extension
+    associations
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>export - Set an environment variable</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>Adding a File Association:</p>
+    <p>To add the File Type "SQLfile"=Notepad.exe and also set the File
+    Association of .SQL="SQLfile" run this command:</p>
+<pre>
+    ASSOCIATE <a
+href="#ParameterExtension">.SQL</a> <a
+href="#ParameterFilename">Notepad.exe</a>
+</pre>
+
+    <hr>
+    <p>Removing a File Association:</p>
+<pre>
+    ASSOCIATE <a
+href="#ParameterExtension">.SQL</a> <a
+href="#SwitchD">/d</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External Resource Kit</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

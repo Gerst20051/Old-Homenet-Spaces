@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>RUNAS</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#r">Commands N-Z</a>
+    &gt; <a href="../INDEXR.HTM#runas">Commands R</a>
+    <h1>RUNAS</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Execute a program under a different user account.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>RUNAS
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>RUNAS
+    [{<a href="#SwitchProfile">/profile</a>
+    |<a href="#SwitchNoProfile">/noprofile</a>}]
+    [<a href="#SwitchEnv">/env</a>]
+    [<a href="#SwitchNetonly">/netonly</a>]
+    [<a href="#SwitchSmartCard">/smartcard</a>]
+    [<a href="#SwitchShowTrustLevels">/showtrustlevels</a>]
+    [<a href="#SwitchTrustLevel">/trustlevel</a>]
+    <a href="#SwitchUser">/user</a>:username
+    <a href="#ParameterProgram">program</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterProgram"></a> program
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>The command to execute.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchEnv"></a> /env
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Use current environment instead of user's.</dd>
+
+      <dt><a name="SwitchNetonly"></a> /netonly
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Use if the credentials specified are for RAS only.</dd>
+
+      <dt><a name="SwitchNoProfile"></a> /noprofile
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that the user's profile is not to be
+      loaded. This allows the application to load more
+      quickly, but it can also cause a malfunction in some
+      applications.</dd>
+
+      <dt><a name="SwitchProfile"></a> /profile
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Load the user's profile (registry). Default.</dd>
+
+      <dt><a name="SwitchShowTrustLevels"></a> /showtrustlevels
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Lists the
+      <a href="#SwitchTrustLevel">/trustlevel</a> options.</dd>
+
+      <dt><a name="SwitchSmartCard"></a> /smartcard
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Indicates whether the credentials are to be
+      supplied from a smartcard.</dd>
+
+      <dt><a name="SwitchTrustLevel"></a> /trustlevel
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the level of authorization at which the
+      application is to run. Use
+      <a href="#SwitchShowTrustLevels">/showtrustlevels</a>
+      to see the trust levels available.</dd>
+
+      <dt><a name="SwitchUser"></a> /user:username
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Username in form USER@DOMAIN or DOMAIN\USER
+      (USER@DOMAIN is not compatible with
+      <a href="#SwitchNetonly">/netonly</a>).</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../A/AT.HTM">AT</a> - Run a command on a remote machine (at a scheduled time).
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>SU - Switch User.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Enter user's password only when prompted.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+<pre>
+    RUNAS <a
+href="#SwitchProfile">/profile</a> <a
+href="#SwitchUser">/user</a>:mymachine\administrator <a
+href="#ParameterProgram">CMD</a>
+
+    RUNAS <a
+href="#SwitchProfile">/profile</a> <a
+href="#SwitchEnv">/env</a> <a
+href="#SwitchUser">/user</a>:SCOT_DOMAIN\administrator <a
+href="#ParameterProgram">NOTEPAD</a>
+
+    RUNAS <a
+href="#SwitchEnv">/env</a> <a
+href="#SwitchUser">/user</a>:user@domain.microsoft.com <a
+href="#ParameterProgram">"NOTEPAD \"my file.txt\""</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

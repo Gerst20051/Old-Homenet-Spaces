@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CHKDSK</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCH.HTM#chkdsk">Commands Ch-Cz</a>
+    <h1>CHKDSK</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Checks the status of a disk and displays a status report. Can
+    also fix disk errors.</p>
+    <p>The status report shows errors found in the operating system
+    filing system, which consists of the file allocation table and
+    directories. CHKDSK also displays a summary of disk usage. (CHKDSK
+    does not verify that the information in your files can be
+    accurately read.) If errors exist on the disk, CHKDSK alerts you
+    with a message.</p>
+    <p><b>Note:</b> The <a href="../S/SCANDISK.HTM">SCANDISK</a>
+    program is the preferred method of fixing drive problems, and
+    should be used instead of the CHKDSK <a href="#SwitchF">/F</a>
+    command. For more information, see the
+    <a href="../S/SCANDISK.HTM">SCANDISK</a> command.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CHKDSK
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>CHKDSK
+    [<a href="#ParameterDrive">drive:</a>][<a href="#ParameterPathFilename">[path]filename</a>]
+    [<a href="#SwitchF">/F</a>]
+    [<a href="#SwitchV">/V</a>]
+    [<a href="#SwitchR">/R</a>]
+    [<a href="#SwitchX">/X</a>]
+    [<a href="#SwitchI">/I</a>]
+    [<a href="#SwitchC">/C</a>]
+    [<a href="#SwitchL">/L</a>[:size]]</p>
+
+    <p>Display the current drive disk status:</p>
+    <p>CHKDSK</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the drive that contains the disk that you want
+      CHKDSK to check.</dd>
+
+      <dt><a name="ParameterPathFilename"></a> [path]filename
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the location and name of a file or set of files
+      that you want CHKDSK to check for fragmentation. You can use
+      wildcards (* and ?) to specify multiple files.</dd>
+      <dd>Specifies the directory to which you want to change.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchC"></a> /C
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>NTFS only: Skips checking of cycles within the folder
+      structure.</dd>
+      <dd>Reduces the amount of time required to run Chkdsk by
+      skipping certain checks of the volume.</dd>
+
+      <dt><a name="SwitchF"></a> /F
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Fixes errors on the disk. Do not use this option when running
+      CHKDSK from other programs; for more information, see
+      <a href="#OpenFiles">"Using CHKDSK With Open Files" in</a>.
+      In general, when fixing disk errors, use
+      <a href="../S/SCANDISK.HTM">ScanDisk</a> instead of CHKDSK.</dd>
+      <dd>If you specify the /F switch, chkdsk will show an error if
+      open files are found on the disk.</dd>
+      <dd>If you use chkdsk /F on a very large disk or a disk with a
+      very large number of files (millions), chkdsk may take a long
+      time to complete. The computer will not be available during this
+      time, as chkdsk does not relinquish control until it is
+      done.</dd>
+      <dd>If the drive is the boot partition for NT, you will be
+      prompted to run the check during the next boot.</dd>
+      <dd>To issue ckdsk on a hard drive you must be a member of the
+      Administrators group.</dd>
+
+      <dt><a name="SwitchI"></a> /I
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>NTFS only: Performs a less vigorous check of index
+      entries.</dd>
+      <dd>Reduces the amount of time required to run Chkdsk by
+      skipping certain checks of the volume.</dd>
+
+      <dt><a name="SwitchL"></a> /L[:size]
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>NTFS only: Change the log file size to the specified number
+      of kilobytes. If size is not specified, displays the current log
+      size and the drive type (FAT or NTFS).</dd>
+
+      <dt><a name="SwitchR"></a> /R
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Locates bad sectors and recovers readable information
+      (implies <a href="#SwitchF">/F</a>).</dd>
+
+      <dt><a name="SwitchV"></a> /V
+      (<a href="../../Version/MSDOS/400.HTM">v4.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>On FAT/FAT32: Displays the full path and name of every file
+      on the disk.</dd>
+      <dd>On NTFS: Displays cleanup messages if any.</dd>
+
+      <dt><a name="SwitchX"></a> /X
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Forces the volume to dismount first if necessary.
+      All opened handles to the volume would then be invalid
+      (implies <a href="#SwitchF">/F</a>).</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="../S/SCANDISK.HTM">SCANDISK</a>
+    - GUI based Disk Repair.
+    <br><a href="CHKNTFS.HTM">CHKNTFS</a> - schedule CHKDSK to run at boot
+    time.
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>cksum - Print CRC checksum and byte counts (can detect problems
+    but not fix them)</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Sectors">Bad disk sectors</a></li>
+      <li><a href="#CrossLinked">Cross-Linked Files</a></li>
+      <li><a href="#Fixing">Fixing disk errors</a></li>
+      <li><a href="#Format">Format of status reports</a></li>
+      <li><a href="#Physical">Physical disk errors</a></li>
+      <li><a href="#Save">Saving a CHKDSK status report to a file</a></li>
+      <li><a href="#Scandisk">SCANDISK repairs disks when CHKDSK fails</a></li>
+      <li><a href="#Assigned">Using CHKDSK with assigned drives and networks</a></li>
+      <li><a href="#OpenFiles">Using CHKDSK with open files</a></li>
+    </ul>
+
+    <hr>
+    <a name="Format"></a> <b>Format of status reports</b>
+    <p>The operating system displays CHKDSK status reports similar
+    to:</p>
+<pre>
+    Volume DISK1PART01 created 12-06-1998 7:35p
+    Volume Serial Number is 4F8D-2A5B
+      201,031,680 bytes total disk space
+        8,769,536 bytes in 49 hidden files
+          851,968 bytes in 194 directories
+      176,619,520 bytes in 2,546 user files
+       14,790,656 bytes available on disk
+            4,096 bytes in each allocation unit
+           49,080 total allocation units on disk
+            3,611 available allocation units on disk
+          647,168 total bytes memory
+          588,304 bytes free
+</pre>
+
+    <hr>
+    <a name="Fixing"></a> <b>Fixing disk errors</b>
+    <p>The <a href="../S/SCANDISK.HTM">SCANDISK</a> program is the
+    preferred method of fixing disk errors. For more information, see
+    the <a href="../S/SCANDISK.HTM">SCANDISK</a> command.</p>
+    <p>If you want to use CHKDSK to fix disk errors, use the
+    <a href="#SwitchF">/F</a> switch. (CHKDSK corrects disk errors only
+    if you specify the <a href="#SwitchF">/F</a> switch.) CHKDSK
+    <a href="#SwitchF">/F</a> displays a prompt similar to:</p>
+<pre>
+    10 lost allocation units found in 3 chains.
+    Convert lost chains to files?
+</pre>
+    <p>If you press Y, the operating system saves each lost chain in
+    the root directory as a file with a name in the format FILEnnnn.CHK.
+    When CHKDSK finishes, you can examine these files to see if they
+    contain any data you need. If you press N, the operating system
+    fixes the disk but does not save the contents of the lost
+    allocation units.</p>
+    <p>If you do not use the <a href="#SwitchF">/F</a> switch, CHKDSK
+    alerts you with a message if a file needs to be fixed but does not
+    fix the error(s).</p>
+
+    <hr>
+    <a name="OpenFiles"></a> <b>Using CHKDSK with open files</b>
+    <p>Never use CHKDSK when files are currently open. CHKDSK is
+    designed for use when the files on the disk are in an unchanging
+    state -- that is, when they are not open. When a file is open, it
+    is probably changing, and the operating system will update the file
+    allocation table and the directory structure to reflect changes.
+    Such updates are not always made immediately, and updates to the
+    file allocation table and the directories occur at different times.
+    If you run CHKDSK when files are open on the disk, it interprets
+    differences between the directory structure and the file
+    allocation tables as errors.</p>
+    <p>Running CHKDSK <a href="#SwitchF">/F</a> when files are open can
+    result in corruption or loss of data. Therefore, never run CHKDSK
+    <a href="#SwitchF">/F</a> from another program, or when Microsoft
+    Windows or the operating system Task Swapper is running.</p>
+
+    <hr>
+    <a name="Assigned"></a> <b>Using CHKDSK with assigned drives and networks</b>
+    <p>The CHKDSK command does not work on drives formed by the
+    <a href="../S/SUBST.HTM">SUBST</a> command. You cannot use CHKDSK to
+    check a disk on a network drive.</p>
+
+    <hr>
+    <a name="Physical"></a> <b>Physical disk errors</b>
+    <p>The CHKDSK command finds only logical errors in the file system,
+    not physical disk errors. To identify and repair physical disk
+    errors, use the <a href="../S/SCANDISK.HTM">SCANDISK</a> program.
+    For more information, see the
+    <a href="../S/SCANDISK.HTM">SCANDISK</a> command.</p>
+
+    <hr>
+    <a name="Sectors"></a> <b>Bad disk sectors</b>
+    <p>Bad sectors reported by CHKDSK were marked as "bad" when your
+    disk was first prepared for operation.
+    <a href="../S/SCANDISK.HTM">SCANDISK</a> and other physical
+    disk-error correction utilities can also mark sectors as "bad."
+    Bad sectors pose no danger.</p>
+
+    <hr>
+    <a name="CrossLinked"></a> <b>Cross-Linked Files</b>
+    <p>CHKDSK reports a cross-linked file if two files or directories
+    are recorded as using the same disk space. If CHKDSK finds a
+    cross-linked file, it displays a message similar to:</p>
+<pre>
+    File is cross linked on allocation unit nnn;
+    Some of the information in these files or directories has been lost.
+</pre>
+    <p>CHKDSK will not fix a cross-linked file, even if you specify the
+    <a href="#SwitchF">/F</a> switch. To correct a cross-linked file,
+    run <a href="../S/SCANDISK.HTM">SCANDISK</a>. Or, to fix them
+    manually, copy the specified files or directories elsewhere and
+    delete the originals.</p>
+
+    <hr>
+    <a name="Save"></a> <b>Saving a CHKDSK status report to a file</b>
+    <p>You can save a CHKDSK status report by redirecting the output to
+    a file. Do not use the <a href="#SwitchF">/F</a> switch when you
+    redirect CHKDSK output to a file.</p>
+
+    <hr>
+    <a name="Scandisk"></a> <b>SCANDISK repairs disks when CHKDSK fails</b>
+    <p>The command-line tool CHKDSK is not as capable as the GUI tool
+    <a href="../S/SCANDISK.HTM">SCANDISK</a>. Under
+    <a href="../../Version/MSWIN/NT400.HTM">NT</a>
+    <a href="../S/SCANDISK.HTM">SCANDISK</a> is only available from
+    the GUI in NT Explorer - select a drive, choose Properties then
+    "Check For Errors"</p>
+    <p>I have more than once seen
+    <a href="../S/SCANDISK.HTM">SCANDISK</a> repair a disk where CHKDSK
+    failed.</p>
+    <p>A good strategy is to schedule an AT job to detect any disk
+    problems by running CHKDSK - then use
+    <a href="../S/SCANDISK.HTM">SCANDISK</a> to manually fix any
+    problems as they occur.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To find out how much data is stored on drive C and how much
+    space is still free, and to check the disk for errors, type:</p>
+<pre>
+    CHKDSK <a href="#ParameterDrive">C:</a>
+</pre>
+
+    <hr>
+    <p>CHKDSK pauses and displays messages if it encounters errors.</p>
+    <p>To redirect the output of CHKDSK to a file named STATUS, type:</p>
+<pre>
+    CHKDSK <a href="#ParameterDrive">A:</a> &gt; status
+</pre>
+    <p>Because the output is redirected, the operating system does not
+    repair errors it encounters during the check; but it records all
+    the errors in a report file. Afterward, you can use CHKDSK with the
+    <a href="#SwitchF">/F</a> switch without redirection to correct
+    any errors noted in the status report.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <ul>
+    <li><b>0</b> No errors</li>
+    <li><b>1</b> Errors were found and fixed. <a href="../../Version/MSWIN/NT400.HTM">(NT4)</a></li>
+    <li><b>2</b> Could not check the disk, did not or could not fix errors. <a href="../../Version/MSWIN/NT400.HTM">(NT4)</a></li>
+    <li><b>255</b> Error(s) found</li>
+    </ul>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>Internal</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/100.HTM">v1.0</a>
+          <a href="../../Version/MSDOS/105.HTM">v1.05</a>
+          <a href="../../Version/MSDOS/110.HTM">v1.1</a>
+          <a href="../../Version/MSDOS/111.HTM">v1.11</a>
+          v1.24
+          v1.25
+          <a href="../../Version/MSDOS/185.HTM">v1.85</a>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

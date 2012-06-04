@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>TIME</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#t">Commands N-Z</a>
+    &gt; <a href="../INDEXT.HTM#time">Commands T</a>
+    <h1>TIME</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Displays the system time or sets your computer's internal
+    clock.</p>
+    <p>The operating system uses time information to update the
+    directory whenever you create or change a file.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>TIME
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>TIME
+    [<a href="#ParameterHours">hours</a>:[<a
+    href="#ParameterMinutes">minutes</a>[:<a
+    href="#ParameterSeconds">seconds</a>[.<a
+    href="#ParameterHundredths">hundredths</a>]]][<a
+    href="#ParameterAmpm">A|P</a>[M]]]</p>
+
+    <p>Display the current time or to display a prompt by which you
+    can change the current time:</p>
+    <p>TIME
+    [<a href="#SwitchT">/T[IME]</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterAmpm"></a> A[M] | P[M]
+      (<a href="../../Version/MSDOS/500.HTM">v5.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies A.M or P.M. for the 12-hour time format. If you
+      type a valid 12-hour time but do not type A or P, TIME uses A
+      (for A.M.).</dd>
+
+      <dt><a name="ParameterHours"></a> hours:
+      (<a href="../../Version/MSDOS/100.HTM">v1.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the hour. Valid values are in the range 0 through
+      23.</dd>
+
+      <dt><a name="ParameterHundredths"></a> hundredths
+      (<a href="../../Version/MSDOS/100.HTM">v1.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies hundredths of a second. Valid values are in the
+      range 0 through 99.</dd>
+
+      <dt><a name="ParameterMinutes"></a> minutes
+      (<a href="../../Version/MSDOS/100.HTM">v1.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies minutes. Valid values are in the range 0 through
+      59.</dd>
+
+      <dt><a name="ParameterSeconds"></a> seconds
+      (<a href="../../Version/MSDOS/100.HTM">v1.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies seconds. Valid values are in the range 0 through
+      59.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchT"></a> /T
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dt> /T[IME]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Just display the time, formatted according to the current
+      Regional settings.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about changing the current date, see the
+    <a href="../D/DATE.HTM">DATE</a> command.
+    <br>For information about changing the time format, see the
+    <a href="../C/COUNTRY.HTM">COUNTRY</a> command.
+    <br><a href="../N/NOW.HTM">NOW</a> - Display Message with Current Date and Time.
+    <br>TIMESERV - Time Service (resource kit).
+    <br>W32TIME - Time Service (y2K compliant update for TIMESERV).
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>date - Display or change the date &amp; time.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Change">Changing the TIME format</a></li>
+      <li><a href="#CommandExtensions">Command Extensions</a></li>
+      <li><a href="#Ensure">Ensuring that the operating system prompts you for the time</a></li>
+      <li><a href="#Clock">Modifying computer system clock</a></li>
+      <li><a href="#RegistryCountryCode">Registry Country Code</a></li>
+      <li><a href="#RegistryTimeSeparator">Registry Time Separator</a></li>
+      <li><a href="#Invalid">Specifying an invalid TIME format</a></li>
+      <li><a href="#TimeFormats">Time formats for different country codes</a></li>
+    </ul>
+
+    <hr>
+    <a name="CommandExtensions"></a> <b>Command Extensions</b>
+    <p>If Command Extensions are disabled TIME will not support the
+    <a href="#SwitchT">/T</a> switch.</p>
+
+    <hr>
+    <a name="TimeFormats"></a> <b>Time formats for different country codes</b>
+<pre>
+ <u>Country or language CountryCode Date format Time format</u>
+   United States         001          01/03/1994  5:35:00.00p
+   Czechoslovakia        042          03.01.1994 17:35:00
+   France                033          03.01.1994 17:35:00
+   Germany               049          03.01.1994 17:35:00
+   Latin America         003          03/01/1994  5:35:00.00p
+
+   International English 061          03/01/1994 17:35:00.00
+   Portugal              351          03-01-1994 17:35:00
+   Finland               358          3.1.1994   17.35.00
+   Switzerland           041          03.01.94   17 35.00
+   Norway                047          03.01.94   17:35:00
+
+   Belgium               032          03/01/94   17:35:00
+   Brazil                055          03/01/94   17:35:00
+   Italy                 039          03/01/94   17.35.00
+   United Kingdom        044          03/01/94   17:35:00.00
+   Denmark               045          03-01-94   17.35.00
+
+   Netherlands           031          03-01-94   17:35:00
+   Spain                 034          3/01/94    17:35:00
+   Hungary               036          1994.01.03 17:35:00
+   Canadian-French       002          1994-01-03 17:35:00
+   Poland                048          1994-01-03 17:35:00
+
+   Sweden                046          1994-01-03 17.35.00
+ <u>Country or language CountryCode Date format Time format</u>
+</pre>
+
+    <hr>
+    <a name="RegistryCountryCode"></a> <b>Registry Country Code</b>
+    <p>The Country Code is a user setting in the registry:</p>
+<pre>
+    [HKEY_CURRENT_USER\Control Panel\International]
+    "iCountry"="44"
+</pre>
+
+    <p>The Country Code can be read using REG as:</p>
+<pre>
+    <a href="../F/FOR_F.HTM">FOR /F</a> <a
+href="../F/FOR_F.HTM#ParameterTokens">"TOKENS=2,3*"</a> <a
+href="../F/FOR_F.HTM#ParameterVariable">%%A</a> IN (<a
+href="../F/FOR_F.HTM#ParameterSetCommand">'REG QUERY "HKEY_CURRENT_USER\Control Panel\International\iCountry"'</a>) DO (<a
+href="../F/FOR_0.HTM">FOR</a> <a
+href="../F/FOR_0.HTM#ParameterVariable">%%G</a> IN (<a
+href="../F/FOR_0.HTM#ParameterSet">%%A</a>) DO (<a
+href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">v_country</a>=<a
+href="../S/SET.HTM#ParameterString">%%G</a>))
+</pre>
+
+    <hr>
+    <a name="RegistryTimeSeparator"></a> <b>Registry Time Separator</b>
+    <p>The time separator is also a registry setting:</p>
+<pre>
+    [HKEY_CURRENT_USER\Control Panel\International]
+    "sTime"=":"
+</pre>
+
+    <p>The time separator can be read using REG as:</p>
+<pre>
+    <a href="../F/FOR_F.HTM">FOR /F</a> <a
+href="../F/FOR_F.HTM#ParameterTokens">"TOKENS=2,3*"</a> <a
+href="../F/FOR_F.HTM#ParameterVariable">%%A</a> IN (<a
+href="../F/FOR_F.HTM#ParameterSetCommand">'REG QUERY "HKEY_CURRENT_USER\Control Panel\International\sTime"'</a>) DO (<a
+href="../F/FOR_0.HTM">FOR</a> <a
+href="../F/FOR_0.HTM#ParameterVariable">%%G</a> IN (<a
+href="../F/FOR_0.HTM#ParameterSet">%%A</a>) DO (<a
+href="../S/SET.HTM">SET</a> <a
+href="../S/SET.HTM#ParameterVariable">v_time_sep</a>=<a
+href="../S/SET.HTM#ParameterString">%%G</a>))
+</pre>
+
+    <hr>
+    <a name="Invalid"></a> <b>Specifying an invalid TIME format</b>
+    <p>If you specify the time in an invalid format, the operating
+    system displays the message and then waits for you to
+    specify the time:</p>
+<pre>
+    Invalid time
+    Enter new time:
+</pre>
+
+    <hr>
+    <a name="Change"></a> <b>Changing the TIME format</b>
+    <p>You can change the TIME format by changing the <a href="../C/COUNTRY.HTM">COUNTRY</a> setting
+    in your CONFIG.SYS file. For more information, see the
+    <a href="../C/COUNTRY.HTM">COUNTRY</a> command. Depending on the country code, the operating
+    system will display the time in the 12-hour format or the 24-hour
+    format. If you are setting the time in the 12-hour format, be sure to
+    specify <a href="#ParameterAmpm">P</a> for hours after noon.</p>
+
+    <hr>
+    <a name="Ensure"></a> <b>Ensuring that the operating system prompts you for the time</b>
+    <p>If you want the operating system to prompt you for the current
+    time whenever you start your system, you can add the TIME command
+    to your AUTOEXEC.BAT file. The operating system will automatically
+    prompt you for the time and date if you do not have an AUTOEXEC.BAT
+    file.</p>
+
+    <hr>
+    <a name="Clock"></a> <b>Modifying computer system clock</b>
+    <p>Prior to <a href="../../Version/MSDOS/330.HTM">v3.30</a>,
+    <a href="../D/DATE.HTM">DATE</a> did not modify the computer
+    system clock (You had to use SETUP disk).</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>To set your computer's clock to 1:36 P.M., use either of the
+    commands:</p>
+<pre>
+    TIME 13:36
+    TIME 1:36p
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/100.HTM">v1.0</a>
+          <a href="../../Version/MSDOS/105.HTM">v1.05</a>
+          </dd>
+        </dl>
+      </dd>
+      <dt>Internal</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/110.HTM">v1.1</a>
+          <a href="../../Version/MSDOS/111.HTM">v1.11</a>
+          v1.24
+          v1.25
+          <a href="../../Version/MSDOS/185.HTM">v1.85</a>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

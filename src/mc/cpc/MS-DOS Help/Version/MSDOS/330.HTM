@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DOS v3.30</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../INDEX.HTM">Versions</a>
+    <h1>DOS v3.30</h1>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    | <a href="#Added">Added</a>
+    | <a href="#Changed">Changed</a>
+    | <a href="#Removed">Removed</a>
+    | <a href="#Files">Files</a>
+    <ul>
+      <li>Released with the IBM Personal System/2 (IBM PS/2) line
+          and compatible with all PCs, August 1987 (announced April 1987).</li>
+      <li>TI laptop ROM, 1990 (version 3.30R).</li>
+      <li>Added support for 1.44Mb 3.5" High-density (HD) diskettes.</li>
+      <li>Added support for four (4) serial ports (was two), and at
+          higher speeds.</li>
+      <li>Added complex system for extra national language support.</li>
+      <li>Added the ability to use logical partitions greater than 32 MB total.
+          Each drive letter in the logical partition is limited to 32 MB.
+          The primary DOS partition is limited to 32 MB.</li>
+      <li>Default number of disk buffers now based on system's
+          configuration, from:
+        <ol>
+          <li>PC and XT: two.</li>
+          <li>AT: three.</li>
+        </ol>
+        to:
+        <ol>
+          <li>minimal RAM and no high-density floppies, 3.5 diskettes,
+              or hard disks: two.</li>
+          <li>512K RAM: fifteen.</li>
+        </ol>
+      </li>
+      <li>Added DOS functions:
+        <ol>
+          <li>44H subfunction 0cH prepare and select code page
+              fonts.</li>
+          <li>66H select code page fonts (when NLSFUNC is
+              resident).</li>
+          <li>67H increase the maximum number of file handles for a
+              process.</li>
+          <li>68H force DOS to update a file to disk ("commit" a
+              write).</li>
+        </ol>
+      </li>
+      <li>Commands introduced:
+        <ol>
+          <li>4201.CPI</li>
+          <li>5202.CPI</li>
+          <li><a href="../../Command/A/ATSIGN.HTM">@</a></li>
+          <li><a href="../../Command/A/APPEND.HTM">APPEND</a></li>
+          <li><a href="../../Command/C/CALL.HTM">CALL</a></li>
+          <li><a href="../../Command/C/CHCP.HTM">CHCP</a></li>
+          <li>COUNTRY.SYS</li>
+          <li><a href="../../Command/D/DISPLAYS.HTM">DISPLAY.SYS</a>, national language and font support.</li>
+          <li>"documented" environment variables</li>
+          <li><a href="../../Command/F/FASTOPEN.HTM">FASTOPEN</a></li>
+          <li><a href="../../Command/K/KEYB.HTM">KEYB</a></li>
+          <li>KEYBOARD.SYS</li>
+          <li>LCD.CPI</li>
+          <li><a href="../../Command/N/NLSFUNC.HTM">NLSFUNC</a></li>
+          <li>PRINTER.SYS, national language and font support.</li>
+        </ol>
+      </li>
+      <li>Commands enhanced:
+        <ol>
+          <li><a href="../../Command/D/DATE.HTM">DATE</a> and
+              <a href="../../Command/T/TIME.HTM">TIME</a>
+              set the battery-powered clock (CMOS Memory) on AT and PS/2.</li>
+          <li><a href="../../Command/A/ATTRIB.HTM">ATTRIB</a>
+              spans multiple files and directories.</li>
+          <li><a href="../../Command/B/BACKUP.HTM">BACKUP</a>
+              is faster and will format diskettes on-the-fly.</li>
+          <li><a href="../../Command/F/FDISK.HTM">FDISK</a>
+              supports multiple "extended" (logical) DOS partitions
+              on a hard disk.</li>
+          <li><a href="../../Command/R/RESTORE.HTM">RESTORE</a>
+              allows selection by time and date of
+              modification; stops "accidently" overwritting IBMBIO.COM,
+              IBMDOS.COM, and COMMAND.COM.</li>
+          <li><a href="../../Command/X/XCOPY.HTM">XCOPY</a>
+              supplies ERRORLEVEL indication for use in batch files.</li>
+          <li><a href="../../Command/K/KEYB.HTM">KEYB</a>
+              replaces KEYBxx and uses Keyboard.Sys.</li>
+          <li><a href="../../Command/N/NLSFUNC.HTM">NLSFUNC</a>
+              installs code page font-switching.</li>
+          <li><a href="../../Command/C/CHCP.HTM">CHCP</a>
+              selects/displays current active code page.</li>
+          <li><a href="../../Command/M/MODERP.HTM">MODE</a> Redirect Printing</li>
+          <li><a href="../../Command/M/MODESC.HTM">MODE</a>
+              supports code page selection and switching.</li>
+          <li><a href="../../Command/E/ECHO.HTM">ECHO</a></li>
+          <li><a href="../../Command/G/GRAFTABL.HTM">GRAFTABL</a></li>
+        </ol>
+      </li>
+    </ul>
+
+    <hr>
+    <a name="Added"></a> <b>Added</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Changed"></a> <b>Changed</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Removed"></a> <b>Removed</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Files"></a> <b>Files</b>
+    <p><a href="../../Filelist/MSDOS/330.HTM">Filelist</a></p>
+
+    <hr>
+    Last Updated: 2006/01/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

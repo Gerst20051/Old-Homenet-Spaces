@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>MODE (Set Device Code Pages)</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#m">Commands A-M</a>
+    &gt; <a href="../INDEXM.HTM#modesc">Commands M</a>
+    <h1>MODE (Set Device Code Pages)</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Prepares, selects, refreshes, or displays the numbers of the
+    character sets (code pages) for parallel printers or the keyboard
+    and monitor. For an introduction to using character sets, see
+    "Customizing for International Use" in the DOS User's Guide --
+    or see section 1.2.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>MODE
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>MODE
+    <a href="#ParameterDevice">device</a>
+    <a href="#ParameterCodepage">CODEPAGE</a>
+    <a href="#ParameterPrepare">PREP[ARE]</a>=((<a
+    href="#ParameterYyy">yyy</a> [...])
+    <a href="#ParameterDrive">[drive:]</a><a
+    href="#ParameterPath">[path]</a><a
+    href="#ParameterFilename">filename</a>)</p>
+
+    <p>MODE
+    <a href="#ParameterDevice">device</a>
+    <a href="#ParameterCodepage">CODEPAGE</a>
+    <a href="#ParameterSelect">SEL[ECT]</a>=<a
+    href="#ParameterYyy">yyy</a></p>
+
+    <p>MODE
+    <a href="#ParameterDevice">device</a>
+    <a href="#ParameterCodepage">CODEPAGE</a>
+    <a href="#ParameterRefresh">REF[RESH]</a></p>
+
+    <p>MODE
+    <a href="#ParameterDevice">device</a>
+    <a href="#ParameterCodepage">CODEPAGE</a>
+    [<a href="#SwitchStatus">/STA[TUS]</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterCodepage"></a> CODEPAGE | CP
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Displays the numbers of the character sets, if any, that are
+      prepared or selected for the specified device. You can abbreviate
+      CODEPAGE as CP.</dd>
+
+      <dt><a name="ParameterDevice"></a> device
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>
+        Specifies the device for which you want to prepare or select a
+        character set. Valid names for device are:
+        <ul>
+          <li><b>CON</b></li>
+          <li><b>LPT1</b></li>
+          <li><b>LPT2</b></li>
+          <li><b>LPT3</b></li>
+          <li><b>PRN</b></li>
+        </ul>
+      </dd>
+
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a name="ParameterPath"></a> path
+      <a name="ParameterFilename"></a> filename
+      <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the location and name of the code-page-information
+      (.CPI) file that the operating system uses to prepare a
+      character set for the specified device.</dd>
+
+      <dt><a name="ParameterPrepare"></a> PREP[ARE]
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Prepares character sets for the specified device. You must
+      prepare a character set for a device before you can use the
+      character set with that device. After you use the CODEPAGE
+      PREPARE form of the MODE command, use the CODEPAGE SELECT form of
+      MODE to specify the character set you want to use. You can
+      abbreviate PREPARE as PREP.</dd>
+
+      <dt><a name="ParameterRefresh"></a> REF[RESH]
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Reinstates the prepared character sets if they are lost as
+      the result of a hardware problem or other error. You can
+      abbreviate REFRESH as REF.</dd>
+
+      <dt><a name="ParameterSelect"></a> SEL[ECT]
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Specifies (selects) which character set to use with the
+      specified device. Before selecting a character set, you must use
+      the CODEPAGE PREPARE form of the MODE command to prepare a
+      character set. You can abbreviate SELECT as SEL.</dd>
+
+      <dt><a name="ParameterYyy"></a> yyy
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Specifies the number of the character set to prepare or select.
+      The list shows each character set supported by the
+      EGA.CPI file and its country or language:
+        <ul>
+          <li><b>437</b> United States</li>
+          <li><b>850</b> Multilingual (Latin I)</li>
+          <li><b>852</b> Slavic (Latin II)</li>
+          <li><b>855</b> Cyrillic (Russian) (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</li>
+          <li><b>857</b> Turkish (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</li>
+          <li><b>860</b> Portuguese</li>
+          <li><b>861</b> Icelandic (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</li>
+          <li><b>863</b> Canadian-French</li>
+          <li><b>865</b> Nordic</li>
+          <li><b>866</b> Russian (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</li>
+          <li><b>869</b> Modern Greek (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</li>
+        </ul>
+      Additional character sets are supported by the EGA2.CPI and
+      EGA3.CPI files. For more information, see "Customizing for
+      International Use".</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchStatus"></a> /STA[TUS]
+      (<a href="../../Version/MSDOS/330.HTM">v3.30</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Displays the numbers of the current character sets prepared
+      or selected for the specified device. You can abbreviate this
+      switch as /STA. Whether or not you specify the /STATUS switch,
+      typing the MODE command with a device name and the CODEPAGE
+      parameter displays the numbers of the character sets that are
+      prepared or selected for the specified device.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about other character-set commands, see the
+    <a href="../N/NLSFUNC.HTM">NLSFUNC</a> and
+    <a href="../C/CHCP.HTM">CHCP</a> commands.
+    <br><a href="MODECP.HTM">MODE</a> - Configure Printer.
+    <br><a href="MODECS.HTM">MODE</a> - Configure Serial Port.
+    <br><a href="MODEDD.HTM">MODE</a> - Display Device Status.
+    <br><a href="MODERP.HTM">MODE</a> - Redirect Printing.
+    <br><a href="MODESM.HTM">MODE</a> - Set Display Mode.
+    <br><a href="MODEST.HTM">MODE</a> - Set Typematic Rate.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#CPI">CPI files</a></li>
+    </ul>
+
+    <hr>
+    <a name="CPI"></a> <b>CPI files</b>
+    <p>The operating system includes three .CPI files: EGA.CPI,
+    EGA2.CPI, and EGA3.CPI. The EGA.CPI is the default CPI file.
+    The EGA2.CPI and EGA3.CPI files provide additional codepages not
+    supported by EGA.CPI. (For more information, see "Customizing
+    for International Use").</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External Resident</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

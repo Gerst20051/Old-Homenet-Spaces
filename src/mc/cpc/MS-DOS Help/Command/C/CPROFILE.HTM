@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CPROFILE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCH.HTM#cprofile">Commands Ch-Cz</a>
+    <h1>CPROFILE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Cleans specified profiles of wasted space and, if
+    user-specific file associations are disabled, removes
+    these associations from the registry. Profiles that
+    are currently in use are not modified.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CPROFILE
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>CPROFILE
+    [<a href="#SwitchL">/L</a>]
+    [<a href="#SwitchI">/I</a>]
+    [<a href="#SwitchV">/V</a>]
+    [<a href="#ParameterFilelist">filelist</a>]</p>
+
+    <p>CPROFILE
+    [<a href="#SwitchI">/I</a>]
+    [<a href="#SwitchV">/V</a>]
+    <a href="#ParameterFilelist">filelist</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterFilelist"></a> filelist
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>A list of files from which you want to remove
+      user-specific file associations. Separate each file in
+      the list with a space. File names can contain wildcard
+      characters.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchL"></a> /L
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Cleans all local profiles. You can also specify a
+      list of additional profiles in the FileList parameter.</dd>
+
+      <dt><a name="SwitchI"></a> /I
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Interactively prompts the user with each profile.</dd>
+
+      <dt><a name="SwitchV"></a> /V
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays information about the actions being performed.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Only administrators can run.</p>
+
+    <p>A terminal server uses file associations to determine
+    which application to use to access files of various types.
+    File types are registered using Windows Explorer.</p>
+
+    <p>Per-user file associations allow each user to have a
+    different application associated with a specific file type.</p>
+
+    <p>If user-specific file associations are enabled, only
+    removes the unused space from the user profile. If
+    user-specific file associations are disabled, also
+    removes the corresponding registry entries.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

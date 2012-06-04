@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DOS v5.00</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../INDEX.HTM">Versions</a>
+    <h1>DOS v5.00</h1>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    | <a href="#Added">Added</a>
+    | <a href="#Changed">Changed</a>
+    | <a href="#Removed">Removed</a>
+    | <a href="#Files">Files</a>
+    <ul>
+      <li>The most significant DOS upgrade in many years, released June 1991.</li>
+      <li>Considered to be a "clone" of Digital Research's DR-DOS v5.0
+          (released over a year earlier).</li>
+      <li>"Largest" beta-test program in history, 7,500 testers.</li>
+      <li>Included many changes to prepare for Windows 3.0.</li>
+      <li>Supports 2.88Mb diskette drives.</li>
+      <li>Supports disk partitions up to 2Gb.</li>
+      <li>Supports up to 8 hard disks.</li>
+      <li>Upgrade version for all earlier DOS versions (5.0UG).</li>
+      <li>Major memory-management support. Now possible to have &gt;620Kb
+          for apps:
+        <ol>
+          <li><a href="../../Command/D/DOS.HTM">DOS</a> puts DOS in the (high-memory) HMA (286+) and
+              provides access to UMBs (386+).</li>
+          <li><a href="../../Command/D/DEVICEHI.HTM">DEVICEHIGH</a> and
+              <a href="../../Command/L/LOADHIGH.HTM">LOADHIGH (LH)</a>
+              let you load device drivers
+              and TSRs outside of the 640K Conventional Memory area
+              (386+).</li>
+          <li><a href="../../Command/H/HIMEMSYS.HTM">HIMEM.SYS</a> supports the HMA and Extended Memory
+              (286+).</li>
+          <li><a href="../../Command/E/EMM386EX.HTM">EMM386.EXE</a> device driver and command support LIM-EMS
+              emulation and UMBs.</li>
+          <li><a href="../../Command/M/MEM.HTM">MEM</a>
+              provides info on UMBs and EMS; indicates if DOS is
+              loaded high.</li>
+        </ol>
+      </li>
+      <li>Other commands introduced:
+        <ol>
+          <li><a href="../../Command/D/DELOLDOS.HTM">DELOLDOS</a></li>
+          <li><a href="../../Command/D/DOSKEY.HTM">DOSKEY</a>
+              a command-line retriever and editor; creates DOS
+              command macros.</li>
+          <li>DOSSWAP</li>
+          <li><a href="../../Command/E/EDIT.HTM">EDIT</a>,
+              a full-screen text editor.</li>
+          <li><a href="../../Command/E/EGASYS.HTM">EGA.SYS</a></li>
+          <li><a href="../../Command/E/EXPAND.HTM">EXPAND</a></li>
+          <li><a href="../../Command/Q/QBASIC.HTM">QBASIC</a>,
+              BASIC language development environment
+              (better than GWBASIC). Based on Quick BASIC.</li>
+          <li><a href="../../Command/H/HELP.HTM">HELP</a>
+              (MS) online syntax help for commands.
+              dosCmdName /? shows some help.</li>
+          <li><a href="../../Command/L/LOADFIX.HTM">LOADFIX</a></li>
+          <li><a href="../../Command/M/MIRROR.HTM">MIRROR</a>,
+              <a href="../../Command/U/UNDELETE.HTM">UNDELETE</a>,
+              <a href="../../Command/U/UNFORMAT.HTM">UNFORMAT</a>
+              provide data security and ability to recover
+              deleted/lost files.</li>
+          <li>SETUP to install/upgrade DOS.</li>
+          <li><a href="../../Command/S/SETVER.HTM">SETVER</a>
+              tricks apps into thinking this is a different
+              version of DOS.</li>
+        </ol>
+      </li>
+      <li>Commands enhanced:
+        <ol>
+          <li><a href="../../Command/A/ATTRIB.HTM">ATTRIB</a>
+              supports hidden and system file attributes.</li>
+          <li><a href="../../Command/C/COMP.HTM">COMP</a>
+              has some new options.</li>
+          <li><a href="../../Command/D/DEBUG.HTM">DEBUG</a>
+              supports 386 opcodes; provides online help via the
+              ? command.</li>
+          <li><a href="../../Command/D/DIR.HTM">DIR</a>
+              supports sorted listings and selection by file
+              attribute. It can search subdirectories (you can find a
+              file anywhere on the disk), and it displays the total of
+              bytes used by the listed files. It also supports the
+              environment variable, dircmd, for selecting default
+              options.</li>
+          <li><a href="../../Command/D/DOSSHELL.HTM">DOSSHELL</a>
+              is now faster, easier to use, takes less memory,
+              and has more features, including the ability to swap tasks.
+              It is a thoroughly respectable DOS shell now.</li>
+          <li><a href="../../Command/E/ECHO.HTM">ECHO</a>
+              with a period (eg, Echo.) displays a blank line.</li>
+          <li><a href="../../Command/E/EDLIN.HTM">EDLIN</a>
+              provides online help via the ? command.</li>
+          <li><a href="../../Command/F/FIND.HTM">FIND</a>
+              <a href="../../Command/F/FIND.HTM#SwitchI">/I</a>
+              performs case-insensitive searches.</li>
+          <li><a href="../../Command/F/FORMAT.HTM">FORMAT</a>
+              will save critical data for recovery via Unformat and, with
+              <a href="../../Command/F/FORMAT.HTM#SwitchQ">/Q</a>,
+              will re-format diskettes very quickly and
+              safely. Supports 2.88M diskettes.</li>
+          <li><a href="../../Command/G/GRAPHICS.HTM">GRAPHICS</a>
+              supports real printers, such as the HP LaserJet.</li>
+          <li><a href="../../Command/M/MEM.HTM">MEM</a>
+              <a href="../../Command/M/MEM.HTM#SwitchC">/C</a>
+              reports memory usage in a manner actually readable
+              by humans.</li>
+          <li><a href="../../Command/R/RAMDRIVE.HTM">RAMDRIVE.SYS</a></li>
+          <li><a href="../../Command/R/RESTORE.HTM">RESTORE</a>
+              <a href="../../Command/R/RESTORE.HTM#SwitchD">/D</a>
+              provides a way to see the names of files on a
+              backup disk.</li>
+          <li><a href="../../Command/S/SMARTDRV.HTM">SMARTDRV.SYS</a> speed up hard disk access using
+              disk-caching.</li>
+          <li><a href="../../Command/T/TIME.HTM">TIME</a>
+              displays and accepts P or PM to mean afternoon.</li>
+        </ol>
+      </li>
+      <li>Commands removed:
+        <ol>
+          <li><a href="../../Command/S/SELECT.HTM">SELECT</a>
+              (now use the full-featured SETUP program)</li>
+          <li><a href="../../Command/B/BUFFERS.HTM">BUFFERS</a>=.../X (buffers in EMS not supported; use
+              <a href="../../Command/S/SMARTDRV.HTM">SMARTDRV.SYS</a> /X)</li>
+        </ol>
+      </li>
+    </ul>
+
+    <hr>
+    <a name="Added"></a> <b>Added</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Changed"></a> <b>Changed</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Removed"></a> <b>Removed</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Files"></a> <b>Files</b>
+    <p><a href="../../Filelist/MSDOS/500.HTM">Filelist</a></p>
+
+    <hr>
+    Last Updated: 2004/03/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

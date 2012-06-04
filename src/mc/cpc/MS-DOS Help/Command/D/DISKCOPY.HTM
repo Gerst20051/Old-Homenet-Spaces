@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DISKCOPY</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDA.HTM#diskcopy">Commands Da-Dr</a>
+    <h1>DISKCOPY</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Copies the entire contents of one floppy disk to another floppy
+    disk. DISKCOPY writes over the existing contents of the destination
+    disk as it copies the new information to it.</p>
+    <p>This command determines the number of sides to copy based on the
+    source drive and disk.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>DISKCOPY
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>DISKCOPY
+    [<a href="#ParameterDrive1">drive1:</a>
+    [<a href="#ParameterDrive2">drive2:</a>]]
+    [<a href="#Switch1">/1</a>]
+    [<a href="#SwitchV">/V</a>]
+    [<a href="#SwitchM">/M</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDrive1"></a> drive1:
+      (<a href="../../Version/MSDOS/100.HTM">v1.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the drive containing the source disk.</dd>
+
+      <dt><a name="ParameterDrive2"></a> drive2:
+      (<a href="../../Version/MSDOS/100.HTM">v1.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the drive containing the destination disk.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="Switch1"></a> /1
+      (<a href="../../Version/MSDOS/100.HTM">v1.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Copies only the first side of a disk.</dd>
+
+      <dt><a name="SwitchM"></a> /M
+      (<a href="../../Version/MSDOS/620.HTM">v6.2</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Forces DISKCOPY to use only conventional memory for interim
+      storage. By default, DISKCOPY uses your hard disk as an interim
+      storage area so you don't have to swap floppy disks.</dd>
+
+      <dt><a name="SwitchV"></a> /V
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Verifies that the information is copied correctly. Use of
+      this switch slows the copying process.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about copying one or more files, see the
+    <a href="../C/COPY.HTM">COPY</a> command.
+    <br>For information about copying directories and subdirectories,
+    see the <a href="../X/XCOPY.HTM">XCOPY</a> command.
+    <br>For information about comparing two disks to see if they are
+    identical, see the <a href="DISKCOMP.HTM">DISKCOMP</a>
+    command.
+    <br><a href="../F/FC.HTM">FC</a> - Compare two files or sets of
+    files, and display the differences between them.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#Fragmentation">Avoiding disk fragmentation</a></li>
+      <li><a href="#StartupDisks">Copying Startup disks</a></li>
+      <li><a href="#SerialNumbers">Disk serial numbers</a></li>
+      <li><a href="#Messages">DISKCOPY messages</a></li>
+      <li><a href="#InvalidDrive">Invalid drive for DISKCOPY</a></li>
+      <li><a href="#OmitDrive">Omitting drive parameters</a></li>
+      <li><a href="#OneDrive">Using one drive for copying</a></li>
+    </ul>
+
+    <hr>
+    <a name="InvalidDrive"></a> <b>Invalid drive for DISKCOPY</b>
+    <p>The DISKCOPY command works only with uncompressed removable
+    disks such as floppy disks. You cannot use DISKCOPY with a hard
+    disk or a network drive. If you specify a hard disk drive for
+    drive1 or drive2, DISKCOPY displays the error message:</p>
+<pre>
+    Invalid drive specification
+    Specified drive does not exist
+    or is non-removable
+</pre>
+
+    <hr>
+    <a name="Messages"></a> <b>DISKCOPY messages</b>
+    <p>The DISKCOPY command prompts you to insert the source and
+    destination disks and waits for you to press any key before
+    continuing.</p>
+    <p>After copying, DISKCOPY displays the message:</p>
+<pre>
+    Copy another diskette (Y/N)?
+</pre>
+
+    <p>If you press Y, DISKCOPY prompts you to insert source and
+    destination disks for the next copy operation. To stop the DISKCOPY
+    process, press N.</p>
+    <p>If you are copying to an unformatted floppy disk in drive2,
+    DISKCOPY formats the disk with the same number of sides and sectors
+    per track as are on the disk in drive1. DISKCOPY displays the
+    message while it formats the disk and copies the
+    files:</p>
+<pre>
+    Formatting while copying
+</pre>
+
+    <p>If the capacity of the source disk is greater than that of the
+    destination disk and your computer can detect this difference,
+    DISKCOPY displays the message:</p>
+<pre>
+    Drive types or diskette types not compatible
+</pre>
+
+    <hr>
+    <a name="SerialNumbers"></a> <b>Disk serial numbers</b>
+    <p>If the source disk has a volume serial number, DISKCOPY creates
+    a new volume serial number for the destination disk and displays
+    the number when the copy operation is complete, since
+    <a href="../../Version/MSDOS/400.HTM">v4.0</a></p>
+
+    <hr>
+    <a name="OmitDrive"></a> <b>Omitting drive parameters</b>
+    <p>If you omit the drive2 parameter, DISKCOPY uses the current
+    drive for drive2. If you omit both drive parameters, DISKCOPY uses
+    the current drive for both. If the current drive is the same as
+    drive1, DISKCOPY prompts you to swap disks as necessary.</p>
+
+    <hr>
+    <a name="OneDrive"></a> <b>Using one drive for copying</b>
+    <p>When you use a single drive as both the source and destination
+    drive, DISKCOPY stores an image of the source disk in the directory
+    specified by the <a href="../../ENV/MSDOS/TEMP.HTM">%TEMP%</a> environment variable. If there is not enough
+    space on that drive to contain the source-disk image, you might
+    have to swap floppy disks. DISKCOPY prompts you each time you
+    should insert a disk in the drive. DISKCOPY reads from the source
+    disk, writes to the destination disk, and prompts you to insert the
+    source disk again. This process continues until the entire disk has
+    been copied.</p>
+
+    <hr>
+    <a name="Fragmentation"></a> <b>Avoiding disk fragmentation</b>
+    <p>Because DISKCOPY makes an exact copy of the source disk on the
+    destination disk, any fragmentation on the source disk is
+    transferred to the destination disk. Fragmentation is the presence
+    of small areas of unused disk space between existing files on a
+    disk.</p>
+    <p>A fragmented source disk can slow down the finding, reading, or
+    writing of files. To avoid transferring fragmentation from one disk
+    to another, use either the <a href="../C/COPY.HTM">COPY</a> command or the
+    <a href="../X/XCOPY.HTM">XCOPY</a> command to copy your disk.
+    Because <a href="../C/COPY.HTM">COPY</a> and
+    <a href="../X/XCOPY.HTM">XCOPY</a> copy files sequentially, the
+    new disk is not fragmented.</p>
+
+    <hr>
+    <a name="StartupDisks"></a> <b>Copying Startup disks</b>
+    <p>If you use the DISKCOPY command to copy a startup disk, the copy
+    will also be a startup disk. If you use
+    <a href="../C/COPY.HTM">COPY</a> or
+    <a href="../X/XCOPY.HTM">XCOPY</a> to copy a startup disk, the
+    copy usually will not be a startup disk.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <ul>
+    <li><b>0</b> The copy operation was successful</li>
+    <li><b>1</b> A nonfatal read/write error occurred</li>
+    <li><b>2</b> The user pressed CTRL+C (^C) to stop the process</li>
+    <li><b>3</b> A critical error occurred</li>
+    <li><b>4</b> An initialization error occurred</li>
+    </ul>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/100.HTM">v1.0</a>
+          <a href="../../Version/MSDOS/105.HTM">v1.05</a>
+          <a href="../../Version/MSDOS/110.HTM">v1.1</a>
+          <a href="../../Version/MSDOS/111.HTM">v1.11</a>
+          v1.24
+          v1.25
+          <a href="../../Version/MSDOS/185.HTM">v1.85</a>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

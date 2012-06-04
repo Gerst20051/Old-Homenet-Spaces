@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CLUSTER</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCH.HTM#cluster">Commands Ch-Cz</a>
+    <h1>CLUSTER</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>You can use cluster commands to administer server clusters from
+    the Windows command prompt. You can also call the program from
+    command scripts to automate many cluster administration tasks.
+    Cluster is provided on all Windows computers.</p>
+    <p>You can administer clusters from a node of the cluster, from
+    nodes of other clusters, or from other computers running Windows NT
+    4.0 with Service Pack 3 or later.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CLUSTER
+    <a href="#SwitchList">/LIST[:domain_name]</a></p>
+
+    <p>CLUSTER
+    <a href="#SwitchHelp">/HELP</a>
+    | <a href="#SwitchHelp">/?</a></p>
+
+    <p>CLUSTER
+    [<a href="#SwitchCluster">[/CLUSTER:]cluster_name</a>]
+    <br>[<a href="#SwitchListNetPri">/LISTNETPRI[ORITY]</a>
+    <br>| <a href="#SwitchPrivProperties">/PRIV[PROPERTIES]</a>
+      [<a href="#ParameterPropertyList">property_list</a>]
+    <br>| <a href="#SwitchPrivProperties">/PRIV[PROPERTIES]</a>
+      [<a href="#ParameterPropertyList">:propname[,propname ...]</a>]
+    <br>| <a href="#SwitchProperties">/PROP[ERTIES]</a>
+      [<a href="#ParameterPropertyList">property_list</a>]
+    <br>| <a href="#SwitchProperties">/PROP[ERTIES]</a>
+      [<a href="#ParameterPropertyList">:propname[,propname ...]</a>]
+    <br>| <a href="#SwitchQuorum">/QUORUM[RESOURCE][:resource_name]</a>
+      [<a href="#SwitchPath">/PATH:path</a>]
+      [<a href="#SwitchMaxLogSize">/MAXLOGSIZE:max_size_kb</a>]
+    <br>| <a href="#SwitchRegister">/[UN]REG[ADMIN]EXT:admin_extension_dll[,admin_extension_dll ...]</a>
+    <br>| <a href="#SwitchRename">/REN[AME]:cluster_name</a>
+    <br>| <a href="#SwitchSetFail">/SETFAIL[UREACTIONS][:node_name[,node_name ...]]</a>
+    <br>| <a href="#SwitchSetNetPri">/SETNETPRI[ORITY]:[node_name[,node_name ...]]</a>
+    <br>| <a href="#SwitchVersion">/VER[SION]</a>
+    <br>| <a href="#SwitchWiz">/WIZ[ARD]</a>]</p>
+
+    <p>CLUSTER
+    <a href="#SwitchCluster">[/CLUSTER:]cluster_name</a>
+    <a href="#SwitchAdd">/ADD[NODES][:node_name[,node_name, ...]]</a>
+    <a href="#SwitchPass">/PASS[WORD]:pass_word</a>
+    [<a href="#SwitchVerb">/VERB[OSE]</a>]
+    [<a href="#SwitchUnattend">/UNATTEND[ED]</a>]
+    [<a href="#SwitchMin">/MIN[IMUM]</a>]</p>
+
+    <p>CLUSTER
+    <a href="#SwitchCluster">[/CLUSTER:]cluster_name</a>
+    <a href="#SwitchChangePass">/CHANGEPASS[WORD][:new_password[,old_password]]</a>
+    [<a href="#SwitchSkipDc">/SKIPDC</a>]
+    [<a href="#SwitchForce">/FORCE</a>]
+    [<a href="#SwitchTest">/TEST</a>]
+    [<a href="#SwitchQuiet">/QUIET</a>]
+    [<a href="#SwitchVerb">/VERB[OSE]</a>]
+    [<a href="#SwitchUnattend">/UNATTEND[ED]</a>]
+    [<a href="#SwitchHelp">/HELP</a>]</p>
+
+    <p>CLUSTER
+    <a href="#SwitchCluster">[/CLUSTER:]cluster_name</a>
+    <a href="#SwitchCreate">/CREATE</a>
+    <a href="#SwitchIpAddr">/IPADDR[ESS]:Static_IP_Address[,SubnetMask,NetworkConnectionName]</a>
+    <a href="#SwitchPass">/PASS[WORD]:pass_word</a>
+    <a href="#SwitchUser">/USER:{domain\user_name | user_name@domain}</a>
+    [<a href="#SwitchNode">/NODE:node_name</a>]
+    [<a href="#SwitchVerb">/VERB[OSE]</a>]
+    [<a href="#SwitchUnattend">/UNATTEND[ED]</a>]
+    [<a href="#SwitchMin">/MIN[IMUM]</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterPropertyList"></a> name=value[,value ...][:format][name=value[,value ...][:format] ...]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dt> :name[,name ...] /userdefault
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>To revert to the default value of a common property or to
+      delete a private property, use the /usedefault option.
+        <ul>
+          <li><b>Binary</b> Separated list of values from 0 to 255</li>
+          <li><b>DWord</b> Double word</li>
+          <li><b>Str[ing]</b> Double quotation marks are required around strings with spaces</li>
+          <li><b>ExpandStr[ing]</b> Expanded by Cluster</li>
+          <li><b>MultiStr[ing]</b> List of strings separated by commas</li>
+          <li><b>Security</b> Set access privileges.
+            <ul>
+              <li>Access types:
+                <ul>
+                  <li><b>grant</b></li>
+                  <li><b>deny</b></li>
+                  <li><b>set</b></li>
+                  <li><b>revoke</b> (Does not require Access mask)</li>
+                </ul>
+              </li>
+              <li>Access masks:
+                <ul>
+                  <li><b>R</b> read</li>
+                  <li><b>C</b> change</li>
+                  <li><b>F</b> full</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><b>ULarge</b> Unsigned 64-bit value</li>
+        </ul>
+      </dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /HELP | /?
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Display cluster syntax. Default.</dd>
+      <dd><a href="#SwitchChangePass">CHANGEPASS[WORD]</a>:
+      help for change password option only.</dd>
+
+      <dt><a name="SwitchAdd"></a> /ADD[NODES][:node_name[,node_name, ...]]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Creates a cluster.</dd>
+
+      <dt><a name="SwitchChangePass"></a> /CHANGEPASS[WORD][:new_password[,old_password]]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>For one or more clusters, changes the Cluster
+      service account password on the domain controller and
+      all the cluster nodes from old_password to
+      new_password. If not supplied as part of the command,
+      you will be prompted to provide the new_password or the
+      old_password. You can specify a blank password by
+      supplying two double quotes (""). If multiple clusters
+      are specified in one operation, they must all use the
+      same Cluster service account.</dd>
+
+      <dt><a name="SwitchCluster"></a> /CLUSTER
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>If you do not specify a cluster, attempts to connect to the
+      cluster running on the node that is running the command.</dd>
+      <dd>If the name of your cluster is also a cluster command or its
+      abbreviation, use /cluster: to explicitly specify the cluster
+      name.</dd>
+
+      <dt><a name="SwitchCreate"></a> /CREATE
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Creates a cluster.</dd>
+
+      <dt><a name="SwitchForce"></a> /FORCE
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Force execution of the password change command on
+      the available nodes in a cluster even if some of the
+      cluster nodes are not available.</dd>
+
+      <dt><a name="SwitchIpAddr"></a> /IPADDR[ESS]:Static_IP_Address[,SubnetMask,NetworkConnectionName]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>?</dd>
+
+      <dt><a name="SwitchList"></a> /LIST[:domain_name]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Display a list of clusters in the computer's domain or a
+      specified domain. Do not use the cluster name with this
+      option.</dd>
+
+      <dt><a name="SwitchListNetPri"></a> /LISTNETPRI[ORITY]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Lists the priority of all internal (private and
+      mixed) networks.</dd>
+
+      <dt><a name="SwitchMaxLogSize"></a> /MAXLOGSIZE:max_size_kb
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Change the size of the quorum resource log.</dd>
+
+      <dt><a name="SwitchMin"></a> /MIN[IMUM]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Creates a cluster using the Advanced (minimum)
+      Configuration option. Use when creating clusters with
+      complex storage configurations.</dd>
+
+      <dt><a name="SwitchNode"></a> /NODE:node_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>The name of the server to be configured as the
+      first cluster node. Will default to use the name of
+      the current computer.</dd>
+
+      <dt><a name="SwitchPass"></a> /PASS[WORD]:pass_word
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>?</dd>
+
+      <dt><a name="SwitchPath"></a> /PATH:path
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Change the location of the quorum resource.</dd>
+
+      <dt><a name="SwitchPrivProperties"></a> /PRIV[PROPERTIES]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>View or set the cluster private properties.</dd>
+
+      <dt><a name="SwitchProperties"></a> /PROP[ERTIES]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>View or set the cluster common properties.</dd>
+
+      <dt><a name="SwitchQuiet"></a> /QUIET
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>No output, unless an error occurs.</dd>
+
+      <dt><a name="SwitchQuorum"></a> /QUORUM[RESOURCE][:resource_name]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Change the name of the quorum resource.</dd>
+
+      <dt><a name="SwitchRegister"></a> /[UN]REG[ADMIN]EXT:admin_extension_dll[,admin_extension_dll ...]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Register/Unregister a Cluster Administrator extension DLL
+      with/from the cluster.</dd>
+
+      <dt><a name="SwitchRename"></a> /REN[AME]:cluster_name
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Rename a cluster.</dd>
+
+      <dt><a name="SwitchSetFail"></a> /SETFAIL[UREACTIONS][:node_name[,node_name ...]]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Resets the restart actions settings that the
+      Services Microsoft Management Console snap-in uses for
+      the Cluster service to the original values used at setup.</dd>
+      <dd>Resets the Cluster service restart settings for one
+      or more nodes to the values:
+        <ul>
+          <li><b>First failure</b> Restart the service</li>
+          <li><b>Second failure</b> Restart the service</li>
+          <li><b>Subsequent failure</b> Restart the service</li>
+          <li><b>Reset fail count after N days</b> 0 days</li>
+          <li><b>Restart service after N minutes</b> 1 minute</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchSetNetPri"></a> /SETNETPRI[ORITY]:node_name[,node_name, ...]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the priority order for all internal networks.
+      If you use this option, you must supply all the
+      internal networks in the cluster.</dd>
+
+      <dt><a name="SwitchSkipDc"></a> /SKIPDC
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Change the Cluster service account password only
+      on the cluster nodes. It will not change the password
+      on the domain controller. Use to complete a previous
+      password update that was only partially completed.</dd>
+      <dd><b>Note</b> If used, you do not have to supply the
+      old_password.</dd>
+
+      <dt><a name="SwitchTest"></a> /TEST
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Open a connection to the specified cluster(s),
+      verify that an appropriate domain controller is
+      available, check the version of the operating system
+      installed on each node, and verify that all the
+      cluster nodes are online and use the same Cluster
+      service account.</dd>
+
+      <dt><a name="SwitchUnattend"></a> /UNATTEND[ED]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Will not be prompted for passwords not supplied at
+      the command prompt.</dd>
+
+      <dt><a name="SwitchUser"></a> /USER:{domain\user_name | user_name@domain}
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>?</dd>
+
+      <dt><a name="SwitchVerb"></a> /VERB[OSE]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Writes all event messages to the cluster log. Use
+      for troubleshooting cluster configuration issues.</dd>
+      <dd><a href="#SwitchChangePass">CHANGEPASS[WORD]</a>:
+      Outputs detailed information about the cluster nodes
+      to the screen. Use for troubleshooting password change
+      issues.</dd>
+
+      <dt><a name="SwitchVersion"></a> /VER[SION]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Display the Cluster service version number.</dd>
+
+      <dt><a name="SwitchWiz"></a> /WIZ[ARD]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Starts the Cluster Configuration Wizard. Must
+      be used with either the <a href="#SwitchCreate">/create</a>
+      or <a href="#SwitchAdd">/add[nodes]</a>.</dd>
+      <dd><b>Important</b> You cannot supply the subnet mask
+      or network connection name to create a cluster. The
+      program will use the information from the network
+      connection with the same subnet mask as the cluster to
+      supply the subnet mask, and network connection name.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="CLUSTERG.HTM">Cluster Group</a>
+    <br><a href="CLUSTERI.HTM">Cluster Netinterface</a>
+    <br><a href="CLUSTERW.HTM">Cluster Network</a>
+    <br><a href="CLUSTERN.HTM">Cluster Node</a>
+    <br><a href="CLUSTERR.HTM">Cluster Resource</a>
+    <br><a href="CLUSTERT.HTM">Cluster ResourceType</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Common cluster property names:
+      <ul>
+        <li><b>AdminExtensions</b> Describes one or more class identifiers (CLSIDs) of Cluster Administrator extension for the cluster object</li>
+        <li><b>DefaultNetworkRole</b> Specifies the default role to assign to networks</li>
+        <li><b>Description</b> Specifies administrative description of the cluster</li>
+        <li><b>EnableEventLogReplication</b> Specifies if Event Log Replication is enabled or disabled cluster wide. (True (1) means enabled; False (0) means disabled.)</li>
+        <li><b>Groups\AdminExtensions</b> Describes one or more class identifiers (CLSIDs) of Cluster Administrator extensions for the groups</li>
+        <li><b>NetInterfaces\AdminExtensions</b> Describes one or more class identifiers (CLSIDs) of Cluster Administrator extensions for the netinterfaces</li>
+        <li><b>Networks\AdminExtensions</b> Describes one or more class identifiers (CLSIDs) of Cluster Administrator extensions for the networks</li>
+        <li><b>Nodes\AdminExtensions</b> Describes one or more class identifiers (CLSIDs) of Cluster Administrator extensions for the nodes</li>
+        <li><b>Resources\AdminExtensions</b> Describes one or more class identifiers (CLSIDs) of Cluster Administrator extensions for the resources</li>
+        <li><b>ResourceTypes\AdminExtensions</b> Describes one or more class identifiers (CLSIDs) of Cluster Administrator extensions for the resource types</li>
+        <li><b>Security</b> Describes Windows 2000-compatible security descriptor</li>
+        <li><b>SecurityDescriptor</b> Describes Windows NT-SP4 and Windows 2000-compatible security descriptor</li>
+      </ul>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

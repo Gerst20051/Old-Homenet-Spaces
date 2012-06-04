@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>PAX</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#p">Commands N-Z</a>
+    &gt; <a href="../INDEXP.HTM#pax">Commands P</a>
+    <h1>PAX</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Starts the Portable Archive Interchange (Pax) utility.</p>
+    <p>Pax is a POSIX program and path names used as arguments must
+    be specified in POSIX format. Use "//C/Users/Default" instead of
+    "C:\USERS\DEFAULT."</p>
+    <p>Combinations of the <a href="#SwitchR">-r</a> and <a href="#SwitchW">-w</a> command-line arguments specify
+    whether pax will read, write or list the contents of the
+    specified archive, or move the specified files to another
+    directory.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>PAX
+    [<a href="#SwitchR">-r</a>]
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchI">-i</a>]
+    [<a href="#SwitchM">-m</a>]
+    [<a href="#SwitchO">-o</a>]
+    [<a href="#SwitchP">-p</a>]
+    [<a href="#SwitchU">-u</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchY">-y</a>]
+    [<a href="#SwitchF">-f archive</a>]
+    [<a href="#SwitchS">-s replstr</a>]
+    [<a href="#SwitchT">-t device</a>]
+    [<a href="#ParameterPattern">pattern...</a>]</p>
+
+    <p>PAX
+    <a href="#SwitchW">-w</a>
+    [<a href="#SwitchA">-a</a>]
+    [<a href="#SwitchD">-d</a>]
+    [<a href="#SwitchI">-i</a>]
+    [<a href="#SwitchM">-m</a>]
+    [<a href="#SwitchU">-u</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchY">-y</a>]
+    [<a href="#SwitchB">-b blocking</a>]
+    [<a href="#SwitchF">-f archive</a>]
+    [<a href="#SwitchS">-s replstr</a>]
+    [<a href="#SwitchT">-t device</a>]
+    [<a href="#SwitchX">-x format</a>]
+    [<a href="#ParameterPathname">pathname...</a>]</p>
+
+    <p>PAX
+    <a href="#SwitchRW">-rw</a>
+    [<a href="#SwitchI">-i</a>]
+    [<a href="#SwitchL">-l</a>]
+    [<a href="#SwitchM">-m</a>]
+    [<a href="#SwitchO">-o</a>]
+    [<a href="#SwitchP">-p</a>]
+    [<a href="#SwitchU">-u</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchY">-y</a>]
+    [<a href="#SwitchS">-s replstr</a>]
+    [<a href="#ParameterPathname">pathname...</a>]
+    <a href="#ParameterDirectory">directory</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDirectory"></a> directory
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Contains the destination directory path for copies when
+      both the <a href="#SwitchR">-r</a> and <a href="#SwitchW">-w</a>
+      options are specified. The directory must exist and be writable
+      before the copy or an error results.</dd>
+
+      <dt><a name="ParameterPathname"></a> pathname...
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Specifies a file whose contents are used instead of the
+      files named on the standard input. When a directory is named,
+      all of its files and subdirectories are copied as well.</dd>
+
+      <dt><a name="ParameterPattern"></a> pattern...
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>A pattern is given using wildcards.
+      The default is all files.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchA"></a> -a
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Appends the files specified by pathname to the specified
+      archive.</dd>
+
+      <dt><a name="SwitchB"></a> -b blocking
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Blocks the output at blocking bytes per write to the
+      archive file:
+        <ul>
+          <li><b>b</b> 512</li>
+          <li><b>k</b> 1024</li>
+          <li><b>m</b> 1,048,576 (1 MB)</li>
+        </ul>
+      If not specified, blocking is automatically determined on
+      input and is ignored for <a href="#SwitchRW">-rw</a>.</dd>
+
+      <dt><a name="SwitchC"></a> -c
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Complements the match sense of the pattern operands.</dd>
+
+      <dt><a name="SwitchD"></a> -d
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Indicates that intermediate directories not explicitly
+      listed in the archive are not created.  This option is ignored
+      unless the <a href="#SwitchR">-r</a> option is specified.</dd>
+
+      <dt><a name="SwitchF"></a> -f archive
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>The archive option specifies the path of the input or
+      output archive, overriding the default of standard input for
+      <a href="#SwitchR">-r</a> or standard output for
+      <a href="#SwitchW">-w</a>.</dd>
+      <dd>Only the last of multiple -f options take effect.</dd>
+
+      <dt><a name="SwitchI"></a> -i
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Interactively renames files. Substitutions specified by
+      <a href="#SwitchS">-s</a> options are performed before
+      requesting the new file name from the user. A file is
+      skipped if an empty line is entered and the pax command
+      exits with an exit status of zero if EOF is encountered.
+      Cannot be used with <a href="#SwitchY">-y</a></dd>
+
+      <dt><a name="SwitchL"></a> -l
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Indicates that files are linked rather than copied when
+      possible.</dd>
+
+      <dt><a name="SwitchM"></a> -m
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Indicates that file modification times are not retained.</dd>
+
+      <dt><a name="SwitchN"></a> -n
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>When <a href="#SwitchR">-r</a> is specified, but
+      <a href="#SwitchW">-w</a> is not, the pattern arguments are
+      treated as ordinary file names. Only the first occurrence of
+      each of these files in the input archive is read. The pax
+      command exits with a zero exit status after all files in the
+      list have been read. If one or more files in the list is not
+      found, pax writes a diagnostic to standard error for each of
+      the files and exits with a nonzero exit status. The file
+      names are compared before any of the <a href="#SwitchI">-i</a>,
+      <a href="#SwitchS">-s</a>, or <a href="#SwitchY">-y</a> options
+      are applied.</dd>
+
+      <dt><a name="SwitchO"></a> -o
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Restores file ownership as specified in the archive.
+      The invoking process must have appropriate privileges to
+      accomplish this.</dd>
+
+      <dt><a name="SwitchP"></a> -p
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Preserves the access time of the input files after
+      they have been copied.</dd>
+
+      <dt><a name="SwitchR"></a> -r
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Reads an archive file from the standard input.
+      Only files with names that match any of the pattern operands
+      are selected for extraction. The selected files are
+      conditionally created and copied relative to the current
+      tree, subject to the other switches.
+      By default, the owner and group of selected
+      files will be that of the invoking process, and the
+      permissions and modification times will be the same as
+      those in the archive. The supported archive formats are
+      automatically detected on input. The default output
+      format is ustar, but may be overridden by
+      <a href="#SwitchX">-x format</a>.</dd>
+
+      <dt><a name="SwitchRW"></a> -rw
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Reads the files and directories named in the pathname
+      operands and copies them to the destination directory. A
+      directory pathname operand refers to the files and
+      (recursively) subdirectories of that directory. If no
+      pathname operands are given, the standard input is read
+      to get a list of paths to copy, one path per line. In this
+      case, only those paths appearing on the standard input are
+      copied. The directory named by the directory operand must
+      exist and have the proper permissions before the copy can
+      occur.</dd>
+
+      <dt><a name="SwitchS"></a> -s replstr
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Modifies file names according to the substitution
+      expression using the syntax of ed(1) as shown:
+<pre>
+      -s /old/new/[gp]
+</pre>
+      Any non-null character may be used as a delimiter (a
+      forward slash is used here as an example). Multiple -s
+      expressions may be specified; the expressions are applied
+      in the order specified terminating with the first
+      successful substitution.</dd>
+      <dd>The optional trailing p causes successful mappings to
+      be listed on standard error.</dd>
+      <dd>The optional trailing g causes the old expression
+      to be replaced each time it occurs in the source string.</dd>
+      <dd>Files that substitute to an empty string are ignored
+      both on input and output.</dd>
+
+      <dt><a name="SwitchT"></a> -t device
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>The device option argument is an implementation-defined
+      identifier that names the input or output archive device,
+      overriding the default of standard input for
+      <a href="#SwitchR">-r</a> and standard output for
+      <a href="#SwitchW">-w</a>.</dd>
+      <dd>Only the last of multiple -t options take effect.</dd>
+
+      <dt><a name="SwitchU"></a> -u
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Copies each file only if it is newer than a preexisting
+      file with the same name.
+      This implies <a href="#SwitchA">-a</a>.</dd>
+
+      <dt><a name="SwitchV"></a> -v
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Lists file names as they are encountered. Produces a
+      verbose table of contents listing on the standard output
+      when both <a href="#SwitchR">-r</a> and
+      <a href="#SwitchW">-w</a> are omitted, otherwise the
+      file names are printed to standard error as they are
+      encountered in the archive.</dd>
+
+      <dt><a name="SwitchW"></a> -w
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Writes the files and directories specified by the
+      pathname operands to the standard output together with
+      the path and status information prescribed by the archive
+      format used. A directory pathname operand refers to the
+      files and (recursively) subdirectories of that directory.
+      If no pathname operands are given, then the standard input
+      is read to get a list of paths to copy, one path per line.
+      In this case, only those paths appearing on the standard
+      input are copied.</dd>
+
+      <dt><a name="SwitchX"></a> -x format
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Specifies the output archive format. The input format,
+      which must be one of the following, is automatically
+      determined when the <a href="#SwitchR">-r</a> option is used.
+      The formats supported:
+      <ul>
+      <li><b>cpio</b>   The extended CPIO interchange format
+      specified in Extended CPIO Format in IEEE Std. 1003.1-1988.</li>
+      <li><b>ustar</b>  The extended TAR interchange format
+      specified in Extended TAR Format in IEEE Std. 1003.1-1988
+      (default archive format).</li>
+      </ul>
+      </dd>
+
+      <dt><a name="SwitchY"></a> -y
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Prompts for the disposition of each file. Substitutions
+      specified by <a href="#SwitchS">-s</a> options are
+      performed before prompting the user for disposition.
+      EOF or an input line starting with the character q causes
+      pax to exit. Otherwise, an input line starting with
+      anything other than y causes the file to be ignored. This
+      option cannot be used in conjunction with the
+      <a href="#SwitchI">-i</a> option.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <ul>
+    <li><a href="#SwitchI">-i</a>
+    <ul>
+    <li><b>0</b> EOF encountered</li>
+    </ul>
+    </li>
+    <li><a href="#SwitchN">-n</a>
+    <ul>
+    <li><b>0</b> all files found</li>
+    <li><b>non-0</b> one or more files not found</li>
+    </ul>
+    </li>
+    </ul>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,557 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>COPY</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCH.HTM#copy">Commands Ch-Cz</a>
+    <h1>COPY</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Copies one or more files to the location you specify.</p>
+    <p>This command can also be used to combine files. When more than
+    one file is copied, the operating system displays each filename
+    as the file is copied.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>COPY
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>COPY
+    [<a href="#SwitchY">/Y</a>
+    | <a href="#SwitchNotY">/-Y</a>]
+    [<a href="#SwitchA">/A</a>
+    | <a href="#SwitchB">/B</a>]
+    <a href="#ParameterSource">source</a>
+    [<a href="#SwitchA">/A</a>
+    | <a href="#SwitchB">/B</a>]
+    [+ <a href="#ParameterSource">source</a>
+    [<a href="#SwitchA">/A</a>
+    | <a href="#SwitchB">/B</a>] [+ ...]]
+    <a href="#ParameterDestination">destination</a>
+    [<a href="#SwitchA">/A</a>
+    | <a href="#SwitchB">/B</a>]]
+    [<a href="#SwitchD">/D</a>]
+    [<a href="#SwitchN">/N</a>]
+    [<a href="#SwitchV">/V</a>]
+    [<a href="#SwitchZ">/Z</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterSource"></a> source
+      (<a href="../../Version/MSDOS/100.HTM">v1.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the location and name of a file or set of files
+      from which you want to copy. Source can consist of a drive letter
+      and colon, a directory name, a filename, or a combination.</dd>
+      <dd>COPY will accept UNC pathnames.</dd>
+
+      <dt><a name="ParameterDestination"></a> destination
+      (<a href="../../Version/MSDOS/100.HTM">v1.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the location and name of a file or set of files to
+      which you want to copy. Destination can consist of a drive letter
+      and colon, a directory name, a filename, or a combination.</dd>
+      <dd>COPY will accept UNC pathnames.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchA"></a> /A
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Indicates an ASCII text file. When the /A switch precedes the
+      list of filenames on the command-line, it applies to all files
+      whose names follow the /A switch, until COPY encounters a
+      <a href="#SwitchB">/B</a> switch, in which case the
+      <a href="#SwitchB">/B</a> switch applies to the file whose name
+      precedes the <a href="#SwitchB">/B</a> switch.</dd>
+      <dd>When the /A switch follows a filename, it applies to the
+      file whose name precedes the /A switch and to all files whose
+      names follow the /A switch, until COPY encounters a
+      <a href="#SwitchB">/B</a> switch, in which case the
+      <a href="#SwitchB">/B</a> switch applies to the file whose name
+      precedes the <a href="#SwitchB">/B</a> switch.</dd>
+      <dd>An ASCII text file can use an end-of-file character (CTRL+Z)
+      to indicate the end of the file. When combining files, COPY
+      treats files as ASCII text files by default.</dd>
+
+      <dt><a name="SwitchB"></a> /B
+      (<a href="../../Version/MSDOS/200.HTM">v2.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Indicates a binary file. When the /B switch precedes the list
+      of filenames on the command-line, it applies to all files whose
+      names follow the /B switch, until COPY encounters an
+      <a href="#SwitchA">/A</a> switch, in which case the
+      <a href="#SwitchA">/A</a> switch applies to the file whose name
+      precedes the <a href="#SwitchA">/A</a> switch.</dd>
+      <dd>When the /B switch follows a filename, it applies to the
+      file whose name precedes the /B switch and to all files whose
+      names follow the /B switch, until COPY encounters an
+      <a href="#SwitchA">/A</a> switch, in which case the
+      <a href="#SwitchA">/A</a> switch applies to the file whose name
+      precedes the <a href="#SwitchA">/A</a> switch.</dd>
+      <dd>The /B switch specifies that the command interpreter is to
+      read the number of bytes specified by the file size in the
+      directory. The /B switch is the default value for COPY unless
+      COPY is combining files.</dd>
+
+      <dt><a name="SwitchD"></a> /D
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Allows the encrypted files being copied to be saved as
+      decrypted files at the destination.</dd>
+
+      <dt><a name="SwitchN"></a> /N
+      (<a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>If at all possible, use only a short filename (8.3) when
+      creating a destination file. This may be necessary when copying
+      between disks that are formatted differently e.g NTFS and VFAT,
+      or when archiving data to an ISO9660 CDROM.</dd>
+
+      <dt><a name="SwitchV"></a> /V
+      (<a href="../../Version/MSDOS/100.HTM">v1.0</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Verifies that new files are written correctly, using
+      primitive CRC.</dd>
+
+      <dt><a name="SwitchY"></a> /Y
+      (<a href="../../Version/MSDOS/620.HTM">v6.2</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Indicates that you want COPY to replace existing file(s)
+      without prompting you for confirmation. By default, if you
+      specify an existing file as the destination file, COPY will ask
+      you if you want to overwrite the existing file. (Previous
+      Versions of the operating system would simply replace the
+      existing file.) If the COPY command is part of a batch file,
+      COPY will behave as in previous Versions. Specifying this
+      switch overrides all defaults and the current setting of the
+      <a href="../../ENV/MSDOS/COPYCMD.HTM">%COPYCMD%</a>
+      environment variable.</dd>
+
+      <dt><a name="SwitchNotY"></a> /-Y
+      (<a href="../../Version/MSDOS/620.HTM">v6.2</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Indicates that you want COPY to prompt you for confirmation
+      when replacing an existing file. Specifying this switch overrides
+      all defaults and the current setting of the COPYCMD environment
+      variable.</dd>
+
+      <dt><a name="SwitchZ"></a> /Z
+      (<a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Copy files in restartable mode. If the copy is interrupted
+      part way through, it will restart if possible. (use on slow
+      networks)</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>For information about copying directories and subdirectories,
+    see the <a href="../X/XCOPY.HTM">XCOPY</a> command.
+    <br><a href="../R/ROBOCOPY.HTM">ROBOCOPY</a> - Robust File and Folder Copy
+    <br><a href="../S/SCOPY.HTM">SCOPY</a> - File Copy with Security
+    <br><a href="../M/MOVE.HTM">MOVE</a> - Move a file from one folder to another
+    <br><b>Equivalent Linux BASH commands:</b>
+    <br>cp - Copy one or more files to another location
+    <br>install - Copy files and set attributes</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <ul>
+      <li><a href="#DateTime">Changing the time and date of a file</a></li>
+      <li><a href="#Combining">Combining files with the COPY command</a></li>
+      <li><a href="#Subdirectories">Copying files in subdirectories</a></li>
+      <li><a href="#ToDevice">Copying to and from devices</a></li>
+      <li><a href="#ZeroLength">Copying zero-length files</a></li>
+      <li><a href="#COPYCMD">Setting the %COPYCMD% environment variable</a></li>
+      <li><a href="#UseSwitchB">Using or omitting the /B switch when copying to a device</a></li>
+      <li><a href="#SwitchAB">Using the /A and /B switches</a></li>
+      <li><a href="#UseSwitchV">Using the /V switch</a></li>
+      <li><a href="#DefaultDestination">Using the default destination file</a></li>
+    </ul>
+
+    <hr>
+    <a name="COPYCMD"></a> <b>Setting the %COPYCMD% environment variable</b> <p>You can set the
+    <a href="../../ENV/MSDOS/COPYCMD.HTM">%COPYCMD%</a> environment
+    variable to specify whether you want the COPY,
+    <a href="../M/MOVE.HTM">MOVE</a>, and
+    <a href="../X/XCOPY.HTM">XCOPY</a> commands to prompt you for
+    confirmation before overwriting a file, whether issued from the
+    command prompt or a batch file.</p>
+    <p>To force the COPY, <a href="../M/MOVE.HTM">MOVE</a>, and
+    <a href="../X/XCOPY.HTM">XCOPY</a> commands to prompt you before
+    overwriting in all cases, set the
+    <a href="../../ENV/MSDOS/COPYCMD.HTM">%COPYCMD%</a> environment
+    variable <a href="#SwitchNotY">/-Y</a>. To force these commands to
+    overwrite in all cases without prompting you, set the
+    <a href="../../ENV/MSDOS/COPYCMD.HTM">%COPYCMD%</a>
+    environment variable to <a href="#SwitchY">/Y</a>.</p>
+    <p>Typing any of these commands with the
+    <a href="#SwitchY">/Y</a> or
+    <a href="#SwitchNotY">/-Y</a> switch overrides all defaults
+    and the current setting of the
+    <a href="../../ENV/MSDOS/COPYCMD.HTM">%COPYCMD%</a> environment
+    variable.</p>
+
+    <hr>
+    <a name="ToDevice"></a> <b>Copying to and from devices</b>
+    <p>You can substitute a device name for one or more occurrences of
+    source or for destination.</p>
+
+    <hr>
+    <a name="UseSwitchB"></a> <b>Using or omitting the /B switch when copying to a device</b>
+    <p>When destination is a device (for example, COM1 or LPT1), the
+    <a href="#SwitchB">/B</a> switch causes the operating system to
+    copy data to the device in binary mode. In binary mode, all
+    characters (including such special characters as CTRL+C (^C), CTRL+S (^S),
+    CTRL+Z (^Z), and carriage return) are copied to the device as data.
+    Whereas, omission of the <a href="#SwitchB">/B</a> switch causes
+    the operating system to copy data to the device in ASCII mode. In
+    ASCII mode, such special characters as those previously listed may
+    cause the operating system to take special action during the
+    copying process.</p>
+
+    <hr>
+    <a name="DefaultDestination"></a> <b>Using the default destination file</b>
+    <p>If you do not specify a destination file, the operating system
+    creates a copy
+    with the same name, creation date, and creation time as the
+    original file, placing the new copy in the current directory on the
+    current drive. If the source file is on the current drive and in
+    the current directory and you do not specify a different drive or
+    directory for the destination file, the COPY command stops and
+    the operating system displays the error message:</p>
+<pre>
+    File cannot be copied onto itself
+    0 File(s) copied
+</pre>
+
+    <hr>
+    <a name="UseSwitchV"></a> <b>Using the /V switch</b>
+    <p>If the operating system cannot verify a write operation, it
+    displays an error
+    message. Although recording errors rarely occur with the COPY
+    command, the <a href="#SwitchV">/V</a> switch lets you
+    verify that critical data has been correctly recorded. The
+    <a href="#SwitchV">/V</a> switch also slows down the COPY
+    command, because the operating system must check each sector
+    recorded on the disk.</p>
+
+    <hr>
+    <a name="SwitchAB"></a> <b>Using the /A and /B switches</b>
+    <p>The effect of an <a href="#SwitchA">/A</a> or
+    <a href="#SwitchB">/B</a> switch depends upon its position
+    on the command-line. When the /A or /B switch follows the source
+    filename, COPY performs as shown in the list:</p>
+    <p><a href="#SwitchA">/A</a> Treats the file as an ASCII
+    (text) file and copies data that precedes the first end-of-file
+    character. COPY does not copy the first end-of-file character or
+    the remainder of the file.</p>
+    <p><a href="#SwitchB">/B</a> Copies the entire file,
+    including any end-of-file character.</p>
+    <p>When the <a href="#SwitchA">/A</a> or
+    <a href="#SwitchB">/B</a> switch follows the destination
+    filename, COPY performs as shown in the list:</p>
+    <p><a href="#SwitchA">/A</a> Adds an end-of-file
+    character as the last character of the file.</p>
+    <p><a href="#SwitchB">/B</a> Does not add an end-of-file
+    character.</p>
+
+    <hr>
+    <a name="Combining"></a> <b>Combining files with the COPY command</b>
+    <p>If you specify more than one source, separating entries with a
+    plus sign (+), COPY combines the files, creating a single file. If
+    you use wildcards in source but specify a single filename in
+    destination, COPY combines all files matching the filename in
+    source and creates a single file with the filename specified in
+    destination.</p>
+    <p>In either case, COPY assumes the combined files are ASCII files
+    unless you specify the <a href="#SwitchB">/B</a> switch.
+    (Do not combine non-ASCII files without specifying the
+    <a href="#SwitchB">/B</a> switch; doing so can result in
+    truncated files, since most binary files contain CTRL+Z (^Z) characters
+    which cause COPY to behave as if it has reached the end of the
+    file.)</p>
+    <p>If the name of the destination file is the same as the name of
+    one of the files being copied (except the first file), the original
+    contents of the destination file are lost. When this happens, COPY
+    displays the message:</p>
+    <p>Content of destination lost before copy</p>
+
+    <hr>
+    <a name="Subdirectories"></a> <b>Copying files in subdirectories</b>
+    <p>To copy all of a directory's files and subdirectories, you
+    should use the <a href="../X/XCOPY.HTM">XCOPY</a> command.</p>
+
+    <hr>
+    <a name="ZeroLength"></a> <b>Copying zero-length files</b>
+    <p>COPY does not copy files that are 0 bytes long; instead, it
+    deletes such files. Use <a href="../X/XCOPY.HTM">XCOPY</a> to
+    copy these files.</p>
+
+    <hr>
+    <a name="DateTime"></a> <b>Changing the time and date of a file</b>
+    <p>If you want to assign the current time and date to a file
+    without modifying the file (AKA "TOUCH"), use a command in the
+    format. The commas indicate the omission of the
+    destination parameter.</p>
+<pre>
+    COPY <a
+href="#SwitchB">/B</a> <a
+href="#ParameterSource">source</a>+,,
+</pre>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>This command copies a file and ensures that an
+    end-of-file character (CTRL+Z) is at the end of the copied
+    file:</p>
+<pre>
+    COPY <a
+href="#ParameterSource">MEMO.DOC</a> <a
+href="#ParameterDestination">LETTER.DOC</a> <a
+href="#SwitchA">/A</a>
+</pre>
+
+    <hr>
+    <p>To copy the NOTE.TXT file from the current drive and directory
+    to the directory MYNOTES, and to prevent the operating system
+    from prompting you before overwriting the destination file (if it
+    already exists), type:</p>
+<pre>
+    COPY <a
+href="#ParameterSource">NOTE.TXT</a> <a
+href="#ParameterDestination">MYNOTES</a> <a
+href="#SwitchY">/Y</a>
+</pre>
+
+    <hr>
+    <p>To copy a file named ROBIN.TYP from the current drive and
+    directory to an existing directory named BIRDS that is located on
+    drive C, type:</p>
+<pre>
+    COPY <a
+href="#ParameterSource">ROBIN.TYP</a> <a
+href="#ParameterDestination">C:\BIRDS</a>
+</pre>
+    <p>If the BIRDS directory doesn't exist, the operating system
+    copies the file ROBIN.TYP into a file named BIRDS that is
+    located in the root directory on the disk in drive C.</p>
+
+    <hr>
+    <p>To copy several files into one file, list any number of files as
+    source parameters on the COPY command-line. Separate filenames with
+    a plus sign (+) and specify a filename for the resulting combined
+    file:</p>
+<pre>
+    COPY <a
+href="#ParameterSource">MAR89.RPT</a> + <a
+href="#ParameterSource">APR89.RPT</a> + <a
+href="#ParameterSource">MAY89.RPT</a> <a
+href="#ParameterDestination">REPORT</a>
+</pre>
+
+    <hr>
+    <p>This command combines the files named MAR89.RPT, APR89.RPT, and
+    MAY89.RPT from the current drive and directory and places them in a
+    file named REPORT in the current directory on the current drive.
+    When files are combined, the destination file is created with the
+    current date and time. If you omit destination, the operating system
+    combines the
+    files and stores them under the name of the first specified file.
+    For example, if a file named REPORT already exists, you can use the
+    command to combine all four files in REPORT:</p>
+<pre>
+    COPY <a
+href="#ParameterSource">REPORT</a> + <a
+href="#ParameterSource">MAR89.RPT</a> + <a
+href="#ParameterSource">APR89.RPT</a> + <a
+href="#ParameterSource">MAY89.RPT</a>
+</pre>
+    <p>You can also combine several files into one by using wildcards:</p>
+<pre>
+    COPY <a
+href="#ParameterSource">*.TXT</a> <a
+href="#ParameterDestination">COMBIN.NEW</a>
+</pre>
+    <p>This command combines all files in the current directory on the
+    current drive that have the extension .TXT into one file named
+    COMBIN.DOC, also in the current directory on the current drive.</p>
+
+    <hr>
+    <p>If you want to combine several binary files into one by using
+    wildcards, include the <a href="#SwitchB">/B</a> switch:</p>
+<pre>
+    COPY <a
+href="#SwitchB">/B</a> <a
+href="#ParameterSource">*.EXE</a> <a
+href="#ParameterDestination">COMBIN.EXE</a>
+</pre>
+    <p>This prevents the operating system from treating CTRL+Z (^Z) as
+    an end-of-file character.</p>
+    <p><b>CAUTION:</b> If you combine binary files, the resulting file
+    might not be usable due to internal formatting.</p>
+
+    <hr>
+    <p>COPY combines each file that has a
+    .TXT extension with its corresponding .REF file. The result is a
+    file with the same filename but with a .NEW extension. Thus, COPY
+    combines FILE1.TXT with FILE1.REF to form FILE1.NEW. Then COPY
+    combines FILE2.TXT with FILE2.REF to form FILE2.NEW, and so on.</p>
+<pre>
+    COPY <a
+href="#ParameterSource">*.TXT</a> + <a
+href="#ParameterSource">*.REF</a> <a
+href="#ParameterDestination">*.NEW</a>
+</pre>
+
+    <hr>
+    <p>The COPY command combines first all files with the
+    .TXT extension, then all files with the .REF extension into one
+    file named COMBIN.TXT:</p>
+<pre>
+    COPY <a
+href="#ParameterSource">*.TXT</a> + <a
+href="#ParameterSource">*.REF</a> <a
+href="#ParameterDestination">COMBIN.TXT</a>
+</pre>
+
+    <hr>
+    <p><b>Copying information from the keyboard</b></p>
+    <p>The COPY command copies what you type at the keyboard
+    to the OUTPUT.TXT file:</p>
+<pre>
+    COPY <a
+href="#ParameterSource">CON</a> <a
+href="#ParameterDestination">OUTPUT.TXT</a>
+</pre>
+    <p>After you type this command and press ENTER, the operating
+    system copies everything you type to the file OUTPUT.TXT. When you
+    are finished typing, press CTRL+Z (^Z) to indicate that you want to end
+    the file. The CTRL+Z (^Z) character will appear on the screen as "Z".
+    You can also end a COPY CON command by pressing the F6 key. When
+    you press F6, it generates the CTRL+Z (^Z) character, which appears on
+    the screen as Z.</p>
+
+    <hr>
+    <p>Copies information from the keyboard to
+    the printer connected to LPT1:</p>
+<pre>
+    COPY <a
+href="#ParameterSource">CON</a> <a
+href="#ParameterDestination">LPT1</a>
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>Internal</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/100.HTM">v1.0</a>
+          <a href="../../Version/MSDOS/105.HTM">v1.05</a>
+          <a href="../../Version/MSDOS/110.HTM">v1.1</a>
+          <a href="../../Version/MSDOS/111.HTM">v1.11</a>
+          v1.24
+          v1.25
+          <a href="../../Version/MSDOS/185.HTM">v1.85</a>
+          <a href="../../Version/MSDOS/200.HTM">v2.0</a>
+          <a href="../../Version/MSDOS/201.HTM">v2.01</a>
+          v2.05
+          <a href="../../Version/MSDOS/210.HTM">v2.10</a>
+          v2.11
+          v2.11R
+          <a href="../../Version/MSDOS/212.HTM">v2.12</a>
+          v2.2
+          <a href="../../Version/MSDOS/225.HTM">v2.25</a>
+          <a href="../../Version/MSDOS/300.HTM">v3.0</a>
+          <a href="../../Version/MSDOS/320.HTM">v3.20</a>
+          <a href="../../Version/MSDOS/305.HTM">v3.05</a>
+          <a href="../../Version/MSDOS/310.HTM">v3.1</a>
+          <a href="../../Version/MSDOS/321.HTM">v3.21</a>
+          v3.25
+          <a href="../../Version/MSDOS/330.HTM">v3.30</a>
+          <a href="../../Version/MSDOS/330A.HTM">v3.3A</a>
+          <a href="../../Version/MSDOS/330.HTM">v3.3R</a>
+          <a href="../../Version/MSDOS/330T.HTM">v3.3T</a>
+          <a href="../../Version/MSDOS/331.HTM">v3.31</a>
+          <a href="../../Version/MSDOS/340.HTM">v3.40</a>
+          <a href="../../Version/MSDOS/400.HTM">v4.0</a>
+          <a href="../../Version/MSDOS/401.HTM">v4.01</a>
+          <a href="../../Version/MSDOS/401A.HTM">v4.01A</a>
+          <a href="../../Version/MSDOS/500.HTM">v5.0</a>
+          <a href="../../Version/MSDOS/500A.HTM">v5.0A</a>
+          v5.00.02
+          <a href="../../Version/MSDOS/500A.HTM">v5.001A</a>
+          v5.01
+          <a href="../../Version/MSDOS/502.HTM">v5.02</a>
+          <a href="../../Version/MSDOS/600.HTM">v6.0</a>
+          <a href="../../Version/MSDOS/610.HTM">v6.10</a>
+          <a href="../../Version/MSDOS/620.HTM">v6.2</a>
+          <a href="../../Version/MSDOS/621.HTM">v6.21</a>
+          <a href="../../Version/MSDOS/622.HTM">v6.22</a>
+          v6.23
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>MSIEXEC</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#m">Commands A-M</a>
+    &gt; <a href="../INDEXM.HTM#msiexec">Commands M</a>
+    <h1>MSIEXEC</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Install, modify, and perform operations on Windows
+    Installer.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>MSIEXEC
+    <a href="#SwitchHelp">/? | /H</a></p>
+
+    <p>MSIEXEC
+    [<a href="#SwitchF">/F options</a>
+    | <a href="#SwitchI">/I</a>
+    | <a href="#SwitchX">/X</a>]
+    <a href="#ParameterPackage">package</a>
+    | <a href="#ParameterProductCode">product_code</a>
+    [<a href="#ParameterTransforms">TRANSFORMS=transform_list</a>]</p>
+
+    <p>MSIEXEC
+    [<a href="#SwitchI">/I</a>]
+    [<a href="#SwitchQ">/Q options</a>]
+    [<a href="#SwitchA">/A</a>
+    | <a href="#SwitchJ">/J</a>]
+    [<a href="#ParameterU">U</a>
+    | <a href="#ParameterM">M</a>]
+    <a href="#ParameterPackage">package</a>
+    [<a href="#SwitchG">/G language_id</a>
+    | <a href="#SwitchT">/T transform_list</a>]</p>
+
+    <p>MSIEXEC
+    <a href="#SwitchL">/L options</a>
+    <a href="#ParameterLogFile">logfile.txt</a></p>
+
+    <p>MSIEXEC
+    <a href="#SwitchP">/P</a>
+    <a href="#ParameterPatchPackage">patch_package</a></p>
+
+    <p>MSIEXEC
+    [<a href="#SwitchY">/Y</a>
+    | <a href="#SwitchZ">/Z</a>]
+    <a href="#ParameterModule">module</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterLogFile"></a> logfile.txt
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Name and path of the text log file.</dd>
+
+      <dt><a name="ParameterM"></a> M
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Advertises to all users of the computer.</dd>
+
+      <dt><a name="ParameterModule"></a> module
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the file name of module.</dd>
+
+      <dt><a name="ParameterPackage"></a> package
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the name of the Windows Installer package file.</dd>
+
+      <dt><a name="ParameterPatchPackage"></a> patch_package
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specific patch.</dd>
+
+      <dt><a name="ParameterProductCode"></a> product_code
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the globally unique identifier (GUID) of
+      the Windows Installer package.</dd>
+
+      <dt><a name="ParameterTransforms"></a> TRANSFORMS=transform_list
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>List of transform (.mst) file paths separated by
+      semicolons.</dd>
+
+      <dt><a name="ParameterU"></a> U
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Advertises to the current user.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchA"></a> /A
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Applies the administrative installation option.</dd>
+
+      <dt><a name="SwitchF"></a> /F options
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Repairs via one or more of the options:
+        <ul>
+          <li><b>A</b> Forces all files to be reinstalled</li>
+          <li><b>C</b> Reinstalls if file is missing or the stored checksum does not match the calculated value</li>
+          <li><b>D</b> Reinstalls if file is missing or a different version is installed</li>
+          <li><b>E</b> Reinstalls if file is missing or an equal or older version is installed</li>
+          <li><b>M</b> Rewrites all required computer-specific registry entries</li>
+          <li><b>O</b> Reinstalls if file is missing or if an older version is installed</li>
+          <li><b>P</b> Reinstalls only if file is missing</li>
+          <li><b>S</b> Overwrites all existing shortcuts</li>
+          <li><b>U</b> Rewrite all required user-specific registry entries</li>
+          <li><b>V</b> Runs from source and re-caches the local package</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchG"></a> /G language_id
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Identifies the language.</dd>
+
+      <dt><a name="SwitchHelp"></a> /? | /H
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays the Windows Installer version and
+      copyright information.</dd>
+
+      <dt><a name="SwitchI"></a> /I
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Installs or configures a product.</dd>
+
+      <dt><a name="SwitchJ"></a> /J
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Advertises a product.</dd>
+      <dd>If you want to install the application with
+      elevated privileges, use /J<a href="#ParameterM">M</a>.</dd>
+
+      <dt><a name="SwitchL"></a> /L options
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the level of log file logging:
+        <ul>
+          <li><b>!</b> Flushes each line to the log</li>
+          <li><b>*</b> Logs all information except for the <b>V</b></li>
+          <li><b>+</b> Appends to existing file</li>
+          <li><b>A</b> Logs startup of actions</li>
+          <li><b>C</b> Logs initial user interface parameters</li>
+          <li><b>E</b> Logs all error messages</li>
+          <li><b>I</b> Logs status messages</li>
+          <li><b>M</b> Logs out-of-memory</li>
+          <li><b>P</b> Logs terminal properties</li>
+          <li><b>R</b> Logs action-specific records</li>
+          <li><b>U</b> Logs user requests</li>
+          <li><b>V</b> Logs verbose output</li>
+          <li><b>W</b> Logs nonfatal warnings</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchP"></a> /P
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Applies a patch.</dd>
+
+      <dt><a name="SwitchQ"></a> /Q options
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>User interface level.
+        <ul>
+          <li><b>b-</b> a basic user interface with no modal dialog boxes</li>
+          <li><b>b+</b> a basic user interface with a modal dialog box displayed at the end</li>
+          <li><b>b</b> a basic user interface</li>
+          <li><b>f</b> the full user interface with a modal dialog box displayed at the end</li>
+          <li><b>n+</b> no user interface, except for a modal dialog box displayed at the end</li>
+          <li><b>n</b> no user interface</li>
+          <li><b>r</b> a reduced user interface with a modal dialog box displayed at the end of the installation</li>
+        </ul>
+      </dd>
+
+      <dt><a name="SwitchT"></a> /T transform_list
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Applies transform to advertised package.</dd>
+
+      <dt><a name="SwitchX"></a> /X
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Uninstalls a product.</dd>
+
+      <dt><a name="SwitchY"></a> /Y
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Calls the system API DllRegisterServer to
+      self-register modules.</dd>
+      <dd>Only used for registry information that cannot be
+      added using the registry tables of the .msi file.</dd>
+
+      <dt><a name="SwitchZ"></a> /Z
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Calls the system API DllRegisterServer to
+      unregister modules.</dd>
+      <dd>Only used for registry information that cannot be
+      added using the registry tables of the .msi file.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

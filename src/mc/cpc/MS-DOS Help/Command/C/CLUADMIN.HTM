@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CLUADMIN</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCH.HTM#cluadmin">Commands Ch-Cz</a>
+    <h1>CLUADMIN</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Used to connect to a server cluster.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CLUADMIN
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>CLUADMIN
+    [<a href="#SwitchNoReconnect">/norecon[nect]</a>]
+    [<a href="#ParameterIpAddress">ip_address</a>]
+    [<a href="#ParameterPeriod"> . </a>]
+    [<a href="#ParameterNetbiosName">netbios_name</a>]</p>
+
+    <p>Starts Cluster Administrator (the tool used to configure and manage server clusters):
+    <p>CLUADMIN</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterPeriod"></a> .
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Connects to the local node.</dd>
+      <dd>If the cluster name or cluster Internet Protocol
+      (IP) address does not come online, you can use this
+      parameter to make a connection to the cluster.</dd>
+
+      <dt><a name="ParameterIpAddress"></a> ip_address
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Connects to either a node in the cluster or the
+      cluster using the IP address.</dd>
+
+      <dt><a name="ParameterNetbiosName"></a> netbios_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Connects to the cluster using a NetBIOS name.
+      You can use either one of the node names or the
+      cluster name.</dd>
+      <dd>To use the name resolution service must be
+      functioning correctly.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchNoReconnect"></a> /norecon[nect]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Starts Cluster Administrator without restoring
+      all previous cluster connections left open when you
+      closed the previous session.</dd>
+      <dd>You will be prompted to enter the name of the
+      cluster that you want to connect to.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="CLUSTER.HTM">Cluster</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

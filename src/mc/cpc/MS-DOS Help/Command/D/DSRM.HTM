@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DSRM</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#d">Commands A-M</a>
+    &gt; <a href="../INDEXDS.HTM#dsrm">Commands Ds-Dz</a>
+    <h1>DSRM</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Deletes an object of a specific type or any general
+    object from the directory.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>DSRM
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>DSRM
+    <a href="#ParameterObjectDN">object_dn ...</a>
+    [<a href="#SwitchC">-c</a>]
+    [<a href="#SwitchNoPrompt">-noprompt</a>]
+    [<a href="#SwitchP">-p {password | *}</a>]
+    [<a href="#SwitchQ">-q</a>]
+    [{<a href="#SwitchS">-s server</a>
+    | <a href="#SwitchD">-d domain</a>}]
+    [<a href="#SwitchSubTree">-subtree</a>
+     [<a href="#SwitchExclude">-exclude</a>]]
+    [<a href="#SwitchU">-u user_name</a>]
+    [<a href="#SwitchUc">-uc | -uci | -uco</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterObjectDN"></a> object_dn
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the distinguished names of objects to
+      delete. If omitted, obtained through standard input
+      (stdin) to support piping of output from another
+      command.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchC"></a> -c
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Reports errors, but continues with the next object
+      in the argument list when multiple target objects are
+      specified (continuous operation mode). If omitted, the
+      command exits on the first error.</dd>
+
+      <dt><a name="SwitchD"></a> -d domain
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Connects the computer to a specified domain. By
+      default, the computer is connected to the domain
+      controller in the logon domain.</dd>
+
+      <dt><a name="SwitchExclude"></a> -exclude
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Exclude base object given by object_dn.</dd>
+
+      <dt><a name="SwitchNoPrompt"></a> -noprompt
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Sets the optional silent mode, which does not
+      prompt to confirm deletion of each object. By
+      default, you are prompted to confirm each deletion.</dd>
+
+      <dt><a name="SwitchP"></a> -p {password | *}
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies to use either a password or a * to log
+      on to a remote server.
+      If *, then prompted for password.</dd>
+
+      <dt><a name="SwitchQ"></a> -q
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Suppresses all output to standard output
+      (quiet mode).</dd>
+
+      <dt><a name="SwitchS"></a> -s server
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Connects the computer to a specified server.</dd>
+
+      <dt><a name="SwitchSubTree"></a> -subtree
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies that both the object and all objects
+      contained in the subtree under that object should be
+      deleted. By default, only the base object specified
+      is deleted.</dd>
+
+      <dt><a name="SwitchU"></a> -u user_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the user name with which user will log
+      on to a remote server. By default, the logged on user
+      name is used. You can specify a user name using one
+      of the formats:
+<pre>
+      user name
+      domain\user name
+      user principal name (UPN)
+</pre>
+      </dd>
+
+      <dt><a name="SwitchUc"></a> -uc | -uci | -uco
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies that output or input data is
+      formatted in Unicode:
+        <ul>
+          <li><b>-uc</b> input from or output to a pipe (|)</li>
+          <li><b>-uco</b> output to a pipe (|) or a file</li>
+          <li><b>-uci</b> input from a pipe (|) or a file</li>
+        </ul>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

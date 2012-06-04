@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>DOS v2.00</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../INDEX.HTM">Versions</a>
+    <h1>DOS v2.00</h1>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    | <a href="#Added">Added</a>
+    | <a href="#Changed">Changed</a>
+    | <a href="#Removed">Removed</a>
+    | <a href="#Files">Files</a>
+    <ul>
+      <li>Major revision (completely rewritten), released February 1983.</li>
+      <li>Introduced with the IBM XT, OEM IBM Corporation PC-DOS.</li>
+      <li>OEM Zenith Computer Corporation.</li>
+      <li>Added support for 80-115ms 10M hard disk.</li>
+      <li>Added 9-sector (360K) capability to 2-sided (double-sided)
+          drives.</li>
+      <li>Added UNIX-like tree-structured (hierarchical) directory
+          support.</li>
+      <li>DOS uses slash (/) as the switch character, backslash (\) to
+          separate subdirectory levels;
+          <br>UNIX uses dash (-) as the switch character, slash (/) to
+          separate subdirectory levels.</li>
+      <li>Added concept of Standard I/O and re-direction + DOS
+          Filters.</li>
+      <li>Added the ability to install <a href="../../Command/A/ANSISYS.HTM">ANSI.SYS</a> and non-standard device
+          drivers via new CONFIG.SYS.</li>
+      <li>Improved BASIC with extended graphics commands, I/O
+          redirection.</li>
+      <li>Added simple multitasking, using memory-resident programs
+          (AKA Terminate-and-Stay-Resident, TSR) PRINT and GRAPHICS.</li>
+      <li>Handle-Oriented File I/O superceded the hard-to-use
+          file-control-block (FCB) File I/O to simplify file/device
+          access.</li>
+      <li>DOS function 1bH stopped returning a pointer to the actual
+          FAT and just returns a pointer to a media descriptor byte.</li>
+      <li>Commands introduced:
+        <ul>
+          <li><a href="../../Command/A/ANSISYS.HTM">ANSI.SYS</a></li>
+          <li><a href="../../Command/A/ASSIGN.HTM">ASSIGN</a></li>
+          <li><a href="../../Command/B/BACKUP.HTM">BACKUP</a></li>
+          <li><a href="../../Command/B/BREAK.HTM">BREAK</a></li>
+          <li><a href="../../Command/B/BUFFERS.HTM">BUFFERS</a></li>
+          <li><a href="../../Command/C/CHDIR.HTM">CHDIR</a> (CD)</li>
+          <li><a href="../../Command/C/CLS.HTM">CLS</a></li>
+          <li>CONFIG.SYS</li>
+          <li><a href="../../Command/C/CTTY.HTM">CTTY</a></li>
+          <li><a href="../../Command/E/ECHO.HTM">ECHO</a></li>
+          <li>ERRORLEVEL</li>
+          <li>IF <a href="../../Command/I/IF.HTM">EXIST</a></li>
+          <li><a href="../../Command/E/EXIT.HTM">EXIT</a></li>
+          <li><a href="../../Command/F/FC.HTM">FC</a></li>
+          <li><a href="../../Command/F/FDISK.HTM">FDISK</a></li>
+          <li><a href="../../Command/F/FILES.HTM">FILES</a></li>
+          <li><a href="../../Command/F/FIND.HTM">FIND</a></li>
+          <li><a href="../../Command/F/FOR_0.HTM">FOR</a></li>
+          <li><a href="../../Command/G/GOTO.HTM">GOTO</a></li>
+          <li><a href="../../Command/G/GRAPHICS.HTM">GRAPHICS</a></li>
+          <li><a href="../../Command/I/IF.HTM">IF</a></li>
+          <li><a href="../../Command/M/MKDIR.HTM">MKDIR</a> (MD)</li>
+          <li><a href="../../Command/M/MORE.HTM">MORE</a></li>
+          <li><a href="../../Command/P/PATH.HTM">PATH</a></li>
+          <li><a href="../../Command/P/PRINT.HTM">PRINT</a></li>
+          <li><a href="../../Command/P/PROMPT.HTM">PROMPT</a></li>
+          <li><a href="../../Command/R/RECOVER.HTM">RECOVER</a></li>
+          <li><a href="../../Command/R/RESTORE.HTM">RESTORE</a></li>
+          <li><a href="../../Command/R/RMDIR.HTM">RMDIR</a> (RD)</li>
+          <li><a href="../../Command/S/SET.HTM">SET</a></li>
+          <li><a href="../../Command/S/SHIFT.HTM">SHIFT</a></li>
+          <li><a href="../../Command/S/SORT.HTM">SORT</a></li>
+          <li><a href="../../Command/T/TREE.HTM">TREE</a></li>
+          <li><a href="../../Command/V/VER.HTM">VER</a></li>
+          <li><a href="../../Command/V/VERIFY.HTM">VERIFY</a></li>
+          <li><a href="../../Command/V/VOL.HTM">VOL</a></li>
+        </ul>
+      </li>
+      <li>Commands enhanced:
+        <ul>
+          <li><a href="../../Command/C/CHKDSK.HTM">CHKDSK</a></li>
+          <li><a href="../../Command/C/COMP.HTM">COMP</a></li>
+          <li><a href="../../Command/D/DEBUG.HTM">DEBUG</a></li>
+          <li><a href="../../Command/D/DIR.HTM">DIR</a></li>
+          <li><a href="../../Command/D/DISKCOMP.HTM">DISKCOMP</a></li>
+          <li><a href="../../Command/D/DISKCOPY.HTM">DISKCOPY</a></li>
+          <li><a href="../../Command/E/EDLIN.HTM">EDLIN</a></li>
+          <li><a href="../../Command/D/DEL.HTM">ERASE</a> (DEL)</li>
+          <li><a href="../../Command/F/FORMAT.HTM">FORMAT</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <hr>
+    <a name="Added"></a> <b>Added</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Changed"></a> <b>Changed</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Removed"></a> <b>Removed</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Files"></a> <b>Files</b>
+    <p><a href="../../Filelist/MSDOS/200.HTM">Filelist</a></p>
+
+    <hr>
+    Last Updated: 2004/03/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>REGEDIT</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#r">Commands N-Z</a>
+    &gt; <a href="../INDEXR.HTM#regedit">Commands R</a>
+    <h1>REGEDIT</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Import or export registry settings from a text (.REG) file.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>REGEDIT
+    [<a href="#SwitchE">/E</a>]
+    <a href="#ParameterPathname">pathname</a>
+    ["<a href="#ParameterRegpath">RegPath</a>"]</p>
+
+    <p>REGEDIT
+    [<a href="#SwitchS">/S</a>]
+    [<a href="#SwitchI">/I</a>]
+    <a href="#ParameterPathname">pathname</a></p>
+
+    <p>Start the regedit GUI:</p>
+    <p>REGEDIT</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterPathname"></a> pathname
+      (<a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Path and filename.</dd>
+
+      <dt><a name="ParameterRegpath"></a> "RegPath"
+      (<a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Export part of the Registry
+      (if omitted, all HKLM plus current user).</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchE"></a> /E
+      (<a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Export.</dd>
+
+      <dt><a name="SwitchI"></a> /I
+      (<a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Import.</dd>
+
+      <dt><a name="SwitchS"></a> /S
+      (<a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a>)</dt>
+      <dd>Silent Import.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>REGEDT32.EXE -
+    Edit the registry including Security and Auditing Options.
+    <br><a href="REG.HTM">REG</a> - Read, Set or Delete registry keys and values.
+    <br><a href="../S/SETX.HTM">SETX</a> - Set environment variables permanently.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>Frank found that to export a registry key, add the specific location to
+    the command such as:</p>
+<pre>
+    REGEDIT <a
+href="#SwitchE">/E</a> <a
+href="#ParameterPathname">c:\out.reg</a> <a
+href="#ParameterRegpath">HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Id</a>
+</pre>
+
+    <p>To delete a registry key place a hyphen as the first
+    character to the right of the bracket:</p>
+<pre>
+    REGEDIT <a
+href="#SwitchI">/I</a> <a
+href="#ParameterPathname">c:\delete.reg</a>
+
+<b>C:\DELETE.REG contains:</b>
+::::::::::::::::::::::::::::::
+regedit 4
+
+[-HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\EventLog\Application\Time Serv]
+::::::::::::::::::::::::::::::
+</pre>
+
+    <p>Klaus Lofflad spent 3 days figuring how to delete an entry from a key,
+    this is his solution:</p>
+<pre>
+    REGEDIT <a
+href="#SwitchI">/I</a> <a
+href="#ParameterPathname">c:\delete.reg</a>
+
+<b>C:\DELETE.REG contains:</b>
+::::::::::::::::::::::::::::::
+regedit 4
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBC.INI\ODBC Data Sources] "MyODBC_DSN"=-
+::::::::::::::::::::::::::::::
+</pre>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/01/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

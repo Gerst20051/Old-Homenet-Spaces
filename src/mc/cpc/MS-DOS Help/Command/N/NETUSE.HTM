@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>NET USE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#n">Commands N-Z</a>
+    &gt; <a href="../INDEXN.HTM#netuse">Commands N</a>
+    <h1>NET USE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Connects a computer to a shared resource or disconnects a
+    computer from a shared resource.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>NET HELP USE</p>
+
+    <p>NET USE
+    [<a href="#ParameterDrive">drive:</a>
+    | <a href="#ParameterSplat">*</a>]
+    [<a href="#ParameterComputer">\\computer_name</a><a
+    href="#ParameterDirectory">\directory</a>
+    [<a href="#ParameterPassword">password</a>
+    | <a href="#ParameterQuestionmark">?</a>]]
+    [<a href="#SwitchSavepw">/SAVEPW:NO</a>]
+    [<a href="#SwitchYes">/YES</a>]
+    [<a href="#SwitchNo">/NO</a>]</p>
+
+    <p>NET USE
+    [<a href="#ParameterPort">port:</a>]
+    [<a href="#ParameterComputer">\\computer_name</a><a
+    href="#ParameterPrinter">\printer</a>
+    [<a href="#ParameterPassword">password</a>
+    | <a href="#ParameterQuestionmark">?</a>]]
+    [<a href="#SwitchSavepw">/SAVEPW:NO</a>]
+    [<a href="#SwitchYes">/YES</a>]
+    [<a href="#SwitchNo">/NO</a>]</p>
+
+    <p>NET USE
+    <a href="#ParameterDrive">drive:</a>
+    | <a href="#ParameterComputer">\\computer_name</a><a
+    href="#ParameterDirectory">\directory</a>
+    <a href="#SwitchDelete">/DELETE</a>
+    [<a href="#SwitchYes">/YES</a>]</p>
+
+    <p>NET USE
+    <a href="#ParameterPort">port:</a>
+    | <a href="#ParameterComputer">\\computer_name</a><a
+    href="#ParameterPrinter">\printer</a>
+    <a href="#SwitchDelete">/DELETE</a>
+    [<a href="#SwitchYes">/YES</a>]</p>
+
+    <p>NET USE
+    <a href="#ParameterSplat">*</a>
+    <a href="#SwitchDelete">/DELETE</a>
+    [<a href="#SwitchYes">/YES</a>]</p>
+
+    <p>NET USE
+    <a href="#ParameterDrive">drive:</a>
+    | <a href="#ParameterSplat">*</a>
+    <a href="#SwitchHome">/HOME</a></p>
+
+    <p>NET USE
+    [<a href="#ParameterDrive">drive:</a>
+    | <a href="#ParameterSplat">*</a>]
+    [<a href="#ParameterComputer">\\computer_name</a><a
+    href="#ParameterDirectory">\directory</a>[<a
+    href="#ParameterVolume">\volume</a>]]
+    [<a href="#ParameterPassword">password</a>
+    | <a href="#ParameterPassSplat">*</a>]
+    [<a href="#SwitchUser">/USER:[domainname\]username</a>]
+    [<a href="#SwitchSaveCred">/SAVECRED</a>]
+    [<a href="#SwitchSmartCard">/SMARTCARD</a>]
+    [<a href="#SwitchDelete">/DELETE</a>
+    | <a href="#SwitchPersistent">/PERSISTENT:[YES | NO]</a>]</p>
+
+    <p>List all computer connections:</p>
+    <p>NET USE</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterComputer"></a> \\computer_name
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Name of the computer controlling the shared
+      resource. If the computername contains blank characters,
+      enclose the double backslash (\\) and the computername
+      in quotation marks (" "). The computername may be from
+      1 to 15 characters long. </dd>
+
+      <dt><a name="ParameterDirectory"></a> directory
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>)</dt>
+      <dd>Specifies the name of the shared directory.</dd>
+
+      <dt><a name="ParameterDrive"></a> drive:
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the drive letter you assign to a shared
+      directory.</dd>
+
+      <dt><a name="ParameterPassSplat"></a> *
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Produces a prompt for the password. The password is
+      not displayed when you type it at the password prompt.</dd>
+
+      <dt><a name="ParameterPassword"></a> password
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the password for the shared resource, if any.</dd>
+
+      <dt><a name="ParameterPort"></a> port
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT400.HTM">NT4</a> ONLY)</dt>
+      <dd>Assigns a name to connect to the resource or specifies
+      the device to be disconnected. There are two kinds of
+      devicenames: disk drives (D: through Z:) and printers
+      (LPT1: through LPT3:). Type an asterisk instead of a
+      specific devicename to assign the next available
+      devicename.</dd>
+
+      <dt><a name="ParameterPrinter"></a> printer
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies the name of the shared printer.</dd>
+
+      <dt><a name="ParameterQuestionmark"></a> ?
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies that you want to be prompted for the
+      password of the shared resource. You don't need to use
+      this option unless the password is optional.</dd>
+
+      <dt><a name="ParameterSplat"></a> *
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies the next available drive letter. If used
+      with <a href="#SwitchDelete">/DELETE</a>, specifies to
+      disconnect all of your connections.</dd>
+
+      <dt><a name="ParameterVolume"></a> \volume
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies a NetWare volume on the server. You must have
+      Client Services for Netware (Windows Workstations)
+      or Gateway Service for Netware (Windows Server)
+      installed and running to connect to NetWare servers.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchDelete"></a> /DELETE
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Breaks/Disconnects the specified connection to a shared
+      resource.</dd>
+
+      <dt><a name="SwitchHome"></a> /HOME
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>
+      <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Makes a connection to your HOME directory if one is
+      specified in your LAN Manager or Windows NT user account.</dd>
+
+      <dt><a name="SwitchNo"></a> /NO
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Carries out the command, responding with NO
+      automatically when you are prompted to confirm actions.</dd>
+
+      <dt><a name="SwitchPersistent"></a> /PERSISTENT:[YES | NO]
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Controls the use of persistent network connections.
+      The default is the setting used last.</dd>
+      <dd>Saves connections as they are made, and restores
+      them at next logon.</dd>
+      <dd>Does not save the connection being made or subsequent
+      connections; existing connections will be restored at
+      next logon. Use the <a href="#SwitchDelete">/DELETE</a>
+      switch to remove persistent connections.</dd>
+
+      <dt><a name="SwitchSaveCred"></a> /SAVECRED
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Stores the provided credentials for reuse.</dd>
+
+      <dt><a name="SwitchSavepw"></a> /SAVEPW:NO
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Specifies that the password you type should not be
+      saved in your password-list file. You need to retype
+      the password the next time you connect to this resource.</dd>
+
+      <dt><a name="SwitchSmartCard"></a> /SMARTCARD
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the network connection is to use the
+      credentials on a smart card. If multiple smart cards
+      are available, you are asked to specify the credential.</dd>
+
+      <dt><a name="SwitchUser"></a> /USER:[domainname\]username]
+      (<a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>)</dt>
+      <dd>Specifies a different username with which the connection
+      is made.</dd>
+
+      <dt><a name="SwitchYes"></a> /YES
+      (<a href="../../Version/MSDOS/700.HTM">v7.00</a>
+      <a href="../../Version/MSWIN/95.HTM">Win95</a>)</dt>
+      <dd>Carries out the command without first prompting you
+      to provide information or confirm actions.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          <a href="../../Version/MSDOS/700.HTM">v7.00</a>
+          <a href="../../Version/MSDOS/700R1.HTM">v7.0R1</a>
+          <a href="../../Version/MSDOS/710.HTM">v7.10</a>
+          <a href="../../Version/MSDOS/800.HTM">v8.00</a>
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          <a href="../../Version/MSWIN/95.HTM">Win95</a>
+          <a href="../../Version/MSWIN/98.HTM">Win98</a>
+          <a href="../../Version/MSWIN/ME.HTM">WinME</a>
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT31.HTM">NT3.1</a>
+          <a href="../../Version/MSWIN/NT35.HTM">NT3.5</a>
+          <a href="../../Version/MSWIN/NT351.HTM">NT3.51</a>
+          <a href="../../Version/MSWIN/NT400.HTM">NT4</a>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2006/12/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

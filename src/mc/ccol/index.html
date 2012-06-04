@@ -1,0 +1,505 @@
+<html>
+
+<head>
+<title>Cars Collection</title>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="stylesheet" type="text/css" href="../css/globalblue.css" media="screen" />
+<script src="cs.js"></script>
+<style type="text/css">@import url('../../css/mp2.css');
+</style>
+</head>
+
+<body>
+
+<script>
+NS6=(document.getElementById&&!document.all)
+IE=(document.all);IE4=(document.all&&!document.getElementById)
+NS=(navigator.appName=="Netscape" && navigator.appVersion.charAt(0)=="4")
+OP=(navigator.userAgent.indexOf('Opera')>-1)
+
+tempBar='';barBuilt=0;lastY=0;lastX=0;sI=new Array();moving=setTimeout('null',1);
+
+function moveOut() {
+	if(parseInt(ssm.left)<0&&mPos||parseInt(ssm.left)>0&&!mPos){
+		clearTimeout(moving);
+		moving=setTimeout('moveOut()', slideXSpeed);
+		slideMenu((!mPos)?"out":"out");
+		}
+	else {
+		clearTimeout(moving);
+		moving=setTimeout('null',1);
+	}
+}
+function moveBack() {
+	clearTimeout(moving);
+	moving=setTimeout('moveBack1()',waitTime);
+}
+function moveBack1() {
+	if(parseInt(ssm.left)>-(menuWidth+1)&&mPos||parseInt(ssm.left)<menuWidth+1&&!mPos) {
+		clearTimeout(moving);
+		moving=setTimeout('moveBack1()',slideXSpeed);
+		slideMenu((!mPos)?"in":"in");
+	}
+	else{
+		clearTimeout(moving);
+		moving=setTimeout('null',1);
+	}
+}
+function slideMenu(way){
+	fHow=(NS6)?0.4:0.2;
+	if(way=="out")flow=fHow*-(parseInt(ssm.left));
+	if(way=="in"&&!mPos)flow=fHow* (menuWidth+1-parseInt(ssm.left));
+	else if(way=="in")flow=fHow*-(menuWidth+1+parseInt(ssm.left));
+	if(flow>0)flow=Math.ceil(flow);
+	else flow=Math.floor(flow);
+	if(IE||NS6){
+		lastX+=flow;
+		bssm.clip="rect(0 "+((!mPos)?(barWidth+menuWidth+3):(barWidth+2+lastX))+" "+(((IE4)?document.body.clientHeight:0)+tssm.offsetHeight)+" "+((!mPos)?(lastX+1):0)+")";
+		}
+	ssm.left=parseInt(ssm.left)+flow;
+	if(NS){
+		if(!mPos){
+			bssm.clip.left+=flow;
+			bssm2.clip.left+=flow;
+		}
+		else{
+			bssm.clip.right+=flow;
+			bssm2.clip.right+=flow;
+		}
+		if(bssm.left+bssm.clip.right>document.width)document.width+=flow;
+	}
+}
+
+function makeStatic() {
+	winY=(IE)?document.body.scrollTop:window.pageYOffset;
+	sHow=(NS6)?0.4:0.2;
+	if(winY!=lastY&&winY>YOffset-staticYOffset)smooth=sHow*(winY-lastY-YOffset+staticYOffset);
+	else if(YOffset-staticYOffset+lastY>YOffset-staticYOffset&&winY<=YOffset-staticYOffset)smooth=sHow*(winY-lastY-(YOffset-(YOffset-winY)));
+	else smooth=0;
+	if(smooth>0)smooth=Math.ceil(smooth);
+	else smooth=Math.floor(smooth);
+	bssm.top=parseInt(bssm.top)+smooth;
+	lastY=lastY+smooth;
+	setTimeout('makeStatic()',slideYSpeed);
+}
+
+function menuClick(id) {
+	obj=(document.all)?document.all(id):document.getElementById(id);
+	with(obj){
+		if(event.srcElement.id!=id){
+			if(target=="_top")top.location=href;
+			else if(target=="_parent")parent.location=href;
+			else if(target=="_blank")window.open(href);
+			else if(target>""&&top.frames[target])top.frames[target].location=href;
+			else if(target>"")eval('window.open("'+href+'","'+target+'")');
+			else location=href;
+		}
+	}
+}
+
+function buildBar() {
+	if(!barType)tempBar='<IMG SRC="'+barText+'" BORDER="0">';
+	else{
+		for(b=0;b<barText.length;b++)tempBar+=barText.charAt(b)+"<BR>"
+	}
+	ssmHTML+='<td align="center" rowspan="100" width="'+barWidth+'" bgcolor="'+barBGColor+'" valign="'+barVAlign+'" align="'+barAlign+'" class="ssmBar" NOWRAP>'+tempBar+'</td>';
+}
+
+function initSlide() {
+	if (!mPos)lastX=menuWidth
+	if ((NS6||IE)&&!OP||(operaFix!=2&&OP)){
+		ssm=(NS6)?document.getElementById("thessm").style:document.all("thessm").style;
+		tssm=(NS6)?document.getElementById("thessm"):document.all("thessm");
+		bssm=(NS6)?document.getElementById("basessm").style:document.all("basessm").style;
+		bssm.clip="rect(0 "+(barWidth+2+((!mPos)?menuWidth+1:0))+" "+(((IE4)?document.body.clientHeight:0)+tssm.offsetHeight)+" "+((!mPos)?(menuWidth+1):0)+")";
+		if (OP&&operaFix==1)XOff=(!mPos)?document.body.clientWidth-barWidth-3:0;
+		bssm.left=(!mPos)?XOff-menuWidth:XOff;
+		if(OP)ssm.left=ssm.left;
+		bssm.visibility="visible";
+		if(NS6&&!OP){
+			bssm.top=YOffset;
+			if(menuOpacity!=100)ssm.MozOpacity=menuOpacity/100;
+			slideIsGo=window.innerHeight>tssm.offsetHeight+staticYOffset;
+		}
+		else{
+			if(menuOpacity!=100)ssm.filter="alpha(opacity="+menuOpacity+")";
+			slideIsGo=((OP)?window.innerHeight:document.body.clientHeight)>parseInt(tssm.offsetHeight)+staticYOffset;
+			}
+		if(autoHideXOverflow&&((IE?document.body.clientWidth:window.innerWidth-16)<parseInt(bssm.left)+parseInt(ssm.left)+menuWidth+barWidth+3)){
+			document.body.style.overflowX="hidden";
+			document.body.style.overflowY="scroll";
+		}
+	}
+	else if(NS){
+		bssm=document.layers["basessm1"];
+		bssm2=bssm.document.layers["basessm2"];
+		ssm=bssm2.document.layers["thessm"];
+		bssm.clip.left=(!mPos)?menuWidth+1:0;
+		bssm.clip.right=(!mPos)?(menuWidth+barWidth+3):barWidth+2;
+		bssm.left=(!mPos)?XOff-menuWidth:XOff;
+		ssm.visibility="show";
+		slideIsGo=window.innerHeight>ssm.clip.bottom+staticYOffset;
+	}
+	if(slideY&&(slideOnYOverflow||(!slideOnYOverflow&&slideIsGo)))makeStatic();
+	if(!slideX)moveOut();
+}
+
+function getXOff() {
+	return (((!XAlign)?((IE||OP)?document.body.clientWidth-barWidth-3:window.innerWidth-barWidth-3-17):(XAlign==1)?Math.floor(((IE||OP)?document.body.clientWidth/2-barWidth/2-1.5:window.innerWidth/2-barWidth/2-1.5)):0)+XOffset);
+}
+
+function buildMenu() {
+	mPos=menuPosition;
+	ssmHTML="";
+	XOff=getXOff();
+	if(IE||NS6)ssmHTML+='<DIV ID="basessm" style="visibility:hidden;Position : Absolute ;Top : '+YOffset+' ;Z-Index : 20;width:'+(barWidth+2)+';"><DIV ID="thessm" style="Position : Absolute ;Left : '+((!mPos)?menuWidth+1:-menuWidth-1)+' ;Top : 0px ;Z-Index : 30;'+((IE)?"width:1px":"")+'" '+((slideX)?'onmouseover="moveOut()" onmouseout="moveBack()")':'')+'>';
+	if(NS)ssmHTML+='<LAYER name="basessm1" top="'+YOffset+'" visibility="show" onload="initSlide()"><ILAYER name="basessm2"><LAYER visibility="hide" name="thessm" bgcolor="'+menuBGColor+'" left="'+((!mPos)?menuWidth+1:-menuWidth-1)+'" '+((slideX)?'onmouseover="moveOut()" onmouseout="moveBack()")':'')+'>';
+	if(NS6)ssmHTML+='<table border="0" cellpadding="0" cellspacing="0" width="'+(menuWidth+barWidth+3)+'"><TR><TD>';
+	ssmHTML+='<table border="0" cellpadding="0" cellspacing="1" width="'+(menuWidth+barWidth+3)+'" bgcolor="'+((!NS)?menuBGColor:"")+'">';
+	for(i=0;i<sI.length;i++){
+		ssmHTML+='<TR>';
+		if(barBuilt==0&&!mPos){
+			buildBar();
+			barBuilt=1
+		}
+		if(sI[i][3]>1)ssmHTML+='<TD BGCOLOR="'+hdrBGColor+'" ALIGN="'+hdrAlign+'" WIDTH="'+menuWidth+'"'+((NS6)?' style="padding:'+hdrPadding+'px"':'><TABLE CELLPADDING="'+hdrPadding+'" CELLSPACING="0" BORDER="0"><TR><TD')+' CLASS="ssmHdr" VALIGN="'+hdrVAlign+'">'+((sI[i][3]==3)?'<a HREF="'+((sI[i][1].indexOf("://")==-1&&sI[i][1].indexOf("../")==-1)?targetDomain:'')+sI[i][1]+'" target="'+sI[i][2]+'" class="ssmHdr">':'')+sI[i][0]+((sI[i][3]==3)?'</a>':'')+((NS6)?'':'</TD></TR></TABLE>')+'</TD>';
+		else{
+			if(!sI[i][2])sI[i][2]=targetFrame;
+			ssmHTML+='<TD WIDTH="'+menuWidth+'"'+(NS&&!sI[i][3]?'':'BGCOLOR="'+linkBGColor+'"')+' '+((NS6)?'CLASS="ssmItem" style="padding:'+linkPadding+'px;" ALIGN="'+linkAlign+'"':'')+' '+((sI[i][3])?'>':'onmouseover="style.backgroundColor=\''+linkOverBGColor+'\'" onmouseout="style.backgroundColor=\''+linkBGColor+'\'" onclick="menuClick(\'item_'+i+'\');"'+(IE?' style="cursor:hand;"':'')+'><ILAYER><LAYER onmouseover="bgColor=\''+linkOverBGColor+'\'" onmouseout="bgColor=\''+linkBGColor+'\'" WIDTH="100%" ALIGN="'+linkAlign+'" bgcolor="'+linkBGColor+'">')+((NS6)?'':'<DIV ALIGN="'+linkAlign+'" CLASS="ssmItem"><TABLE CELLPADDING="'+linkPadding+'" CELLSPACING="0" BORDER="0"><TR><TD VALIGN="'+linkVAlign+'" CLASS="ssmItem">')+((sI[i][3])?'':'<A HREF="'+((sI[i][1].indexOf("://")==-1&&sI[i][1].indexOf("../")==-1)?targetDomain:'')+sI[i][1]+'" target="'+sI[i][2]+'" CLASS="ssmItem" id="item_'+i+'">')+sI[i][0]+''+((sI[i][3])?'':'</A>')+((NS6)?'':'</TD></TR></TABLE></DIV>')+((sI[i][3])?'':'</LAYER></ILAYER>')+'</TD>';
+		}
+		if(barBuilt==0&&mPos){
+			buildBar();
+			barBuilt=1;
+		}
+		ssmHTML+='</TR>';
+	}
+	ssmHTML+='</table>';
+	if(NS6)ssmHTML+='</TD></TR></TABLE>';
+	if(IE||NS6){
+		ssmHTML+='</DIV></DIV>';
+		setTimeout('initSlide();',1);
+	}
+	if(NS)ssmHTML+='</LAYER></ILAYER></LAYER>';
+	document.write(ssmHTML);
+}
+
+function addHdr(text){sI[sI.length]=[text, '', '', 2]}
+
+function addLink(text, link, target){if(!link)link="javascript://";sI[sI.length]=[text, link, target, 3]}
+
+function addItem(text, link, target){if(!link)link="javascript://";sI[sI.length]=[text, link, target, 0]}
+
+function addText(text){sI[sI.length]=[text, '', '', 1]}
+
+//window.onresize=function(){setTimeout('alert(getOff());XOff=getXOff();bssm.left=(!mPos)?XOff-menuWidth:XOff;');}
+
+//-->
+    </script>
+<script>
+<!--
+YOffset=40;
+XAlign=2;
+XOffset=0;
+staticYOffset=20;
+waitTime=500;
+slideX=1;
+slideXSpeed=15;
+slideY=1;
+slideYSpeed=15;
+slideOnYOverflow=1;
+autoHideXOverflow=1;
+targetFrame="";
+targetDomain="";
+operaFix=0;
+menuOpacity=100;
+menuPosition=1;
+menuBGColor="#F5DB9C";
+menuWidth=125;
+hdrBGColor="#2C323B";
+hdrPadding=3;
+hdrAlign="left";
+hdrVAlign="center";
+linkBGColor="#545C65";
+linkOverBGColor="#2C323B";
+linkAlign="left";
+linkVAlign="center";
+linkPadding=3;
+barWidth=15;
+barBGColor="#F5DB9C";
+barAlign="left";
+barVAlign="center";
+barType=5;
+barText="NAVIGATION";
+
+
+//The Menu's Items
+addHdr("Homenet Navi.");
+addItem("Home", "../../index.html", "_parent");
+addItem("Motorcycle", "sp/motorcycle/index.htm", "");
+addItem("Mopeds", "sp/mopeds/index.htm", "");
+addItem("Planes", "sp/planes/index.htm", "");
+addItem("Helicopters", "sp/helicopters/index.htm", "");
+addItem("Submarines", "sp/submarines/index.htm", "");
+buildMenu();
+
+
+//-->
+    </script>
+<hr>
+<p align="center"><font size="7">Cars Collection</font></p>
+<hr>
+
+</body>
+<center>
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="98%" id="AutoNumber1" height="100">
+  <tr>
+    <td width="100%" height="27" align="center" colspan="3">
+    <p align="center"><font size="5">
+    <a href="dodge_viper/Dodge%20Viper%20Quote.htm">2006 Dodge Viper</a></font></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height="267" align="center" bgcolor="#FFFFFF" colspan="3">
+    <p align="center">
+    <img alt="2006 Dodge Viper SRT-10 Coupe" src="../../i/mc/ccol/dodge_viper/3.jpg" border="0" align="center" width="400" height="267"></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height="27" align="center" colspan="3">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="100%" height="27" align="center" colspan="3">
+    <p align="center"><font size="5">
+    <a href="dodge_ram_srt10/Dodge%20Ram%20SRT-10%20Quote.htm">
+    2006 Dodge Ram SRT-10</a></font></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" height="211" align="center" bgcolor="#FFFFFF" colspan="3">
+    <p align="center">
+    <img border="0" src="../../i/mc/ccol/dodge_ram_srt10/1.jpg" width="584" height="211"></p>
+    </td>
+  </tr>
+</table>
+</center><br>
+<div align="center">
+  <center>
+  <table width="98%" border="1" bordercolor="#000000" cellspacing="0" style="border-collapse: collapse" cellpadding="2">
+    <tr>
+      <td width="100%" height="27" align="center" bgcolor="#F5E4A9" colspan="3">
+      <p align="center"><font size="5">Car Makes</font></p>
+      </td>
+    </tr>
+    <tr>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Acura</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Eagle</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Lotus</p>
+      </td>
+    </tr>
+    <tr>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Audi</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Ferrari</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Mazda</p>
+      </td>
+    </tr>
+    <tr>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Bentley</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Fiat</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">Mercury</td>
+    </tr>
+    <tr>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">BMW</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Ford</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Mercedes Benz</p>
+      </td>
+    </tr>
+    <tr>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Buick</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">General Motors (GM)</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Mitsubishi</p>
+      </td>
+    </tr>
+    <tr>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Cadillac</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Hummer</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Plymouth</p>
+      </td>
+    </tr>
+    <tr>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Chevrolet</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Hyundai</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Pontiac</p>
+      </td>
+    </tr>
+    <tr>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Chevy</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Infiniti</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Porsche</p>
+      </td>
+    </tr>
+    <tr>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Chrysler</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Isuzu</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Saab</p>
+      </td>
+    </tr>
+    <tr>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Citroen</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Jaguar</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Saturn</p>
+      </td>
+    </tr>
+    <tr>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Daewoo</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Jeep</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Subaru</p>
+      </td>
+    </tr>
+    <tr>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Daihatsu</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">
+      <p align="center">Kia</p>
+      </td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">Suzuki</td>
+    </tr>
+    <tr>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">Dodge</td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">Lexus</td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">Toyota</td>
+    </tr>
+    <tr>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">&nbsp;</td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">Lincoln</td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">Volkswagen</td>
+    </tr>
+    <tr>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">&nbsp;</td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">&nbsp;</td>
+      <td width="34%" height="19" align="center" bgcolor="#F5E4A9">Volvo</td>
+    </tr>
+  </table>
+  </center>
+</div>
+&nbsp;<div align="center">
+  <center>
+  <table width="98%" bgcolor="#F5E4A9" style="border-collapse: collapse" bordercolor="#111111" cellpadding="2" cellspacing="0" border="1">
+    <tr>
+      <td width="100%" height="19" align="center" colspan="2">
+      <p align="left"><font size="4">Information:</font></p>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%" height="19" align="center">
+      <p align="center">Aerodynamics</p>
+      </td>
+      <td width="50%" height="19" align="center">Engines</td>
+    </tr>
+    <tr>
+      <td width="50%" height="4" align="center">
+      <p align="center">Roll Cage</p>
+      </td>
+      <td width="50%" height="4" align="center">Transmissions</td>
+    </tr>
+    <tr>
+      <td width="50%" height="4" align="center">Wings (Spoilers)</td>
+      <td width="50%" height="4" align="center">Fuel (Fuel Cells)</td>
+    </tr>
+    <tr>
+      <td width="50%" height="4" align="center">Tires</td>
+      <td width="50%" height="4" align="center">Fenders - Bumpers (Fiberglass)</td>
+    </tr>
+    <tr>
+      <td width="50%" height="4" align="center">Rear End</td>
+      <td width="50%" height="4" align="center">Other</td>
+    </tr>
+  </table>
+  </center>
+</div>
+<br>
+<div align="center">
+  <center>
+  <table width="98%" bgcolor="#F5E4A9" style="border-collapse: collapse" bordercolor="#111111" cellpadding="2" cellspacing="0" border="1">
+    <tr>
+      <td width="100%" height="19" align="center" colspan="2">
+      <p align="left"><font size="4">Links:</font></p>
+      </td>
+    </tr>
+    <tr>
+      <td width="51%" height="19" align="center">
+      <p align="center"><a href="http://www.kbb.com/">Kelly Blue Book</a></p>
+      </td>
+      <td width="49%" height="19" align="center">
+      <a href="http://www.cars-cars-cars.org/">Cars Cars Cars</a></td>
+    </tr>
+    <tr>
+      <td width="51%" height="19" align="center">
+      <p align="center"><a href="../../index.html">Home</a></p>
+      </td>
+      <td width="49%" height="19" align="center">
+      <a href="../r/ccol/index.html">Cars Resources</a></td>
+    </tr>
+  </table>
+  </center>
+</div>
+</center>
+
+</body>
+
+</html>

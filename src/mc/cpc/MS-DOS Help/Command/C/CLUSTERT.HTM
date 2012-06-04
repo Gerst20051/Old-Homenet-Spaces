@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CLUSTER RESOURCETYPE</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCH.HTM#clusterresourcetype">Commands Ch-Cz</a>
+    <h1>CLUSTER RESOURCETYPE</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>You can use cluster commands to administer server clusters from
+    the Windows command prompt. You can also call the program from
+    command scripts to automate many cluster administration tasks.
+    Cluster is provided on all Windows computers.</p>
+    <p>You can administer clusters from a node of the cluster, from
+    nodes of other clusters, or from other computers running Windows NT
+    4.0 with Service Pack 3 or later.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CLUSTER
+    RES[OURCE]TYPE
+    [<a href="#SwitchHelp">/?</a>
+    | <a href="#SwitchHelp">/HELP</a>]</p>
+
+    <p>CLUSTER
+    [<a href="#SwitchCluster">[/CLUSTER:]cluster_name]</a>
+    RES[OURCE]TYPE
+    [<a href="#SwitchList">/LIST</a>]
+    <a href="#SwitchPrivProperties">/PRIV[PROPERTIES]</a>
+    <a href="#SwitchProperties">/PROP[ERTIES]</a>
+    <a href="#SwitchListOwners">/LISTOWNERS</a>]</p>
+
+    <p>CLUSTER
+    [<a href="#SwitchCluster">[/CLUSTER:]cluster_name]</a>
+    RES[OURCE]TYPE
+    <a href="#ParameterTypeName">type_name</a>
+    <br>[<a href="#SwitchDelete">/DELETE</a>
+    <br>| <a href="#SwitchListOwners">/LISTOWNERS</a>]
+    <br><a href="#SwitchType">/TYPE</a></p>
+
+    <p>CLUSTER
+    [<a href="#SwitchCluster">[/CLUSTER:]cluster_name]</a>
+    RES[OURCE]TYPE
+    <a href="#ParameterDisplayName">display_name</a>
+    <br>[<a href="#SwitchCreate">/CREATE</a> /DLL[NAME]:dll_name [/TYPE:type_name] [/ISALIVE:interval_milliseconds] [/LOOKSALIVE:interval_milliseconds]
+    <br>| <a href="#SwitchDelete">/DELETE</a>
+    <br>| <a href="#SwitchListOwners">/LISTOWNERS</a>
+    <br>| <a href="#SwitchPrivProperties">/PRIV[PROPERTIES]</a>
+      [<a href="#ParameterPropertyList">property_list</a>]
+    <br>| <a href="#SwitchPrivProperties">/PRIV[PROPERTIES]</a>
+      [<a href="#ParameterPropertyList">:propname[,propname ...]</a>]
+    <br>| <a href="#SwitchProperties">/PROP[ERTIES]</a>
+      [<a href="#ParameterPropertyList">property_list</a>]
+    <br>| <a href="#SwitchProperties">/PROP[ERTIES]</a>
+      [<a href="#ParameterPropertyList">:propname[,propname ...]</a>]]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterDisplayName"></a> display_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>?</dd>
+
+      <dt><a name="ParameterPropertyList"></a> name=value[,value ...][:format][name=value[,value ...][:format] ...]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dt> :name[,name ...] /userdefault
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>To revert to the default value of a common property or to
+      delete a private property, use the /usedefault option.
+        <ul>
+          <li><b>Binary</b> Separated list of values from 0 to 255</li>
+          <li><b>DWord</b> Double word</li>
+          <li><b>Str[ing]</b> Double quotation marks are required around strings with spaces</li>
+          <li><b>ExpandStr[ing]</b> Expanded by Cluster</li>
+          <li><b>MultiStr[ing]</b> List of strings separated by commas</li>
+          <li><b>Security</b> Set access privileges.
+            <ul>
+              <li>Access types:
+                <ul>
+                  <li><b>grant</b></li>
+                  <li><b>deny</b></li>
+                  <li><b>set</b></li>
+                  <li><b>revoke</b> (Does not require Access mask)</li>
+                </ul>
+              </li>
+              <li>Access masks:
+                <ul>
+                  <li><b>R</b> read</li>
+                  <li><b>C</b> change</li>
+                  <li><b>F</b> full</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><b>ULarge</b> Unsigned 64-bit value</li>
+        </ul>
+      </dd>
+
+      <dt><a name="ParameterTypeName"></a> type_name
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>?</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /HELP | /?
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Display cluster group syntax. Default.</dd>
+
+      <dt><a name="SwitchCluster"></a> /CLUSTER
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>If you do not specify a cluster, attempts to connect to the
+      cluster running on the node that is running the command.</dd>
+      <dd>If the name of your cluster is also a cluster command or its
+      abbreviation, use /cluster: to explicitly specify the cluster
+      name.</dd>
+
+      <dt><a name="SwitchCreate"></a> /CREATE /DLL[NAME]:dll_name [/TYPE:type_name] [/ISALIVE:interval_milliseconds] [/LOOKSALIVE:interval_milliseconds]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Create a resource type.</dd>
+
+      <dt><a name="SwitchDelete"></a> /DELETE
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Delete a group.</dd>
+
+      <dt><a name="SwitchList"></a> /LIST
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>List the available installed cluster resource types.
+      If you do not provide a resource type display name,
+      all installed resource types are listed</dd>
+
+      <dt><a name="SwitchListOwners"></a> /LISTOWNERS
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>Display a list of preferred owners.</dd>
+
+      <dt><a name="SwitchPrivProperties"></a> /PRIV[PROPERTIES]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>View or set the cluster private properties.</dd>
+      <dd>By default, there are no private properties for cluster
+      resourcetype. Software vendors can add private properties to
+      extend cluster functionality.</dd>
+
+      <dt><a name="SwitchProperties"></a> /PROP[ERTIES]
+      (<a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>)</dt>
+      <dd>View or set the resourcetype common properties.</dd>
+
+      <dt><a name="SwitchType"></a> /TYPE
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specify the resource type name.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="CLUSTER.HTM">Cluster</a>
+    <br><a href="CLUSTERG.HTM">Cluster Group</a>
+    <br><a href="CLUSTERI.HTM">Cluster Netinterface</a>
+    <br><a href="CLUSTERW.HTM">Cluster Network</a>
+    <br><a href="CLUSTERN.HTM">Cluster Node</a>
+    <br><a href="CLUSTERR.HTM">Cluster Resource</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>Common resourcetype property names:
+      <ul>
+        <li><b>AdminExtensions</b> Describes one or more class identifiers (CLSID) for Cluster Administrator extensions</li>
+        <li><b>DebugControlFunctions</b> Specifies if debugger breakpoint is set at the resource control function. (True (1) it is set; False (0) it is not set.)</li>
+        <li><b>DebugPrefix</b> Specifies the appropriate debugger for the resource type.  For more information, see the Microsoft Platform Software Development Kit</li>
+        <li><b>Description</b> Changes the text that describes a resource type</li>
+        <li><b>DllName</b> Specifies the name of the dynamic-link library (DLL) for a specific resource type</li>
+        <li><b>IsAlivePollInterval</b> Specifies the interval (in milliseconds) that the Cluster service polls resources of a particular resource type to determine if the resources are operational</li>
+        <li><b>LooksAlivePollInterval</b> Specifies the interval (in milliseconds) that the Cluster service polls resources of a particular resource type to determine if the resources appear operational</li>
+        <li><b>Name</b> Changes a resource type display name</li>
+      </ul>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K.HTM">NT2000</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

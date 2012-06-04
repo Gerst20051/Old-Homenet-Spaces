@@ -1,0 +1,920 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>TCP / IP Protocols</title>
+<meta name="Microsoft Theme" content="layers 0011">
+</head>
+
+<body background="../../../_themes/layers/laybkgnd.gif" bgcolor="#FFFFFF" text="#000000" link="#330099" vlink="#999999" alink="#660033"><!--mstheme--><font face="georgia,times new roman,times">
+
+<h1 align="center"><!--mstheme--><font face="georgia,Times New Roman,Times"><!--mstheme--><b><b><b>TCP/IP Protocols</b></b><!--mstheme--></font><!--mstheme--></b></h1>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<div align="center">
+  <center>
+  <!--mstheme--></font><table width="100%" border="0" style="border-collapse: collapse" cellpadding="0" cellspacing="0">
+    <tr>
+      <td><!--mstheme--><font face="georgia,times new roman,times">
+      <p class="blacktext">The Internet Protocol (IP), defined by IETF RFC791, is 
+      the routing layer datagram service of the TCP/IP suite. All other protocols 
+      within the TCP/IP suite, except ARP and RARP, use IP to route frames from 
+      host to host. The IP frame header contains routing information and control 
+      information associated with datagram delivery. </p>
+      <p class="blacktext">The IP header structure is as follows:</p>
+      <!--mstheme--></font><table cellSpacing="0" cellPadding="2" width="400" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+        <tr class="blacktext">
+          <td vAlign="top" width="12%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+          <div align="right">
+            4
+          </div>
+          <!--mstheme--></font></td>
+          <td vAlign="top" width="10%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+          <div align="right">
+            8
+          </div>
+          <!--mstheme--></font></td>
+          <td vAlign="top" bgColor="#ffffff" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">
+          <div align="right">
+            16
+          </div>
+          <!--mstheme--></font></td>
+          <td vAlign="top" bgColor="#ffffff" colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">
+          <div align="right">
+            32 bits
+          </div>
+          <!--mstheme--></font></td>
+        </tr>
+        <tr class="blacktext">
+          <td vAlign="top" width="12%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+          <p>Ver. </p>
+          </center><!--mstheme--></font></td>
+          <td vAlign="top" width="10%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+          <p>IHL </p>
+          </center><!--mstheme--></font></td>
+          <td vAlign="top" noWrap colSpan="2"><!--mstheme--><font face="georgia,times new roman,times"><center>
+          <p>Type of service </p>
+          </center><!--mstheme--></font></td>
+          <td vAlign="top" align="middle" colSpan="4"><!--mstheme--><font face="georgia,times new roman,times">Total length <!--mstheme--></font></td>
+        </tr>
+        <tr class="blacktext">
+          <td vAlign="top" colSpan="4"><!--mstheme--><font face="georgia,times new roman,times"><center>
+          <p>Identification </p>
+          </center><!--mstheme--></font></td>
+          <td vAlign="top" width="16%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+          <p>Flags </p>
+          </center><!--mstheme--></font></td>
+          <td vAlign="top" noWrap colSpan="3"><!--mstheme--><font face="georgia,times new roman,times">Fragment offset <!--mstheme--></font></td>
+        </tr>
+        <tr class="blacktext">
+          <td vAlign="top" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times"><center>
+          <p>Time to live </p>
+          </center><!--mstheme--></font></td>
+          <td vAlign="top" align="middle" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">Protocol <!--mstheme--></font></td>
+          <td vAlign="top" noWrap colSpan="4"><!--mstheme--><font face="georgia,times new roman,times"><center>
+          <p>Header checksum </p>
+          </center><!--mstheme--></font></td>
+        </tr>
+        <tr class="blacktext">
+          <td vAlign="top" colSpan="8"><!--mstheme--><font face="georgia,times new roman,times"><center>
+          <p>Source address </p>
+          </center><!--mstheme--></font></td>
+        </tr>
+        <tr class="blacktext">
+          <td vAlign="top" colSpan="8"><!--mstheme--><font face="georgia,times new roman,times"><center>
+          <p>Destination address </p>
+          </center><!--mstheme--></font></td>
+        </tr>
+        <tr class="blacktext">
+          <td vAlign="top" colSpan="8"><!--mstheme--><font face="georgia,times new roman,times"><center>
+          <p>Option + Padding </p>
+          </center><!--mstheme--></font></td>
+        </tr>
+        <tr class="blacktext">
+          <td vAlign="top" colSpan="8"><!--mstheme--><font face="georgia,times new roman,times"><center>
+          <p>Data </p>
+          </center><!--mstheme--></font></td>
+        </tr>
+        <tr class="blacktext" bgColor="#ffffff">
+          <td vAlign="top" colSpan="8"><!--mstheme--><font face="georgia,times new roman,times">
+          <div align="center">
+            <span class="blackitalic">IP header structure</span>
+          </div>
+          <!--mstheme--></font></td>
+        </tr>
+      </table><!--mstheme--><font face="georgia,times new roman,times">
+      <p align="left"><span class="title4">Version</span><font face="Arial,Helvetica,sans-serif" color="#cc6600"><span class="redsmall"><br>
+      </span></font><span class="blacktext"><font face="Arial">Version field indicates 
+      the format of the Internet header.</font></span></p>
+      <p align="left"><span class="title4">IHL</span><font face="Arial,Helvetica,sans-serif" color="#cc6600"><span class="title2"><br>
+      </span></font><span class="blacktext"><font face="Arial">Internet header length 
+      is the length of the Internet header in 32-bit words. Points to the beginning 
+      of the data. The minimum value for a correct header is 5.</font></span></p>
+      <p align="left"><span class="title4">Type of service</span><font face="Arial,Helvetica,sans-serif" color="#cc6600"><span class="redsmall"><br>
+      </span></font><span class="blacktext">Indicates the quality of service desired. 
+      Networks may offer service precedence, meaning that they accept traffic only 
+      above a certain precedence at times of high load. There is a three-way trade-off 
+      between low delay, high reliability and high throughput.</span></p>
+      <div align="left">
+        <!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="75%" border="0">
+          <tr class="blacktext">
+            <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">Bits 0-2: Precedence<!--mstheme--></font></td>
+          </tr>
+          <tr class="blacktext">
+            <td width="8%"><!--mstheme--><font face="georgia,times new roman,times">111 <!--mstheme--></font></td>
+            <td width="92%"><!--mstheme--><font face="georgia,times new roman,times">Network control. <!--mstheme--></font></td>
+          </tr>
+          <tr class="blacktext">
+            <td width="8%"><!--mstheme--><font face="georgia,times new roman,times">110 <!--mstheme--></font></td>
+            <td width="92%"><!--mstheme--><font face="georgia,times new roman,times">Internetwork control. <!--mstheme--></font></td>
+          </tr>
+          <tr class="blacktext">
+            <td width="8%"><!--mstheme--><font face="georgia,times new roman,times">101 <!--mstheme--></font></td>
+            <td width="92%"><!--mstheme--><font face="georgia,times new roman,times">CRITIC/ECP.<!--mstheme--></font></td>
+          </tr>
+          <tr class="blacktext">
+            <td width="8%"><!--mstheme--><font face="georgia,times new roman,times">100<!--mstheme--></font></td>
+            <td width="92%"><!--mstheme--><font face="georgia,times new roman,times">Flash override.<!--mstheme--></font></td>
+          </tr>
+          <tr class="blacktext">
+            <td width="8%"><!--mstheme--><font face="georgia,times new roman,times">011 <!--mstheme--></font></td>
+            <td width="92%"><!--mstheme--><font face="georgia,times new roman,times">Flash. <!--mstheme--></font></td>
+          </tr>
+          <tr class="blacktext">
+            <td width="8%"><!--mstheme--><font face="georgia,times new roman,times">010 <!--mstheme--></font></td>
+            <td width="92%"><!--mstheme--><font face="georgia,times new roman,times">Immediate.<!--mstheme--></font></td>
+          </tr>
+          <tr class="blacktext">
+            <td width="8%"><!--mstheme--><font face="georgia,times new roman,times">001<!--mstheme--></font></td>
+            <td width="92%"><!--mstheme--><font face="georgia,times new roman,times">Priority.<!--mstheme--></font></td>
+          </tr>
+          <tr class="blacktext">
+            <td width="8%"><!--mstheme--><font face="georgia,times new roman,times">000<!--mstheme--></font></td>
+            <td width="92%"><!--mstheme--><font face="georgia,times new roman,times">Routine.<!--mstheme--></font></td>
+          </tr>
+        </table><!--mstheme--><font face="georgia,times new roman,times">
+        <p class="blacktext" align="left">Bit 3: Delay</p>
+        <div align="left">
+          <!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="75%" border="0">
+            <tr class="blacktext">
+              <td width="8%"><!--mstheme--><font face="georgia,times new roman,times">0<!--mstheme--></font></td>
+              <td width="92%"><!--mstheme--><font face="georgia,times new roman,times">Normal delay.<!--mstheme--></font></td>
+            </tr>
+            <tr class="blacktext">
+              <td width="8%"><!--mstheme--><font face="georgia,times new roman,times">1<!--mstheme--></font></td>
+              <td width="92%"><!--mstheme--><font face="georgia,times new roman,times">Low delay.<!--mstheme--></font></td>
+            </tr>
+          </table><!--mstheme--><font face="georgia,times new roman,times">
+          <p class="blacktext" align="left">Bit 4: Throughput</p>
+          <div align="left">
+            <!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="75%" border="0">
+              <tr class="blacktext">
+                <td width="8%"><!--mstheme--><font face="georgia,times new roman,times">0<!--mstheme--></font></td>
+                <td width="92%"><!--mstheme--><font face="georgia,times new roman,times">Normal throughput.<!--mstheme--></font></td>
+              </tr>
+              <tr class="blacktext">
+                <td width="8%"><!--mstheme--><font face="georgia,times new roman,times">1<!--mstheme--></font></td>
+                <td width="92%"><!--mstheme--><font face="georgia,times new roman,times">High throughput.<!--mstheme--></font></td>
+              </tr>
+            </table><!--mstheme--><font face="georgia,times new roman,times">
+            <p class="blacktext" align="left">Bit 5: Reliability</p>
+            <div align="left">
+              <!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="75%" border="0">
+                <tr class="blacktext">
+                  <td width="8%"><!--mstheme--><font face="georgia,times new roman,times">0<!--mstheme--></font></td>
+                  <td width="92%"><!--mstheme--><font face="georgia,times new roman,times">Normal reliability.<!--mstheme--></font></td>
+                </tr>
+                <tr class="blacktext">
+                  <td width="8%"><!--mstheme--><font face="georgia,times new roman,times">1<!--mstheme--></font></td>
+                  <td width="92%"><!--mstheme--><font face="georgia,times new roman,times">High reliability.<!--mstheme--></font></td>
+                </tr>
+              </table><!--mstheme--><font face="georgia,times new roman,times">
+              <p class="blacktext" align="left">Bits 6-7: Reserved for future use.<font color="#cc6600"><b>
+              </b></font></p>
+              <p align="left"><span class="title4">Total length</span><font face="Arial,Helvetica,sans-serif" color="#cc6600"><span class="redsmall"><br>
+              </span></font><span class="blacktext">Length of the datagram measured 
+              in bytes, including the Internet header and data. This field allows 
+              the length of a datagram to be up to 65,535 bytes, although such long 
+              datagrams are impractical for most hosts and networks. All hosts must 
+              be prepared to accept datagrams of up to 576 bytes, regardless of 
+              whether they arrive whole or in fragments. It is recommended that 
+              hosts send datagrams larger than 576 bytes only if the destination 
+              is prepared to accept the larger datagrams.</span></p>
+              <p align="left"><span class="title4">Identification</span><font face="Arial,Helvetica,sans-serif" color="#cc6600"><span class="redsmall"><br>
+              </span></font><span class="blacktext">Identifying value assigned by 
+              the sender to aid in assembling the fragments of a datagram.</span></p>
+              <p align="left"><span class="title4">Flags</span><font face="Arial,Helvetica,sans-serif" color="#cc6600"><span class="redsmall"><br>
+              </span></font><span class="blacktext">3 bits. Control flags:</span></p>
+              <p class="blacktext" align="left">Bit 0 is reserved and must be zero</p>
+              <p class="blacktext" align="left">Bit 1: Don’t fragment bit:</p>
+              <div align="left">
+                <!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="75%" border="0">
+                  <tr class="blacktext">
+                    <td width="8%"><!--mstheme--><font face="georgia,times new roman,times">0<!--mstheme--></font></td>
+                    <td width="92%"><!--mstheme--><font face="georgia,times new roman,times">May fragment.<!--mstheme--></font></td>
+                  </tr>
+                  <tr class="blacktext">
+                    <td width="8%"><!--mstheme--><font face="georgia,times new roman,times">1<!--mstheme--></font></td>
+                    <td width="92%"><!--mstheme--><font face="georgia,times new roman,times">Don’t fragment.<!--mstheme--></font></td>
+                  </tr>
+                </table><!--mstheme--><font face="georgia,times new roman,times">
+                <p class="blacktext" align="left">Bit 2: More fragments bit:</p>
+                <div align="left">
+                  <!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="75%" border="0">
+                    <tr class="blacktext">
+                      <td width="8%"><!--mstheme--><font face="georgia,times new roman,times">0<!--mstheme--></font></td>
+                      <td width="92%"><!--mstheme--><font face="georgia,times new roman,times">Last fragment.<!--mstheme--></font></td>
+                    </tr>
+                    <tr class="blacktext">
+                      <td width="8%"><!--mstheme--><font face="georgia,times new roman,times">1<!--mstheme--></font></td>
+                      <td width="92%"><!--mstheme--><font face="georgia,times new roman,times">More fragments.<!--mstheme--></font></td>
+                    </tr>
+                  </table><!--mstheme--><font face="georgia,times new roman,times">
+                  <p align="left"><span class="title4"><font face="Arial">Fragment 
+                  offset</font></span><font face="Arial" color="#cc6600"><span class="redsmall"><br>
+                  </span></font><span class="blacktext">13 bits. Indicates where 
+                  this fragment belongs in the datagram. The fragment offset is 
+                  measured in units of 8 bytes (64 bits). The first fragment has 
+                  offset zero.</span></p>
+                  <p align="left"><span class="title4">Time to live</span><font face="Arial,Helvetica,sans-serif" color="#cc6600"><span class="redsmall"><br>
+                  </span></font><span class="blacktext">Indicates the maximum time 
+                  the datagram is allowed to remain in the Internet system. If this 
+                  field contains the value zero, the datagram must be destroyed. 
+                  This field is modified in Internet header processing. The time 
+                  is measured in units of seconds. However, since every module that 
+                  processes a datagram must decrease the TTL by at least one (even 
+                  if it processes the datagram in less than 1 second), the TTL must 
+                  be thought of only as an upper limit on the time a datagram may 
+                  exist. The intention is to cause undeliverable datagrams to be 
+                  discarded and to bound the maximum datagram lifetime.</span></p>
+                  <p align="left"><span class="title4">Protocol</span><font face="Arial,Helvetica,sans-serif" color="#cc6600"><span class="redsmall"><br>
+                  </span></font><span class="blacktext">Indicates the next level 
+                  protocol used in the data portion of the Internet datagram.</span></p>
+                  <p align="left"><span class="title4">Header checksum</span><font face="Arial,Helvetica,sans-serif" color="#cc6600"><span class="redsmall"><br>
+                  </span></font><span class="blacktext">A checksum on the header 
+                  only. Since some header fields change, e.g., Time To Live, this 
+                  is recomputed and verified at each point that the Internet header 
+                  is processed.</span></p>
+                  <p align="left"><span class="title4">Source address / destination 
+                  address</span><font face="Arial,Helvetica,sans-serif" color="#cc6600"><span class="redsmall"><br>
+                  </span></font><span class="blacktext">32 bits each. A distinction 
+                  is made between names, addresses and routes. A <i>name </i>indicates 
+                  an object to be sought. An <i>address</i> indicates the location 
+                  of the object. A <i>route </i>indicates how to arrive at the object. 
+                  The Internet protocol deals primarily with addresses. It is the 
+                  task of higher level protocols (such as host-to-host or application) 
+                  to make the mapping from names to addresses. The Internet module 
+                  maps Internet addresses to local net addresses. It is the task 
+                  of lower level procedures (such as local net or gateways) to make 
+                  the mapping from local net addresses to routes.</span></p>
+                  <p align="left"><span class="title4">Options</span><font face="Arial,Helvetica,sans-serif" color="#cc6600"><span class="redsmall"><br>
+                  </span></font><span class="blacktext">Options may or may not appear 
+                  in datagrams. They must be implemented by all IP modules (host 
+                  and gateways). What is optional is their transmission in any particular 
+                  datagram, not their implementation. In some environments, the 
+                  security option may be required in all datagrams</span><font face="Arial">.</font></p>
+                  <p class="blacktext" align="left">The option field is variable 
+                  in length. There may be zero or more options. There are two possible 
+                  formats for an option: </p>
+                  <div align="left">
+                    <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/layers/alaybul1.gif" width="12" height="12" hspace="15" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="georgia,times new roman,times">A single octet of option type. <!--mstheme--></font><!--msthemelist--></td></tr>
+                      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/layers/alaybul1.gif" width="12" height="12" hspace="15" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="georgia,times new roman,times">An option type octet, an option length octet and the actual 
+                      option data octets. <!--mstheme--></font><!--msthemelist--></td></tr>
+                    <!--msthemelist--></table><!--mstheme--><font face="georgia,times new roman,times">
+                  </div>
+                  <p class="blacktext" align="left">The length octet includes the 
+                  option type octet and the actual option data octets.</p>
+                  <p class="blacktext" align="left">The option type octet has 3 
+                  fields:</p>
+                  <p class="blacktext" align="left">1 bit: Copied flag. Indicates 
+                  that this option is copied into all fragments during fragmentation:</p>
+                  <div align="left">
+                    <!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="75%" border="0">
+                      <tr class="blacktext">
+                        <td width="8%"><!--mstheme--><font face="georgia,times new roman,times">0<!--mstheme--></font></td>
+                        <td width="92%"><!--mstheme--><font face="georgia,times new roman,times">Copied.<!--mstheme--></font></td>
+                      </tr>
+                      <tr class="blacktext">
+                        <td width="8%"><!--mstheme--><font face="georgia,times new roman,times">1<!--mstheme--></font></td>
+                        <td width="92%"><!--mstheme--><font face="georgia,times new roman,times">Not copied.<!--mstheme--></font></td>
+                      </tr>
+                    </table><!--mstheme--><font face="georgia,times new roman,times">
+                    <p class="blacktext" align="left">2 bits: Option class</p>
+                    <div align="left" style="width: 696; height: 3696">
+                      <!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="75%" border="0">
+                        <tr class="blacktext">
+                          <td width="7%"><!--mstheme--><font face="georgia,times new roman,times">0 <!--mstheme--></font></td>
+                          <td width="93%"><!--mstheme--><font face="georgia,times new roman,times">Control.<!--mstheme--></font></td>
+                        </tr>
+                        <tr class="blacktext">
+                          <td width="7%"><!--mstheme--><font face="georgia,times new roman,times">1 <!--mstheme--></font></td>
+                          <td width="93%"><!--mstheme--><font face="georgia,times new roman,times">Reserved for future use.<!--mstheme--></font></td>
+                        </tr>
+                        <tr class="blacktext">
+                          <td width="7%"><!--mstheme--><font face="georgia,times new roman,times">2<!--mstheme--></font></td>
+                          <td width="93%"><!--mstheme--><font face="georgia,times new roman,times">Debugging and measurement.<!--mstheme--></font></td>
+                        </tr>
+                        <tr class="blacktext">
+                          <td width="7%"><!--mstheme--><font face="georgia,times new roman,times">3<!--mstheme--></font></td>
+                          <td width="93%"><!--mstheme--><font face="georgia,times new roman,times">Reserved for future use.<!--mstheme--></font></td>
+                        </tr>
+                      </table><!--mstheme--><font face="georgia,times new roman,times">
+                      <p class="blacktext" align="left">5 bits: Option number.</p>
+                      <p align="left"><span class="title4">
+                      <font face="Arial,Helvetica,sans-serif">Data</font></span><font face="Arial,Helvetica,sans-serif" color="#cc6600"><span class="redsmall"><br>
+                      </span></font><span class="blacktext">IP data or higher layer 
+                      protocol header.</span></p>
+                      <!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="480" border="0">
+                        <tr>
+                          <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">
+                          <a onclick="MM_openBrWindow('ScreenCaptures/ip.gif','ScreenCaptures','scrollbars=yes,resizable=yes,width=700,height=600')" href="javascript:;">
+                          <img src="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/IP%20Small.gif" border="0" width="480" height="338"></a><!--mstheme--></font></td>
+                        </tr>
+                        <tr>
+                          <td class="purple"><!--mstheme--><font face="georgia,times new roman,times">
+                          <div align="center">
+                            <a href="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/IP.gif">
+                            Enlarge</a></div>
+                          <!--mstheme--></font></td>
+                          <td class="purple"><!--mstheme--><font face="georgia,times new roman,times">
+                          <div align="center">
+                            <a href="http://www.radcom.com/Technologies.aspx?BoneId=376&ObjId=-1&=&=&=&staticName1=1&staticName2=" target="_blank">
+                            More Details</a></div>
+                          <!--mstheme--></font></td>
+                        </tr>
+                      </table><!--mstheme--><font face="georgia,times new roman,times">
+                      <p align="left"><span class="title2">IPv6</span></p>
+                      <p class="blacksmall" align="left">RFC1883
+                      <a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1883.html" target="window2">
+                      <u><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc1883.html</font></u></a><font color="blue"><u><br>
+                      </u></font>RFC1827
+                      <a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1827.html" target="window2">
+                      <u><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc1827.html</font></u></a></p>
+                      <p class="blacktext" align="left">IP version 6 (IPv6) is a 
+                      new version of the Internet Protocol based on IPv4. IPv4 and 
+                      IPv6 are demultiplexed at the media layer. For example, IPv6 
+                      packets are carried over Ethernet with the content type 86DD 
+                      (hexadecimal) instead of IPv4’s 0800.</p>
+                      <p class="blacktext" align="left">IPv6 increases the IP address 
+                      size from 32 bits to 128 bits, to support more levels of addressing 
+                      hierarchy, a much greater number of addressable nodes and 
+                      simpler auto-configuration of addresses. Scalability of multicast 
+                      addresses is introduced. A new type of address called an
+                      <i>anycast address</i> is also defined, to send a packet to 
+                      any one of a group of nodes.</p>
+                      <p align="left"><span class="blackbold">
+                      <font face="Arial,Helvetica,sans-serif">Improved support for 
+                      extensions and options</font></span><font face="Arial,Helvetica,sans-serif"><b>
+                      </b>-</font><span class="blacktext"> IPv6 options are placed 
+                      in separate headers that are located between the IPv6 header 
+                      and the transport layer header. Changes in the way IP header 
+                      options are encoded allow more efficient forwarding, less 
+                      stringent limits on the length of options, and greater flexibility 
+                      for introducing new options in the future. The extension headers 
+                      are: Hop-by-Hop Option, Routing (Type 0), Fragment, Destination 
+                      Option, Authentication, Encapsulation Payload.</span></p>
+                      <p align="left"><span class="blackbold">Flow labeling capability</span><font face="Arial,Helvetica,sans-serif"> 
+                      - </font><span class="blacktext">A new capability has been 
+                      added to enable the labeling of packets belonging to particular 
+                      traffic flows for which the sender requests special handling, 
+                      such as non-default Quality of Service or real-time service.</span></p>
+                      <p class="blacktext" align="left">The IPv6 header structure 
+                      is as follows:</p>
+                      <div align="left">
+                        <!--mstheme--></font><table cellSpacing="0" cellPadding="2" width="396" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+                          <tr class="blacktext">
+                            <td vAlign="top" width="12%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+                            <div align="right">
+                              4
+                            </div>
+                            <!--mstheme--></font></td>
+                            <td vAlign="top" width="12%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+                            <div align="right">
+                              4
+                            </div>
+                            <!--mstheme--></font></td>
+                            <td vAlign="top" width="23%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+                            <div align="right">
+                              16
+                            </div>
+                            <!--mstheme--></font></td>
+                            <td vAlign="top" width="24%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+                            <div align="right">
+                              24
+                            </div>
+                            <!--mstheme--></font></td>
+                            <td vAlign="top" width="29%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+                            <div align="right">
+                              32 bits
+                            </div>
+                            <!--mstheme--></font></td>
+                          </tr>
+                          <tr class="blacktext">
+                            <td vAlign="top" width="12%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p>Ver. </p>
+                            </center><!--mstheme--></font></td>
+                            <td vAlign="top" width="12%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p>Priority </p>
+                            </center><!--mstheme--></font></td>
+                            <td vAlign="top" colSpan="3"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p>Flow label </p>
+                            </center><!--mstheme--></font></td>
+                          </tr>
+                          <tr class="blacktext">
+                            <td vAlign="top" colSpan="3"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p>Payload length </p>
+                            </center><!--mstheme--></font></td>
+                            <td vAlign="top" width="24%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p>Next header </p>
+                            </center><!--mstheme--></font></td>
+                            <td vAlign="top" width="29%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p>Hop limit </p>
+                            </center><!--mstheme--></font></td>
+                          </tr>
+                          <tr class="blacktext">
+                            <td vAlign="top" colSpan="5"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p><br>
+                            Source address<br>
+                            (128 Bits) </p>
+                            </center><!--mstheme--></font></td>
+                          </tr>
+                          <tr class="blacktext">
+                            <td vAlign="top" colSpan="5"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p><br>
+                            Destination address<br>
+                            (128 bits) </p>
+                            </center><!--mstheme--></font></td>
+                          </tr>
+                          <tr class="blacktext" bgColor="#ffffff">
+                            <td vAlign="top" colSpan="5"><!--mstheme--><font face="georgia,times new roman,times">
+                            <div align="center">
+                              <span class="blackitalic">IPv6 header structure</span></div>
+                            <!--mstheme--></font></td>
+                          </tr>
+                        </table><!--mstheme--><font face="georgia,times new roman,times">
+                      </div>
+                      <p align="left"><span class="title4">Version</span><font face="Arial,Helvetica,sans-serif" color="#cc6600"><span class="redsmall"><br>
+                      </span></font><span class="blacktext">Internet Protocol Version 
+                      number (IPv6 is 6).</span></p>
+                      <p align="left"><span class="title4">Priority</span><font face="Arial,Helvetica,sans-serif" color="#cc6600"><span class="redsmall"><br>
+                      </span></font><span class="blacktext">Enables a source to 
+                      identify the desired delivery priority of the packets. Priority 
+                      values are divided into ranges: traffic where the source provides 
+                      congestion control and non-congestion control traffic.</span></p>
+                      <p align="left"><span class="title4">Flow label</span><font face="Arial,Helvetica,sans-serif" color="#cc6600"><span class="redsmall"><br>
+                      </span></font><span class="blacktext">Used by a source to 
+                      label those products for which it requests special handling 
+                      by the IPv6 router. The flow is uniquely identified by the 
+                      combination of a source address and a non-zero flow label.</span></p>
+                      <p align="left"><span class="title4">Payload length</span><font face="Arial,Helvetica,sans-serif" color="#cc6600"><span class="redsmall"><br>
+                      </span></font><span class="blacktext">Length of payload (in 
+                      octets).</span></p>
+                      <p align="left"><span class="title4">Next header</span><font face="Arial,Helvetica,sans-serif" color="#cc6600"><span class="redsmall"><br>
+                      </span></font><span class="blacktext">Identifies the type 
+                      of header immediately following the IPv6 header.</span></p>
+                      <p align="left"><span class="title4">Hop limit</span><font face="Arial,Helvetica,sans-serif" color="#cc6600"><span class="redsmall"><br>
+                      </span></font><span class="blacktext">8-bit integer that is 
+                      decremented by one by each node that forwards the packet. 
+                      The packet is discarded if the Hop Limit is decremented to 
+                      zero.</span></p>
+                      <p align="left"><span class="title4">Source address</span><font face="Arial,Helvetica,sans-serif" color="#cc6600"><span class="redsmall"><br>
+                      </span></font><span class="blacktext">128-bit address of the 
+                      originator of the packet.</span></p>
+                      <p align="left"><span class="title4">Destination address</span><font face="Arial,Helvetica,sans-serif" color="#cc6600"><span class="redsmall"><br>
+                      </span></font><span class="blacktext">128-bit address of the 
+                      intended recipient of the packet.</span></p>
+                      <!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="480" border="0">
+                        <tr>
+                          <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">
+                          <a onclick="MM_openBrWindow('ScreenCaptures/IP6.gif','ScreenCaptures','scrollbars=yes,resizable=yes,width=700,height=600')" href="javascript:;">
+                          <img src="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/IP6%20Small.gif" border="0" width="480" height="339"></a><!--mstheme--></font></td>
+                        </tr>
+                        <tr>
+                          <td class="purple"><!--mstheme--><font face="georgia,times new roman,times">
+                          <div align="center">
+                            <a href="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/IP6.gif">
+                            Enlarge</a></div>
+                          <!--mstheme--></font></td>
+                          <td class="purple"><!--mstheme--><font face="georgia,times new roman,times">
+                          <div align="center">
+                            <a href="http://www.radcom.com/Technologies.aspx?BoneId=376&ObjId=-1&=&=&=&staticName1=1&staticName2=" target="_blank">
+                            More Details</a></div>
+                          <!--mstheme--></font></td>
+                        </tr>
+                      </table><!--mstheme--><font face="georgia,times new roman,times">
+                      <p align="left">&nbsp;<span class="title2">TCP</span></p>
+                      <p class="blacksmall" align="left">RFC793
+                      <a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc793.html" target="window2">
+                      <u><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc793.html</font></u></a><font color="blue"><u><br>
+                      </u></font>RFC1146
+                      <a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1146.html" target="window2">
+                      <u><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc1146.html</font></u></a><font color="blue"><u><br>
+                      </u></font>RFC1072
+                      <a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1072.html" target="window2">
+                      <u><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc1072.html</font></u></a><font color="blue"><u><br>
+                      </u></font>This RFC has been replaced by
+                      <a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1323.html" target="_blank">
+                      <font size="1">RFC 1323</font></a><font size="1">. </font>
+                      <br>
+                      The information on this page will be updated to suit the new 
+                      RFC in the near future.<br>
+                      RFC1693
+                      <a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc1693.html" target="window2">
+                      <u><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc1693.html</font></u></a></p>
+                      <p class="blacktext" align="left">IETF RFC793 defines the 
+                      Transmission Control Protocol (TCP). TCP provides a reliable 
+                      stream delivery and virtual connection service to applications 
+                      through the use of sequenced acknowledgment with retransmission 
+                      of packets when necessary. </p>
+                      <p class="blacktext" align="left">The TCP header structure 
+                      is as follows:</p>
+                      <div align="left">
+                        <!--mstheme--></font><table cellSpacing="0" cellPadding="2" width="400" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+                          <tr class="blacktext">
+                            <td vAlign="top" bgColor="#ffffff" colSpan="8"><!--mstheme--><font face="georgia,times new roman,times">
+                            <div align="right">
+                              16
+                            </div>
+                            <!--mstheme--></font></td>
+                            <td vAlign="top" width="12%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+                            <div align="right">
+                              32 bits
+                            </div>
+                            <!--mstheme--></font></td>
+                          </tr>
+                          <tr class="blacktext">
+                            <td vAlign="top" colSpan="8"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p>Source port </p>
+                            </center><!--mstheme--></font></td>
+                            <td vAlign="top" width="12%"><!--mstheme--><font face="georgia,times new roman,times">Destination port <!--mstheme--></font></td>
+                          </tr>
+                          <tr class="blacktext">
+                            <td vAlign="top" colSpan="9"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p>Sequence number </p>
+                            </center><!--mstheme--></font></td>
+                          </tr>
+                          <tr class="blacktext">
+                            <td vAlign="top" colSpan="9"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p>Acknowledgement number </p>
+                            </center><!--mstheme--></font></td>
+                          </tr>
+                          <tr class="blacktext">
+                            <td vAlign="top" width="12%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p>Offset </p>
+                            </center><!--mstheme--></font></td>
+                            <td vAlign="top" width="13%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p>Resrvd </p>
+                            </center><!--mstheme--></font></td>
+                            <td vAlign="top" width="4%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p>U </p>
+                            </center><!--mstheme--></font></td>
+                            <td vAlign="top" width="4%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p>A </p>
+                            </center><!--mstheme--></font></td>
+                            <td vAlign="top" width="4%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p>P </p>
+                            </center><!--mstheme--></font></td>
+                            <td vAlign="top" width="4%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p>R </p>
+                            </center><!--mstheme--></font></td>
+                            <td vAlign="top" width="4%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p>S </p>
+                            </center><!--mstheme--></font></td>
+                            <td vAlign="top" width="4%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p>F </p>
+                            </center><!--mstheme--></font></td>
+                            <td vAlign="top" width="12%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p>Window </p>
+                            </center><!--mstheme--></font></td>
+                          </tr>
+                          <tr class="blacktext">
+                            <td vAlign="top" colSpan="8"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p>Checksum </p>
+                            </center><!--mstheme--></font></td>
+                            <td vAlign="top" width="12%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p>Urgent pointer </p>
+                            </center><!--mstheme--></font></td>
+                          </tr>
+                          <tr class="blacktext">
+                            <td vAlign="top" colSpan="9"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p>Option + Padding </p>
+                            </center><!--mstheme--></font></td>
+                          </tr>
+                          <tr class="blacktext">
+                            <td vAlign="top" colSpan="9"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p>Data </p>
+                            </center><!--mstheme--></font></td>
+                          </tr>
+                          <tr class="blacktext" bgColor="#ffffff">
+                            <td vAlign="top" colSpan="9"><!--mstheme--><font face="georgia,times new roman,times">
+                            <div align="center">
+                              <span class="blackitalic">TCP header structure
+                              </span>
+                            </div>
+                            <!--mstheme--></font></td>
+                          </tr>
+                        </table><!--mstheme--><font face="georgia,times new roman,times">
+                      </div>
+                      <p align="left"><span class="title4">Source port</span><font face="Arial,Helvetica,sans-serif" color="#cc6600"><span class="redsmall"><br>
+                      </span></font><span class="blacktext">Source port number.</span></p>
+                      <p align="left"><span class="title4">Destination port</span><font color="#cc6600"><span class="redsmall"><br>
+                      </span></font><span class="blacktext">Destination port number.</span></p>
+                      <p align="left"><span class="title4">Sequence number</span><font color="#cc6600"><span class="redsmall"><br>
+                      </span></font><span class="blacktext">The sequence number 
+                      of the first data octet in this segment (except when SYN is 
+                      present). If SYN is present, the sequence number is the initial 
+                      sequence number (ISN) and the first data octet is ISN+1.</span></p>
+                      <p align="left"><span class="title4">Acknowledgment number</span><font color="#cc6600"><span class="redsmall"><br>
+                      </span></font><span class="blacktext">If the ACK control bit 
+                      is set, this field contains the value of the next sequence 
+                      number which the sender of the segment is expecting to receive. 
+                      Once a connection is established, this value is always sent.</span></p>
+                      <p align="left"><span class="title4">Data offset</span><font color="#cc6600"><span class="redsmall"><br>
+                      </span></font><span class="blacktext">4 bits. The number of 
+                      32-bit words in the TCP header, which indicates where the 
+                      data begins. The TCP header (even one including options) has 
+                      a length which is an integral number of 32 bits.</span></p>
+                      <p align="left"><span class="title4">Reserved</span><span class="redsmall"><br>
+                      </span><span class="blacktext">6 bits. Reserved for future 
+                      use. Must be zero.</span></p>
+                      <p align="left"><span class="title4">Control bits</span><span class="redsmall"><br>
+                      </span><span class="blacktext">6 bits. The control bits may 
+                      be (from right to left):</span></p>
+                      <div align="left">
+                        <!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="400" border="0">
+                          <tr class="blacktext">
+                            <td width="19%"><!--mstheme--><font face="georgia,times new roman,times">U (URG)<!--mstheme--></font></td>
+                            <td width="81%"><!--mstheme--><font face="georgia,times new roman,times">Urgent pointer field significant.<!--mstheme--></font></td>
+                          </tr>
+                          <tr class="blacktext">
+                            <td width="19%"><!--mstheme--><font face="georgia,times new roman,times">A (ACK)<!--mstheme--></font></td>
+                            <td width="81%"><!--mstheme--><font face="georgia,times new roman,times">Acknowledgment field significant.<!--mstheme--></font></td>
+                          </tr>
+                          <tr class="blacktext">
+                            <td width="19%"><!--mstheme--><font face="georgia,times new roman,times">P (PSH)<!--mstheme--></font></td>
+                            <td width="81%"><!--mstheme--><font face="georgia,times new roman,times">Push function.<!--mstheme--></font></td>
+                          </tr>
+                          <tr class="blacktext">
+                            <td width="19%"><!--mstheme--><font face="georgia,times new roman,times">R (RST) <!--mstheme--></font></td>
+                            <td width="81%"><!--mstheme--><font face="georgia,times new roman,times">Reset the connection. <!--mstheme--></font></td>
+                          </tr>
+                          <tr class="blacktext">
+                            <td width="19%"><!--mstheme--><font face="georgia,times new roman,times">S (SYN)<!--mstheme--></font></td>
+                            <td width="81%"><!--mstheme--><font face="georgia,times new roman,times">Synchronize sequence numbers.<!--mstheme--></font></td>
+                          </tr>
+                          <tr class="blacktext">
+                            <td width="19%"><!--mstheme--><font face="georgia,times new roman,times">F (FIN)<!--mstheme--></font></td>
+                            <td width="81%"><!--mstheme--><font face="georgia,times new roman,times">No more data from sender.<!--mstheme--></font></td>
+                          </tr>
+                        </table><!--mstheme--><font face="georgia,times new roman,times">
+                      </div>
+                      <p align="left"><span class="title4">Window</span><span class="redsmall"><br>
+                      </span><span class="blacktext">16 bits. The number of data 
+                      octets which the sender of this segment is willing to accept, 
+                      beginning with the octet indicated in the acknowledgment field.</span></p>
+                      <p align="left"><span class="title4">Checksum</span><span class="redsmall"><br>
+                      </span><span class="blacktext">16 bits. The checksum field 
+                      is the 16 bit one’s complement of the one’s complement sum 
+                      of all 16-bit words in the header and text. If a segment contains 
+                      an odd number of header and text octets to be checksummed, 
+                      the last octet is padded on the right with zeros to form a 
+                      16-bit word for checksum purposes. The pad is not transmitted 
+                      as part of the segment. While computing the checksum, the 
+                      checksum field itself is replaced with zeros.</span></p>
+                      <p align="left"><span class="title4">Urgent Pointer</span><span class="redsmall"><br>
+                      </span><span class="blacktext">16 bits. This field communicates 
+                      the current value of the urgent pointer as a positive offset 
+                      from the sequence number in this segment. The urgent pointer 
+                      points to the sequence number of the octet following the urgent 
+                      data. This field can only be interpreted in segments for which 
+                      the URG control bit has been set.</span></p>
+                      <p align="left"><span class="title4">Options</span><span class="redsmall"><br>
+                      </span><span class="blacktext">Options may be transmitted 
+                      at the end of the TCP header and always have a length which 
+                      is a multiple of 8 bits. All options are included in the checksum. 
+                      An option may begin on any octet boundary.</span></p>
+                      <!--mstheme--></font><table class="blacktext" cellSpacing="0" cellPadding="0" width="100%" border="0">
+                        <tr>
+                          <td><!--mstheme--><font face="georgia,times new roman,times">There are two possible formats for an option:<!--mstheme--></font></td>
+                        </tr>
+                        <tr>
+                          <td><!--mstheme--><font face="georgia,times new roman,times">
+                          <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/layers/alaybul1.gif" width="12" height="12" hspace="15" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="georgia,times new roman,times">
+                            <div class="blacktext" align="left">
+                              <div align="left">
+                                <div align="left">
+                                  <div align="left">
+                                    <div align="left">
+                                      <div align="left">
+                                        <div align="left">
+                                          <div align="left">
+                                            A single octet of option type.</div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!--mstheme--></font><!--msthemelist--></td></tr>
+                            <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../../_themes/layers/alaybul1.gif" width="12" height="12" hspace="15" alt="bullet"></td><td valign="top" width="100%"><!--mstheme--><font face="georgia,times new roman,times">
+                            <div class="blacktext" align="left">
+                              <div align="left">
+                                <div align="left">
+                                  <div align="left">
+                                    <div align="left">
+                                      <div align="left">
+                                        <div align="left">
+                                          <div align="left">
+                                            An octet of option type, an octet of 
+                                            option length, and the actual option 
+                                            data octets.</div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!--mstheme--></font><!--msthemelist--></td></tr>
+                          <!--msthemelist--></table><!--mstheme--><font face="georgia,times new roman,times">
+                          <!--mstheme--></font></td>
+                        </tr>
+                      </table><!--mstheme--><font face="georgia,times new roman,times">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div align="left">
+        <div align="left">
+          <div align="left">
+            <div align="left">
+              <div align="left">
+                <div align="left">
+                  <div align="left">
+                    <div align="left">
+                      <p class="blacktext" align="left">The option length includes 
+                      the option type and option length, as well as the option data 
+                      octets.<br>
+                      <br>
+                      The list of options may be shorter than that designated by 
+                      the data offset field because the contents of the header beyond 
+                      the End-of-Option option must be header padding i.e., zero.</p>
+                      <p class="blacktext" align="left">A TCP must implement all 
+                      options.<br>
+                      <br>
+                      <span class="title4">Data</span><span class="redsmall"><br>
+                      </span><span class="blacktext">TCP data or higher layer protocol.</span></p>
+                      <!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="480" border="0">
+                        <tr>
+                          <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">
+                          <a onclick="MM_openBrWindow('ScreenCaptures/tcp.gif','ScreenCaptures','scrollbars=yes,resizable=yes,width=700,height=600')" href="javascript:;">
+                          <img src="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/TCP%20Small.gif" border="0" width="480" height="338"></a><!--mstheme--></font></td>
+                        </tr>
+                        <tr>
+                          <td class="purple"><!--mstheme--><font face="georgia,times new roman,times">
+                          <div align="center">
+                            <a href="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/TCP.gif">
+                            Enlarge</a></div>
+                          <!--mstheme--></font></td>
+                          <td class="purple"><!--mstheme--><font face="georgia,times new roman,times">
+                          <div align="center">
+                            <a href="http://www.radcom.com/Technologies.aspx?BoneId=376&ObjId=-1&=&=&=&staticName1=1&staticName2=" target="_blank">
+                            More Details</a></div>
+                          <!--mstheme--></font></td>
+                        </tr>
+                      </table><!--mstheme--><font face="georgia,times new roman,times">
+                      <p align="left"><span class="title2">UDP</span></p>
+                      <p class="blacksmall" align="left">RFC768
+                      <a href="http://www.cis.ohio-state.edu/htbin/rfc/rfc768.html" target="window2">
+                      <u><font size="1">http://www.cis.ohio-state.edu/htbin/rfc/rfc768.html</font></u></a></p>
+                      <p class="blacktext" align="left">The User Datagram Protocol 
+                      (UDP), defined by IETF RFC768, provides a simple, but unreliable 
+                      message service for transaction-oriented services. Each UDP 
+                      header carries both a source port identifier and destination 
+                      port identifier, allowing high-level protocols to target specific 
+                      applications and services among hosts. </p>
+                      <p class="blacktext" align="left">The UDP header structure 
+                      is shown as follows:</p>
+                      <div align="left">
+                        <!--mstheme--></font><table cellSpacing="0" cellPadding="2" width="396" bgColor="#99ccff" border="1" bordercolordark="#330033" bordercolorlight="#330033">
+                          <tr class="blacktext">
+                            <td vAlign="top" width="48%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+                            <div align="right">
+                              <font color="black">16 </font>
+                            </div>
+                            <!--mstheme--></font></td>
+                            <td vAlign="top" width="52%" bgColor="#ffffff"><!--mstheme--><font face="georgia,times new roman,times">
+                            <div align="right">
+                              <font color="black">32 bits </font>
+                            </div>
+                            <!--mstheme--></font></td>
+                          </tr>
+                          <tr class="blacktext">
+                            <td vAlign="top" width="48%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p><font color="black">Source port </font></p>
+                            </center><!--mstheme--></font></td>
+                            <td vAlign="top" width="52%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p><font color="black">Destination port </font></p>
+                            </center><!--mstheme--></font></td>
+                          </tr>
+                          <tr class="blacktext">
+                            <td vAlign="top" width="48%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p><font color="black">Length </font></p>
+                            </center><!--mstheme--></font></td>
+                            <td vAlign="top" width="52%"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p><font color="black">Checksum </font></p>
+                            </center><!--mstheme--></font></td>
+                          </tr>
+                          <tr class="blacktext">
+                            <td vAlign="top" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times"><center>
+                            <p><font color="black"><br>
+                            Data<br>
+                            </font></p>
+                            </center><!--mstheme--></font></td>
+                          </tr>
+                          <tr class="blacktext" bgColor="#ffffff">
+                            <td vAlign="top" colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">
+                            <div align="center">
+                              <span class="blackitalic">UDP header structure</span></div>
+                            <!--mstheme--></font></td>
+                          </tr>
+                        </table><!--mstheme--><font face="georgia,times new roman,times">
+                      </div>
+                      <p align="left"><span class="title4">Source port</span><span class="redsmall"><br>
+                      </span><span class="blacktext">Source port is an optional 
+                      field. When used, it indicates the port of the sending process 
+                      and may be assumed to be the port to which a reply should 
+                      be addressed in the absence of any other information. If not 
+                      used, a value of zero is inserted.</span></p>
+                      <p align="left"><span class="title4">Destination port</span><span class="redsmall"><br>
+                      </span><span class="blacktext">Destination port has a meaning 
+                      within the context of a particular Internet destination address.</span></p>
+                      <p align="left"><span class="title4">Length</span><span class="redsmall"><br>
+                      </span><span class="blacktext">The length in octets of this 
+                      user datagram, including this header and the data. The minimum 
+                      value of the length is eight.</span></p>
+                      <p align="left"><span class="title4">Checksum</span><span class="redsmall"><br>
+                      </span><span class="blacktext">The 16-bit one’s complement 
+                      of the one’s complement sum of a pseudo header of information 
+                      from the IP header, the UDP header and the data, padded with 
+                      zero octets at the end (if necessary) to make a multiple of 
+                      two octets.</span></p>
+                      <p align="left"><span class="title4">Data</span><span class="redsmall"><br>
+                      </span><span class="blacktext">UDP data field.</span></p>
+                      <!--mstheme--></font><table cellSpacing="0" cellPadding="0" width="480" border="0">
+                        <tr>
+                          <td colSpan="2"><!--mstheme--><font face="georgia,times new roman,times">
+                          <a onclick="MM_openBrWindow('ScreenCaptures/udp.gif','ScreenCaptures','scrollbars=yes,resizable=yes,width=700,height=600')" href="javascript:;">
+                          <img src="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/UDP%20Small.gif" border="0" width="480" height="339"></a><!--mstheme--></font></td>
+                        </tr>
+                        <tr>
+                          <td class="purple"><!--mstheme--><font face="georgia,times new roman,times">
+                          <div align="center">
+                            <a href="../../../i/mc/cpc/Bottom%20Table/TCPIP%20Protocols/UDP.gif">
+                            Enlarge</a></div>
+                          <!--mstheme--></font></td>
+                          <td class="purple"><!--mstheme--><font face="georgia,times new roman,times">
+                          <div align="center">
+                            <a href="http://www.radcom.com/Technologies.aspx?BoneId=376&ObjId=-1&=&=&=&staticName1=1&staticName2=" target="_blank">
+                            More Details</a></div>
+                          <!--mstheme--></font></td>
+                        </tr>
+                      </table><!--mstheme--><font face="georgia,times new roman,times">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--mstheme--></font></td>
+    </tr>
+  </table><!--mstheme--><font face="georgia,times new roman,times">
+  </center>
+</div>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<p align="center"><a href="../../../index.html">Home</a> -
+<a href="../index.html">Computers</a> -
+<a href="../IP%20Sub-Netting.htm">IP Sub-Netting</a> -
+<a href="../ISDN%20Tutorial.htm">ISDN Tutorial</a> -
+<a href="../IP%20Addressing%20and%20Subnetting.htm">IP Addressing</a></p>
+<!--msthemeseparator--><p align="center"><img src="../../../_themes/layers/alayrule.gif" width="600" height="10" alt="horizontal rule"></p>
+<p align="center"><a href="Page%201.htm">Page 1</a> - <a href="Page%202.htm">Page 
+2</a> - <a href="Page%203.htm">Page 3</a> - <a href="Page%204.htm">Page 4</a> -
+<a href="Page%205.htm">Page 5</a> - <a href="Page%206.htm">Page 6</a> -
+<a href="Page%207.htm">Page 7</a> - <a href="Page%208.htm">Page 8</a> -
+<a href="Page%209.htm">Page 9</a> - <a href="Page%2010.htm">Page 10</a></p>
+
+<!--mstheme--></font></body>
+
+</html>

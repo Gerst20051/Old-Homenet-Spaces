@@ -1,0 +1,487 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>RSS</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXN.HTM#r">Commands N-Z</a>
+    &gt; <a href="../INDEXR.HTM#rss">Commands R</a>
+    <h1>RSS</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Manages Remote Storage. Can run batch scripts for applications
+    that will allow them to access Remote Storage directly.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>RSS
+    <a href="#ParameterAdminSet">admin set</a>
+    [<a href="#SwitchAdminExempt">/adminexempt:number</a>]
+    [<a href="#SwitchConcurrency">/concurrency:number</a>]
+    [<a href="#SwitchMediaCopies">/mediacopies:number</a>]
+    [<a href="#SwitchRecallLimit">/recalllimit:number</a>]
+    [<a href="#SwitchSchedule">/schedule:new_schedule</a>]</p>
+
+    <p>RSS
+    <a href="#ParameterAdminShow">admin show</a>
+    [<a href="#SwitchAdminExempt">/adminexempt</a>]
+    [<a href="#SwitchConcurrency">/concurrency</a>]
+    [<a href="#SwitchGeneral">/general</a>]
+    [<a href="#SwitchManageables">/manageables</a>]
+    [<a href="#SwitchManaged">/managed</a>]
+    [<a href="#SwitchMedia">/media</a>]
+    [<a href="#SwitchMediaCopies">/mediacopies</a>]
+    [<a href="#SwitchRecallLimit">/recalllimit</a>]
+    [<a href="#SwitchSchedule">/schedule</a>]</p>
+
+    <p>RSS
+    <a href="#ParameterFileRecall">file recall</a>
+    [<a href="#ParameterFile">file_specification [file_specification ...]</a>]</p>
+
+    <p>RSS
+    <a href="#ParameterMediaDelete">media delete</a>
+    <a href="#ParameterMedia">media_name [media_name ...] | *</a>
+    <a href="#SwitchCopySet">/copyset:[number_of_set]</a></p>
+
+    <p>RSS
+    <a href="#ParameterMediaShow">media show</a>
+    <a href="#ParameterMedia">media_name [media_name ...] | *</a>
+    [<a href="#SwitchCapacity">/capacity</a>]
+    [<a href="#SwitchCopies">/copies</a>]
+    [<a href="#SwitchFreespace">/freespace</a>]
+    [<a href="#SwitchName">/name</a>]
+    [<a href="#SwitchStatus">/status</a>]
+    [<a href="#SwitchVersion">/version</a>]</p>
+
+    <p>RSS
+    <a href="#ParameterMediaRecreateMaster">media recreatemaster</a>
+    <a href="#ParameterMedia">media_name [media_name ...] | *</a>
+    <a href="#SwitchCopySet">/copyset:[number_of_set]</a>
+    [<a href="#SwitchWait">/wait</a>]</p>
+
+    <p>RSS
+    <a href="#ParameterMediaSynchronize">media synchronize</a>
+    <a href="#ParameterMedia">media_name [media_name ...] | *</a>
+    <a href="#SwitchCopySet">/copyset:[number_of_set]</a>
+    [<a href="#SwitchWait">/wait</a>]</p>
+
+    <p>RSS
+    <a href="#ParameterVolumeDelete">volume delete</a>
+    <a href="#ParameterVolume">volume_name [volume_name ...] | *</a>
+    <a href="#SwitchRule">/rule:path[:file_extension]</a></p>
+
+    <p>RSS
+    <a href="#ParameterVolumeJob">volume job</a>
+    <a href="#ParameterVolume">volume_name [volume_name ...] | *</a>
+    [<a href="#SwitchCancel">/cancel</a>
+    | <a href="#SwitchRun">/run</a>]
+    [<a href="#SwitchType">/type:value</a>]
+    [<a href="#SwitchWait">/wait</a>]</p>
+
+    <p>RSS
+    <a href="#ParameterVolumeManage">volume manage</a>
+    <a href="#ParameterVolume">volume_name [volume_name ...] | *</a>
+    [<a href="#SwitchAccess">/access:days_not_accessed</a>]
+    [<a href="#SwitchDfs">/dfs:desired_free_space</a>]
+    [[<a href="#SwitchExclude">/exclude:path[:file_extension]</a>]
+     [<a href="#SwitchRecursive">/recursive</a>]]
+    [[<a href="#SwitchInclude">/include:path[:file_extension]</a>]
+     [<a href="#SwitchRecursive">/recursive</a>]]
+    [<a href="#SwitchSize">/size:lower_limit</a>]</p>
+
+    <p>RSS
+    <a href="#ParameterVolumeSet">volume set</a>
+    <a href="#ParameterVolume">volume_name [volume_name ...] | *</a>
+    [<a href="#SwitchAccess">/access:days_not_accessed</a>]
+    [<a href="#SwitchDfs">/dfs:desired_free_space</a>]
+    [[<a href="#SwitchExclude">/exclude:path[:file_extension]</a>]
+     [<a href="#SwitchRecursive">/recursive</a>]]
+    [[<a href="#SwitchInclude">/include:path[:file_extension]</a>]
+     [<a href="#SwitchRecursive">/recursive</a>]]
+    [<a href="#SwitchSize">/size:lower_limit</a>]</p>
+
+    <p>RSS
+    <a href="#ParameterVolumeShow">volume show</a>
+    <a href="#ParameterVolume">volume_name [volume_name ...] | *</a>
+    [<a href="#SwitchAccess">/access</a>]
+    [<a href="#SwitchDfs">/dfs</a>]
+    [<a href="#SwitchRule">/rule</a>]
+    [<a href="#SwitchSize">/size</a>]
+    [<a href="#SwitchStatistics">/statistics</a>]</p>
+
+    <p>RSS
+    <a href="#ParameterVolumeUnmanage">volume unmanage</a>
+    <a href="#ParameterVolume">volume_name [volume_name ...] | *</a>
+    [<a href="#SwitchFull">/full</a>
+     | <a href="#SwitchQuick">/quick</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterAdminSet"></a> admin set
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Modify Remote Storage parameters.</dd>
+
+      <dt><a name="ParameterAdminShow"></a> admin show
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display the Remote Storage parameters.</dd>
+      <dd>When invoked without switches, the system displays
+      all Remote Storage parameters.</dd>
+
+      <dt><a name="ParameterFile"></a> file_specification [file_specification ...]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the files to be recalled. You can use
+      the asterisk (*) and question mark (?) wildcard
+      characters.</dd>
+
+      <dt><a name="ParameterFileRecall"></a> file recall
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Recall files from remote storage.</dd>
+      <dd>This command is synchronous, which means that it
+      will not return to the command prompt until Remote
+      Storage has recalled all files.</dd>
+
+      <dt><a name="ParameterMedia"></a> media_name [media_name ...] | *
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>If you use an asterisk (*) in place of a
+      media_name, will display parameters for all media.</dd>
+
+      <dt><a name="ParameterMediaDelete"></a> media delete
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Delete remote storage data from specified media.</dd>
+
+      <dt><a name="ParameterMediaShow"></a> media show
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display information about specified media.</dd>
+
+      <dt><a name="ParameterMediaRecreateMaster"></a> media recreatemaster
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Recreate a master from a specified copy.</dd>
+
+      <dt><a name="ParameterMediaSynchronize"></a> media synchronize
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Synchronize a copy set.</dd>
+
+      <dt><a name="ParameterVolume"></a> volume_name [volume_name ...] | *
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>If you use an asterisk (*) in place of a
+      volume_name, will display parameters for all volumes.</dd>
+      <dd>If no other switches, will display all parameters
+      for the specified volumes.</dd>
+
+      <dt><a name="ParameterVolumeDelete"></a> volume delete
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Remove an include or exclude rule.</dd>
+
+      <dt><a name="ParameterVolumeJob"></a> volume job
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Run or cancel a single Remote Storage job.</dd>
+
+      <dt><a name="ParameterVolumeManage"></a> volume manage
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Manage a volume.</dd>
+
+      <dt><a name="ParameterVolumeSet"></a> volume set
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Modify settings for a specified volume.</dd>
+
+      <dt><a name="ParameterVolumeShow"></a> volume show
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Show parameters for a specified volume.</dd>
+
+      <dt><a name="ParameterVolumeUnmanage"></a> volume unmanage
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Stop managing a volume.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchAccess"></a> /access
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the last access date migration criteria
+      for managed files.</dd>
+      <dt> /access:days_not_accessed
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Only files that have not been accessed in the
+      specified number of days or longer will be managed
+      (default 180).</dd>
+
+      <dt><a name="SwitchAdminExempt"></a> /adminexempt
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays whether administrators are exempt from
+      the runaway recall limit.</dd>
+      <dt> /adminexempt:number
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies whether administrators are exempt from
+      the runaway recall limit:
+      <ul>
+      <li><b>0</b>  indicates that they are not</li>
+      <li><b>1</b>  indicates that they are.</li>
+      </ul>
+      </dd>
+
+      <dt><a name="SwitchCancel"></a> /cancel
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Cancels the specified job, if it is running.
+      Cancelling a job that is not running will do nothing.</dd>
+
+      <dt><a name="SwitchCapacity"></a> /capacity
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the media capacity in gigabytes (GB).</dd>
+
+      <dt><a name="SwitchConcurrency"></a> /concurrency
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the number of migrate jobs/recalls that
+      can be executed concurrently.</dd>
+      <dt> /concurrency:number
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies how many migrate jobs/recalls can be
+      executed concurrently.</dd>
+
+      <dt><a name="SwitchCopies"></a> /copies
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the number of existing copies for the
+      media and each copy's status.</dd>
+
+      <dt><a name="SwitchCopySet"></a> /copyset:[number_of_set]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the copy set to copy/delete/synchronize
+      on the specified media (1..3).</dd>
+
+      <dt><a name="SwitchDfs"></a> /dfs
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the desired free space setting for the
+      volume.</dd>
+      <dt> /dfs:desired_free_space
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the desired free space setting for the volume
+      to the specified percentage (default 5).</dd>
+
+      <dt><a name="SwitchExclude"></a> /exclude:path[:file_extension]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies an exclusion rule to be added to the
+      volume.</dd>
+
+      <dt><a name="SwitchFreespace"></a> /freespace
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the amount of free space on the media in
+      gigabytes.</dd>
+
+      <dt><a name="SwitchFull"></a> /full
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Removes the volume or volumes from management and
+      recalls all files from remote storage.</dd>
+
+      <dt><a name="SwitchGeneral"></a> /general
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays general information about Remote Storage:
+      version, status, number of volumes managed, number of
+      tape cartridges used, data in remote storage.</dd>
+
+      <dt><a name="SwitchInclude"></a> /include:path[:file_extension]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies an inclusion rule to be added to the
+      volume.</dd>
+
+      <dt><a name="SwitchManageables"></a> /manageables
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the volumes that are available for
+      management by Remote Storage.</dd>
+
+      <dt><a name="SwitchManaged"></a> /managed
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the volumes that are currently being
+      managed by Remote Storage.</dd>
+
+      <dt><a name="SwitchMedia"></a> /media
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the set of media currently allocated for
+      Remote Storage.</dd>
+
+      <dt><a name="SwitchMediaCopies"></a> /mediacopies
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the configured number of media copies.</dd>
+
+      <dt><a name="SwitchName"></a> /name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the Removable Storage name for the
+      media.</dd>
+
+      <dt><a name="SwitchQuick"></a> /quick
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Removes the volume or volumes from management
+      without recalling all files from remote storage
+      (default).</dd>
+
+      <dt><a name="SwitchRecallLimit"></a> /recalllimit
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the runaway recall limit runaway.</dd>
+      <dt> /recalllimit:number
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the runaway recall limit to the specified
+      number.</dd>
+
+      <dt><a name="SwitchRecursive"></a> /recursive
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies that the rule should be applied to all
+      folders under the given path.</dd>
+
+      <dt><a name="SwitchRule"></a> /rule
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays all include/exclude rules for the volume
+      in appropriate format, indicating which are system
+      rules that cannot be deleted.</dd>
+      <dt> /rule:path[:file_extension]
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies an inclusion or exclusion rule to delete
+      from the volume.</dd>
+
+      <dt><a name="SwitchRun"></a> /run
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Runs the specified job (default).</dd>
+
+      <dt><a name="SwitchSchedule"></a> /schedule
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the schedule.</dd>
+      <dt> /schedule:new_schedule
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Schedules migration jobs as specified:
+      <b>at</b>
+      {<b>startup</b> | <b>idle</b> | <b>login</b> | <b>Time</b>}
+      <b>every</b> <a href="#SwitchScheduleOccurrence">occurrence</a>
+      {<b>day</b>
+      | [<b>week</b>
+         <a href="#SwitchScheduleSpecifier">specifier</a>]
+      | [<b>month</b>
+         <a href="#SwitchScheduleSpecifier">specifier</a>]}
+      <a href="#SwitchScheduleTime">time</a>
+      <dl>
+        <dt><a name="SwitchScheduleOccurrence"></a> occurrence
+        (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+        <dd>Specifies how many days, weeks or months pass
+        between jobs.</dd>
+
+        <dt><a name="SwitchScheduleSpecifier"></a> specifier
+        (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+        <dd>Indicates the day of the week
+        <ul>
+        <li><b>0</b> Sunday</li>
+        <li><b>1</b> Monday</li>
+        <li><b>2</b> Tuesday</li>
+        <li><b>3</b> Wednesday</li>
+        <li><b>4</b> Thursday</li>
+        <li><b>5</b> Friday</li>
+        <li><b>6</b> Saturday</li>
+        </ul>
+        OR indicates day of month (1..31).</dd>
+
+        <dt><a name="SwitchScheduleTime"></a> time
+        (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+        <dd>Specified using the 24 hour, HH:MM:SS format.</dd>
+      </dl>
+      </dd>
+
+      <dt><a name="SwitchSize"></a> /size
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the minimum size for files to be managed.</dd>
+      <dt> /size:lower_limit
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the minimum size in kilobytes (KB) for files
+      to be managed (default 12). Only files larger than the
+      specified size will be managed.</dd>
+
+      <dt><a name="SwitchStatistics"></a> /statistics
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>?</dd>
+
+      <dt><a name="SwitchStatus"></a> /status
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the media status.</dd>
+
+      <dt><a name="SwitchType"></a> /type:value
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the type of job to run:
+      <ul>
+      <li><b>[create]f[reespace]</b> runs a Create Free Space
+      job for the managed volumes by truncating all
+      pre-migrated files for each specified volume.</li>
+      <li><b>c[opyfiles]</b> immediately copies files from the
+      specified volumes to remote storage.</li>
+      <li><b>v[alidate]</b> checks to make sure that files on
+      specified volumes still point to valid data in remote
+      storage and updates the volume statistics.</li>
+      </ul>
+      </dd>
+
+      <dt><a name="SwitchVersion"></a> /version
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the most recent update date for the
+      media.</dd>
+
+      <dt><a name="SwitchWait"></a> /wait
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Indicates that the jobs should run synchronously
+      on each volume and that Remote Storage will wait until
+      all jobs are complete or it encounters an error before
+      returning to the command prompt. If omitted, all jobs
+      will run asynchronously on each volume, and Remote
+      Storage will return to the command prompt without
+      waiting for the jobs to finish.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,469 @@
+<html>
+
+<head>
+<title>Computer Flash Cards</title>
+<script language="javascript" type="text/javascript">
+
+//<![CDATA[
+
+<!--
+
+// BrowserCheck Object
+
+function BrowserCheck() {
+	var b = navigator.appName
+//HBS extension
+	this.mac = (navigator.appVersion.indexOf('Mac') != -1)
+	if (b=="Netscape") this.b = "ns"
+	else if (b=="Microsoft Internet Explorer") this.b = "ie"
+	else this.b = b
+	this.version = navigator.appVersion
+	this.v = parseInt(this.version)
+	this.ns = (this.b=="ns" && this.v>=4)
+	this.ns4 = (this.b=="ns" && this.v==4)
+	this.ns5 = (this.b=="ns" && this.v==5)
+	this.ie = (this.b=="ie" && this.v>=4)
+	this.ie4 = (this.version.indexOf('MSIE 4')>0)
+	this.ie5 = (this.version.indexOf('MSIE 5')>0)
+	this.min = (this.ns||this.ie)
+	this.CRAPBrowser = (this.ie && this.mac); //Cannot Resolve Addresses Properly
+}
+
+is = new BrowserCheck();
+
+var LocFolder = GetFolder(window.location.href);
+function GetFolder(LocPath){
+	LocPath = ReplaceStuff('\'','%27',LocPath);
+	var i = LocPath.lastIndexOf('/');
+	if (i<0){i=LocPath.lastIndexOf('\\')};
+	return LocPath.substring(0,i);
+}
+
+function CombineURLs(InURL){
+	var i = InURL.indexOf('../');
+	var s = LocFolder;
+	while (i >- 1){
+		s = GetFolder(s);
+		InURL = InURL.substring(3,InURL.length);
+		i = InURL.indexOf('../');
+	}
+	return s + '/' + InURL;
+}
+
+x = new Array();
+function ResolveURLs(InText,Attribute){
+	x.length=0;
+	var Temp = InText.toLowerCase();
+	var z;
+	var AttLen = Attribute.length + 2;
+	var y=Temp.lastIndexOf(Attribute + '="');
+	while (y>-1){
+		var sLoc = y+AttLen;
+		if (Temp.substring(sLoc,sLoc+5) != 'http:'){
+			x[x.length]=new Array();
+			x[x.length-1][0] = sLoc;
+			z = Temp.indexOf('"',sLoc);
+			x[x.length-1][1] = z;
+			x[x.length-1][2] = Temp.substring(sLoc,z);
+		}
+		Temp = Temp.substring(0,y);
+		y=Temp.lastIndexOf(Attribute + '="');
+	}
+	for (var j=x.length-1; j>-1; j--){
+		InText = InText.substring(0,x[j][0]) + CombineURLs(x[j][2]) + InText.substring(x[j][1], InText.length);
+	}
+	return InText;
+}
+
+function ResolveAllURLs(Stuff){
+	Stuff = ResolveURLs(Stuff,'href');
+	Stuff = ResolveURLs(Stuff,'src');
+	Stuff = ResolveURLs(Stuff,'parent.location');
+	return Stuff;
+}
+
+var ExerciseTitle = 'Computer Flash Cards';
+var ExerciseSubtitle = 'Matching exercise';
+var Instructions = 'Click on the Button below to move through the flash card.  You will see the definition first and then the word.';
+
+var PreviousPage = history.length;
+
+var NavBar='';
+
+
+NavBar+='<tr><form name="NavButtons1" action=""><td bgcolor="#000066" align="center">';
+NavBar+='<font face="Geneva,Arial" size="-1">';
+
+
+NavBar+='<input type="button" value="Index" onclick="parent.location=\'http://www.catawba.k12.nc.us/onlinequiz/\'"></input>';
+
+
+NavBar+='</font></td></form></tr>';
+
+
+var TitleCode = '<tr><td colspan="2" align="center" valign="top" bgcolor="#ffffff">';
+TitleCode += '<font size="+1" face="Geneva,Arial" color="#000033">' + ExerciseTitle + '</font><br />';
+TitleCode += '<font size="-1" face="Geneva,Arial" color="#000033">' + ExerciseSubtitle + '<br />';
+TitleCode += '</font></td></tr>';
+
+var FlashButton = '<tr><form name="Flashcard" action="">';
+FlashButton += '<td align="center" valign="middle"><font face="Geneva,Arial" size="-1">';
+FlashButton += '<input type="button" name="Flash" value="  [*]  " onclick="parent.ShowItem()"></input>';
+FlashButton += '</td></form></tr>';
+
+var CurrItem = 0;
+var Stage = 1;
+
+var CellOpener = '<td valign="middle" align="center" width="50%" bgcolor="#bbbbee"><font face="Geneva,Arial" size="+2">';
+var CellCloser = '</font></td>';
+
+function GoBack(){
+	var BackSkip = history.length - PreviousPage;
+	if (BackSkip > 0){
+		history.go((BackSkip+1)*-1);
+	}
+	else{
+		parent.history.back();
+	}
+}
+
+I = new Array();
+I[0] = new Array();
+I[0][0] = 'A method of sorting data in alphabetical order (A-Z) or numerical order (0-9)';
+I[0][1] = 'Ascending';
+I[1] = new Array();
+I[1][0] = 'Words such as and, or, and not that join certain conditions together when performing a search';
+I[1][1] = 'Connector';
+I[2] = new Array();
+I[2][0] = 'Is an organized collection of information';
+I[2][1] = 'Database';
+I[3] = new Array();
+I[3][0] = 'A method of sorting data in reverse alphabetical order (Z-A) or reverse numerical order (9-0)';
+I[3][1] = 'Descending';
+I[4] = new Array();
+I[4][0] = 'Data that is entered into a field';
+I[4][1] = 'Entry';
+I[5] = new Array();
+I[5][0] = 'A category of information in a database';
+I[5][1] = 'Field';
+I[6] = new Array();
+I[6][0] = 'Related records in a database';
+I[6][1] = 'File';
+I[7] = new Array();
+I[7][0] = 'Shows all the records in a database file (looks like a spreadsheet)';
+I[7][1] = 'List View';
+I[8] = new Array();
+I[8][0] = 'Mathematical symbols used in comparisons in searching a database.  > (greater than),  = (is equal to), < (is less than)';
+I[8][1] = 'Operators';
+I[9] = new Array();
+I[9][0] = 'A group of fields related to one topic';
+I[9][1] = 'Records';
+I[10] = new Array();
+I[10][0] = 'A method of finding specific data with in a database that meets certain conditions or criteria';
+I[10][1] = 'Search or Filter';
+I[11] = new Array();
+I[11][0] = 'To arrange data in a particular order';
+I[11][1] = 'Sort';
+I[12] = new Array();
+I[12][0] = 'A computer program that detects viruses and repairs files';
+I[12][1] = 'Antivirus Program';
+I[13] = new Array();
+I[13][0] = 'A desctructive computer code or virus designed to activate at a specific time';
+I[13][1] = 'Bomb';
+I[14] = new Array();
+I[14][0] = 'Software whose copyright is owned by the author/software publisher';
+I[14][1] = 'Commercial Software';
+I[15] = new Array();
+I[15][0] = 'Protection giving the owner the exclusive right to reproduce or distrubute copies of his or her own work';
+I[15][1] = 'Copyright';
+I[16] = new Array();
+I[16][0] = 'A set of moral principles or values';
+I[16][1] = 'Ethics';
+I[17] = new Array();
+I[17][0] = 'Software that is given away free of charge, but whose author still retains all rights';
+I[17][1] = 'Freeware';
+I[18] = new Array();
+I[18][0] = 'A person who secretly gains access to computers and files without permission';
+I[18][1] = 'Hacker';
+I[19] = new Array();
+I[19][0] = 'A program intended to scare users into thinking they have a virus';
+I[19][1] = 'Hoax';
+I[20] = new Array();
+I[20][0] = 'A safeguard for access to a computer or computer program';
+I[20][1] = 'Password';
+I[21] = new Array();
+I[21][0] = 'The illegal copying and distribution of software';
+I[21][1] = 'Piracy';
+I[22] = new Array();
+I[22][0] = 'Software that is not copyrighte and is free to copy and distribute';
+I[22][1] = 'Public Domain';
+I[23] = new Array();
+I[23][0] = 'Copyrighted software distributed free of charge on a trial basis with payment by the honor system.';
+I[23][1] = 'Shareware';
+I[24] = new Array();
+I[24][0] = 'A virus that is disguised as a useful peice of software';
+I[24][1] = 'Trojan Horse';
+I[25] = new Array();
+I[25][0] = 'A computer program designed to cause damage to computer files';
+I[25][1] = 'Virus';
+I[26] = new Array();
+I[26][0] = 'A destructive computer program that bores its way through a computer\'s files or through a computer\'s network';
+I[26][1] = 'Worm';
+I[27] = new Array();
+I[27][0] = 'The cell that is highlighted';
+I[27][1] = 'Active Cell';
+I[28] = new Array();
+I[28][0] = 'The location of a cell on a grid as indentified by its coordinates, such as B2';
+I[28][1] = 'Cell Address';
+I[29] = new Array();
+I[29][0] = 'The intersection of a row and a column in which data can be entered';
+I[29][1] = 'Cell';
+I[30] = new Array();
+I[30][0] = 'The symbol used in a formula to make a cell range';
+I[30][1] = 'Colon';
+I[31] = new Array();
+I[31][0] = 'The vertical lines of data labeled with letters';
+I[31][1] = 'Column';
+I[32] = new Array();
+I[32][0] = 'The row and column designations that defin a cell location in a spreadsheet, such as "A2", to indicate the cell where column A crosses row 2';
+I[32][1] = 'Coordinates';
+I[33] = new Array();
+I[33][0] = 'To change the original entry';
+I[33][1] = 'Edit';
+I[34] = new Array();
+I[34][0] = 'Type inor record data in a spreadsheet';
+I[34][1] = 'Enter';
+I[35] = new Array();
+I[35][0] = 'Mathematical equation with symbols (+-*/).  =(A2+B2)';
+I[35][1] = 'Formula';
+I[36] = new Array();
+I[36][0] = 'The line that shows the contents of the active cell';
+I[36][1] = 'Formula Bar';
+I[37] = new Array();
+I[37][0] = 'Shortcut formulas such as: SUM(auto addition), and AVG (auto averaging of numbers)';
+I[37][1] = 'Function';
+I[38] = new Array();
+I[38][0] = 'A series of evenly spaced horizontal and vertical lines that intersect each other';
+I[38][1] = 'Grid';
+I[39] = new Array();
+I[39][0] = 'Text, symbols, dates, numbers not used in a formula';
+I[39][1] = 'Label';
+I[40] = new Array();
+I[40][0] = 'Multiplication (*), Division( /), Addition (+), Subtraction (-)';
+I[40][1] = 'Mathematical Operations';
+I[41] = new Array();
+I[41][0] = 'A defined block of cells in a spreadsheet';
+I[41][1] = 'Range';
+I[42] = new Array();
+I[42][0] = 'The horizontal lines of data labeled with numbers';
+I[42][1] = 'Row';
+I[43] = new Array();
+I[43][0] = 'A program that allows you to use rows and columns of data to forecast, predict, manage, and present information';
+I[43][1] = 'Spreadsheet';
+I[44] = new Array();
+I[44][0] = 'A number that is entered on a spreadsheet and used in calculations';
+I[44][1] = 'Value';
+I[45] = new Array();
+I[45][0] = 'Communicating over a distance';
+I[45][1] = 'TELECOMMUNICATIONS';
+I[46] = new Array();
+I[46][0] = 'Sending or recieving information to another computer via a modem and a phone line';
+I[46][1] = 'TELECOMPUTING';
+I[47] = new Array();
+I[47][0] = 'A device that permits a computer to transmit and receive data over a telephone line';
+I[47][1] = 'MODEM';
+I[48] = new Array();
+I[48][0] = 'The speed at which signals are sent and recieved by a modem';
+I[48][1] = 'BAUD RATE';
+I[49] = new Array();
+I[49][0] = 'Sending data from one computer to another';
+I[49][1] = 'UPLOAD';
+I[50] = new Array();
+I[50][0] = 'Receiving data from another computer';
+I[50][1] = 'DOWNLOAD';
+I[51] = new Array();
+I[51][0] = 'Electronic mail is sent and recieved from one computer to another';
+I[51][1] = 'E-MAIL';
+I[52] = new Array();
+I[52][0] = 'The act of connecting with another system or on-line service';
+I[52][1] = 'LOG-ON';
+I[53] = new Array();
+I[53][0] = 'The act of signing off and disconnecting with another computer or system';
+I[53][1] = 'LOG-OFF';
+I[54] = new Array();
+I[54][0] = 'A global network of thousands of computer networks that offers e-mail and information services to millions of users';
+I[54][1] = 'INTERNET';
+I[55] = new Array();
+I[55][0] = 'A term used to describe electronic information networks that carry audio, video, and computer data';
+I[55][1] = 'INFORMATION HIGHWAY';
+I[56] = new Array();
+I[56][0] = 'A term used to describe an interface to the internet that contains millions of hypertext documents that are linked together and contain text, sound, video, and graphics';
+I[56][1] = 'WORLD WIDE WEB';
+I[57] = new Array();
+I[57][0] = 'Heavier typestyle used for emphasis and appearance';
+I[57][1] = 'Bold';
+I[58] = new Array();
+I[58][0] = 'The letters, numbers, or symbols that appear in a document';
+I[58][1] = 'Characters';
+I[59] = new Array();
+I[59][0] = 'A collection of picture files that can be inserted into a doucment';
+I[59][1] = 'Clip Art';
+I[60] = new Array();
+I[60][0] = 'To make a duplicate of highlighted section of a document';
+I[60][1] = 'Copy';
+I[61] = new Array();
+I[61][0] = 'The blinking line that represents your location in the document';
+I[61][1] = 'Cursor';
+I[62] = new Array();
+I[62][0] = 'To remove a highlighted section of a document';
+I[62][1] = 'Cut';
+I[63] = new Array();
+I[63][0] = 'Changing or making corrections in the document';
+I[63][1] = 'Editing';
+I[64] = new Array();
+I[64][0] = 'A word processing document';
+I[64][1] = 'File';
+I[65] = new Array();
+I[65][0] = 'A specific design for a complete set of letters, numbers, and symbols';
+I[65][1] = 'Font';
+I[66] = new Array();
+I[66][0] = 'The printed copy';
+I[66][1] = 'Hard Copy';
+I[67] = new Array();
+I[67][0] = 'The method of selecting a portion of the text by holding down the mouse button and draging over the text';
+I[67][1] = 'Highlighting';
+I[68] = new Array();
+I[68][0] = 'Typestyle that is evenly slanted towards the right for emphasis and appearance';
+I[68][1] = 'Italics';
+I[69] = new Array();
+I[69][0] = 'The vertical distance between lines of text';
+I[69][1] = 'Line Spacing';
+I[70] = new Array();
+I[70][0] = 'This function is usually used in conjunction with cut or copy';
+I[70][1] = 'Paste';
+I[71] = new Array();
+I[71][0] = 'To make a hard copy of a document';
+I[71][1] = 'Print';
+I[72] = new Array();
+I[72][0] = 'To store a file on a disk or the computer';
+I[72][1] = 'Save';
+I[73] = new Array();
+I[73][0] = 'Tool that checks for misspellings in the document';
+I[73][1] = 'Spell Check';
+I[74] = new Array();
+I[74][0] = 'The words in the document';
+I[74][1] = 'Text';
+I[75] = new Array();
+I[75][0] = 'Tool that is used to find words with a similar meaning';
+I[75][1] = 'Thesaurus';
+I[76] = new Array();
+I[76][0] = 'A horizontal line used for emphasis';
+I[76][1] = 'Underline';
+
+
+function Shuffle(){
+	var Temp;
+	var Num;
+	for (var i=0; i<I.length; i++){
+		Num = Math.round(Math.random() * (I.length-1));
+		Temp = I[i];
+		I[i] = I[Num];
+		I[Num] = Temp;
+	}
+}
+
+function StartUp(){
+	Shuffle();
+	WriteFeedback(Instructions);
+	WriteOutput(TitleCode);
+}
+
+function ShowItem(){
+	if (CurrItem >= I.length){
+		Shuffle();
+		CurrItem = 0;
+	}
+	var Output = TitleCode + '<tr>' + CellOpener + I[CurrItem][0] + CellCloser;
+	if (Stage == 1){
+		Output += CellOpener + '&nbsp;' + CellCloser;
+		Stage = 2;
+	}
+	else{
+		Output += CellOpener + I[CurrItem][1] + CellCloser;
+		Stage = 1;
+		CurrItem++;
+	}
+	Output += '</tr>';
+	WriteOutput(Output);
+}
+
+function WriteFeedback(Feedback) {
+	if (is.CRAPBrowser){Feedback=ResolveAllURLs(Feedback);}
+//Build the output string
+	var OutString = '';
+	OutString += '<html>';
+	OutString += '<body  background="" bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#0000cc">';
+	OutString += '<center><table border="0" cellpadding="5" cellspacing="1" width="85%">';
+	OutString += NavBar;
+	if (Feedback.length>0){
+		OutString += '<tr><td bgcolor="#bbbbee" align="center">'; 
+		OutString += '<font face="Geneva,Arial" size="-1" color="#000000">';
+		OutString += Feedback;
+		OutString += '</font></td></tr>'
+	}
+	OutString += FlashButton;
+	OutString += '</table></center></body></html>';
+//Write it to the frame
+	TopFrame.document.clear();
+	TopFrame.document.open();
+	TopFrame.document.write(OutString);
+	TopFrame.document.close();
+}
+
+function WriteOutput(Output) {
+	if (is.CRAPBrowser){Output=ResolveAllURLs(Output);}
+	BottomFrame.document.clear();
+	BottomFrame.document.open();
+	BottomFrame.document.writeln ('<html>');
+	BottomFrame.document.writeln ('<body  background="" bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#0000cc">');
+	BottomFrame.document.writeln ('<center><table border="0" cellpadding="5" cellspacing="1" width="85%">');
+	BottomFrame.document.writeln (Output);
+	BottomFrame.document.writeln ('</table></center></body></html>');
+	BottomFrame.document.close();
+}
+
+function ReplaceStuff(Token, Replacement, InString){
+	var i = InString.indexOf(Token);
+	var FirstBit = '';
+	var LastBit = '';
+	while (i>-1){
+		FirstBit = InString.substring(0, i);
+		LastBit = InString.substring(i + Token.length, InString.length);	
+		InString = FirstBit + Replacement + LastBit;
+		i = InString.indexOf(Token);
+	}
+	return InString;
+}
+
+function Blank(){
+	return '<html><body>&copy;Half-Baked Software. Loading...</body></html>';
+}
+
+
+//-->
+
+//]]>
+
+</script>
+<meta name="Microsoft Theme" content="none, default">
+<meta name="Microsoft Border" content="none, default">
+</head>
+
+<frameset rows="25%,*" framespacing="0" border="0" onload="StartUp()">
+  <frame src="javascript:parent.Blank()" frameborder="0" name="TopFrame">
+  </frame>
+  <frame src="javascript:parent.Blank()" frameborder="0" name="BottomFrame">
+  </frame>
+</frameset>
+
+</html>

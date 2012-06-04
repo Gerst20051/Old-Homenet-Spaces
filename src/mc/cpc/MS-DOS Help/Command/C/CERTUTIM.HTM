@@ -1,0 +1,636 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>CERTUTIL manage</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#c">Commands A-M</a>
+    &gt; <a href="../INDEXCA.HTM#certutilmanage">Commands Ca-Cg</a>
+    <h1>CERTUTIL manage</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Certutil tasks for managing a Certification Authority (CA).</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>CERTUTIL
+    [<a href="#SwitchDump">-dump</a>]
+    [<a href="#SwitchHelp">/?</a>]</p>
+
+    <p>To display the information stored in public key related files:
+    <br>CERTUTIL
+    <a href="#SwitchDump">-dump</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchSplit">-split</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchP">-p password</a>]
+    [<a href="#ParameterFileConfiguration">configuration_file</a>]</p>
+
+    <p>To restrict which rows from the CA schema are displayed when viewing CA database information:
+    <br>CERTUTIL
+    <a href="#SwitchView">-view</a>
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchSilent">-silent</a>]
+    [<a href="#SwitchSplit">-split</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    [<a href="#SwitchRestrict">-restrict restriction_list</a>]
+    [<a href="#SwitchOut">-out column_list</a>]
+    [<a href="#ParameterRequestId">request_id</a>]</p>
+
+    <p>To view a list of templates supported by the local CA:
+    <br>CERTUTIL
+    <a href="#SwitchCaTemplates">-catemplates</a>
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchUt">-ut</a>]
+    [<a href="#SwitchMt">-mt</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    [<a href="#SwitchDc">-dc dc_name</a>]
+    [<a href="#ParameterTemplate">template</a>]</p>
+
+    <p>To display a list of tagged database files and database directories:
+    <br>CERTUTIL
+    <a href="#SwitchDatabaseLocations">-databaselocations</a>
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]</p>
+
+    <p>To deny a certificate request:
+    <br>CERTUTIL
+    <a href="#SwitchDeny">-deny</a>
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    [<a href="#ParameterRequestId">request_id</a>]</p>
+
+    <p>To publish a certificate or CRL to Active Directory:
+    <br>CERTUTIL
+    <a href="#SwitchDsPublish">-dsPublish</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchDc">-dc dc_name</a>]
+    <a href="#ParameterFileCertificate">certificate_file</a>
+    <a href="#ParameterStoreCertificate">certificate_store</a></p>
+    <p>CERTUTIL
+    <a href="#SwitchDsPublish">-dsPublish</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchUser">-user</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchDc">-dc dc_name</a>]
+    <a href="#ParameterFileCrl">crl_file</a>
+    [<a href="#ParameterDSCDPcontainer">DSCDP_container</a>
+    [<a href="#ParameterDSCDPobject">DSCDP_object</a>]]</p>
+
+    <p>To display a list of dynamic files that must be backed up separately:
+    <br>CERTUTIL
+    <a href="#SwitchDynamicFilelist">-dynamicfilelist</a>
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]</p>
+
+    <p>To delete unwanted requests from the CA database:
+    <br>CERTUTIL
+    <a href="#SwitchDeleteRow">-deleterow</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    <a href="#ParameterRowId">row_id</a>
+    <a href="#ParameterDate">date</a>
+    <a href="#ParameterTable">table</a></p>
+
+    <p>To add a display name that appears in the local language to a certificate template:
+    <br>CERTUTIL
+    <a href="#SwitchOid">-oid</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterTemplateOid">"template_oid"</a>
+    <a href="#ParameterLocalFriendlyName">local_friendly_name</a>
+    [<a href="#ParameterLanguageId">language_id</a>]</p>
+
+    <p>To revoke the certificate by serial number:
+    <br>CERTUTIL
+    <a href="#SwitchRevoke">-revoke</a>
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    <a href="#ParameterSerialNumber">serial_number</a>
+    [<a href="#ParameterReason">reason</a>]</p>
+
+    <p>To set attributes on pending certificate requests:
+    <br>CERTUTIL
+    <a href="#SwitchSetAttributes">-setattributes</a>
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterRequestId">request_id</a>
+    <a href="#ParameterAttributeString">attribute_string</a></p>
+
+    <p>To set the extension in the certificate request:
+    <br>CERTUTIL
+    <a href="#SwitchSetExtension">-setextension</a>
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    <a href="#ParameterRequestId">request_id</a>
+    <a href="#ParameterExpansionName">expansion_name</a>
+    <a href="#ParameterFlags">flags</a>
+    {<a href="#ParameterLongValue">long_value</a>
+    | <a href="#ParameterDateValue">date_value</a>
+    | <a href="#ParameterStringValue">string_value</a>
+    | <a href="#ParameterInFile">@in_file</a>}</p>
+
+    <p>To resubmit a pending certificate request:
+    <br>CERTUTIL
+    <a href="#SwitchResubmit">-resubmit</a>
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    <a href="#ParameterRequestId">request_id</a></p>
+
+    <p>To shut down the CA server:
+    <br>CERTUTIL
+    <a href="#SwitchShutdown">-shutdown</a>
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]</p>
+
+    <p>To verify a key set:
+    <br>CERTUTIL
+    <a href="#SwitchVerifyKeys">-verifykeys</a>
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSilent">-silent</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    [<a href="#ParameterKeyContainerName">key_container_name</a>]
+    [<a href="#ParameterFileCertificate">certificate_file</a>]</p>
+
+    <p>To back up the CA certificate and keys:
+    <br>CERTUTIL
+    <a href="#SwitchBackupKey">-backupkey</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    [<a href="#SwitchP">-p password</a>]
+    <a href="#ParameterBackupDirectory">backup_directory</a></p>
+
+    <p>To restore the CA certificate and keys from a backup directory or a PKCS #12 (.pfx) file:
+    <br>CERTUTIL
+    <a href="#SwitchRestoreKey">-restorekey</a>
+    [<a href="#SwitchF">-f</a>]
+    [<a href="#SwitchGmt">-gmt</a>]
+    [<a href="#SwitchSeconds">-seconds</a>]
+    [<a href="#SwitchV">-v</a>]
+    [<a href="#SwitchConfig">-config machine\user</a>]
+    [<a href="#SwitchP">-p password</a>]
+    <a href="#ParameterBackupDirectory">backup_directory</a>
+    <a href="#ParameterFilePFX">\PFX_file</a></p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <dl>
+      <dt><a name="ParameterAttributeString"></a> attribute_string
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the request attribute string to be set
+      on the request identifier certificate.</dd>
+      <dd>Use \n to separate multiple values in a string.</dd>
+      <dd>Requests the attribute name and value pairs.
+      Separate names and value pairs with a colon.
+      Multiple name and value pairs are separated by placing
+      them on a new line.</dd>
+
+      <dt><a name="ParameterBackupDirectory"></a> backup_directory
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the backup directory.</dd>
+      <dd>You can use the <a href="#SwitchF">-f</a> to
+      overwrite existing files in backup_directory.</dd>
+
+      <dt><a name="ParameterExpansionName"></a> expansion_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>?</dd>
+
+      <dt><a name="ParameterFileCertificate"></a> certificate_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the certificate.</dd>
+      <dd>Specifies the CA signature certificate that
+      contains the public key used to verify digital signatures.</dd>
+
+      <dt><a name="ParameterStoreCertificate"></a> certificate_store
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the certificate will be published to:
+      <ul>
+      <li><b>crossca</b> cross-certified CA store</li>
+      <li><b>kra</b> key recovery agent store</li>
+      <li><b>machine</b> computer store</li>
+      <li><b>ntauthca</b> NTAuth store</li>
+      <li><b>rootca</b> root CA store</li>
+      <li><b>subca</b> subordinate CA store</li>
+      <li><b>user</b> user store</li>
+      </ul>
+      </dd>
+
+      <dt><a name="ParameterFileConfiguration"></a> configuration_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the file name of the configuration file
+      that you want to display.</dd>
+
+      <dt><a name="ParameterFileCrl"></a> crl_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the certificate revocation list.</dd>
+
+      <dt><a name="ParameterDate"></a> date
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies a date restriction on which to query.</dd>
+      <dd>You can use the mm/dd/yyyy 00:00 date format, where
+      00:00 is standard time that must be designated as either
+      AM or PM.</dd>
+      <dd>If you specify Date without a time of day, deletes
+      all of the requests issued before the specified date,
+      but it does not delete the requests issued on the
+      specified date.</dd>
+      <dd>If you delete rows by Date, does not delete the CA
+      certificate or the CA certificate chain rows. To delete
+      the CA certificate and the CA certificate chain rows, you
+      must delete rows by <a href="#ParameterRowId">row_id</a>.</dd>
+      <dd>If Date occurs in the future, fails and displays an
+      invalid parameter error. Use <a href="#SwitchF">-f</a> to
+      override the invalid parameter error.</dd>
+
+      <dt><a name="ParameterDateValue"></a> date_value
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>?</dd>
+
+      <dt><a name="ParameterDSCDPcontainer"></a> DSCDP_container
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the Active Directory Certificate
+      revocation list Distribution Point (CDP) container
+      Common Name (CN), usually the CA computer name.</dd>
+
+      <dt><a name="ParameterDSCDPobject"></a> DSCDP_object
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the Active Directory Certificate
+      revocation list Distribution Point (CDP) object Common
+      Name (CN), usually based on the sanitized CA short name
+      and key index.</dd>
+
+      <dt><a name="ParameterExtensionName"></a> extension_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the ObjectID string of the extension.</dd>
+
+      <dt><a name="ParameterFlags"></a> flags
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the extension:
+        <ul>
+          <li><b>0</b> noncritical</li>
+          <li><b>1</b> critical</li>
+        </ul>
+      </dd>
+
+      <dt><a name="ParameterInFile"></a> @in_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies a string that is accepted in one of the
+      following formats if the string meets the specified
+      criteria: @In_File
+      If the value starts with the @ symbol, the
+      rest of the token is the file name containing binary data
+      or an ASCII-text hexadecimal dump.</dd>
+
+      <dt><a name="ParameterKeyContainerName"></a> key_container_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the key container name of the key to
+      verify.</dd>
+
+      <dt><a name="ParameterLanguageId"></a> language_id
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the local language identifier for the
+      specified object.
+      <a href="#ParameterLocalFriendlyName">local_friendly_name</a>
+      appears in the specified language.</dd>
+      <dd>Decimal representation of a
+      hexadecimal local identifier (LCID) value.</dd>
+      <dd>If you do not specify, uses the current
+      system default, which is 1033.</dd>
+
+      <dt><a name="ParameterLocalFriendlyName"></a> local_friendly_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the display name that you want to add
+      to the certificate template.</dd>
+
+      <dt><a name="ParameterLongValue"></a> long_value
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>?</dd>
+
+      <dt><a name="ParameterReason"></a> reason
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies one of:
+        <ul>
+          <li><b>0</b> Unspecified (does not provide information about revocation reasons)</li>
+          <li><b>1</b> Key compromise</li>
+          <li><b>2</b> CA compromise</li>
+          <li><b>3</b> Affiliation change</li>
+          <li><b>4</b> Superseded</li>
+          <li><b>5</b> Cessation of operation</li>
+          <li><b>6</b> Hold revocation (CANNOT be revoked)</li>
+          <li><b>8</b> Remove from CRL</li>
+          <li><b>-1</b> Unrevoke</li>
+        </ul>
+      </dd>
+
+      <dt><a name="ParameterFilePFX"></a> PFX_file
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>ies the PKCS #12 PFX file.</dd>
+
+      <dt><a name="ParameterRequestId"></a> request_id
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the request identifier number.</dd>
+      <dd>Must be in decimal format
+      (or hexadecimal format with a leading 0x).</dd>
+
+      <dt><a name="ParameterRowId"></a> row_id
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the request identifier of the row that
+      you want to delete.</dd>
+
+      <dt><a name="ParameterSerialNumber"></a> serial_number
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the serial number of the certificate
+      that you want to revoke.</dd>
+      <dd>Must be in hexadecimal format with an even number
+      of digits. A single zero (0) can be prefaced to a
+      value with an odd number of digits.
+      No leading 0x is allowed.</dd>
+
+      <dt><a name="ParameterStringValue"></a> string_value
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>?</dd>
+
+      <dt><a name="ParameterTable"></a> table
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>One of:
+        <ul>
+          <li><b>request</b> request table</li>
+          <li><b>cert</b> certificate table</li>
+          <li><b>ext</b> certificate extensions table</li>
+          <li><b>attrib</b> attribute table</li>
+          <li><b>crl</b> certificate revocation list (CRL) table</li>
+        </ul>
+      </dd>
+
+      <dt><a name="ParameterTemplate"></a> template
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the template.</dd>
+
+      <dt><a name="ParameterTemplateOid"></a> "template_oid"
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies the object identifier of the certificate
+      template.</dd>
+    </dl>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Display help.</dd>
+
+      <dt><a name="SwitchBackupKey"></a> -backupkey
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Backs up the Certificate Services certificate and
+      private key.</dd>
+
+      <dt><a name="SwitchCaTemplates"></a> -catemplates
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays CA templates.</dd>
+
+      <dt><a name="SwitchConfig"></a> -config machine\user
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Processes the operation by using the CA specified
+      in the machine/user configuration string.</dd>
+      <dd>You must specify the machine or user in -config.
+      Otherwise, the Select Certificate Authority dialog box
+      appears and displays a list of all CAs that are available.</dd>
+      <dd>If you use "-config -", the operation is processed
+      using the default CA.
+
+      <dt><a name="SwitchDatabaseLocations"></a> -databaselocations
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays database locations.</dd>
+      <dd>The hexadecimal buffer offset and hexadecimal type
+      tag are displayed on each line.</dd>
+
+      <dt><a name="SwitchDc"></a> -dc dc_name
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Targets a specific domain controller.</dd>
+
+      <dt><a name="SwitchDeleteRow"></a> -deleterow
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Deletes a row in the CA database.</dd>
+      <dd>You can use this to delete "denial of service"
+      errors.</dd>
+      <dd>When deleting more than one row with this command,
+      you must be both a CA Administrator and a Certificate
+      Manager to complete the task. The CA must not be
+      configured to enforce role separation in this case.</dd>
+
+      <dt><a name="SwitchDeny"></a> -deny
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Denies the pending certificate request.</dd>
+
+      <dt><a name="SwitchDsPublish"></a> -dsPublish
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Publishes a new certificate or CRL to the CA object
+      in Active Directory.</dd>
+      <dd>You must be logged on as a computer administrator
+      to complete this procedure.</dd>
+
+      <dt><a name="SwitchDump"></a> -dump
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Dumps configuration information or files.</dd>
+
+      <dt><a name="SwitchDynamicFilelist"></a> -dynamicfilelist
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays dynamic file list.</dd>
+      <dd>Includes the local copy of the certificate
+      revocation list (CRL) on the server.</dd>
+      <dd>The hexadecimal buffer offset is displayed on
+      each line.</dd>
+
+      <dt><a name="SwitchF"></a> -f
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Overwrites existing files or keys.</dd>
+
+      <dt><a name="SwitchGmt"></a> -gmt
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays time as Greenwich mean time.</dd>
+
+      <dt><a name="SwitchMt"></a> -mt
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the computer templates.</dd>
+
+      <dt><a name="SwitchOid"></a> -oid
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Defines a display name in a certificate template.</dd>
+
+      <dt><a name="SwitchOut"></a> -out column_list
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies a comma-separated column list.</dd>
+
+      <dt><a name="SwitchP"></a> -p password
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies a password.</dd>
+      <dd>The maximum length allowed for a PFX file password
+      is 32 characters.</dd>
+
+      <dt><a name="SwitchRestrict"></a> -restrict restriction_list
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Restricts which rows from the schema are displayed.
+      Specifies a comma-separated restriction list.</dd>
+
+      <dt><a name="SwitchRestoreKey"></a> -restorekey
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Restores Certificate Services certificate and
+      private key from the specified
+      <a href="#ParameterBackupDirectory">backup_directory</a>
+      or PKCS #12 PFXFile.</dd>
+
+      <dt><a name="SwitchResubmit"></a> -resubmit
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Issue certificates from a pending request, it does not resubmit.
+      (<a href="http://www.microsoft.com/technet/prodtechnol/windowsserver2003/technologies/security/advcert.mspx#EGAA">TechNet</a> article)
+      </dd>
+
+      <dt><a name="SwitchRevoke"></a> -revoke
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Revokes the certificate.</dd>
+
+      <dt><a name="SwitchSeconds"></a> -seconds
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays time with seconds and milliseconds.</dd>
+
+      <dt><a name="SwitchSetAttributes"></a> -setattributes
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the attributes for the pending request.</dd>
+
+      <dt><a name="SwitchSetExtension"></a> -setextension
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Sets the extension for the pending request.</dd>
+
+      <dt><a name="SwitchShutdown"></a> -shutdown
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Shuts down the CA server.</dd>
+
+      <dt><a name="SwitchSilent"></a> -silent
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Uses a silent flag to acquire CryptContext.</dd>
+
+      <dt><a name="SwitchSplit"></a> -split
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Splits the embedded Abstract Syntax Notation One
+      (ASN.1) elements, and saves them to files.</dd>
+
+      <dt><a name="SwitchUser"></a> -user
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Uses the HKEY_CURRENT_USER keys or certificate
+      store.</dd>
+
+      <dt><a name="SwitchUt"></a> -ut
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Displays the user templates.</dd>
+
+      <dt><a name="SwitchV"></a> -v
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Specifies verbose output.</dd>
+
+      <dt><a name="SwitchVerifyKeys"></a> -verifykeys
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Verifies the public and private keys for the
+      specified CA.</dd>
+
+      <dt><a name="SwitchView"></a> -view
+      (<a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>)</dt>
+      <dd>Dumps the certification authority database view.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p><a href="CERTUTIB.HTM">CERTUTIL backup/restore</a>
+    <br><a href="CERTUTIC.HTM">CERTUTIL configure</a>
+    <br><a href="CERTUTIE.HTM">CERTUTIL decode/encode</a>
+    <br><a href="CERTUTIF.HTM">CERTUTIL certificates</a>
+    <br><a href="CERTUTIL.HTM">CERTUTIL CRLs</a>
+    <br><a href="CERTUTIR.HTM">CERTUTIL archival/recovery</a>
+    <br><a href="CERTUTIT.HTM">CERTUTIL troubleshooting</a></p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2005/07/01
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>MACFILE VOLUME</title>
+    <link rel="stylesheet" href="../../CSS/COMMANDS.CSS" type="text/css">
+  </head>
+  <body>
+    <a href="../../Index.html">Home</a>
+    &gt; <a href="../../INDEXA.HTM#m">Commands A-M</a>
+    &gt; <a href="../INDEXM.HTM#macfilevolume">Commands M</a>
+    <h1>MACFILE VOLUME</h1>
+
+    <hr>
+    <a name="Description"></a> <b>Description</b>
+    | <a href="#Syntax">Syntax</a>
+    | <a href="#Parameters">Parameters</a>
+    | <a href="#Switches">Switches</a>
+    | <a href="#Related">Related</a>
+    | <a href="#Notes">Notes</a>
+    | <a href="#Examples">Examples</a>
+    | <a href="#Errorlevels">Errorlevels</a>
+    | <a href="#Availability">Availability</a>
+    <p>Add, change, or remove Macintosh-accessible volumes.</p>
+
+    <hr>
+    <a name="Syntax"></a> <b>Syntax</b>
+    <p>MACFILE VOLUME
+    <a href="#SwitchHelp">/?</a></p>
+
+    <p>MACFILE VOLUME
+    <a href="#SwitchAdd">/add</a>
+    [<a href="#SwitchGuestsAllowed">/guestsallowed:true | false</a>]
+    [<a href="#SwitchMaxUsers">/maxusers:nn | unlimited</a>]
+    <a href="#SwitchName">/name:volume_name</a>
+    <a href="#SwitchPath">/path:path</a>
+    [<a href="#SwitchPassword">/password:password</a>]
+    [<a href="#SwitchReadOnly">/readonly:true | false</a>]
+    [<a href="#SwitchServer">/server:\\Computer</a>]</p>
+
+    <p>MACFILE VOLUME
+    <a href="#SwitchRemove">/remove</a>
+    <a href="#SwitchName">/name:volume_name</a>
+    [<a href="#SwitchServer">/server:\\Computer</a>]</p>
+
+    <p>MACFILE VOLUME
+    <a href="#SwitchSet">/set</a>
+    [<a href="#SwitchGuestsAllowed">/guestsallowed:true | false</a>]
+    [<a href="#SwitchMaxUsers">/maxusers:nn | unlimited</a>]
+    <a href="#SwitchName">/name:volume_name</a>
+    [<a href="#SwitchPassword">/password:password</a>]
+    [<a href="#SwitchReadOnly">/readonly:true | false</a>]
+    [<a href="#SwitchServer">/server:\\Computer</a>]</p>
+
+    <hr>
+    <a name="Parameters"></a> <b>Parameters</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Switches"></a> <b>Switches</b>
+    <dl>
+      <dt><a name="SwitchHelp"></a> /?
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Displays help.</dd>
+
+      <dt><a name="SwitchAdd"></a> /add
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Adds the specified volume.</dd>
+
+      <dt><a name="SwitchGuestsAllowed"></a> /guestsallowed:true | false
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies whether users who log on as guests can
+      use the volume.
+        <ul>
+          <li><b>true</b> guests can use the volume</li>
+          <li><b>false</b> guests cannot use the volume</li>
+        </ul>
+      If omitted when <a href="#SwitchAdd">adding</a> a
+      volume, guests can use the volume. If omitted when
+      <a href="#SwitchSet">changing</a> a volume, the
+      setting for the volume remains unchanged.</dd>
+
+      <dt><a name="SwitchMaxUsers"></a> /maxusers:nn | unlimited
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the maximum number of users who can
+      simultaneously use the files on the volume. If omitted
+      when <a href="#SwitchAdd">adding</a> a volume, an
+      unlimited number of users can use the volume. If
+      omitted when <a href="#SwitchSet">changing</a> a
+      volume, the value remains unchanged.</dd>
+
+      <dt><a name="SwitchName"></a> /name:volume_name
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the volume_name to be added, changed, or
+      removed.</dd>
+
+      <dt><a name="SwitchPassword"></a> /password:password
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies a password that will be required to
+      access the volume. If omitted when
+      <a href="#SwitchAdd">adding</a> a volume, no password
+      is created. If omitted when
+      <a href="#SwitchSet">changing</a> a volume, the
+      password remains unchanged.</dd>
+
+      <dt><a name="SwitchPath"></a> /path:path
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the path to the root directory of the
+      volume to be added.</dd>
+
+      <dt><a name="SwitchReadOnly"></a> /readonly:true | false
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies whether users can change files in the
+      volume.
+        <ul>
+          <li><b>true</b> users cannot change files in the volume</li>
+          <li><b>false</b> users can change files in the volume</li>
+        </ul>
+      If omitted when
+      <a href="#SwitchAdd">adding</a> a volume, changes
+      to files are allowed. If omitted when
+      <a href="#SwitchSet">changing</a> a volume, the
+      readonly setting for the volume remains unchanged.</dd>
+
+      <dt><a name="SwitchRemove"></a> /remove
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Remove a Macintosh-accesible volume.</dd>
+
+      <dt><a name="SwitchServer"></a> /server:\\Computer
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Specifies the server on which to add, change, or
+      remove a volume. If omitted, the operation is
+      performed on the local computer.</dd>
+
+      <dt><a name="SwitchSet"></a> /set
+      (<a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>)</dt>
+      <dd>Changes the specified volume.</dd>
+    </dl>
+
+    <hr>
+    <a name="Related"></a> <b>Related</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Notes"></a> <b>Notes</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Examples"></a> <b>Examples</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Errorlevels"></a> <b>Errorlevels</b>
+    <p>none.</p>
+
+    <hr>
+    <a name="Availability"></a> <b>Availability</b>
+    <dl>
+      <dt>External</dt>
+      <dd>
+        <dl>
+          <dt>DOS</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows</dt>
+          <dd>
+          none
+          </dd>
+          <dt>Windows NT</dt>
+          <dd>
+          <a href="../../Version/MSWIN/NTXP.HTM">NTXP</a>
+          <a href="../../Version/MSWIN/NT2K3.HTM">NT2003</a>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <hr>
+    Last Updated: 2003/07/28
+    <br>Direct corrections or suggestions to:
+    <a href="mailto:rick_lively@yahoo.com">Rick Lively</a>
+  </body>
+</html>

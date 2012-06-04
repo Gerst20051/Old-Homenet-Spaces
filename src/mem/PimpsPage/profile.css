@@ -1,0 +1,121 @@
+body {
+ 	border: #0066FF 0px solid;
+ 	background: #000000 url('../../i/mc/ph/b/jpg/3.jpg') no-repeat fixed top;
+	scrollbar-face-color: #000000;
+	scrollbar-highlight-color: #0066FF;
+	scrollbar-3dlight-color: #000000;
+	scrollbar-shadow-color: #000000;
+	scrollbar-darkshadow-color: #000000;
+	scrollbar-arrow-color: #0066FF;
+	scrollbar-track-color: #000000;
+	cursor: default}
+	
+img 		 {  }
+a img		 {  }
+a:hover img	 {  }
+
+p            {  color: #FFFFFF; font-size: 12pt}
+h1           {  }
+h2           {  }
+h3           {  }
+h4           {  }
+h5           {  }
+h6           {  }
+a            {  color: #0077FF; cursor: default}
+a:visited    {  }
+a:active     {  color: #0077FF}
+a:hover      {  color: #0066FF}
+html         {  }
+hr           {  color: #0066FF}
+li           {  }
+ol           {  }
+ul           {  }
+table        {  }
+td           {  border: 1px solid #0066FF}
+textarea     {  }
+th           {  }
+tr           {  }
+address      {  }
+button       {  }
+fieldset     {  }
+input        {  }
+legend       {  }
+option       {  }
+pre          {  }
+select       {  }
+.toplinks              {  font-size: 10pt; font-family: Times New Roman; color: #0077FF}
+a:hover.toplinks       {  text-decoration: none; font-size: 10pt; font-family: Times New Roman; color: #0066FF}
+.friendlinks           {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #0077FF; width: 100%}
+a:hover.friendlinks    {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #0066FF}
+.navbarlinks           {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #0077FF; width: 100%; height: 22}
+a:hover.navbarlinks    {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #0066FF}
+.favoritelinks         {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #0077FF; width: 100%; height: 22}
+a:hover.favoritelinks  {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #0066FF}
+.messagelinks          {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #0077FF; width: 100%; height: 22}
+a:hover.messagelinks   {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #0066FF}
+.profilelinks          {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #0077FF; width: 100%; height: 22}
+a:hover.profilelinks   {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #0066FF}
+.commentlinks          {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #0077FF; width: 100%; height: 22}
+a:hover.commentlinks   {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #0066FF}
+.onlinenow          {  display: show; align: center; width: 100; height: 25}
+.mytopfriends       {  text-transform: capitalize; color: #FFFFFF; font-size: 14pt; text-align: center}
+.messagelink        {  font-size: 12pt; text-align: center; display: show}
+.friendnumber       {  color: #FFFFFF; font-size: 12pt; text-align: center}
+.lastlogin          {  color: #FFFFFF; font-size: 12pt; text-align: center}
+.profileviews       {  color: #FFFFFF; font-size: 12pt; text-align: center}
+.musicplayer        {  color: #FFFFFF; font-size: 12pt; text-align: center; display: show}
+.noembed            {  color: #FFFFFF; font-size: 12pt; text-align: center; display: none; padding-bottom: 5}
+.header             {  text-transform: capitalize; color: #FFFFFF; font-size: 14pt; text-align: left}
+.topic              {  text-transform: capitalize; color: #FFFFFF; font-size: 13pt; text-align: left}     
+.question           {  text-transform: capitalize; color: #FFFFFF; font-size: 12pt; text-align: center; font-weight: bold}
+.answer             {  color: #FFFFFF; font-size: 12pt; text-align: center}
+.homenetspaces      {  color: #0077FF; font-size: 36pt; text-align: center; font-weight: bold; padding: 4}
+.name               {  text-align: center; color: #0066FF; text-decoration: underline; font-size: 12pt; text-transform: uppercase; font-weight: bold; padding-bottom: 6}
+.details            {  text-align: center; color: #0077FF; font-size: 12pt; text-transform: capitalize; padding: 2}
+.commentnumber      {  color: #FFFFFF; font-size: 12pt; text-align: center}
+.commentlink        {  font-size: 12pt; text-align: center; display: show}.commentdate        {  color: #FFFFFF; font-size: 12pt; text-align: center}
+.commentmessage     {  color: #FFFFFF; font-size: 12pt; text-align: center}
+.frienddiv          {  width: 100%; height: 100%}
+.copyright          {  font-size: 10px; color: #0066FF; font-weight: bold; text-align: center}
+#topnav             {  padding: 4; border: 2px solid #0066FF; width: 98%; height: 20}
+#topnavtext         {  font-size: 10pt; text-align: center; color: #0077FF}
+#homenetspaces      {  width: 98%}
+#homenet            {  border-style: solid; background-color: #FFFFFF; text-align: center; float: right; width: 110; height: 63; border-width: 0; position: relative; left: -5}
+#homenetcell        {  border-style: solid; background-color: #FFFFFF; text-align: center; width: 110; height: 63; border-width: 0}
+#logo               {  width: 96; height: 38; text-align: center; border-width: 0}
+#marquee            {  color: #800000; font-size: 10pt; font-weight: bold; width: 100%; background-color: #000000}
+#marqueecell        {  background-color: #000000}
+#mainpicture        {  width: 110; height: 110; border-style: solid; border-width: 0}
+#mainname           {  padding: 4; border: 2px solid #0066FF; width: 98%}
+#mainnamecell       {  background-color: #FFFFFF}
+#onlinenowtable     {  padding: 4; border: 2px solid #0066FF; width: 98%}
+#onlinenowcell      {  background-color: #FFFFFF}
+#message            {  padding: 4; border: 2px solid #0066FF; width: 98%}
+#musicplayercell    {  padding-top: 8; display: inline}
+#friends            {  padding: 4; border: 2px solid #0066FF; width: 98%}
+#friend             {  width: 95%; padding: 3; background-color: #000000; position: relative; top: 12}
+#friendpicture      {  border: 2px solid #0066FF; width: 110; height: 110}
+#question1          {  padding: 4; border: 2px solid #0066FF; width: 98%}
+#question2          {  padding: 4; border: 2px solid #0066FF; width: 98%}
+#comments           {  padding: 4; border: 2px solid #0066FF; width: 98%}
+#commentcell        {  padding: 8; border: 2px solid #0066FF; width: 98%}
+#navbar             {  border-width: 0; padding: 3; width: 98%; background-image: url('../../i/m/b/n/nav_bg.gif')}
+#copyright          {  width: 100%; height: 50}
+#copyrightcell      {  border: 2px solid #0066FF; padding: 2; background-color: #FFFFFF}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

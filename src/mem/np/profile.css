@@ -1,0 +1,243 @@
+/* Universal Style Sheets */
+
+@import url(../../css/pm.css); 
+@import url(../../css/on.css); 
+
+
+/* Personal Style */
+
+#profilebody { 
+	margin: 0 0 0 0; 
+	}
+
+#profilebody .content { 
+	width: 100%; 
+	position: absolute; 
+	}
+
+body {
+ 	border: 0px solid #800000;
+ 	background: #000000 url('../../i/Profile%20Help/Backgrounds/0.jpg') no-repeat fixed top;
+	scrollbar-face-color: #000000;
+	scrollbar-highlight-color: #800000;
+	scrollbar-3dlight-color: #000000;
+	scrollbar-shadow-color: #000000;
+	scrollbar-darkshadow-color: #000000;
+	scrollbar-arrow-color: #800000;
+	scrollbar-track-color: #000000; 
+	cursor: url('profile.css')}
+
+img 		 {  }
+a img		 {  }
+a:hover img	 {  }
+
+p            {  color: #FFFFFF; font-size: 12pt; text-align: center}
+h1           {  }
+h2           {  }
+h3           {  }
+h4           {  }
+h5           {  }
+h6           {  }
+a            {  color: #004488; cursor: url('profile.css')}
+a:visited    {  }
+a:active     {  color: #004488}
+a:hover      {  color: #004488}
+html         {  }
+hr           {  color: #800000}
+li           {  }
+ol           {  }
+ul           {  }
+table        {  }
+td           {  border: 1px solid #800000}
+textarea     {  }
+th           {  }
+tr           {  }
+address      {  }
+button       {  }
+fieldset     {  }
+input        {  }
+legend       {  }
+option       {  }
+pre          {  }
+select       {  }
+
+.toplinks              {  font-size: 10pt; font-family: Times New Roman; color: #004080}
+a:hover.toplinks       {  text-decoration: none; font-size: 10pt; font-family: Times New Roman; color: #004080}
+.friendlinks           {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #004080; width: 100%}
+a:hover.friendlinks    {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #0066FF}
+.navbarlinks           {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #004080; width: 100%; height: 22}
+a:hover.navbarlinks    {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #0066FF}
+.favoritelinks         {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #004080; width: 100%; height: 22}
+a:hover.favoritelinks  {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #0066FF}
+.messagelinks          {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #004080; width: 100%; height: 22}
+a:hover.messagelinks   {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #0066FF}
+.profilelinks          {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #004080; width: 100%; height: 22}
+a:hover.profilelinks   {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #0066FF}
+.commentlinks          {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #004080; width: 100%; height: 22}
+a:hover.commentlinks   {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #0066FF}
+.onlinenow          {  display: show; align: center; width: 100; height: 25}
+.mytopfriends       {  text-transform: capitalize; color: #FFFFFF; font-size: 14pt; text-align: center}
+.messagelink        {  font-size: 12pt; text-align: center; display: show}
+.friendnumber       {  color: #FFFFFF; font-size: 12pt; text-align: center}
+.lastlogin          {  color: #FFFFFF; font-size: 12pt; text-align: center}
+.profileviews       {  color: #FFFFFF; font-size: 12pt; text-align: center}
+.musicplayer        {  color: #FFFFFF; font-size: 12pt; text-align: center; display: show}
+.noembed            {  color: #FFFFFF; font-size: 12pt; text-align: center; display: none; padding-bottom: 5}
+.header             {  text-transform: capitalize; color: #FFFFFF; font-size: 14pt; text-align: left}
+.topic              {  text-transform: capitalize; color: #FFFFFF; font-size: 13pt; text-align: left}     
+.question           {  text-transform: capitalize; color: #FFFFFF; font-size: 12pt; text-align: center; font-weight: bold}
+.answer             {  color: #FFFFFF; font-size: 12pt; text-align: center}
+.homenetspaces      {  color: #00468C; font-size: 36pt; text-align: center; font-weight: bold; padding: 4}
+.name               {  text-align: center; color: #800000; text-decoration: underline; font-size: 12pt; text-transform: uppercase; font-weight: bold; padding-bottom: 6}
+.details            {  text-align: center; color: #004488; font-size: 12pt; text-transform: capitalize; padding: 2}
+.commentnumber      {  color: #FFFFFF; font-size: 12pt; text-align: center}
+.commentlink        {  font-size: 12pt; text-align: center; display: show}
+.commentdate        {  color: #FFFFFF; font-size: 12pt; text-align: center}
+.commentmessage     {  color: #FFFFFF; font-size: 12pt; text-align: center}
+.frienddiv          {  width: 100%; height: 100%}
+.copyright          {  font-size: 10px; color: #000080; font-weight: bold; text-align: center}
+
+#topnav             {  padding: 4; border: 1px solid #800000; width: 98%; height: 20}
+#topnavtext         {  font-size: 10pt; text-align: center; color: #004488}
+#homenetspaces      {  width: 98%}
+#homenet            {  border-style: solid; background-color: #FFFFFF; text-align: center; float: right; width: 110; height: 63; border-width: 0; position: relative; left: -5}
+#homenetcell        {  border-style: solid; background-color: #FFFFFF; text-align: center; width: 110; height: 63; border-width: 0}
+#logo               {  width: 96; height: 38; text-align: center; border-width: 0}
+#marquee            {  color: #800000; font-size: 10pt; font-weight: bold; width: 100%; background-color: #000000}
+#marqueecell        {  background-color: #000000}
+#mainpicture        {  width: 110; height: 110; border-style: solid; border-width: 0}
+#mainname           {  padding: 4; border: 1px solid #800000; width: 98%}
+#mainnamecell       {  background-color: #FFFFFF}
+#onlinenowtable     {  padding: 4; border: 1px solid #800000; width: 98%}
+#onlinenowcell      {  background-color: #FFFFFF}
+#message            {  padding: 4; border: 1px solid #800000; width: 98%}
+#musicplayercell    {  padding-top: 8; display: inline}
+#friends            {  padding: 4; border: 1px solid #800000; width: 98%}
+#friend             {  width: 95%; padding: 3; background-color: #000000; position: relative; top: 12}
+#friendpicture      {  border: 2px solid #800000; width: 110; height: 110}
+#question1          {  padding: 4; border: 1px solid #800000; width: 98%}
+#question2          {  padding: 4; border: 1px solid #800000; width: 98%}
+#comments           {  padding: 4; border: 1px solid #800000; width: 98%}
+#commentcell        {  padding: 8; border: 1px solid #800000; width: 98%}
+#navbar             {  border-width: 0; padding: 3; width: 98%; background-image: url('../../i/m/b/n/nav_bg.gif')}
+#copyright          {  width: 100%; height: 50}
+#copyrightcell      {  border: 2px solid #800000; padding: 2; background-color: #FFFFFF}
+
+
+/* Drop Down Navigation */
+
+#dropdown_navigation { 
+	display: inline; 
+	width: 100%; 
+   	margin: 0 auto; 
+	padding-left: 5px; 
+	float: left; 
+	background: url('../i/m/b/n/black_gradient_bar.png') repeat-xy top center; 
+	}
+
+#dropdown_navigation li#dropdown1, 
+#dropdown_navigation li#dropdown2, 
+#dropdown_navigation li#dropdown3, 
+#dropdown_navigation li#dropdown4 { 
+	float: left; 
+	color: #fff; 
+	font-size: 1.5em; 
+	line-height: 1.4em; 
+	border-bottom: 2px solid #555; 
+	padding: 3px 24px 0 3px; 
+	margin: 0 15px 0 0; 
+	background: transparent url('../i/m/b/n/dropdown_indicator.png') no-repeat 98%; 
+	height: 28px; 
+	position: relative; 
+	z-index: 10; 
+	}
+
+#dropdown_navigation li#dropdown1:hover, 
+#dropdown_navigation li#dropdown2:hover, 
+#dropdown_navigation li#dropdown3:hover, 
+#dropdown_navigation li#dropdown4:hover, 
+#dropdown_navigation li.ie6hover { 
+	border-bottom: 2px solid #BADF74; 
+	cursor: pointer; 
+	}
+
+#dropdown_navigation li a, 
+#dropdown_navigation li a:visited { 
+	color: #fff; 
+	font-size: 1.4em; 
+	display: block; 
+	height: 32px; 
+	}
+
+#dropdown_navigation li a.top_level, 
+#dropdown_navigation li a.top_level:visited { 
+	display: inline; 
+	font-size: 0.8em; 
+	}
+
+#dropdown_navigation li a:hover { 
+	text-decoration: none; 
+	}
+
+#dropdown_navigation li ul { 
+	display: none; 
+	}
+
+#dropdown_navigation li:hover ul, 
+#dropdown_navigation li.ie6hover ul { 
+	display: block; 
+	position: absolute; 
+	top: 34px; 
+	left: -40px; 
+	background-color: #519BE0; 
+	width: 160px; 
+	}
+
+#dropdown_navigation li:hover ul li, 
+#dropdown_navigation li.ie6hover ul li { 
+	margin: 0; 
+	padding: 0; 
+	height: auto; 
+	}
+
+#dropdown_navigation li:hover ul li a, 
+#dropdown_navigation li:hover ul li a:visited, 
+#dropdown_navigation li.ie6hover ul li a, 
+#dropdown_navigation li.ie6hover ul li a:visited { 
+	font-size: 12px; 
+	line-height: 14px; 
+	padding: 8px 0 8px 10px; 
+	display: block; 
+	width: 150px; 
+	height: auto; 
+	}
+
+#dropdown_navigation li:hover ul li a, 
+#dropdown_navigation li:hover ul li a:visited { 
+	font-weight: bold; 
+	}
+
+#dropdown_navigation li:hover ul li a:hover, 
+#dropdown_navigation li.ie6hover ul li a:hover { 
+	background-color: #576E7A; 
+	}
+
+#directorySearch { 
+	color: #fff; 
+	font-size: 1.5em; 
+	line-height: 1.4em; 
+	height: 28px; 
+	float: right; 
+	margin: 5px 15px 0 0; 
+	padding-right: 20px; 
+	}
+
+#search_input { 
+	width: 190px;  
+	height: 20px; 
+	padding: 1px 1px 2px 1px; 
+	color: #AFAFAF; 
+	}
+
+#searchquery { 
+	}

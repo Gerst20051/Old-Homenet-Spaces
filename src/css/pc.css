@@ -1,0 +1,70 @@
+/* Style Spec's Default */
+
+p            {  color: #000000; font-size: 12pt; font-family: Times New Roman; text-align: center}
+h1           {  }
+h2           {  }
+h3           {  }
+h4           {  }
+h5           {  }
+h6           {  }
+body         {  background-color: #999966; color: #000000; background-image: url('../i/m/b/7.gif')}
+a            {  }
+a:link       {  color: #660000}
+a:visited    { 	color: #003399}
+a:active     {	color: #999933}
+a:hover      {  color: #A60000}
+html         {  }
+hr           {  color: #003366}
+sup          {  font-size: 10pt; font-family: OCR A Extended; color: #DF0000; font-weight: bold; padding-left: 4; vertical-align: super}
+li           {  }
+ol           {  }
+ul           {  }
+table        {  border-color: #999966; table-border-color-dark: #CCCC99; table-border-color-light: #999966}
+td           {  }
+textarea     {  }
+th           {  }
+tr           {  }
+address      {  }
+button       {  }
+fieldset     {  }
+input        {  }
+legend       {  }
+option       {  }
+pre          {  }
+select       {  }
+
+.top                {  color: #000000; text-align: center}
+.topnav             {  padding: 4; border: 1px solid #000000; width: 95%; text-align: center}
+.toplinks           {  color: #0000FF; font-size: 10pt}
+a:hover.toplinks    {  color: #0066CC; font-size: 10pt}
+.title              {  padding: 6; color: #003366; font-size: 36pt; font-weight: bold; text-align: center}
+.subtitle           {  color: #003366; font-size: 14pt; font-weight: bold; text-align: center; height: 30}
+.heading            {  color: #003366; font-size: 12pt; font-weight: bold; text-align: left}
+.headingcell        {  }
+.mainpicture        {  width: 420; height: 310; border: 0px none}
+.mainpicturetable   {  width: 100%; padding: 5}
+.picturetitle       {  text-align: center; font-weight: bold}
+.picturetitlecell   {  }
+.commonpicture      {  border: 0px none}
+.picture            {  text-align: center; padding: 2; border: 0px none}
+.picturecell        {  }
+.selection          {  text-align: center}
+.selectioncell      {  }
+.maintable          {  width: 100%; padding: 5}
+.linkstable         {  padding: 5; width: 95%; text-align: center}
+.picturelinks       {  padding: 2; text-align: center; width: 100%; height: 20}
+a:hover.picturelinks{  padding: 2; text-align: center; width: 100%; height: 20}
+.links              {  color: #000000; font-size: 12pt; text-align: center}
+a.links             {  color: #0000FF; font-size: 12pt}
+a:hover.links       {  color: #0066CC; font-size: 12pt}
+.special            {  color: #4A8F0C; font-size: 10pt}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,68 @@
+/* Style Spec's Default */
+
+p            {  color: #000000; font-size: 12pt; font-family: Times New Roman; text-align: center}
+h1           {  }
+h2           {  }
+h3           {  }
+h4           {  }
+h5           {  }
+h6           {  }
+body         {  background-color: #999966; color: #000000; background-image: url('../i/m/b/7.gif')}
+a            {  }
+a:link       {  color: #660000}
+a:visited    { 	color: #003399}
+a:active     {	color: #999933}
+a:hover      {  color: #A60000}
+html         {  }
+hr           {  color: #003366}
+sup          {  font-size: 10pt; font-family: OCR A Extended; color: #DF0000; font-weight: bold; padding-left: 4; text-decoration: underline}
+li           {  }
+ol           {  }
+ul           {  }
+table        {  border-color: #999966; color: #000000; table-border-color-dark: #CCCC99; table-border-color-light: #999966}
+td           {  }
+textarea     {  }
+th           {  }
+tr           {  }
+address      {  }
+button       {  }
+fieldset     {  }
+input        {  }
+legend       {  }
+option       {  }
+pre          {  }
+select       {  }
+
+
+/* Style Spec's For Homepage  */
+
+.top                {  text-align: center}
+.topnav             {  padding: 4; border: 1px solid #000000; width: 95%}
+.toplinks           {  color: #0000FF; font-size: 10pt}
+a:hover.toplinks    {  color: #0066CC; font-size: 10pt}
+.title              {  padding: 6; color: #003366; font-size: 36pt; font-weight: bold; text-align: center}
+.subtitle           {  color: #003366; font-size: 14pt; font-weight: bold; text-align: center}
+.letter             {  color: #000000; font-size: 24pt; text-align: center}
+.lettertable        {  padding: 5; border: 0px solid #000000; width: 90%}
+.letterlinks        {  text-align: center}
+a.letterlinks       {  color: #004080; font-size: 14pt; text-align: center}
+a:hover.letterlinks {  color: #800000; font-size: 14pt; text-align: center}
+.videolinkstable    {  padding: 5; border: 0px solid #000000; width: 90%}
+.videolinks         {  padding: 2; font-size: 12pt; text-align: center; width: 100%; height: 20}
+a:hover.videolinks  {  padding: 2; font-size: 12pt; text-align: center; width: 100%; height: 20}
+.linkstable         {  padding: 5; border: 0px solid #000000; width: 90%}
+.links              {  color: #000000; font-size: 12pt}
+a.links             {  color: #0000FF; font-size: 12pt}
+a:hover.links       {  color: #0000FF; font-size: 12pt}
+
+#new                {  font-size: 12pt; color: #003366; font-variant: small-caps; font-weight: bold}
+
+
+
+
+
+
+
+
+
+

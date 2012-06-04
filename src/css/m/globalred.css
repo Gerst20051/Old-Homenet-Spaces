@@ -1,0 +1,145 @@
+/* Style Spec's Mobile Red Default */
+
+p            {  }
+h1           {  }
+h2           {  }
+h3           {  }
+h4           {  }
+h5           {  }
+h6           {  }
+body         {  background: #FFFFFF url('../../i/m/b/blu/7.png') fixed left top; border: 20px solid #F3F3F3}
+a            {  color: #CC0000}
+a:link       {  }
+a:visited    {  }
+a:active     {  }
+a:hover      {  color: #BB0000}
+html         {  }
+hr           {  color: #BB0000}
+sup          {  }
+li           {  }
+ol           {  }
+ul           {  }
+table        {  }
+td           {  }
+textarea     {  }
+th           {  }
+tr           {  }
+address      {  }
+button       {  }
+fieldset     {  }
+input        {  }
+legend       {  }
+option       {  }
+pre          {  }
+select       {  }
+
+#topnav         {  padding: 5; background-color: #FFAEAE; width: 100%}
+#homenetspaces  {  background-color: #FFFFFF}
+#signoutdiv     {  text-align: right; font-size: 8pt; font-family: Times New Roman; color: #000000; font-weight: bold; background-color: #FFFFFF; width: 100%; height: 15}
+#signout        {  text-align: center; font-size: 8pt; font-family: Times New Roman; color: #000000; font-weight: bold}
+#country        {  text-align: center; font-size: 8pt; font-family: Times New Roman; color: #000000; font-weight: bold}
+#hnslogo        {  float: center; width: 580; height: 132}
+#marquee        {  padding: 2; color: #000000; background-color: #FFFFFF; font-size: 12pt}
+#marqueetable   {  width: 98%}
+#login          {  border-width: 0; padding: 3; background-color: #FF6666; width: 100%; height: 152}
+#username       {  border-style: ridge; border-width: 2}
+#password       {  border-style: ridge; border-width: 2}
+#checkbox       {  text-align: center}
+#loginbutton    {  border: 2px ridge #CC0000; background-color: #FFAEAE}
+#logindiv       {  text-align: center}
+#signupbutton   {  border-width: 0; width: 68; height: 22}
+#signupdiv      {  text-align: center}
+#links          {  padding: 3; background-color: #F3F3F3; width: 100%; border-width: 0; height: 152}
+#advertisement  {  padding: 5; background-color: #E6E6E6; width: 14%}
+#coolnew        {  padding: 5; background-color: #E6E6E6; width: 100%; border-width: 0}
+#icon           {  border-width: 0; width: 18; height: 18; float: left}
+#visitors       {  border-width: 0}
+#homepage       {  text-decoration: none; font-size: 14pt; font-family: Kristen ITC; color: #0675C6; font-weight: bold; width: 100%}
+#newlinks       {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #004080; width: 100%}
+#news           {  border-width: 0; padding: 5; background-color: #E6E6E6; width: 100%}
+#navbar         {  border-width: 0; padding: 3; width: 100%; background-image: url('../../i/m/b/n/nav_bg.gif')}
+#copyright      {  border: 0px solid #FFFFFF; background-color: #FFFFFF}
+#copyrightlinks1{  background-color: #FFFFFF}
+#copyrightlinks2{  background-color: #F3F3F3}
+#copyrightlinks3{  background-color: #FFFFFF}
+
+.top                {  color: #000000; font-size: 10pt; text-align: center}
+.linksspan          {  position: relative; top: 0; left: 5}
+.login              {  color: #00468C; font-size: 12pt; text-align: center}
+.login2             {  text-align: center}
+.title              {  color: #FFAEAE; font-size: 36pt; font-weight: bold; text-align: center}
+.subtitle           {  color: #4981F3; font-size: 14pt; font-weight: bold; text-align: center; text-decoration: none; width: 100%}
+a.subtitle          {  color: #4981F3; font-size: 14pt; font-weight: bold; text-align: center; text-decoration: none; width: 100%}
+.advertisement      {  font-family: Times New Roman; color: #BB0000; font-size: 12pt; text-decoration: none}
+.advertisementcell  {  background-position: center top; background-image: url('../../i/m/b/1.jpg'); background-repeat: repeat; background-attachment: fixed}
+.advertisementhead  {  background-image: url('../../i/m/b/1.gif')}
+.pictures           {  border-width: 0; width: 100; height: 100}
+.specials           {  color: #00468C; font-size: 12pt; text-align: center}
+.greeting           {  font-size: 12pt; color: #CC0000; font-style: italic; font-weight: bold}
+.clearcookie        {  font-size: 10pt; position: relative; left: 15; letter-spacing: 1pt; text-decoration: none}
+.member             {  font-size: 10pt}
+.forgot             {  font-size: 10pt; text-align: center; position: relative; left: 13}
+.remember           {  text-align: center; position: relative; left: -10}
+.username           {  }
+.password           {  }
+.highlight          {  background-color: #CC0000}
+.headercell         {  background-image: url('../../i/m/b/blu/1.gif')}
+.friends            {  padding-bottom: 4; padding-top: 4; background-color: #FFAEAE}
+.newnews            {  padding-bottom: 4; padding-top: 4; background-color: #FFAEAE; width: 100%}
+.new                {  color: #E80000; font-size: 8pt; text-align: center}
+.news               {  color: #00468C; font-size: 12pt; font-weight: bold; text-align: center; width: 100%}
+.newschannel        {  text-decoration: none; font-size: 14pt; font-family: Times New Roman; color: #FFAEAE}
+.visitorscell       {  background-color: #FFFFFF}
+.homepagestyles     {  color: #00468C; font-size: 12pt; text-align: center; font-weight: bold}
+.copyrightlink      {  color: #FFFFFF; font-size: 10pt; text-align: center}
+.copyright          {  color: #00468C; font-size: 8pt; text-align: center}
+.copyrightbold      {  color: #BB0000; font-size: 8pt; font-weight: bold; text-align: center}
+.bold               {  font-weight: bold}
+.blue               {  }
+.orange             {  }
+.green              {  }
+.yellow             {  }
+.red                {  }
+.black              {  }
+
+.toplinks              {  color: #CC0000}
+a:hover.toplinks       {  text-decoration: none; color: #FFAEAE}
+.links                 {  text-decoration: none; font-size: 10pt; font-family: Times New Roman; color: #CC0000; background-color: #F3F3F3; text-align: left; width: 98%; height: 21}
+a:hover.links          {  text-decoration: none; font-size: 10pt; font-family: Times New Roman; color: #CC0000; background-color: #F3F3F3; text-align: left; width: 98%; height: 21; padding-left: 3; padding-right: 0; padding-top: 2; padding-bottom: 0}
+.newlinks              {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #CC0000; width: 100%}
+a:hover.newlinks       {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #FFAEAE}
+.friendlinks           {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #CC0000}
+a:hover.friendlinks    {  text-decoration: none; font-size: 12pt; font-family: Times New Roman; color: #FFAEAE; background-color: #0D4E87; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 4}
+.navbarlinks           {  text-align: center; color: #CC0000; width: 100%; height: 26}
+a:hover.navbarlinks    {  text-decoration: none; text-align: center; color: #FFAEAE}
+.copyrightlinks        {  text-decoration: none; color: #CC0000}
+a:hover.copyrightlinks {  border-top: 1px dotted #FF9933; border-bottom: 1px dotted #FFAEAE; color: #FFAEAE; font-variant: small-caps}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

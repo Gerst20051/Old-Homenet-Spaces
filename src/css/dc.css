@@ -1,0 +1,93 @@
+/* Style Spec's Default */
+
+p            {  text-align: center}
+h1           {  color: rgb(0,102,102)}
+h2           {  color: rgb(0,102,102)}
+h3           {  color: rgb(0,102,102)}
+h4           {  color: rgb(0,102,102)}
+h5           {  color: rgb(0,102,102)}
+h6           {  color: rgb(0,102,102)}
+body         {  color: #000000; background-color: #FFFFFF; background-image: url('../i/m/b/6.gif')}
+a            {  }
+a:link		 {  color: rgb(102,102,51)}
+a:visited	 {	color: rgb(153,102,0)}
+a:active	 {	color: rgb(153,51,0)}
+a:hover      {  color: rgb(170,170,85)}
+html         {  }
+hr           {  color: rgb(0,102,102)}
+sup          {  }
+li           {  }
+ol           {  }
+ul           {  }
+table        {  table-border-color-light: rgb(153,153,102);	table-border-color-dark: rgb(0,102,102); border-color: rgb(0,102,102); color: rgb(0,0,0)}
+td           {  border-color: rgb(0,102,102)}
+textarea     {  border-color: rgb(0,102,102); color: black}
+th           {  color: rgb(0,0,0); border-color: rgb(0,102,102)}
+tr           {  }
+address      {  }
+button       {  background-color: rgb(0,102,102); border-color: rgb(102,153,153); color: white}
+fieldset     {  border-color: rgb(0,102,102); color: black}
+input        {  }
+legend       {  border-color: rgb(0,102,102)}
+option       {  }
+pre          {  }
+select       {  border-color: rgb(0,102,102); color: black}
+.top                {  text-align: center; color: #000000}
+.topnav             {  padding: 4; border: 1px solid #000000; width: 90%}
+.toplinks           {  color: #0000FF; font-size: 10pt}
+a:hover.toplinks    {  color: #0066CC; font-size: 10pt}
+.main               {  text-align: center; font-size: 36pt; color: #000000; padding-top: 10}
+.info               {  text-align: center; font-size: 12pt; color: #000000; width: 100%; padding: 10}
+.name               {  padding: 2; text-align: center; font-size: 14pt; color: #000000; width: 100%; font-family: Tahoma}
+a.name              {  font-size: 14pt; width: 100%; font-family: Tahoma}
+.size               {  text-align: center; font-size: 12pt; color: #000000}
+.maintable          {  width: 100%}
+.letterlinks        {  background-image: url('../i/m/b/blu/1.jpg'); color: #000000; text-align: center; padding-top: 2; padding-bottom: 2}
+a.letterlinks       {  color: #00038C; font-size: 14pt; font-weight: bold}
+a:hover.letterlinks {  color: #0066CC; font-size: 14pt; font-weight: bold}
+.letter             {  background-image: url('../i/m/b/t/tab_middle.gif'); color: #000000; font-size: 24pt; font-weight: bold; text-align: center}
+.letters            {  background-image: url('../i/m/b/t/tab_middle.gif')}
+.tablemaintop       {  padding: 4; border: 0px}
+.tabletop           {  padding: 4; background-image: url('../i/m/b/t/tab_middle.gif')}
+.tablemainheadings  {  text-align: left; font-size: 14pt}
+.tableheadings      {  text-align: center; font-size: 12pt}
+.recentlydownloaded {  padding: 2; text-align: center; font-size: 14pt; color: #000000; width: 100%; font-family: Tahoma}
+a.recentlydownloaded{  font-size: 14pt; width: 100%; font-family: Tahoma}
+.download           {  background-image: url('../i/m/b/5.gif')}
+.special            {  background-image: url('../i/m/b/10.gif')}
+.downloadlink       {  width: 100%; text-decoration: none}
+.imagealign         {  text-align: center}
+.imagedownload      {  border: 0px none; width: 66; height: 17}
+.imageview          {  border: 0px none; width: 42; height: 17}
+.extralinksdiv      {  text-align: center; font-size: 12pt; width: 100%; padding: 10}
+.extralinks         {  text-align: center; font-size: 12pt; width: 100%; padding: 2}
+.linkstable         {  padding: 5; border: 0px solid #000000; width: 90%; text-align: center}
+.links              {  text-align: center}
+a.links             {  font-size: 12pt}
+a:hover.links       {  font-size: 12pt}
+.copyright           {  color: #00468C; font-size: 8pt; text-align: center}
+.copyright2          {  color: #00468C; font-size: 8pt; font-weight: bold; text-align: center}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

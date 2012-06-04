@@ -1,0 +1,65 @@
+/* Style Spec's Default */
+
+p            {  color: #000000; font-size: 12pt; text-align: center; text-decoration: none}
+h1           {  }
+h2           {  }
+h3           {  }
+h4           {  }
+h5           {  }
+h6           {  }
+body         {  background-image: url('../i/m/b/6.gif'); background-repeat: repeat}
+a            {  }
+a:link		 {	color: rgb(153,102,51)}
+a:visited	 {	color: rgb(102,102,0)}
+a:active	 {	color: rgb(204,153,0)}
+a:hover      {  }
+html         {  }
+hr           {  color: rgb(153,153,153)}
+sup          {  }
+li           {  }
+ol           {  }
+ul           {  }
+table        {  table-border-color-light: rgb(204,204,153);	table-border-color-dark: rgb(0,0,0)}
+td           {  border-color: rgb(51,102,153)}
+textarea     {  }
+th           {  color: rgb(0,0,0); border-color: rgb(153,153,102)}
+tr           {  }
+address      {  }
+button       {  }
+fieldset     {  }
+input        {  }
+legend       {  }
+option       {  }
+pre          {  }
+select       {  }
+
+.top                {  color: #000000; text-align: center}
+.topnav             {  padding: 4; width: 100%}
+.toplinks           {  color: #0000FF; font-size: 12pt}
+a:hover.toplinks    {  color: #0066CC; font-size: 12pt}
+.linkstable         {  padding: 5; cellspacing: 0; width: 100%; text-align: center}
+.links              {  color: #000000; font-size: 12pt}
+a.links             {  color: #0000FF; font-size: 12pt}
+a:hover.links       {  color: #0066CC; font-size: 12pt}
+.maintitle          {  color: #000080; font-size: 30pt; text-align: center; padding-top: 5; padding-bottom: 5}
+.maintable          {  padding: 5; width: 100%}
+.subtitle           {  color: #0000AE; font-size: 14pt; text-align: center; width: 100%}
+.names              {  font-color: #000000; font-size: 12pt; text-align: center; font-family: Lucida Handwriting; text-decoration: line-through; color: #FFFF00; font-weight: bold}
+.pic                {  text-align: center; width: ; height: 110; border-style: solid; border-width: 0}
+.friend             {  padding: 2; background-color: #FFFFFF; text-align: center; width: 90%; text-transform: capitalize}
+#picture1           {  border-style: solid; border-width: 0; text-align: center; width: 170px; height: 139px}
+#picture2           {  border-style: solid; border-width: 0; text-align: center; width: 140px; height: 186px}
+#topnavtext         {  font-size: 12pt; text-align: center; color: #996633}
+
+
+
+
+
+
+
+
+
+
+
+
+

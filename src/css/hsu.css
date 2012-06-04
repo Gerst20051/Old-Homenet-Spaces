@@ -1,0 +1,63 @@
+/* Style Spec's Default */
+
+p            {  }
+h1           {  }
+h2           {  }
+h3           {  }
+h4           {  }
+h5           {  }
+h6           {  }
+body         {  color: #000000; background-color: #FFFFFF; background-image: url('../i/m/b/2.gif'); background-attachment: scroll}
+a            {  }
+a:link       {  }
+a:visited    {  }
+a:active     {  color: #0000FF}
+a:hover      {  font-variant: small-caps; font-weight: bold}
+html         {  }
+hr           {  }
+sup          {  }
+li           {  }
+ol           {  }
+ul           {  }
+table        {  table-border-color-light: rgb(153,153,102);	table-border-color-dark: rgb(0,102,102); border-color: rgb(0,102,102); color: rgb(0,0,0)}
+td           {  border-color: rgb(0,102,102)}
+textarea     {  border-color: rgb(0,102,102); color: black}
+th           {  color: rgb(0,0,0); border-color: rgb(0,102,102)}
+tr           {  }
+address      {  }
+button       {  }
+fieldset     {  }
+input        {  }
+legend       {  }
+option       {  }
+pre          {  }
+select       {  }
+
+/* Style Spec's For Homepage  */
+
+.top                {  color: #000000; text-align: center}
+.topnav             {  filter: alpha(opacity=50); padding: 4; border: 1px solid #000000; width: 90%}
+.toplinks           {  color: #0000FF; font-size: 10pt}
+a:hover.toplinks    {  color: #0066CC; font-size: 10pt}
+.titletable         {  padding: 5; border: 0px solid #000000; width: 90%}
+.title              {  background-image: url('../i/m/b/blu/1.jpg'); color: #000000; font-size: 16pt; text-align: center; padding-top: 2; padding-bottom: 2}
+.changestable       {  padding: 5; border: 0px solid #000000; width: 90%; text-align: center}
+a.links             {  color: #0000FF; font-size: 12pt}
+a:hover.links       {  color: #0000FF; font-size: 12pt}
+.headerhl           {  color: #000000; font-weight: bold; font-size: 16pt; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 5; text-align: left}
+.headerhc           {  color: #000000; font-weight: bold; font-size: 16pt; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 5; text-align: center}
+.headerhr           {  color: #000000; font-weight: bold; font-size: 16pt; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 5; text-align: right}
+.copyright          {  color: #00468C; font-size: 8pt; text-align: center; font-weight: bold}
+#center             {  text-align: center}
+
+
+
+
+
+
+
+
+
+
+
+

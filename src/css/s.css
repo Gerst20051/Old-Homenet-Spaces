@@ -1,0 +1,69 @@
+/* Style Spec's Default */
+
+p            {  }
+h1           {  }
+h2           {  }
+h3           {  }
+h4           {  }
+h5           {  }
+h6           {  }
+body         {  background: #FFFFFF url('../i/m/b/blu/2.png') fixed left top; border: 20px solid #F3F3F3}
+a            {  }
+a:link       {  color: #004080}
+a:visited    {  color: #004080}
+a:active     {  color: #004080}
+a:hover      {  color: #DFE9FD}
+html         {  }
+hr           {  color: #F3F3F3}
+sup          {  }
+li           {  }
+ol           {  }
+ul           {  }
+table        {  }
+td           {  }
+textarea     {  }
+th           {  }
+tr           {  }
+address      {  }
+button       {  }
+fieldset     {  }
+input        {  }
+legend       {  }
+option       {  }
+pre          {  }
+select       {  }
+
+#topnav       {  border: 2px solid #DFE9FD}
+#homenetspaces{  border-style: none; border-width: 0}
+#homenet      {  border-style: none; border-width: 0}
+#staff        {  padding: 5; border: 2px solid #004080; background-color: #000040; width: 100%}
+#copyright    {  border: 0px solid #FFFFFF; background-color: #E6E6E6}
+
+.topnav             {  color: #00468C; font-size: 10pt; text-align: center}
+.title              {  color: #4981F3; font-size: 36pt; font-weight: bold; text-align: center}
+.subtitle           {  color: #4981F3; font-size: 14pt; font-weight: bold; text-align: center}
+.staffheader        {  background-image: url('../i/m/b/8.gif')}
+.stafftype          {  color: #00468C; font-size: 12pt; text-align: center}
+.staffname          {  color: #00468C; font-size: 12pt; text-align: center}
+.copyright          {  color: #00468C; font-size: 8pt; text-align: center}
+.copyrightbold      {  color: #00468C; font-size: 8pt; font-weight: bold; text-align: center}
+
+.toplinks              {  color: #004488}
+a:hover.toplinks       {  text-transform: uppercase; text-decoration: none; color: #DFE9FD}
+.copyrightlinks        {  text-decoration: none; color: #004488}
+a:hover.copyrightlinks {  border-top: 1px dotted #FF9933; border-bottom: 1px dotted #FF9933; color: #FFB871; font-variant: small-caps}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
